@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ProUI Email Template - Welcome</title>
+        <meta name="viewport" content="width=device-width" />
+       <style type="text/css">
+            @media only screen and (max-width: 550px), screen and (max-device-width: 550px) {
+                body[yahoo] .buttonwrapper { background-color: transparent !important; }
+                body[yahoo] .button { padding: 0 !important; }
+                body[yahoo] .button a { background-color: #1bbae1; padding: 15px 25px !important; }
+            }
+
+            @media only screen and (min-device-width: 601px) {
+                .content { width: 600px !important; }
+                .col387 { width: 387px !important; }
+            }
+			table {
+			 border: 1px solid lightgray;
+			}
+        </style>
+    </head>
+    <body <?php if ( $content_type == 'plain_text' ) { ?>bgcolor="#394263"<?php } ?> style="margin: 0; padding: 0;" yahoo="fix">
+        <!--[if (gte mso 9)|(IE)]>
+        <table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td>
+        <![endif]-->
+        <table align="center" cellpadding="0" cellspacing="0" style="width: 100%; max-width: 600px;" class="content">
+            <?php /* if ( $content_type == 'plain_text' ) { ?>
+			<tr>
+                <td colspan="2" style="padding: 15px 10px 15px 10px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td align="center" style="color: #aaaaaa; font-family: Arial, sans-serif; font-size: 12px;">
+                                Email not displaying correctly?  <a href="#" style="color: #1bbae1;">View it in your browser</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+			<?php } */ ?>
+            <tr>
+                <td colspan="2" align="center" border="1px solid lightgrey" style="padding: 20px 20px 20px 20px; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold;">
+                    <img src="<?php echo IMG_PATH.'org/'.$row[0]['photo'];  ?>" style="display:block;" />
+                    <?php echo $row[0]['org_name']; ?>
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 10px 20px 5px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 15px; line-height: 24px;">
+                    <img src="<?php echo IMG_PATH.'org/'.$row[0]['photo']; ?>" style="display:block;" width="96px" height="124" />
+                </td>
+                <td bgcolor="#ffffff" style="padding: 10px 20px 5px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 15px; line-height: 24px;">
+                    <b>Roll No</b><br>
+					<?php for($i=0;$i<$row['tag'][0]['NROWS'];$i++) { if ( $row['tag'][$i]['tag_name'] == "Roll No" ) echo $row['tag'][$i]['tag_value']; } ?>
+                </td>
+            </tr>
+			<?php for($i=0;$i<$row['tag'][0]['NROWS'];$i++) {?> 
+            <tr>
+                <td bgcolor="#ffffff" style="padding: 10px 20px 5px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 15px; line-height: 24px;">
+                    <b><?php  echo $row['tag'][$i]['tag_name'] ;  ?></b>
+                </td>
+                <td bgcolor="#ffffff" style="padding: 10px 20px 5px 20px; color: #555555; font-family: Arial, sans-serif; font-size: 15px; line-height: 24px;">
+                   <?php echo $row['tag'][$i]['tag_value'];   ?>
+                </td>
+            </tr> <?php } ?>
+            
+			<?php if ( $content_type == 'plain_text' ) { ?>
+            <tr>
+                <td colspan="2" align="center" bgcolor="#dddddd" style="padding: 15px 10px 15px 10px; color: #555555; font-family: Arial, sans-serif; font-size: 12px; line-height: 18px;">
+                    <b>Company Inc.</b><br/>Jayanagar 1st Block &bull; Jayanagar, Bangalore 560038 INDIA
+                </td>
+            </tr>
+			<!--
+            <tr>
+                <td colspan="2" style="padding: 15px 10px 15px 10px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td width="60%" style="color: #999999; font-family: Arial, sans-serif; font-size: 12px;">
+                                <a href="#" style="color: #1bbae1;">Unsubscribe</a> from this newsletter
+                            </td>
+                            <td align="right" width="40%" style="color: #999999; font-family: Arial, sans-serif; font-size: 12px;">
+                                2013-14 &copy; <a href="#" style="color: #1bbae1;">Cloudnix Software Labs</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+			 -->
+			<?php } ?>
+        </table>
+        <!--[if (gte mso 9)|(IE)]>
+                </td>
+            </tr>
+        </table>
+        <![endif]-->
+    </body>
+</html>

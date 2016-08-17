@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.daasuu.FPSAnimator">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TweenSampleActivity"
+            android:label="TweenSample" />
+        <activity
+            android:name=".EasingSampleActivity"
+            android:label="EasingSample" />
+        <activity
+            android:name=".ParabolicMotionSampleActivity"
+            android:label="ParabolicMotionSampleActivity" />
+        <activity
+            android:name=".SpriteSheetSampleActivity"
+            android:label="SpriteSheetSampleActivity" />
+        <activity
+            android:name=".FPSSurfaceViewSampleActivity"
+            android:label="FPSSurfaceViewSampleActivity" />
+        <activity
+            android:name=".AnimationPauseSampleActivity"
+            android:label="AnimationPauseSampleActivity" />
+        <activity
+            android:name=".ContainerSampleActivity"
+            android:label="ContainerSampleActivity" />
+        <activity
+            android:name=".CustomDrawerSampleActivity"
+            android:label="CustomDrawerSampleActivity" />
+        <activity android:name=".ArcSampleActivity"></activity>
+    </application>
+
+</manifest>

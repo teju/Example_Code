@@ -1,0 +1,22 @@
+<form id="PmtReDirectForm" name="PmtReDirectForm" style='' 
+	action="<?php echo $GATEWAY['action']; ?>" method="POST" accept-charset="utf-8">
+	<?php foreach($GATEWAY['DATA'] as $name => $value) {
+		echo "<input type='hidden' name='$name' value='$value' />";
+	}?>
+</form>
+<script language="JavaScript">
+	if (typeof jQuery !== 'undefined') {
+		// jQuery is available
+	// Move step bar forward
+	$('#step-1-bar').removeClass().addClass('ui-state-default ui-state-disabled');
+	$('#step-2-bar').removeClass().addClass('ui-state-default ui-state-disabled');
+	$('#step-3-bar').removeClass().addClass('ui-state-default ui-state-active');
+	$('#step-4-bar').removeClass().addClass('ui-state-default ui-state-disabled');
+	$('#gateway-message').fadeOut();
+	$('.loading-msg #message').html('Please wait while we redirect you to the payment gateway');
+	}
+        document.getElementById("PmtReDirectForm").submit();
+
+
+</script>
+

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Amberly</title>
+    <link rel="stylesheet" href="boostrap/css/bootstrap.css" >
+    <link rel="stylesheet" href="boostrap/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="boostrap/fonts">
+    <link rel="stylesheet" href="boostrap/css/datepicker.css">
+    <link rel="stylesheet" href="includes/css/style.css">
+    <link rel="stylesheet" href="includes/css/footer.css">
+    <link rel="stylesheet" href="includes/fonts">
+    <link rel="stylesheet" href="includes/css/ionicons.min.css">
+    <link rel="stylesheet" href="includes/css/animate.css">
+    <link rel="stylesheet" href="includes/css/owl-carousel.css">
+
+    <link rel="stylesheet" href="includes/css/owl.theme.css">
+    <link rel="stylesheet" href="includes/css/owl.transitions.css"> 
+    <link rel="stylesheet" type="text/css" href="includes/css/lightbox.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="body-overlay"></div>
+    <div id="side-panel" class="dark">
+      <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times"></i></a></div>
+      <div class="side-panel-wrap">
+        <ul class="navbar mm-panel">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms</a>
+            <ul class="dropdown-menu">
+              <li><a href="room-1.html">Room 1</a></li>
+              <li><a href="room-2.html">Room 2</a></li>
+              <li><a href="room-3.html">Room 3</a></li>
+              <li><a href="room-single-1.html">Room Single</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">News</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <ul class="dropdown-menu">
+              <li><a href="blog-1.html">Blog 1</a></li>
+              <li><a href="blog-2.html">Blog 2</a></li>
+              <li><a href="blog-3.html">Blog 3</a></li>
+              <li><a href="blog-single.html">Blog Single</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Booking</a>
+            <ul class="dropdown-menu">
+              <li><a href="booking-1.html">Booking 1</a></li>
+              <li><a href="booking-2.html">Booking 2</a></li>
+              <li><a href="booking-3.html">Booking 3</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Pages</a>
+            <ul class="dropdown-menu">
+              <li><a href="service.html">Service</a></li>
+              <li><a href="coming-soon.html">Coming Soon</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="404.html">404</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper" class="clearfix">
+      <div id="mobile-bar" class="visible-xs visible-sm">
+        <a href="#" id="offcanvas-togglers" class="menu-trigger"><i class="fa fa-bars"></i></a>
+        <h1 class="mob-title"><a href="home.html">Home</a></h1>
+      </div>
+      <header class="main-header">
+        <div class="header-container">
+          <div class="container">
+            <div class="row">
+              <div class="header">
+                <div class="top-header">
+                  <div class="col-xs-12 col-sm-4 col-md-6 no-left">
+                    <div class="weather">
+                      <i class="ion-ios-cloudy-night-outline i-weather"></i>
+                      <div class="info-wether">
+                        <span id="ywloc">Melbourne, Victoria</span>
+                        <span id="ywtem">16<sup>o</sup>C</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 col-md-6">
+                    <div class="top-nav-bar hidden-xs hidden-sm">
+                      <div class="widget-title"><i class="ion-android-call i_first"></i>(+064)-342-28679</div>
+                      <div class="widget-title"><i class="ion-email-unread i_first"></i>info@amberley.com</div>
+                      <div class="widget-title no-right"><i class="ion-android-globe i_first"></i>English<i class="fa fa-angle-down" id="down"></i>
+                        <ul class="drop-down">
+                          <li>
+                            <a href="#"><img class="iclflag" title="Français" alt="fr" src="images/flags/fr.png">Français</a>
+                          </li>
+                          <li>
+                            <a href="#"><img class="iclflag" src="images/flags/ru.png" alt="fr" title="Français">Russian</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- .top-header -->
+
+                <div class="main-nav">
+                  <div class="col-sm-12 col-md-4">
+                    <div id="logo">
+                      <a href="#"><img src="images/logo.png" alt="Theme logo" class="img-responsive"></a>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-8 nav-right  hidden-xs hidden-sm">
+                    <nav>
+                      <ul class="nav navbar-nav" id="main-nav">
+                        <li class="active"><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="room-1.html">Room 1</a></li>
+                            <li><a href="room-2.html">Room 2</a></li>
+                            <li><a href="room-3.html">Room 3</a></li>
+                            <li><a href="room-single-1.html">Room Single</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">News</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="blog-1.html">Blog 1</a></li>
+                            <li><a href="blog-2.html">Blog 2</a></li>
+                            <li><a href="blog-3.html">Blog 3</a></li>
+                            <li><a href="blog-single.html">Blog Single</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Booking</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="booking-1.html">Booking 1</a></li>
+                            <li><a href="booking-2.html">Booking 2</a></li>
+                            <li><a href="booking-3.html">Booking 3</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="service.html">Service</a></li>
+                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="404.html">404</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="search-bar">
+                      <input type="text" class="input-search">
+                      <i class="ion-ios-search btn-search"></i>
+                    </div>
+                    <div id="btn-trigger">
+                      <a id="offcanvas-toggler" class="menu-trigger" href="#">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="hidden-xs hidden-sm">
+          </div>
+        </div>
+      </header>
+      <section class="slider-box parslide">
+        <div class="slider-mask"></div>
+        <div class="custom-controls">
+          <div class="shadow">
+            <div class="slider-helper">
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="images/Layer01.png" alt="img Luxury room">
+                    <div class="carousel-caption hidden-xs hidden-sm">
+                      <p class="title-up animated fadeInDownBig">Special Offer</p>
+                      <h1 class="animated swing"><span>Luxury</span> <em>Room</em></h1>
+                      <p class="slide-subtitle animated fadeInUpBig">from only &dollar;168 / night</p>
+                      <div class="button-slide">
+                        <a href="#" class="btn-more">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <img src="images/Layer01.png" alt="img special room">
+                    <div class="carousel-caption hidden-xs hidden-sm">
+                      <p class="title-up animated  slideInRight">Special Offer</p>
+                      <h1 class="animated rollIn"><span>Special</span> <em>Room</em></h1>
+                      <p class="slide-subtitle animated slideInLeft">from only &dollar;190 / night</p>
+                      <div class="button-slide">
+                        <a href="#" class="btn-more">Learn more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section> <!--.slider-box -->
+      <section id="check-room">
+        <div class="container">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 check-room">
+            <form method="post" action="/">
+              <div class="col-xs-12 col-md-9 custom-form">
+                <div class="col-xs-12 col-sm-6 col-md-3 arrival group">
+                  <h4>Arrival Date</h4>
+                  <label for="for1" class="add-on"><i class="ion-android-calendar date1"></i></label>
+                  <input type='text' id='for1' class="dateclick" name="arrive" placeholder="Oct 17th, 2015"/>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 departure group">
+                  <h4>Departure Date</h4>
+                  <label for="for2" class="add-on"><i class="ion-android-calendar date2"></i></label>
+                  <input type='text' id='for2' class="dateclick" name="depart" placeholder="Oct 18th, 2015"/>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 adults group">
+                  <h4>No. Rooms</h4>
+                  <div class="mylabel">
+                    <select class="ul-room-2">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-3 room group">
+                  <h4>Adult</h4>
+                  <div class="mylabel">
+                    <select class="ul-room-2">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-3  bookbtn group">
+                <a href="#" class="btn-check"><span>Check</span><br> Availability</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <main>
+        <section id="why_choose_us">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                <h3>Why choose amberly</h3>
+                <div class="row">
+                  <div class="post col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="img_zoom">
+                      <img src="images/experience.png" class="wow fadeInLeft img-responsive" data-wow-duration="2s" alt="Bringing the best experience">
+                    </div>
+                    <div class="text-col">
+                      <a href="#"><h4>Bringing the best experience</h4></a>
+                      <p>Vestibulum felis felis, volutpat eu venenatis ut, pharetra at sapien. Pellentesque accumsan aliquet leo, in feugiat odio dapibus ut. Nunc sem enim, pulvinar sed enim eget, iaculis lacinia est.</p>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="post col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="img_zoom">
+                      <img src="images/helpful-staff.png" class="wow fadeInRight img-responsive" data-wow-duration="2s" alt="Friendly & Helpful Staff">
+                    </div>
+                    <div class="text-col">
+                      <a href="#"><h4>Friendly & Helpful Staff</h4></a>
+                      <p>Vestibulum felis felis, volutpat eu venenatis ut, pharetra at sapien. Pellentesque accumsan aliquet leo, in feugiat odio dapibus ut. Nunc sem enim, pulvinar sed enim eget, iaculis lacinia est.</p>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">Read more</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 no-right" id="upcoming">
+                <!-- <img src="images/layer41.png" alt="Upcoming Events" class="img-responsive"> -->
+                <figure id="contact-room">
+                  <div id="contact">
+                    <a href="#" title=""><img src="images/upcoming.png" alt="img upcoming" class="img-responsive pr-img"></a>
+                  </div>
+                  <figcaption class="sub-upcoming">
+
+                    <h3>Upcoming Events</h3>
+                    <div id="upcoming-events" class="owl-carousel">
+                      <div class="upcoming-ul">
+                        <div>
+                          <span>Oct 18th, 2015</span>
+                          <div class="box_up">
+                            <h4>Monsoon Music Festival</h4>
+                            <p>Fusce in odio ac diam finibus tempus. Suspen disse Etiam purus magna</p>
+                          </div>
+                          <div class="btn-readmore">
+                            <i class="fa fa-caret-right"></i>
+                            <a href="#" class="readmore">Read more</a>
+                          </div>
+                        </div>
+                        <div class="li_last">
+                          <span>Oct 18th, 2015</span>
+                          <div class="box_up">
+                            <h4>Monsoon Music Festival</h4>
+                            <p>Fusce in odio ac diam finibus tempus. Poten. Etiam accumsan purus magna. Nam rhoncus mi non ultricies posuere.</p>
+                          </div>
+                          <div class="btn-readmore">
+                            <i class="fa fa-caret-right"></i>
+                            <a href="#" class="readmore">Read more</a>
+                          </div>
+                        </div>
+                        <div class="button-ok btn-more">
+                          <a href="#">VIEW ALL EVENTS</a>
+                        </div>
+                      </div> 
+                      <div class="upcoming-ul">
+                        <div>
+                          <span>Oct 18th, 2015</span>
+                          <div class="box_up">
+                            <h4>Monsoon Music Festival</h4>
+                            <p>Fusce in odio ac diam finibus tempus. Suspen disse Etiam purus magna</p>
+                          </div>
+                          <div class="btn-readmore">
+                            <i class="fa fa-caret-right"></i>
+                            <a href="#" class="readmore">Read more</a>
+                          </div>
+                        </div>
+                        <div class="li_last">
+                          <span>Oct 18th, 2015</span>
+                          <div class="box_up">
+                            <h4>Monsoon Music Festival</h4>
+                            <p>Fusce in odio ac diam finibus tempus. Poten. Etiam accumsan purus magna. Nam rhoncus mi non ultricies posuere.</p>
+                          </div>
+                          <div class="btn-readmore">
+                            <i class="fa fa-caret-right"></i>
+                            <a href="#" class="readmore">Read more</a>
+                          </div>
+                        </div>
+                        <div class="button-ok btn-more">
+                          <a href="#">VIEW ALL EVENTS</a>
+                        </div>
+                      </div> 
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="rating">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <div class="text-col">
+                  <a href="#"><h3>Guest Rating</h3></a>
+                  <p>We’ve been rated from over +4,000 lovely guests. Check it out and make your own decision for your next stay in Melbourne.</p>
+                  <div class="btn-readmore">
+                    <i class="fa fa-caret-right"></i>
+                    <a href="#" class="readmore">Learn more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-1 col-md-offset-1 first-vote pr-vote">
+                <div class="vote rotateIn wow">
+                  <span>8.9</span>
+                  <img src="images/Layer5.png" alt="">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-1  col-md-offset-2 pr-vote">
+                <div class="vote group-vote rotateIn wow">
+                  <span>9.3</span>
+                  <img src="images/Layer6.png" alt="">
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-1 col-md-offset-2 pr-vote">
+                <div class="vote group-vote rotateIn wow">
+                  <span>9.1</span>
+                  <img src="images/voting.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="service">
+          <div class="container ourservice img-border">
+            <h2>Our Service</h2>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4"></div>
+              <div class="col-xs-12 col-sm-12 col-md-8 col-content">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <i class="col-xs-3 col-sm-3 col-md-3 ion ion-wifi wow zoomIn box-dotted"></i>
+                    <div class="border-dotted"></div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 service1"> 
+                      <h4>Free Wifi Accessible</h4>
+                      <span class="pi">Mauris ultricies nisi eget velit bibendum, sit amet euismod mi </span>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque non laoreet risus, id elementum purus.</p>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <i class="col-xs-3 col-sm-3 col-md-3 ion-model-s wow zoomIn box-dotted"></i>
+                    <div class="border-dotted"></div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 service1"> 
+                      <h4>Car Park & Valet Parking</h4>
+                      <span class="pi">Mauris ultricies nisi eget velit bibendum, sit amet euismod mi </span>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque non laoreet risus, id elementum purus.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <i class="col-xs-3 col-sm-3 col-md-3 ion-leaf wow zoomIn box-dotted"></i>
+                    <div class="border-dotted"></div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 service1"> 
+                      <h4>Spa Treatments & Massage</h4>
+                      <span class="pi">Mauris ultricies nisi eget velit bibendum, sit amet euismod mi </span>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque non laoreet risus, id elementum purus.</p>
+                    </div>
+                  </div>
+                  <div class=" col-xs-12 col-sm-6 col-md-6">
+                    <i class="col-xs-3 col-sm-3 col-md-3 ion-ios-wineglass wow zoomIn box-dotted"></i>
+                    <div class="border-dotted"></div>
+                    <div class="col-xs-9 col-sm-9 col-md-9 service1"> 
+                      <h4>Free Wifi Accessible</h4>
+                      <span class="pi">Mauris ultricies nisi eget velit bibendum, sit amet euismod mi </span>
+                      <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque non laoreet risus, id elementum purus.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="hot-deal">
+          <div class="container">
+            <div class="deal ">
+              <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                    <img id="img_01" src="images/small/img1-small.png" data-zoom-image="images/large/img1-large.png" class="img_011 img_01 img-responsive" alt="image room 1"/>
+                    <div class="border-bottom"></div>
+                    <div id="gallery_01" class="col-xs-10 col-sm-8 col-md-12 col-lg-12 hidden-xs">
+                      <a href="#" data-image="images/small/img1-small.png" data-zoom-image="images/large/img1-large.png" >
+                        <img class="img_011" src="images/thumb/img1-thumb.png" alt="image thumb room 1"/> 
+                      </a> 
+                      <a href="#" data-image="images/small/img2-small.png" data-zoom-image="images/large/img2-large.png" >
+                        <img class="img_011" src="images/thumb/img2-thumb.png" alt="image thumb room 2"/> 
+                      </a> 
+                      <a href="#" data-image="images/small/img3-small.png" data-zoom-image="images/large/img3-large.png" >
+                        <img class="img_011" src="images/thumb/img3-thumb.png" alt="image thumb room 3" /> 
+                      </a> 
+                      <a href="#" data-image="images/small/img4-small.png" data-zoom-image="images/large/img4-large.png" > 
+                        <img class="img_011 img-last" src="images/thumb/img4-thumb.png" alt="image thumb room 4"/> 
+                      </a> 
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="deal-content">
+                    <h5>Book now & save up to 40%</h5>
+                    <h3>Best Deal for this October</h3>
+                    <p class="slide-subtitle">from only <span>$168.00</span>/night<br >for Luxury Room Type</p>
+                    <p>Fusce in odio ac diam finibus tempus. Suspendisse potenti. Etia Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo rem voluptates, iste, vero porro quaerat adipisci ad, hic nisi sapiente, eligendi sunt eaque fuga. Consequuntur ipsam non accusamus esse tempore!</p>
+                    <div class="btn-book"><a href="#" class="bookroom">Book This Room</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="checkout_room">
+          <div id="checkoutroom" class="container-fluid">
+            <div class="row">
+              <div id="heading-room">
+                <h2>Checkout Our Rooms</h2>
+                <span>We always try our best</span>
+              </div>
+              <div id="content-room">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-3 nopadding">
+                    <img src="images/Layer7.png" class="img-responsives" alt="img-room1">
+                    <div class="text-room">
+                      <span class="black">Standard</span><span class="italic">Room</span>
+                      <div class="price-room"><p >$129.00/night</p></div>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">See Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 nopadding ">
+                    <img src="images/Layer10.png" class="img-responsives" alt="img room2">
+                    <div class="text-room ">
+                      <span class="black">Deluxe</span><span class="italic">Room</span>
+                      <div class="price-room"><p>$129.00/night</p></div>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">See Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 nopadding">
+                    <img src="images/Layer8.png" class="img-responsives" alt="img room3">
+                    <div class="text-room">
+                      <span class="black">Superior</span><span class="italic">Room</span>
+                      <div class="price-room"><p>$129.00/night</p></div>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">See Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-3 nopadding ">
+                    <img src="images/Layer9.png" class="img-responsives" alt="img room4">
+                    <div class="text-room">
+                      <span class="black">Family</span><span class="italic">Room</span>
+                      <div class="price-room"><p>$129.00/night</p></div>
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">See Detail</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="testimonial">
+          <div class="container">
+            <div class="row">
+              <div class="heading img-border">
+                <i class="fa fa-quote-left"></i>
+                <h2>Don't hear from us only</h2>
+              </div>
+              <div class="text">
+                  <div class="owl-carousel" id="testimonial_carousel">
+                    <div class="item active">
+                      <span class="pi">Sed convallis malesuada massa id volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque semper quis neque dictum hendrerit. Sed nulla ipsum, porttitor pharetra tortor in, consequat imperdiet nisi.</span>
+                      <div class="carousel-captions">
+                        <div class="image col-xs-6 col-sm-6 col-md-6">
+                          <img src="images/Layer21.png" alt="img-name">
+                        </div>
+                        <div class="sub-name col-xs-6 col-sm-6 col-md-6">
+                          <h4>Kelly Marshall</h4>
+                          <span>Melbourne</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <span class="pi">Sed convallis malesuada massa id volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque semper quis neque dictum hendrerit. Sed nulla ipsum, porttitor pharetra tortor in, consequat imperdiet nisi.</span>
+                      <div class="carousel-captions wow zoomIn">
+                        <div class="image col-xs-6 col-sm-6 col-md-6">
+                          <img src="images/Layer21.png" alt="img-name">
+                        </div>
+                        <div class="sub-name col-xs-6 col-sm-6 col-md-6">
+                          <h4>Marshall</h4>
+                          <span>1Melbourne</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item">
+                      <span class="pi">Sed convallis malesuada massa id volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque semper quis neque dictum hendrerit. Sed nulla ipsum, porttitor pharetra tortor in, consequat imperdiet nisi.</span>
+                      <div class="carousel-captions">
+                        <div class="image col-xs-6 col-sm-6 col-md-6">
+                          <img src="images/Layer21.png" alt="img-name">
+                        </div>
+                        <div class="sub-name col-xs-6 col-sm-6 col-md-6">
+                          <h4>ABC Marshall</h4>
+                          <span>ABC Melbourne</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="on-media">
+          <div class="container">
+            <div class="logos-media outer">
+              <div id="oc-clients-full" class="owl-carousel image-carousel">
+                <a href="#"><img src="images/sunshine1.png" alt="Clients"></a>
+                <a href="#"><img src="images/housetree1.png" alt="Clients"></a>
+                <a href="#"><img src="images/fontport1.png" alt="Clients"></a>
+                <a href="#"><img src="images/morerison1.png" alt="Clients"></a>
+                <a href="#"><img src="images/sunshine1.png" alt="Clients"></a>
+                <a href="#"><img src="images/housetree1.png" alt="Clients"></a>
+                <a href="#"><img src="images/fontport1.png" alt="Clients"></a>
+                <a href="#"><img src="images/morerison1.png" alt="Clients"></a>
+                <a href="#"><img src="images/sunshine1.png" alt="Clients"></a>
+                <a href="#"><img src="images/housetree1.png" alt="Clients"></a>
+                <a href="#"><img src="images/fontport1.png" alt="Clients"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="bottom-main">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <div id="recent-new">
+                  <h3>Rencent New</h3>
+                  <ul class="row">
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box-date wow bounceIn">
+                        <div class="heading3">10 <p class="month">Oct</p></div>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box-text">
+                        <a href="#"><h4>Nunc aliquet lacus sem, vitae pretium ligula gravida</h4></a>
+                        <span class="pi">Praesent venena ultricies erat. Nunc fringilla eros vitae ni</span>
+                      </div>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box-date wow bounceIn">
+                        <div class="heading3">11 <p class="month">Oct</p></div>
+                      </div>
+                      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box-text">
+                        <a href="#"><h4>Nunc aliquet lacus sem, vitae pretium ligula gravida</h4></a>
+                        <span class="pi">Praesent venena ultricies erat. Nunc fringilla eros vitae ni</span>
+                      </div>
+                    </li>
+                    <li class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                      <div class="btn-readmore">
+                        <i class="fa fa-caret-right"></i>
+                        <a href="#" class="readmore">See All News</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div id="tour">
+                  <h3>Take a Tour</h3>
+                  <div class="examples1">
+                    <img src="images/Layer32.png" alt="youtube">
+                    <a href="#" class="slvj-link-lightbox 1 ht-lightbox" data-videoid="Sdb9-UTCyxE" data-videosite="youtube">
+                      <i class="fa fa-play i-playvideo"></i>
+                    </a>
+                  </div>
+                  <div class="description">
+                    <p>Nunc luctus aliquet ante, at sodales risus porttitor at. Integer nunc ipsum, fermentum vel justo a, ornare pulvinar ipsum. Proin nec lacus lacus. Sed vitae consectetur est.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" id="gallery">
+                <div class="heading-gallery">
+                  <h3 class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Gallery</h3>
+                  <a href="#" id="btn-gallery" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 btn-more"><i class="fa fa-camera-retro"></i> #amberly</a>
+                </div>
+                <div class="flickr-widget clean-list row list-ul">
+                  <div class="col-md-12 img-thumb">
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img1.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img2.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img3.png" alt="">
+                      </a>
+                    </div>
+                    <div class="last-img list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img4.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img5.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img6.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img7.png" alt="">
+                      </a>
+                    </div>
+                    <div class="last-img list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres  wow zoomIn" src="images/img8.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres wow zoomIn" src="images/img9.png" alt="">
+                      </a>
+                    </div>
+                    <div class="list-li">
+                      <a class="flickr-link" href="#" target="_blank">
+                        <img class="img-subres wow zoomIn" src="images/img10.png" alt="">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <a href="#" class="back-top"><i class="fa fa-arrow-up"></i></a>
+        <div id="prefooter">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-left">
+                <div id="links">
+                  <h4>Useful Links</h4>
+                  <ul class="row site-links">
+                    <li><a href="#"><i class="ion-minus"></i>Services</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Blog</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Rooms</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Facilities</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>About</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Event Planner</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Special Offers</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>FAQs</a></li>
+                    <li><a href="#"><i class="ion-minus"></i>Under Construction</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div id="about">
+                  <div class="logo">
+                    <img src="images/logo.png" alt="">
+                  </div>
+                  <div class="about-us">
+                    <p>24-26-28 Southern Str, Melbourne, VIC </p>
+                    <p>(+064) - 342 - 68273  — (+064) - 342 - 68273 </p>
+                    <p>info@gmail.com</p>
+                    <p>http://amberlayhotel.com</p>
+                  </div>
+                  <div class="iconicons">
+                    <ul>
+                      <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                      <li><a href="#"><i class="ion-social-twitter"></i></a></li>
+                      <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
+                      <li><a href="#"><i class="ion-social-pinterest-outline"></i></a></li>
+                      <li><a href="#"><i class="ion-social-instagram-outline"></i></a></li>
+                      <li><a href="#"><i class="ion-social-youtube-outline"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 no-right">
+                <div id="newsletter">
+                  <h4>News Letter</h4>
+                  <p>Cras dignissim, velit ut placerat pulvinar, metus justo ultricies lacus, ut consectetur neque augue maximus lectus. Phasellus non placerat nibh.</p>
+                  <div class="subscribe_email">
+                    <input type="text" value="" name="subscribe_email" id="subscribe_email" placeholder="Enter your email here">
+                    <button type="button" id="btn-subscribe-email" class="btn btn-default btn-lg">
+                      <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <p>&copy; 2015 Amberley Hotel & Resrot. Designed with  <i class="fa fa-heart"></i>  by leehari</p>
+        </div>
+      </footer>
+    </div><!-- .wrapper -->
+    <script type="text/javascript" src="boostrap/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="boostrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/js/owl.carousel.min.js" ></script>
+    <script type="text/javascript" src="boostrap/js/moment.js"></script>
+    <script type="text/javascript" src="boostrap/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="includes/js/plugins.js"></script>
+    <script type="text/javascript" src="includes/js/functions.js"></script> 
+    <script type="text/javascript" src="includes/js/jquery.elevatezoom.js"></script>
+    <script type="text/javascript" src="includes/js/room-1.js" ></script>
+    <script type="text/javascript" src="includes/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="includes/js/home.js"></script>
+        <script type="text/javascript" src="includes/js/jquery.localscroll-1.2.7-min.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.scrollTo-1.4.2-min.js"></script>
+
+    <script type="text/javascript">
+      $('.examples1 a').simpleLightboxVideo();
+       $('#service').parallax("50%", 0.3);
+      
+    </script>
+  </body>
+</html>

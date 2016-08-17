@@ -1,0 +1,102 @@
+<!-- Category List -->
+<div style='border-top:1px solid lightgrey;border-bottom:1px solid lightgrey;width:960px;margin:20px auto;padding:10px;'>
+	<?php 
+	$type='';
+	$category='';
+	$temp_type='';
+	$temp_category='';
+	$delimeter=', ';
+	for ( $i=0;$i<$hierarchy_row[0]['NROWS'];$i++ ) {
+		if ( $i == $hierarchy_row[0]['NROWS']-1 ) $delimeter='';
+		// Type
+		if ( $type != $hierarchy_row[$i]['type'] ) { 
+			$type=$hierarchy_row[$i]['type'];
+			$type_clean_url=make_clean_url($hierarchy_row[$i]['type']);
+			echo "<span style='padding:3px;'><a href='".SHOP_BASEURL."/shop/$type_clean_url'>$type</a></span>$delimeter";
+		}
+		// Category 
+		if ( $category != $hierarchy_row[$i]['category'] ) {
+			$category=$hierarchy_row[$i]['category'];
+			$category_clean_url=make_clean_url($hierarchy_row[$i]['category']);
+			echo "<span style='padding:3px;'><a href='".SHOP_BASEURL."/shop/$type_clean_url/$category_clean_url'>$category</a></span>$delimeter";
+		}
+		// Sub Category
+		$subcategory=$hierarchy_row[$i]['subcategory'];
+		$subcategory_clean_url=make_clean_url($hierarchy_row[$i]['subcategory']);
+		echo "<span style='padding:3px;'><a href='".SHOP_BASEURL."/shop/$type_clean_url/$category_clean_url/$subcategory_clean_url'>$subcategory</a></span>$delimeter";
+	} ?>
+</div>
+<!-- Brands, Terms and Policy -->
+<div class="ui-widget-content" style="padding:20px 0px;border-right:none !important;border-left:none !important;">
+	<table align="center" class="ui-widget-content" style="border-collapse:collapse;border:none;background:none;margin:0px auto !important;width:800px !important;">
+		<tr>
+			<th style="font-weight:bold;font-size:14px;border-right:1px solid #8D8C8C;padding-right:100px;">BRANDS</th>
+			<th style="font-weight:bold;font-size:14px;border-right:1px solid #8D8C8C;padding:0px 50px;">SUPPORT</th>
+			<th style="font-weight:bold;font-size:14px;padding-left:50px;">CONTACT US</th>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #8D8C8C;padding-right:100px;">&nbsp;</td>
+			<td style="border-right:1px solid #8D8C8C;padding:0px 50px;">&nbsp;</td>
+			<td style="padding-left:50px;">&nbsp;</td>
+		</tr>
+		<tr>
+			<?php if ( !isset($brands_row[0]) ) {?><td style='border-right:1px solid #8D8C8C;padding-right:100px;'>&nbsp;</td><?php } else { ?>
+			<td style='font-size:12px;border-right:1px solid #8D8C8C;padding-right:100px;'><a href='<?php echo SHOP_BASEURL; ?>/shop/Brand/<?php echo $brands_row[0]['clean_value']; ?>'><?php echo $brands_row[0]['value']; ?></a></td><?php } ?>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/about-us">About Us</td>
+			<td style="font-size:12px;padding-left:50px;"><a style="text-decoration:none" target="_blank" href="mailto:<?php echo $_SESSION['admin']['shop']['support_email']; ?>"><?php echo $_SESSION['admin']['shop']['support_email']; ?></a></td>
+		</tr>
+	
+		<tr>
+			<?php if ( !isset($brands_row[1]) ) {?><td style='border-right:1px solid #8D8C8C;padding-right:100px;'>&nbsp;</td><?php } else { ?>
+			<td style='font-size:12px;border-right:1px solid #8D8C8C;padding-right:100px;'><a href='<?php echo SHOP_BASEURL; ?>/shop/Brand/<?php echo $brands_row[0]['clean_value']; ?>'><?php echo $brands_row[1]['value']; ?></a></td><?php } ?>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/help">Help</td>
+			<td style="font-size:12px;padding-left:50px;"><?php echo $_SESSION['admin']['shop']['support_phone']; ?></td>
+		</tr>
+		<tr>
+			<?php if ( !isset($brands_row[2]) ) {?><td style='border-right:1px solid #8D8C8C;padding-right:100px;'>&nbsp;</td><?php } else { ?>
+			<td style='font-size:12px;border-right:1px solid #8D8C8C;padding-right:100px;'><a href='<?php echo SHOP_BASEURL; ?>/shop/Brand/<?php echo $brands_row[0]['clean_value']; ?>'><?php echo $brands_row[2]['value']; ?></a></td><?php } ?>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/how-it-works">How It Works</td>
+			<td style="padding-left:50px;">&nbsp;</td>
+		</tr>
+		<tr>
+			<?php if ( !isset($brands_row[3]) ) {?><td style='border-right:1px solid #8D8C8C;padding-right:100px;'>&nbsp;</td><?php } else { ?>
+			<td style='font-size:12px;border-right:1px solid #8D8C8C;padding-right:100px;'><a href='<?php echo SHOP_BASEURL; ?>/shop/Brand/<?php echo $brands_row[0]['clean_value']; ?>'><?php echo $brands_row[3]['value']; ?></a></td><?php } ?>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/contact-us">Contact Us</td>
+			<td style="padding-left:50px;font-weight:bold;font-size:14px;">SHARE</td>
+		</tr>
+		<tr>
+			<?php if ( !isset($brands_row[4]) ) {?><td style='border-right:1px solid #8D8C8C;padding-right:100px;'>&nbsp;</td><?php } else { ?>
+			<td style='font-size:12px;border-right:1px solid #8D8C8C;padding-right:100px;'><a href='<?php echo SHOP_BASEURL; ?>/shop/Brand/<?php echo $brands_row[0]['clean_value']; ?>'><?php echo $brands_row[4]['value']; ?></a></td><?php } ?>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/terms">Terms & Conditions</td>
+			<td style="padding-left:50px;" rowspan="2">
+				<a style="text-decoration:none;" href="https://www.facebook.com/" target="_blank"><img style="padding:5px;" src="<?php echo SHOP_CDN; ?>/uploads/facebook-icon.png" /> 
+				<a style="text-decoration:none;" href="https://twitter.com/" target="_blank"><img style="padding:5px;" src="<?php echo SHOP_CDN; ?>/uploads/twitter-icon.png" /> 
+				<a style="text-decoration:none;" href="https://plus.google.com/" target="_blank"><img style="padding:5px;" src="<?php echo SHOP_CDN; ?>/uploads/gplus-24.png" />
+			</td>
+		</tr>
+		<tr>
+			<td style="border-right:1px solid #8D8C8C;padding-right:100px;">&nbsp;</td>
+			<td style="font-size:12px;border-right:1px solid #8D8C8C;padding:0px 50px;"><a href="<?php echo SHOP_BASEURL; ?>/show/privacy-policy">Privacy Policy</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<!-- Payments -->
+		<tr align="center">
+			<td colspan="3" style=";padding:10px 0px;border-top:1px solid lightgrey;;border-bottom:1px solid lightgrey;">
+				<img style="padding:5px;" width="56" height="23" src="<?php echo SHOP_CDN; ?>/uploads/Shopnix-secure.png" /> 
+				<img style="padding:5px;" width="56" height="23" src="<?php echo SHOP_CDN; ?>/uploads/visa.png" /> 
+				<img style="padding:5px;" width="56" height="23" src="<?php echo SHOP_CDN; ?>/uploads/mastercard.png" /> 
+				<img style="padding:5px;" width="56" height="23" src="<?php echo SHOP_CDN; ?>/uploads/netbanking.png" /> 
+				<img style="padding:5px;" width="56" height="23" src="<?php echo SHOP_CDN; ?>/uploads/cod.png" /> 
+			</td>
+		</tr>
+		<tr align="center">
+			<td colspan="3" style="font-size:12px;">
+				Copyright &copy; 2013 <?php echo $_SESSION['admin']['shop']['name']; ?>. All Rights Reserved
+			</td>
+		</tr>
+	</table>
+</div>

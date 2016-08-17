@@ -1,0 +1,147 @@
+<!-- Page content -->
+<div id="page-content">
+	<!-- Forms General Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="gi gi-notes_2"></i><?php echo $ROW[0]['university']; ?> <img src="<?php echo IMG_PATH.'university/'.$ROW[0]['logo']; ?>" />
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><a href="<?php echo BASEURL.'/certificate'; ?>"><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?></a></li>
+		<li>Roll no <?php echo get_arg($_GET,'roll_no'); ?></li>
+	</ul>
+	<!-- END Forms General Header -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Basic Form Elements Block -->
+			<div class="block">
+				<!-- Basic Form Elements Title -->
+				<div class="block-title">
+					<h2><strong>Search Result for Roll no</strong> <?php echo get_arg($_GET,'roll_no'); ?></h2>
+				</div>
+				<!-- END Form Elements Title -->
+
+				<!-- Basic Form Elements Content -->
+				<form action="page_forms_general.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+					<div class="form-group">
+						<label class="col-md-3 control-label">Serial No</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['serial_no']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Name</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['name']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Photo</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><img src="<?php echo IMG_PATH.'student/'.$ROW[0]['photo']; ?>" /></p>
+						</div>
+						<label class="col-md-3 control-label">Date of Birth</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['dob']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">College</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['college']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Roll Number</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['roll_no']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Course</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['course']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Grade</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['grade']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Date of Issue</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['date_of_issue']; ?></p>
+						</div>
+						<label class="col-md-3 control-label">Place of Issue</label>
+						<div class="col-md-9">
+							<p class="form-control-static"><?php echo $ROW[0]['place_of_issue']; ?></p>
+						</div>
+						<div class="col-md-9 col-md-offset-3">
+							<button data-toggle="modal" href="#nfc-modal-certificate-email" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Send via Email</button>
+							<!-- <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button> -->
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- User Settings, modal which opens from Settings link (found in top right user menu) and the Cog link (found in sidebar user info) -->
+<div id="nfc-modal-certificate-email" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header text-center">
+                <h2 class="modal-title"><i class="fa fa-envelope"></i> Send Email</h2>
+            </div>
+            <!-- END Modal Header -->
+
+
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+				<!-- Success Message -->
+				<div class="has-success">
+					<label class="col-md-4 control-label" for="example-text-input4"></label>
+				</div>
+
+                <form id="nfc-certificate-email-form" action="index.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                    <fieldset>
+                        <legend>Email Info</legend>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Email</label>
+                            <div class="col-md-8">
+                                <input type="email" id="email_to" name="to" class="form-control" placeholder="Enter to address" value="">
+                                <input type="email" id="email_from" name="from" class="form-control hidden" value="support@shopnix.in">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Subject</label>
+                            <div class="col-md-8">
+                                <input type="text" id="subject" name="subject" class="form-control" value="Certificate Details for <?php echo get_arg($ROW[0],'roll_no'); ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-notifications">Content Type</label>
+                            <div class="col-md-8">
+								<label class="radio-inline" for="product-condition-new">
+									<input name="content_type" value="plain_text" checked="" type="radio"> Plain Text
+								</label>
+								<label class="radio-inline" for="product-condition-used">
+									<input name="content_type" value="pdf_attachment" type="radio"> PDF Attachment
+								</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Message</label>
+                            <div class="col-md-8">
+                                <textarea id="message" name="message" class="form-control">Please find the below details of the student with roll no: <b><?php echo $ROW[0]['roll_no']; ?></b><br/></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group form-actions">
+                        <div class="col-xs-12 text-right">
+                            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" id="send-certificate-email" class="btn btn-sm btn-primary"><span>Send</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END Modal Body -->
+        </div>
+    </div>
+</div>
+<!-- END User Settings -->

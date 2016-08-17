@@ -1,0 +1,177 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ travel: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=travel">travels</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify travel '.get_arg($ROW[0],"name"); else echo "New travel"; ?>
+</div>
+<?php show_msgs(); ?>
+
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" enctype="multipart/form-data"
+			  name="travel<?php echo $mode; ?>Form" 
+			  id="travel<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=travel" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="travel_id" value="<?php echo get_arg($ROW[0],"travel_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." travel"; ?></b></h3>
+		</div>
+		
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="name" 
+				name="name" 
+				value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Domain -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Domain</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="domain" 
+				name="domain" 
+				value="<?php echo get_arg($ROW[0],"domain"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- logo -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Logo</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<img style="width:100px;height:100px;" src="<?php echo IMG_PATH.'travel/'.get_arg($ROW[0],'logo'); ?>" />
+			<input type="file" name="logo" value="<?php echo get_arg($ROW[0],'logo'); ?>">
+			<input type="hidden" name="logo" value="<?php echo get_arg($ROW[0],'logo'); ?>">
+		</div>
+
+		<!-- Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Mobile</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="mobile" 
+				name="mobile" 
+				value="<?php echo get_arg($ROW[0],"mobile"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Address</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<textarea 
+					id="address" 
+					name="address" 
+					rows="2"
+					cols="10"
+					<?php echo $disabled; ?> 
+					/><?php echo get_arg($ROW[0],'address'); ?></textarea>
+		</div>
+		
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Created Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="created_dt" 
+				name="created_dt" 
+				value="<?php if( get_arg($ROW[0],"created_dt") != "" )  echo date('Y-M-d',strtotime(get_arg($ROW[0],"created_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class="datepicker" 
+			/>
+		</div>
+
+		
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=travel" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#travel<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200},
+					photo:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					mobile:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					address:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500},
+					salary:			{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:500}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter Name', 
+									   digits: 'Name should have only numbers',
+									   number: 'Name should have only numbers (eg: 123.23)',
+									   minlength: 'Name should be atleast 1 characters.',
+									   maxlength: 'Name should be less than 200 characters.'},
+					photo: {required: 'Please enter Photo', 
+									   digits: 'Photo should have only numbers',
+									   number: 'Photo should have only numbers (eg: 123.23)',
+									   minlength: 'Photo should be atleast 0 characters.',
+									   maxlength: 'Photo should be less than 200 characters.'},
+					mobile: {required: 'Please enter Phone No', 
+									   digits: 'Phone No should have only numbers',
+									   number: 'Phone No should have only numbers (eg: 123.23)',
+									   minlength: 'Phone No should be atleast 0 characters.',
+									   maxlength: 'Phone No should be less than 18 characters.'},
+					address: {required: 'Please enter Address', 
+									   digits: 'Address should have only numbers',
+									   number: 'Address should have only numbers (eg: 123.23)',
+									   minlength: 'Address should be atleast 0 characters.',
+									   maxlength: 'Address should be less than 500 characters.'},
+					salary: {required: 'Please enter salary No', 
+									   digits: 'salary No should have only numbers',
+									   number: 'salary No should have only numbers (eg: 123.23)',
+									   minlength: 'salary No should be atleast 0 characters.',
+									   maxlength: 'salary No should be less than 18 characters.'}			   
+					
+			}
+		});
+
+	});
+</script>

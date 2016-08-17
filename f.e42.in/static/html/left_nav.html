@@ -1,0 +1,69 @@
+
+	<div id="accordion"> 
+		<h3><a href="#">fueltracker admin</a></h3> 
+		<div>
+			<a <?php echo make_url('go=list',make_base_url('admin','driver'),true);?> >
+				Driver
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','search'),true);?> >
+				Search
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','supervisor'),true);?> >
+				Supervisor
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','tagsticker'),true);?> >
+				Tag Sticker
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','user'),true);?> >
+				User
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','vehicle'),true);?> >
+				Vehicle
+			</a><br><br> 
+		</div>
+		<h3><a href="#">Shop2</a></h3> 
+		<div>
+			<a <?php echo make_url('go=list',make_base_url('admin','driver'),true);?> >
+				Driver
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','search'),true);?> >
+				Search
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','supervisor'),true);?> >
+				Supervisor
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','tagsticker'),true);?> >
+				Tag Sticker
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','user'),true);?> >
+				User
+			</a><br><br> 
+			<a <?php echo make_url('go=list',make_base_url('admin','vehicle'),true);?> >
+				Vehicle
+			</a><br><br> 
+		</div>
+	</div>
+
+
+<script>
+	function load(mod,ent,args) {
+
+		//alert("HERE");
+		if ( mod == undefined || ent == undefined ) {
+			alert("Please check syntax");
+			return;
+		}
+
+		if ( args == undefined ) { 
+			args="";
+		}
+
+		url='index.php?mod='+mod+'&ent='+ent+'&ajx=1'+args;
+		$('#center-div').empty().html('<p align=center><br><br><br><br><br><br><img src="static/images/ajax-loader-medium-2.gif" /> <br>Loading '+url+'...</p>');
+
+		//alert(url);
+		setTimeout("$('#center-div').load(url)",100); //TODO: Timeout needs to be removed later
+	}
+
+
+</script>

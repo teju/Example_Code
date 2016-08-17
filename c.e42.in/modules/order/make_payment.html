@@ -1,0 +1,94 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ ORDER: $template "); ?>
+
+<!-- Page content -->
+<div id="page-content">
+	<!-- Forms General Header -->
+	<!-- Table Responsive Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="fa fa-mortar-board"></i><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?><br><small>Get Credits</small>
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?></li>
+	</ul>
+	<!-- END Forms General Header -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Basic Form Elements Block -->
+			<div class="block">
+				<!-- Basic Form Elements Title -->
+				<div class="block-title">
+					<h2><strong>Get Credits</strong></h2>
+				</div>
+				<!-- END Form Elements Title -->
+
+				<?php echo show_msgs(); ?>
+				<!-- Basic Form Elements Content -->
+				<form id="nfc-form-make-payment-validation" action="<?php echo BASEURL; ?>make_payment" method="post" class="form-horizontal form-bordered" >
+					<input type="hidden" name="do" value="<?php echo "make_payment"; ?>">
+					<div class="form-group">
+						<label class="col-md-3 control-label">Name</label>
+						<div class="col-md-9">
+							<input type="text" name="name" class="form-control" placeholder="Enter Name" value="<?php echo get_arg($_SESSION["payment"],'name'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Email ID</label>
+						<div class="col-md-9">
+							<input type="text" name="email_id" class="form-control" placeholder="Enter Email ID" value="<?php echo get_arg($_SESSION["payment"],'email_id'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Amount</label>
+						<div class="col-md-9">
+							<input type="text" name="amount" class="form-control" placeholder="Enter Amount" value="<?php echo get_arg($_SESSION["payment"],'amount'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Mobile</label>
+						<div class="col-md-9">
+							<input type="text" name="mobile" class="form-control" placeholder="Enter Mobile Number" value="<?php echo get_arg($_SESSION["payment"],'mobile'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Payment Type</label>
+						<div class="col-md-9">
+							<label class="switch switch-primary">
+								<input type="checkbox" id="payment-cc" class="payment-option" name="pmt_type" value="CC"> <span></span><div>Credit Card </div>
+							</label>
+							<label class="switch switch-primary" style="padding-left:10%;">
+								<input type="checkbox" id="payment-dc" class="payment-option" name="pmt_type" value="DC" > <span></span><div>Debit Card </div>
+							</label>
+							<label class="switch switch-primary" style="padding-left:10%;">
+								<input type="checkbox" id="payment-nb" class="payment-option" name="pmt_type" value="NB" > <span></span><div>Net Banking </div>
+							</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-9 col-md-offset-3">
+							<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Make Payment</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+	$(document).ready(function(){
+		$(".payment-option").click(function(){
+			var payment_id=this.id;
+			$(".payment-option").each(function(){
+				if ( payment_id != this.id ) $(this).removeAttr("checked");
+			});
+			if ( $(this).is(":checked") == true ) $(this).attr("checked",true);
+			else $(this).removeAttr("checked");
+		});
+	});
+</script>

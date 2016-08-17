@@ -1,0 +1,3 @@
+D:\Android\cretified42\app\build\intermediates\classes\debug
+D:\Android\cretified42\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.8-55103df57821b56b6f702c34792a06b2e32a36a9.jar
+D:\Android\cretified42\app\build\intermediates\pre-dexed\debug\guavalib-521d1c5ab407aedb4700721f2c6ca00a73834912.jar

@@ -1,0 +1,235 @@
+
+<!-- SEARCH -->
+<div class="span-24 ui-widget-content" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+
+	<div class="span-24" style="padding: 10px 0px 0px 10px;height:20px;"><h4><?php if (get_arg($ROW[0],'IS_SEARCH') ) echo 'Showing results:'; else echo 'Show Searchs with:';?></h4></div>
+
+	<form method="post" 
+		id="SearchSearchForm" 
+		name="SearchSearchForm" 
+		action="#" > 
+
+		<!-- FIELDS -->
+
+			<!-- User Id -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">User Id</div>
+			<div class="span-4 append-2 bg-test">
+				<?php 
+				if ( 'user_id' !== '0' ) { ?>
+					<select name="user_id" id="user_id" 
+							<?php if ($user_id) echo "style='background:#FFF6BF'";?> >
+						<option value="" selected>-Select user-</option>
+						<?php 
+						$no_user=$row_user[0]['NROWS'];
+						for ($i=0; $i<$no_user; $i++) {
+							if ($user_id == $row_user[$i]["user_id"]) { $selstr = 'selected'; } 
+							else {$selstr = ''; }?>
+							<option value="<?php echo $row_user[$i]["user_id"] ?>" 
+									<?php echo $selstr ?> ><?php echo $row_user[$i]['name']?>
+							</option><?php
+						} ?> 
+					</select>
+				<?php 
+				// RADIO BUTTONS (tinyint)
+				} else if ('int' === 'tinyint') { ?>
+					<input type="radio" 
+							id="user_id" 
+							name="user_id" 
+							value="1" 
+							<?php if ($user_id === '1') { echo 'checked'; } ?> 
+							style="width:20px;"/>Yes
+					<input type="radio" 
+							id="user_id" 
+							name="user_id" 
+							value="0" 
+							<?php if ($user_id === '0') { echo 'checked'; } ?> 
+							style="width:20px;"/>No
+				<?php 
+				// TEXT BOX (everything else) 
+				} else { ?>
+					<input type="text" 
+						id="user_id" 
+						name="user_id" 
+						<?php if ($user_id) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $user_id; ?>" 
+					/>
+				<?php } ?>
+			</div>
+
+			<!-- Certificate Id -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Certificate Id</div>
+			<div class="span-4 append-2 bg-test">
+				<?php 
+				if ( 'certificate_id' !== '0' ) { ?>
+					<select name="certificate_id" id="certificate_id" 
+							<?php if ($certificate_id) echo "style='background:#FFF6BF'";?> >
+						<option value="" selected>-Select certificate-</option>
+						<?php 
+						$no_certificate=$row_certificate[0]['NROWS'];
+						for ($i=0; $i<$no_certificate; $i++) {
+							if ($certificate_id == $row_certificate[$i]["certificate_id"]) { $selstr = 'selected'; } 
+							else {$selstr = ''; }?>
+							<option value="<?php echo $row_certificate[$i]["certificate_id"] ?>" 
+									<?php echo $selstr ?> ><?php echo $row_certificate[$i]['name']?>
+							</option><?php
+						} ?> 
+					</select>
+				<?php 
+				// RADIO BUTTONS (tinyint)
+				} else if ('int' === 'tinyint') { ?>
+					<input type="radio" 
+							id="certificate_id" 
+							name="certificate_id" 
+							value="1" 
+							<?php if ($certificate_id === '1') { echo 'checked'; } ?> 
+							style="width:20px;"/>Yes
+					<input type="radio" 
+							id="certificate_id" 
+							name="certificate_id" 
+							value="0" 
+							<?php if ($certificate_id === '0') { echo 'checked'; } ?> 
+							style="width:20px;"/>No
+				<?php 
+				// TEXT BOX (everything else) 
+				} else { ?>
+					<input type="text" 
+						id="certificate_id" 
+						name="certificate_id" 
+						<?php if ($certificate_id) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $certificate_id; ?>" 
+					/>
+				<?php } ?>
+			</div>
+
+			<!-- Search Result -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Search Result</div>
+			<div class="span-4 append-2 bg-test">
+				<?php 
+				if ( '0' !== '0' ) { ?>
+					<select name="search_result" id="search_result" 
+							<?php if ($search_result) echo "style='background:#FFF6BF'";?> >
+						<option value="" selected>-Select 0-</option>
+						<?php 
+						$no_0=$row_0[0]['NROWS'];
+						for ($i=0; $i<$no_0; $i++) {
+							if ($search_result == $row_0[$i]["0"]) { $selstr = 'selected'; } 
+							else {$selstr = ''; }?>
+							<option value="<?php echo $row_0[$i]["0"] ?>" 
+									<?php echo $selstr ?> ><?php echo $row_0[$i]['name']?>
+							</option><?php
+						} ?> 
+					</select>
+				<?php 
+				// RADIO BUTTONS (tinyint)
+				} else if ('varchar' === 'tinyint') { ?>
+					<input type="radio" 
+							id="search_result" 
+							name="search_result" 
+							value="1" 
+							<?php if ($search_result === '1') { echo 'checked'; } ?> 
+							style="width:20px;"/>Yes
+					<input type="radio" 
+							id="search_result" 
+							name="search_result" 
+							value="0" 
+							<?php if ($search_result === '0') { echo 'checked'; } ?> 
+							style="width:20px;"/>No
+				<?php 
+				// TEXT BOX (everything else) 
+				} else { ?>
+					<input type="text" 
+						id="search_result" 
+						name="search_result" 
+						<?php if ($search_result) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $search_result; ?>" 
+					/>
+				<?php } ?>
+			</div>
+
+			<!-- Created Dt -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Created Dt</div>
+			<div class="span-4 append-2 bg-test">
+				<?php 
+				if ( '0' !== '0' ) { ?>
+					<select name="created_dt" id="created_dt" 
+							<?php if ($created_dt) echo "style='background:#FFF6BF'";?> >
+						<option value="" selected>-Select 0-</option>
+						<?php 
+						$no_0=$row_0[0]['NROWS'];
+						for ($i=0; $i<$no_0; $i++) {
+							if ($created_dt == $row_0[$i]["0"]) { $selstr = 'selected'; } 
+							else {$selstr = ''; }?>
+							<option value="<?php echo $row_0[$i]["0"] ?>" 
+									<?php echo $selstr ?> ><?php echo $row_0[$i]['name']?>
+							</option><?php
+						} ?> 
+					</select>
+				<?php 
+				// RADIO BUTTONS (tinyint)
+				} else if ('datetime' === 'tinyint') { ?>
+					<input type="radio" 
+							id="created_dt" 
+							name="created_dt" 
+							value="1" 
+							<?php if ($created_dt === '1') { echo 'checked'; } ?> 
+							style="width:20px;"/>Yes
+					<input type="radio" 
+							id="created_dt" 
+							name="created_dt" 
+							value="0" 
+							<?php if ($created_dt === '0') { echo 'checked'; } ?> 
+							style="width:20px;"/>No
+				<?php 
+				// TEXT BOX (everything else) 
+				} else { ?>
+					<input type="text" 
+						id="created_dt" 
+						name="created_dt" 
+						<?php if ($created_dt) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $created_dt; ?>" 
+					/>
+				<?php } ?>
+			</div>
+	</form>
+
+	<!-- BUTTON -->
+	<?php 
+		$no_fields=5-1;
+		$excess_fields = $no_fields % 3;
+		switch ($excess_fields){
+			case 2: // Two fields on line
+					$button_span="prepend-3 span-4 append-1 last";
+					break;
+			case 1: // Only one field on line
+					$button_span="prepend-11 span-4 append-1 last";
+					break;
+			case 0:	// no fields on this line
+					$button_span="prepend-19 span-4 append-1 last";
+					break;
+			default:
+				break;
+		}
+	
+	?>
+	<div class="<?php echo $button_span; ?>" >
+		<div class="span-1" style="padding-top:5px"><a <?php echo make_url('go=list',NULL,true); ?> >Clear</a></div>
+		<div class="span-1" ><button id="SearchSearchButton" >Search</button></div>
+	</div>
+
+</div>
+
+<?php if ( get_arg($ROW[0],'IS_SEARCH') && get_arg($ROW[0],'NROWS') === 0  ) { ?>
+	<div class="span-24 notice" style="text-align:center">No matching Searchs were found.<br/> <a <?php echo make_url('go=list',NULL,true); ?> >Clear</a><br/> </div>
+<?php } ?>
+
+
+<script>
+	$(document).ready(function(){
+		// Search SEARCH button
+		$('#SearchSearchButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			var data=$('#SearchSearchForm').serialize();
+			document.location.href="<?php echo make_url('go=list',NULL,false); ?>&"+data;
+			return false;
+		});
+	});
+</script>

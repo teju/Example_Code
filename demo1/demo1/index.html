@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 07-room-v3 </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="boostrap/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="includes/css/footer.css"/>
+    <link type="text/css" rel="stylesheet" href="includes/css/header.css"/>
+    <link type="text/css" rel="stylesheet" href="includes/css/style-room-3.css"/>
+    <link type="text/css" rel="stylesheet" href="boostrap/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="boostrap/css/datepicker.css">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="includes/css/ionicons.min.css">
+  </head>
+  <body class="stretched dark side-push-panel">
+    <div class="body-overlay"></div>
+    <div id="side-panel" class="dark">
+      <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="fa fa-times"></i></a></div>
+      <div class="side-panel-wrap">
+        <ul class="navbar mm-panel">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms</a>
+            <ul class="dropdown-menu">
+              <li><a href="room-1.html">Room 1</a></li>
+              <li><a href="room-2.html">Room 2</a></li>
+              <li><a href="room-3.html">Room 3</a></li>
+              <li><a href="room-single-1.html">Room Single</a></li>
+            </ul>
+          </li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#">News</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+            <ul class="dropdown-menu">
+              <li><a href="blog-1.html">Blog 1</a></li>
+              <li><a href="blog-2.html">Blog 2</a></li>
+              <li><a href="blog-3.html">Blog 3</a></li>
+              <li><a href="blog-single.html">Blog Single</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Booking</a>
+            <ul class="dropdown-menu">
+              <li><a href="booking-1.html">Booking 1</a></li>
+              <li><a href="booking-2.html">Booking 2</a></li>
+              <li><a href="booking-3.html">Booking 3</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#">Pages</a>
+            <ul class="dropdown-menu">
+              <li><a href="service.html">Service</a></li>
+              <li><a href="coming-soon.html">Coming Soon</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faqs.html">FAQs</a></li>
+              <li><a href="404.html">404</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="wrapper" class="clearfix">
+      <div id="mobile-bar" class="visible-xs visible-sm">
+        <a href="#" id="offcanvas-togglers" class="menu-trigger"><i class="fa fa-bars"></i></a>
+        <h1 class="mob-title"><a href="home.html">Home</a></h1>
+      </div>
+
+      <header class="main-header">
+        <div class="header-container">
+          <div class="container">
+            <div class="row">
+              <div class="header">
+                <div class="top-header">
+                  <div class="col-xs-12 col-sm-4 col-md-6">
+                    <div class="weather">
+                      <i class="ion-ios-cloudy-night-outline i-weather"></i>
+                      <div class="info-wether">
+                        <span id="ywloc">Melbourne, Victoria</span>
+                        <span id="ywtem">16<sup>o</sup>C</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8 col-md-6">
+                    <div class="top-nav-bar hidden-xs hidden-sm">
+                      <div class="widget-title"><i class="ion-android-call i_first"></i>(+064)-342-28679</div>
+                      <div class="widget-title"><i class="ion-email-unread i_first"></i>info@amberley.com</div>
+                      <div class="widget-title no-right"><i class="ion-android-globe i_first"></i>English<i class="fa fa-angle-down" id="down"></i>
+                        <ul class="drop-down">
+                          <li>
+                            <a href="#"><img class="iclflag" title="Français" alt="fr" src="images/flags/fr.png">Français</a>
+                          </li>
+                          <li>
+                            <a href="#"><img class="iclflag" src="images/flags/ru.png" alt="fr" title="Français">Russian</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- .top-header -->
+
+                <div class="main-nav">
+                  <div class="col-sm-12 col-md-4">
+                    <div id="logo">
+                      <a href="home.html"><img src="images/logo.png" alt="Theme logo" class="img-responsive"></a>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-md-8 nav-right  hidden-xs hidden-sm">
+                    <nav>
+                      <ul class="nav navbar-nav" id="main-nav">
+                        <li><a href="home.html">Home <span class="sr-only">(current)</span></a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="dropdown active">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rooms</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="room-1.html">Room 1</a></li>
+                            <li><a href="room-2.html">Room 2</a></li>
+                            <li><a href="room-3.html">Room 3</a></li>
+                            <li><a href="room-single-1.html">Room Single</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#">News</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="blog-1.html">Blog 1</a></li>
+                            <li><a href="blog-2.html">Blog 2</a></li>
+                            <li><a href="blog-3.html">Blog 3</a></li>
+                            <li><a href="blog-single.html">Blog Single</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Booking</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="booking-1.html">Booking 1</a></li>
+                            <li><a href="booking-2.html">Booking 2</a></li>
+                            <li><a href="booking-3.html">Booking 3</a></li>
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                          <ul class="dropdown-menu">
+                            <li><a href="service.html">Service</a></li>
+                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="faqs.html">FAQs</a></li>
+                            <li><a href="404.html">404</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="search-bar">
+                      <input type="text" class="input-search">
+                      <i class="ion-ios-search btn-search"></i>
+                    </div>
+                    <div id="btn-trigger">
+                      <a id="offcanvas-toggler" class="menu-trigger" href="#">
+                        <i class="fa fa-bars"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="hidden-xs hidden-sm">
+          </div>
+        </div>
+      </header>
+      <section class="slider-box parslide">
+        <div class="slider-mask"></div>
+        <div class="custom-controls">
+          <div class="slider-helper">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <img src="images/bg-header.png" alt="img Luxury room">
+                  <div class="carousel-caption hidden-xs hidden-sm">
+                    <h1>ACCOMMODATION</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </section> <!--.slider-box -->
+      <!--Begin #content-->
+      <main id="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 main-content">
+              <div class="row">
+                <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 apartment-room">
+                  <div class="img_zoom">
+                    <a href="">
+                      <img src="images/room/room_1.JPEG" class="img-responsive" alt="room_1 Room listing">
+                    </a>
+                  </div>
+                  <figcaption>
+                    <a href="#"><h3 class="style_h3"><span class="title_room">SUPERIOR</span><em>ROOM</em></h3></a>
+                    <p class="rooms-description">
+                      Pellentesque a massa risus. Cras convallis finibus porta. Integer in ligula leo. Cras quis consequat nisl, at malesuada sapien. Mauris ultricies nisi eget velit bibendum, sit amet euismod mi gravida.
+                    <p class="infor-detail">
+                      <a href="#" class="btn_detail">BOOK NOW</a>
+                    </p>
+                  </figcaption>
+                </figure>
+
+                <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 apartment-room">
+                  <div class="img_zoom">
+                    <a href="#"><img src="images/room/room-2.png" class="img-responsive" alt="room_2 Room listing"></a>
+                  </div>
+                  <figcaption>
+                    <a href="#"><h3 class="style_h3"><span class="title_room">DELUXE</span><em>ROOM</em></h3></a>
+                    <p class="rooms-description">
+                      Pellentesque a massa risus. Cras convallis finibus porta. Integer in ligula leo. Cras quis consequat nisl, at malesuada sapien. Mauris ultricies nisi eget velit bibendum, sit amet euismod mi gravida.
+                    <p class="infor-detail">
+                      <a href="#" class="btn_detail">BOOK NOW</a>
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="row">
+                <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 apartment-room">
+                  <div class="img_zoom">
+                    <a href="#"><img src="images/room/room_1.JPEG" class="img-responsive" alt="room_3 Room listing"></a>
+                  </div>
+                  <figcaption>
+                    <a href="#"><h3 class="style_h3"><span class="title_room">LUXURY</span><em>ROOM</em> </h3></a>
+                    <p class="rooms-description">
+                      Pellentesque a massa risus. Cras convallis finibus porta. Integer in ligula leo. Cras quis consequat nisl, at malesuada sapien. Mauris ultricies nisi eget velit bibendum, sit amet euismod mi gravida.
+                    <p class="infor-detail">
+                      <a href="#" class="btn_detail">BOOK NOW</a>
+                    </p>
+                  </figcaption>
+                </figure>
+
+                <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 apartment-room">
+                  <div class="img_zoom">
+                    <a href="#"><img src="images/room/room-4.png" class="img-responsive" alt="room_4 Room listing"></a>
+                  </div>
+                  <figcaption>
+                    <a href="#"><h3 class="style_h3"><span class="title_room">FAMILY</span><em>ROOM</em> </h3></a>
+                    <p class="rooms-description">
+                      Pellentesque a massa risus. Cras convallis finibus porta. Integer in ligula leo. Cras quis consequat nisl, at malesuada sapien. Mauris ultricies nisi eget velit bibendum, sit amet euismod mi gravida.
+                    <p class="infor-detail">
+                      <a href="#" class="btn_detail">BOOK NOW</a>
+                    </p>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="row">
+                <figure class="col-xs-12 col-sm-6 col-md-6 col-lg-6 apartment-room">
+                  <div class="img_zoom">
+                    <a href="#"><img src="images/room/room-5.png" class="img-responsive" alt="room_5 Room listing"></a>
+                  </div>
+                  <figcaption>
+                    <a href="#"><h3 class="style_h3"><span class="title_room">STUDIO</span><em>SUITES</em> </h3></a>
+                    <p class="rooms-description">
+                      Pellentesque a massa risus. Cras convallis finibus porta. Integer in ligula leo. Cras quis consequat nisl, at malesuada sapien. Mauris ultricies nisi eget velit bibendum, sit amet euismod mi gravida.
+                    <p class="infor-detail" id="room-last">
+                      <a href="#" class="btn_detail">BOOK NOW</a>
+                    </p>
+                  </figcaption>
+                </figure>     
+              </div>  
+            </div>  
+            <!--Begin #sidebar-->
+            <section  id="sidebar">
+              <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <section id="check-room">           
+                  <form class="b-form group" id="booking-wrap" method="post" action="/">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 arrival group">
+                        <h4>Arrival Date</h4>
+                        <label for="foo" class="add-on"><i class="fa fa-calendar"></i></label>
+                        <input type='text' id="foo" class="form-control date-time" name="arrive" placeholder="Oct 17th, 2015"/>
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12  departure group">
+                        <h4>Departure Date</h4>
+                        <label for="foo1" class="add-on"><i class="fa fa-calendar"></i></label>
+                        <input type='text' id="foo1" class="form-control date-time" name="depart" placeholder="Oct 18th, 2015"/>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12 adults group">
+                        <h4>No. Rooms</h4>
+                        <div class="mylabel">
+                          <select id="ul-room-1" class="fa fa-caret-down">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6 col-md-12 room group">
+                        <h4>Adult</h4>
+                        <div class="mylabel">
+                          <select id="ul-room-2" class="fa fa-caret-down">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div id="button-check" class="btn-more">
+                        <a href=""><span>Check Availability</span></a>
+                      </div>
+                    </div>
+                  </form>
+                </section>
+
+                <div id="sub-room">
+                  <div class="col-sm-6 col-md-12 col-lg-12 no-left no-right">
+                    <p id="infor-room">Popular Rooms</p>
+                    <div class="row" id="sub-room-1">
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sub-img">
+                        <a href="" title=""><img src="images/room/sub-room-1.png" alt="Detail subRoom Hotel" class="img-room img-responsive"></a>
+                      </div>
+                      <div class= "col-xs-8 col-sm-8 col-md-8 col-lg-8 title-room">
+                        <p class="subtitle-room">Deluxe Room</p>
+                        <p class="price-room"><em>from $149.00/night</em></p>
+                      </div>
+                    </div>
+
+                    <div class="row" id="sub-room-2">
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sub-img" >
+                        <a href=""><img src="images/room/sub-room-2.png" alt="Detail subRoom Hotel" class="img-room img-responsive"></a>
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 title-room">
+                        <p class="subtitle-room">Superio Room</p>
+                        <p class="price-room"><em>from $129.00/night</em></p>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 sub-img">
+                        <a href="" title=""><img src="images/room/sub-room-3.png" alt="Detail subRoom Hotel" class="img-room img-responsive"></a>
+                      </div>
+                      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 title-room">
+                        <p class="subtitle-room">Family Room</p>
+                        <p class="price-room"><em>from $169.00/night</em></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+                    <figure id="contact-room">
+                      <div id="contact">
+                        <a href="#" title=""><img src="images/room/bg-contactv2.jpg" alt="img-contact Room listing" class="img-responsive"></a>
+                      </div>
+                      <figcaption>
+                        <p id="title-contact">NEED LONG-TERM ROOM?</p>
+                        <p id="phone-contact">Please contact us via hotline<br/> (+064)-342-28679</p>
+                        <p id="p-or">or</p>
+                        <p class="p_btncontact"><a href="#" class="btn_contact ">CONTACT US</a></p>
+                        <p id="infor-cost">just from only $1,000/month</p>
+                      </figcaption>     
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </section><!--End sidebar-->
+          </div>
+        </div>
+      </main><!--End #content-->
+
+      <!--Begin footer-->
+      <footer>
+        <a href="#" class="back-top"><i class="fa fa-arrow-up"></i></a>
+        <div id="prefooter">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div id="links">
+                  <h4>Useful Links</h4>
+                  <ul class="site-links">
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Services</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Blog</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Rooms</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Facilities</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>About</a></li>
+
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Event Planner</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Special Offers</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>FAQs</a></li>
+                    <li><a href="#"><i class="fa fa-chevron-right"></i>Under Construction</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div id="about">
+                  <div class="logo">
+                    <img src="images/logo.png" alt="Logo Hotel">
+                  </div>
+                  <div class="about-us">
+                    <p>24-26-28 Southern Str, Melbourne, VIC </p>
+                    <p>(+064) - 342 - 68273  — (+064) - 342 - 68273 </p>
+                    <p>info@gmail.com</p>
+                    <p>http://amberlayhotel.com</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div id="newsletter">
+                  <h4>News Letter</h4>
+                  <p>Cras dignissim, velit ut placerat pulvinar, metus justo ultricies lacus, ut consectetur neque augue maximus lectus. Phasellus non placerat nibh.</p>
+                  <div class="subscribe_email">
+                    <input type="text" value="" name="subscribe_email" id="subscribe_email" placeholder="Enter your email here">
+                    <button type="button" id="btn-subscribe-email" class="btn btn-default btn-lg">
+                      <i class="fa fa-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="footer">
+          <p>&copy; 2015 Amberley Hotel &amp; Resrot. Designed with  <i class="fa fa-heart"></i>  by leehari</p>
+        </div>
+      </footer><!--End footer-->
+    </div>
+    <script type="text/javascript" src="boostrap/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="includes/js/plugins.js"></script>
+    <script type="text/javascript" src="includes/js/functions.js"></script>
+    <script type="text/javascript" src="includes/js/home.js"></script>
+    <script type="text/javascript" src="includes/js/jquery.elevatezoom.js"></script>
+    <script type="text/javascript" src="boostrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="boostrap/js/moment.js"></script>
+    <script type="text/javascript" src="boostrap/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="boostrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="includes/js/room-1.js" ></script>
+  </body>
+</html>

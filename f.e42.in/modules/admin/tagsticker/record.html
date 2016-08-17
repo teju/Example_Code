@@ -1,0 +1,90 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ TAGSTICKER: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=tagsticker">Tag Stickers</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Tag Sticker '.get_arg($ROW[0],"name"); else echo "New Tag Sticker"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" 
+			  name="tagsticker<?php echo $mode; ?>Form" 
+			  id="tagsticker<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=tagsticker" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="nfc_tag_id" value="<?php echo get_arg($ROW[0],"nfc_tag_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"sticker_no"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." Tag Sticker"; ?></b></h3>
+		</div>
+
+		<!-- NFC Tag ID -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">NFC Tag ID</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="nfc_tag_id" 
+				name="nfc_tag_id" 
+				value="<?php echo get_arg($ROW["nfc_tag_id"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Sticker No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Sticker No</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="sticker_no" 
+				name="sticker_no" 
+				value="<?php echo get_arg($ROW[0],"sticker_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=tagsticker" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#tagsticker<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					sticker_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:45}
+			},
+			// Error Messages
+			messages: {
+					sticker_no: {required: 'Please enter Sticker No', 
+									   digits: 'Sticker No should have only numbers',
+									   number: 'Sticker No should have only numbers (eg: 123.23)',
+									   minlength: 'Sticker No should be atleast 1 characters.',
+									   maxlength: 'Sticker No should be less than 45 characters.'}
+			}
+		});
+	});
+</script>

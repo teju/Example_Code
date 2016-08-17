@@ -1,0 +1,157 @@
+﻿body {
+}
+.mainDockDiv {
+    height: 20px;
+    border-bottom: 1px solid;
+    border-color: #EBEBEB;
+}
+.innerDiv {
+    display: inline;
+}
+.expandDiv {
+    height: 150px;
+    border-color: silver;
+    padding-top: 10px;
+}
+.brandIcon {
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin-right: 15px;
+    padding-left: 3px;
+    padding-top: 2px;
+}
+.brandText {
+    max-width: 556px;
+    text-align: right;
+}
+.innerText {
+    font-size: .9em;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: silver;
+    padding-top: 2px;
+    margin-right: 25px;
+    display: inherit;
+    cursor: pointer;
+}
+.settingsImg {
+    cursor: pointer;
+}
+.paginate {
+    margin-top: 55px;
+    cursor: pointer;
+}
+#loadingImg {
+    display: inline;
+    margin-left: 350px;
+}
+.floatRight {
+    float: right;
+}
+.floatLeft {
+    float: left;
+}
+.showing {
+	display : block;
+	height : 140px;
+}
+
+.hiding{
+	display : none;
+	height : 0px;
+}
+/*Youtube*/
+.youtubeResultDiv {
+    width: 47%;
+    float: left;
+}
+.youtubeTextDiv {
+    font-size: .8em;
+    font-family: sans-serif;
+    float: right;
+    width: 45%;
+    overflow: hidden
+}
+.youtubeImg {
+    float: left;
+    margin: 10px 0 0 10px;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.bold {
+    font-weight: bold;
+}
+/*wiki*/
+.wikiResultDiv {
+    width: 47%;
+    float: left;
+}
+
+.wikiTextDiv {
+    font-size: .9em;
+    font-family: sans-serif;
+    float: right;
+    width: 75%;
+    overflow: hidden
+}
+.wikiImgDiv {
+    width: 20%;
+    float: left;
+}
+.wikiImg {
+    width: 100%;
+    display: inline;
+    margin: 10px 10px 0 10px;
+    max-height: 120px;
+}
+/*Amazon*/
+.amazonResultDiv {
+    width: 47%;
+    float: left;
+}
+.amazonImg {
+    width: 100%;
+    display: inline;
+    margin: 10px 10px 0 10px;
+    max-height: 120px;
+}
+.amazonImgDiv {
+    width: 25%;
+    float: left;
+}
+.amazonTextDiv {
+    font-size: .9em;
+    font-family: sans-serif;
+    float: right;
+    width: 90%;
+    overflow: hidden
+}
+/*ebay*/
+.ebayResultsDiv {
+    width: 47%;
+    float: left;
+}
+.ebayTextDiv {
+    float: right;
+    width: 90%;
+    font-size: .9em;
+    font-family: sans-serif;
+    overflow: hidden
+}
+.ebayImgDiv {
+    width: 35%;
+    float: left;
+    max-height: 120px;
+}
+.ebayImg {
+    width: 100%;
+    float: left;
+    margin: 10px 10px 40px 10px;
+}
+/*flickr*/
+.flickrResultsDiv {
+    width: 23%;
+    float: left;
+}

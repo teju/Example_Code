@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="bkground">#ffffff</color>
+    <color name="text_color">#ffffff</color>
+    <color name="prov_msg">#006400</color>
+	<color name="check_option">#000000</color>
+</resources>

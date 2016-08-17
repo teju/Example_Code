@@ -1,0 +1,199 @@
+<div class="order-list" >
+<style>
+		table.report{
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	margin-bottom:0px;
+			border-collapse:collapse;
+			border:1px solid lightgrey;
+}
+.report th{
+	cursor:pointer;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;  
+	color: black;
+	text-align:left;
+	font-weight:bold;
+			border:1px dotted lightblue;
+}
+.report th.order_sort:hover {
+	text-decoration:underline !important;
+}
+.report td {
+			border:1px dotted lightgrey;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;
+}
+.no-overflow{
+	overflow:hidden !important;
+	text-overflow:ellipsis !important;
+	width:130px;
+}
+<?php if ( $report_mode == 'PDF' ) { ?>
+.report th, .report td {
+				font-size:9px !important;
+			}
+			.report th h3 {
+				font-size:12px !important;
+}
+<?php } else { // This is required only to ensure that the allignment of the table headings are not changed?>
+.report th#status {
+	width:60px !important;
+}
+.report th#payment_type {
+	width:72px !important;
+}
+.report th#payment_status {
+	width:72px !important;
+}
+.report th#customer_mobile {
+	width:90px !important;
+}
+.report th#total_items {
+	width:55px !important;
+}
+<?php } ?>
+</style>
+	<?php if ( $row[0]['NROWS'] > 0 ) { 
+		if ( $report_mode == 'HTML' ) { ?>
+		<div id="order-report-icons" style="text-align:left;">
+			<span id="StudentReportCSV" style="cursor:pointer;"><img height="16" width="16" src='static/images/csv.png'/></span>
+			<span id="StudentReportPDF" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/pdf.png'/></span>
+			<span id="StudentReportMail" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/mail.png'/></span>
+			<span id="StudentReportPrint" style="cursor:pointer;margin-left:10px;margin-right:10px"><img  height="16" width="16" src='static/images/print.png'/></span>
+			<hr>
+		</div>
+			<!-- Mail Dialog-->
+			<?php include('mail_dialog.html'); 
+		} ?>
+				<div style="width:100%; overflow-y: hidden; ">
+		<table class="span-40 report" align="center">
+
+		<!-- FIELD NAMES -->
+		<thead>
+			<tr >	
+					<th colspan="16" style="text-align:center;font-weight:bold;cursor:default;">
+					<div><h3><?php echo SITE_NAME; ?> - Attendance Log</h3></div>
+				</th>
+			</tr>
+			<tr >
+				<th class="order_sort" id="name"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'name' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;"></span>User Name</th>
+				<th class="order_sort" id="id_number"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'id_number' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;"></span>Id Number</th>
+				<th class="order_sort" id="time_in"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'time_in' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Time In</th>
+				<th class="order_sort" id="time_out"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'time_out' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Time Out</th>
+				<th class="order_sort" id="time_of_day"><span class="ui-icon<?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'time_of_day' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Time of Day</th>
+				<th class="order_sort" id="reg_no"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'reg_no' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Reg No</th>
+				<th class="order_sort" id="st_reg_no"><span class="ui-icon<?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'st_reg_no' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Student Reg No</th>
+				<th class="order_sort" id="client_name"><span class="ui-icon<?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'client_name' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Client Name</th>
+				<th class="order_sort" id="route"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'route' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Route</th>
+				<th class="order_sort" id="created_dt"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'created_dt' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Created Dt</th>
+				<!--<th class="order_sort" id="guardian_name"><span class="ui-icon" style="float:left;margin-bottom:10px;"></span>Guardian Name</th> -->
+				<!--<th class="order_sort" id="guardian_time_of_day"><span class="ui-icon" style="float:left;"></span>Guardian Time Of Day</th>-->
+				<?php if ( $report_mode != 'PDF' ) { ?>
+					<th id="createde_dt">Student Check In Image</th>
+					<th id="createde_dt">Student Check Out Image</th>
+					<th id="createde_dt">Student Photo</th>
+				<!--<th class="order_sort" id="createde_dt"><span class="ui-icon" style="float:left;"></span>Guardian Image</th>-->
+				<!--<th class="order_sort" id="createde_dt"><span class="ui-icon" style="float:left;"></span>Guardian Photo</th>-->
+				<?php } ?>
+			</tr>                                     
+		</thead>                                      
+		<!-- FIELD VALUES -->
+		<tbody>
+			<?php 
+				for ( $i=0;$i<$row[0]['NROWS'];$i++ ) { ?>
+				<tr>
+					<td><?php echo $row[$i]['student_name'];?></td>
+					<td><?php echo $row[$i]['id_number'];?></td>
+					<td><?php echo $row[$i]['time_in'];?></td>
+					<td><?php echo $row[$i]['time_out'];?></td>
+					<td><?php echo $row[$i]['time_of_day'];?></td>
+					<td><?php echo $row[$i]['reg_no'];?></td>
+					<td><?php echo $row[$i]['st_reg_no'];?></td>
+					<td><?php echo $row[$i]['client_name'];?></td>
+					<td><?php echo $row[$i]['route'];?></td>
+					<td><?php echo $row[$i]['created_dt'];?></td>
+					<!--<td><?php echo $row[$i]['guardian_name'];?></td>-->
+					<!--<td><?php echo $row[$i]['time_of_day'];?></td>-->
+					<?php if ( $report_mode != 'PDF' ) { ?>
+					<td>
+					<a href="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'check_in_image'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'check_in_image'); ?>" />
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'check_out_image'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'check_out_image'); ?>" />
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'student_photo'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'student_photo'); ?>" />
+					</a>
+				</td>
+				<!--<td>
+					<a href="<?php echo IMG_PATH.'guardian/'.get_arg($row[$i],'guardian_image'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'guardian/'.get_arg($row[$i],'photo'); ?>" />
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo IMG_PATH.'guardian/'.get_arg($row[$i],'guardian_photo'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'guardian/'.get_arg($row[$i],'guardian_photo'); ?>" />
+					</a>
+				</td>-->
+				<?php } } ?>
+				</tr>
+		</tbody>
+	</table>
+<?php }   else { ?>
+	<div class="notice" style="margin-top:200px;text-align:center;">No Log Report found</div>
+<?php } ?>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+	$('.order_sort').click(function(){
+			// Show loading on every call
+			$('.order-list').html('<div style="text-align:center;"><img src="static/images/ajax-loader-medium-2.gif"/></div>');
+			data=$('#SearchReportGenerateForm').serialize();
+			$('#order-by').val(this.id);
+			order_by_type=$('#order-by-type').val();
+			if ( order_by_type == 'DESC' ) order_by_type='ASC';
+			else order_by_type='DESC';
+			$('#order-by-type').val(order_by_type);// Ajax call
+			$( ".order-list" ).load('index.php?mode=a&mod=admin&ent=report&go=student_report&report_mode=HTML&order_by='+this.id+'&order_by_type='+order_by_type+'&'+data).show();
+			return false;
+		});
+
+		// CSV 
+		$('#StudentReportCSV').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=student_report&report_mode=CSV&<?php echo $row['search_str'];?>';
+		return false;
+	});
+
+		// PDF 
+		$('#StudentReportPDF').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=student_report&report_mode=PDF&<?php echo $row['search_str'];?>';
+			return false;
+		});
+
+		// Print 
+		$('#StudentReportPrint').click(function() {
+			$('#order-report-icons').hide();
+			w=window.open();
+			w.document.write($('.order-list').html());
+			w.print();
+			w.close();
+			$('#order-report-icons').show();
+		});
+
+		// Mail
+		$( "#StudentReportMail" ).click(function(){
+			$('#go').val('student_report');
+			mail_dialog_open('Student Report');
+			$('#search-str').val('<?php echo $row['search_str'];?>');
+		});
+	});
+</script>

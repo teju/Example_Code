@@ -1,0 +1,435 @@
+ACT,Books,"Business, Investing And Management",Accounts
+ACT,Books,"Business, Investing And Management"
+AGR,Books,Reference,"Agriculture Science"
+ANA,Books,"Medical Books",Anatomy
+ANA,Books,"Medical Books",Osteology
+ANA,Books,"Medical Books",Embryyology
+ANA,Books,"Medical Books"
+ANA,Books,"Medical Books",Histology
+ANAST,Books,"Medical Books",Anaesthesia
+ANAST,Books,"Medical Books"
+ANI,Books,"Outdoors & Nature","Animal Science/wildlife"
+ANI,Books,Reference
+ANI,Books,Reference,"Animal Science/wildlife"
+ANI,Books,Reference
+ANI,Books,Reference,"Animal Science/wildlife"
+ART,Books,"Arts, Photography And Design",Drawing
+ART,Books,"Arts, Photography And Design",Art
+ART,Books,"Arts, Photography And Design",Sketching
+ART,Books,"Children And Teens",Sketching
+ART,Books,"Children And Teens",Drawing
+ART,Books,"Crafts & Hobbies"
+ART,Books,"Crafts & Hobbies",Sketching
+ART,Books,"Crafts & Hobbies",Drawing
+ART,Books,"Crafts & Hobbies",Art
+ART,Books,"History And Politics",Archeology
+ART,Books,Reference,Archeology
+AYU,Books,"Medical Books",Ayurveda
+AYU,Books,"Medical Books"
+BEU,Books,"Health And Fitness","Beauty Care"
+BEU,Books,"Health And Fitness",Pregnancy
+BEU,Books,Women
+BEU,Books,Women,Mehendi/cosmetics
+BEU,Books,Women,"Beauty Care"
+BEU,Books,Women,Pregnancy
+BGY,Books,"Biographies & Autobiographies",Biography/autobiography
+BGY,Books,"Biographies & Autobiographies"
+BICHE,Books,"Medical Books","Bio Chemistry"
+BICHE,Books,Textbooks,"Bio Chemistry"
+BIO,Books,Textbooks,Biology
+BIO,Books,Textbooks
+BIOT,Books,"Science & Technology",Biotechnology
+BIOT,Books,"Science & Technology"
+BIOT,Books,Textbooks
+BIOT,Books,Textbooks,Biotechnology
+CAR,Books,"Coffee Table"
+CAR,Books,"Coffee Table","Automobiles (cars/bikes)"
+CAR,Books,Reference,Automobiles
+CET,Books,"Entrance Exams Preparation"
+CET,Books,"Entrance Exams Preparation","Common Entrance Test"
+CET,Books,Textbooks,"Common Entrance Test"
+CET,Books,Textbooks,"Common Entrance Test"
+CET,Books,Textbooks
+CHE,Books,Textbooks,Chemistry
+CHE,Books,Textbooks
+CHI,Books,"Children And Teens"
+CHI,Books,"Children And Teens",Children
+CHICARE,Books,Women,"Child Care Parenting"
+CHICARE,Books,Women
+CHL,Books,"Academic And Professional","Chemical Engg"
+CHL,Books,"Academic And Professional"
+CHL,Books,"Science & Technology","Chemical Engg"
+CHL,Books,Textbooks,"Chemical Engg"
+CHL,Books,Textbooks
+CIV,Books,"Academic And Professional","Civil Engg"
+CIV,Books,"Academic And Professional"
+CIV,Books,"Science & Technology","Civil Engg"
+CIV,Books,"Science & Technology"
+CIV,Books,Textbooks
+CIV,Books,Textbooks,"Civil Engg"
+CMP,Books,"Academic And Professional","Computer Science"
+CMP,Books,"Academic And Professional"
+CMP,Books,"Computers & Internet","Computr Science"
+CMP,Books,"Computers & Internet"
+CMP,Books,"Science & Technology","Computer Science"
+CMP,Books,Textbooks,"Computr Science"
+COMIC,Books,"Children And Teens"
+COMIC,Books,"Children And Teens",Comics
+COMIC,Books,Comics
+COOK,Books,"Cooking, Food & Wine",Cookery
+COOK,Books,"Cooking, Food & Wine"
+COOK,Books,Women,Cookery
+CSR,Books,"Academic And Professional","Competitive Exams"
+CSR,Books,"Academic And Professional"
+CSR,Books,"Business, Investing And Management","Competitive Exams"
+CSR,Books,"Business, Investing And Management"
+CSR,Books,"Entrance Exams Preparation"
+CSR,Books,"Entrance Exams Preparation","Competitive Exams"
+DEN,Books,"Medical Books",Dental
+DEN,Books,"Medical Books"
+DIC,Books,"Children And Teens","Dictionary /thesaurus"
+DIC,Books,"Children And Teens"
+DIC,Books,Textbooks
+DIC,Books,Textbooks,"Dictionary /thesaurus"
+DIR,Books,Reference,Directories
+DIR,Books,Reference
+DM,Books,"Medical Books"
+DM,Books,Textbooks
+DN,Books,"Literature & Fiction"
+DP,Books,Textbooks
+DS,Books,"Children And Teens"
+E,Books,Textbooks
+ECG,Books,"Medical Books"
+ECG,Books,"Medical Books","Cardiology/ecg/heart Disease"
+ECO,Books,"Academic And Professional"
+ECO,Books,"Academic And Professional",Economics
+ECO,Books,"Business, Investing And Management",Economics
+ECO,Books,"Business, Investing And Management"
+ECO,Books,Textbooks
+ECO,Books,Textbooks,Economics
+EDN,Books,"Academic And Professional"
+EDN,Books,"Academic And Professional",Education
+EDN,Books,"Children And Teens"
+EDN,Books,"Children And Teens",Education
+EDN,Books,Textbooks,Education
+EDN,Books,Textbooks
+ELE,Books,"Academic And Professional"
+ELE,Books,"Academic And Professional","Electrical/electronic Science"
+ELE,Books,"Science & Technology","Electrical/electronic Science"
+ELE,Books,"Science & Technology"
+ELE,Books,Textbooks,"Electrical/electronic Science"
+ELE,Books,Textbooks
+ENCY,Books,"Children And Teens",Encyclopedia
+ENCY,Books,"Children And Teens"
+ENCY,Books,"Coffee Table"
+ENCY,Books,"Coffee Table",Encyclopedia
+ENCY,Books,Textbooks
+ENCY,Books,Textbooks,Encyclopedia
+ENT,Books,"Medical Books",Ent/otolaryngology
+ENT,Books,"Medical Books"
+ESSAY,Books,"Literature & Fiction"
+EVS,Books,"Outdoors & Nature","Environmental Science"
+EVS,Books,"Outdoors & Nature","Environmental Polution"
+EVS,Books,"Science & Technology","Environmental Science/polution"
+EVS,Books,"Science & Technology"
+EYE,Books,"Medical Books","Opthalmology/eye Disease"
+EYE,Books,"Medical Books"
+FAS,Books,"Arts, Photography And Design",Fashion
+FAS,Books,Reference,Fashion
+FAS,Books,Women,Craft
+FAS,Books,Women
+FAS,Books,Women,Fashion
+FAS,Books,Women
+FIC,Books,"Coffee Table",Fiction
+FIC,Books,"Coffee Table"
+FUR,Books,"Arts, Photography And Design",Architecture
+FUR,Books,"Arts, Photography And Design"
+FUR,Books,"Home & Garden"
+FUR,Books,"Home & Garden",Architecture/interior/furniture
+FUR,Books,Textbooks,Architecture/interior/furniture
+FUR,Books,Textbooks
+G,Books,Reference
+G&G,Books,"Home & Garden"
+G&G,Books,"Home & Garden","Gate And Grills"
+GAR,Books,"Home & Garden",Gardening/plants/shrubs/trees
+GAR,Books,"Home & Garden"
+GAR,Books,"Outdoors & Nature",Gardening
+GAR,Books,"Outdoors & Nature",Shrubs
+GAR,Books,"Outdoors & Nature",Trees
+GAR,Books,"Outdoors & Nature",Plants
+GEN,Books,Reference
+GEO,Books,Reference,Geology
+GEO,Books,Reference
+GEO,Books,Textbooks
+GEO,Books,Textbooks,Geology
+GK,Books,"Children And Teens","General Knowledge"
+GK,Books,"Children And Teens"
+GK,Books,"Entrance Exams Preparation","General Knowledge"
+GPY,Books,Textbooks,Geography
+GPY,Books,Textbooks
+GRAM,Books,"Children And Teens"
+GRAM,Books,"Children And Teens",Grammar/synonym/antonym
+GRAM,Books,"Literature & Fiction",Grammar/synonym/antonym
+GRAM,Books,"Literature & Fiction"
+GRAM,Books,Textbooks,Grammar/synonym/antonym
+GRAM,Books,Textbooks
+GUIDE,Books,Textbooks,Guides
+GUIDE,Books,Textbooks
+H,Books,Reference
+HEA,Books,"Health And Fitness"
+HEA,Books,"Health And Fitness","Alternative Health/health Care"
+HEA,Books,"Medical Books","Alternative Health/health Care"
+HEA,Books,"Medical Books"
+HEA,Books,Reference
+HEMA,Books,"Medical Books",Haematology
+HEMA,Books,"Medical Books"
+HIS,Books,"History And Politics"
+HIS,Books,"History And Politics",History
+HIS,Books,Textbooks,History
+HIS,Books,Textbooks
+HMS,Books,Textbooks,"Home Science"
+HMS,Books,Women,"Home Science"
+HMS,Books,Women
+HOM,Books,"Medical Books",Homeopathy
+HOM,Books,"Medical Books"
+IFIC,Books,"Literature & Fiction","Indian Fiction"
+IFIC,Books,"Literature & Fiction"
+INTR,Books,"Business, Investing And Management"
+INTR,Books,"Business, Investing And Management","Inteviews/group Discussion"
+INTR,Books,"Entrance Exams Preparation"
+INTR,Books,"Entrance Exams Preparation","Inteviews/group Discussion"
+INTR,Books,Textbooks
+INTR,Books,Textbooks,"Inteviews/group Discussion"
+IQ,Books,"Children And Teens",Puzzles
+IQ,Books,"Children And Teens"
+JEW,Books,"Arts, Photography And Design",Jewelry/catlog
+JEW,Books,"Arts, Photography And Design"
+JEW,Books,Women,Jewelry/catlog
+JEW,Books,Women
+JOK,Books,Humor
+JOK,Books,Humor,Joke/humor
+JOU,Books,"History And Politics"
+JOU,Books,"History And Politics",Journalism
+KS,Books,Reference,Sex/kamasutra
+KS,Books,Reference
+LANG,Books,"Children And Teens"
+LANG,Books,"Children And Teens","Language Learning"
+LANG,Books,Textbooks,"Language Learning"
+LANG,Books,Textbooks
+LAW,Books,"Business, Investing And Management"
+LAW,Books,"Business, Investing And Management",Law
+LAW,Books,"Entrance Exams Preparation",Law
+LAW,Books,"Entrance Exams Preparation"
+LAW,Books,"History And Politics"
+LAW,Books,"History And Politics",Law
+LAW,Books,Textbooks
+LAW,Books,Textbooks,Law
+LET,Books,"Children And Teens","Letter Writing"
+LET,Books,"Entrance Exams Preparation"
+LET,Books,"Entrance Exams Preparation","Letter Writing"
+LIB,Books,"Literature & Fiction","Library Science"
+LIB,Books,"Literature & Fiction"
+LIB,Books,Textbooks,"Library Science"
+LIB,Books,Textbooks
+LIT,Books,"Literature & Fiction",Literature
+LIT,Books,"Literature & Fiction"
+LIT,Books,Textbooks,Literature
+LIT,Books,Textbooks
+M,Books,"Medical Books"
+MAG,Books,"Children And Teens"
+MAG,Books,"Children And Teens",Magic
+MAG,Books,"Crafts & Hobbies"
+MAG,Books,"Crafts & Hobbies",Magic
+MAP,Books,"Children And Teens","Atlas/maps/travel Logs"
+MAP,Books,"Children And Teens"
+MAP,Books,Textbooks
+MAP,Books,Travel,"Atlas/maps/travel Logs"
+MAP,Books,Travel
+MAT,Books,Textbooks
+MAT,Books,Textbooks,Mathematics
+MEC,Books,Textbooks
+MEC,Books,Textbooks,"Mechanical Engineering"
+MED,Books,Textbooks,Medicine
+MED,Books,Textbooks
+MEDMCQ,Books,"Entrance Exams Preparation","Usmle/nms/mcq/notes Viva ( Medical Entrance Exam)"
+MEDMCQ,Books,"Entrance Exams Preparation"
+MEDMCQ,Books,"Medical Books"
+MEDMCQ,Books,"Medical Books","Medicine Usmle/nms/mcq/notes Viva ( Medical Entrance Exam)"
+MEDMCQ,Books,Textbooks,"Usmle/nms/mcq/notes Viva ( Medical Entrance Exam)"
+MEDMCQ,Books,Textbooks
+MGT,Books,"Business, Investing And Management"
+MGT,Books,"Business, Investing And Management",Management
+MGT,Books,Textbooks,Management
+MGT,Books,Textbooks
+MICR,Books,Textbooks,Microbiology
+MICR,Books,Textbooks
+MUS,Books,"Music, Films And Entertainment",Films
+MUS,Books,"Music, Films And Entertainment",Dance
+MUS,Books,"Music, Films And Entertainment"
+MUS,Books,"Music, Films And Entertainment",Music
+N,Books,"Literature & Fiction",Fiction
+N,Books,"Literature & Fiction"
+NEU,Books,"Medical Books"
+NEU,Books,"Medical Books","Neurology/ Nuero Surgery/nerves"
+NEU,Books,Textbooks
+NEU,Books,Textbooks,"Neurology/ Nuero Surgery/nerves"
+NFI,Books,"Literature & Fiction",Non-fiction
+NFI,Books,"Literature & Fiction"
+NUM,Books,Reference,Horoscope
+NUM,Books,Reference,Palmistry
+NUM,Books,Reference,Numerology
+NUM,Books,Reference
+NUM,Books,Reference,Astrology
+NUM,Books,"Religion & Spirituality",Numerology
+NUM,Books,"Religion & Spirituality",Astrology
+NUM,Books,"Religion & Spirituality",Palmistry
+NUM,Books,"Religion & Spirituality",Horoscope
+NUM,Books,"Religion & Spirituality"
+NUR,Books,250
+NUR,Books,349
+NUR,Books,5
+NUR,Books,"Outdoors & Nature"
+NUR,Books,Women,Neonatolgy
+NUR,Books,Women,Neonatolgy
+NUR,Books,Women,Neonatolgy
+OBG,Books,"Medical Books"
+OBG,Books,"Medical Books",Obsterics
+OBG,Books,"Medical Books"
+OBG,Books,"Medical Books",Gynecology
+OBG,Books,Textbooks,Obsterics/gynecology/neonatolgy
+OBG,Books,Textbooks
+OBG,Books,Women,Gynecology
+OBG,Books,Women
+OBG,Books,Women,Obsterics
+OCC,Books,"Religion & Spirituality"
+OCC,Books,"Religion & Spirituality","Occult Science/spirits"
+OCC,Books,"Science & Technology","Occult Science/spirits"
+OCC,Books,"Science & Technology"
+ORTH,Books,"Medical Books"
+ORTH,Books,"Medical Books","Orthopaedics& Fracture"
+ORTH,Books,Textbooks,"Orthopaedics& Fracture"
+ORTH,Books,Textbooks
+P,Books,Textbooks
+PAED,Books,"Medical Books",Neonatolgy
+PAED,Books,"Medical Books",Paediatrics
+PAED,Books,Textbooks,Paediatrics
+PATH,Books,"Medical Books"
+PATH,Books,"Medical Books",Pathology
+PATH,Books,Textbooks,Pathology
+PATH,Books,Textbooks
+PHA,Books,"Medical Books",Pharmacy/pharmacology
+PHA,Books,"Medical Books"
+PHA,Books,Textbooks
+PHA,Books,Textbooks,Pharmacy/pharmacology
+PHI,Books,"Religion & Spirituality",Philosophy
+PHI,Books,"Religion & Spirituality"
+PHI,Books,Self-help,Philosophy
+PHI,Books,Self-help
+PHO,Books,"Arts, Photography And Design",Photography/camera
+PHO,Books,"Arts, Photography And Design"
+PHO,Books,"Crafts & Hobbies"
+PHO,Books,"Crafts & Hobbies",Photography/camera
+PHO,Books,"Music, Films And Entertainment"
+PHO,Books,"Music, Films And Entertainment",Photography
+PHO,Books,"Music, Films And Entertainment",Camera
+PHO,Books,Travel
+PHO,Books,Travel,Photography/camera
+PHY,Books,Textbooks,Physics
+PHY,Books,Textbooks
+PHYSIO,Books,"Medical Books",Physiology
+PHYSIO,Books,"Medical Books"
+PHYSIO,Books,Textbooks
+PHYSIO,Books,Textbooks,"Political Science"
+POL,Books,"History And Politics"
+POL,Books,Textbooks
+POL,Books,Textbooks,"Political Science"
+POPSCIE,Books,Reference
+POPSCIE,Books,Reference,"Popular Science"
+POPSCIE,Books,"Science & Technology"
+POPSCIE,Books,"Science & Technology","Popular Science"
+POPSCIE,Books,Textbooks
+POPSCIE,Books,Textbooks,"Popular Science"
+PSY,Books,"Medical Books",Psychology
+PSY,Books,"Medical Books"
+PSY,Books,Textbooks
+PSY,Books,Textbooks,Psychology
+PSYCH,Books,"Medical Books","Psychiatry/mental Disorders"
+PSYCH,Books,"Medical Books"
+PSYCH,Books,Textbooks
+PSYCH,Books,Textbooks,"Psychiatry/mental Disorders"
+PTHY,Books,"Medical Books",Physiotheraphy
+PTHY,Books,"Medical Books"
+PTHY,Books,Textbooks,Physiotheraphy
+QUEANS,Books,"Entrance Exams Preparation","Question Bank/syllabus"
+QUEANS,Books,"Entrance Exams Preparation"
+QUEANS,Books,Textbooks,"Question Bank/syllabus"
+QUEANS,Books,Textbooks
+QUO,Books,Self-help,"Quotation /proverbs"
+QUO,Books,Self-help
+RAD,Books,"Medical Books"
+RAD,Books,"Medical Books","Radiology /ultrasound"
+RAD,Books,"Science & Technology","Radiology /ultrasound"
+RAD,Books,"Science & Technology"
+REF,Books,Reference,Reference
+REF,Books,Reference
+REL,Books,"Religion & Spirituality"
+REL,Books,"Religion & Spirituality","Religion /mythology"
+ROC,Books,Textbooks
+ROC,Books,Textbooks
+ROC,Books,Textbooks,Rock/mineral/stones
+S,Books,"Children And Teens"
+SELF,Books,Self-help,"Self Help"
+SELF,Books,Self-help
+SERI,Books,Textbooks
+SERI,Books,Textbooks,Sericulture/silk
+SKIN,Books,"Medical Books","Veneral Disease/std/hiv"
+SKIN,Books,"Medical Books"
+SKIN,Books,"Medical Books",Dermatology
+SKIN,Books,Reference
+SKIN,Books,Textbooks,"Veneral Disease/std/hiv"
+SKIN,Books,Textbooks
+SKIN,Books,Textbooks,Dermatology
+SOC,Books,Textbooks,Sociology
+SOC,Books,Textbooks
+SPO,Books,"Children And Teens",Sports
+SPO,Books,"Children And Teens"
+SPO,Books,"Crafts & Hobbies",Sports
+SPO,Books,"Crafts & Hobbies"
+SPO,Books,"Health And Fitness",Sports
+SPO,Books,"Sports And Games","Martial Arts"
+SPO,Books,"Sports And Games",Games
+SPO,Books,"Sports And Games"
+SPO,Books,"Sports And Games"
+SPO,Books,"Sports And Games",Sports
+STA,Books,Textbooks
+STA,Books,Textbooks,Statistics
+STR,Books,"Religion & Spirituality"
+STR,Books,"Science & Technology",Astronomy
+STR,Books,"Science & Technology",Universe
+STR,Books,"Science & Technology",Planets
+STR,Books,"Science & Technology",Star
+STR,Books,"Science & Technology"
+SUR,Books,"Medical Books",Surgery
+SUR,Books,"Medical Books"
+SUR,Books,Textbooks
+SUR,Books,Textbooks,Surgery
+TEC,Books,"Computers & Internet",Technology
+TEC,Books,"Computers & Internet"
+TEC,Books,"Science & Technology"
+TEC,Books,"Science & Technology",Technology
+TEX,Books,"Science & Technology"
+TEX,Books,"Science & Technology","Textile Science"
+TOU,Books,Travel,"Tourism/hotel Management"
+TOU,Books,Travel
+VAS,Books,"Religion & Spirituality"
+VAS,Books,"Religion & Spirituality",Vastu/fengshui
+VET,Books,"Medical Books",Veterniary
+VET,Books,"Medical Books"
+VET,Books,Textbooks
+VET,Books,Textbooks,Veterinary
+YOGA,Books,"Health And Fitness"
+YOGA,Books,"Health And Fitness",Yoga
+YOGA,Books,Women
+YOGA,Books,Women,Yoga
+ZOO,Books,Textbooks
+ZOO,Books,Textbooks,Zoology

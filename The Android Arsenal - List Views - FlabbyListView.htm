@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/ca-pub-9539438564038193.js"></script><script src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/analytics.js" async=""></script>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/><![endif]-->
+<meta name="author" content="Vladislav Bauer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="android arsenal,android libraries,android libraries list,android development,android library,android apps,android applications,android projects,android tools,FlabbyListView,Github,JPARDOGO (jpardogo),Android List Views"><meta name="description" content="List Views | FlabbyListView by JPARDOGO (jpardogo)"><meta name="author" content="Vladislav Bauer"><meta name="application-name" content="Android Arsenal"><title>The Android Arsenal - List Views - FlabbyListView</title><meta itemprop="name" content="FlabbyListView"><meta itemprop="description" content="List Views | FlabbyListView by JPARDOGO (jpardogo)"><meta property="og:site_name" content="Android Arsenal"><meta property="og:type" content="website"><meta property="og:title" content="FlabbyListView | Android-Arsenal.com"><meta property="og:description" content="List Views | FlabbyListView by JPARDOGO (jpardogo)"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@Android_Arsenal"><meta name="twitter:title" content="Android Arsenal"><meta name="twitter:description" content="List Views | FlabbyListView by JPARDOGO (jpardogo)"><meta name="twitter:image" content="https://camo.githubusercontent.com/2194c820b758d70a0bf525e14e1b7f3f135b6ece/687474703a2f2f692e696d6775722e636f6d2f756743424869482e6769665d28687474703a2f2f692e696d6775722e636f6d2f756743424869482e676966"><meta name="og:image" content="https://camo.githubusercontent.com/2194c820b758d70a0bf525e14e1b7f3f135b6ece/687474703a2f2f692e696d6775722e636f6d2f756743424869482e6769665d28687474703a2f2f692e696d6775722e636f6d2f756743424869482e676966"><meta itemprop="image" content="https://camo.githubusercontent.com/2194c820b758d70a0bf525e14e1b7f3f135b6ece/687474703a2f2f692e696d6775722e636f6d2f756743424869482e6769665d28687474703a2f2f692e696d6775722e636f6d2f756743424869482e676966"> <link href="https://android-arsenal.com/favicon.png" type="image/png" rel="icon">
+<link href="http://feeds.feedburner.com/Android_Arsenal" rel="alternate" title="RSS" type="application/rss+xml">
+<link href="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/app.css" rel="stylesheet" type="text/css">
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="fluid-container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://android-arsenal.com/"><i class="fa fa-android"></i> Android Arsenal</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-right">
+<li class="dropdown active"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Tools &amp; Libraries">Weapons <b class="caret"></b></a><ul class="dropdown-menu"><li class="active"><a href="https://android-arsenal.com/free">Free</a></li><li><a href="https://android-arsenal.com/paid">Paid</a></li></ul></li><li><a href="https://android-arsenal.com/demo" title="Applications &amp; Demo projects">Battlefield</a></li><li><a href="https://android-arsenal.com/rating" title="Rating list">Ratings</a></li><li><a href="https://android-arsenal.com/contact" title="Library suggestions can be submitted">Contact</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Social networks">Social <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="https://twitter.com/Android_Arsenal" title="Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li><li><a href="https://telegram.me/AndroidArsenal" title="Telegram" rel="nofollow" target="_blank"><i class="fa fa-paper-plane"></i> Telegram</a></li><li><a href="http://android-arsenal.tumblr.com/" title="Tumblr" rel="nofollow" target="_blank"><i class="fa fa-tumblr-square"></i> Tumblr</a></li><li><a href="https://www.facebook.com/AndroidArsenal" title="Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li><li><a href="https://plus.google.com/+AndroidArsenalOfficial" title="Google+" rel="nofollow" target="_blank"><i class="fa fa-google-plus-square"></i> Google+</a></li><li><a href="http://android-arsenal.blogspot.com/" title="Blogger" rel="nofollow" target="_blank"><i class="fa fa-book"></i> Blogger</a></li><li><a href="https://feeds.feedburner.com/Android_Arsenal" title="RSS" rel="nofollow" target="_blank"><i class="fa fa-rss-square"></i> RSS</a></li><li><a href="https://www.reddit.com/r/androidarsenal" title="Reddit" rel="nofollow" target="_blank"><i class="fa fa-reddit-square"></i> Reddit</a></li><li><a href="https://www.pushbullet.com/channel?tag=android_arsenal" title="Pushbullet" rel="nofollow" target="_blank"><i class="fa fa-bell-o"></i> Pushbullet</a></li><li><a href="https://medium.com/@Android_Arsenal" title="Medium" rel="nofollow" target="_blank"><i class="fa fa-medium"></i> Medium</a></li></ul></li><li><a href="https://android-arsenal.com/random" title="Random project" rel="nofollow"><i class="fa fa-question"></i></a></li>
+<li>
+<form class="navbar-form navbar-right" role="search" method="GET" action="/search">
+<div class="input-group search-input-container">
+<input id="q" name="q" class="form-control search-input" placeholder="Search" maxlength="32" type="text">
+<div class="input-group-btn">
+<button class="btn btn-default search-button" type="submit">
+<i class="fa fa-search"></i>
+</button>
+</div>
+</div>
+</form>
+</li>
+<li id="aa_login"><a class="login" href="#" title="Log in via Github">Sign in</a></li> </ul>
+</div>
+</div>
+</div>
+<div class="container content">
+<div class="project-details">
+<h1>
+<a id="favoriteButton" href="#" class="fa fa-star-o favorite tshadow" title="Add to favorites"></a> <a href="https://android-arsenal.com/details/1/763">FlabbyListView</a> <div id="githubInfoValue"><a href="https://github.com/jpardogo/FlabbyListView/stargazers" title="Stargazers" rel="nofollow" target="_blank"><i class="fa fa-star"></i> 671</a><a href="https://github.com/jpardogo/FlabbyListView/watchers" title="Watchers" rel="nofollow" target="_blank"><i class="fa fa-eye"></i> 40</a><a href="https://github.com/jpardogo/FlabbyListView/network" title="Forks" rel="nofollow" target="_blank"><i class="fa fa-code-fork"></i> 137</a><a href="https://github.com/jpardogo/FlabbyListView/issues" title="Open Issues" rel="nofollow" target="_blank"><i class="fa fa-exclamation-circle"></i> 3</a></div> </h1>
+<div class="project-social">
+<a href="https://twitter.com/intent/tweet?url=http://android-arsenal.com/details/1/763&amp;text=Android+Arsenal+-+FlabbyListView+%23android+%23dev" rel="nofollow" class="fa fa-twitter-square" onclick="popupCenter(this); return false;" title="Share on Twitter"></a><a href="https://facebook.com/sharer.php?u=http://android-arsenal.com/details/1/763" rel="nofollow" class="fa fa-facebook-square" onclick="popupCenter(this); return false;" title="Share on Facebook"></a><a href="https://plus.google.com/share?url=http://android-arsenal.com/details/1/763" rel="nofollow" class="fa fa-google-plus-square" onclick="popupCenter(this); return false;" title="Share on Google+"></a><a href="http://news.ycombinator.com/submitlink?u=http://android-arsenal.com/details/1/763&amp;t=Android+Arsenal+-+FlabbyListView" rel="nofollow" class="fa fa-hacker-news" onclick="popupCenter(this); return false;" title="Share on Hacker News"></a><a href="https://reddit.com/submit?url=http://android-arsenal.com/details/1/763&amp;title=Android+Arsenal+-+FlabbyListView" rel="nofollow" class="fa fa-reddit-square" onclick="popupCenter(this); return false;" title="Share on Reddit"></a> </div>
+<div class="row">
+<div class="col-md-4">
+<h2>General</h2>
+<dl class="dl-horizontal">
+<dt>Category</dt>
+<dd>
+<a href="https://android-arsenal.com/free">Free</a> </dd>
+<dt>Tag</dt><dd><a href="https://android-arsenal.com/tag/52">List Views</a></dd>
+<dt>License</dt><dd><a href="http://opensource.org/licenses/Apache-2.0" rel="nofollow" target="_blank">Apache License, Version 2.0</a></dd>
+<dt>Min SDK</dt><dd><a href="https://android-arsenal.com/api?level=10">10 (Android 2.3.3–2.3.7 Gingerbread)</a></dd>
+<dt>Registered</dt>
+<dd>Aug 3, 2014</dd>
+<dt>Favorites</dt>
+<dd id="afavCount">1</dd>
+<dt>Link</dt>
+<dd><a href="https://github.com/jpardogo/FlabbyListView" rel="nofollow" target="_blank">https://github.com/jpardogo/FlabbyListView</a></dd>
+<dt>See also</dt><dd><a href="https://android-arsenal.com/details/1/1565">JazzyListView</a> </dd><dd><a href="https://android-arsenal.com/details/2/585">CustomListView</a> </dd><dd><a href="https://android-arsenal.com/details/1/2461">AnimatedListView</a> </dd><dd><a href="https://android-arsenal.com/details/1/252">PlayView</a> </dd><dd><a href="https://android-arsenal.com/details/1/256">TreeViewList</a> </dd> </dl>
+</div>
+<div class="col-md-4">
+<h2>Additional</h2>
+<dl class="dl-horizontal">
+<dt>Language</dt><dd>Java</dd><dt>Version</dt><dd>v1.0.0 (Mar 24, 2014)</dd><dt>Created</dt><dd>Mar 22, 2014</dd><dt>Updated</dt><dd>Aug 25, 2014</dd><dt>Owner</dt><dd><a href="https://android-arsenal.com/user/jpardogo" title="Open profile">JPARDOGO (jpardogo)</a></dd><dt></dt><dt>Contributors</dt><dd class="contributors"><div class="col-md-2 contributor"><a href="https://android-arsenal.com/user/jpardogo" title="JPARDOGO (jpardogo)"><img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/1172221.png" alt="JPARDOGO (jpardogo)"></a></div><div class="col-md-2 contributor"><a href="https://android-arsenal.com/user/eveliotc" title="eveliotc"><img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/400641.png" alt="eveliotc"></a></div><a href="https://github.com/jpardogo/FlabbyListView//graphs/contributors" rel="nofollow" target="_blank" class="contributors-count">2</a></dd><dt>Activity</dt><dd><div class="commit-activity"><canvas height="15" width="207" style="display: inline-block; width: 207px; height: 15px; vertical-align: top;"></canvas></div></dd>
+<dt>Badge</dt>
+<dd><a id="openBadgeModal" href="#" title="Generate badge for project"><i class="fa fa-shield"></i> Generate</a></dd>
+<dt>Download</dt><dd><a class="actionLink" title="Download source code" href="https://github.com/jpardogo/FlabbyListView//archive/master.zip" rel="nofollow"><i class="fa fa-cloud-download"></i> Source code</a></dd><dd><a class="actionLink apkLink" title="Download apk file" rel="nofollow"><i class="fa fa-cloud-download"></i> APK file</a></dd>
+</dl>
+</div>
+<div class="col-md-4">
+<h2>Blurb</h2>
+<div id="adsBlock1" class="aa-ads"><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-9539438564038193" data-ad-slot="9551766865" data-ad-format="auto"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:349px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:349px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="280" width="349"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle||[]).push({});$(window).load(function(){removeAdsBlockLoading(); if(!adsbygoogle.loaded)showAdsError();});</script></div>
+</div>
+</div>
+<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+<li role="presentation" class="active"><a id="descriptionTab" href="#description" data-toggle="tab"><i class="fa fa-list-alt" title="Description"></i><span class="tab-name"> Description</span></a></li><li role="presentation"><a id="packageTab" href="#package" data-toggle="tab"><i class="fa fa-cube" title="Package"></i><span class="tab-name"> Package</span></a></li><li role="presentation"><a id="apkTab" href="#apk" data-toggle="tab"><i class="fa fa-android" title="APK"></i><span class="tab-name"> APK</span></a></li><li role="presentation"><a id="liveDemoTab" href="#liveDemo" data-toggle="tab"><i class="fa fa-mobile" title="Demo"></i><span class="tab-name"> Demo</span></a></li><li role="presentation"><a id="discussionTab" href="#discussion" data-toggle="tab"><i class="fa fa-comment" title="Discussion"></i><span class="tab-name"> Discussion</span></a></li><li role="presentation"><a id="faqTab" href="#faq" data-toggle="tab"><i class="fa fa-question-circle" title="Q&amp;A"></i><span class="tab-name"> Q&amp;A</span></a></li> </ul>
+<div class="tab-content">
+<div class="tab-pane active" id="description">
+<div class="row">
+<div class="col-md-12">
+<div style="display: inline-block;" id="adsLongBlock2" class="ads-row"><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9539438564038193" data-ad-slot="6483778464"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle||[]).push({});$(window).load(function(){if(adsbygoogle.loaded)showLongAds(2);});</script></div><div id="projectDesc"><div class="announce instapaper_body md" id="readme"><article class="markdown-body entry-content"><h1><a id="user-content-flabbylistview" class="anchor" href="#flabbylistview" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FlabbyListView</h1>
+<p>Android library to display a ListView which cells are not rigid but flabby and react to ListView scroll and touch events.</p>
+<p>A video example of this library is on this
+<a href="https://www.youtube.com/watch?v=yN6oO4dBgW8" rel="nofollow" target="nofollow">youtube video</a>.
+<br> The
+<a href="https://play.google.com/store/apps/details?id=com.jpardogo.android.flabbylistview" rel="nofollow" target="nofollow">demo app</a> can be found on the play store.
+<br> And I also wrote a
+<a href="http://blog.jpardogo.com/path-and-control-points/" rel="nofollow" target="nofollow">blog post</a> about this library in
+<a href="http://jpardogo.com/" rel="nofollow" target="nofollow">my blog</a></p>
+<p align="center">
+<a href="https://camo.githubusercontent.com/2194c820b758d70a0bf525e14e1b7f3f135b6ece/687474703a2f2f692e696d6775722e636f6d2f756743424869482e6769665d28687474703a2f2f692e696d6775722e636f6d2f756743424869482e676966" target="nofollow" rel="nofollow"><img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/687474703a2f2f692e696d6775722e636f6d2f756743424869482e676966.gif" style="max-width:100%;"></a>
+<a href="https://camo.githubusercontent.com/e8e4947b18c6998175e02c3ea8b5c898eea35cfd/687474703a2f2f692e696d6775722e636f6d2f776657477242532e6769665d28687474703a2f2f692e696d6775722e636f6d2f776657477242532e676966" target="nofollow" rel="nofollow"><img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/687474703a2f2f692e696d6775722e636f6d2f776657477242532e676966.gif" style="max-width:100%;"></a>
+<a href="https://play.google.com/store/apps/details?id=com.jpardogo.android.flabbylistview" rel="nofollow" target="nofollow">
+<img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/68747470733a2f2f7261772e6769746875622e636f6d2f6a70617264_004.png" style="max-width:100%;"> </a> </p>
+<h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>1.Place the
+<code>FlabbyListView</code> on your layout:</p>
+<div class="highlight highlight-text-xml"><pre>    &lt;<span class="pl-ent">com</span>.jpardogo.android.flabbylistview.lib.FlabbyListView
+        <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+        <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">tools</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/tools<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:id/list<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s"><span class="pl-pds">"</span>match_parent<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s"><span class="pl-pds">"</span>match_parent<span class="pl-pds">"</span></span>/&gt;<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre></div>
+<p>2.Populate it with items which xml layout is wrap by a
+<code>FlabbyLayout</code>:</p>
+<div class="highlight highlight-text-xml"><pre>    <span class="pl-c">&lt;!--Notice that this view extends from &lt;FrameLayout/&gt;.--&gt;</span>
+    &lt;<span class="pl-ent">com</span>.jpardogo.android.flabbylistview.lib.FlabbyLayout
+        <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+        <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">tools</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/tools<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s"><span class="pl-pds">"</span>match_parent<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s"><span class="pl-pds">"</span>100dp<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">orientation</span>=<span class="pl-s"><span class="pl-pds">"</span>vertical<span class="pl-pds">"</span></span>&gt;
+
+        <span class="pl-c">&lt;!--Your content--&gt;</span>
+
+    &lt;/<span class="pl-ent">FlabbyLayout</span>&gt;<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre></div>
+<p>3.Set the color of each item. It needs to be set on the getView method of your adapter calling
+<code>setFlabbyColor</code> from
+<code>FlabbyLayout</code>:</p>
+<div class="highlight highlight-source-java"><pre>    @<span class="pl-smi">Override</span>
+    <span class="pl-k">public</span> <span class="pl-smi">View</span> getView(<span class="pl-k">int</span> position, <span class="pl-smi">View</span> convertView, <span class="pl-smi">ViewGroup</span> parent) {
+        <span class="pl-smi">ViewHolder</span> holder;
+        <span class="pl-k">if</span> (convertView <span class="pl-k">==</span> <span class="pl-c1">null</span>) {
+            convertView <span class="pl-k">=</span> <span class="pl-smi">LayoutInflater</span><span class="pl-k">.</span>from(mContext)<span class="pl-k">.</span>inflate(<span class="pl-smi">R</span><span class="pl-k">.</span>layout<span class="pl-k">.</span>item_list, parent, <span class="pl-c1">false</span>);
+            holder <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">ViewHolder</span>(convertView);
+            convertView<span class="pl-k">.</span>setTag(holder);
+        } <span class="pl-k">else</span> {
+            holder <span class="pl-k">=</span> (<span class="pl-smi">ViewHolder</span>) convertView<span class="pl-k">.</span>getTag();
+        }
+
+        <span class="pl-k">int</span> color <span class="pl-k">=</span> <span class="pl-smi">Color</span><span class="pl-k">.</span>argb(<span class="pl-c1">255</span>, mRandomizer<span class="pl-k">.</span>nextInt(<span class="pl-c1">256</span>), mRandomizer<span class="pl-k">.</span>nextInt(<span class="pl-c1">256</span>), mRandomizer<span class="pl-k">.</span>nextInt(<span class="pl-c1">256</span>));
+        ((<span class="pl-smi">FlabbyLayout</span>)convertView)<span class="pl-k">.</span>setFlabbyColor(color);
+        holder<span class="pl-k">.</span>text<span class="pl-k">.</span>setText(getItem(position));
+        <span class="pl-k">return</span> convertView;
+    }<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre></div>
+<h2><a id="user-content-including-in-your-project" class="anchor" href="#including-in-your-project" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Including in your project</h2>
+<p>You can either add the library to your application as a library project or add the following dependency to your build.gradle:</p>
+<p><a href="https://camo.githubusercontent.com/02ea5633bf7ffe52f4431fa614a6254b1db3c77b/68747470733a2f2f6d6176656e2d6261646765732e6865726f6b756170702e636f6d2f6d6176656e2d63656e7472616c2f636f6d2e6a706172646f676f2e666c616262796c697374766965772f6c6962726172792f62616467652e737667" target="nofollow" rel="nofollow"><img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/68747470733a2f2f6d6176656e2d6261646765732e6865726f6b75617070.svg" alt="Maven Central" style="max-width:100%;"></a></p>
+<div class="highlight highlight-source-groovy"><pre>dependencies {
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.jpardogo.flabbylistview:library:(latest version)<span class="pl-pds">'</span></span>
+}<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre></div>
+<h2><a id="user-content-notes" class="anchor" href="#notes" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notes</h2>
+<p>The iOS version developed by
+<a href="https://github.com/brocoo" rel="nofollow" target="nofollow">brocoo</a> is available at
+<a href="https://github.com/brocoo/BRFlabbyTable" rel="nofollow" target="nofollow">BRFlabbyTable</a></p>
+<h2><a id="user-content-developed-by" class="anchor" href="#developed-by" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Developed By</h2>
+<p>Javier Pardo de Santayana Gómez -
+<a href="mailto:jpardogo@gmail.com" rel="nofollow" target="nofollow">jpardogo@gmail.com</a></p>
+<p><a href="https://twitter.com/jpardogo" rel="nofollow" target="nofollow">
+<img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/68747470733a2f2f7261772e6769746875622e636f6d2f6a70617264_002.png" alt="Follow me on Twitter" style="max-width:100%;"> </a>
+<a href="https://plus.google.com/u/0/+JavierPardo/posts" rel="nofollow" target="nofollow">
+<img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/68747470733a2f2f7261772e6769746875622e636f6d2f6a706172646f67.png" alt="Follow me on Google+" style="max-width:100%;"> </a>
+<a href="http://www.linkedin.com/profile/view?id=155395637" rel="nofollow" target="nofollow">
+<img src="The%20Android%20Arsenal%20-%20List%20Views%20-%20FlabbyListView_files/68747470733a2f2f7261772e6769746875622e636f6d2f6a70617264_003.png" alt="Follow me on LinkedIn" style="max-width:100%;"></a></p><a href="http://www.linkedin.com/profile/view?id=155395637" rel="nofollow" target="nofollow">
+</a><h2><a href="http://www.linkedin.com/profile/view?id=155395637" rel="nofollow" target="nofollow"></a><a id="user-content-license" class="anchor" href="#license" aria-hidden="true" rel="nofollow" target="nofollow"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
+<pre><code>Copyright 2013 Javier Pardo de Santayana Gómez
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code><a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre> </article></div></div> </div>
+</div>
+</div>
+<div class="tab-pane" id="package">
+<div class="row">
+<div class="col-md-12">
+<h1 class="tab-h1">To get this project into your build</h1>
+<div class="panel panel-news-message">
+<div class="panel-heading">
+Information:
+<ul>
+<li>It may be not the official build, but possibility to simplify access to some artifacts.</li>
+<li>The project may be also unavailable on <a href="https://jitpack.io/" rel="nofollow" target="_blank">JitPack.io</a>.
+If it is the case, you can <a href="https://github.com/jpardogo/FlabbyListView//issues/new" rel="nofollow" target="_blank">open a corresponding issue</a>
+in the project to resolve this problem.</li>
+</ul>
+</div>
+</div>
+<p>
+<b>Step 1.</b> Select your build system:
+<select id="packageType" class="form-control inline-inherit">
+<option value="gradle" selected="selected">Gradle</option>
+<option value="maven">Maven</option>
+<option value="lein">Leiningen</option>
+<option value="buildr">Buildr</option>
+<option value="sbt">sbt</option>
+</select>
+</p>
+<article class="markdown-body">
+<p>
+<b>Step 2.</b> Add the specific repository to your build file:
+</p><pre id="packageRepository">repositories {
+    maven {
+        url <span class="pl-ent">"https://jitpack.io"</span>
+    }
+}<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre>
+<p></p>
+<p>
+<b>Step 3.</b> Add the dependency in your build file (do not forget to specify the correct qualifier, usually 'aar'):
+</p><pre id="packageDependency">dependencies {
+    compile <span class="pl-ent">'com.github.jpardogo:FlabbyListView:v1.0.0'</span>
+}<a class="ctcb" title="Copy to clipboard"><i class="fa fa-clipboard"></i></a></pre>
+<p></p>
+</article>
+<p><b>That's it!</b></p>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="apk">
+<div class="row">
+<div class="col-md-12">
+<h1 class="tab-h1">APK file</h1>
+<div class="panel panel-news-message">
+<div class="panel-heading">
+Information:
+<ul>
+<li>The APK file was built automatically using Gradle Wrapper with a 
+heuristic algorithm to modify the project and run "gradlew build" 
+command.</li>
+<li>The log file of the build process is available for the author only, see it in the "Additional" section.</li>
+</ul>
+</div>
+</div>
+You can <a class="apkLink" title="Download APK file">Download APK</a> directly if you want to install it manually.<br>
+Or download by scanning this QR code:
+<img id="apkQRCode" title="QR code">
+</div>
+</div>
+</div>
+<div class="tab-pane" id="liveDemo">
+<div class="row">
+<div class="col-md-12">
+<h1 class="tab-h1">Live demo</h1>
+<div class="panel panel-news-message">
+<div class="panel-heading">
+Information:
+<ul id="liveDemoLoading">
+<li>Android emulator is loading. Wait a moment, please.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="emulator">
+<iframe id="liveDemoWidget" scrolling="no" frameborder="0" height="605px" width="305px"></iframe> </div>
+</div>
+</div>
+<div class="tab-pane" id="discussion">
+<div class="row">
+<div class="col-md-12">
+<h1 class="tab-h1">Discussion</h1>
+<div id="disqus_thread"></div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="faq">
+<div class="row">
+<div class="col-md-12">
+<h1 class="tab-h1">Questions &amp; Answers</h1>
+<div class="panel panel-news-message">
+<div class="panel-heading">
+Information:
+<ul>
+<li><a href="https://stackoverflow.com/" rel="nofollow" target="_blank">StackOverflow</a> service is used to find questions and answers.</li>
+<li>Results are close to the actual, but not completely accurate or exact. It depends on the uniqueness of the project name.</li>
+<li>You can also <a href="https://stackoverflow.com/questions/ask" rel="nofollow" target="_blank">ask a question</a>, but remember <a href="http://stackoverflow.com/help/how-to-ask" rel="nofollow" target="_blank">how to do it</a> correctly.</li>
+</ul>
+</div>
+</div>
+<div id="faqList">
+<h1>Loading...</h1>
+Wait a little bit, it could take some time.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var DP_PROJECT = 
+{id:763,name:'FlabbyListView',owner:'jpardogo',repo:'FlabbyListView',ver:'v1.0.0',url:'http://android-arsenal.com/details/1/763',activity:{commits:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],dates:["Aug,
+ 2015","Aug, 2015","Aug, 2015","Aug, 2015","Aug, 2015","Sep, 2015","Sep,
+ 2015","Sep, 2015","Sep, 2015","Oct, 2015","Oct, 2015","Oct, 2015","Oct,
+ 2015","Nov, 2015","Nov, 2015","Nov, 2015","Nov, 2015","Nov, 2015","Dec,
+ 2015","Dec, 2015","Dec, 2015","Dec, 2015","Jan, 2016","Jan, 2016","Jan,
+ 2016","Jan, 2016","Jan, 2016","Feb, 2016","Feb, 2016","Feb, 2016","Feb,
+ 2016","Mar, 2016","Mar, 2016","Mar, 2016","Mar, 2016","Apr, 2016","Apr,
+ 2016","Apr, 2016","Apr, 2016","May, 2016","May, 2016","May, 2016","May,
+ 2016","May, 2016","Jun, 2016","Jun, 2016","Jun, 2016","Jun, 2016","Jul,
+ 2016","Jul, 2016","Jul, 2016","Jul, 
+2016"]},appetizeKey:"y7pa8z6025hamqpcxwnaw267g0"}</script>
+</div><div aria-hidden="true" aria-labelledby="badgeModalLabel" tabindex="-1" role="dialog" id="badgeModal" class="modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><h4 class="modal-title" id="badgeModalLabel">Project Badge</h4></div><div class="modal-body"><dl class="dl-horizontal"><dt>Color</dt><dd><select style="display: none;" id="badgeColor" name="badgeColor" class="form-control chosen-select"><option value="blue">Blue</option><option value="brightgreen" selected="selected">Bright Green</option><option value="green">Green</option><option value="yellowgreen">Yellow Green</option><option value="yellow">Yellow</option><option value="orange">Orange</option><option value="red">Red</option><option value="lightgrey">Light Grey</option></select><div id="badgeColor_chosen" title="" style="width: 0px;" class="chosen-container chosen-container-single"><a class="chosen-single" tabindex="-1"><span>Bright Green</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input autocomplete="off" placeholder="Type category" type="text"></div><ul class="chosen-results"></ul></div></div></dd><dt>Type</dt><dd><select style="display: none;" id="badgeCodeType" name="badgeCodeType" class="form-control chosen-select"><option value="1" selected="selected">Markdown</option><option value="2">AsciiDoc</option><option value="3">reStructuredText</option><option value="4">HTML</option></select><div id="badgeCodeType_chosen" title="" style="width: 0px;" class="chosen-container chosen-container-single"><a class="chosen-single" tabindex="-1"><span>Markdown</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input autocomplete="off" placeholder="Type category" type="text"></div><ul class="chosen-results"></ul></div></div></dd><dt>Design</dt><dd><select style="display: none;" id="badgeDesign" name="badgeDesign" class="form-control chosen-select"><option selected="selected" value="flat">Flat</option><option value="flat-square">Flat squared</option><option value="plastic">Plastic</option><option value="social">Social</option></select><div id="badgeDesign_chosen" title="" style="width: 0px;" class="chosen-container chosen-container-single"><a class="chosen-single" tabindex="-1"><span>Flat</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input autocomplete="off" placeholder="Type category" type="text"></div><ul class="chosen-results"></ul></div></div></dd></dl><hr><dl class="dl-horizontal"><dt>Preview</dt><dd><div id="badgePreview"></div></dd><dt>URL</dt><dd><a id="badgeUrl"></a></dd><dt>Code</dt><dd><div id="badgeCode"></div></dd></dl></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>
+<div style="display: inline-block;" id="adsLongBlock1" class="ads-row"><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9539438564038193" data-ad-slot="7704948866"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins><script>(adsbygoogle = window.adsbygoogle||[]).push({});$(window).load(function(){if(adsbygoogle.loaded)showLongAds(1);});</script></div>
+<div style="display: block;" class="navbar-bottom row-fluid footer tshadow">
+<div class="navbar-inner">
+<div class="container">
+<div class="row">
+<div title="Open Twitter" class="col-sm-4 col-xs-12">
+<a title="Open Twitter" href="https://twitter.com/Android_Arsenal" rel="nofollow" target="_blank" class="footer-logo logo-twitter"></a>
+Follow us on <a href="https://twitter.com/Android_Arsenal" rel="nofollow" target="_blank">Twitter</a>
+</div>
+<div title="Open Google Play" class="col-sm-4 col-xs-12">
+<a title="Open Google Play" href="https://play.google.com/store/apps/details?id=com.android_arsenal.androidarsenal" rel="nofollow" target="_blank" class="footer-logo logo-google-play"></a>
+Get Android app on <a href="https://play.google.com/store/apps/details?id=com.android_arsenal.androidarsenal" rel="nofollow" target="_blank">Google Play</a>
+</div>
+<div title="Open Pushbullet" class="col-sm-4 col-xs-12">
+<a title="Open Pushbullet" href="https://www.pushbullet.com/channel?tag=android_arsenal" rel="nofollow" target="_blank" class="footer-logo logo-pushbullet"></a>
+Stay informed with <a href="https://www.pushbullet.com/channel?tag=android_arsenal" rel="nofollow" target="_blank">Pushbullet</a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<p>
+Created by
+<a href="https://github.com/vbauer" rel="nofollow" target="_blank" title="Github">Vladislav Bauer</a>
+<a href="https://twitter.com/BauerVlad" rel="nofollow" target="_blank" class="fa fa-twitter-square" title="Twitter"></a>
+<a href="https://www.linkedin.com/in/vladislavbauer" rel="nofollow" target="_blank" class="fa fa-linkedin-square" title="Linkedin"></a>
+</p>
+<p>
+© 2014-2016 - <a href="https://android-arsenal.com/">Android Arsenal</a> | <a href="https://android-arsenal.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    function addAsyncJS(url,cb){
+        var h = document.getElementsByTagName("head")[0] || document.documentElement,
+            e = document.createElement('script'), d = false;
+        e.type = 'text/javascript'; e.async = true; e.src = url;
+        e.onload = e.onreadystatechange = function(){
+            if (!d && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")){
+                d = true; e.onload = e.onreadystatechange = null;
+                if (h && e.parentNode) h.removeChild(e);
+                if (cb) cb();
+            }
+        };
+        h.insertBefore(e,h.firstChild);
+    }
+    addAsyncJS('/js/app.031f232c.js',function(){initPages();});
+</script>
+</body></html>

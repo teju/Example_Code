@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "D:\\Android project\\Example code\\LoginSample\\linkedin-sdk\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\Android project\\Example code\\LoginSample\\linkedin-sdk\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\home\\udaysingh\\android-studio-projects\\LoginSample\\linkedin-sdk\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\home\\udaysingh\\android-studio-projects\\LoginSample\\linkedin-sdk\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    }
+]

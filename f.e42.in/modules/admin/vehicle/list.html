@@ -1,0 +1,107 @@
+
+<?php LOG_MSG('INFO',"+++PLAYING+++ VEHICLE: $template "); ?>
+
+<!--BREADCRUMB-->
+<?php if ( is_admin() ) { ?>
+
+<br/><div class="breadcrumb"><a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; Vehicle</div>
+<?php show_msgs(); ?>
+
+
+<!-- LIST HEADER -->
+<div class="span-24" style="margin-top:25px;">
+	<h3 ><b>Vehicles</b></h3>
+	<button id="AddButton">Add New Vehicle</button>
+</div>
+<?php }?>
+
+<!-- SEARCH BAR -->
+<?php include(TEMPLATE_DIR."search_bar.html"); ?>
+
+<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+	<table class="span-24" style="margin-bottom:0px;" >
+
+		<!-- FIELD NAMES -->
+		<thead>
+		<tr >
+				<th class="ui-widget-header">Reg No</th>
+				<th class="ui-widget-header">Route</th>
+				<th class="ui-widget-header">Vehicle Model</th>
+				<th class="ui-widget-header">Type</th>
+				<th class="ui-widget-header">Sticker No</th>
+				<?php if ( is_admin() ) { ?>
+				<th class="ui-widget-header">Start Date</th>
+				<th class="ui-widget-header">End Date</th>
+				<th class="ui-widget-header">Driver Name</th>
+				<th class="ui-widget-header">Cleaner Name</th>
+				<th class="ui-widget-header">Supervisor Name</th>
+				<th class="ui-widget-header">Client Name</th> <?php }?>
+				<th class="ui-widget-header">Is Active</th>
+				<?php if ( is_admin() ) { ?>
+					<th class="ui-widget-header" width="1%"></th>
+				<?php } ?>
+		</tr>
+		</thead>
+
+		<!-- FIELD VALUES -->
+		<tbody>
+		<?php for ($i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++) {?>
+			<tr>
+				<td>
+					<a href="index.php?mod=admin&ent=vehicle&go=modify&vehicle_id=<?php echo $ROW[$i]["vehicle_id"];?>" >
+						<?php echo $ROW[$i]['reg_no']; ?>
+					</a>
+				</td>
+					<td><span><?php echo $ROW[$i]['route']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['vehicle_model']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['type']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['sticker_no']; ?></span></td>
+					<?php if ( is_admin() ) { ?>
+					<td><span><?php if( get_arg($ROW[$i],"start_dt") != "" )  echo date('Y-M-d h:ia',strtotime($ROW[$i]['start_dt'])); ?></span></td>
+					<td><span><?php if( get_arg($ROW[$i],"end_dt") != "" )  echo  date('Y-M-d h:ia',strtotime($ROW[$i]['end_dt'])); ?></span></td>
+					<td><span><?php echo $ROW[$i]['driver_name']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['cleaner_name']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['supervisor_name']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['client_name']; ?></span></td> <?php }?>
+					<td><span><input type="checkbox" id="is_active-<?php echo $ROW[$i]['vehicle_id']; ?>" class="is_active" name="is_active"  <?php if( $ROW[$i]['is_active']){ ?> checked <?php }?></span></td>
+					<?php if ( is_admin() ) { ?>
+						<td><a href="index.php?mod=admin&ent=vehicle&go=remove&vehicle_id=<?php echo $ROW[$i]["vehicle_id"];?>" ><div class="ui-icon ui-icon-trash"></div></a></td>
+					<?php } ?>
+			</tr><?php 
+		} ?>
+		</tbody>
+
+	</table>
+
+	<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+
+<?php } ?>
+
+
+
+<script>
+	$(document).ready(function(){
+		$('#AddButton')
+		.button({icons: {primary: "ui-icon-circle-plus"}})
+		.click(function() {
+			document.location.href="<?php echo make_url('go=new'); ?>"; 
+			return false;
+		});
+
+		$(".is_active").click(function(){
+			var vehicle_id=$(this).attr("id").split('-')[1];
+			var is_active=$(this).is(':checked') == true ? 1 : 0;
+			alert(vehicle_id);
+			alert(is_active);
+			$.post( "<?php echo BASEURL; ?>index.php?mode=j&mod=admin&ent=vehicle", { 
+				"do"			: "save_json",
+				"is_active"		: is_active, 
+				"vehicle_id"	: vehicle_id
+			}).done(function() {
+				alert( "success" );
+			});
+		});
+	});
+
+</script>
+

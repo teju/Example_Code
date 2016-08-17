@@ -1,0 +1,51 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ CERTIFICATE: $template "); ?>
+
+<!-- Page content -->
+<div id="page-content">
+	<!-- Table Responsive Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="fa fa-mortar-board"></i><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?><br><small>List of Organizations</small>
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li>Organization</li>
+	</ul>
+	<!-- END Table Responsive Header -->
+<?php include(TEMPLATE_DIR."search.html"); ?>
+<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+	<?php echo show_msgs(); ?>
+	<!-- Responsive Full Block -->
+	<div class="block">
+		<a href="<?php echo BASEURL.get_arg($_GET,'mod').'/new'; ?>"><button class="btn btn-sm btn-primary fa fa-plus">ADD New Organization</button></a>
+		<div class="table-responsive">
+			<table class="table table-vcenter table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Name</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php for ( $i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++ ) { ?>
+						<tr class="selected" id="row-<?php echo $ROW[$i]['org_id']; ?>" delete_id="<?php echo $ROW[$i]['org_id']; ?>"
+							delete_name="org_id" delete_url="<?php echo BASEURL.'org/delete'; ?>">
+							<td><a href="<?php echo BASEURL.'org/modify/'.$ROW[$i]['org_id']; ?>"><img width="20%" height="20%" src="<?php echo IMG_PATH.'org/'.$ROW[$i]['org_id'].'/'.$ROW[$i]['logo']; ?>" /></a></td>
+							<td><?php echo $ROW[$i]['name']; ?></td>
+							<td><a href="#delete-dialog" class="delete-row fa fa-trash" data-toggle="modal"></a></td>
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+		</div>
+		<!-- END Responsive Full Content -->
+	</div>
+	<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+<?php } ?>
+	<!-- END Responsive Full Block -->
+</div>
+<!-- END Page Content -->

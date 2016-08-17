@@ -1,0 +1,110 @@
+
+<!-- SEARCH -->
+<div class="span-24 ui-widget-content block" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+
+	<span class="span-24" style="padding: 10px 0px 0px 10px;height:20px;"><h4><?php if (get_arg($ROW[0],'IS_SEARCH') ) echo 'Showing results:'; else echo 'Show Wallets with:';?></h4></span>
+
+	<form method="post" 
+		id="WalletSearchForm" 
+		name="WalletSearchForm" 
+		action="#" > 
+
+		<!-- FIELDS -->
+			<div>
+			
+
+			<!-- Created Dt -->
+			<span class="span-2 bg-test" style="text-align:right;margin-left:36px;">Created Dt</span>
+			<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="created_dt" 
+						name="created_dt" 
+						<?php if ($created_dt) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $created_dt; ?>" 
+					/>
+			</span>
+
+			<!-- Description -->
+			<span class="span-2 bg-test" style="text-align:right;margin-left:40px;">Description</span>
+			<span class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="description" 
+					name="description" 
+					<?php if ($description) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $description; ?>" 
+				/>
+			</span>
+			
+			<!-- Transaction Type -->
+			<span class="span-2 bg-test" style="text-align:right;margin-left:40px;">Transaction Type</span>
+			<span class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="transaction_type" 
+					name="transaction_type" 
+					<?php if ($transaction_type) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $transaction_type; ?>" 
+				/>
+			</span>
+
+			<!-- Amount -->
+			<div style ="margin-top:10px">
+				<span class="span-2 bg-test" style="text-align:right;margin-left:50px;">Amount</span>
+				<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="amount" 
+						name="amount" 
+						<?php if ($amount) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $amount; ?>" 
+					/>
+				</span>
+
+				<!-- Balance Amount -->
+				<span class="span-2 bg-test" style="text-align:right;margin-left:18px;">Balance Amount</span>
+				<span class="span-4 append-2 bg-test">
+						<input type="text" 
+							id="balance_amount" 
+							name="balance_amount" 
+							<?php if ($balance_amount) echo "style='background:#FFF6BF'";?>
+							value="<?php echo $balance_amount; ?>" 
+						/>
+				</span>
+	</form>
+
+				<!-- BUTTON -->
+				<?php 
+					$no_fields=7-1;
+					$excess_fields = $no_fields % 3;
+					switch ($excess_fields){
+						case 2: // Two fields on line
+								$button_span="prepend-3 span-4 append-1 last";
+								break;
+						case 1: // Only one field on line
+								$button_span="prepend-11 span-4 append-1 last";
+								break;
+						case 0:	// no fields on this line
+								$button_span="prepend-19 span-4 append-1 last";
+								break;
+						default:
+							break;
+					}
+				?>
+					<span class="span-1" style="margin-left:35px; margin-top:10px;"><a href= "<?php echo BASEURL; ?>wallet/" >Clear</a></span>
+					<span class="span-1" ><button id="WalletSearchButton" class="btn btn-sm btn-primary" style="margin-top:5px; padding:2px 10px;" >Search</button></span>
+
+			</div>
+
+<?php if ( get_arg($ROW[0],'IS_SEARCH') && get_arg($ROW[0],'NROWS') === 0  ) { ?>
+	<div class="span-24 notice" style="text-align:center">No matching Wallets were found.<br/> <a href= "<?php echo BASEURL; ?>wallet/">Clear</a><br/> </div>
+<?php } ?>
+
+
+<script>
+	$(document).ready(function(){
+		// Search WALLET button
+		$('#WalletSearchButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			var data=$('#WalletSearchForm').serialize();
+			document.location.href="<?php echo BASEURL; ?>wallet/search/&"+data;
+			return false;
+		});
+	});
+</script>

@@ -1,0 +1,200 @@
+<style>
+	/**************************************************/
+	/* Dashboard                                      */
+	/**************************************************/
+	.column { width: 660px; float: left;}
+
+	.portlet { margin: 0 1em 1em 0; }
+	.portlet-header { margin: 0.3em; padding-bottom: 4px; padding-left: 0.2em; text-align:center }
+	.portlet-header .ui-icon { float: right; }
+	.portlet-content { padding: 0.4em; }
+	.ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 50px !important; }
+	.ui-sortable-placeholder * { visibility: hidden; }
+
+	.summary-sale-header { margin: 0.3em; padding-bottom: px; text-align:center }
+	.summary-header { padding:px;background:black;color:white;text-align:center;font-size:14px;font-weight:bold; }
+	.summary-data { padding:px;border:1px lightgrey solid;text-align:center;margin-bottom:15px;font-weight:bold;font-size:20px; }
+
+	.attendance .summary-sale-header { margin: 0.3em; padding: 8px; text-align:center;font-weight:bold !important; }
+	.attendance .summary-header { padding:px;background:grey;color:white;text-align:center;font-size:12px;font-weight:bold; }
+	.attendance .summary-data { padding:px;border:1px lightgrey solid;text-align:center;margin-bottom:15px;font-weight:bold;font-size:14px; }
+
+	#sales_div,
+	#top_selling_div {
+			text-align:center;
+	}
+</style>
+
+<?php if ( is_admin() && TRAVEL_ID != 5 && TRAVEL_ID != 7 ) { ?>
+	<!-- HEADING AND DATES FIELDS -->
+	<div class="span-24" style="margin-top:20px;">
+		<div class="span-9"><h2><b><?php echo TRAVEL_NAME;?> dashboard</b></h2></div>
+		<?php if ( is_admin() ) { ?>
+		<div class="prepend-4 span-11 last" style="margin-bottom:20px;position:relative;">
+			<form method="GET" action="index.php?mod=admin&ent=dashboard&go=list">
+				<input type="text" class="datepicker" name="st_date" id="st_date" value="<?php echo get_arg($_GET,'st_date');?>" /> to 
+				<input type="text" class="datepicker" name="en_date" id="en_date" value="<?php echo get_arg($_GET,'en_date');?>"/>
+				<input type="submit" value="Go"/>
+			</form>
+		</div>
+		<?php } ?>
+	</div>
+
+	<div class='span-24' style='height:300px;'>
+		<!--SUMMARY -->
+		<div class="ui-widget-content span-6">
+			<div class="ui-widget-header summary-sale-header">SUMMARY</div>
+			<div class="" style=";padding:5px 40px;">
+				<div class="ui-corner-top summary-header">TODAY'S Fuel Filled</div>
+				<div class="ui-corner-bottom summary-data"><?php echo $today_fuel_filled[0]['today_fuel_filled']; ?> lts</div>
+
+				<div class="ui-corner-top summary-header">Total Fuel Filled</div>
+				<div class="ui-corner-bottom summary-data"><?php echo $total_fuel_filled[0]['total_fuel_filled']; ?> lts</div>
+			</div>
+		</div>
+
+		<!-- SALES GRAPH -->
+		<div class="span-17">
+			<div class="ui-widget-header summary-sale-header">Fuel Filled Bewteen
+				<?php echo get_arg($_GET,'st_date'); ?> and 
+				<?php echo get_arg($_GET,'en_date'); ?> 
+			</div>
+			<div id="sales_div"><img class="loading-icon" src="static/images/ajax-loader-medium-2.gif"></div>
+		</div>
+	</div>
+	<?php 
+} 
+
+	if ( is_admin() && (TRAVEL_ID == 5 || TRAVEL_ID == 7)) { ?>
+		<div class="span-24" style="margin-top:20px;">
+			<div class="span-9"><h2><b>Attendance dashboard</b></h2></div>
+			<?php if ( is_admin() & TRAVEL_ID == 3 ) { ?>
+			<div class="prepend-4 span-11 last" style="margin-bottom:20px;position:relative;">
+				<form method="GET" action="index.php?mod=admin&ent=dashboard&go=list">
+					<input type="text" class="datepicker" name="time_in" id="time_in" value="<?php echo get_arg($_GET,'time_in');?>" /> 
+					<input type="submit" value="Go"/>
+				</form>
+			</div>
+			<?php } ?>
+		</div>
+		<?php 
+		for($i=0; $i<$attendance_row[0]['NROWS'];$i++) { ?>
+			<div class='attendance span-24' style='margin-bottom:20px;margin-left:auto;margin-right:auto;'>
+				<!--SUMMARY -->
+				<!-- Morning -->
+				<div class="ui-widget-content span-8">
+					<div class="ui-widget-header summary-sale-header"><?php echo $attendance_row[$i]['reg_no'].' - Morning'; ?></div>
+					<div class="" style=";padding:5px 40px;">
+						<div class="ui-corner-top summary-header">Route </div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['route']?></div>
+						<div class="ui-corner-top summary-header">School/Organization</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['client_name']; ?> </div>
+						<div class="ui-corner-top summary-header">Total Students</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['total_students']; ?> </div> 
+						<div class="ui-corner-top summary-header">STUDENTS ON BOARD</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row['total_student_on_board_morning'][$attendance_row[$i]['reg_no']]; ?></div>
+						<div class="ui-corner-right summary-header">INVALID ROUTE</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row['invalid_count_morning'][$attendance_row[$i]['reg_no']]; ?></div>
+					</div>
+				</div>
+
+				<!-- Morning -->
+				<div class="ui-widget-content span-8" style="margin-left:120px;">
+					<div class="ui-widget-header summary-sale-header"><?php echo $attendance_row[$i]['reg_no'].' - Evening'; ?></div>
+					<div class="" style=";padding:5px 40px;">
+						<div class="ui-corner-top summary-header">Route </div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['route']?></div>
+						<div class="ui-corner-top summary-header">School/Organization</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['client_name']; ?> </div>
+						<div class="ui-corner-top summary-header">Total Students</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row[$i]['total_students']; ?> </div> 
+						<div class="ui-corner-top summary-header">STUDENTS ON BOARD</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row['total_student_on_board_evening'][$attendance_row[$i]['reg_no']]; ?></div>
+						<div class="ui-corner-right summary-header">INVALID ROUTE</div>
+						<div class="ui-corner-bottom summary-data"><?php echo $attendance_row['invalid_count_evening'][$attendance_row[$i]['reg_no']]; ?></div>
+					</div>
+				</div>
+			</div>
+
+			<?php 
+		} 
+	} ?>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		//Sortable
+		$( ".column" ).sortable({
+			connectWith: ".column",
+			stop: function(){
+					draw_top_selling_chart();
+				}
+		});
+
+		$( ".portlet" ).addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+			.find( ".portlet-header" )
+				.addClass( "ui-widget-header ui-corner-all" )
+				.prepend( "<span class='ui-icon ui-icon-minusthick'></span>")
+				.end()
+			.find( ".portlet-content" );
+
+		$( ".portlet-header .ui-icon" ).click(function() {
+			$( this ).toggleClass( "ui-icon-minusthick" ).toggleClass( "ui-icon-plusthick" );
+			$( this ).parents( ".portlet:first" ).find( ".portlet-content" ).toggle();
+		
+		});
+
+		$( ".column" ).disableSelection();
+
+	});
+
+	<?php if ( is_admin() ) { ?>
+
+		// SALES
+		// Callback function that draws the chart and then puts in the div specified
+		function draw_sales_chart() {
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Day');		// X axis
+			data.addColumn('number', 'Litres');			// Y axis
+			data.addRows([<?php for($i=0;$i<$mothly_fuel_filled[0]['NROWS'];$i++) { ?>
+							["<?php echo $mothly_fuel_filled[$i]['created_dt']; ?>", <?php echo $mothly_fuel_filled[$i]['fuel_filled']; ?>]
+							<?php if( $i < $mothly_fuel_filled[0]['NROWS']-1 ) echo ","; 
+						}?>]);
+
+			// Set chart options
+			var options = {'title':'FUEL FILLED',		// Heading
+							'pointSize': 5,
+							'legend':'none',
+							'fontSize': 10,
+							'width':700,	
+							'height':245};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.LineChart(document.getElementById('sales_div'));
+			chart.draw(data, options);
+		}
+
+		function gvapi_draw_charts() {
+			//alert('in gvapi_draw_charts()');
+			draw_sales_chart();
+		}
+
+		function gvapi_load_charts() {
+			//alert('in gvapi_load_charts()');
+			google.load("visualization", "1.0", {"callback" : gvapi_draw_charts,'packages':['corechart']});
+		}
+
+		function load_deffered(url) {
+				//alert('deffered_load(url=['+url+'])');
+				var script = document.createElement("script");
+				script.src = url;
+				script.type = "text/javascript";
+				document.getElementsByTagName("head")[0].appendChild(script);
+		}
+
+		//gvapi_init();
+		load_deffered('https://www.google.com/jsapi?callback=gvapi_load_charts');
+	<?php } ?>
+
+</script>

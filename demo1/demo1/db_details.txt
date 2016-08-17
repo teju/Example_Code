@@ -1,0 +1,9 @@
+columns :
+
+room_name
+room_id
+description
+is_booked
+prize
+images
+title

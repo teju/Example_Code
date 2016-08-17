@@ -1,0 +1,210 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ USER: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=user">System Users</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify User '.get_arg($ROW[0],"name"); else echo "New System User"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" 
+			  name="user<?php echo $mode; ?>Form" 
+			  id="user<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=user" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="user_id" value="<?php echo get_arg($ROW[0],"user_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." System User"; ?></b></h3>
+		</div>
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="name" 
+				name="name" 
+				value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Email Id -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Email Id</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="email_id" 
+				name="email_id" 
+				value="<?php echo get_arg($ROW[0],"email_id"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Password -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Password</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="password" 
+				name="password" 
+				value="<?php echo get_arg($ROW[0],"password"); ?>" 
+				<?php echo $disabled; ?> 
+				/>
+		</div>
+
+		<!-- Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Phone No</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="phone_no" 
+				name="phone_no" 
+				value="<?php echo get_arg($ROW[0],"phone_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Address</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<textarea 
+				id="address" 
+				name="address" 
+				rows="2"
+				cols="10"
+				<?php echo $disabled; ?> 
+				/><?php echo get_arg($ROW[0],'address'); ?></textarea>
+		</div>
+		<!-- Type -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Type</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;margin-top:10px;">ADMIN
+			<!-- <select name="type" id="type" <?php echo $disabled; ?>> -->
+				<!-- <option value="" selected>-Select-</option> -->
+				<!-- <option value="ADMIN" <?php if ( get_arg($ROW[0],'type') == 'ADMIN' ) echo 'selected'; ?>>ADMIN</option> -->
+				<!-- <option value="SUPERVISOR" <?php if ( get_arg($ROW[0],'type') == 'SUPERVISOR' ) echo 'selected'; ?>>SUPERVISOR</option> -->
+				<!-- <option value="SUPERVISOR" <?php if ( get_arg($ROW[0],'type') == 'ATTENDANCE' ) echo 'selected'; ?>>SUPERVISOR</option> -->
+			<!-- </select> -->
+		</div>
+		<!-- Is Active -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Is Active</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="1" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 1) { echo "checked"; } ?> 
+					style="width:20px;"/>Yes
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="0" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 0) { echo "checked"; } ?> 
+					style="width:20px;"/>No
+		</div>
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=user" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#user<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					email_id:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:100},
+					password:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:45},
+					phone_no:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					address:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500},
+					type:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:10},
+					is_active:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:1}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter Name', 
+									   digits: 'Name should have only numbers',
+									   number: 'Name should have only numbers (eg: 123.23)',
+									   minlength: 'Name should be atleast 0 characters.',
+									   maxlength: 'Name should be less than 200 characters.'},
+					email_id: {required: 'Please enter Email Id', 
+									   digits: 'Email Id should have only numbers',
+									   number: 'Email Id should have only numbers (eg: 123.23)',
+									   minlength: 'Email Id should be atleast 0 characters.',
+									   maxlength: 'Email Id should be less than 100 characters.'},
+					password: {required: 'Please enter Password', 
+									   digits: 'Password should have only numbers',
+									   number: 'Password should have only numbers (eg: 123.23)',
+									   minlength: 'Password should be atleast 0 characters.',
+									   maxlength: 'Password should be less than 45 characters.'},
+					phone_no: {required: 'Please enter Phone No', 
+									   digits: 'Phone No should have only numbers',
+									   number: 'Phone No should have only numbers (eg: 123.23)',
+									   minlength: 'Phone No should be atleast 0 characters.',
+									   maxlength: 'Phone No should be less than 18 characters.'},
+					address: {required: 'Please enter Address', 
+									   digits: 'Address should have only numbers',
+									   number: 'Address should have only numbers (eg: 123.23)',
+									   minlength: 'Address should be atleast 0 characters.',
+									   maxlength: 'Address should be less than 500 characters.'},
+					type: {required: 'Please enter Type', 
+									   digits: 'Type should have only numbers',
+									   number: 'Type should have only numbers (eg: 123.23)',
+									   minlength: 'Type should be atleast 1 characters.',
+									   maxlength: 'Type should be less than 10 characters.'},
+					is_active: {required: 'Please enter Is Active', 
+									   digits: 'Is Active should have only numbers',
+									   number: 'Is Active should have only numbers (eg: 123.23)',
+									   minlength: 'Is Active should be atleast 0 characters.',
+									   maxlength: 'Is Active should be less than 1 characters.'}
+			}
+		});
+	});
+</script>

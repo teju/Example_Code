@@ -1,0 +1,175 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ jobcard: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=jobcard">Job Card</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify jobcard '.get_arg($ROW[0],"name"); else echo "New Jobcard"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" enctype="multipart/form-data"
+			  name="jobcard<?php echo $mode; ?>Form" 
+			  id="jobcard<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=jobcard" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="jobcard_id" value="<?php echo get_arg($ROW[0],"jobcard_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." jobcard"; ?></b></h3>
+		</div>
+		
+
+		<!-- reg_no -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Reg no</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="reg_no" 
+				name="reg_no" 
+				value="<?php echo get_arg($ROW[0],"reg_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		
+
+		<!-- job_reference -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Job Reference</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="job_reference" 
+				name="job_reference" 
+				value="<?php echo get_arg($ROW[0],"job_reference"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Date -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="date" 
+				name="date" 
+				value="<?php if( get_arg($ROW[0],"date") != "" )  echo date('Y-M-d',strtotime(get_arg($ROW[0],"date"))); ?>" 
+				<?php echo $disabled; ?> 
+				class="datepicker" 
+			/>
+		</div>
+		
+		<!-- details -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Details</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="details" 
+				name="details" 
+				value="<?php echo get_arg($ROW[0],"details"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		
+		<!-- amount -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Amount</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="amount" 
+				name="amount" 
+				value="<?php echo get_arg($ROW[0],"amount"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		<!-- document -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Document</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="document" 
+				name="document" 
+				value="<?php echo get_arg($ROW[0],"document"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+
+		
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=jobcard" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#jobcard<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					reg_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200},
+					job_reference:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					Date:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					details:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500},
+					amount:			{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500}
+			},
+			// Error Messages
+			messages: {
+					reg_no: {required: 'Please enter reg no', 
+									   minlength: 'Name should be atleast 1 characters.',
+									   maxlength: 'Name should be less than 200 characters.'},
+					job_reference: { digits: 'Photo should have only numbers',
+									   number: 'Photo should have only numbers (eg: 123.23)',
+									   minlength: 'Photo should be atleast 0 characters.',
+									   maxlength: 'Photo should be less than 200 characters.'},
+					Date: { digits: 'Phone No should have only numbers',
+									   number: 'Phone No should have only numbers (eg: 123.23)',
+									   minlength: 'Phone No should be atleast 0 characters.',
+									   maxlength: 'Phone No should be less than 18 characters.'},
+					details: { digits: 'Address should have only numbers',
+									   number: 'Address should have only numbers (eg: 123.23)',
+									   minlength: 'Address should be atleast 0 characters.',
+									   maxlength: 'Address should be less than 500 characters.'},
+					amount: { digits: 'salary No should have only numbers',
+									   number: 'salary No should have only numbers (eg: 123.23)',
+									   minlength: 'salary No should be atleast 0 characters.',
+									   maxlength: 'salary No should be less than 18 characters.'}			   
+					
+			}
+		});
+
+	});
+</script>

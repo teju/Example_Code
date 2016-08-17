@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"> 
+
+
+<?php 	LOG_MSG('INFO',"+++PLAYING+++ static/html/head.html "); ?>
+
+<html>
+
+<head> 
+	<title><?php echo SITE_NAME; ?></title> 
+	<meta name="generator" http-equiv="content-type" content="text/html"> 
+
+	<!-- CSS -->
+
+    <!-- Blueprint CSS --> 
+	<link rel="stylesheet" href="static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="static/css/blueprint/print.css" type="text/css" media="print">	
+	<!--[if IE]><link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->  
+
+	<link rel="stylesheet" href="static/themes/jquery-ui-1.11.4.custom/css/<?php echo THEME; ?>/jquery-ui.min.css" type="text/css" />
+	<link rel="stylesheet" href="static/themes/jquery-ui-1.11.4.custom/css/<?php echo THEME; ?>/jquery-ui.structure.min.css" type="text/css" />
+	<link rel="stylesheet" href="static/themes/jquery-ui-1.11.4.custom/css/<?php echo THEME; ?>/jquery-ui.theme.min.css" type="text/css" />
+	<link rel="stylesheet" href="static/css/jquery.multiselect.css" type="text/css">
+	<link rel="stylesheet" href="static/css/fileuploader.css" type="text/css">
+
+	<!-- JS -->
+	<script type="text/javascript" 	src="static/themes/jquery-ui-1.11.4.custom/js/jquery.js"></script> 
+	<script type="text/javascript"	src="static/themes/jquery-ui-1.11.4.custom/js/jquery-ui.min.js"></script> 
+	<script type="text/javascript" 	src="static/js/jquery.validate.min.js"></script> 
+	<script type="text/javascript" src="static/js/jquery.multiselect.js"></script>
+	<script type="text/javascript" src="static/js/jquery.editable.js"></script>
+	<script type="text/javascript" src="static/js/jquery-ui-timepicker.js"></script>
+	<script type="text/javascript" src="static/js/fileuploader.js"></script>
+ 
+
+	<!-- JQ DATATABLES 
+	<script type="text/javascript" 	src="static/js/DataTables-1.7.6/media/js/jquery.dataTables.js"></script> 
+	<script type="text/javascript" 	src="static/js/dataTables.columnFilter.js"></script> 
+	-->
+
+	<style>
+
+		input[disabled],
+		select[disabled],
+		textarea[disabled],
+		.disabled {
+				color:grey;
+				background-color:#C0c0c0 !important;
+		}
+
+		input[disabled],
+		textarea[disabled],
+		.disabled {
+				border:1px solid white !important;
+		}
+
+		.light-text {
+			color:#7F7F7F;
+		}
+
+		.highlight-text {
+			-webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+			-moz-box-shadow: 0 1px 0 #444444;
+			outline:none;
+		}
+
+		input[type="text"],input[type="password"],input[type="file"] {
+			padding:4px;
+			width:150px;
+		}
+
+		input[type="file"] {
+			padding:4px;
+			width:245px;
+		}
+
+		select {
+			padding:4px;
+			width:160px;
+		}
+
+		.editable-dropdown select {
+			padding:4px 1px; 
+			width:45px;
+		}
+
+		textarea {
+			padding:2px;
+			width:250px;
+			height:100px;
+		}
+
+		# Error message for JQ VALIDATE
+		.error { 
+			float: none; 
+			color: red; 
+			vertical-align: top; 
+			line-height:1.25em;
+			margin-left:5px !important;
+			background:blue !important;
+		}
+
+		.green-button {
+			background:#D0F2D2 !important;
+			color: #288528 !important;
+		}
+
+		.green-button:hover {
+			background:#90EE90 !important;
+			color: #288528 !important;
+		}
+
+		.red-button {
+			background:#F1BBBB !important;
+			color: #7C1818 !important;
+		}
+
+		.red-button:hover {
+			background:#EB6262 !important;
+			color:#7C1818 !important;
+		}
+
+		.big-button {
+			font-size:20px;
+		}
+
+		.editable-cursor {
+			cursor:pointer;
+		}
+
+		.block:hover {
+			background-color:#95B9C7 !important;
+		}
+
+		/**************************************************************/
+		/*  BREADCRUMBS                                               */
+		/**************************************************************/
+		.breadcrumb {
+			color: #534A45;
+			font-size:12px;
+			margin-bottom:10px;
+		}
+		.breadcrumb a{
+			color:black;
+			text-decoration:none;
+			border-bottom:1px dotted grey;	
+		}
+		.breadcrumb a:hover{
+			text-decoration:none;
+			border-bottom:1px solid grey;
+		}
+
+		.breadcrumb .completed{
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-khtml-border-radius: 4px;
+			border-radius: 4px;
+			border-top-right-radius:30px;
+			border-bottom-right-radius:30px;
+			padding:5px 8px;
+			background:#DCDCDC;
+		}
+
+		.breadcrumb .active{
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			-khtml-border-radius: 4px;
+			border-radius: 4px;
+			padding:5px 8px;
+			text-decoration: none;
+			background:lightgreen;
+		}
+
+		.breadcrumb .inactive{
+			color:lightgrey;
+		}
+
+		.breadcrumb .step{
+			margin-right:25px;
+		}
+
+		.breadcrumb .step-no{
+			font-weight:bold;
+			font-size:14px;
+		}
+
+		.breadcrumb .shop-name{
+			font-weight:bold !important; 
+			font-size:14px !important;
+		}
+
+
+		.background-bar {
+			position:absolute;
+			top:0px;
+			height:80px;
+			width:100%;
+			z-index:-100;
+		}
+
+		.page-title {
+			height:70px;
+			padding-top:10px;
+			border-color:#5C9CCC ;
+			margin-bottom:10px;
+		}
+
+		.center-content {
+			min-height:600px;
+		}
+
+		.no-border {
+			border:none !important;
+		}
+
+		form p {
+			position:relative;
+		}
+
+		label.title-hint {
+			color:grey;
+			position:absolute;
+			top:10px;
+			left:6px;
+		}
+
+		.tab-button-active {
+			background:#A0C1DA !important;
+		}
+
+		.hint{
+			font-size:11px;
+			font-style:italic;
+			color:grey;
+		}
+
+		.ui-autocomplete-loading { 
+			background: white url('static/images/loading.gif') right center no-repeat;
+		}
+	</style>
+
+
+
+	<script> 
+		$(document).ready(function() {
+
+			// function to change some stuff on the screen. Is also called in all ajax page loads
+			// defined below
+			init_screen();
+
+		});
+
+
+		function init_screen() {
+
+			$(".datepicker").datepicker({
+					dateFormat: 'yy-mm-dd',
+					changeMonth: true,
+					changeYear: true
+			});
+
+			//End Date should activate the dates to select only after the date selected in Start date
+			$('#start_dt').datetimepicker({
+					dateFormat: 'dd-M-yy',
+					onClose: function(dateText, inst) {
+							var endDateTextBox = $('#end_dt');
+							if (endDateTextBox.val() != '') {
+									var testStartDate = new Date(dateText);
+									var testEndDate = new Date(endDateTextBox.val());
+									if (testStartDate > testEndDate)
+											endDateTextBox.val(dateText);
+							}
+							else {
+									endDateTextBox.val(dateText);
+							}
+					},
+					onSelect: function (selectedDateTime){
+							var start = $(this).datetimepicker('getDate');
+							$('#end_dt').datetimepicker('option', 'minDate', new Date(start));
+					}
+			});
+			$('#end_dt').datetimepicker({
+					dateFormat: 'dd-M-yy',
+					onClose: function(dateText, inst) {
+							var startDateTextBox = $('#start_dt');
+							if (startDateTextBox.val() != '') {
+									var testStartDate = new Date(startDateTextBox.val());
+									var testEndDate = new Date(dateText);
+									if (testStartDate > testEndDate)
+											startDateTextBox.val(dateText);
+							}
+							else {
+									startDateTextBox.val(dateText);
+							}
+					},
+					onSelect: function (selectedDateTime){
+							var end = $(this).datetimepicker('getDate');
+							$('#delivery_st_dt').datetimepicker('option', 'maxDate', new Date(end.getTime()) );
+					}
+			});
+
+			//Code for cookie persistence on accordion
+			$("#accordion").accordion({
+				header: "h3",
+				event: "click hoverintent",
+				autoHeight: true
+			});
+
+			$("button, input:submit, .a-href-buttons").button().addClass("ui-corner-all");// Buttonify all buttons
+			$("table, .ui-widget-header, .ui-widget-content").addClass("ui-corner-all");
+			$("input:text, input:password, select, textarea").addClass("ui-widget-content ui-corner-all padding-all light-text");
+		
+			// Passwords are handled differently (see LoginForm.html)
+			$("input:text, select, textarea").focus(function(){     // On focus
+					var title=$(this).attr('title');
+					if ( $(this).val() === title ) {
+							$(this).val("");
+					}
+					$(this).removeClass("light-text");
+					$(this).addClass("highlight-text");
+			}).blur(function(){                             // On blur
+					var title=$(this).attr('title');
+					if ( $(this).val() === '' ) {
+							$(this).val(title);
+					}
+					$(this).addClass("light-text");
+					$(this).removeClass("highlight-text");
+			}).each(function(){                             // On load
+					var title=$(this).attr('title');
+					if ( $(this).val() === '' ) {
+							$(this).val(title);
+					}
+			});
+
+			//Restrict text area length
+			$("textarea").keypress(function() {
+				var text_length=$('#'+this.id).val();
+				var max_length=$('#'+this.id).attr('max_length');
+				if (typeof(max_length) == 'undefined') max_length=200; 
+
+				if ( text_length.length >= max_length ) {
+					text_length = text_length.substring(0, max_length-1);
+					$('#'+this.id).val(text_length);
+					//alert('max='+max_length);
+				}
+			});
+
+		   // Ajax fix
+		   $.ajaxSetup({
+				   jsonp: null,
+				   jsonpCallback: null
+		   });
+
+		   //Initialize error Dialog
+		   	$( "#error-alert-dialog" ).dialog({
+				autoOpen: false,
+				resizable: false,
+				height:220,
+				width:300,
+				modal: true,
+				/* Scrollbar fix  */
+				open: function(event, ui){$('body').css('overflow','hidden');$('.ui-widget-overlay').css('width','100%'); }, 
+				close: function(event, ui){$('body').css('overflow','auto'); } ,
+				buttons: {
+					OK: function() {
+						$( this ).dialog( "close" );
+					}
+				}
+			});
+
+		}
+
+		function callback(value) {
+			alert(value);
+			return value;
+		}
+		// Convert Indian currency format to a simple number (without the Rs suffix)
+		function inr2num(inr) { 
+			//alert('INR=['+inr+']'); 
+			inr=$.trim(inr); 
+			if ( inr == null || inr == "" ) return parseFloat(0.00); 
+			var num=parseFloat((inr).replace(/,/g,'')); 
+			//alert('got='+inr+' returned='+(num).toFixed(2)); 
+			return num; 
+		} 
+
+
+		// Convert number to Indian currency format (without the Rs suffix)
+		function num2inr(nStr) { 
+			nStr=parseFloat(nStr).toFixed(2);
+			nStr += ''; 
+			x = nStr.split('.'); 
+			x1 = x[0]; 
+			x2 = x.length > 1 ? '.' + x[1] : ''; 
+			var rgx = /(\d+)(\d{3})/; 
+			var z = 0; 
+			var len = String(x1).length; 
+			var num = parseInt((len/2)-1); 
+
+			while (rgx.test(x1)) 
+			{ 
+				if(z > 0) 
+				{ 
+				x1 = x1.replace(rgx, '$1' + ',' + '$2'); 
+				} 
+				else 
+				{ 
+				x1 = x1.replace(rgx, '$1' + ',' + '$2'); 
+				rgx = /(\d+)(\d{2})/; 
+				} 
+				z++; 
+				num--; 
+				if(num == 0) 
+				{ 
+				break; 
+				} 
+			} 
+			return x1 + x2; 
+		}
+
+		function set_domain(name){
+			var domain=name.replace(/[^0-9A-Za-z-_\.]/g, "").substr(0,35).toLowerCase();
+			$('#domain').val(domain);
+		}
+	</script>
+
+ </head> 

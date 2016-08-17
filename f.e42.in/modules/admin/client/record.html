@@ -1,0 +1,120 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ client: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=client">clients</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify client '.get_arg($ROW[0],"name"); else echo "New client"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" enctype="multipart/form-data"
+			  name="client<?php echo $mode; ?>Form" 
+			  id="client<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=client" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="client_id" value="<?php echo get_arg($ROW[0],"client_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." client"; ?></b></h3>
+		</div>
+
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="name" 
+				name="name" 
+				value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Photo -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Photo</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<img style="width:100px;height:100px;" src="<?php echo IMG_PATH.'client/'.get_arg($ROW[0],'photo'); ?>" />
+			<input type="file" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+			<input type="hidden" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+		</div>
+
+		<!-- Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Mobile</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="mobile" 
+				name="mobile" 
+				value="<?php echo get_arg($ROW[0],"mobile"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Address</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<textarea 
+					id="address" 
+					name="address" 
+					rows="2"
+					cols="10"
+					<?php echo $disabled; ?> 
+					/><?php echo get_arg($ROW[0],'address'); ?></textarea>
+		</div>
+
+		
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=client" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#client<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200},
+					photo:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					mobile:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					address:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,}
+					
+			}
+		});
+
+	});
+</script>

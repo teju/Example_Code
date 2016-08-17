@@ -1,0 +1,23 @@
+{
+    "name": "nubera-ebusiness/intercom-php",
+    "version": "0.1.2",
+    "type": "library",
+    "description": "Connectivity with the Intercom API",
+    "keywords": ["intercom","api"],
+    "homepage": "https://github.com/nubera-ebusiness/intercom-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno Pedro",
+            "email": "bruno.pedro@cloudwork.com",
+            "homepage": "http://brunopedro.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "classmap": ["Intercom.php"]
+    }    
+}

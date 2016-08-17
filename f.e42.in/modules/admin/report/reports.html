@@ -1,0 +1,49 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ ORDER: $template "); ?>
+<!--BREADCRUMB-->
+<br/><div class="breadcrumb"><a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; Reports</div>
+<?php show_msgs(); ?>
+
+<div class="span-24 ui-widget-content" style="margin-top:15px;padding-bottom:15px;" id="tabs">
+
+	<!-- TAB HEADER -->
+	<ul id="tabs">
+		<?php if ( $report_name == 'search_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=search_report&report_mode=SEARCH">Log Report</a></li>
+		<?php } else if ( $report_name == 'expiry_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=expiry_report&report_mode=SEARCH">Expiry Report</a></li>
+		<?php } else if ( $report_name == 'vehicle_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=vehicle_report&report_mode=SEARCH">Vehicle Report</a></li>
+		<?php } else if ( $report_name == 'profitability_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=profitability_report&report_mode=SEARCH">Profitability Report</a></li>
+		<?php } else if ( $report_name == 'smssent_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=smssent_report&report_mode=SEARCH">SMS Sent Report</a></li>
+		<?php } ?>
+		<?php if ( $report_name == 'attendance_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=attendance_report&report_mode=SEARCH">Attendance Table</a></li>
+		<?php } ?>
+		<?php if ( $report_name == 'attendancelog_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=attendancelog_report&report_mode=SEARCH">AttendanceLog Table</a></li>
+		<?php } ?>
+		<?php if ( $report_name == 'student_report' ) { clear_msgs(); ?>
+		<li><a href="index.php?mode=a&mod=admin&ent=report&go=student_report&report_mode=SEARCH">Attendance Log</a></li>
+		<?php } ?>
+                <?php if ( $report_name == 'iisclog_report' ) { clear_msgs(); ?>
+                <li><a href="index.php?mode=a&mod=admin&ent=report&go=iisclog_report&report_mode=SEARCH">User Log</a></li>
+                <?php } ?>
+
+	</ul>
+
+</div><!-- END DIV -->
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		// Main Tabs
+		var $tabs = $( "#tabs" ).tabs();
+
+		// Pdf Button
+		$('#OrderReportPDFButton').button({icons: {primary: "ui-icon-disk"}}).click(function() {
+			$('#OrderReportPDFForm').submit();
+			return false;
+		});
+	});
+</script>

@@ -1,0 +1,333 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ SEARCH: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=search">Searchs</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Search '.get_arg($ROW[0],"name"); else echo "New Search"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" 
+			  name="search<?php echo $mode; ?>Form" 
+			  id="search<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=search" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="search_id" value="<?php echo get_arg($ROW[0],"search_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"user_id"); ?>"/>
+			<?php } ?>
+
+	<!-- TITLE -->
+	<div class="span-23 last" style="padding:5px 0px 10px 5px">
+		<h3><b><?php echo ucfirst(strtolower($mode))." Search"; ?></b></h3>
+	</div>
+		<!-- User Id -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">User Id</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<?php 
+			// SELECT DROPDOWN (foreign_keys)
+			if ( 'user_id' !== '0' ) { ?>
+				<select name="user_id" id="user_id" <?php echo $disabled; ?>>
+					<option value="" selected>-Select user-</option>
+					<?php 
+					$no_user=count($row_user);
+					for ($i=0; $i<$no_user; $i++) {
+						if (get_arg($ROW[0],'user_id') == 
+							$row_user[$i]["user_id"]) {
+								$selstr = " selected"; } 
+						else {$selstr = ""; }?>
+						<option value="<?php echo $row_user[$i]["user_id"] ?>" 
+								<?php echo $selstr ?> ><?php echo $row_user[$i]["name"]?>
+						</option><?php
+					} ?> 
+				</select>
+			<?php 
+			// RADIO BUTTONS (tinyint)
+			} else if ('int' === 'tinyint') { ?>
+				<input type="radio" 
+						id="user_id" 
+						name="user_id" 
+						value="1" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"user_id") === 1) { echo "checked"; } ?> 
+						style="width:20px;"/>Yes
+				<input type="radio" 
+						id="user_id" 
+						name="user_id" 
+						value="0" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"user_id") === 0) { echo "checked"; } ?> 
+						style="width:20px;"/>No
+			<?php 
+			// TEXT AREA type=varchar and size > 100
+			} else if ( ('int' === 'varchar' || 'int' === 'text' ) && 11 > 100) { ?>
+				<textarea 
+						id="user_id" 
+						name="user_id" 
+						rows="2"
+						cols="10"
+						<?php echo $disabled; ?> 
+						/><?php echo get_arg($ROW[0],'user_id'); ?></textarea>
+			<?php
+			// TEXT BOX (everything else) 
+			} else { ?>
+				<input type="text" 
+					id="user_id" 
+					name="user_id" 
+					value="<?php echo get_arg($ROW[0],"user_id"); ?>" 
+					<?php echo $disabled; ?> 
+					<?php if ( "int" === "date" ) { echo "class='datepicker'"; } ?> 
+				/>
+			<?php } ?>
+		</div>
+		<!-- Certificate Id -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Certificate Id</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<?php 
+			// SELECT DROPDOWN (foreign_keys)
+			if ( 'certificate_id' !== '0' ) { ?>
+				<select name="certificate_id" id="certificate_id" <?php echo $disabled; ?>>
+					<option value="" selected>-Select certificate-</option>
+					<?php 
+					$no_certificate=count($row_certificate);
+					for ($i=0; $i<$no_certificate; $i++) {
+						if (get_arg($ROW[0],'certificate_id') == 
+							$row_certificate[$i]["certificate_id"]) {
+								$selstr = " selected"; } 
+						else {$selstr = ""; }?>
+						<option value="<?php echo $row_certificate[$i]["certificate_id"] ?>" 
+								<?php echo $selstr ?> ><?php echo $row_certificate[$i]["name"]?>
+						</option><?php
+					} ?> 
+				</select>
+			<?php 
+			// RADIO BUTTONS (tinyint)
+			} else if ('int' === 'tinyint') { ?>
+				<input type="radio" 
+						id="certificate_id" 
+						name="certificate_id" 
+						value="1" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"certificate_id") === 1) { echo "checked"; } ?> 
+						style="width:20px;"/>Yes
+				<input type="radio" 
+						id="certificate_id" 
+						name="certificate_id" 
+						value="0" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"certificate_id") === 0) { echo "checked"; } ?> 
+						style="width:20px;"/>No
+			<?php 
+			// TEXT AREA type=varchar and size > 100
+			} else if ( ('int' === 'varchar' || 'int' === 'text' ) && 11 > 100) { ?>
+				<textarea 
+						id="certificate_id" 
+						name="certificate_id" 
+						rows="2"
+						cols="10"
+						<?php echo $disabled; ?> 
+						/><?php echo get_arg($ROW[0],'certificate_id'); ?></textarea>
+			<?php
+			// TEXT BOX (everything else) 
+			} else { ?>
+				<input type="text" 
+					id="certificate_id" 
+					name="certificate_id" 
+					value="<?php echo get_arg($ROW[0],"certificate_id"); ?>" 
+					<?php echo $disabled; ?> 
+					<?php if ( "int" === "date" ) { echo "class='datepicker'"; } ?> 
+				/>
+			<?php } ?>
+		</div>
+		<!-- Search Result -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Search Result</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<?php 
+			// SELECT DROPDOWN (foreign_keys)
+			if ( '0' !== '0' ) { ?>
+				<select name="search_result" id="search_result" <?php echo $disabled; ?>>
+					<option value="" selected>-Select 0-</option>
+					<?php 
+					$no_0=count($row_0);
+					for ($i=0; $i<$no_0; $i++) {
+						if (get_arg($ROW[0],'search_result') == 
+							$row_0[$i]["0"]) {
+								$selstr = " selected"; } 
+						else {$selstr = ""; }?>
+						<option value="<?php echo $row_0[$i]["0"] ?>" 
+								<?php echo $selstr ?> ><?php echo $row_0[$i]["name"]?>
+						</option><?php
+					} ?> 
+				</select>
+			<?php 
+			// RADIO BUTTONS (tinyint)
+			} else if ('varchar' === 'tinyint') { ?>
+				<input type="radio" 
+						id="search_result" 
+						name="search_result" 
+						value="1" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"search_result") === 1) { echo "checked"; } ?> 
+						style="width:20px;"/>Yes
+				<input type="radio" 
+						id="search_result" 
+						name="search_result" 
+						value="0" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"search_result") === 0) { echo "checked"; } ?> 
+						style="width:20px;"/>No
+			<?php 
+			// TEXT AREA type=varchar and size > 100
+			} else if ( ('varchar' === 'varchar' || 'varchar' === 'text' ) && 200 > 100) { ?>
+				<textarea 
+						id="search_result" 
+						name="search_result" 
+						rows="2"
+						cols="10"
+						<?php echo $disabled; ?> 
+						/><?php echo get_arg($ROW[0],'search_result'); ?></textarea>
+			<?php
+			// TEXT BOX (everything else) 
+			} else { ?>
+				<input type="text" 
+					id="search_result" 
+					name="search_result" 
+					value="<?php echo get_arg($ROW[0],"search_result"); ?>" 
+					<?php echo $disabled; ?> 
+					<?php if ( "varchar" === "date" ) { echo "class='datepicker'"; } ?> 
+				/>
+			<?php } ?>
+		</div>
+		<!-- Created Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Created Dt</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<?php 
+			// SELECT DROPDOWN (foreign_keys)
+			if ( '0' !== '0' ) { ?>
+				<select name="created_dt" id="created_dt" <?php echo $disabled; ?>>
+					<option value="" selected>-Select 0-</option>
+					<?php 
+					$no_0=count($row_0);
+					for ($i=0; $i<$no_0; $i++) {
+						if (get_arg($ROW[0],'created_dt') == 
+							$row_0[$i]["0"]) {
+								$selstr = " selected"; } 
+						else {$selstr = ""; }?>
+						<option value="<?php echo $row_0[$i]["0"] ?>" 
+								<?php echo $selstr ?> ><?php echo $row_0[$i]["name"]?>
+						</option><?php
+					} ?> 
+				</select>
+			<?php 
+			// RADIO BUTTONS (tinyint)
+			} else if ('datetime' === 'tinyint') { ?>
+				<input type="radio" 
+						id="created_dt" 
+						name="created_dt" 
+						value="1" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"created_dt") === 1) { echo "checked"; } ?> 
+						style="width:20px;"/>Yes
+				<input type="radio" 
+						id="created_dt" 
+						name="created_dt" 
+						value="0" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"created_dt") === 0) { echo "checked"; } ?> 
+						style="width:20px;"/>No
+			<?php 
+			// TEXT AREA type=varchar and size > 100
+			} else if ( ('datetime' === 'varchar' || 'datetime' === 'text' ) && 30 > 100) { ?>
+				<textarea 
+						id="created_dt" 
+						name="created_dt" 
+						rows="2"
+						cols="10"
+						<?php echo $disabled; ?> 
+						/><?php echo get_arg($ROW[0],'created_dt'); ?></textarea>
+			<?php
+			// TEXT BOX (everything else) 
+			} else { ?>
+				<input type="text" 
+					id="created_dt" 
+					name="created_dt" 
+					value="<?php echo get_arg($ROW[0],"created_dt"); ?>" 
+					<?php echo $disabled; ?> 
+					<?php if ( "datetime" === "date" ) { echo "class='datepicker'"; } ?> 
+				/>
+			<?php } ?>
+		</div>
+
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=search" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#search<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					user_id:		{required:true, 
+										digits:true,
+										number:false,
+										minlength:1,
+										maxlength:11},
+					certificate_id:		{required:true, 
+										digits:true,
+										number:false,
+										minlength:1,
+										maxlength:11},
+					search_result:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					created_dt:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:30}			
+			},
+			// Error Messages
+			messages: {
+					user_id: {required: 'Please enter User Id', 
+									   digits: 'User Id should have only numbers',
+									   number: 'User Id should have only numbers (eg: 123.23)',
+									   minlength: 'User Id should be atleast 1 characters.',
+									   maxlength: 'User Id should be less than 11 characters.'},
+					certificate_id: {required: 'Please enter Certificate Id', 
+									   digits: 'Certificate Id should have only numbers',
+									   number: 'Certificate Id should have only numbers (eg: 123.23)',
+									   minlength: 'Certificate Id should be atleast 1 characters.',
+									   maxlength: 'Certificate Id should be less than 11 characters.'},
+					search_result: {required: 'Please enter Search Result', 
+									   digits: 'Search Result should have only numbers',
+									   number: 'Search Result should have only numbers (eg: 123.23)',
+									   minlength: 'Search Result should be atleast 0 characters.',
+									   maxlength: 'Search Result should be less than 200 characters.'},
+					created_dt: {required: 'Please enter Created Dt', 
+									   digits: 'Created Dt should have only numbers',
+									   number: 'Created Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Created Dt should be atleast 1 characters.',
+									   maxlength: 'Created Dt should be less than 30 characters.'}			}
+		});
+	});
+</script>

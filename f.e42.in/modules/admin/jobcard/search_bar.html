@@ -1,0 +1,118 @@
+
+<!-- SEARCH -->
+<div class="span-24 ui-widget-content" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+
+	<div class="span-24" style="padding: 10px 0px 0px 10px;height:20px;"><h4><?php if (get_arg($ROW[0],'IS_SEARCH') ) echo 'Showing results:'; else echo 'Show jobcards with:';?></h4></div>
+
+	<form method="post" 
+		id="jobcardsearchForm" 
+		name="jobcardsearchForm" 
+		action="#" > 
+
+		<!-- FIELDS -->
+
+			<!-- Reg No -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Reg No</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="reg_no" 
+					name="reg_no" 
+					<?php if ($reg_no) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $reg_no; ?>" 
+				/>
+			</div>
+
+			<!-- Job Reference -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Job Reference</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="job_reference" 
+					name="job_reference" 
+					<?php if ($job_reference) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $job_reference; ?>" 
+				/>
+			</div>
+			<!-- Date-->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Date</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="date" 
+					name="date" 
+					<?php if ($date) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $date; ?>" 
+					class="datepicker"
+				/>
+			</div>
+			<!-- Details -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Details</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="details" 
+					name="details" 
+					<?php if ($details) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $details; ?>" 
+				/>
+			</div>
+			<!-- Amount -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Amount</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="amount" 
+					name="amount" 
+					<?php if ($amount) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $amount; ?>" 
+				/>
+			</div>
+			<!-- Document -->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Document</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="document" 
+					name="document" 
+					<?php if ($document) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $document; ?>" 
+				/>
+			</div>
+
+			
+	<!-- BUTTON -->
+	<?php 
+		$no_fields=11-1;
+		$excess_fields = $no_fields % 3;
+		switch ($excess_fields){
+			case 2: // Two fields on line
+					$button_span="prepend-3 span-4 append-1 last";
+					break;
+			case 1: // Only one field on line
+					$button_span="prepend-11 span-4 append-1 last";
+					break;
+			case 0:	// no fields on this line
+					$button_span="prepend-19 span-4 append-1 last";
+					break;
+			default:
+				break;
+		}
+	
+	?>
+	<div class="<?php echo $button_span; ?>" >
+		<div class="span-1" style="padding-top:5px"><a <?php echo make_url('go=list',NULL,true); ?> >Clear</a></div>
+		<div class="span-1" ><button id="jobcardsearchButton" >Search</button></div>
+	</div>
+
+</div>
+
+<?php if ( get_arg($ROW[0],'IS_SEARCH') && get_arg($ROW[0],'NROWS') === 0  ) { ?>
+	<div class="span-24 notice" style="text-align:center">No matching jobcards were found.<br/> <a <?php echo make_url('go=list',NULL,true); ?> >Clear</a><br/> </div>
+<?php } ?>
+
+
+<script>
+	$(document).ready(function(){
+		// Search jobcard button
+		$('#jobcardsearchButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			var data=$('#jobcardsearchForm').serialize();
+			document.location.href="<?php echo make_url('go=list',NULL,false); ?>&"+data;
+			return false;
+		});
+	});
+</script>

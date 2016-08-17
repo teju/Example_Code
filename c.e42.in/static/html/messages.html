@@ -1,0 +1,28 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ : message.html "); ?>
+<style>
+	.nfc-message {
+		padding: 8px 4px !important;
+	}
+</style>
+<!-- MESSAGES -->
+
+	<?php if ($ERROR_MESSAGE) {?>
+		<!-- Error Message -->
+		<div>
+			<p><span class="col-md-12 nfc-message label label-warning"><?php echo $ERROR_MESSAGE; ?></span></p><br><br>
+		</div>
+	<?php }
+
+	if ($SUCCESS_MESSAGE) {?>
+		<!-- Success Message -->
+		<div>
+			<span class="col-md-12 nfc-message label label-success"><?php echo $SUCCESS_MESSAGE; ?></span><br><br>
+		</div>
+	<?php } 
+
+	if ($NOTICE_MESSAGE) {?>
+		<!-- Notice Message -->
+		<div>
+			<span class="col-md-12 nfc-message label label-info"><?php echo $NOTICE_MESSAGE; ?></span><br><br>
+		</div>
+	<?php } ?>

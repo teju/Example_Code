@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Android\cretified42\app\libs\android-async-http-1.4.8.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="77bbfe240e437ecb396d982afa0d3bd4f9090ba7">
+        <dex dex="D:\Android\cretified42\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.8-55103df57821b56b6f702c34792a06b2e32a36a9.jar" />
+    </item>
+    <item
+        jar="D:\Android\cretified42\app\libs\guavalib.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4dad6eb644b525f4222e3c55d31c16660bacb92e">
+        <dex dex="D:\Android\cretified42\app\build\intermediates\pre-dexed\debug\guavalib-521d1c5ab407aedb4700721f2c6ca00a73834912.jar" />
+    </item>
+
+</items>

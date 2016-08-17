@@ -1,0 +1,139 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ USER: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=setting">Settings</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Setting '.get_arg($ROW[0],"name"); else echo "New Setting"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" 
+			  name="setting<?php echo $mode; ?>Form" 
+			  id="setting<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=setting" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="setting_id" value="<?php echo get_arg($ROW[0],"setting_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." Setting"; ?></b></h3>
+		</div>
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;margin-top:8px;">
+			<?php echo get_arg($ROW[0],"name"); ?>
+			<input type="hidden" 
+					id="name" 
+					name="name" 
+					value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Value -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Value</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<?php if ( get_arg($ROW[0],"name") == "image_capture_range" || get_arg($ROW[0],"name") == "attendance_image_capture_range" ) { ?>
+				<select name="value" id="value" <?php echo $disabled; ?>>
+					<option value="" selected>-Select-</option>
+					<?php foreach ( $IMAGE_CAPTURE_RANGE AS $value => $key ) { ?> 
+						<option value="<?php echo $value; ?>" <?php if ( get_arg($ROW[0],'value') == $value ) echo 'selected'; ?>><?php echo $key; ?></option>
+					<?php }?>
+				</select>
+			<?php } else if ( get_arg($ROW[0],"name") == "account_time_end" ) { ?>
+				<select name="value" id="value" <?php echo $disabled; ?>>
+					<option value="" selected>-Select-</option>
+					<?php 
+						for ( $i=1;$i<=24;$i++ ) { 
+						$separator="";
+						if ( $i < 10 ) $separator="0"; ?>
+						<option value="<?php echo $separator.$i.":00"; ?>" <?php if ( get_arg($ROW[0],'value') == $separator.$i.":00" ) echo 'selected'; ?>><?php echo $separator.$i.":00"; ?></option>
+					<?php } ?>
+				</select>
+			<?php } else { ?>
+				<input type="text" 
+					id="value" 
+					name="value" 
+					value="<?php echo get_arg($ROW[0],"value"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			<?php } ?>
+		</div>
+
+
+		<!-- Effective Dt -->
+		<?php if($ROW[0]['name']=='upcoming_fuel_rate') { ?>
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Effective Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="datetimepicker1" 
+				name="effective_date" 
+				value="<?php  if( get_arg($ROW[0],"effective_date" ) != "" ) echo date('Y-M-d h:ia',strtotime(get_arg($ROW[0],"effective_date"))); ?>" 
+				<?php echo $disabled; ?> 
+				/>
+		</div>
+		<?php } ?>
+		
+		
+
+		<!-- BUTTON -->
+		<div class="prepend-5 span-4" style="padding-top:5px;">
+			<?php if ($mode != "VIEW" ) { ?> 
+				<!-- SAVE/DELETE BUTTON -->
+				<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+			<?php } ?>
+			<!-- BACK LINK -->
+			<a href="index.php?mod=admin&ent=setting" >Back</a>
+		</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#setting<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:100},
+					value:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:100}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter Name', 
+									   digits: 'Name should have only numbers',
+									   number: 'Name should have only numbers (eg: 123.23)',
+									   minlength: 'Name should be atleast 1 characters.',
+									   maxlength: 'Name should be less than 100 characters.'},
+					value: {required: 'Please enter Value', 
+									   digits: 'Value should have only numbers',
+									   number: 'Value should have only numbers (eg: 123.23)',
+									   minlength: 'Value should be atleast 1 characters.',
+									   maxlength: 'Value should be less than 100 characters.'}
+			}
+		});
+		 $(function () {
+                $('#datetimepicker1').datetimepicker(
+				{dateFormat: 'dd-mm-yy', timeFormat: 'hh:mm:ss' });
+            });
+	});
+</script>

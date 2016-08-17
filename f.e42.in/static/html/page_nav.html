@@ -1,0 +1,66 @@
+<style>
+	.small-buttons {
+		height: 22px;
+	}
+
+</style>
+<table class="span-24" width=100% border=0>
+	<thead>
+		<tr >
+			<!-- FIRST AND PREV -->
+			<th align="left">
+				<button class="small-buttons" id="seek-start" <?php echo get_arg($page_arr,'prev_disabled');?>>
+					<span class="ui-icon ui-icon-seek-start"></span>
+				</button>
+				
+				<button class="small-buttons" id="seek-prev"  <?php echo get_arg($page_arr,'prev_disabled');?>>
+					<span class="ui-icon ui-icon-seek-prev"></span>
+				</button>
+			</th>
+
+			<!-- Page X of XX -->
+			<th align="center" style="text-align:center;">
+					<?php echo "Page ".get_arg($page_arr,'page')." of ".get_arg($page_arr,'no_of_pages'); ?>
+			</th>
+
+
+			<!-- LAST and NEXT -->
+			<th style="text-align:right">
+				<button class="small-buttons" id="seek-next" <?php echo get_arg($page_arr,'next_disabled');?>>
+					<span class="ui-icon ui-icon-seek-next"></span>
+				</button>
+				
+				<button class="small-buttons" id="seek-end"  <?php echo get_arg($page_arr,'next_disabled');?>>
+					<span class="ui-icon ui-icon-seek-end"></span>
+				</button>
+			</th>
+		</tr>
+	</thead>
+</table>
+
+
+<script>
+
+		// Setup button
+		$('#seek-start').click(function() {
+			document.location.href="<?php echo $url.get_arg($page_arr,'first_href'); ?>";
+			return false;
+		});
+
+		$('#seek-prev').click(function() {
+			document.location.href="<?php echo $url.get_arg($page_arr,'prev_href'); ?>";
+			return false;
+		});
+
+		$('#seek-next').click(function() {
+			document.location.href="<?php echo $url.get_arg($page_arr,'next_href'); ?>#ui-tabs-1";
+			return false;
+		});
+
+		$('#seek-end').click(function() {
+			document.location.href="<?php echo $url.get_arg($page_arr,'last_href'); ?>";
+			return false;
+		});
+
+</script>
+

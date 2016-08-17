@@ -1,0 +1,380 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ group: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=student">Users</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify group '.get_arg($ROW[0],"group_name"); else echo "New group"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+	<div id="tabs">
+	  <ul>
+		<li><a href="#fragment-1"><span>Student</span></a></li>
+		<?php if ($mode == 'EDIT') {?>
+			<li><a href="#fragment-2"><span>Student Group</span></a></li>
+		<?php } ?>
+	  </ul>
+
+			<!-- FORM START -->
+			<form method="post" enctype="multipart/form-data"
+				  name="student<?php echo $mode; ?>Form" 
+				  id="student<?php echo $mode; ?>Form" 
+				  action="index.php?mod=admin&ent=student" >
+				<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+				<input type="hidden" name="student_id" value="<?php echo get_arg($ROW[0],"student_id"); ?>" />
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+
+			<div id= "fragment-1">
+			<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." user"; ?></b></h3>
+		</div>
+		
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="name" 
+				name="name" 
+				value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Student Photo -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;" id="image_delete">User Photo</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<img id="image" style="width:100px;height:100px;" src="<?php echo IMG_PATH.'student/'.get_arg($ROW[0],'student_photo'); ?>"/>
+			<?php if( get_arg($ROW[0],'student_photo' ) !="no_image.jpg" ) {?> 
+			<span id="<?php echo get_arg($ROW[0],'student_photo'); ?>" class="delete-image ui-icon ui-icon-trash"></span> <?php } ?>
+			<input type="file" id="student_photo_file" name="student_photo">
+			<input type="hidden" id="student_photo" name="student_photo" value="<?php echo get_arg($ROW[0],'student_photo'); ?>">
+		</div>
+
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Id Number</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="id_number" 
+				name="id_number" 
+				value="<?php echo get_arg($ROW[0],"id_number"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Address</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<textarea 
+					id="address" 
+					name="address" 
+					rows="2"
+					cols="10"
+					<?php echo $disabled; ?> 
+					/><?php echo get_arg($ROW[0],'address'); ?></textarea>
+		</div>
+		
+
+		<!-- Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Mobile</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="phone" 
+				name="phone" 
+				value="<?php echo get_arg($ROW[0],"phone"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!--<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Guardian Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="guardian_name" 
+				name="guardian_name" 
+				value="<?php echo get_arg($ROW[0],"guardian_name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div> -->
+
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Email Id</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="email_id" 
+				name="email_id" 
+				value="<?php echo get_arg($ROW[0],"email_id"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+	<!--	<!-- Guardian Photo 
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;" id="image_delete">Guardian Photo</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<img style="width:100px;height:100px;" src="<?php echo IMG_PATH.'guardian/'.get_arg($ROW[0],'guardian_photo'); ?>" />
+			<input type="file" name="guardian_photo" value="<?php echo get_arg($ROW[0],'guardian_photo'); ?>">
+			<input type="hidden" name="guardian_photo" value="<?php echo get_arg($ROW[0],'guardian_photo'); ?>">
+		</div> -->
+		
+		
+
+		<!---Client-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Client</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<select name="client_id" id="client_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select client-</option>
+					<?php
+					for ( $i=0; $i<$row_client[0]['NROWS']; $i++ ) { ?>
+							<option value="<?php echo $row_client[$i]['client_id'] ?>" <?php if ( get_arg($ROW[0],"client_id") == 
+							$row_client[$i]["client_id"] ) echo "selected"; ?> ><?php echo $row_client[$i]["name"]; ?>
+							</option><?php
+					} ?>
+			</select>
+		</div>
+		<!---reg_no-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Reg No</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<select name="vehicle_id" id="vehicle_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select vehicle-</option>
+					<?php
+					for ( $i=0; $i<$row_vehicle[0]['NROWS']; $i++ ) { ?>
+							<option value="<?php echo $row_vehicle[$i]['vehicle_id'] ?>" <?php if ( get_arg($ROW[0],"vehicle_id") == 
+							$row_vehicle[$i]["vehicle_id"] ) echo "selected"; ?> ><?php echo $row_vehicle[$i]["reg_no"]; ?>
+							</option><?php
+					} ?>
+			</select>
+		</div>
+		<!--exp_dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Expiry Date</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="exp_dt" 
+				name="exp_dt" 
+				value="<?php if(get_arg($ROW[0],"exp_dt") != "") echo date('Y-M-d',strtotime(get_arg($ROW[0],"exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class="datepicker" 
+			/>
+		</div>
+
+		<!-- Is Active -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Is Active</div>
+		<div class=" span-18"  style="margin-bottom:10px;">
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="1" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 1) { echo "checked"; } ?> 
+					style="width:20px;"/>Yes
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="0" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 0) { echo "checked"; } ?> 
+					style="width:20px;"/>No
+		</div>
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=student" >Back</a>
+	</div>
+			</div>
+			<?php if ($mode == 'EDIT') {?>
+				<div id= "fragment-2">
+					<!-- TITLE -->
+					<div class="span-23 last" style="padding:5px 0px 10px 5px">
+						<h3><b>Add Group Location</b></h3>
+					</div>
+
+					<table class="span-8" style="margin-bottom:0px; margin-top:55px;" align ="left" >
+
+						<!-- FIELD NAMES -->
+						<thead>
+						<tr >
+							<th class="ui-widget-header"> Group Name</th>
+							<th class="ui-widget-header" width="1%"></th>
+						</tr>
+						<tr >
+							<td>
+								<select name="group" id="group" <?php echo $disabled; ?>>
+								<option value="" selected>-Select group-</option>
+									<?php
+									for ( $i=0; $i<$row_group_location[0]['NROWS']; $i++) { ?>
+											<option value="<?php echo $row_group_location[$i]['group_id'] ?>" 
+											<?php if ( get_arg($ROW[0],"group_id") == $row_group_location[$i]["group_id"] ) echo "selected"; ?> ><?php echo $row_group_location[$i]["group_name"]; ?>
+											</option><?php
+									} ?>
+								</select>
+							</td>
+							<td width="1%">
+								<button class="addlocationid">ADD</button>
+							</td>
+						</tr>
+						</thead>
+
+						<?php if( $location_group_row[0]['NROWS'] > 0) { ?>
+						<!-- FIELD VALUES -->
+						<tbody>
+							<?php for ( $i=0; $i<$location_group_row[0]['NROWS']; $i++) { ?>
+							<tr id="row-id-<?php echo $location_group_row[$i]['group_id']; ?>">
+								<td><span><?php echo $location_group_row[$i]['group_name']; ?></span></td>
+								<td ><span id="delete-id-<?php echo $location_group_row[$i]['group_id']; ?>" 
+									class="delete-row ui-icon ui-icon-trash"></span>
+								</td>
+							</tr><?php 
+						} ?>
+						</tbody>
+
+					</table>
+					<?php } ?>
+	
+				</div>
+			<?php } ?>
+		<!-- FORM END -->
+		</form>
+	</div>
+</div><!-- END WIDGET -->
+
+<script>
+	$(document).ready(function(){
+
+		$("#group<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					group_name:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter group Name', 
+									   digits: 'group Name should have only numbers',
+									   number: 'group Name should have only numbers (eg: 123.23)',
+									   minlength: 'group Name should be atleast 1 characters.',
+									   maxlength: ' group Name should be less than 200 characters.'}
+			}
+		});
+
+		// Tabs
+		$(".addlocationid").click(function(){
+			var group_id=$("#group :selected").val();
+			var params = {
+				"do"			: "save_group_location_json",
+				"group_id"			: group_id, 
+				"student_id"	: "<?php echo get_arg($_GET,"student_id"); ?>"
+			}
+
+			$.ajax({
+				url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=student",
+				type: 'post',
+				dataType: 'json',
+				success: function (response) {
+					if ( response.status === "ERROR" ) {
+						alert( response.message );
+					} else {
+						alert( response.message );
+						$('tbody').prepend('<tr id="row-id-'+response.group_id+'">'+
+													'<td><span>'+response.group_name+'</span></td>'+
+													'<td ><span id="delete-id-'+response.group_id+'" class="delete-row ui-icon ui-icon-trash"></span>'+
+													'</td>'+
+												'</tr>'
+											);
+						$("#group").val("");
+					}
+
+					// Delete for newly added row
+					$("#delete-id-"+response.location_id).click(function(){
+						var group_id=this.id.split("-")[2];
+						var params = {
+							"do"			: "remove_group",
+							"group_id"	: group_id, 
+						}
+						$.ajax({
+							url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=student",
+							type: 'post',
+							dataType: 'json',
+							success: function (response) {
+								if ( response.status === "ERROR" ) {
+									alert( response.message );
+								} else {
+									alert( response.message );
+									$("#row-id-"+group_id).remove();
+								}
+							},
+							data: params
+						});
+						return false;
+					});
+				},
+				data: params
+			});
+
+			return false;
+		});
+
+		// Delete
+		$(".delete-row").click(function(){
+			var group_id=this.id.split("-")[2];
+			var params = {
+				"do"			: "remove_group",
+				"group_id"	: group_id, 
+			}
+			$.ajax({
+				url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=student",
+				type: 'post',
+				dataType: 'json',
+				success: function (response) {
+					if ( response.status === "ERROR" ) {
+						alert( response.message );
+					} else {
+						alert( response.message );
+						$("#row-id-"+group_id).remove();
+					}
+				},
+				data: params
+			});
+			return false;
+		});
+
+			$(".delete-image").click(function(){
+			var student_id="<?php echo get_arg($_GET,"student_id"); ?>";
+			var student_photo=this.id;
+			alert(student_photo);
+			var params = {
+				"do"			: "remove_image",
+				"student_id"	: student_id, 
+				"student_photo"	: student_photo,
+			}
+			$.ajax({
+				url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=student",
+				type: 'post',
+				dataType: 'json',
+				success: function (response) {
+					if ( response.status === "ERROR" ) {
+						alert( response.message );
+					} else {
+						alert( response.message );
+						$('#image').attr('src',"<?php echo IMG_PATH.'student/'."no_image.jpg"; ?>");
+						$("#student_photo").val("no_image.jpg");
+						$(".delete-image").hide();
+					}
+				},
+				data: params
+			});
+			return false;
+		});
+
+		// Tabs
+		$( "#tabs" ).tabs();
+	});
+</script>

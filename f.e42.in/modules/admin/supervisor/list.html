@@ -1,0 +1,73 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ SUPERVISOR: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/><div class="breadcrumb"><a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; Supervisor</div>
+<?php show_msgs(); ?>
+
+
+<!-- LIST HEADER -->
+<div class="span-24" style="margin-top:25px;">
+	<h3 ><b>Supervisors</b></h3>
+	<button id="AddButton">Add New Supervisor</button>
+</div>
+
+<!-- SEARCH BAR -->
+<?php include(TEMPLATE_DIR."search_bar.html"); ?>
+
+<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+	<table class="span-24" style="margin-bottom:0px;" >
+
+		<!-- FIELD NAMES -->
+		<thead>
+		<tr >
+				<th class="ui-widget-header"></th>
+				<th class="ui-widget-header">Name</th>
+				<th class="ui-widget-header">Mobile</th>
+				<th class="ui-widget-header">IMEI</th>
+				<th class="ui-widget-header">Start Date</th>
+				<th class="ui-widget-header">End Date</th>
+				<th class="ui-widget-header">Is Active</th>
+				<th class="ui-widget-header" width="1%"></th>
+		</tr>
+		</thead>
+
+		<!-- FIELD VALUES -->
+		<tbody>
+		<?php for ($i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++) {?>
+			<tr>
+				<td>
+					<a href="index.php?mod=admin&ent=supervisor&go=modify&supervisor_id=<?php echo $ROW[$i]["supervisor_id"];?>" >
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'supervisor/'.get_arg($ROW[$i],'photo'); ?>" />
+					</a>
+				</td>
+					<td><span><?php echo $ROW[$i]['name']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['phone_no']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['imei']; ?></span></td>
+					<td><span><?php if( get_arg($ROW[$i],"start_dt") != "" ) echo date('Y-M-d h:ia',strtotime(get_arg($ROW[$i],"start_dt"))); ?></span></td>
+					<td><span><?php if( get_arg($ROW[$i],"end_dt") != "" ) echo date('Y-M-d h:ia',strtotime(get_arg($ROW[$i],"end_dt"))); ?></span></td>
+					<td><span><?php echo $ROW[$i]['is_active']; ?></span></td>
+					<td><a href="index.php?mod=admin&ent=supervisor&go=remove&supervisor_id=<?php echo $ROW[$i]["supervisor_id"];?>" ><div class="ui-icon ui-icon-trash"></div></a></td>
+			</tr><?php 
+		} ?>
+		</tbody>
+
+	</table>
+
+	<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+
+<?php } ?>
+
+
+
+<script>
+	$(document).ready(function(){
+		$('#AddButton')
+		.button({icons: {primary: "ui-icon-circle-plus"}})
+		.click(function() {
+			document.location.href="<?php echo make_url('go=new'); ?>"; 
+			return false;
+		});
+
+	});
+</script>
+

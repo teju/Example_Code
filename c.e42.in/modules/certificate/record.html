@@ -1,0 +1,157 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ WALLET: $template "); ?>
+<!-- Page content -->
+<div id="page-content">
+	<!-- Forms General Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="gi gi-notes_2"></i><?php echo $_SESSION['org_name']; ?> <img width="10%" src="<?php echo IMG_PATH.'org/'.$_SESSION['org_id'].'/'.$_SESSION['org_logo']; ?>" />
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><a href="<?php echo BASEURL.'certificate'; ?>"><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?></a></li>
+		<li><?php echo $mode; ?></li>
+	</ul>
+	<!-- END Forms General Header -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Basic Form Elements Block -->
+			<div class="block">
+				<!-- Basic Form Elements Title -->
+				<div class="block-title">
+					<h2><strong><?php echo $mode; ?> Certificate</strong></h2>
+							<button data-toggle="modal" href="#nfc-modal-certificate-email" class="btn btn-sm btn-primary email-send"><i class="fa fa-angle-right"></i> Send via Email</button>
+							<!-- <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button> -->
+				</div>
+				<!-- END Form Elements Title -->
+
+				<?php echo show_msgs(); ?>
+				<!-- Basic Form Elements Content -->
+				<form id="nfc-form-certificate-validation" action="<?php echo BASEURL; ?>certificate/<?php echo $_do; ?>/<?php echo get_arg($ROW[0],'certificate_id'); ?>" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" >
+					<input type="hidden" name="do" value="<?php echo $_do; ?>">
+					<input type="hidden" name="certificate_id" value="<?php echo get_arg($ROW[0],'certificate_id'); ?>">
+					<div class="form-group">
+						<label class="col-md-3 control-label">USN</label>
+						<div class="col-md-9">
+							<input type="text" id="usn" name="usn" class="form-control" placeholder="Enter USN" value="<?php echo get_arg($ROW[0],'usn'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Name</label>
+						<div class="col-md-9">
+							<input type="text" name="name" class="form-control" placeholder="Enter Name" value="<?php echo get_arg($ROW[0],'name'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Photo</label>
+						<div class="col-md-9">
+							<img width="20%" src="<?php echo IMG_PATH.'org/'.$_SESSION['org_id'].'/certificate/'.get_arg($ROW[0],'photo'); ?>" />
+							<input type="file" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+							<input type="hidden" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Status</label>
+						<div class="col-md-9">
+							<select name="status" class="form-control">
+								<option value="UNISSUED" <?php if ( get_arg($ROW[0],'status') == "UNISSUED" ) echo "selected"; ?>>UNISSUED</option>
+								<option value="UNSIGNED" <?php if ( get_arg($ROW[0],'status') == "UNSIGNED" ) echo "selected"; ?>>UNSIGNED</option>
+								<option value="SIGNED" <?php if ( get_arg($ROW[0],'status') == "SIGNED" ) echo "selected"; ?>>SIGNED</option>
+								<option value="LOST" <?php if ( get_arg($ROW[0],'status') == "LOST" ) echo "selected"; ?>>LOST</option>
+								<option value="DAMAGED" <?php if ( get_arg($ROW[0],'status') == "DAMAGED" ) echo "selected"; ?>>DAMAGED</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<table class="table table-vcenter table-striped">
+							<thead>
+								<tr>
+									<th>Tag Name </th>
+									<th>Tag Value </th>
+								</tr>
+							</thead>
+							<tbody class="add-tag-row">
+								<?php for ( $i=0;$i<$tag_row[0]['NROWS'];$i++ ) { ?>
+									<tr id="row-<?php echo $tag_row[$i]['tag_id']; ?>" tag_id="<?php echo $tag_row[$i]['tag_id']; ?>"><input type="hidden" name="tag_id_arr[]" value="<?php echo $tag_row[$i]['tag_id']; ?>">
+										<td><input type="hidden" name="tag_name_arr[]" value="<?php echo get_arg($tag_row[$i],'tag_name'); ?>"><?php echo get_arg($tag_row[$i],'tag_name'); ?></td>
+										<td><input type="text" name="tag_value_arr[]" value="<?php echo get_arg($tag_row[$i],'tag_value'); ?>" class="form-control" placeholder="Enter Value" ></td>
+									</tr>
+								<?php } ?>
+							</tbody>
+						</table>
+					</div>
+					<div class="form-group">
+						<div class="col-md-9 col-md-offset-3">
+							<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+<div id="nfc-modal-certificate-email" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header text-center">
+                <h2 class="modal-title"><i class="fa fa-envelope"></i> Send Email</h2>
+            </div>
+
+            <!-- END Modal Header -->
+			<div class="modal-body">
+				<!-- Success Message -->
+				<div class="has-success">
+					<label class="col-md-4 control-label" for="example-text-input4"></label>
+				</div>
+
+                <form id="nfc-certificate-email-form" action="index.php" method="post" enctype="multipart/form-data" class="form-horizontal form-bordered" onsubmit="return false;">
+                    <fieldset>
+                        <legend>Email Info</legend>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Email</label>
+                            <div class="col-md-8">
+                                <input type="email" id="email_to" name="to" class="form-control" placeholder="Enter to address" value="">
+                                <input type="email" id="email_from" name="from" class="form-control hidden" value="support@shopnix.in">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Subject</label>
+                            <div class="col-md-8">
+                                <input type="text" id="subject" name="subject" class="form-control" value="Certificate Details for <?php echo get_arg($ROW[0],'roll_no'); ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-notifications">Content Type</label>
+                            <div class="col-md-8">
+								<label class="radio-inline" for="product-condition-new">
+									<input name="content_type" value="plain_text" checked="" type="radio"> Plain Text
+								</label>
+								<label class="radio-inline" for="product-condition-used">
+									<input name="content_type" value="pdf_attachment" type="radio"> PDF Attachment
+								</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="user-settings-email">Message</label>
+                            <div class="col-md-8">
+                                <textarea id="message" name="message" class="form-control">Please find the below details of the student with roll no: <b><?php for ( $i=0;$i<$tag_row[0]['NROWS'];$i++ ) { 
+									if ( $tag_row[$i]['tag_name'] == "Roll No" ) echo $tag_row[$i]['tag_value']; 
+								} ?></b><br/></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group form-actions">
+                        <div class="col-xs-12 text-right">
+                            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" id="send-certificate-email" class="btn btn-sm btn-primary"><span>Send</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+		</div>
+	</div>
+</div>
+</div>

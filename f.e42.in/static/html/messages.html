@@ -1,0 +1,16 @@
+<!-- MESSAGES -->
+<div class="span-24 ui-widget ui-corner-all" style="padding-top:5px">
+
+	<?php if ($ERROR_MESSAGE) {?>
+		<div class="error" align="center"> <?php echo $ERROR_MESSAGE; ?> <a href="javascript:window.history.back();">Back</a></div><?php
+	}
+
+	if ($SUCCESS_MESSAGE) {?>
+		<div class="success" align="center"> <?php echo $SUCCESS_MESSAGE; ?> </div><?php
+	} 
+
+	if ($NOTICE_MESSAGE) {?>
+		<div class="notice" align="center"> <?php echo $NOTICE_MESSAGE; ?> </div><?php
+	} ?>
+
+</div>

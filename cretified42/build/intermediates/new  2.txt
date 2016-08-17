@@ -1,0 +1,1 @@
+> File 'E:\NFC\nfc-reader-master - org\app\build\outputs\apk\release.apk' specified for property 'signingConfig.storeFile' does not exist.

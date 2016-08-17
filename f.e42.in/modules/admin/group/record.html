@@ -1,0 +1,236 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ group: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=group">Groups</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify group '.get_arg($ROW[0],"group_name"); else echo "New group"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+	<div id="tabs">
+	  <ul>
+		<li><a href="#fragment-1"><span>Group</span></a></li>
+		<?php if ($mode == 'EDIT') {?>
+			<li><a href="#fragment-2"><span>Location</span></a></li>
+		<?php } ?>
+	  </ul>
+
+			<!-- FORM START -->
+			<form method="post" enctype="multipart/form-data"
+				  name="group<?php echo $mode; ?>Form" 
+				  id="group<?php echo $mode; ?>Form" 
+				  action="index.php?mod=admin&ent=group" >
+				<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+				<input type="hidden" name="group_id" value="<?php echo get_arg($ROW[0],"group_id"); ?>" />
+				<?php if( $mode === 'DELETE LOCATION') { ?>
+				<input type="hidden" name="location_id" value="<?php echo get_arg($_GET,"location_id"); ?>" /> 
+				<?php } if ( $mode === 'DELETE' && $mode !== 'DELETE LOCATION'  ) { ?>
+					<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"group_name"); ?>"/>
+				<?php } ?>
+
+			<div id= "fragment-1">
+				<!-- TITLE -->
+				<div class="span-23 last" style="padding:5px 0px 10px 5px">
+					<h3><b><?php echo ucfirst(strtolower($mode))." Group"; ?></b></h3>
+				</div>
+
+				<!--group Name -->
+				<div style="text-align:left; padding-top:8px;font-weight:bold;">Group Name
+					<span class=" "  style="margin-bottom:10px;">
+						<input type="text" 
+							id="name" 
+							name="name" 
+							value="<?php echo get_arg($ROW[0],"name"); ?>" 
+							<?php echo $disabled; ?> />
+					</span>
+				</div>
+
+				<!--Credit Limit-->
+				<div style="text-align:left; padding-top:8px;font-weight:bold;">Credit Limit
+					<span class=" "  style="margin-bottom:10px;">
+						<input type="text" 
+							id="credit_limit" 
+							name="credit_limit" 
+							value="<?php echo get_arg($ROW[0],"credit_limit"); ?>" 
+							<?php echo $disabled; ?> />
+					</span>
+				</div>
+				<!-- BUTTON -->
+				<div class="prepend-5 span-4" style="padding-top:5px;">
+					<?php if ($mode != "VIEW" ) { ?> 
+						<!-- SAVE/DELETE BUTTON -->
+						<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+					<?php } ?>
+					<!-- BACK LINK -->
+					<a href="index.php?mod=admin&ent=group" >Back</a>
+				</div>
+			</div>
+			<?php if ($mode == 'EDIT') {?>
+				<div id= "fragment-2">
+					<!-- TITLE -->
+					<div class="span-23 last" style="padding:5px 0px 10px 5px">
+						<h3><b>Add Location</b></h3>
+					</div>
+
+					<table class="span-8" style="margin-bottom:0px; margin-top:55px;" align ="left" >
+
+						<!-- FIELD NAMES -->
+						<thead>
+						<tr >
+							<th class="ui-widget-header"> Location Name</th>
+							<th class="ui-widget-header" width="1%"></th>
+						</tr>
+						<tr >
+							<td>
+								<select name="location" id="location" <?php echo $disabled; ?>>
+								<option value="" selected>-Select location-</option>
+									<?php
+									for ( $i=0; $i<$row_location[0]['NROWS']; $i++) { ?>
+											<option value="<?php echo $row_location[$i]['location_id'] ?>" 
+											<?php if ( get_arg($ROW[0],"location_id") == $row_location[$i]["location_id"] ) echo "selected"; ?> ><?php echo $row_location[$i]["location_name"]; ?>
+											</option><?php
+									} ?>
+								</select>
+							</td>
+							<td width="1%">
+								<button class="addlocationid">ADD</button>
+							</td>
+						</tr>
+						</thead>
+
+						<?php if( $location_group_row[0]['NROWS'] > 0) { ?>
+						<!-- FIELD VALUES -->
+						<tbody>
+							<?php for ( $i=0; $i<$location_group_row[0]['NROWS']; $i++) { ?>
+							<tr id="row-id-<?php echo $location_group_row[$i]['location_id']; ?>">
+								<td><span><?php echo $location_group_row[$i]['location_name']; ?></span></td>
+								<td ><span id="delete-id-<?php echo $location_group_row[$i]['location_id']; ?>" 
+									class="delete-row ui-icon ui-icon-trash"></span>
+								</td>
+							</tr><?php 
+						} ?>
+						</tbody>
+
+					</table>
+					<?php } ?>
+	
+				</div>
+			<?php } ?>
+		<!-- FORM END -->
+		</form>
+	</div>
+</div><!-- END WIDGET -->
+
+<script>
+	$(document).ready(function(){
+
+		$("#group<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					group_name:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter group Name', 
+									   digits: 'group Name should have only numbers',
+									   number: 'group Name should have only numbers (eg: 123.23)',
+									   minlength: 'group Name should be atleast 1 characters.',
+									   maxlength: ' group Name should be less than 200 characters.'}
+			}
+		});
+
+		// Tabs
+		$(".addlocationid").click(function(){
+			var location_id=$("#location :selected").val();
+			var params = {
+				"do"			: "save_location_json",
+				"location_id"			: location_id, 
+				"group_id"	: "<?php echo get_arg($_GET,"group_id"); ?>"
+			}
+
+			$.ajax({
+				url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=group",
+				type: 'post',
+				dataType: 'json',
+				success: function (response) {
+					if ( response.status === "ERROR" ) {
+						alert( response.message );
+					} else {
+						alert( response.message );
+						$('tbody').prepend('<tr id="row-id-'+response.location_id+'">'+
+													'<td><span>'+response.location_name+'</span></td>'+
+													'<td ><span id="delete-id-'+response.location_id+'" class="delete-row ui-icon ui-icon-trash"></span>'+
+													'</td>'+
+												'</tr>'
+											);
+						$("#location").val("");
+					}
+
+					// Delete for newly added row
+					$("#delete-id-"+response.location_id).click(function(){
+						var location_id=this.id.split("-")[2];
+						var params = {
+							"do"			: "remove_location",
+							"location_id"	: location_id, 
+						}
+						$.ajax({
+							url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=group",
+							type: 'post',
+							dataType: 'json',
+							success: function (response) {
+								if ( response.status === "ERROR" ) {
+									alert( response.message );
+								} else {
+									alert( response.message );
+									$("#row-id-"+location_id).remove();
+								}
+							},
+							data: params
+						});
+						return false;
+					});
+				},
+				data: params
+			});
+
+			return false;
+		});
+
+
+		// Delete
+		$(".delete-row").click(function(){
+			var location_id=this.id.split("-")[2];
+			var params = {
+				"do"			: "remove_location",
+				"location_id"	: location_id, 
+			}
+			$.ajax({
+				url: "<?php echo BASEURL; ?>index.php?mode=a&mod=admin&ent=group",
+				type: 'post',
+				dataType: 'json',
+				success: function (response) {
+					if ( response.status === "ERROR" ) {
+						alert( response.message );
+					} else {
+						alert( response.message );
+						$("#row-id-"+location_id).remove();
+					}
+				},
+				data: params
+			});
+			return false;
+		});
+
+		// Tabs
+		$( "#tabs" ).tabs();
+	});
+</script>

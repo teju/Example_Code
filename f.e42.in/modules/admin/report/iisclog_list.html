@@ -1,0 +1,150 @@
+<div class="order-list" >
+<style>
+		table.report{
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	margin-bottom:0px;
+			border-collapse:collapse;
+			border:1px solid lightgrey;
+}
+.report th{
+	cursor:pointer;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;  
+	color: black;
+	text-align:left;
+	font-weight:bold;
+			border:1px dotted lightblue;
+}
+.report th.order_sort:hover {
+	text-decoration:underline !important;
+}
+.report td {
+			border:1px dotted lightgrey;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;
+}
+.no-overflow{
+	overflow:hidden !important;
+	text-overflow:ellipsis !important;
+	width:130px;
+}
+<?php if ( $report_mode == 'PDF' ) { ?>
+.report th, .report td {
+				font-size:9px !important;
+			}
+			.report th h3 {
+				font-size:12px !important;
+}
+<?php } else { // This is required only to ensure that the allignment of the table headings are not changed?>
+.report th#status {
+	width:60px !important;
+}
+.report th#payment_type {
+	width:72px !important;
+}
+.report th#payment_status {
+	width:72px !important;
+}
+.report th#customer_mobile {
+	width:90px !important;
+}
+.report th#total_items {
+	width:55px !important;
+}
+<?php } ?>
+</style>
+	<?php if ( $row[0]['NROWS'] > 0 ) { 
+		if ( $report_mode == 'HTML' ) { ?>
+		<div id="order-report-icons" style="text-align:left;">
+			<span id="IISCLogReportCSV" style="cursor:pointer;"><img height="16" width="16" src='static/images/csv.png'/></span>
+			<span id="IISCLogReportPDF" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/pdf.png'/></span>
+			<span id="IISCLogReportMail" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/mail.png'/></span>
+			<span id="IISCLogReportPrint" style="cursor:pointer;margin-left:10px;margin-right:10px"><img  height="16" width="16" src='static/images/print.png'/></span>
+			<hr>
+		</div>
+			<!-- Mail Dialog-->
+			<?php include('mail_dialog.html'); 
+		} ?>
+				<div style="width:100%; overflow-y: hidden; ">
+		<table class="span-40 report" align="center">
+
+		<!-- FIELD NAMES -->
+		<thead>
+			<tr >	
+					<th colspan="6" style="text-align:center;font-weight:bold;cursor:default;">
+					<div><h3><?php echo TRAVEL_NAME; ?> - Attendance Log</h3></div>
+				</th>
+			</tr>
+			<tr >
+				<th class="order_sort" id="student_id"><span class="ui-icon" style="float:left;"></span>User Name</th>
+				<th class="order_sort" id="student_id"><span class="ui-icon" style="float:left;"></span>Id Number</th>
+				<th class="order_sort" id="reg_no"><span class="ui-icon" style="float:left;margin-bottom:10px;"></span>Reg No</th>
+				<th class="order_sort" id="createde_dt"><span class="ui-icon" style="float:left;"></span>Created Date</th>
+				<th class="order_sort" id="createde_dt"><span class="ui-icon" style="float:left;"></span>Captured</th>
+                                <th class="order_sort" id="createde_dt"><span class="ui-icon" style="float:left;"></span>Original</th>
+			</tr>                                     
+		</thead>                                      
+		<!-- FIELD VALUES -->
+		<tbody>
+			<?php 
+				for ( $i=0;$i<$row[0]['NROWS'];$i++ ) { ?>
+				<tr>
+					<td><?php echo $row[$i]['student_name'];?></td>
+					<td><?php echo $row[$i]['id_number'];?></td>
+					<td><?php echo $row[$i]['reg_no'];?></td>
+					<td><?php echo $row[$i]['created_dt'];?></td>
+					<td>
+						<a href="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'image'); ?>" target="_blank">
+							<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'image'); ?>" />
+						</a>
+					</td>
+					<td>
+                                                <a href="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'student_photo'); ?>" target="_blank">
+                                                        <img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'student/'.get_arg($row[$i],'student_photo'); ?>" />
+                                                </a>
+                                        </td>
+
+				<?php } ?>
+				</tr>
+		</tbody>
+	</table>
+<?php }   else { ?>
+	<div class="notice" style="margin-top:200px;text-align:center;">No User Report found</div>
+<?php } ?>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		// CSV 
+		$('#IISCLogReportCSV').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=iisclog_report&report_mode=CSV&<?php echo $row['search_str'];?>';
+		return false;
+	});
+
+		// PDF 
+		$('#IISCLogReportPDF').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=iisclog_report&report_mode=PDF&<?php echo $row['search_str'];?>';
+			return false;
+		});
+
+		// Print 
+		$('#IISCLogReportPrint').click(function() {
+			$('#order-report-icons').hide();
+			w=window.open();
+			w.document.write($('.order-list').html());
+			w.print();
+			w.close();
+			$('#order-report-icons').show();
+		});
+
+		// Mail
+		$( "#IISCLogReportMail" ).click(function(){
+			$('#go').val('iisclog_report');
+			mail_dialog_open('Order Report');
+			$('#search-str').val('<?php echo $row['search_str'];?>');
+		});
+	});
+</script>

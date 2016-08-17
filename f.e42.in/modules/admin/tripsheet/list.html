@@ -1,0 +1,71 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ tripsheet: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/><div class="breadcrumb"><a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; Trip Sheets</div>
+<?php show_msgs(); ?>
+
+
+<!-- LIST HEADER -->
+<div class="span-24" style="margin-top:25px;">
+	<h3 ><b>Trip Sheets</b></h3>
+	<button id="AddButton">Add New Trip Sheets</button>
+</div>
+
+
+
+<!-- SEARCH BAR -->
+<?php include(TEMPLATE_DIR."search_bar.html"); ?>
+
+<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+	<table class="span-24" style="margin-bottom:0px;" >
+
+		<!-- FIELD NAMES -->
+		<thead>
+		<tr >
+				<th class="ui-widget-header">Reg No</th>
+				<th class="ui-widget-header">Date</th>
+				<th class="ui-widget-header">No of trips</th>
+				<th class="ui-widget-header">Amount</th>
+				<th class="ui-widget-header">Document</th>
+				<th class="ui-widget-header" width="1%"></th>
+		</tr>
+		</thead>
+
+		<!-- FIELD VALUES -->
+		<tbody>
+		<?php for ($i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++) {?>
+			<tr>
+					<td>
+					<a href="index.php?mod=admin&ent=tripsheet&go=modify&tripsheet_id=<?php echo $ROW[$i]["tripsheet_id"];?>" >
+						<?php echo $ROW[$i]['reg_no']; ?>
+					</a>
+				</td>
+					<td><span><?php echo $ROW[$i]['date']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['no_of_trips']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['amount']; ?></span></td>
+					<td><span><?php echo $ROW[$i]['document']; ?></span></td>
+					<td><a href="index.php?mod=admin&ent=tripsheet&go=remove&tripsheet_id=<?php echo $ROW[$i]["tripsheet_id"];?>" ><div class="ui-icon ui-icon-trash"></div></a></td>
+			</tr><?php 
+		} ?>
+		</tbody>
+
+	</table>
+
+	<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+
+<?php } ?>
+
+
+
+<script>
+	$(document).ready(function(){
+		$('#AddButton')
+		.button({icons: {primary: "ui-icon-circle-plus"}})
+		.click(function() {
+			document.location.href="<?php echo make_url('go=new'); ?>"; 
+			return false;
+		});
+
+	});
+</script>
+

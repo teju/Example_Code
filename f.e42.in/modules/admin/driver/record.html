@@ -1,0 +1,275 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ DRIVER: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=driver">Drivers</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Driver '.get_arg($ROW[0],"name"); else echo "New Driver"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" enctype="multipart/form-data"
+			  name="driver<?php echo $mode; ?>Form" 
+			  id="driver<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=driver" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="driver_id" value="<?php echo get_arg($ROW[0],"driver_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." Driver"; ?></b></h3>
+		</div>
+
+		<!-- Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="name" 
+				name="name" 
+				value="<?php echo get_arg($ROW[0],"name"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Photo -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Photo</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<img style="width:100px;height:100px;" src="<?php echo IMG_PATH.'driver/'.get_arg($ROW[0],'photo'); ?>" />
+			<input type="file" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+			<input type="hidden" name="photo" value="<?php echo get_arg($ROW[0],'photo'); ?>">
+		</div>
+
+		<!-- Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Mobile</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="phone_no" 
+				name="phone_no" 
+				value="<?php echo get_arg($ROW[0],"phone_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		<!--Driver Phone No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Driver Mobile</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="owner_ph_no" 
+				name="owner_ph_no" 
+				value="<?php echo get_arg($ROW[0],"owner_ph_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Address</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<textarea 
+					id="address" 
+					name="address" 
+					rows="2"
+					cols="10"
+					<?php echo $disabled; ?> 
+					/><?php echo get_arg($ROW[0],'address'); ?></textarea>
+		</div>
+
+		<!-- License No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">License Number</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="license_no" 
+				name="license_no" 
+				value="<?php echo get_arg($ROW[0],"license_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- License Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">License Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="license_exp_dt" 
+				name="license_exp_dt" 
+				value="<?php if(get_arg($ROW[0],"license_exp_dt") != "")  echo date('Y-M-d',strtotime(get_arg($ROW[0],"license_exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class="datepicker" 
+			/>
+		</div>
+		
+		<!-- Address -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Salary</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="salary" 
+				name="salary" 
+				value="<?php echo get_arg($ROW[0],"salary"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Start Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Start Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="start_dt" 
+				name="start_dt" 
+				value="<?php if(get_arg($ROW[0],"start_dt") != "") echo date('Y-M-d h:ia',strtotime(get_arg($ROW[0],"start_dt")));  ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- End Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">End Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="end_dt" 
+				name="end_dt" 
+				value="<?php if ( get_arg($ROW[0],"end_dt") != "" ) echo date('Y-M-d h:ia',strtotime(get_arg($ROW[0],"end_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Is Active -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Is Active</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="1" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 1) { echo "checked"; } ?> 
+					style="width:20px;"/>Yes
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="0" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 0) { echo "checked"; } ?> 
+					style="width:20px;"/>No
+		</div>
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=driver" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#driver<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200},
+					photo:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					phone_no:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					address:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500},
+					license_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:45},
+					license_exp_dt:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:11},
+					start_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:30},
+					end_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:30},
+					is_active:		{required:true, 
+										digits:true,
+										number:false,
+										minlength:1,
+										maxlength:1}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter Name', 
+									   digits: 'Name should have only numbers',
+									   number: 'Name should have only numbers (eg: 123.23)',
+									   minlength: 'Name should be atleast 1 characters.',
+									   maxlength: 'Name should be less than 200 characters.'},
+					photo: {required: 'Please enter Photo', 
+									   digits: 'Photo should have only numbers',
+									   number: 'Photo should have only numbers (eg: 123.23)',
+									   minlength: 'Photo should be atleast 0 characters.',
+									   maxlength: 'Photo should be less than 200 characters.'},
+					phone_no: {required: 'Please enter Phone No', 
+									   digits: 'Phone No should have only numbers',
+									   number: 'Phone No should have only numbers (eg: 123.23)',
+									   minlength: 'Phone No should be atleast 0 characters.',
+									   maxlength: 'Phone No should be less than 18 characters.'},
+					address: {required: 'Please enter Address', 
+									   digits: 'Address should have only numbers',
+									   number: 'Address should have only numbers (eg: 123.23)',
+									   minlength: 'Address should be atleast 0 characters.',
+									   maxlength: 'Address should be less than 500 characters.'},
+					license_no: {required: 'Please enter License No', 
+									   digits: 'License No should have only numbers',
+									   number: 'License No should have only numbers (eg: 123.23)',
+									   minlength: 'License No should be atleast 1 characters.',
+									   maxlength: 'License No should be less than 45 characters.'},
+					license_exp_dt: {required: 'Please enter License Exp Dt', 
+									   digits: 'License Exp Dt should have only numbers',
+									   number: 'License Exp Dt should have only numbers (eg: 123.23)',
+									   minlength: 'License Exp Dt should be atleast 1 characters.',
+									   maxlength: 'License Exp Dt should be less than 10 characters.'},
+					start_dt: {required: 'Please enter Start Dt', 
+									   digits: 'Start Dt should have only numbers',
+									   number: 'Start Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Start Dt should be atleast 0 characters.',
+									   maxlength: 'Start Dt should be less than 30 characters.'},
+					end_dt: {required: 'Please enter End Dt', 
+									   digits: 'End Dt should have only numbers',
+									   number: 'End Dt should have only numbers (eg: 123.23)',
+									   minlength: 'End Dt should be atleast 0 characters.',
+									   maxlength: 'End Dt should be less than 30 characters.'},
+					is_active: {required: 'Please enter Is Active', 
+									   digits: 'Is Active should have only numbers',
+									   number: 'Is Active should have only numbers (eg: 123.23)',
+									   minlength: 'Is Active should be atleast 1 characters.',
+									   maxlength: 'Is Active should be less than 1 characters.'}
+			}
+		});
+
+	});
+</script>

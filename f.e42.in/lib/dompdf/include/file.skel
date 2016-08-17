@@ -1,0 +1,9 @@
+<?php
+/**
+ * @package dompdf
+ * @link    http://www.dompdf.com/
+ * @author  Benj Carson <benjcarson@digitaljunkies.ca>
+ * @author  ...
+ * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+ * @version $Id: file.skel,v 1.1.1.1 2012/09/12 04:05:14 avinash Exp $
+ */

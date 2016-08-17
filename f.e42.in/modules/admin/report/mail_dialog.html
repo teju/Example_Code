@@ -1,0 +1,124 @@
+<!-- Email -->
+<div id="mail-dialog-form" style="font-size: 11px;" title="Send Email">
+
+	<!-- Loading -->
+	<div id='mail-loading' style="text-align:center;display:none;"><img src='static/images/ajax-loader-medium-2.gif'/></div>
+
+	<!-- Error Message -->
+	<div class="error" id="error_msgs" style="font-weight:bold;padding: .3em;display:none;"></div>
+
+	<!-- Email Form -->
+	<div id="mail-dialog-form-field">
+		<fieldset style="padding:0; border:0; margin-top:25px;">
+			<label for="from_email_id">From</label>
+			<input type="text" class="save-textbox" style="margin-bottom:12px; width:95%; padding: .4em;" name="from_email_id" id="from_email_id" value="<?php echo "pranoy@cloudnix.com";?>" class="text ui-widget-content ui-corner-all" />
+			<label for="to_email_id">To</label>
+			<input type="text" class="save-textbox" style="margin-bottom:12px; width:95%; padding: .4em;" name="to_email_id" id="to_email_id" value="" class="text ui-widget-content ui-corner-all" />
+			<label for="subject" class="infield">Subject</label>
+			<input type="text" style="margin-bottom:12px; width:95%; padding: .4em;" name="subject" id="subject" value="" class="text ui-widget-content ui-corner-all" />
+			<input type="radio" class="mail-mode" name="mode" value="attachment" id="attachment" checked />Attachment<br/>
+			<input type="radio" class="mail-mode" name="mode" value="inline" />Inline<br/>
+			<label>Message</label>
+			<textarea class="save-textbox" style="margin-bottom:12px; width:95%; padding: .4em;" name="message" id="message" value="" class="text ui-widget-content ui-corner-all"></textarea>
+		</fieldset>
+	</div>
+
+	<!-- Mail Success Message -->
+	<div id="success_msgs" style="display:none;text-align:center;">
+		<div style="font-size:14px;font-weight:bold;margin-top:100px;">Mail Sent to: <div id='to'></div></div>
+	</div>
+
+	<!-- Hidden Variables -->
+	<input type="hidden" id="order-by" value="" />
+	<input type="hidden" id="tripsheet_order_by" value="" />
+	<input type="hidden" id="jobcard_order_by" value="" />
+	<input type="hidden" id="order-by-type" value="DESC" />
+	<input type="hidden" id="tripsheet_order_by_type" value="DESC" />
+	<input type="hidden" id="jobcard_order_by_type" value="DESC" />
+	<input type="hidden" id="search-str" value="" />
+	<input type="hidden" id="go" value="" />
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		// Main Tabs
+		var $tabs = $( "#tabs" ).tabs();
+
+		// Pdf Button
+		$('#OrderReportPDFButton').button({icons: {primary: "ui-icon-disk"}}).click(function() {
+			$('#OrderReportPDFForm').submit();
+			return false;
+		});
+
+		$( "#StockReportMailButton" ).button({icons: {primary: "ui-icon-mail-closed"}}).click(function(){
+			mail_dialog_open('Stock Report');
+		});
+
+		$( "#OrderReportMailButton" ).button({icons: {primary: "ui-icon-mail-closed"}}).click(function(){
+			mail_dialog_open('Order Report');
+		});
+
+	});
+
+	$( "#mail-dialog-form" ).dialog({
+			autoOpen: false,
+			modal: true,
+			height: 550,
+			width: 350,
+			resizable: false,
+			buttons: {
+				"Send Mail": function() {
+					$('#mail-loading').show();
+					$("#error_msgs").hide();
+					var from = $( "#from_email_id" ).val();
+					var to = $( "#to_email_id" ).val();
+					var subject = $( "#subject" ).val();
+					var mail_mode = $( ".mail-mode:checked" ).val();
+					var message = $( "#message" ).val();
+					var go=$('#go').val();
+					var order_by=$('#order-by').val();
+					var order_by_type=$('#order-by-type').val();
+					var search_str=$('#search-str').val();
+					$('#mail-dialog-form-field').hide();
+					$.get('index.php?mode=a&mod=admin&ent=report&go='+go+'&report_mode=EMAIL&from='+from+'&to='+to+'&subject='+subject+'&order_by='+order_by+'&order_by_type='+order_by_type+'&'+search_str+'&mail_mode='+mail_mode+'&message='+message,
+						mail_sent_callback, //Add response handler function
+						'json');
+				},
+				Close: function() {
+					$( this ).dialog( "close" );
+						$('#mail-dialog-form-field').show();
+						$('#error_msgs').hide();
+						$('#success_msgs').hide();
+						$('#to_email_id').val('');
+				}
+			}
+		});
+
+	function mail_dialog_open(report_name) {
+		$( "#mail-dialog-form" ).dialog( "open" );
+		$(".ui-dialog-titlebar-close").show();
+		$('#mail-dialog-form-field').show();
+		$('#error_msgs').hide();
+		$('#success_msgs').hide();
+		$('#to_email_id').val('');
+		$('#message').val('Hi, Please find the attachment');
+		$('#attachment').attr('checked','checked');
+		$('#subject').val('<?php echo SITE_NAME; ?> - '+report_name);
+	}
+
+	
+	function mail_sent_callback(response){
+		$('#mail-loading').hide();
+		if ( response.status === 'ERROR' ) {
+			$('#error_msgs').show();
+			$('#error_msgs').text(response.message);
+			$('#mail-dialog-form-field').show();
+		} else { 
+			$(".ui-dialog-titlebar-close").hide();
+			$('#mail-dialog-form-field').hide();
+			$('#success_msgs').show();
+			$('#to').text(response.to);
+		}
+	}
+</script>

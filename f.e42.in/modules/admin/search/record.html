@@ -1,0 +1,418 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ SEARCH: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=search">Searchs</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Search '.get_arg($ROW[0],"name"); else echo "New Search"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" 
+			  name="search<?php echo $mode; ?>Form" 
+			  id="search<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=search" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="search_id" value="<?php echo get_arg($ROW[0],"search_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"reg_no"); ?>"/>
+			<?php } ?>
+
+			<!-- TITLE -->
+			<div class="span-23 last" style="padding:5px 0px 10px 5px">
+				<h3><b><?php echo ucfirst(strtolower($mode))." Search"; ?></b></h3>
+			</div>
+
+			<!-- Vehicle No -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Reg No</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="reg_no" 
+					name="reg_no" 
+					value="<?php echo get_arg($ROW[0],"reg_no"); ?>" 
+					<?php echo $disabled; ?> 
+					<?php if ( "varchar" === "date" ) { echo "class='datepicker'"; } ?> 
+				/>
+			</div>
+
+			<!-- Imei -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Imei</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="imei" 
+					name="imei" 
+					value="<?php echo get_arg($ROW[0],"imei"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Vehicle Model -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Vehicle Model</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="vehicle_model" 
+					name="vehicle_model" 
+					value="<?php echo get_arg($ROW[0],"vehicle_model"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Vehicle Status -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Vehicle Status</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="radio" 
+						id="vehicle_status" 
+						name="vehicle_status" 
+						value="1" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"vehicle_status") === 1) { echo "checked"; } ?> 
+						style="width:20px;"/>Yes
+				<input type="radio" 
+						id="vehicle_status" 
+						name="vehicle_status" 
+						value="0" 
+						<?php echo $disabled;?> 
+						<?php if (get_arg($ROW[0],"vehicle_status") === 0) { echo "checked"; } ?> 
+						style="width:20px;"/>No
+			</div>
+
+			<!-- Description -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Description</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="description" 
+					name="description" 
+					value="<?php echo get_arg($ROW[0],"description"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Driver Name -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Driver</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<select name="driver_name" id="driver_name" <?php echo $disabled; ?>>
+					<option value="" selected>-Select driver-</option>
+									<?php
+									for ( $i=0; $i<$row_driver[0]['NROWS']; $i++) { ?>
+											<option value="<?php echo $row_driver[$i]['name'] ?>" <?php if ( get_arg($ROW[0],"driver_name") == $row_driver[$i]["name"] ) echo "selected"; ?> ><?php echo $row_driver[$i]["name"]; ?>
+											</option><?php
+									} ?>
+				</select>
+			</div>
+
+			<!-- Driver phone No -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Driver Phone No</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="driver_phone_no" 
+					name="driver_phone_no" 
+					value="<?php echo get_arg($ROW[0],"driver_phone_no"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Owner phone No -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Owner Phone No</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="owner_ph_no" 
+					name="owner_ph_no" 
+					value="<?php echo get_arg($ROW[0],"owner_ph_no"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Driver Salary -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Driver Salary</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="driver_sal" 
+					name="driver_sal" 
+					value="<?php echo get_arg($ROW[0],"driver_sal"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!---Cleaner-->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Cleaner</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<select name="cleaner_name" id="cleaner_name" <?php echo $disabled; ?>>
+					<option value="" selected>-Select cleaner-</option>
+						<?php
+						for ( $i=0; $i<$row_cleaner[0]['NROWS']; $i++ ) { ?>
+								<option value="<?php echo $row_cleaner[$i]['name'] ?>" <?php if ( get_arg($ROW[0],"cleaner_name") == 
+								$row_cleaner[$i]["name"] ) echo "selected"; ?> ><?php echo $row_cleaner[$i]["name"]; ?>
+								</option><?php
+						} ?>
+				</select>
+			</div>
+
+			<!-- Cleaner Salary -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Cleaner Salary</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="cleaner_salary" 
+					name="cleaner_salary" 
+					value="<?php echo get_arg($ROW[0],"cleaner_salary"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Supervisor Name -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Supervisor</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<select name="supervisor_name" id="supervisor_name" <?php echo $disabled; ?>>
+					<option value="" selected>-Select supervisor-</option>
+									<?php
+									for ( $i=0; $i<$row_supervisor[0]['NROWS']; $i++) { ?>
+											<option value="<?php echo $row_supervisor[$i]['name'] ?>" <?php if ( get_arg($ROW[0],"supervisor_name") == $row_supervisor[$i]["name"] ) echo "selected"; ?> ><?php echo $row_supervisor[$i]["name"]; ?>
+											</option><?php
+									} ?>
+				</select>
+			</div>
+
+			<!-- Supervisor Phone No -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Supervisor Phone No</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="supervisor_phone_no" 
+					name="supervisor_phone_no" 
+					value="<?php echo get_arg($ROW[0],"supervisor_phone_no"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+				<!---Client-->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Client</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<select name="client_name" id="client_name" <?php echo $disabled; ?>>
+					<option value="" selected>-Select client-</option>
+						<?php
+						for ( $i=0; $i<$row_client[0]['NROWS']; $i++ ) { ?>
+								<option value="<?php echo $row_client[$i]['name'] ?>" <?php if ( get_arg($ROW[0],"client_name") == 
+								$row_client[$i]["name"] ) echo "selected"; ?> ><?php echo $row_client[$i]["name"]; ?>
+								</option><?php
+						} ?>
+				</select>
+			</div>
+
+			<!-- Client Mobile -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Client Mobile</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="client_mobile" 
+					name="client_mobile" 
+					value="<?php echo get_arg($ROW[0],"client_mobile"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Daily Fuel Lmt -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Daily Fuel Lmt</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="daily_fuel_lmt" 
+					name="daily_fuel_lmt" 
+					value="<?php echo get_arg($ROW[0],"daily_fuel_lmt"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Monthly Fuel Lmt -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Monthly Fuel Lmt</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="monthly_fuel_lmt" 
+					name="monthly_fuel_lmt" 
+					value="<?php echo get_arg($ROW[0],"monthly_fuel_lmt"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Monthly Fuel Lmt -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Fuel Rate</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="fuel_rate" 
+					name="fuel_rate" 
+					value="<?php echo get_arg($ROW[0],"fuel_rate"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Filling Saation -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Filling Sataion</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="filling_station" 
+					name="filling_station" 
+					value="<?php echo get_arg($ROW[0],"filling_station"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Fuel Filled -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Fuel Filled</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="fuel_filled" 
+					name="fuel_filled" 
+					value="<?php echo get_arg($ROW[0],"fuel_filled"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+			<!-- Odometer Reading -->
+			<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Odometer Reading</div>
+			<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+				<input type="text" 
+					id="odometer_reading" 
+					name="odometer_reading" 
+					value="<?php echo get_arg($ROW[0],"odometer_reading"); ?>" 
+					<?php echo $disabled; ?> 
+				/>
+			</div>
+
+		<!-- Created Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Accountability Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+					id="accountability_date" 
+					name="accountability_date" 
+					value="<?php echo get_arg($ROW[0],"accountability_date"); ?>" 
+					class="datepicker"
+			/>
+		</div>
+
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=search" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#search<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					reg_no:				{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:20},
+					imei:				{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:20},
+					vehicle_status:		{required:true, 
+										digits:true,
+										number:false,
+										minlength:1,
+										maxlength:11},
+					driver_name:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					daily_fuel_lmt:		{required:false, 
+										digits:false,
+										number:true,
+										minlength:0,
+										maxlength:10},
+					monthly_fuel_lmt:	{required:false, 
+										digits:false,
+										number:true,
+										minlength:0,
+										maxlength:10},
+					fuel_rate:			{required:true, 
+										digits:false,
+										number:true,
+										minlength:1,
+										maxlength:10},
+					fuel_filled:		{required:false, 
+										digits:false,
+										number:true,
+										minlength:0,
+										maxlength:10},
+					odometer_reading:	{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:45},
+					created_dt:			{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:30}
+			},
+			// Error Messages
+			messages: {
+					reg_no: 		{required: 'Please enter Vehicle No', 
+									   digits: 'Vehicle No should have only numbers',
+									   number: 'Vehicle No should have only numbers (eg: 123.23)',
+									   minlength: 'Vehicle No should be atleast 1 characters.',
+									   maxlength: 'Vehicle No should be less than 20 characters.'},
+					imei: 			{required: 'Please enter imei', 
+									   digits: 'Vehicle No should have only numbers',
+									   number: 'Vehicle No should have only numbers (eg: 123.23)',
+									   minlength: 'Vehicle No should be atleast 1 characters.',
+									   maxlength: 'Vehicle No should be less than 20 characters.'},
+					vehicle_status: {required: 'Please enter Vehicle Status', 
+									   digits: 'Vehicle Status should have only numbers',
+									   number: 'Vehicle Status should have only numbers (eg: 123.23)',
+									   minlength: 'Vehicle Status should be atleast 1 characters.',
+									   maxlength: 'Vehicle Status should be less than 11 characters.'},
+					driver_name: 	{required: 'Please enter Driver Name', 
+									   digits: 'Driver Name should have only numbers',
+									   number: 'Driver Name should have only numbers (eg: 123.23)',
+									   minlength: 'Driver Name should be atleast 1 characters.',
+									   maxlength: 'Driver Name should be less than 200 characters.'},
+					daily_fuel_lmt: {required: 'Please enter Daily Fuel Lmt', 
+									   digits: 'Daily Fuel Lmt should have only numbers',
+									   number: 'Daily Fuel Lmt should have only numbers (eg: 123.23)',
+									   minlength: 'Daily Fuel Lmt should be atleast 0 characters.',
+									   maxlength: 'Daily Fuel Lmt should be less than 10 characters.'},
+					monthly_fuel_lmt:{required: 'Please enter Monthly Fuel Lmt', 
+									   digits: 'Monthly Fuel Lmt should have only numbers',
+									   number: 'Monthly Fuel Lmt should have only numbers (eg: 123.23)',
+									   minlength: 'Monthly Fuel Lmt should be atleast 0 characters.',
+									   maxlength: 'Monthly Fuel Lmt should be less than 10 characters.'},
+					fuel_rate: 		{required: 'Please enter Fuel Rate', 
+									   digits: 'Monthly Fuel Lmt should have only numbers',
+									   number: 'Monthly Fuel Lmt should have only numbers (eg: 123.23)',
+									   minlength: ' Fuel Rate should be atleast 0 characters.',
+									   maxlength: 'Monthly Fuel Lmt should be less than 10 characters.'},
+					fuel_filled: 	{required: 'Please enter Fuel Filled', 
+									   digits: 'Fuel Filled should have only numbers',
+									   number: 'Fuel Filled should have only numbers (eg: 123.23)',
+									   minlength: 'Fuel Filled should be atleast 0 characters.',
+									   maxlength: 'Fuel Filled should be less than 10 characters.'},
+					odometer_reading:{required: 'Please enter Odometer Reading', 
+									   digits: 'Odometer Reading should have only numbers',
+									   number: 'Odometer Reading should have only numbers (eg: 123.23)',
+									   minlength: 'Odometer Reading should be atleast 0 characters.',
+									   maxlength: 'Odometer Reading should be less than 45 characters.'},
+					created_dt: 	{required: 'Please enter Created Dt', 
+									   digits: 'Created Dt should have only numbers',
+									   number: 'Created Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Created Dt should be atleast 1 characters.',
+									   maxlength: 'Created Dt should be less than 30 characters.'}			}
+		});
+	});
+</script>

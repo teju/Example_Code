@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+android:background="@drawable/images"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/latitude"
+        android:layout_centerHorizontal="true"
+        android:text="LAtitude"
+        android:textColor="#000000"
+        android:background="@drawable/textmargin"
+        android:padding="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loggitude"
+        android:layout_below="@+id/latitude"
+        android:layout_centerHorizontal="true"
+        android:text="Longitude"
+        android:textColor="#000000"
+        android:background="@drawable/textmargin"
+        android:layout_marginTop="20dp"
+        android:padding="4dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/address"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/loggitude"
+        android:text="address"
+        android:textColor="#000000"
+        android:background="@drawable/textmargin"
+        android:layout_marginTop="20dp"
+        android:padding="4dp"/>
+
+    <Button
+        android:id="@+id/btn_simple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="View MAp"
+        android:background="@drawable/textmargin"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+
+ />
+
+
+</RelativeLayout>

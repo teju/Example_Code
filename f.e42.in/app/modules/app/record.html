@@ -1,0 +1,78 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ WALLET: $template "); ?>
+<!-- Page content -->
+<div id="page-content">
+    <!-- Table Responsive Header -->
+    <div class="content-header">
+        <div class="header-section">
+            <h1>
+                <i class="gi gi-iphone"></i>Wallet<br><small>Your list of payments and balance credits</small>
+            </h1>
+        </div>
+    </div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><a href="<?php echo BASEURL.'wallet'; ?>"><?php echo ucwords(strtolower(get_arg($_GET,'mod'))); ?></a></li>
+		<li><?php echo $mode; ?></li>
+	</ul>
+	<!-- END Forms General Header -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Basic Form Elements Block -->
+			<div class="block">
+				<!-- Basic Form Elements Title -->
+				<div class="block-title">
+					<h2><strong><?php echo $mode; ?> Wallet</strong></h2>
+				</div>
+				<!-- END Form Elements Title -->
+
+				<?php echo show_msgs(); ?>
+				<!-- Basic Form Elements Content -->
+				<form id="nfc-form-wallet-validation" action="<?php echo BASEURL; ?>wallet/<?php echo $_do; ?>" method="post" class="form-horizontal form-bordered" >
+					<input type="hidden" name="do" value="<?php echo $_do; ?>">
+					<input type="hidden" name="wallet_id" value="<?php echo get_arg($ROW[0],'wallet_id'); ?>">
+					<div class="form-group">
+						<label class="col-md-3 control-label">Date</label>
+						<div class="col-md-9">
+							<input type="text" placeholder="yyyy-mm-dd" data-date-format="yyyy-mm-dd" class="form-control input-datepicker" name="created_dt" value="<?php echo get_arg($ROW[0],'created_dt'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Description</label>
+						<div class="col-md-9">
+							<input type="text" name="description" class="form-control" placeholder="Enter Description" value="<?php echo get_arg($ROW[0],'description'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Transaction Type</label>
+						<div class="col-md-9">
+							<div class="input-group col-md-6">
+								<select name="transaction_type" class="form-control">
+									<option value="TOPUP" <?php if ( get_arg($ROW[0],'transaction_type') == 'TOPUP' ) echo 'selected'; ?>>TOPUP</option>
+									<option value="PURCHASE" <?php if ( get_arg($ROW[0],'transaction_type') == 'PURCHASE' ) echo 'selected'; ?>>PURCHASE</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Amount</label>
+						<div class="col-md-9">
+							<input type="text" name="amount" class="form-control" placeholder="Enter Amount" value="<?php echo get_arg($ROW[0],'amount'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Balance Amount</label>
+						<div class="col-md-9">
+							<input type="text" name="balance_amount" class="form-control" placeholder="Enter Balance Amount" value="<?php echo get_arg($ROW[0],'balance_amount'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-9 col-md-offset-3">
+							<button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

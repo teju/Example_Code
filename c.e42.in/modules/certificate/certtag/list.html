@@ -1,0 +1,34 @@
+<div class="row">
+	<div class="col-md-9">
+		<!-- Basic Form Elements Block -->
+		<div class="block">
+			<!-- Basic Form Elements Title -->
+			<div class="block-title">
+				<h2><strong> Other Information</strong></h2>
+			</div>
+			<!-- END Form Elements Title -->
+
+			<!-- Basic Form Elements Content -->
+			<div class="table-responsive">
+				<table class="table table-vcenter table-striped">
+					<thead>
+						<tr>
+							<th><input type="text" id="tag-name" class="form-control" placeholder="Enter Name" ></th>
+							<th><input type="text" id="tag-value" class="form-control" placeholder="Enter Value" ></th>
+							<th><button class="add-certtag btn btn-sm btn-success"><i class="fa fa-plus"></i> Add</button></th>
+						</tr>
+					</thead>
+					<tbody class="add-certtag-row">
+						<?php for ( $i=0;$i<$tag_row[0]['NROWS'];$i++ ) { ?>
+							<tr id="row-<?php echo $tag_row[$i]['tag_id']; ?>" certificate_id="<?php echo $tag_row[$i]['certificate_id']; ?>" tag_id="<?php echo $tag_row[$i]['tag_id']; ?>">
+								<td><?php echo get_arg($tag_row[$i],'tag_name'); ?></td>
+								<td><?php echo get_arg($tag_row[$i],'tag_value'); ?></td>
+								<td><a href="#certtag-delete-dialog" class="delete-certtag fa fa-trash" data-toggle="modal"></a></td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

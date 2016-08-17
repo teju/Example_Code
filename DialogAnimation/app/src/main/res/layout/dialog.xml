@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/relativeLayout_1"
+    android:background="@color/colorAccent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Status is Pending"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:id="@+id/txt1"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txt1"
+        android:background="@color/colorAccent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:id="@+id/dialog_login_button"
+            android:layout_marginLeft="91dp"
+            android:text="Login"
+            android:layout_marginStart="91dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="#ffffff"
+            android:id="@+id/cancel"
+            android:layout_toRightOf="@+id/dialog_login_button"
+            android:layout_marginLeft="10dp"
+            android:text="Cancel"/>
+    </RelativeLayout>
+</RelativeLayout>

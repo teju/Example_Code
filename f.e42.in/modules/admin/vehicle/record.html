@@ -1,0 +1,539 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ VEHICLE: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+<?php if ( is_admin() ) { ?>
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=vehicle">Vehicles</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify Vehicle '.get_arg($ROW[0],"name"); else echo "New Vehicle"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+	<!-- FORM START -->
+	<form method="post" enctype="multipart/form-data"
+		  name="vehicle<?php echo $mode; ?>Form" 
+		  id="vehicle<?php echo $mode; ?>Form" 
+		  action="index.php?mod=admin&ent=vehicle" >
+		<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+		<input type="hidden" name="vehicle_id" value="<?php echo get_arg($ROW[0],"vehicle_id"); ?>" />
+		<?php if ( $mode === 'DELETE' ) { ?>
+			<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"reg_no"); ?>"/>
+		<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." Vehicle"; ?></b></h3>
+		</div>
+
+		<!-- Reg No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Registration No</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="reg_no" 
+				name="reg_no" 
+				value="<?php echo get_arg($ROW[0],"reg_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Route</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="route" 
+				name="route" 
+				value="<?php echo get_arg($ROW[0],"route"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Vehicle Model -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Vehicle Model</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="vehicle_model" 
+				name="vehicle_model" 
+				value="<?php echo get_arg($ROW[0],"vehicle_model"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Type -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Type</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="type" id="type" <?php echo $disabled; ?>>
+				<option value="" selected>-Select-</option>
+				<option value="PERMANENT" <?php if ( get_arg($ROW[0],'type') == 'PERMANENT' ) echo 'selected'; ?>>PERMANENT</option>
+				<option value="CONTRACT" <?php if ( get_arg($ROW[0],'type') == 'CONTRACT' ) echo 'selected'; ?>>CONTRACT</option>
+			</select>
+		</div>
+
+		<!-- Sticker No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Sticker Number</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="sticker_no" 
+				name="sticker_no" 
+				value="<?php echo get_arg($ROW[0],"sticker_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Rc No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">RC Number</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="rc_no" 
+				name="rc_no" 
+				value="<?php echo get_arg($ROW[0],"rc_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Rc Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">RC Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="rc_exp_dt" 
+				name="rc_exp_dt" 
+				value="<?php if( get_arg($ROW[0],"rc_exp_dt") != "" )  echo get_arg($ROW[0],"rc_exp_dt"); ?>" 
+				<?php echo $disabled; ?> 
+				class='datepicker' 
+			/>
+		</div>
+
+		<!-- Daily Fuel Lmt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Daily Fuel Limit</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="daily_fuel_lmt" 
+				name="daily_fuel_lmt" 
+				value="<?php echo get_arg($ROW[0],"daily_fuel_lmt"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Monthly Fuel Lmt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Monthly Fuel Limit</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="monthly_fuel_lmt" 
+				name="monthly_fuel_lmt" 
+				value="<?php echo get_arg($ROW[0],"monthly_fuel_lmt"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Insurance Ref No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Insurance Ref No</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="insurance_ref_no" 
+				name="insurance_ref_no" 
+				value="<?php echo get_arg($ROW[0],"insurance_ref_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Insurance Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Insurance Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="insurance_exp_dt" 
+				name="insurance_exp_dt" 
+				value="<?php if( get_arg($ROW[0],"insurance_exp_dt") != "" )  echo date('Y-M-d',strtotime(get_arg($ROW[0],"insurance_exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class='datepicker' 
+			/>
+		</div>
+
+		<!-- Road Tax Ref No -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Road Tax Ref No</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="road_tax_ref_no" 
+				name="road_tax_ref_no" 
+				value="<?php echo get_arg($ROW[0],"road_tax_ref_no"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Road Tax Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Road Tax Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="road_tax_exp_dt" 
+				name="road_tax_exp_dt" 
+				value="<?php if( get_arg($ROW[0],"road_tax_exp_dt") != "" )  echo date('Y-M-d',strtotime(get_arg($ROW[0],"road_tax_exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class='datepicker' 
+			/>
+		</div>
+		
+		
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Permit</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="permit" 
+				name="permit" 
+				value="<?php echo get_arg($ROW[0],"permit"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+		
+		<!-- Road Tax Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Permit Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="permit_exp_dt" 
+				name="permit_exp_dt" 
+				value="<?php if( get_arg($ROW[0],"permit_exp_dt") != "" ) echo date('Y-M-d',strtotime(get_arg($ROW[0],"permit_exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class='datepicker' 
+			/>
+		</div>
+		
+		
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Authorization</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="authorization" 
+				name="authorization" 
+				value="<?php echo get_arg($ROW[0],"authorization"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Road Tax Exp Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Authorization Expiry Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="authorization_exp_dt" 
+				name="authorization_exp_dt" 
+				value="<?php if( get_arg($ROW[0],"authorization_exp_dt") != "" ) echo date('Y-M-d',strtotime(get_arg($ROW[0],"authorization_exp_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+				class='datepicker' 
+			/>
+		</div>
+		<!-- Start Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Start Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="start_dt" 
+				name="start_dt" 
+				value="<?php if( get_arg($ROW[0],"start_dt") != "" )  echo date('Y-M-d h:ia',strtotime(get_arg($ROW[0],"start_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- End Dt -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">End Date</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="end_dt" 
+				name="end_dt" 
+				value="<?php  if( get_arg($ROW[0],"end_dt") != "" )  echo date('Y-M-d h:ia',strtotime(get_arg($ROW[0],"end_dt"))); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Driver Id -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Driver</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="driver_id" id="driver_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select driver-</option>
+                                <?php
+                                for ( $i=0; $i<$row_driver[0]['NROWS']; $i++) { ?>
+                                        <option value="<?php echo $row_driver[$i]['driver_id'] ?>" <?php if ( get_arg($ROW[0],"driver_id") == $row_driver[$i]["driver_id"] ) echo "selected"; ?> ><?php echo $row_driver[$i]["name"]; ?>
+                                        </option><?php
+                                } ?>
+			</select>
+		</div>
+
+		<!-- Supervisor Id -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Supervisor</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="supervisor_id" id="supervisor_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select supervisor-</option>
+                                <?php
+                                for ( $i=0; $i<$row_supervisor[0]['NROWS']; $i++) { ?>
+                                        <option value="<?php echo $row_supervisor[$i]['supervisor_id'] ?>" <?php if ( get_arg($ROW[0],"supervisor_id") == $row_supervisor[$i]["supervisor_id"] ) echo "selected"; ?> ><?php echo $row_supervisor[$i]["name"]; ?>
+                                        </option><?php
+                                } ?>
+			</select>
+		</div>
+		<!---Client-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Client</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="client_id" id="client_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select client-</option>
+					<?php
+					for ( $i=0; $i<$row_client[0]['NROWS']; $i++ ) { ?>
+							<option value="<?php echo $row_client[$i]['client_id'] ?>" <?php if ( get_arg($ROW[0],"client_id") == 
+							$row_client[$i]["client_id"] ) echo "selected"; ?> ><?php echo $row_client[$i]["name"]; ?>
+							</option><?php
+					} ?>
+			</select>
+		</div>
+		<!---Cleaner-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Cleaner</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="cleaner_id" id="cleaner_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select cleaner-</option>
+					<?php
+					for ( $i=0; $i<$row_cleaner[0]['NROWS']; $i++ ) { ?>
+							<option value="<?php echo $row_cleaner[$i]['cleaner_id'] ?>" <?php if ( get_arg($ROW[0],"cleaner_id") == 
+							$row_cleaner[$i]["cleaner_id"] ) echo "selected"; ?> ><?php echo $row_cleaner[$i]["name"]; ?>
+							</option><?php
+					} ?>
+			</select>
+		</div>
+		<!-- Document -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Upload</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="file" name="doc" value="">
+		</div>
+
+		<!--Download-->
+		<?php 
+		if ( $mode == 'EDIT' ) { 
+			if ( $row_vehicledoc[0]['NROWS'] != 0 ) {?>
+				<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Download</div>
+				<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+					<?php
+					for ( $i=0; $i<$row_vehicledoc[0]['NROWS']; $i++) { ?>
+							<a href="<?php echo UPLOAD_PATH.'vehicledoc/'.$row_vehicledoc[$i]["doc_name"]; ?>">
+							<?php echo $row_vehicledoc[$i]["doc_name"]; ?></a></br>
+							<?php
+					} ?>
+					</select>
+				</div>
+				<?php 
+			}
+		} ?>
+
+		<!-- Is Active -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Is Active</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="1" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 1) { echo "checked"; } ?> 
+					style="width:20px;"/>Yes
+			<input type="radio" 
+					id="is_active" 
+					name="is_active" 
+					value="0" 
+					<?php echo $disabled;?> 
+					<?php if (get_arg($ROW[0],"is_active") === 0) { echo "checked"; } ?> 
+					style="width:20px;"/>No
+		</div>
+
+		<!-- BUTTON -->
+		<div class="prepend-5 span-4" style="padding-top:5px;">
+			<?php if ($mode != "VIEW" ) { ?> 
+				<!-- SAVE/DELETE BUTTON -->
+				<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+			<?php } ?>
+			<!-- BACK LINK -->
+			<a href="index.php?mod=admin&ent=vehicle" >Back</a>
+		</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+<?php }?>
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#vehicle<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					reg_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:100},
+					vehicle_model:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:45},
+					type:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:10},
+					sticker_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:45},
+					rc_no:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:45},
+					rc_exp_dt:		{required:true, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:11},
+					daily_fuel_lmt:		{required:false, 
+										digits:false,
+										number:true,
+										minlength:0,
+										maxlength:10},
+					monthly_fuel_lmt:		{required:false, 
+										digits:false,
+										number:true,
+										minlength:0,
+										maxlength:10},
+					insurance_ref_no:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:45},
+					insurance_exp_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:11},
+					road_tax_ref_no:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:45},
+					road_tax_exp_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:11},
+					start_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:30},
+					end_dt:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:30},
+					driver_id:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:11},
+					supervisor_id:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:11},
+					client_id:			{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:11},
+					is_active:		{required:true, 
+										digits:true,
+										number:false,
+										minlength:1,
+										maxlength:1}			
+			},
+			// Error Messages
+			messages: {
+					reg_no: {required: 'Please enter Reg No', 
+									   digits: 'Reg No should have only numbers',
+									   number: 'Reg No should have only numbers (eg: 123.23)',
+									   minlength: 'Reg No should be atleast 1 characters.',
+									   maxlength: 'Reg No should be less than 100 characters.'},
+					vehicle_model: {required: 'Please enter Vehicle Model', 
+									   digits: 'Vehicle Model should have only numbers',
+									   number: 'Vehicle Model should have only numbers (eg: 123.23)',
+									   minlength: 'Vehicle Model should be atleast 1 characters.',
+									   maxlength: 'Vehicle Model should be less than 45 characters.'},
+					type: {required: 'Please enter Type', 
+									   digits: 'Type should have only numbers',
+									   number: 'Type should have only numbers (eg: 123.23)',
+									   minlength: 'Type should be atleast 1 characters.',
+									   maxlength: 'Type should be less than 10 characters.'},
+					sticker_no: {required: 'Please enter Sticker No', 
+									   digits: 'Sticker No should have only numbers',
+									   number: 'Sticker No should have only numbers (eg: 123.23)',
+									   minlength: 'Sticker No should be atleast 1 characters.',
+									   maxlength: 'Sticker No should be less than 45 characters.'},
+					rc_no: {required: 'Please enter Rc No', 
+									   digits: 'Rc No should have only numbers',
+									   number: 'Rc No should have only numbers (eg: 123.23)',
+									   minlength: 'Rc No should be atleast 1 characters.',
+									   maxlength: 'Rc No should be less than 45 characters.'},
+					rc_exp_dt: {required: 'Please enter Rc Exp Dt', 
+									   digits: 'Rc Exp Dt should have only numbers',
+									   number: 'Rc Exp Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Rc Exp Dt should be atleast 1 characters.',
+									   maxlength: 'Rc Exp Dt should be less than 10 characters.'},
+					daily_fuel_lmt: {required: 'Please enter Daily Fuel Lmt', 
+									   digits: 'Daily Fuel Lmt should have only numbers',
+									   number: 'Daily Fuel Lmt should have only numbers (eg: 123.23)',
+									   minlength: 'Daily Fuel Lmt should be atleast 0 characters.',
+									   maxlength: 'Daily Fuel Lmt should be less than 10 characters.'},
+					monthly_fuel_lmt: {required: 'Please enter Monthly Fuel Lmt', 
+									   digits: 'Monthly Fuel Lmt should have only numbers',
+									   number: 'Monthly Fuel Lmt should have only numbers (eg: 123.23)',
+									   minlength: 'Monthly Fuel Lmt should be atleast 0 characters.',
+									   maxlength: 'Monthly Fuel Lmt should be less than 10 characters.'},
+					insurance_ref_no: {required: 'Please enter Insurance Ref No', 
+									   digits: 'Insurance Ref No should have only numbers',
+									   number: 'Insurance Ref No should have only numbers (eg: 123.23)',
+									   minlength: 'Insurance Ref No should be atleast 0 characters.',
+									   maxlength: 'Insurance Ref No should be less than 45 characters.'},
+					insurance_exp_dt: {required: 'Please enter Insurance Exp Dt', 
+									   digits: 'Insurance Exp Dt should have only numbers',
+									   number: 'Insurance Exp Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Insurance Exp Dt should be atleast 0 characters.',
+									   maxlength: 'Insurance Exp Dt should be less than 10 characters.'},
+					road_tax_ref_no: {required: 'Please enter Road Tax Ref No', 
+									   digits: 'Road Tax Ref No should have only numbers',
+									   number: 'Road Tax Ref No should have only numbers (eg: 123.23)',
+									   minlength: 'Road Tax Ref No should be atleast 0 characters.',
+									   maxlength: 'Road Tax Ref No should be less than 45 characters.'},
+					road_tax_exp_dt: {required: 'Please enter Road Tax Exp Dt', 
+									   digits: 'Road Tax Exp Dt should have only numbers',
+									   number: 'Road Tax Exp Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Road Tax Exp Dt should be atleast 0 characters.',
+									   maxlength: 'Road Tax Exp Dt should be less than 10 characters.'},
+					start_dt: {required: 'Please enter Start Dt', 
+									   digits: 'Start Dt should have only numbers',
+									   number: 'Start Dt should have only numbers (eg: 123.23)',
+									   minlength: 'Start Dt should be atleast 0 characters.',
+									   maxlength: 'Start Dt should be less than 30 characters.'},
+					end_dt: {required: 'Please enter End Dt', 
+									   digits: 'End Dt should have only numbers',
+									   number: 'End Dt should have only numbers (eg: 123.23)',
+									   minlength: 'End Dt should be atleast 0 characters.',
+									   maxlength: 'End Dt should be less than 30 characters.'},
+					driver_id: {required: 'Please enter Driver Id', 
+									   digits: 'Driver Id should have only numbers',
+									   number: 'Driver Id should have only numbers (eg: 123.23)',
+									   minlength: 'Driver Id should be atleast 0 characters.',
+									   maxlength: 'Driver Id should be less than 11 characters.'},
+					supervisor_id: {required: 'Please enter Supervisor Id', 
+									   digits: 'Supervisor Id should have only numbers',
+									   number: 'Supervisor Id should have only numbers (eg: 123.23)',
+									   minlength: 'Supervisor Id should be atleast 0 characters.',
+									   maxlength: 'Supervisor Id should be less than 11 characters.'},
+					is_active: {required: 'Please enter Is Active', 
+									   digits: 'Is Active should have only numbers',
+									   number: 'Is Active should have only numbers (eg: 123.23)',
+									   minlength: 'Is Active should be atleast 1 characters.',
+									   maxlength: 'Is Active should be less than 1 characters.'}
+			}
+		});
+	});
+</script>

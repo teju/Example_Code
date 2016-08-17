@@ -1,0 +1,2 @@
+E:\NFC\nfc-reader-master - org\app\build\intermediates\classes\release
+E:\NFC\nfc-reader-master - org\app\build\intermediates\pre-dexed\release\guavalib-f99e58608699c0b5d8237baa666bc08fcec21a8e.jar

@@ -1,0 +1,134 @@
+	<div class="span-23" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+	<!-- Generate Report -->
+		<form method="post" 
+			id="SearchReportGenerateForm" 
+			name="SearchReportGenerateForm" 
+			action="#" > 
+
+			<!-- FIELDS -->
+			<!-- Vehicle No -->
+			<div class="span-2" style="text-align:right;padding-top:2px;">Vehicle No</div>
+			<div class="span-4 append-2">
+				<input class="search-textbox"
+					type="text" 
+					id="reg_no" 
+					name="reg_no"
+					value="" 
+				/>
+			</div>
+
+			<!-- Type-->
+			<div class="span-2 bg-test" style="text-align:right;padding-top:8px;">Type</div>
+			<div class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="type" 
+					name="type" 
+					<?php if ($type) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $type; ?>" 
+				/>
+			</div>
+			
+
+			<!-- client -->
+			<div class="span-1" style="text-align:right;padding-top:2px;">Client</div>
+			<div class="span-4 append-2">
+				<input class="search-textbox"
+					type="text" 
+					id="client_name" 
+					name="client_name"
+					value="" 
+				/>
+			</div> 
+
+			<!-- Created from -->
+			<div class="span-2" style="text-align:right;padding-top:2px;">Accounting date from </div>
+			<div class="span-5">
+					<input class="search-textbox" style="width:62px;"
+						type="text" 
+						id="accountability_st_dt" 
+						name="accountability_st_dt" 
+						value="" 
+					/> to
+			<!-- Created to -->
+				<input type="text" class="search-textbox" style="width:62px;"
+					id="accountability_en_dt" 
+					name="accountability_en_dt" 
+					value="" 
+				/>
+			</div>
+		</form>
+
+		<div class="prepend-18 span-6 " style='padding-top:5px'>
+			<div class="span-1" style="padding-top:5px"><a href="index.php?mod=admin&ent=report&go=list&report_name=search_report" class="tipped" title="Click here to clear report">Clear</a></div>
+			<div class="span-4" ><button id="SearchReportGenerateButton" class="tipped" title="Click here to generate report">Generate Report</button></div>
+			</div>
+		</div>
+
+	<!-- ORDER REPORT LIST -->
+<div class="order-list"></div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		init_screen();
+
+		$('#accountability_st_dt').datepicker({
+			dateFormat: 'dd-M-yy',
+			onClose: function(dateText, inst) {
+				var endDateTextBox = $('#accountability_en_dt');
+				if (endDateTextBox.val() != '') {
+					var testStartDate = new Date(dateText);
+					var testEndDate = new Date(endDateTextBox.val());
+					if (testStartDate > testEndDate)
+						endDateTextBox.val(dateText);
+				}
+				else {
+					endDateTextBox.val(dateText);
+				}
+			},
+			onSelect: function (selectedDateTime){
+				var start = $(this).datepicker('getDate');
+				$('#accountability_en_dt').datepicker('option', 'minDate', new Date(start));
+			}
+		});
+
+		$('#accountability_en_dt').datepicker({
+			dateFormat: 'dd-M-yy',
+			onClose: function(dateText, inst) {
+				var startDateTextBox = $('#accountability_st_dt');
+				if (startDateTextBox.val() != '') {
+					var testStartDate = new Date(startDateTextBox.val());
+					var testEndDate = new Date(dateText);
+					if (testStartDate > testEndDate)
+						startDateTextBox.val(dateText);
+				}
+				else {
+					startDateTextBox.val(dateText);
+				}
+			},
+			onSelect: function (selectedDateTime){
+				var end = $(this).datepicker('getDate');
+				$('#accountability_st_dt').datepicker('option', 'maxDate', new Date(end.getTime()) );
+			}
+		});
+
+
+		// SEARCH PRODUCT BUTTON
+		$('#SearchReportGenerateButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			// Show loading on every call
+			$('.order-list').html('<div style="text-align:center;"><img src="static/images/ajax-loader-medium-2.gif"/></div>');
+
+			$('.search-textbox').each(function(){
+				if ( $('#'+this.id).val() != '' ) $('#'+this.id).css('background','#FFF6BF');
+				else $('#'+this.id).css('background','none');
+			});
+
+			var data=$('#SearchReportGenerateForm').serialize();
+			$('#order-by').val('');
+			$('#order-by-type').val('');
+			$('.order-list').load('index.php?mode=a&mod=admin&ent=report&go=search_report&report_mode=HTML&'+data).show();
+			return false;
+		});
+
+	});
+</script>

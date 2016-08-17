@@ -1,0 +1,79 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ Tag: $template "); ?>
+<!-- Page content -->
+<div id="page-content">
+	<!-- Forms General Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="gi gi-notes_2"></i><?php echo $_SESSION['org_name']; ?> <img width="10%" src="<?php echo IMG_PATH.'org/'.$_SESSION['org_id'].'/'.$_SESSION['org_logo']; ?>" />
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><a href="<?php echo BASEURL.'standardtag'; ?>">Standard Tag</a></li>
+	</ul>
+	<!-- END Forms General Header -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- Basic Form Elements Block -->
+			<div class="block">
+				<!-- Basic Form Elements Title -->
+				<div class="block-title">
+					<h2><strong>Standard Tags</strong></h2>
+				</div>
+				<!-- END Form Elements Title -->
+
+				<!-- Basic Form Elements Content -->
+				<div class="table-responsive">
+					<table class="table table-vcenter table-striped">
+						<thead>
+							<tr>
+								<th>Tag Name </th>
+								<th>Tag Value </th>
+								<th>Is Tag Sync </th>
+								<th>Type </th>
+								<th>Is Active </th>
+							</tr>
+							<tr>
+								<th><input type="text" id="add-tag-name" class="form-control" placeholder="Enter Name" ></th>
+								<th><input type="text" id="add-tag-value" class="form-control" placeholder="Enter Value" ></th>
+								<th><input type="checkbox" id="add-is-tag-sync" /></th>
+								<th>
+									<select id="add-tag-type" class="form-control">
+										<option value="PUBLIC">PUBLIC</option>
+										<option value="PRIVATE">PRIVATE</option>
+										<option value="INTERNAL">INTERNAL</option>
+									</select>
+								</th>
+								<th><input type="checkbox" id="add-is-active" /></th>
+								<th><button class="add-tag btn btn-sm btn-success"><i class="fa fa-plus"></i> Add</button></th>
+							</tr>
+						</thead>
+						<tbody class="add-tag-row">
+							<?php for ( $i=0;$i<$ROW[0]['NROWS'];$i++ ) { ?>
+								<tr id="row-<?php echo $ROW[$i]['tag_id']; ?>" tag_id="<?php echo $ROW[$i]['tag_id']; ?>">
+									<td><?php echo get_arg($ROW[$i],'tag_name'); ?></td>
+									<td><?php echo get_arg($ROW[$i],'tag_value'); ?></td>
+									<!--<td><a href="#tag-delete-dialog" class="delete-tag fa fa-trash" data-toggle="modal"></a></td> -->
+									<td><span><input type="checkbox" class="is_tag_sync" name="is_tag_sync" <?php if ( $ROW[$i]['is_tag_sync']){ ?> checked <?php } ?> /></span></td>
+									<td>
+										<span>
+											<select class="tag_type form-control">
+												<option value="PUBLIC" <?php if ( $ROW[$i]['type'] == "PUBLIC" ) echo "selected"; ?>>PUBLIC</option>
+												<option value="PRIVATE" <?php if ( $ROW[$i]['type'] == "PRIVATE" ) echo "selected"; ?>>PRIVATE</option>
+												<option value="INTERNAL" <?php if ( $ROW[$i]['type'] == "INTERNAL" ) echo "selected"; ?>>INTERNAL</option>
+											</select>
+										</span>
+									</td>
+									<td><span><input type="checkbox" class="is_active" name="is_active"  <?php if( $ROW[$i]['is_active']){ ?> checked <?php }?> /></span></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

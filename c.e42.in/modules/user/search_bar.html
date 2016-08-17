@@ -1,0 +1,101 @@
+
+<!-- SEARCH -->
+<div class="span-24 ui-widget-content block" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+
+	<span class="span-24" style="padding: 10px 0px 0px 10px;height:20px;"><h4><?php if (get_arg($ROW[0],'IS_SEARCH') ) echo 'Showing results:'; else echo 'Show Users with:';?></h4></span>
+
+	<form method="post" 
+		id="UserSearchForm" 
+		name="UserSearchForm" 
+		action="#" > 
+
+		<!-- FIELDS -->
+			<div>
+				<!-- Name -->
+				<span class="span-2 bg-test"  style="text-align:right;margin-left:38px;">Name</span>
+				<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="name" 
+						name="name" 
+						<?php if ($name) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $name; ?>" 
+					/>
+				</span>
+
+				<!-- Email Id -->
+				<span class="span-2 bg-test"  style="text-align:right;margin-left:40px;">Email Id</span>
+				<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="email_id" 
+						name="email_id" 
+						<?php if ($email_id) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $email_id; ?>" 
+					/>
+				</span>
+
+				<!-- User Type -->
+				<span class="span-2 bg-test"  style="text-align:right;margin-left:20px;">User Type</span>
+				<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="user_type" 
+						name="user_type" 
+						<?php if ($user_type) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $user_type; ?>" 
+					/>
+				</span>
+			</div>
+
+
+			<!-- Is Active -->
+			<div style="margin-top:10px">
+				<span class="span-2 bg-test"  style="text-align:right;margin-left:28px;">Is Active</span>
+				<span class="span-4 append-2 bg-test">
+					<input type="text" 
+						id="is_active" 
+						name="is_active" 
+						<?php if ($is_active) echo "style='background:#FFF6BF'";?>
+						value="<?php echo $is_active; ?>" 
+					/>
+				</span>
+			</div>
+	</form>
+
+	<!-- BUTTON -->
+	<?php 
+		$no_fields=8-1;
+		$excess_fields = $no_fields % 3;
+		switch ($excess_fields){
+			case 2: // Two fields on line
+					$button_span="prepend-3 span-4 append-1 last";
+					break;
+			case 1: // Only one field on line
+					$button_span="prepend-11 span-4 append-1 last";
+					break;
+			case 0:	// no fields on this line
+					$button_span="prepend-19 span-4 append-1 last";
+					break;
+			default:
+				break;
+		}
+	?>
+	<span class="<?php echo $button_span; ?>" >
+		<span class="span-1" style="margin-left:50px; margin-top:10px; margin-bottom:20px"><a href= "<?php echo BASEURL; ?>user/">Clear</a></span>
+		<span class="span-1" ><button id="UserSearchButton" class="btn btn-sm btn-primary" style="margin-left:5px; padding:2px 10px;" >Search</button></span>
+	</span>
+</div>
+
+
+<?php if ( get_arg($ROW[0],'IS_SEARCH') && get_arg($ROW[0],'NROWS') === 0  ) { ?>
+	<div class="span-24 notice" style="text-align:center">No matching Users were found.<br/> <a href= "<?php echo BASEURL; ?>user/" >Clear</a><br/> </div>
+<?php } ?>
+
+<script>
+	$(document).ready(function(){
+		// Search USER button
+		$('#UserSearchButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			var data=$('#UserSearchForm').serialize();
+			document.location.href="<?php echo BASEURL;?>user/search/&"+data;
+			return false;
+		});
+	});
+</script>

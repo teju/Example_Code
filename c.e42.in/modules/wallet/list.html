@@ -1,0 +1,56 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ WALLET: $template "); ?>
+
+<!-- Page content -->
+<div id="page-content">
+	<!-- Table Responsive Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="gi gi-iphone"></i>Wallet<br><small>Your list of payments and balance credits</small>
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li><?php echo get_arg($_SESSION,'name'); ?> Wallet</li>
+	</ul>
+	<!-- END Table Responsive Header -->
+<?php include(TEMPLATE_DIR."search_bar.html"); ?>
+<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+	<?php echo show_msgs(); ?>
+	<!-- Responsive Full Block -->
+	<div class="block">
+		<a href="<?php echo BASEURL.get_arg($_GET,'mod').'/new'; ?>"><button class="btn btn-sm btn-primary fa fa-plus">ADD New Wallet</button></a>
+		<div class="table-responsive">
+			<table class="table table-vcenter table-striped">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Description</th>
+						<th>Transaction Type</th>
+						<th>Amount</th>
+						<th>Balance Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php for ( $i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++ ) { ?>
+						<tr class="selected" id="row-<?php echo $ROW[$i]['wallet_id']; ?>" delete_id="<?php echo $ROW[$i]['wallet_id']; ?>"
+							delete_name="wallet_id" delete_url="<?php echo BASEURL.'wallet/delete'; ?>">
+							<td><a href="<?php echo BASEURL.'wallet/modify/'.$ROW[$i]['wallet_id']; ?>"><?php echo $ROW[$i]['created_dt']; ?></a></td>
+							<td><?php echo $ROW[$i]['description']; ?></a></td>
+							<td><?php echo $ROW[$i]['transaction_type']; ?></td>
+							<td><?php echo $ROW[$i]['amount']; ?></td>
+							<td><?php echo $ROW[$i]['balance_amount']; ?></td>
+							<td><a href="#delete-dialog" class="delete-row fa fa-trash" data-toggle="modal"></a></td>
+						</tr><?php 
+					} ?>
+				</tbody>
+			</table>
+		</div>
+		<!-- END Responsive Full Content -->
+	</div>
+<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+<?php } ?>
+	<!-- END Responsive Full Block -->
+</div>
+<!-- END Page Content -->

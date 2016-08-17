@@ -1,0 +1,235 @@
+
+	<?php if((modulesetting_get('vehicle')) && is_admin() ) { ?>
+		<button id="VehicleButton"  style="float:left;margin-right:20px;">  Vehicles </button>
+	<?php } ?>
+		
+		<?php if((modulesetting_get('driver') || modulesetting_get('client') || modulesetting_get('cleaner')) && is_admin() ){ ?>
+	<ul class="menu ui-widget ui-state-default ui-corner-all" style="width:150px;display:inline-block;float:left;margin-right:20px;">
+		<li>Master Database
+			<ul style="width:150px;">
+			<?php if(modulesetting_get('driver')) { ?>
+				<li id="DriverButton">  Drivers </li><hr>
+			<?php }?>
+			<?php if(modulesetting_get('client')) { ?>
+				<li id="ClientButton"> Clients </li><hr>
+			<?php }?>
+			<?php if(modulesetting_get('cleaner')) { ?>
+				<li id="CleanerButton"> Cleaner </li><hr>
+			<?php }?>
+			</ul>
+		</li>
+	</ul>
+	<?php }?>
+
+	<?php if((modulesetting_get('user') || modulesetting_get('supervisor') || modulesetting_get('search') || modulesetting_get('settings') || modulesetting_get('fillingstation') ) && is_admin() ){ ?>
+	<ul class="menu ui-widget ui-state-default ui-corner-all" style="width:150px;display:inline-block;float:left;margin-right:20px;">
+		<li>Advance Settings
+			<ul style="width:150px;">
+			<?php if(modulesetting_get('user')) { ?>
+				<li id="UserButton"> System Users </li><hr>
+			<?php } ?>
+			<?php if(modulesetting_get('supervisor')) { ?>
+				<li id="SupervisorButton">  Supervisors </li><hr>
+			<?php }?>
+			<?php if(modulesetting_get('fillingstation')) { ?>
+				<li id="fillingstationButton"> Filling Station </li><hr>
+			<?php }?>
+			<?php if(modulesetting_get('settings')) { ?>
+				<li id="SettingButton">  Master Setting</li><hr>
+			<?php }?>
+			<?php if( modulesetting_get('search') )  { ?>
+				<li id="SearchButton"> Search</li><hr>
+			<?php } ?>
+			</ul>
+		</li>
+	</ul>
+	<?php } ?>
+
+		<?php if ( is_admin() || is_viewer() ) { ?>
+		<?php if(modulesetting_get('log_report') || modulesetting_get('vehicle_report') || modulesetting_get('profitability_report') || modulesetting_get('expiry_report') ||modulesetting_get('sms_report') || modulesetting_get('attendance_report') ) { ?>
+		<ul class="menu ui-widget ui-state-default ui-corner-all" style="width:100px;display:inline-block;float:left;margin-right:20px;">
+		<li>Reports
+			<ul style="width:150px;">
+				<?php if(modulesetting_get('log_report')) { ?>
+					<li id="SearchReportButton">  Log Report </li><hr> 
+				<?php }?>
+				<?php if(modulesetting_get('vehicle_report')) { ?>
+					<li id="SearchVehicleReportButton">  Vehicle Report </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('profitability_report')) { ?>
+					<li id="ProfitabilityReport">  Profitability Report </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('expiry_report')) { ?>
+					<li id="ExpiryReportButton">  Expiry Report </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('sms_report')) { ?>
+					<li id="SMSReportButton">  SMS Report </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('attendance_report')) { ?>
+					<li id="AttendanceReport">  Attendance Table </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('student_report')) { ?>
+					<li id="StudentReport">  Attendance Log </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('attendancelog_report')) { ?>
+					<li id="AttendanceLogReport">  AttendanceLog Report </li><hr>
+				<?php }?>
+				<?php if(modulesetting_get('iisclog_report')) { ?>
+						<li id="IISCLogReport">  User Log </li><hr>
+				<?php }?>
+			</ul>
+		</li>
+	</ul>
+	<?php } } ?>
+	
+		<?php if((modulesetting_get('jobcard')) && is_admin() ) { ?>
+			<button id="JobCardButton" style="margin-right:20px;"> Job Card </button> 
+		<?php }?>
+		<?php if((modulesetting_get('tripsheet')) && is_admin() ) { ?>
+			<button id="TripSheetButton" style="margin-right:20px;"> Trip Sheet </button>
+		<?php }?>
+		<?php if((modulesetting_get('student')) && is_admin() )  { ?>
+			<button id="StudentButton" style="margin-right:20px;"> User </button>
+		<?php }?>
+		<?php if((modulesetting_get('location')) && is_admin() )  { ?>
+			<button id="LocationButton" style="margin-right:20px;"> Location </button>
+		<?php }?>
+		<?php if((modulesetting_get('wallet')) && is_admin() )  { ?>
+			<button id="WalletButton" style="margin-right:20px;"> Wallet </button>
+		<?php }?>
+		<?php if((modulesetting_get('group')) && is_admin() )  { ?>
+			<button id="GroupButton" style="margin-right:20px;"> Group </button>
+		<?php }?>
+		<?php if((modulesetting_get('student_group')) && is_admin() )  { ?>
+			<button id="StudentGroupButton" style="margin-right:20px;">Student Group </button>
+		<?php }?>
+		<!--<button id="TravelButton"> Travel </button>-->
+
+<script>
+	$(document).ready(function() {
+	<?php $entity='admin'; ?>
+
+	$( ".menu" ).menu({
+		position: { my: "left top", at: "left bottom" },
+		icons: {
+			submenu: "ui-icon-triangle-1-s"
+		}
+	});
+	$( ".menu" ).hover(function(){
+		$( "#ui-id-3" ).addClass('ui-corner-all');
+	});
+
+		// Driver Button 
+		$('#DriverButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'driver'),false);?>";
+		});
+		// Search Button 
+		$('#SearchButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'search'),false);?>";
+		});
+		// Supervisor Button 
+		$('#SupervisorButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'supervisor'),false);?>";
+		});
+
+		// client Button 
+		$('#ClientButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'client'),false);?>";
+		});
+
+		
+		// Wallet Button 
+		$('#WalletButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'wallet'),false);?>";
+		});
+		// Group Button 
+		$('#GroupButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'group'),false);?>";
+		});
+		//Location Button 
+		$('#LocationButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'location'),false);?>";
+		});
+		// cleaner Button 
+		$('#CleanerButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'cleaner'),false);?>";
+		});
+		// student group Button 
+		$('#StudentGroupButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'studentgroup'),false);?>";
+		});
+		//Filling station
+		$('#fillingstationButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'fillingstation'),false);?>";
+		});
+		$('#JobCardButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'jobcard'),false);?>";
+		});
+		// TagSticker Button 
+		$('#TagStickerButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'tagsticker'),false);?>";
+		});
+		// User Button 
+		$('#UserButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'user'),false);?>";
+		});
+		// Vehicle Button 
+		$('#VehicleButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'vehicle'),false);?>";
+		});
+		// Trip Sheet Button 
+		$('#TripSheetButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'tripsheet'),false);?>";
+		});
+		$('#StudentButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'student'),false);?>";
+		});
+	//	$('#TravelButton').click(function() {
+		//	document.location.href="<?php echo make_url('go=list',make_base_url($entity,'travel'),false);?>";
+		//});
+		// Setting Button 
+		$('#SettingButton').click(function() {
+			document.location.href="<?php echo make_url('go=list',make_base_url($entity,'setting'),false);?>";
+		});
+		// Report Button 
+		$('#SearchReportButton').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=search_report',make_base_url($entity,'report'),false);?>";
+		});
+		// Report Button 
+		$('#SearchVehicleReportButton').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=vehicle_report',make_base_url($entity,'report'),false);?>";
+		});
+		// Report Button 
+		$('#AttendanceLogReport').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=attendancelog_report',make_base_url($entity,'report'),false);?>";
+		});
+		
+		// Profitability Report Button 
+		$('#ProfitabilityReport').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=profitability_report',make_base_url($entity,'report'),false);?>";
+		});
+		// Student Report Button 
+		$('#StudentReport').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=student_report',make_base_url($entity,'report'),false);?>";
+		});
+		// Expiry Button 
+		$('#ExpiryReportButton').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=expiry_report',make_base_url($entity,'report'),false);?>";
+		});
+		// SMS Button 
+		$('#SMSReportButton').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=smssent_report',make_base_url($entity,'report'),false);?>";
+		});
+		$('#AttendanceReport').click(function() {
+			document.location.href="<?php echo make_url('go=list&report_name=attendance_report',make_base_url($entity,'report'),false);?>";
+		});
+                $('#IISCLogReport').click(function() {
+                        document.location.href="<?php echo make_url('go=list&report_name=iisclog_report',make_base_url($entity,'report'),false);?>";
+                });
+
+	});
+</script>
+
+
+
+

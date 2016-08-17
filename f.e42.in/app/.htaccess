@@ -1,0 +1,74 @@
+RewriteEngine on
+
+#####################################
+# GENERIC REDIRECTS				 #
+#####################################
+#Redirect: www => non-wwww
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Redrect: http to https
+RewriteCond %{HTTP_HOST} ^srpcards.com$  [NC]
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Redrect: https to http
+RewriteCond %{HTTP_HOST} !^srpcards.com$  [NC]
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
+
+# Redirect .shopnix.in to .shopnix.org except payments
+RewriteCond %{HTTP_HOST} !^payments.shopnix.in$  [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.shopnix.in$ [NC]
+RewriteRule ^(.*)$ http://%1.shopnix.org/$1 [R=301,L]
+
+# Redirect: non-www => www
+# RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+php_value newrelic.appname "Shopnix Stores"
+
+#####################################-
+# DON'T REDIRECT FILE/FOLDERS	   #
+#####################################
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule	  ^/media/(.*)/images/products/(.*)-([0-9]+)-([0-9]+)-jpg$	media/$1.jpg							[NC,L]
+
+#####################################
+# CERTIFICATE                       #
+#####################################
+RewriteRule	      ^upload/?$	                    fileupload.php	 [NC,L]
+RewriteRule	      ^validate_vehicle/(.*)/(.*)/?$	index.php?mode=j&mod=app&go=app_validate_vehicle&nfc_tag_id=$1&imei=$2	 [NC,L]
+RewriteRule	      ^updatesqlite/(.*)/?$		              index.php?mode=j&mod=app&go=update_sqlite&imei=$1	 [NC,L]
+RewriteRule	      ^updatesupervisor/(.*)/?$		              index.php?mode=j&mod=app&go=update_supervisor&imei=$1	 [NC,L]
+RewriteRule	      ^app_image_store/?$		index.php?mode=j&mod=app&go=app_image_store	 [NC,L]
+RewriteRule	      ^app_attendance_image_store/?$		index.php?mode=j&mod=app&go=app_attendance_image_store	 [NC,L]
+RewriteRule	      ^app_sync_image_store/?$		index.php?mode=j&mod=app&go=app_sync_image_store	 [NC,L]
+RewriteRule	      ^app_fuel_store/(.*)/(.*)/?$		index.php?mode=j&mod=app&go=app_fuel_store&search_id=$1&fuel_filled=$2	 [NC,L]
+RewriteRule	      ^app_odometer_store/(.*)/(.*)/?$	index.php?mode=j&mod=app&go=app_odometer_store&search_id=$1&odometer_reading=$2	 [NC,L]
+RewriteRule	      ^insert_fuel/?$					index.php?mod=app									[NC,L]
+RewriteRule	      ^student/(.*)/(.*)/(.*)/(.*)/(.*)?$ 						index.php?mode=j&mod=app&go=student_login&nfc_tag_id=$1&imei=$2&latitude=$3&longitude=$4&address=$5			[NC,L]
+RewriteRule	      ^iisc/(.*)/(.*)?$ 				index.php?mode=j&mod=app&go=iisc_login&nfc_tag_id=$1&imei=$2			[NC,L]
+RewriteRule	      ^attendance_list/?$				index.php?mod=app&go=studentlog_list								[NC,L]
+RewriteRule	  	  ^sync/(.*)/?$						index.php?mode=j&mod=app&go=sync_to_sqlite&imei=$1					  [NC,L]
+RewriteRule	  	  ^iisc_sync/(.*)/?$				index.php?mode=j&mod=app&go=iisc_sync&imei=$1					  [NC,L]
+RewriteRule	  	  ^todays_summary/(.*)/?$							index.php?mode=j&mod=app&go=todays_summary&imei=$1					  [NC,L]
+RewriteRule	  	  ^syncupdate/?$						index.php?mode=j&mod=app&go=update_sync_to_sqlite					  [NC,L]
+RewriteRule	  	  ^syncToDb/(.*)/?$							index.php?mode=j&mod=app&go=sync_to_db&imei=$1					  [NC,L]
+RewriteRule	  	  ^iisc_synctodb/?$							index.php?mode=j&mod=app&go=iisc_synctodb&imei=$1					  [NC,L]
+RewriteRule	  	  ^sync_attendance_log/(.*)/?$				index.php?mode=j&mod=app&go=sync_attendance_log&imei=$1					  [NC,L]
+#RewriteRule	  ^vehicle/app_new/?$				index.php?mod=vehicle&go=app_new					  [NC,L]
+RewriteRule	      ^iisc_app_attendance_image_store/?$		index.php?mode=j&mod=app&go=iisc_app_attendance_image_store	 [NC,L]
+
+RewriteRule	      ^wallet_save/?$	    				index.php?mode=j&mod=app	 [NC,L]
+RewriteRule	      ^nfctag/?$	    				    index.php?mode=j&mod=app&go=nfctag [NC,L]
+RewriteRule	      ^student_register/?$	    		    index.php?mode=j&mod=app&go=student_register [NC,L]
+RewriteRule	      ^show_all/?$	    		    		index.php?mode=j&mod=app&go=show_all [NC,L]
+RewriteRule	      ^check_balance/?$	    		    	index.php?mode=j&mod=app&go=check_balance [NC,L]
+
+RewriteRule	      ^send_data/?$	    		    		index.php?mode=j&mod=app&go=send_data [NC,L]
+
+
+#####################################

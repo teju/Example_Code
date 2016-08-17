@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Android\cretified42\app\src\main\assets"><file name="fonts/trajan-pro-regular.ttf" path="D:\Android\cretified42\app\src\main\assets\fonts\trajan-pro-regular.ttf"/></source></dataSet><dataSet config="debug"><source path="D:\Android\cretified42\app\src\debug\assets"/></dataSet></merger>

@@ -1,0 +1,33 @@
+<style>
+	.small-buttons {
+		height: 22px;
+	}
+
+</style>
+<div class="text-center">
+<?php
+	$max_no_of_pages=3;
+	$page=get_arg($page_arr,'page');
+	if ( get_arg($page_arr,'no_of_pages') < $max_no_of_pages ) { $max_no_of_pages=get_arg($page_arr,'no_of_pages'); }
+	$curr_page_pos=$page%$max_no_of_pages;
+	if ( $curr_page_pos === 0 ) $curr_page_pos=$max_no_of_pages;
+	$first_page=$page-$curr_page_pos+1;
+	$last_page=$page+($max_no_of_pages-$curr_page_pos);
+	if ( $last_page > get_arg($page_arr,'last_page') ) $last_page=get_arg($page_arr,'last_page');
+
+	//LOG_MSG('INFO',"========page_arr========\n".print_r($page_arr,true));
+?>
+	<ul class="pagination">
+		<li <?php if ( $page <= $max_no_of_pages ) echo 'class="disabled"'; ?>><a href="<?php if ( $page > $max_no_of_pages ) echo url('page',$page-$max_no_of_pages); else echo "javascript:void(0)"; ?>"><i class="fa fa-angle-left"></i></a></li>
+		<?php for ( $j=$first_page;$j<=$last_page;$j++ ) { ?>
+			<li <?php if ($j === $page) echo 'class="active"'; ?>>
+				<a href="<?php if ( isset($_GET["search"]) ) echo url('page',$j); 
+				else echo BASEURL.get_arg($_GET,'mod')."/search/&page=$j"; ?>"><?php echo $j; ?></a>
+			</li>
+		<?php } ?>
+		<li <?php if ( $last_page >= get_arg($page_arr,'no_of_pages') || get_arg($page_arr,'no_of_pages') == get_arg($page_arr,'last_page')-1 ) echo 'class="disabled"'; ?>><a href="<?php if ( $last_page < get_arg($page_arr,'no_of_pages') ) echo url('page',$last_page+1);   else echo "javascript:void(0)"; ?>"><i class="fa fa-angle-right"></i></a></li>
+	</ul>
+	<span align="left" style="text-align:left;">
+		<?php echo "Page ".get_arg($page_arr,'page')." of ".get_arg($page_arr,'no_of_pages'); ?>
+	</span>
+</div>

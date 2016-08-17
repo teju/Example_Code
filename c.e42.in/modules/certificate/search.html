@@ -1,0 +1,80 @@
+<style>
+.search {
+	margin-left:5px;
+}
+</style>
+<!-- SEARCH -->
+<div class="block" style="margin:10px 0px 20px 0px; padding: 0px 0px 5px 0px;font-size:10px">
+
+	<span class="span-24" style="padding: 10px 0px 0px 10px;height:20px;"><h4><?php if (get_arg($ROW[0],'IS_SEARCH') ) echo 'Showing results:'; else echo 'Show certificates with:';?></h4></span>
+
+	<form method="post" 
+		id="certificatesearchForm" 
+		name="certificatesearchForm" 
+		action="#" > 
+
+		<!-- FIELDS -->
+
+			<!-- Name -->
+			<span class= "span-2 bg-test" style="text-align:left;margin-left:20px;">Name</span>
+			<span class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="name" 
+					name="name" 
+					<?php if ($name) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $name; ?>" 
+				/>
+			</span>
+
+			<!-- Tag Id -->
+			<span class="span-2 bg-test" style="text-align:left;margin-left:40px;">USN</span>
+			<span class="span-4 append-2 bg-test">
+				<input type="text" 
+					id="usn" 
+					name="usn" 
+					<?php if ($usn) echo "style='background:#FFF6BF'";?>
+					value="<?php echo $usn; ?>" 
+				/>
+			</span>
+			
+	<!-- BUTTON -->
+	<?php 
+		$no_fields=11-1;
+		$excess_fields = $no_fields % 3;
+		switch ($excess_fields){
+			case 2: // Two fields on line
+					$button_span="prepend-3 span-4 append-1 last";
+					break;
+			case 1: // Only one field on line
+					$button_span="prepend-11 span-4 append-1 last";
+					break;
+			case 0:	// no fields on this line
+					$button_span="prepend-19 span-4 append-1 last";
+					break;
+			default:
+				break;
+		}
+	
+	?>
+	<span class="<?php echo $button_span; ?>" >
+		<span class="span-1 " style="margin-left:20px; margin-top:10px;"><a href= "<?php echo BASEURL; ?>certificate/" >Clear</a></span>
+		<span class="span-1 " ><button id="certificatesearchButton" class="btn btn-sm btn-primary" style="margin-left:5px; padding:2px 10px;" >Search</button></span>
+	</span>
+	</form>
+
+</div>
+
+<?php if ( get_arg($ROW[0],'IS_SEARCH') && get_arg($ROW[0],'NROWS') === 0  ) { ?>
+	<div class="span-24 notice" style="text-align:center">No matching certificates were found.<br/> <a href= "<?php echo BASEURL; ?>certificate/" >Clear</a><br/> </div>
+<?php } ?>
+
+<script>
+ 	$(document).ready(function(){
+		// Search certificate button
+		$('#certificatesearchButton').button({icons: {primary: "ui-icon-search"}}).click(function(){
+			var data=$('#certificatesearchForm').serialize();
+			document.location.href="<?php echo BASEURL; ?>certificate/search/&"+data;
+			return false;
+		});
+	});
+</script>

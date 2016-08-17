@@ -1,0 +1,51 @@
+<style>
+	#Intercom {
+		position: fixed;
+		bottom: 0px;
+		right: 20px;
+		padding: 5px 8px;
+		max-width: 300px;
+		text-decoration: none;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		height:20px;
+		color: white;
+		border: 1px solid orange;
+		background: #f17a49;
+		/*border: 1px solid #4297d7;
+		background: #5c9ccc url(images/ui-bg_gloss-wave_55_5c9ccc_500x100.png) 50% 50% repeat-x;
+		color: #ffffff;*/
+	}
+	
+	a:hover #Intercom {
+		color:grey;
+	}
+	
+	#Intercom img {
+		vertical-align:middle;
+		padding-right:5px;
+	}
+</style>
+
+<a id="Intercom" class="ui-corner-top" href="mailto:e5d8196714cf0bf945bd764be170dd41c22dc998@incoming.intercom.io"><img src="http://shopnix.in/admin/static/images/help.png" height=24 width=24 />Have a Question?</a>
+
+<script id="IntercomSettingsScriptTag">
+	window.intercomSettings = {
+		<?php foreach ($INTERCOM_USER as $name => $value) {
+			echo "$name: $value,";
+		} ?>
+		company: {
+			<?php $i=0; foreach ($INTERCOM_SHOP as $name => $value) {
+				$i++;
+				echo "$name: $value"; if ( count($INTERCOM_SHOP) != $i ) echo ','; 
+			} ?>
+		},
+		"widget": {
+    			"activator": "#Intercom"
+  		}
+	};
+</script>
+
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
+
+

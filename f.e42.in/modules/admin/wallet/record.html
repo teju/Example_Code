@@ -1,0 +1,190 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ wallet: $template "); ?>
+
+<!--BREADCRUMB-->
+<br/>
+<div class="breadcrumb">
+	<a href='index.php' >Home</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<a href="index.php?mod=admin&ent=wallet">wallets</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp; 
+	<?php if ($mode == 'EDIT') echo 'Modify wallet '.get_arg($ROW[0],"name"); else echo "New wallet"; ?>
+</div>
+<?php show_msgs(); ?>
+
+<!-- WIDGET START -->
+<div class="span-24 ui-widget-content" style="margin-top:15px;min-height:600px; padding:15px 0px 15px 0px;">
+		<!-- FORM START -->
+		<form method="post" enctype="multipart/form-data"
+			  name="wallet<?php echo $mode; ?>Form" 
+			  id="wallet<?php echo $mode; ?>Form" 
+			  action="index.php?mod=admin&ent=wallet" >
+			<input type="hidden" name="do" value="<?php echo $_do; ?>" />
+			<input type="hidden" name="wallet_id" value="<?php echo get_arg($ROW[0],"wallet_id"); ?>" />
+			<?php if ( $mode === 'DELETE' ) { ?>
+				<input type="hidden" name="name" value="<?php echo get_arg($ROW[0],"name"); ?>"/>
+			<?php } ?>
+
+		<!-- TITLE -->
+		<div class="span-23 last" style="padding:5px 0px 10px 5px">
+			<h3><b><?php echo ucfirst(strtolower($mode))." wallet"; ?></b></h3>
+		</div>
+		
+
+		<!--Student Name -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Student Name</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="student_id" id="student_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select Student-</option>
+                                <?php
+                                for ( $i=0; $i<$row_student[0]['NROWS']; $i++) { ?>
+                                        <option value="<?php echo $row_student[$i]['student_id'] ?>" <?php if ( get_arg($ROW[0],"student_id") == $row_student[$i]["student_id"] ) echo "selected"; ?> ><?php echo $row_student[$i]["name"]; ?>
+                                        </option><?php
+                                } ?>
+			</select>
+		</div>
+
+		<!-- Location Id-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Location </div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="location_id" id="location_id" <?php echo $disabled; ?>>
+				<option value="" selected>-Select Location-</option>
+                                <?php
+                                for ( $i=0; $i<$row_location[0]['NROWS']; $i++) { ?>
+                                        <option value="<?php echo $row_location[$i]['location_id'] ?>" <?php if ( get_arg($ROW[0],"location_id") == $row_location[$i]["location_id"] ) echo "selected"; ?> ><?php echo $row_location[$i]["location_name"]; ?>
+                                        </option><?php
+                                } ?>
+			</select>
+		</div>
+
+		<!-- Imei-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Imei</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="imei" 
+				name="imei" 
+				value="<?php echo get_arg($ROW[0],"imei"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Description-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Description</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="description" 
+				name="description" 
+				value="<?php echo get_arg($ROW[0],"description"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!-- Transaction Type-->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;"> Transaction Type</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<select name="transaction_type" id="transaction_type" <?php echo $disabled; ?>>
+				<option value="" selected>-Select-</option>
+				<option value="CR" <?php if ( get_arg($ROW[0],'type') == 'CR' ) echo 'selected'; ?>>CR</option>
+				<option value="DR" <?php if ( get_arg($ROW[0],'type') == 'DR' ) echo 'selected'; ?>>DR</option>
+			</select>
+		</div>
+		
+		<!-- Amount -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Amount</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="amount" 
+				name="amount" 
+				value="<?php echo get_arg($ROW[0],"amount"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+		<!--Balance Amount -->
+		<div class="prepend-1 span-3"  style="text-align:right; padding-top:8px;font-weight:bold;">Balance Amount</div>
+		<div class="prepend-1 span-18"  style="margin-bottom:10px;">
+			<input type="text" 
+				id="balance_amount" 
+				name="balance_amount" 
+				value="<?php echo get_arg($ROW[0],"balance_amount"); ?>" 
+				<?php echo $disabled; ?> 
+			/>
+		</div>
+
+	<!-- BUTTON -->
+	<div class="prepend-5 span-4" style="padding-top:5px;">
+		<?php if ($mode != "VIEW" ) { ?> 
+			<!-- SAVE/DELETE BUTTON -->
+			<button id="<?php echo $_do; ?>Button" ><?php echo ucfirst($_do);?></button> or
+		<?php } ?>
+		<!-- BACK LINK -->
+		<a href="index.php?mod=admin&ent=wallet" >Back</a>
+	</div>
+
+	<!-- FORM END -->
+	</form>
+</div><!-- END WIDGET -->
+
+
+<script>
+	$(document).ready(function(){
+
+		$("#wallet<?php echo $mode; ?>Form").validate({
+			// Rules
+			rules: {
+					name:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:1,
+										maxlength:200},
+					photo:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:200},
+					mobile:		{required:false, 
+										digits:true,
+										number:false,
+										minlength:0,
+										maxlength:18},
+					address:		{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500},
+					salary:			{required:false, 
+										digits:false,
+										number:false,
+										minlength:0,
+										maxlength:500}
+			},
+			// Error Messages
+			messages: {
+					name: {required: 'Please enter Name', 
+									   digits: 'Name should have only numbers',
+									   number: 'Name should have only numbers (eg: 123.23)',
+									   minlength: 'Name should be atleast 1 characters.',
+									   maxlength: 'Name should be less than 200 characters.'},
+					photo: {required: 'Please enter Photo', 
+									   digits: 'Photo should have only numbers',
+									   number: 'Photo should have only numbers (eg: 123.23)',
+									   minlength: 'Photo should be atleast 0 characters.',
+									   maxlength: 'Photo should be less than 200 characters.'},
+					mobile: {required: 'Please enter Phone No', 
+									   digits: 'Phone No should have only numbers',
+									   number: 'Phone No should have only numbers (eg: 123.23)',
+									   minlength: 'Phone No should be atleast 0 characters.',
+									   maxlength: 'Phone No should be less than 18 characters.'},
+					address: {required: 'Please enter Address', 
+									   digits: 'Address should have only numbers',
+									   number: 'Address should have only numbers (eg: 123.23)',
+									   minlength: 'Address should be atleast 0 characters.',
+									   maxlength: 'Address should be less than 500 characters.'},
+					salary: {required: 'Please enter salary No', 
+									   digits: 'salary No should have only numbers',
+									   number: 'salary No should have only numbers (eg: 123.23)',
+									   minlength: 'salary No should be atleast 0 characters.',
+									   maxlength: 'salary No should be less than 18 characters.'}			   
+					
+			}
+		});
+
+	});
+</script>

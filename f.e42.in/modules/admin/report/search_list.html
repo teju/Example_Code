@@ -1,0 +1,190 @@
+<div class="order-list" >
+<style>
+		table.report{
+	font-family: Lucida Grande, Lucida Sans, Arial, sans-serif;
+	margin-bottom:0px;
+			border-collapse:collapse;
+			border:1px solid lightgrey;
+}
+.report th{
+	cursor:pointer;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;  
+	color: black;
+	text-align:left;
+	font-weight:bold;
+			border:1px dotted lightblue;
+}
+.report th.order_sort:hover {
+	text-decoration:underline !important;
+}
+.report td {
+			border:1px dotted lightgrey;
+	background:none !important;
+	padding:4px;
+	font-size: 12px;
+}
+.no-overflow{
+	overflow:hidden !important;
+	text-overflow:ellipsis !important;
+	width:130px;
+}
+<?php if ( $report_mode == 'PDF' ) { ?>
+.report th, .report td {
+				font-size:9px !important;
+			}
+			.report th h3 {
+				font-size:12px !important;
+}
+<?php } else { // This is required only to ensure that the allignment of the table headings are not changed?>
+.report th#status {
+	width:60px !important;
+}
+.report th#payment_type {
+	width:72px !important;
+}
+.report th#payment_status {
+	width:72px !important;
+}
+.report th#customer_mobile {
+	width:90px !important;
+}
+.report th#total_items {
+	width:55px !important;
+}
+<?php } ?>
+</style>
+	<?php if ( $row[0]['NROWS'] > 0 ) { 
+		if ( $report_mode == 'HTML' ) { ?>
+		<div id="order-report-icons" style="text-align:left;">
+			<span id="SearchReportCSV" style="cursor:pointer;"><img height="16" width="16" src='static/images/csv.png'/></span>
+			<span id="SearchReportPDF" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/pdf.png'/></span>
+			<span id="SearchReportMail" style="cursor:pointer;margin-left:10px;"><img  height="16" width="16" src='static/images/mail.png'/></span>
+			<span id="SearchReportPrint" style="cursor:pointer;margin-left:10px;margin-right:10px"><img  height="16" width="16" src='static/images/print.png'/></span>
+			<hr>
+		</div>
+			<!-- Mail Dialog-->
+			<?php include('mail_dialog.html'); 
+		} ?>
+		<table class="span-40 report" align="center">
+
+		<!-- FIELD NAMES -->
+		<thead>
+			<tr >	
+					<th colspan="13" style="text-align:center;font-weight:bold;cursor:default;">
+					<div><h3><?php echo TRAVEL_NAME; ?> - Log Report</h3></div>
+				</th>
+			</tr>
+			<tr >
+				<th class="order_sort" id="reg_no"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'reg_no' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;"></span>Vehicle No</th>
+				<th class="order_sort" id="type"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'type' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Type</th> 
+				<th class="order_sort" id="vehicle_model"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'vehicle_model' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Vehicle Model</th> 
+				<th class="order_sort" id="sticker_no"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'sticker_no' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Sticker No</th> 
+				<th class="order_sort" id="filling_station"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'filling_station' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Filling Station</th> 
+				<th class="order_sort" id="fuel_rate"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'fuel_rate' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Fuel Rate</th> 
+				<th class="order_sort" id="fuel_filled"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'fuel_filled' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Fuel Filled</th>
+				<th id="amount"><span  style="float:left;margin-bottom:10px;"></span>Amount</th>
+				<th class="order_sort" id="client_name"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'client_name' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Client</th>
+				<th class="order_sort" id="odometer_reading"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'odometer_reading' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Odometer Reading</th>
+				<th class="order_sort" id="accountability_date"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'accountability_date' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Accounting Date</th>
+				<th class="order_sort" id="created_dt"><span class="ui-icon <?php if ( $row['order_by_type'] == 'ASC' && $row['order_by'] == 'created_dt' ) echo 'ui-icon-triangle-1-n'; else echo 'ui-icon-triangle-1-s';?>" style="float:left;margin-bottom:10px;"></span>Created Date</th>
+				<?php if( $report_mode != 'PDF' ) { ?>
+					<th id="fuel_image">Fuel image</th>
+					<th id="odometer_image">Odometer image</th>
+				<?php } ?>
+			</tr>                                     
+		</thead>                                      
+		<!-- FIELD VALUES -->
+		<tbody>
+			<?php 
+				$total_fuel_filled=0;
+				for ( $i=0;$i<$row[0]['NROWS'];$i++ ) { ?>
+				<tr>
+					<td><?php echo $row[$i]['reg_no'];?></td>
+					<td><?php echo $row[$i]['type'];?></td>
+					<td><?php echo $row[$i]['vehicle_model'];?></td>
+					<td><?php echo $row[$i]['sticker_no'];?></td>
+					<td><?php echo $row[$i]['filling_station'];?></td>
+					<td><?php echo $row[$i]['fuel_rate'];?></td>
+					<td><?php echo $row[$i]['fuel_filled'];?></td>
+					<td><?php echo $row[$i]['fuel_amount'];?></td>
+					<td><?php echo $row[$i]['client_name'];?></td>
+					<td><?php echo $row[$i]['odometer_reading'];?></td>
+					<td><?php echo $row[$i]['accountability_date'];?></td>
+					<td><?php echo $row[$i]['created_dt'];?></td>
+					<?php if( $report_mode != 'PDF' ) { ?>
+					<td>
+					<a href="<?php echo IMG_PATH.'fuel/'.get_arg($row[$i],'fuel_image'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'fuel/'.get_arg($row[$i],'fuel_image'); ?>" />
+					</a>
+				</td>
+				<td>
+					<a href="<?php echo IMG_PATH.'odometer/'.get_arg($row[$i],'odometer_image'); ?>" target="_blank">
+						<img style="width:50px;height:50px;" src="<?php echo IMG_PATH.'odometer/'.get_arg($row[$i],'odometer_image'); ?>" />
+					</a>
+				</td>
+					<?php } ?>
+				</tr>
+			<?php 
+				$total_fuel_filled+=$row[$i]['fuel_filled'];
+				} ?>
+			<tr style="font-weight:bold;">
+				<td colspan="6"><b>Totals</b></td>
+				<td><b><?php echo $total_fuel_filled; ?></b></td>
+				
+			</tr>
+		</tbody>
+	</table>
+<?php } else {?>
+	<div class="notice" style="margin-top:200px;text-align:center;">No Log Report found</div>
+<?php } ?>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('.order_sort').click(function(){
+			// Show loading on every call
+			$('.order-list').html('<div style="text-align:center;"><img src="static/images/ajax-loader-medium-2.gif"/></div>');
+			data=$('#SearchReportGenerateForm').serialize();
+			$('#order-by').val(this.id);
+			order_by_type=$('#order-by-type').val();
+			if ( order_by_type == 'DESC' ) order_by_type='ASC';
+			else order_by_type='DESC';
+			$('#order-by-type').val(order_by_type);// Ajax call
+			$( ".order-list" ).load('index.php?mode=a&mod=admin&ent=report&go=search_report&report_mode=HTML&order_by='+this.id+'&order_by_type='+order_by_type+'&'+data).show();
+			return false;
+		});
+
+		// CSV 
+		$('#SearchReportCSV').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=search_report&report_mode=CSV&<?php echo $row['search_str'];?>';
+		return false;
+	});
+
+		// PDF 
+		$('#SearchReportPDF').click(function() {
+			document.location.href='index.php?mod=admin&ent=report&mode=a&go=search_report&report_mode=PDF&<?php echo $row['search_str'];?>';
+			return false;
+		});
+
+		// Print 
+		$('#SearchReportPrint').click(function() {
+			$('#order-report-icons').hide();
+			w=window.open();
+			w.document.write($('.order-list').html());
+			w.print();
+			w.close();
+			$('#order-report-icons').show();
+		});
+
+		// Mail
+		$( "#SearchReportMail" ).click(function(){
+			$('#go').val('search_report');
+			mail_dialog_open('Log Report');
+			$('#search-str').val('<?php echo $row['search_str'];?>');
+		});
+
+	});
+</script>

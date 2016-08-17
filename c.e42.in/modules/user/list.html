@@ -1,0 +1,58 @@
+<?php LOG_MSG('INFO',"+++PLAYING+++ CERTIFICATE: $template "); ?>
+
+<!-- Page content -->
+<div id="page-content">
+	<!-- Table Responsive Header -->
+	<div class="content-header">
+		<div class="header-section">
+			<h1>
+				<i class="gi gi-iphone"></i>User<br><small>List of Users</small>
+			</h1>
+		</div>
+	</div>
+	<ul class="breadcrumb breadcrumb-top">
+		<li><a href="<?php echo BASEURL; ?>">Home</a></li>
+		<li>User</li>
+	</ul>
+	<!-- END Table Responsive Header -->
+<?php include(TEMPLATE_DIR."search_bar.html"); ?>
+	<?php if ( get_arg($page_arr,'page_row_count') > 0 ) { ?> 
+
+	<?php echo show_msgs(); ?>
+	<!-- Responsive Full Block -->
+	<div class="block">
+		<a href="<?php echo BASEURL.get_arg($_GET,'mod').'/new'; ?>"><button class="btn btn-sm btn-primary fa fa-plus">ADD New User</button></a>
+		<div class="table-responsive">
+			<table class="table table-vcenter table-striped">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Name</th>
+						<th>Email ID</th>
+						<th>Type</th>
+						<th>Is Active</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php for ( $i=get_arg($page_arr,'page_start_row');$i<get_arg($page_arr,'page_row_count');$i++ ) { ?>
+						<tr class="selected" id="row-<?php echo $ROW[$i]['user_id']; ?>" delete_id="<?php echo $ROW[$i]['user_id']; ?>"
+							delete_name="user_id" delete_url="<?php echo BASEURL.'user/delete'; ?>">
+							<td><a href="<?php echo BASEURL.'user/modify/'.$ROW[$i]['user_id']; ?>"><img width="20%" height="20%" src="<?php echo IMG_PATH.'org/'.$_SESSION['org_id'].'/user/'.$ROW[$i]['photo']; ?>" /></a></td>
+							<td><?php echo $ROW[$i]['name']; ?></td>
+							<td><?php echo $ROW[$i]['email_id']; ?></td>
+							<td><?php echo $ROW[$i]['user_type']; ?></td>
+							<td><?php if ( $ROW[$i]['is_active'] ) echo "<span class='fa fa-check'></span>"; ?></td>
+							<td><a href="#delete-dialog" class="delete-row fa fa-trash" data-toggle="modal"></a></td>
+						</tr><?php 
+					} ?>
+				</tbody>
+			</table>
+		</div>
+		<!-- END Responsive Full Content -->
+	</div>
+	<?php include(NAV_TEMPLATE_DIR."page_nav.html"); ?>
+<?php } ?>
+	<!-- END Responsive Full Block -->
+</div>
+<!-- END Page Content -->
