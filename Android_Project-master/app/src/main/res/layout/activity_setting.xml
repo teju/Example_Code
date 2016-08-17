@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/activity_toolbar"
+        android:id="@+id/app_login_bar"></include>
+
+    <include layout="@layout/activity_navigation">
+    </include>
+
+    <ImageView
+    android:layout_width="250dp"
+    android:layout_height="250dp"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true">
+    </ImageView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/app_login_bar"
+        android:id="@+id/setting_list"
+        android:entries="@array/list"
+        android:layout_marginTop="20dp">
+    </ListView>
+
+</RelativeLayout>

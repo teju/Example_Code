@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>What does PorterDuff.Mode mean in android graphics.What does it do? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="What does PorterDuff.Mode mean in android graphics.What does it do?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I would like to know what PorterDuff.Mode means in android graphics.
+
+I know that it is a transfer mode. 
+
+I also know, that it has attributes such as DST_IN, Multiply etc.
+">
+    <meta property="og:url" content="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do">
+    <link rel="canonical" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do">
+
+    
+    
+    <script type="text/javascript" async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/ados"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/quant.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/beacon.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/analytics.js"></script><script type="text/javascript" async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/ados.js"></script><script src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;What does PorterDuff.Mode mean in android graphics.What does it do?&#39;" href="http://stackoverflow.com/feeds/question/8280027">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:8280027});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '8280027');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1457340099,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableSocialMediaInSharePopup":true},"user":{"fkey":"0c6fa7bbafee1373debe9dad87c3d4ee","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"d1d9db47ad8b","js/moderator.en.js":"481e310df8f0","js/full-anon.en.js":"595eae76ff7b","js/full.en.js":"b02448f4618e","js/wmd.en.js":"1de0b7ffe6b9","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"52aabd47bbed","js/help.en.js":"f9152eb55343","js/tageditor.en.js":"bf40cdc40458","js/tageditornew.en.js":"492db9ece06f","js/inline-tag-editing.en.js":"c98171472261","js/revisions.en.js":"1411a789db48","js/review.en.js":"6935bdabc24d","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"19d213800c96","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"04da806ec375","js/keyboard-shortcuts.en.js":"cedbeaf78f1b","js/external-editor.en.js":"d3d544e5946c","js/external-editor.en.js":"d3d544e5946c","js/snippet-javascript.en.js":"ed9778c326ff","js/snippet-javascript-codemirror.en.js":"04d707bc87e2"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/adFeedback.js"></script><link rel="stylesheet" href="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/adFeedback.css"><link type="text/css" rel="stylesheet" href="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/jobs.min.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&amp;utm_medium=site-ui&amp;utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 153 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                        About Us
+                        <span class="item-summary">
+                            Learn more about Stack Overflow the company
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                        Business
+                        <span class="item-summary">
+                            Learn more about hiring developers or posting ads with us
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="Search Q&amp;A" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs">Jobs</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                                            </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do" class="question-hyperlink">What does PorterDuff.Mode mean in android graphics.What does it do?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="8280027" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1152814780",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1152814780"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMTk1Nzc4LCJkaSI6ImRmNDcxMTUxZjNiYzQxNGE5NWEyNjU0ZWZiYjNiOTRiIiwiZG0iOjEsImZjIjoxMjY5MTM3LCJmbCI6ODY0MjI1LCJpcCI6IjExMS45My4xMzguMTQyIiwia3ciOiJhbmRyb2lkLGdyYXBoaWNzLHBvcnRlci1kdWZmIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic3QiOjgyNzcsInVrIjoidWUxLTZhMjk4ZjkyZjBlMzQ5MzU4NDBhMDI1N2U5MzBmNmNkIiwiem4iOjQzLCJ0cyI6MTQ1NzM0MDEwMDQzMywiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTE1MjgxNDc4MCIsInVyIjoiaHR0cDovL2NhcmVlcnMuc3RhY2tvdmVyZmxvdy5jb20vcHJvZHVjdHM_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1lbXBsb3llcnMtYmVzdC13YXkmdXRtX2NvbnRlbnQ9bGItdXNlIn0&amp;s=QKpcCueOWzRyrQTbarQK3lo-WQ8" rel="nofollow" target="_blank" title=""><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/5fa811fa1a3e40f1a3435478bd1364a0.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/i.gif"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="8280027">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">59</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>38</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I would like to know what <strong>PorterDuff.Mode</strong> means in android graphics.</p>
+
+<p>I know that it is a <em>transfer mode</em>. </p>
+
+<p>I also know, that it has attributes such as DST_IN, Multiply etc.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag js-gps-track" title="show questions tagged &#39;android&#39;" rel="tag"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/tKsDb.png" height="16" width="18" alt="" class="sponsor-tag-img">android</a> <a href="http://stackoverflow.com/questions/tagged/graphics" class="post-tag js-gps-track" title="show questions tagged &#39;graphics&#39;" rel="tag">graphics</a> <a href="http://stackoverflow.com/questions/tagged/porter-duff" class="post-tag js-gps-track" title="show questions tagged &#39;porter-duff&#39;" rel="tag">porter-duff</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/8280027" title="short permalink to this question" class="short-link" id="link-post-8280027">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8280027/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/8280027/revisions" title="show all edits to this post">edited <span title="2015-06-07 18:38:18Z" class="relativetime">Jun 7 '15 at 18:38</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/165071/alexander-farber"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/MB9bd.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/165071/alexander-farber">Alexander Farber</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">3,088</span><span title="29 gold badges"><span class="badge1"></span><span class="badgecount">29</span></span><span title="119 silver badges"><span class="badge2"></span><span class="badgecount">119</span></span><span title="237 bronze badges"><span class="badge3"></span><span class="badgecount">237</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2011-11-26 16:56:57Z" class="relativetime">Nov 26 '11 at 16:56</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/598714/rogerstone"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/2cad697b7a5483d40a5511c92bb8d199" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/598714/rogerstone">rogerstone</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">2,363</span><span title="7 gold badges"><span class="badge1"></span><span class="badgecount">7</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="55 bronze badges"><span class="badge3"></span><span class="badgecount">55</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8280027" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-8280027" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								3 Answers
+                                <span style="display:none;" itemprop="answerCount">3</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">
+            active</a>
+        <a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="25654603"></a>
+<div id="answer-25654603" class="answer accepted-answer" data-answerid="25654603" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="25654603">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">97</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here's an excellent article with illustrations by a Google engineer:</p>
+
+<p><a href="http://ssp.impulsetrain.com/porterduff.html">http://ssp.impulsetrain.com/porterduff.html</a></p>
+
+<p>PorterDuff is described as a way of combining images as if they were "irregular shaped pieces of cardboard" overlayed on each other, as well as a scheme for blending the overlapping parts.</p>
+
+<p>The default Android way of composing images is <a href="http://developer.android.com/reference/android/graphics/PorterDuff.Mode.html#SRC_OVER">PorterDuff.Mode.SRC_OVER</a>, which equates to drawing the source image/color <i>over</i> the target image. In other words, it does what you would expect and draws the source image (the one you're drawing) on top of the destination image (the canvas) with the destination image showing through to the degree defined by the source image's alpha.</p>
+
+<p><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/B9syg.png" alt="PorterDuff infographic from the article"></p>
+
+<p>You can use the key below to understand the algebra that <a href="http://developer.android.com/reference/android/graphics/PorterDuff.Mode.html">the Android docs</a> use to describe the other modes (see <a href="http://ssp.impulsetrain.com/porterduff.html">the article</a> for a fuller desription with similar terms).</p>
+
+<ul>
+  <li><b>Sa</b> Source alpha</li>
+  <li><b>Sc</b> Source color</li>
+  <li><b>Da</b> Destination alpha</li>
+  <li><b>Dc</b> Destination color</li>
+</ul>
+
+<p>Where alpha is a value <code>[0..1]</code>, and color is substituted once per channel (so use the formula once for each of red, green and blue)</p>
+
+<p>The resulting values are specified as a pair in square braces as follows.</p>
+
+<pre class="default prettyprint prettyprinted"><code><span class="pun">[&lt;</span><span class="pln">alpha</span><span class="pun">-</span><span class="pln">value</span><span class="pun">&gt;,&lt;</span><span class="pln">color</span><span class="pun">-</span><span class="pln">value</span><span class="pun">&gt;]</span></code></pre>
+
+<p>Where <code>alpha-value</code> and <code>color-value</code> are formulas for generating the resulting alpha chanel and each color chanel respectively.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/25654603" title="short permalink to this answer" class="short-link" id="link-post-25654603">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/25654603/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/25654603/revisions" title="show all edits to this post">edited <span title="2015-04-12 21:06:25Z" class="relativetime">Apr 12 '15 at 21:06</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/700206/lee-whitney"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/jYx9d.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/700206/lee-whitney">Lee Whitney</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,739</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="43 bronze badges"><span class="badge3"></span><span class="badgecount">43</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-09-03 22:27:03Z" class="relativetime">Sep 3 '14 at 22:27</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/820124/phasmal"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/cdd9f8f82f5cdebe00ae3fafbebe45e6" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/820124/phasmal">Phasmal</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,148</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-25654603" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-25654603" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk30720790",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk30720790"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjozMjI1MTQsImNoIjoxMTc4LCJjayI6e30sImNyIjoxMjY3NTg4LCJkaSI6IjBhMTAyNjQ4YzIwYzQ5ZjFiNDNhNjBiODcxMDVkMjUwIiwiZG0iOjEsImZjIjoxMzY1OTUxLCJmbCI6ODY0MjI1LCJpcCI6IjExMS45My4xMzguMTQyIiwia3ciOiJhbmRyb2lkLGdyYXBoaWNzLHBvcnRlci1kdWZmIiwibnciOjIyLCJwYyI6MCwiZWMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY28uaW4vIiwic3QiOjgyNzcsInVrIjoidWUxLTZhMjk4ZjkyZjBlMzQ5MzU4NDBhMDI1N2U5MzBmNmNkIiwiem4iOjQ0LCJ0cyI6MTQ1NzM0MDEwMDQzNSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMzA3MjA3OTAiLCJ1ciI6Imh0dHA6Ly9zdGFja292ZXJmbG93LmNvbS9qb2JzL3JlbW90ZT91dG1fc291cmNlPXN0YWNrb3ZlcmZsb3cuY29tJnV0bV9tZWRpdW09YWQmdXRtX2NhbXBhaWduPWNhbmRpZGF0ZXMtd2ZoJnV0bV9jb250ZW50PWxiLXdmaC1raWQtd29yay1vbi13b3JrIn0&amp;s=dU4LEt8G1midjNz-Rni9YYE5GU4" rel="nofollow" target="_blank" title=""><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/72156ae7d17b4328808246c02701d7b0.png" title="" alt="" border="0" width="728" height="90"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/i(1).gif"></div>
+  
+<a name="15996936"></a>
+<div id="answer-15996936" class="answer" data-answerid="15996936" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="15996936">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>It defines how to compose images based on the alpha value. See more here <a href="http://en.wikipedia.org/wiki/Alpha_compositing" rel="nofollow">http://en.wikipedia.org/wiki/Alpha_compositing</a></p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15996936" title="short permalink to this answer" class="short-link" id="link-post-15996936">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15996936/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2013-04-14 07:57:41Z" class="relativetime">Apr 14 '13 at 7:57</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/377014/yoah"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/39b516c9d9853fd701d70d768cd1533d" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/377014/yoah">yoah</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,103</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15996936" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-15996936" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="26610629"></a>
+<div id="answer-26610629" class="answer" data-answerid="26610629" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="26610629">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">-1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>from my recent discovery. if you have overlapping images and try to change the color filter of one of them, it afffects the other image that is overlapping it!</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/26610629" title="short permalink to this answer" class="short-link" id="link-post-26610629">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/26610629/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-10-28 14:16:54Z" class="relativetime">Oct 28 '14 at 14:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/444668/jonney"><div class="gravatar-wrapper-32"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/7ffced6cbed40a750c8ef8a365872fd7" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/444668/jonney">jonney</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">4,133</span><span title="29 gold badges"><span class="badge1"></span><span class="badgecount">29</span></span><span title="71 silver badges"><span class="badge2"></span><span class="badgecount">71</span></span><span title="127 bronze badges"><span class="badge3"></span><span class="badgecount">127</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+            
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-26610629" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-26610629" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/8280027/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="8280027">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.co.in/">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.options.snippets.enabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="0c6fa7bbafee1373debe9dad87c3d4ee">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f8280027%2fwhat-does-porterduff-mode-mean-in-android-graphics-what-does-it-do%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag" title="show questions tagged &#39;android&#39;" rel="tag"><img src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/tKsDb.png" height="16" width="18" alt="" class="sponsor-tag-img">android</a> <a href="http://stackoverflow.com/questions/tagged/graphics" class="post-tag" title="show questions tagged &#39;graphics&#39;" rel="tag">graphics</a> <a href="http://stackoverflow.com/questions/tagged/porter-duff" class="post-tag" title="show questions tagged &#39;porter-duff&#39;" rel="tag">porter-duff</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-11-26 16:56:57Z"><b>4 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>26457 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do?lastactivity" class="lastactivity-link" title="2015-06-07 18:38:18Z">9 months ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk154482337",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk154482337"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input type="radio" value="12" name="downvoteReason">Uninteresting</label></li><li><label><input type="radio" value="13" name="downvoteReason">Misleading</label></li><li><label><input type="radio" value="14" name="downvoteReason">Offensive</label></li><li><label><input type="radio" value="15" name="downvoteReason">Repetitive</label></li><li><label><input type="radio" value="16" name="downvoteReason">Other</label></li></ul><a href="http://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img height="0px" width="0px" border="0" style="position:absolute;" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/i(2).gif"></div>
+        <div id="hireme" class=" blue looking tagged"><a href="http://stackoverflow.com/jobs" target="_blank" data-tz="1" data-ti="0" class="top"><span>Looking for a job?</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="195187" href="http://stackoverflow.com/jobs/109265/lead-android-developer-fetchr" target="_blank" title="Lead Android Developer at Fetchr. Click to learn more.">Lead Android Developer<br><div class="company">Fetchr</div><div class="location" title="New Delhi, India">New Delhi, India</div><span class="post-tag highlight">android</span><span class="post-tag">java</span></a></li><li><a data-at="0" data-tz="3" data-ti="209407" href="http://stackoverflow.com/jobs/109407/unity3d-architect-30-hr-crossover" target="_blank" title="Unity3D Architect - $30/hr at Crossover. Click to learn more.">Unity3D Architect - $30/hr<br><div class="company">Crossover</div><div class="location" title=" / remote"> / remote</div><span class="post-tag highlight">android</span><span class="post-tag">unity3d-pro</span></a></li><li><a data-at="0" data-tz="3" data-ti="209851" href="http://stackoverflow.com/jobs/109851/big-data-solutions-designer-developer-ericsson" target="_blank" title="Big Data Solutions Designer, Developer at Ericsson. Click to learn more.">Big Data Solutions Designer, Developer<br><div class="company">Ericsson</div><div class="location" title=""></div><span class="post-tag">java</span><span class="post-tag">mobile</span></a></li><li><a data-at="0" data-tz="3" data-ti="194955" href="http://stackoverflow.com/jobs/107296/mobile-app-architect-java-node-js-and-meteor-crossover" target="_blank" title="Mobile App Architect (Java, Node js, and Meteor)- $60k at Crossover. Click to learn more.">Mobile App Architect (Java, Node js, and Meteor)- $60k<br><div class="company">Crossover</div><div class="location" title=" / remote"> / remote</div><span class="post-tag highlight">android</span><span class="post-tag">java</span></a></li></ul></div><img class="impression" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/soi.gif" style="display:none;"></div>
+			<div class="module" id="chat-feature">
+    
+
+    
+<h4><a href="http://chat.stackoverflow.com/" id="h-chat-link" title="103 users active in 57 rooms the last 60 minutes">103 People Chatting</a></h4>
+
+<div class="related" id="ad502-rooms"><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="PHP"><a href="http://chat.stackoverflow.com/rooms/11">PHP</a></span></h3><span title="2016-03-07 07:07:47Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/5160493">Ali Zia</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/5160493"><img height="23" width="23" title="Ali Zia: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/photo.jpg"></a><a href="http://chat.stackoverflow.com/users/4332216"><img height="23" width="23" title="Saitama: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/Wv4X9.jpg"></a><a href="http://chat.stackoverflow.com/users/1075902"><img height="23" width="23" title="taco: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/aSoLE.jpg"></a><a href="http://chat.stackoverflow.com/users/4670278"><img height="23" width="23" title="Sagar Naliyapara: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/photo(1).jpg"></a><a href="http://chat.stackoverflow.com/users/3808200"><img height="23" width="23" title="meetesh: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/B9c6Q.jpg"></a><a href="http://chat.stackoverflow.com/users/5793567"><img height="23" width="23" title="About Leros: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/photo(2).jpg"></a><a href="http://chat.stackoverflow.com/users/576767"><img height="23" width="23" title="Félix Gagnon-Grenier: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/7b30843578e5daecaa12b25536801c96"></a></div></div><div class="ad502-room"><h3 class="ad502-room-h3"><span class="ad502-room-title" title="JavaScript"><a href="http://chat.stackoverflow.com/rooms/17">JavaScript</a></span></h3><span title="2016-03-07 07:02:39Z" class="ad502-last-message">1 hour ago - <a href="http://chat.stackoverflow.com/users/4670278">Sagar Naliyapara</a></span><br><div class="ad502-users"><a href="http://chat.stackoverflow.com/users/4670278"><img height="23" width="23" title="Sagar Naliyapara: 1 hour ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/photo(1).jpg"></a><a href="http://chat.stackoverflow.com/users/1075902"><img height="23" width="23" title="taco: 2 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/aSoLE.jpg"></a><a href="http://chat.stackoverflow.com/users/576767"><img height="23" width="23" title="Félix Gagnon-Grenier: 3 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/7b30843578e5daecaa12b25536801c96"></a><a href="http://chat.stackoverflow.com/users/855760"><img height="23" width="23" title="Abhishrek: 3 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/x4ZMC.jpg"></a><a href="http://chat.stackoverflow.com/users/3459110"><img height="23" width="23" title="Awal Garg: 3 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/595ae5c7ef8e8c620bd4d3506be53172"></a><a href="http://chat.stackoverflow.com/users/1839506"><img height="23" width="23" title="Caprica Six: 3 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/Sej2t.jpg"></a><a href="http://chat.stackoverflow.com/users/1386166"><img height="23" width="23" title="phenomnomnominal: 4 hours ago" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/7ea079654bb159fdaa4043834688f57d"></a></div></div></div>
+<script>
+// <!--
+    StackExchange.ready(
+    function () {
+        var options = {
+            chatUrl: 'http://chat.stackoverflow.com',
+            reloadUrl: '/api/recent-chat',
+            preloadData: {"activeUsers":103,"activeRooms":57,"rooms":[{"name":"PHP","id":11,"lastPost":1457334467,"posts":2247201,"users":[{"name":"Ali Zia","id":5160493,"emailhash":"!https://lh4.googleusercontent.com/-BtFs62DS4_g/AAAAAAAAAAI/AAAAAAAAAJU/8cdpbQg_wzE/photo.jpg?sz=128","lastPost":1457334467},{"name":"Saitama","id":4332216,"emailhash":"!https://i.stack.imgur.com/Wv4X9.jpg?s=128\u0026g=1","lastPost":1457334258},{"name":"taco","id":1075902,"emailhash":"!https://i.stack.imgur.com/aSoLE.jpg?s=128\u0026g=1","lastPost":1457334073},{"name":"Sagar Naliyapara","id":4670278,"emailhash":"!https://lh6.googleusercontent.com/-xLaNL88x90A/AAAAAAAAAAI/AAAAAAAAAFU/HtZWwkXC94E/photo.jpg?sz=128","lastPost":1457334043},{"name":"meetesh","id":3808200,"emailhash":"!https://i.stack.imgur.com/B9c6Q.jpg?s=128\u0026g=1","lastPost":1457333657},{"name":"About Leros","id":5793567,"emailhash":"!https://lh4.googleusercontent.com/-GLNDT-vMcOk/AAAAAAAAAAI/AAAAAAAAABI/PGjF3z8ffbk/photo.jpg?sz=128","lastPost":1457333465},{"name":"Félix Gagnon-Grenier","id":576767,"emailhash":"7b30843578e5daecaa12b25536801c96","lastPost":1457333437}],"messages":[{"date":1457334467,"user":"Ali Zia","userid":5160493}],"singleImage":false,"tags":["php"]},{"name":"JavaScript","id":17,"lastPost":1457334159,"posts":3227659,"users":[{"name":"Sagar Naliyapara","id":4670278,"emailhash":"!https://lh6.googleusercontent.com/-xLaNL88x90A/AAAAAAAAAAI/AAAAAAAAAFU/HtZWwkXC94E/photo.jpg?sz=128","lastPost":1457334159},{"name":"taco","id":1075902,"emailhash":"!https://i.stack.imgur.com/aSoLE.jpg?s=128\u0026g=1","lastPost":1457329457},{"name":"Félix Gagnon-Grenier","id":576767,"emailhash":"7b30843578e5daecaa12b25536801c96","lastPost":1457328589},{"name":"Abhishrek","id":855760,"emailhash":"!https://i.stack.imgur.com/x4ZMC.jpg?s=128\u0026g=1","lastPost":1457328354},{"name":"Awal Garg","id":3459110,"emailhash":"595ae5c7ef8e8c620bd4d3506be53172","lastPost":1457327960},{"name":"Caprica Six","id":1839506,"emailhash":"!https://i.stack.imgur.com/Sej2t.jpg?s=128\u0026g=1","lastPost":1457327059},{"name":"phenomnomnominal","id":1386166,"emailhash":"7ea079654bb159fdaa4043834688f57d","lastPost":1457323886}],"messages":[{"date":1457334159,"user":"Sagar Naliyapara","userid":4670278}],"singleImage":false,"tags":["ecmascript","es6","javascript","nodejs","promises"]}]} 
+        };
+
+        StackExchange.chatAd.init(options);
+    });
+// -->
+</script>
+
+</div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/5118894?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">20</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5118894/how-to-change-a-bitmaps-opacity?lq=1" class="question-hyperlink">How to change a bitmap's opacity?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/19461191?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">12</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/19461191/how-to-set-backgroundcolor-on-imageview-on-android?lq=1" class="question-hyperlink">How to Set BackgroundColor on ImageView on Android?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/4988067?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4988067/background-image-in-canvas-while-drawing-path-over-the-top?lq=1" class="question-hyperlink">background (image) in canvas while drawing path over the top</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/32569989?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/32569989/how-to-change-all-toolbars-icons-color-dynamically-without-styling-toolbar?lq=1" class="question-hyperlink">How to change all ToolBar's icons color dynamically without styling toolbar</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/31271313?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/31271313/android-view-ondraw-method-fill-everything-except-some-view?lq=1" class="question-hyperlink">Android View OnDraw method: fill everything EXCEPT some view</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/33348450?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33348450/change-color-of-horizontal-progress-bar-programmatically?lq=1" class="question-hyperlink">Change color of horizontal progress bar programmatically</a>
+</div>			</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3995825?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">416
+    </div>
+</a><a href="http://stackoverflow.com/questions/3995825/what-does-androidlayout-weight-mean?rq=1" class="question-hyperlink">What does android:layout_weight mean?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/6143398?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/6143398/android-alpha-masking-question?rq=1" class="question-hyperlink">Android Alpha Masking question</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8076161?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/8076161/conditional-formatting-for-android-button?rq=1" class="question-hyperlink">Conditional Formatting for Android Button</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/8139555?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">6
+    </div>
+</a><a href="http://stackoverflow.com/questions/8139555/android-color-overlay-porterduff-modes?rq=1" class="question-hyperlink">Android color overlay - PorterDuff modes</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13237157?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/13237157/implementing-different-porterduff-modes-in-android?rq=1" class="question-hyperlink">Implementing different PorterDuff modes in android</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/13528550?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">29
+    </div>
+</a><a href="http://stackoverflow.com/questions/13528550/punch-a-hole-in-a-rectangle-overlay-with-hw-acceleration-enabled-on-view?rq=1" class="question-hyperlink">Punch a hole in a rectangle overlay with HW acceleration enabled on View</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14463384?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/14463384/android-how-to-prevent-colorfilter-with-porterduff-mode-screen-from-blending-a?rq=1" class="question-hyperlink">Android - How to prevent ColorFilter with Porterduff.Mode.Screen from blending alpha?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16848066?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/16848066/crossfade-between-images-in-android?rq=1" class="question-hyperlink">Crossfade between images in Android</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/17478223?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/17478223/android-porter-duff-compositing-performance?rq=1" class="question-hyperlink">Android Porter-Duff Compositing Performance</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/29160732?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">3
+    </div>
+</a><a href="http://stackoverflow.com/questions/29160732/android-custom-xfermode-porterduff-mode?rq=1" class="question-hyperlink">Android custom XferMode / PorterDuff.Mode</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/310780/is-there-any-word-in-english-where-th-sounds-like-th" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is there any word in English where "th" sounds like "t+h"?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76671/what-check-to-use-to-see-if-a-player-notices-an-uncomfortable-npc" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What check to use to see if a player notices an uncomfortable NPC?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64476/where-to-publish-research-if-i-do-not-want-a-peer-review-process" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Where to publish research if I do not want a peer review process?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/311867/how-to-express-an-unwanted-purchase" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to express an unwanted purchase
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-woodworking" title="Woodworking Stack Exchange"></div><a href="http://woodworking.stackexchange.com/questions/3577/are-my-sheet-good-storage-methods-warping-my-boards" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:603 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are my sheet good storage methods warping my boards?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/121354/why-werent-ron-and-hermione-allowed-to-enter-the-three-broomsticks" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why weren't Ron and Hermione allowed to enter the Three Broomsticks?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/241772/what-is-time-dilation-really" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is time dilation really?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/35829643/python-3-super-raises-typeerror-unexpectedly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Python 3: super() raises TypeError unexpectedly
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/25861/what-happens-if-you-exceed-the-maximum-speed-on-a-c172" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What happens if you exceed the maximum speed on a C172?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathoverflow" title="MathOverflow"></div><a href="http://mathoverflow.net/questions/232930/profinite-groups-as-absolute-galois-groups" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:504 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Profinite groups as absolute Galois groups
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/311933/a-word-to-describe-an-incident-or-event-that-may-or-may-not-have-taken-place" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A word to describe an incident or event that may or may not have taken place
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-electronics" title="Electrical Engineering Stack Exchange"></div><a href="http://electronics.stackexchange.com/questions/221143/voltage-drops-are-not-adding-up-to-voltage-of-the-source" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:135 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Voltage drops are not adding up to voltage of the source
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/297694/move-y-axis-in-pgfplots" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Move y-axis in pgfplots
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/25896/what-is-this-door-on-the-fuselage-of-a-747" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is this door on the fuselage of a 747?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/37469/is-personal-notability-possible-without-anyone-knowing-what-the-person-did-to-be" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is personal notability possible without anyone knowing what the person did to become notable?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/257931/can-i-change-the-screen-brightness" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can I change the screen brightness?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/64657/is-it-ethical-to-withdraw-a-conference-long-version-paper-after-being-accepted-a" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it ethical to withdraw a conference long version paper after being accepted as a SHORT paper?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/26936/do-i-really-need-to-wash-the-outside-of-my-car" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Do I really need to wash the outside of my car?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/64800/button-for-pedestrian-traffic-lights-in-germany" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Button for pedestrian traffic lights in Germany
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-salesforce" title="Salesforce Stack Exchange"></div><a href="http://salesforce.stackexchange.com/questions/113147/most-efficient-way-to-mass-delete-collaborationgroups-after-24-hours" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:459 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Most efficient way to mass delete CollaborationGroups after 24 hours?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76675/can-a-druid-cast-the-spell-polymorph-on-themselves" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can a Druid cast the spell Polymorph on themselves.
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/76665/prison-break-with-an-aarakocra" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Prison break with an aarakocra
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-matheducators" title="Mathematics Educators Stack Exchange"></div><a href="http://matheducators.stackexchange.com/questions/10680/what-books-are-like-knuths-surreal-numbers" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:548 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What books are like Knuth's Surreal Numbers?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="http://blender.stackexchange.com/questions/48351/merge-every-two-vertices-in-a-loop" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Merge every two vertices in a loop
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/8280027" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/8280027/ivc/c71a');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/8280027/ivc/c71a" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.3.4.3317
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () {
+            setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+        ados_setKeywords('android,graphics,porter-duff');; ados_load();
+    });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');
+                        ga('set', 'dimension2', '|android|graphics|porter-duff|');         ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>
+            
+    
+<script async="" src="./What does PorterDuff.Mode mean in android graphics.What does it do_ - Stack Overflow_files/p.js"></script></body></html>

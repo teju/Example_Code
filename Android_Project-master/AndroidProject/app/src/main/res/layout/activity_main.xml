@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_background">
+
+    <include layout="@layout/login_toolbar"
+        android:id="@+id/app_login_bar">
+    </include>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_login_bar"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/name_textview"
+        android:layout_marginTop="22dp"
+        android:textSize="25dp"
+        />
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainactivitydrawer">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/framelayout">
+    </FrameLayout>
+
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.teju_chi.androidproject.MainActivityFragment"
+        android:id="@+id/fragmentmain"
+        android:layout_gravity="left|top" />
+
+   </android.support.v4.widget.DrawerLayout>
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageButton"
+        android:background="@drawable/cameraicon"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="captureImage"/>
+</RelativeLayout>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US">
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Android: Passing ArrayList of Object Within an Intent | Chisiki No Yama</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/style.css">
+<link rel="pingback" href="http://aryo.lecture.ub.ac.id/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Chisiki No Yama » Feed" href="http://aryo.lecture.ub.ac.id/feed/">
+<link rel="alternate" type="application/rss+xml" title="Chisiki No Yama » Comments Feed" href="http://aryo.lecture.ub.ac.id/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Chisiki No Yama » Android: Passing ArrayList of Object Within an Intent Comments Feed" href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/feed/">
+<link rel="stylesheet" id="bp-legacy-css-css" href="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/buddypress.css" type="text/css" media="screen">
+<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var BP_DTheme = {"my_favs":"My Favorites","accepted":"Accepted","rejected":"Rejected","show_all_comments":"Show all comments for this thread","show_all":"Show all","comments":"comments","close":"Close","view":"View","mark_as_fav":"Favorite","remove_fav":"Remove Favorite"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/buddypress.js"></script>
+<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/comment-reply.js"></script>
+<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/bp-share-it.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://aryo.lecture.ub.ac.id/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://aryo.lecture.ub.ac.id/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Desain dan Analisis Algoritma PTIIK Genap 2012/2013: Fundamentals of Algorithm Analysis in Efficiency" href="http://aryo.lecture.ub.ac.id/desain-dan-analisis-algoritma-ptiik-genap-20122013-fundamentals-of-algorithm-analysis-in-efficiency/">
+<link rel="next" title="Pemrograman Web: Tugas Pengganti Kuliah – Selasa 5 Maret 2013" href="http://aryo.lecture.ub.ac.id/pemrograman-web-tugas-pengganti-kuliah-selasa-5-maret-2013/">
+<meta name="generator" content="WordPress 3.5.1">
+<link rel="canonical" href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/">
+<link rel="shortlink" href="http://aryo.lecture.ub.ac.id/?p=464">
+
+	<script type="text/javascript">var ajaxurl = 'http://aryo.lecture.ub.ac.id/wp-admin/admin-ajax.php';</script>
+
+<link href="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/style_002.css" media="screen" rel="stylesheet" type="text/css">
+<!-- Chisiki No Yama Custom CSS Styles -->
+<style type="text/css" media="screen">
+body {
+    font-family: 'Segoe UI', Arial, 'sans-serif' !important;
+}
+
+blockqoute {
+    background-color: #dedede !important;
+    border-left:3px solid #999 !important;
+}
+
+blockquote {
+    padding: 0em 2em;
+    margin: 0 3em;
+    border-left: 7px solid #ea533f;
+}
+
+.entry-title {
+    line-height:26px !important;
+    font-size:27px !important;
+}
+
+h1, h2, h3, h4, h5, .entry-title {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif !important;
+    letter-spacing:-1px;
+    font-weight:normal !important;
+}
+
+.hentry {
+    border-bottom:1px dotted #ea533f;
+    border-radius:0;
+}
+
+.entry-content a {
+    font-weight:bold;
+}
+
+.entry-meta {
+    padding-top:1em;
+    border-top:1px solid #ddd;
+}
+
+#page {
+    background-color:white !important;
+    border-radius:9px;
+    border:1px solid #ccc;
+}
+
+#respond {
+    background: #dedede !important;
+}
+
+#respond input#submit {
+    background: #ea533f !important;
+}
+code, .code {
+    background-color:#efefef;
+    padding:14px 20px;
+    font-size:0.9em;
+    color: #5082b4;
+    border-radius:5px;
+}
+
+pre {
+    border-radius:5px;
+    color: #5082b4;
+    font: 0.9em Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+pre code, p code, li code {
+    border-radius: 0px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+#page a {
+   color:#ea533f;
+}
+
+#branding {
+    background-image:url('http://aryo.lecture.ub.ac.id/files/2012/08/mountain.png') !important;
+    background-repeat:no-repeat;
+    background-position:330px 15px;
+    height:252px;
+    border-radius:10px;
+}
+
+#branding hgroup {
+    padding: 4em 0 0;
+}
+
+#branding ul.menu li {
+    border-right:1px solid #ba2025;
+}
+
+#access {
+    background: #ea533f !important;
+    background: -moz-linear-gradient(#da3b26, #ea533f) !important;
+    background: -o-linear-gradient(#da3b26, #ea533f) !important;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#da3b26), to(#ea533f)) !important;
+    background: -webkit-linear-gradient(#da3b26, #ea533f) !important;
+}
+
+#access a {
+    color: white !important;
+}
+
+#access a:hover {
+   color:#ea533f !important;
+}
+
+#access .current_page_item {
+    background-color:white !important;
+}
+
+#access .current_page_item  a {
+    color:#ea533f !important;
+}
+
+#site-description {
+    color:#ea533f !important;
+    margin: 0 270px 117px 0 !important;
+}
+
+#main {
+    background-color:white;
+}
+
+#content nav a {
+    font-size: 16px;
+}
+
+.entry-content, .entry-summary {
+    font-size:13px !important;
+}
+
+img#si_image_com {
+    padding:5px;
+    border:1px solid #ccc;
+}
+
+.commentlist .children > li.bypostauthor {
+    background-color:#eee !important;
+    border-left:7px solid #ea533f;
+}
+
+.comment-meta a {
+    font-weight: normal !important;
+}
+
+li.comment .fn {
+    display: block;
+    font-size: 16px;
+    font-weight: normal !important;
+    line-height: 10px;
+    margin-top: 0.8em;
+}
+
+#secondary {
+    border-left: 1px solid #ccc;
+    width:32%;
+}
+
+.tagcloud {
+    text-align:center;
+    line-height:2.2em;
+}
+
+.tagcloud a {
+    padding: 0 0.4em;
+    background-color: #eee;
+    border-radius: 0.2em;
+}
+
+.widget {
+    padding: 0.5em 1em 1em 3em;
+    border-bottom:none;
+    background-color:transparent;
+}
+
+.widget-title {
+    border-bottom: 1px solid #ddd !important;
+    font-size: 19px !important;
+    letter-spacing: 0em !important;
+    margin: 1em -0.7em 1em !important;
+}
+
+.widget_akismet_widget a {
+    color:#cfea93 !important;
+}
+
+.a-stats .count {
+    font-size: 27px !important;
+    font-weight: normal !important;
+    padding: 8px 13px !important;
+}
+
+#supplementary .widget {
+    padding: 0.5em 1em 1em;
+}
+
+#supplementary .widget-title {
+    color: #999;
+    text-shadow: 0 1px 0 white;
+}
+
+#site-generator {
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    border:none;
+    border-top:1px solid #ccc;
+}
+
+#third .widget_rss {
+    margin-bottom:0;
+}
+</style>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<style type="text/css">
+.a-stats {
+	width: auto;
+}
+.a-stats a { 
+	background: #7CA821;
+	background-image:-moz-linear-gradient(0% 100% 90deg,#5F8E14,#7CA821);
+	background-image:-webkit-gradient(linear,0% 0,0% 100%,from(#7CA821),to(#5F8E14));
+	border: 1px solid #5F8E14;
+	border-radius:3px;
+	color: #CFEA93;
+	cursor: pointer;
+	display: block;
+	font-weight: normal;
+	height: 100%;
+	-moz-border-radius:3px;
+	padding: 7px 0 8px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-border-radius:3px;
+	width: 100%;
+}
+.a-stats a:hover { 
+	text-decoration: none;
+	background-image:-moz-linear-gradient(0% 100% 90deg,#6F9C1B,#659417);
+	background-image:-webkit-gradient(linear,0% 0,0% 100%,from(#659417),to(#6F9C1B));
+}
+.a-stats .count {
+	color: #FFF;
+	display: block;
+	font-size: 15px;
+	line-height: 16px;
+	padding: 0 13px;
+	white-space: nowrap;
+}
+</style>
+
+<!-- Vipers Video Quicktags v6.4.5 | http://www.viper007bond.com/wordpress-plugins/vipers-video-quicktags/ -->
+<style type="text/css">
+.vvqbox { display: block; max-width: 100%; visibility: visible !important; margin: 10px auto; } .vvqbox img { max-width: 100%; height: 100%; } .vvqbox object { max-width: 100%; } 
+</style>
+<script type="text/javascript">
+// <![CDATA[
+	var vvqflashvars = {};
+	var vvqparams = { wmode: "opaque", allowfullscreen: "true", allowscriptaccess: "always" };
+	var vvqattributes = {};
+	var vvqexpressinstall = "http://aryo.lecture.ub.ac.id/wp-content/plugins/vipers-video-quicktags/resources/expressinstall.swf";
+// ]]>
+</script>
+	<style type="text/css">
+			#site-title a,
+		#site-description {
+			color: #ea533f !important;
+		}
+		</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #efefef; background-image: url('http://aryo.lecture.ub.ac.id/files/2013/01/bg-body2.png'); background-repeat: repeat-x; background-position: top left; background-attachment: fixed; }
+</style>
+<!-- begin SI CAPTCHA Anti-Spam - comment form style --><style type="text/css">div#captchaImgDiv { display:block; }.captchaSizeDivSmall { width:175px; height:45px; padding-top:10px; }.captchaSizeDivLarge { width:250px; height:60px; padding-top:10px; }img#si_image_com,#si_image_reg,#si_image_log,#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }.captchaImgRefresh { border-style:none; margin:0; vertical-align:bottom; }div#captchaInputDiv { display:block; padding-top:15px; padding-bottom:5px; }label#captcha_code_label { margin:0; }input#captcha_code { width:65px; }</style><!-- end SI CAPTCHA Anti-Spam - comment form style --></head>
+
+<body class="single single-post postid-464 single-format-standard custom-background single-author content-sidebar js">
+<div id="page" class="hfeed">
+	<header id="branding" role="banner">
+			<hgroup>
+               	                <div id="site-details">            
+					<h1 id="site-title"><span><a href="http://aryo.lecture.ub.ac.id/" title="Chisiki No Yama" rel="home">Chisiki No Yama</a></span></h1>
+					<h2 id="site-description">Aryo Pinandito, ST, M.MT  /  Mountain of Knowledge  /  Brawijaya University</h2>
+                </div>
+			</hgroup>
+				<form method="get" id="searchform" action="http://aryo.lecture.ub.ac.id/">
+		<label for="s" class="assistive-text">Search</label>
+		<input class="field" name="s" id="s" placeholder="Search" type="text">
+		<input class="submit" name="submit" id="searchsubmit" value="Search" type="submit">
+	</form>
+
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text">Primary menu</h3>
+								<div class="skip-link"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+				<div class="skip-link"><a class="assistive-text" href="#secondary" title="Skip to secondary content">Skip to secondary content</a></div>
+				                                	<div class="menu-header-container">
+						<ul class="menu l_tinynavNaN"><li><a href="http://aryo.lecture.ub.ac.id/" title="Home">Home</a></li><li class="page_item page-item-2"><a href="http://aryo.lecture.ub.ac.id/about/">About</a></li><li class="page_item page-item-299"><a href="http://aryo.lecture.ub.ac.id/awards/">Awards</a></li><li class="page_item page-item-297"><a href="http://aryo.lecture.ub.ac.id/publications/">Publications</a></li><li class="page_item page-item-303"><a href="http://aryo.lecture.ub.ac.id/research/">Research Lab</a></li></ul><select class="tinynav tinynavNaN"><option value="http://aryo.lecture.ub.ac.id/">Home</option><option value="http://aryo.lecture.ub.ac.id/about/">About</option><option value="http://aryo.lecture.ub.ac.id/awards/">Awards</option><option value="http://aryo.lecture.ub.ac.id/publications/">Publications</option><option selected="selected" value="http://aryo.lecture.ub.ac.id/research/">Research Lab</option></select>
+                    </div>
+				   
+			</nav><!-- #access -->
+            
+				</header><!-- #branding -->
+    
+	<div id="main" class="clearfix">
+
+		<div id="primary">
+			<div id="content" role="main">
+    			
+				
+					<nav id="nav-single">
+						<h3 class="assistive-text">Post navigation</h3>
+						<span class="nav-previous"><a href="http://aryo.lecture.ub.ac.id/desain-dan-analisis-algoritma-ptiik-genap-20122013-fundamentals-of-algorithm-analysis-in-efficiency/" rel="prev"><span class="meta-nav">←</span> Previous</a></span>
+						<span class="nav-next"><a href="http://aryo.lecture.ub.ac.id/pemrograman-web-tugas-pengganti-kuliah-selasa-5-maret-2013/" rel="next">Next <span class="meta-nav">→</span></a></span>
+					</nav><!-- #nav-single -->
+
+					
+<article id="post-464" class="post-464 post type-post status-publish format-standard hentry category-android category-programming category-snippets tag-android tag-java tag-snippets tag-tutorial">
+	<header class="entry-header">
+		<h1 class="entry-title">Android: Passing ArrayList of Object Within an Intent</h1>
+
+		            <div class="entry-meta">
+                <span class="sep">Posted on </span><a href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/" title="10:07 AM" rel="bookmark"><time class="entry-date updated" datetime="2013-03-04T10:07:08+00:00" pubdate="">04 March 2013</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="http://aryo.lecture.ub.ac.id/author/aryo/" title="View all posts by Aryo Pinandito" rel="author">Aryo Pinandito</a></span></span>                                    <span class="sep"> — </span>
+                    <span class="comments-link">
+                        <a href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/#respond" title="Comment on Android: Passing ArrayList of Object Within an Intent">No Comments ↓</a>                    </span>
+                            </div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>An intent is an object that is very useful to pass variables between activities in Android. Basic primitive data types such as <code>Integer</code>, <code>String</code>, <code>Boolean</code> are easy to be passed through an intent.</p>
+<p>On my previously written article on <a href="http://aryo.lecture.ub.ac.id/how-to-switch-between-activities-in-android-sdk/">how to switch between android activities</a>&nbsp;I
+ already explained on how to pass a char sequence variable. But Android 
+has no custom object data type that can be passed directly through an 
+intent as in primitive data types. So how do we able to pass such kind 
+of custom object data?</p>
+<p>The answers is: “flatten the object into a Parcelable object, passing
+ it into the intent, and rebuild the flatten object into the original 
+object”. More information on parcelable <a href="http://developer.android.com/reference/android/os/Parcelable.html">can be seen here</a>.</p>
+<p>Better understanding on how to do this technically is by an example. Lets say I have a list of array (an ArrayList) of a <code>Car</code> class object which is going to be passed through an intent. Below is the definition of the <code>Car</code> class:</p>
+<pre><code>class Car {
+    public int regId;
+    public String brand;
+    public String color;
+}</code></pre>
+<p>in order the <code>Car</code> class become parcelable, it has to implement <code>Parcelable</code> class and it’s required method. So the <code>Car</code> class has to be modified as below:</p>
+<pre><code>class Car implements Parcelable {
+    public int regId;
+    public String brand;
+    public String color;
+
+    public int describeContents() {
+	return this.hashCode();
+    }
+
+    public void writeToParcel(Parcel dest, int flags) {
+	dest.writeInt(regId);
+	dest.writeString(brand);
+	dest.writeString(color);
+    }
+
+}
+</code></pre>
+<p>OK, we’re done for this one. As for another requirement for <code>Parcelable</code> class, the class which implements the <code>Parcelable</code> class has to have an object of <code>Parcelable.Creator&lt;T&gt;</code>&nbsp;class type named <code>CREATOR</code>. So let’s add it into the <code>Car</code> class like below:</p>
+<pre><code>class Car implements Parcelable {
+&nbsp; &nbsp; public int regId;
+&nbsp; &nbsp; public String brand;
+&nbsp; &nbsp; public String color;
+
+    public Car(Parcel source) {
+        regId = source.getInt();
+        brand = source.getString();
+        color = source.getString();
+    }
+
+    public Car(int regId, String brand, String color) { 
+        this.regId = regId;
+        this.brand = brand;
+        this.color = color;
+    }
+
+&nbsp; &nbsp; public int describeContents() {
+	return this.hashCode();
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; public void writeToParcel(Parcel dest, int flags) {
+	dest.writeInt(regId);
+	dest.writeString(brand);
+	dest.writeString(color);
+&nbsp; &nbsp; }
+
+    public static final Parcelable.Creator CREATOR
+             = new Parcelable.Creator() {
+         public Car createFromParcel(Parcel in) {
+             return new Car(in);
+         }
+
+         public Car[] newArray(int size) {
+             return new Car[size];
+         }
+    };
+
+}
+</code></pre>
+<p>A <code>Parcelable.Creator</code> class requires two method, <code>createFromParcel(Parcel)</code> and <code>newArray(int)</code>. the <code>createFromParcel(Parcel)</code> method returning <code>Car</code> object from <code>Parcel</code>. So we have to add a constructor with a <code>Parcel</code> as it’s parameter. The order of <code>get[dataType]()</code> function has to be in the same order as in <code>writeToParcel() </code>method. As an addition I also added another constructor for convenience in creating <code>Car</code> object.</p>
+<p>We’re done in creating a parcelable <code>Car</code> class. So now we can pass the <code>Car</code> class into an intent like below:</p>
+<pre><code>ArrayList carList = new ArrayList();
+carList.add(new Car('1','Honda','Black'); 
+carList.add(new Car('2','Toyota','Blue'); 
+carList.add(new Car('3','Suzuki','Green'); 
+Intent i = new Intent(getApplicationContext(), CarDetailActivity.class);
+i.putParcelableArrayListExtra("cars", carList);
+this.startActivity(i);</code></pre>
+<p>In CarDetailActivity class getting those extra are as follow:</p>
+<pre><code>Intent i = this.getIntent();
+ArrayList&lt;Car&gt; carList = (ArrayList&lt;Car&gt;) i.getParcelableArrayListExtra("cars");
+
+// then, do what you want with the ArrayList.</code></pre>
+<p>Hope this tutorial is useful to you and found that Parcelable class 
+is useful to flatten a custom Object and pass it through an intent.</p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-meta">
+		This entry was posted in <a href="http://aryo.lecture.ub.ac.id/category/programming/android/" title="View all posts in Android" rel="category tag">Android</a>, <a href="http://aryo.lecture.ub.ac.id/category/programming/" title="View all posts in Programming" rel="category tag">Programming</a>, <a href="http://aryo.lecture.ub.ac.id/category/snippets/" title="View all posts in Snippets" rel="category tag">Snippets</a> and tagged <a href="http://aryo.lecture.ub.ac.id/tag/android/" rel="tag">Android</a>, <a href="http://aryo.lecture.ub.ac.id/tag/java/" rel="tag">java</a>, <a href="http://aryo.lecture.ub.ac.id/tag/snippets/" rel="tag">Snippets</a>, <a href="http://aryo.lecture.ub.ac.id/tag/tutorial/" rel="tag">tutorial</a> by <a href="http://aryo.lecture.ub.ac.id/author/aryo/">Aryo Pinandito</a>. Bookmark the <a href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/" title="Permalink to Android: Passing ArrayList of Object Within an Intent" rel="bookmark">permalink</a>.		
+		
+	</footer><!-- .entry-meta -->
+</article><!-- #post-464 -->
+
+        
+
+						<div id="comments">
+	
+	
+	
+									<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://aryo.lecture.ub.ac.id/android-passing-arraylist-of-object-within-an-intent/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://aryo.lecture.ub.ac.id/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" size="30" type="text"></p>
+
+<div class="captchaSizeDivLarge">
+        <div style="display:none;">
+          <label for="email_com"><small>Leave this field empty</small></label>
+          <input name="email_com" id="email_com" type="text">
+        </div>
+    <input name="si_tok_com" value="3dcdd0fd19e304c4ad02134013dfbe1e,1465214782" type="hidden">
+<img id="si_image_com" class="si-captcha" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/securimage_show.png" alt="CAPTCHA Image" title="CAPTCHA Image" height="60" width="175">
+    <input id="si_code_com" name="si_code_com" value="4mGf9yBBtG18sWvu" type="hidden">
+    <div id="si_refresh_com">
+<a href="#" rel="nofollow" title="Refresh Image" onclick="si_captcha_refresh('si_image_com','com','/wp-content/mu-plugins/si-captcha-for-wordpress/captcha','http://aryo.lecture.ub.ac.id/wp-content/mu-plugins/si-captcha-for-wordpress/captcha/securimage_show.php?si_form_id=com&amp;prefix='); return false;">
+      <img class="captchaImgRefresh" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/refresh.png" alt="Refresh Image" onclick="this.blur();" height="20" width="22"></a>
+  </div>
+  </div>
+<br>
+<p><input id="captcha_code" name="captcha_code" size="6" type="text">
+<label id="captcha_code_label" for="captcha_code">CAPTCHA Code</label><span class="required">*</span>
+</p>												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a
+ href="" title="" rel=""&gt; &lt;abbr title=""&gt; &lt;acronym 
+title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; 
+&lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q 
+cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="464" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="7e22e014fa" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+						
+</div><!-- #comments -->
+
+				
+			</div><!-- #content -->
+		</div><!-- #primary -->
+        
+		<div id="secondary" class="widget-area" role="complementary">
+			<aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-1134"><a href="http://aryo.lecture.ub.ac.id/category/announcements/" title="View all posts filed under Announcements">Announcements</a> (1)
+</li>
+	<li class="cat-item cat-item-125758"><a href="http://aryo.lecture.ub.ac.id/category/concept/" title="View all posts filed under Concept">Concept</a> (9)
+</li>
+	<li class="cat-item cat-item-795"><a href="http://aryo.lecture.ub.ac.id/category/programming/" title="View all posts filed under Programming">Programming</a> (34)
+<ul class="children">
+	<li class="cat-item cat-item-125767"><a href="http://aryo.lecture.ub.ac.id/category/programming/net-framework/" title="View all posts filed under .NET Framework">.NET Framework</a> (1)
+</li>
+	<li class="cat-item cat-item-16860"><a href="http://aryo.lecture.ub.ac.id/category/programming/android/" title="View all posts filed under Android">Android</a> (11)
+</li>
+	<li class="cat-item cat-item-68765"><a href="http://aryo.lecture.ub.ac.id/category/programming/arduino/" title="View all posts filed under Arduino">Arduino</a> (1)
+</li>
+	<li class="cat-item cat-item-106761"><a href="http://aryo.lecture.ub.ac.id/category/programming/php/" title="View all posts filed under PHP">PHP</a> (15)
+</li>
+	<li class="cat-item cat-item-796"><a href="http://aryo.lecture.ub.ac.id/category/programming/python/" title="View all posts filed under Python">Python</a> (1)
+</li>
+	<li class="cat-item cat-item-125775"><a href="http://aryo.lecture.ub.ac.id/category/programming/raspberry-pi/" title="View all posts filed under Raspberry Pi">Raspberry Pi</a> (2)
+</li>
+	<li class="cat-item cat-item-125770"><a href="http://aryo.lecture.ub.ac.id/category/programming/ruby/" title="View all posts filed under Ruby">Ruby</a> (2)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-83689"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/" title="View all posts filed under PTIIK">PTIIK</a> (69)
+<ul class="children">
+	<li class="cat-item cat-item-6917"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/desain-dan-analisis-algoritma/" title="View all posts filed under Desain dan Analisis Algoritma">Desain dan Analisis Algoritma</a> (13)
+</li>
+	<li class="cat-item cat-item-3864"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/desain-web/" title="View all posts filed under Desain Web">Desain Web</a> (15)
+</li>
+	<li class="cat-item cat-item-4786"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/interaksi-manusia-komputer/" title="View all posts filed under Interaksi Manusia-Komputer">Interaksi Manusia-Komputer</a> (13)
+</li>
+	<li class="cat-item cat-item-107941"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/pemrograman-web/" title="View all posts filed under Pemrograman Web">Pemrograman Web</a> (22)
+</li>
+	<li class="cat-item cat-item-125776"><a href="http://aryo.lecture.ub.ac.id/category/ptiik/pengembangan-aplikasi-perangkat-bergerak/" title="View all posts filed under Pengembangan Aplikasi Perangkat Bergerak">Pengembangan Aplikasi Perangkat Bergerak</a> (10)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-109673"><a href="http://aryo.lecture.ub.ac.id/category/snippets/" title="View all posts filed under Snippets">Snippets</a> (30)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://aryo.lecture.ub.ac.id/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a> (2)
+</li>
+	<li class="cat-item cat-item-109661"><a href="http://aryo.lecture.ub.ac.id/category/vocation-ub/" title="View all posts filed under Vocation UB">Vocation UB</a> (1)
+<ul class="children">
+	<li class="cat-item cat-item-29615"><a href="http://aryo.lecture.ub.ac.id/category/vocation-ub/rekayasa-perangkat-lunak/" title="View all posts filed under Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</a> (1)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-34568"><a href="http://aryo.lecture.ub.ac.id/category/web/" title="View all posts filed under Web">Web</a> (22)
+<ul class="children">
+	<li class="cat-item cat-item-125766"><a href="http://aryo.lecture.ub.ac.id/category/web/css/" title="View all posts filed under CSS">CSS</a> (4)
+</li>
+</ul>
+</li>
+		</ul>
+</aside><aside id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Tags Cloud</h3><div class="tagcloud"><a href="http://aryo.lecture.ub.ac.id/tag/net/" class="tag-link-125768" title="1 topic" style="font-size: 8pt;">.net</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/net-framework/" class="tag-link-125767" title="1 topic" style="font-size: 8pt;">.NET Framework</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/akademik/" class="tag-link-261" title="14 topics" style="font-size: 16.555555555556pt;">Akademik</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/android/" class="tag-link-16860" title="13 topics" style="font-size: 16.263888888889pt;">Android</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/apache/" class="tag-link-106821" title="5 topics" style="font-size: 12.666666666667pt;">apache</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/arduino/" class="tag-link-68765" title="1 topic" style="font-size: 8pt;">Arduino</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/bash/" class="tag-link-16855" title="7 topics" style="font-size: 13.833333333333pt;">Bash</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/c/" class="tag-link-978" title="1 topic" style="font-size: 8pt;">C#</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/css/" class="tag-link-125766" title="4 topics" style="font-size: 11.888888888889pt;">CSS</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/daa/" class="tag-link-125774" title="11 topics" style="font-size: 15.583333333333pt;">DAA</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/database/" class="tag-link-459" title="3 topics" style="font-size: 10.916666666667pt;">Database</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/design/" class="tag-link-9514" title="14 topics" style="font-size: 16.555555555556pt;">design</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/git/" class="tag-link-109677" title="1 topic" style="font-size: 8pt;">Git</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/github/" class="tag-link-119892" title="1 topic" style="font-size: 8pt;">Github</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/hci/" class="tag-link-109669" title="14 topics" style="font-size: 16.555555555556pt;">HCI</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/html5/" class="tag-link-125778" title="1 topic" style="font-size: 8pt;">HTML5</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/java/" class="tag-link-9511" title="7 topics" style="font-size: 13.833333333333pt;">java</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/linux/" class="tag-link-833" title="10 topics" style="font-size: 15.194444444444pt;">Linux</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/macintosh/" class="tag-link-125763" title="3 topics" style="font-size: 10.916666666667pt;">Macintosh</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/mac-os-x/" class="tag-link-125764" title="7 topics" style="font-size: 13.833333333333pt;">Mac OS X</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/mobile/" class="tag-link-83674" title="9 topics" style="font-size: 14.805555555556pt;">Mobile</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/mountain-lion/" class="tag-link-125765" title="4 topics" style="font-size: 11.888888888889pt;">Mountain Lion</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/mysql/" class="tag-link-835" title="3 topics" style="font-size: 10.916666666667pt;">MySQL</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/php/" class="tag-link-106761" title="14 topics" style="font-size: 16.555555555556pt;">PHP</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/programming-2/" class="tag-link-12374" title="24 topics" style="font-size: 18.694444444444pt;">programming</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/ptiik/" class="tag-link-83689" title="54 topics" style="font-size: 22pt;">PTIIK</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/python/" class="tag-link-796" title="1 topic" style="font-size: 8pt;">Python</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/raspberry-pi/" class="tag-link-125775" title="2 topics" style="font-size: 9.75pt;">Raspberry Pi</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/responsive-web/" class="tag-link-125772" title="2 topics" style="font-size: 9.75pt;">Responsive Web</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/ruby/" class="tag-link-125770" title="2 topics" style="font-size: 9.75pt;">Ruby</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/server/" class="tag-link-106746" title="7 topics" style="font-size: 13.833333333333pt;">server</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/shell-scripting/" class="tag-link-109676" title="8 topics" style="font-size: 14.319444444444pt;">Shell Scripting</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/snippets/" class="tag-link-109673" title="24 topics" style="font-size: 18.694444444444pt;">Snippets</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/tutorial/" class="tag-link-599" title="18 topics" style="font-size: 17.527777777778pt;">tutorial</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/ub/" class="tag-link-184" title="23 topics" style="font-size: 18.5pt;">UB</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/web/" class="tag-link-34568" title="33 topics" style="font-size: 19.958333333333pt;">Web</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/web-design/" class="tag-link-105032" title="18 topics" style="font-size: 17.527777777778pt;">web design</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/web-server/" class="tag-link-851" title="7 topics" style="font-size: 13.833333333333pt;">web server</a>
+<a href="http://aryo.lecture.ub.ac.id/tag/windows/" class="tag-link-83730" title="4 topics" style="font-size: 11.888888888889pt;">Windows</a></div>
+</aside><aside id="calendar-2" class="widget widget_calendar"><h3 class="widget-title">Post Calendar</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>June 2016</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://aryo.lecture.ub.ac.id/2014/11/" title="View posts for November 2014">« Nov</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="2" class="pad">&nbsp;</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+	</tr>
+	<tr>
+		<td id="today">6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+	</tr>
+	<tr>
+		<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+	</tr>
+	<tr>
+		<td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+	</tr>
+	<tr>
+		<td>27</td><td>28</td><td>29</td><td>30</td>
+		<td class="pad" colspan="3">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></aside><aside id="archives-3" class="widget widget_archive"><h3 class="widget-title">Post Archives</h3>		<ul>
+			<li><a href="http://aryo.lecture.ub.ac.id/2014/11/" title="November 2014">November 2014</a>&nbsp;(1)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2014/10/" title="October 2014">October 2014</a>&nbsp;(1)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/12/" title="December 2013">December 2013</a>&nbsp;(7)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/11/" title="November 2013">November 2013</a>&nbsp;(7)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/10/" title="October 2013">October 2013</a>&nbsp;(16)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/09/" title="September 2013">September 2013</a>&nbsp;(3)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/07/" title="July 2013">July 2013</a>&nbsp;(5)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/06/" title="June 2013">June 2013</a>&nbsp;(5)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/05/" title="May 2013">May 2013</a>&nbsp;(5)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/04/" title="April 2013">April 2013</a>&nbsp;(8)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/03/" title="March 2013">March 2013</a>&nbsp;(9)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/02/" title="February 2013">February 2013</a>&nbsp;(17)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2013/01/" title="January 2013">January 2013</a>&nbsp;(12)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2012/12/" title="December 2012">December 2012</a>&nbsp;(1)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2012/10/" title="October 2012">October 2012</a>&nbsp;(1)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2012/09/" title="September 2012">September 2012</a>&nbsp;(4)</li>
+	<li><a href="http://aryo.lecture.ub.ac.id/2012/08/" title="August 2012">August 2012</a>&nbsp;(2)</li>
+		</ul>
+</aside><aside id="search-3" class="widget widget_search"><h3 class="widget-title">Search</h3>	<form method="get" id="searchform" action="http://aryo.lecture.ub.ac.id/">
+		<label for="s" class="assistive-text">Search</label>
+		<input class="field" name="s" id="s" placeholder="Search" type="text">
+		<input class="submit" name="submit" id="searchsubmit" value="Search" type="submit">
+	</form>
+</aside><aside id="akismet_widget-2" class="widget widget_akismet_widget"><h3 class="widget-title">Spam Protection Stats</h3>
+	<div class="a-stats">
+		<a href="http://akismet.com/" target="_blank" title=""><strong class="count">51,664 spam</strong> blocked by <strong>Akismet</strong></a>
+	</div>
+
+</aside><aside id="text-2" class="widget widget_text">			<div class="textwidget"><img src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/responsive-web-design-630x387.jpg" style="margin-right:10px" align="left" width="136">
+<em>Hey! This web is responsive! Resize your browser window size or open
+ with your mobile devices. This website layout will adapt to your web 
+browser resolution, so it should be also easy to read on your mobile 
+devices.</em>
+<br>
+<a href="http://www.prchecker.info/" title="PageRank" target="_blank">
+<img src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/getpr.gif" alt="PageRank" style="border:0"></a></div>
+		</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta Tags</h3>			<ul>
+			<li><a href="https://aryo.lecture.ub.ac.id/wp-login.php?action=register">Register</a></li>			<li><a href="https://aryo.lecture.ub.ac.id/wp-login.php">Log in</a></li>
+			<li><a href="http://aryo.lecture.ub.ac.id/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://aryo.lecture.ub.ac.id/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</aside>		</div><!-- #secondary .widget-area -->
+
+	</div><!-- #main -->
+
+	<footer id="colophon" role="contentinfo">
+			
+<div id="supplementary" class="three">
+		<div id="first" class="widget-area" role="complementary">
+		<aside id="recent-comments-3" class="widget widget_recent_comments"><h3 class="widget-title">Recently Commented</h3><ul id="recentcomments"><li class="recentcomments"><a href="http://downloadlaguterbaru.web.id/" rel="external nofollow" class="url">lagu terbaru</a> on <a href="http://aryo.lecture.ub.ac.id/desain-web-graphics-for-web/comment-page-1/#comment-54004">Desain Web: Graphics for Web</a></li><li class="recentcomments"><a href="http://downloadlaguterbaru.web.id/" rel="external nofollow" class="url">download lagu terbaru</a> on <a href="http://aryo.lecture.ub.ac.id/install-raspbian-wheezy-on-raspberry-pi-sd-card-using-macos-x/comment-page-1/#comment-54003">Install Raspbian Wheezy on Raspberry Pi SD Card Using MacOS X</a></li><li class="recentcomments"><a href="http://blogresepmasakan.com/" rel="external nofollow" class="url">resep masakan</a> on <a href="http://aryo.lecture.ub.ac.id/dom-javascript-dan-jquery/comment-page-1/#comment-54001">DOM, JavaScript, dan jQuery</a></li><li class="recentcomments"><a href="http://objektempatwisataindonesia.com/" rel="external nofollow" class="url">objek+wisata</a> on <a href="http://aryo.lecture.ub.ac.id/dom-javascript-dan-jquery/comment-page-1/#comment-54000">DOM, JavaScript, dan jQuery</a></li><li class="recentcomments"><a href="http://objektempatwisataindonesia.com/" rel="external nofollow" class="url">objek wisata</a> on <a href="http://aryo.lecture.ub.ac.id/install-raspbian-wheezy-on-raspberry-pi-sd-card-using-macos-x/comment-page-1/#comment-53999">Install Raspbian Wheezy on Raspberry Pi SD Card Using MacOS X</a></li><li class="recentcomments"><a href="http://objektempatwisataindonesia.com/" rel="external nofollow" class="url">tempat wisata</a> on <a href="http://aryo.lecture.ub.ac.id/tugas-matakuliah-desain-web-konversi-psd-ke-html5/comment-page-1/#comment-53998">Tugas Matakuliah Desain Web: Konversi PSD ke HTML5</a></li></ul></aside>	</div><!-- #first .widget-area -->
+	
+		<div id="second" class="widget-area" role="complementary">
+				<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/dom-javascript-dan-jquery/" title="DOM, JavaScript, dan jQuery">DOM, JavaScript, dan jQuery</a>
+						</li>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/tugas-matakuliah-desain-web-konversi-psd-ke-html5/" title="Tugas Matakuliah Desain Web: Konversi PSD ke HTML5">Tugas Matakuliah Desain Web: Konversi PSD ke HTML5</a>
+						</li>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/opening-macos-x-finder-window-on-a-hidden-folder-from-terminal/" title="Opening MacOS X Finder Window on A Hidden Folder from Terminal">Opening MacOS X Finder Window on A Hidden Folder from Terminal</a>
+						</li>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/project-akhir-pengembangan-aplikasi-perangkat-bergerak/" title="Project Akhir: Pengembangan Aplikasi Perangkat Bergerak">Project Akhir: Pengembangan Aplikasi Perangkat Bergerak</a>
+						</li>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/project-akhir-interaksi-manusia-dan-komputer/" title="Project Akhir: Interaksi Manusia dan Komputer">Project Akhir: Interaksi Manusia dan Komputer</a>
+						</li>
+					<li>
+				<a href="http://aryo.lecture.ub.ac.id/case-study-quiz-nuclear-reactor/" title="Case Study Quiz: Nuclear Reactor">Case Study Quiz: Nuclear Reactor</a>
+						</li>
+				</ul>
+		</aside>	</div><!-- #second .widget-area -->
+	
+		<div id="third" class="widget-area" role="complementary">
+		<aside id="rss-2" class="widget widget_rss"><h3 class="widget-title"><a class="rsswidget" href="https://api.twitter.com/1/statuses/user_timeline.rss?screen_name=aryoxp" title="Syndicate this content"><img style="border:0" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/rss.png" alt="RSS" height="14" width="14"></a> <a class="rsswidget" href="" title="">Recently Tweeted</a></h3></aside><aside id="text-3" class="widget widget_text">			<div class="textwidget"><p>Needs faster update? Follow <a href="http://twitter.com/aryoxp">@aryoxp</a> on Twitter.<br>
+More information are available on <a href="http://aryo.info/" target="_blank">Aryo Pinandito personal website</a>.</p>
+</div>
+		</aside>	</div><!-- #third .widget-area -->
+	</div><!-- #supplementary -->           			<div id="site-generator" class="clearfix">
+            	
+			<div class="social-profile">
+ 		 		<ul><li class="facebook"><a href="http://facebook.com/aryoxp" title="Facebook" target="_blank">Facebook</a></li><li class="twitter"><a href="http://twitter.com/aryoxp" title="Twitter" target="_blank">Twitter</a></li><li class="google-plus"><a href="https://plus.google.com/110247299703886300379" title="Google Plus" target="_blank">Google Plus</a></li><li class="you-tube"><a href="http://www.youtube.com/user/aryoxp" title="YouTube" target="_blank">YouTube</a></li><li class="tumblr"><a href="http://aryoxp.tumblr.com/" title="Tumblr" target="_blank">Tumblr</a></li><li class="flickr"><a href="http://www.flickr.com/photos/aryoxp" title="Flickr" target="_blank">Flickr</a></li>
+				</ul>
+			</div>            	<div class="copyright">
+                	Copyright © 2016                    <a href="http://aryo.lecture.ub.ac.id/" title="Chisiki No Yama">
+						Chisiki No Yama            		</a>
+                    . All Rights Reserved.                </div>
+                <div class="powered">
+                	<a href="http://wordpress.org/" title="Powered by WordPress" rel="generator">Powered by WordPress</a>
+					<span class="sep"> | </span>
+                    <a href="http://catchthemes.com/" title="Theme Catch Box by Catch Themes" rel="designer">Theme: Catch Box</a>
+            	</div>
+                          	</div> <!-- #site-generator -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/si_captcha.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+var si_captcha_styles = "\
+<!-- begin SI CAPTCHA Anti-Spam - comment form style -->\
+<style type='text/css'>\
+div#captchaImgDiv { display:block; }\
+.captchaSizeDivSmall { width:175px; height:45px; padding-top:10px; }\
+.captchaSizeDivLarge { width:250px; height:60px; padding-top:10px; }\
+img#si_image_com,#si_image_reg,#si_image_log,#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }\
+.captchaImgRefresh { border-style:none; margin:0; vertical-align:bottom; }\
+div#captchaInputDiv { display:block; padding-top:15px; padding-bottom:5px; }\
+label#captcha_code_label { margin:0; }\
+input#captcha_code { width:65px; }\
+</style>\
+<!-- end SI CAPTCHA Anti-Spam - comment form style -->\
+";
+jQuery(document).ready(function($) {
+$('head').append(si_captcha_styles);
+});
+//]]>
+</script>
+
+<!-- Generated in 1.636 seconds. (90 q) -->
+
+	<script type="text/javascript" src="Android%20%20Passing%20ArrayList%20of%20Object%20Within%20an%20Intent%20_%20Chisiki%20No%20Yama_files/catchbox-menu.js"></script>
+
+<script>function lc_get_cookie(name) {var c = document.cookie;if (c.indexOf(name) != -1) {var x = c.indexOf(name)+name.length+1;var y = c.indexOf(";",x);if (y < 0) y = c.length;return decodeURIComponent(c.substring(x,y));} else return "";}if ((d = document.getElementById("commentform")) != null) { e = d.elements;var z = lc_get_cookie("comment_author_email_b050aa7e7fb99e8cd92ce92a0c484703");if (z != "") e["email"].value = z;z = lc_get_cookie("comment_author_b050aa7e7fb99e8cd92ce92a0c484703");if (z != "") e["author"].value = z;z = lc_get_cookie("comment_author_url_b050aa7e7fb99e8cd92ce92a0c484703");if (z != "") e["url"].value = z;}</script></body></html>

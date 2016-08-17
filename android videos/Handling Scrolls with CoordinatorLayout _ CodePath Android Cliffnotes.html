@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Handling Scrolls with CoordinatorLayout | CodePath Android Cliffnotes</title><link href="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/bootstrap.min.css" rel="stylesheet" type="text/css"><link href="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/bootstrap-forms.min.css" rel="stylesheet" type="text/css"><link href="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/markdown.css" rel="stylesheet" type="text/css"><link href="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/style.css" rel="stylesheet" type="text/css"><meta content="width=device-width, initial-scale=1.0" name="viewport"><script type="text/javascript" async="" src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/linkid.js"></script><script async="" src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/analytics.js"></script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47712505-2', 'codepath.com');
+ga('require', 'linkid', 'linkid.js');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');</script></head><body style="zoom: 1;"><div class="header"><div class="inner-content clearfix"><a class="pull-left" href="https://guides.codepath.com/android"><img height="30" src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/codepath.svg"></a><div class="pull-right"><form action="https://guides.codepath.com/android/search" class="form-inline search" method="get" role="search"><div class="form-group"><input class="form-control" id="query" name="query" placeholder="Search" style="width: 20em;" type="text" value=""><button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button></div></form></div></div></div><div class="container"><div class="row" id="wiki-content"><div class="markdown-toc" style="max-height: 473px; position: absolute; top: 9815px; left: 986.703px; width: 310px; height: 393px;"><div class="title">Jump to Section</div><div class="toc"><div class="toc-title">Table of Contents</div><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#overview">Overview</a></li></ul></ul><ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#code-samples">Code Samples</a></li></ul></ul></ul><ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#setup">Setup</a></li></ul></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#floating-action-buttons-and-snackbars">Floating Action Buttons and Snackbars</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#expanding-and-collapsing-toolbars">Expanding and Collapsing Toolbars</a></li></ul></ul><ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#responding-to-scroll-events">Responding to Scroll Events</a></li></ul></ul></ul><ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#creating-collapsing-effects">Creating Collapsing Effects</a></li></ul></ul></ul><ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#creating-parallax-animations">Creating Parallax Animations</a></li></ul></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#bottom-sheets">Bottom Sheets</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#troubleshooting-coordinated-layouts">Troubleshooting Coordinated Layouts</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#custom-behaviors">Custom Behaviors</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#third-party-scrolling-and-parallax">Third-Party Scrolling and Parallax</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#embedding-google-maps-in-appbarlayout">Embedding Google Maps in AppBarLayout</a></li></ul></ul><ul><ul><li><a href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#references">References</a></li></ul></ul></div></div><h1 class="col-xs-4 col-sm-9 col-md-9 col-lg-9" id="wiki-title">Handling Scrolls with CoordinatorLayout<div class="page-nav"><a class="btn btn-primary edit-link" href="https://github.com/codepath/android_guides/wiki/Handling-Scrolls-with-CoordinatorLayout/_edit">Edit Page</a><a class="btn btn-primary edit-link" href="https://github.com/codepath/android_guides/wiki/Handling-Scrolls-with-CoordinatorLayout/_history">Page History</a></div></h1><div id="wiki-body"><div class="markdown-body col-xs-6 col-sm-9 col-md-12 col-lg-12"><h2><a class="anchor" id="overview" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#overview"><i class="fa fa-link"></i></a>Overview</h2>
+
+<p><a href="https://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.html">CoordinatorLayout</a> extends the ability to accomplish many of the Google's Material Design <a href="http://www.google.com/design/spec/patterns/scrolling-techniques.html">scrolling effects</a>.  Currently, there are several ways provided in this framework that allow it to work without needing to write your own custom animation code.  These effects include:</p>
+
+<ul>
+<li>Sliding the Floating Action Button up and down to make space for the Snackbar.</li>
+</ul>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/zF9GGsK.gif" width="350"></p>
+
+<ul>
+<li>Expanding or contracting the Toolbar or header space to make room for the main content.</li>
+</ul>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/X5AIH0P.gif" width="350"></p>
+
+<ul>
+<li>Controlling which views should expand or collapse and at what rate, including <a href="https://ihatetomatoes.net/demos/parallax-scroll-effect/">parallax scrolling effects</a> animations.</li>
+</ul>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/1JHP0cP.gif"></p>
+
+<h3><a class="anchor" id="code-samples" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#code-samples"><i class="fa fa-link"></i></a>Code Samples</h3>
+
+<p>Chris Banes from Google has put together a beautiful demo of the <code>CoordinatorLayout</code> and other <a class="internal present" href="https://guides.codepath.com/android/Design-Support-Library">design support library</a> features.</p>
+
+<p><a href="https://github.com/chrisbanes/cheesesquare"><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/aA8aGSg.png" width="500"></a></p>
+
+<p>The <a href="https://github.com/chrisbanes/cheesesquare">full source code</a> can be found on github. This project is one of the easiest ways to understand <code>CoordinatorLayout</code>.</p>
+
+<h3><a class="anchor" id="setup" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#setup"><i class="fa fa-link"></i></a>Setup</h3>
+
+<p>Make sure to follow the <a class="internal present" href="https://guides.codepath.com/android/Design-Support-Library">Design Support Library</a> instructions first.</p>
+
+<h2><a class="anchor" id="floating-action-buttons-and-snackbars" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#floating-action-buttons-and-snackbars"><i class="fa fa-link"></i></a>Floating Action Buttons and Snackbars</h2>
+
+<p>The CoordinatorLayout can be used to create floating effects using the <code>layout_anchor</code> and <code>layout_gravity</code> attributes.  See the <a class="internal present" href="https://guides.codepath.com/android/Floating-Action-Buttons">Floating Action Buttons</a> guide for more information.</p>
+
+<p>When a <a class="internal present" href="https://guides.codepath.com/android/Displaying-the-Snackbar">Snackbar</a> is rendered, it normally appears at the bottom of the visible screen.  To make room, the floating action button must be moved up to provide space.  </p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/zF9GGsK.gif" width="350"></p>
+
+<p>So long as the CoordinatorLayout is used as the primary layout, this animation effect will occur for you automatically.   The floating action button has a <a href="https://developer.android.com/reference/android/support/design/widget/FloatingActionButton.Behavior.html">default behavior</a> that detects Snackbar views being added and animates the button above the height of the Snackbar.</p>
+
+<pre class="highlight"><code> <span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/main_content"</span>
+        <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+
+   <span class="nt">&lt;android.support.v7.widget.RecyclerView</span>
+         <span class="na">android:id=</span><span class="s">"@+id/rvToDoList"</span>
+         <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+         <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;&lt;/android.support.v7.widget.RecyclerView&gt;</span>
+
+   <span class="nt">&lt;android.support.design.widget.FloatingActionButton</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_gravity=</span><span class="s">"bottom|right"</span>
+        <span class="na">android:layout_margin=</span><span class="s">"16dp"</span>
+        <span class="na">android:src=</span><span class="s">"@mipmap/ic_launcher"</span>
+        <span class="na">app:layout_anchor=</span><span class="s">"@id/rvToDoList"</span>
+        <span class="na">app:layout_anchorGravity=</span><span class="s">"bottom|right|end"</span><span class="nt">/&gt;</span>
+ <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span></code></pre>
+
+
+<h2><a class="anchor" id="expanding-and-collapsing-toolbars" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#expanding-and-collapsing-toolbars"><i class="fa fa-link"></i></a>Expanding and Collapsing Toolbars</h2>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/X5AIH0P.gif" width="350"></p>
+
+<p>The first step is to make sure you are not using the deprecated ActionBar.  Make sure to follow the <a class="internal present" href="https://guides.codepath.com/android/Using-the-App-ToolBar#using-toolbar-as-actionbar">Using the ToolBar as ActionBar</a> guide.  Also make sure that the CoordinatorLayout is the main layout container.</p>
+
+<pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+ <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/main_content"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:popupTheme=</span><span class="s">"@style/ThemeOverlay.AppCompat.Light"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span></code></pre>
+
+
+<h3><a class="anchor" id="responding-to-scroll-events" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#responding-to-scroll-events"><i class="fa fa-link"></i></a>Responding to Scroll Events</h3>
+
+<p>Next, we must make the Toolbar responsive to scroll events using a container layout called
+<a href="http://developer.android.com/reference/android/support/design/widget/AppBarLayout.html">AppBarLayout</a>:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.AppBarLayout</span>
+        <span class="na">android:id=</span><span class="s">"@+id/appbar"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"@dimen/detail_backdrop_height"</span>
+        <span class="na">android:theme=</span><span class="s">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span>
+        <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:popupTheme=</span><span class="s">"@style/ThemeOverlay.AppCompat.Light"</span> <span class="nt">/&gt;</span>
+
+ <span class="nt">&lt;/android.support.design.widget.AppBarLayout&gt;</span></code></pre>
+
+
+<p><strong>Note</strong>: AppBarLayout currently expects to be the first child nested within a CoordinatorLayout according to the official <a href="http://developer.android.com/reference/android/support/design/widget/AppBarLayout.html">Google docs</a>.</p>
+
+<p>Next, we need to define an association between the AppBarLayout and the View that will be scrolled.  Add an <code>app:layout_behavior</code> to a RecyclerView or any other View capable of nested scrolling such as <a href="http://stackoverflow.com/questions/25136481/what-are-the-new-nested-scrolling-apis-for-android-l">NestedScrollView</a>.  The support library contains a special string resource <code>@string/appbar_scrolling_view_behavior</code> that maps to <a href="https://developer.android.com/reference/android/support/design/widget/AppBarLayout.ScrollingViewBehavior.html">AppBarLayout.ScrollingViewBehavior</a>, which is used to notify the <code>AppBarLayout</code> when scroll events occur on this particular view.  The behavior must be established on the view that triggers the event.</p>
+
+<pre class="highlight"><code> <span class="nt">&lt;android.support.v7.widget.RecyclerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/rvToDoList"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:layout_behavior=</span><span class="s">"@string/appbar_scrolling_view_behavior"</span><span class="nt">&gt;</span></code></pre>
+
+
+<p>When a CoordinatorLayout notices this attribute declared in the RecyclerView, it will search across the other views contained within it for any related views associated by the behavior.  In this particular case, the <code>AppBarLayout.ScrollingViewBehavior</code> describes a dependency between the RecyclerView and AppBarLayout.   Any scroll events to the RecyclerView should trigger changes to the AppBarLayout layout or any views contained within it.</p>
+
+<p>Scroll events in the RecyclerView trigger changes inside views declared within <code>AppBarLayout</code> by using the <code>app:layout_scrollFlags</code> attribute:</p>
+
+<pre class="highlight"><code>    <span class="nt">&lt;android.support.design.widget.AppBarLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
+        <span class="na">android:theme=</span><span class="s">"@style/ThemeOverlay.AppCompat.Dark.ActionBar"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|enterAlways"</span><span class="nt">/&gt;</span>
+
+ <span class="nt">&lt;/android.support.design.widget.AppBarLayout&gt;</span></code></pre>
+
+
+<p>The <code>scroll</code> flag used within the attribute <code>app:layout_scrollFlags</code> must be enabled for any scroll effects to take into effect.  This flag must be enabled along with <code>enterAlways</code>, <code>enterAlwaysCollapsed</code>, <code>exitUntilCollapsed</code>, or <code>snap</code>:</p>
+
+<ul>
+<li>
+<p><code>enterAlways</code>: The view will become visible when scrolling up.  This flag is useful in cases when scrolling from the bottom of a list and wanting to expose the <code>Toolbar</code> as soon as scrolling up takes place.  </p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/sGltNwr.png"></p>
+
+<p>Normally, the <code>Toolbar</code> only appears when the list is scrolled to the top as shown below:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/IZzcL1C.png"></p>
+</li>
+<li>
+<p><code>enterAlwaysCollapsed</code>:   Normally, when only <code>enterAlways</code> is used, the <code>Toolbar</code> will continue to expand as you scroll up:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/nVtheyw.png"></p>
+
+<p>Assuming <code>enterAlways</code> is declared and you have specified a <code>minHeight</code>, you can also specify <code>enterAlwaysCollapsed</code>.  When this setting is used, your view will only appear at this minimum height. Only when scrolling reaches to the top will the view expand to its full height:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/HqR8Nx5.png"></p>
+</li>
+<li>
+<p><code>exitUntilCollapsed</code>: When the <code>scroll</code> flag is set, scrolling down will normally cause the entire content to move:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/qpEr4x5.png"></p>
+
+<p>By specifying a <code>minHeight</code> and <code>exitUntilCollapsed</code>, the minimum height of the <code>Toolbar</code> will be reached before the rest of the content begins to scroll and exit from the screen:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/dTDPztp.png"></p>
+</li>
+<li><p><code>snap</code>: Using this option will determine what to do when a view only has been partially reduced.  If scrolling ends and the view size has been reduced to less than 50% of its original, then this view to return to its original size.  If the size is greater than 50% of its sized, it will disappear completely.<br>
+   <img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/9hnupWJ.png"></p></li>
+</ul>
+
+<p><strong>Note</strong>: Keep in mind to order all your views with the <code>scroll</code> flag first.  This way, the views that collapse will exit first while leaving the pinned elements at the top.</p>
+
+<p>At this point, you should notice that the Toolbar responds to scroll events.  </p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/Hl2Asb1.gif" width="350"></p>
+
+<h3><a class="anchor" id="creating-collapsing-effects" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#creating-collapsing-effects"><i class="fa fa-link"></i></a>Creating Collapsing Effects</h3>
+
+<p>If we want to create the collapsing toolbar effect, we must wrap the Toolbar inside CollapsingToolbarLayout:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.CollapsingToolbarLayout</span>
+            <span class="na">android:id=</span><span class="s">"@+id/collapsing_toolbar"</span>
+            <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+            <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
+            <span class="na">app:contentScrim=</span><span class="s">"?attr/colorPrimary"</span>
+            <span class="na">app:expandedTitleMarginEnd=</span><span class="s">"64dp"</span>
+            <span class="na">app:expandedTitleMarginStart=</span><span class="s">"48dp"</span>
+            <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|exitUntilCollapsed"</span><span class="nt">&gt;</span>
+            
+            <span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|enterAlways"</span><span class="nt">&gt;&lt;/android.support.v7.widget.Toolbar&gt;</span>
+
+<span class="nt">&lt;/android.support.design.widget.CollapsingToolbarLayout&gt;</span></code></pre>
+
+
+<p>Your result should now appears as:</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/X5AIH0P.gif" width="350"></p>
+
+<p>Normally, we set the title of the Toolbar. Now, we need to set the title on the CollapsingToolBarLayout instead of the Toolbar.</p>
+
+<pre class="highlight"><code> <span class="n">CollapsingToolbarLayout</span> <span class="n">collapsingToolbar</span> <span class="o">=</span>
+              <span class="o">(</span><span class="n">CollapsingToolbarLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">collapsing_toolbar</span><span class="o">);</span>
+ <span class="n">collapsingToolbar</span><span class="o">.</span><span class="na">setTitle</span><span class="o">(</span><span class="s">"Title"</span><span class="o">);</span></code></pre>
+
+
+<p>Note that when using <code>CollapsingToolbarLayout</code>, the status bar should be made translucent (API 19) or transparent (API 21) as <a href="https://github.com/chrisbanes/cheesesquare/blob/master/app/src/main/res/values-v21/styles.xml">shown in this file</a>. In particular, the following styles should be set in <code>res/values-xx/styles.xml</code> as illustrated:</p>
+
+<pre class="highlight"><code><span class="c">&lt;!-- res/values-v19/styles.xml --&gt;</span>
+<span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"AppTheme"</span> <span class="na">parent=</span><span class="s">"Base.AppTheme"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowTranslucentStatus"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- res/values-v21/styles.xml --&gt;</span>
+<span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">"AppTheme"</span> <span class="na">parent=</span><span class="s">"Base.AppTheme"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:windowDrawsSystemBarBackgrounds"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"android:statusBarColor"</span><span class="nt">&gt;</span>@android:color/transparent<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/style&gt;</span></code></pre>
+
+
+<p>By enabling translucent system bars as shown above, your layout will fill the area behind the system bars, so you must also enable <code>android:fitsSystemWindow</code> for the portions of your layout that should not be covered by the system bars. An additional workaround for API 19 which adds padding to avoid the status bar clipping views <a href="http://blog.raffaeu.com/archive/2015/04/11/android-and-the-transparent-status-bar.aspx">can be found here</a>.</p>
+
+<h3><a class="anchor" id="creating-parallax-animations" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#creating-parallax-animations"><i class="fa fa-link"></i></a>Creating Parallax Animations</h3>
+
+<p>The CollapsingToolbarLayout also enables us to do more advanced animations, such as using an ImageView that fades out as it collapses.  The title can also change in height as the user scrolls.</p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/ah4l5oj.gif" width="350"></p>
+
+<p>To create this effect, we add an ImageView and declare an <code>app:layout_collapseMode="parallax"</code> attribute to the tag.</p>
+
+<pre class="highlight"><code><span class="nt">&lt;android.support.design.widget.CollapsingToolbarLayout</span>
+    <span class="na">android:id=</span><span class="s">"@+id/collapsing_toolbar"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:fitsSystemWindows=</span><span class="s">"true"</span>
+    <span class="na">app:contentScrim=</span><span class="s">"?attr/colorPrimary"</span>
+    <span class="na">app:expandedTitleMarginEnd=</span><span class="s">"64dp"</span>
+    <span class="na">app:expandedTitleMarginStart=</span><span class="s">"48dp"</span>
+    <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|exitUntilCollapsed"</span><span class="nt">&gt;</span>
+
+            <span class="nt">&lt;android.support.v7.widget.Toolbar</span>
+                <span class="na">android:id=</span><span class="s">"@+id/toolbar"</span>
+                <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                <span class="na">android:layout_height=</span><span class="s">"?attr/actionBarSize"</span>
+                <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|enterAlways"</span><span class="nt">&gt;&lt;/android.support.v7.widget.Toolbar&gt;</span>
+            <span class="nt">&lt;ImageView</span>
+                <span class="na">android:src=</span><span class="s">"@drawable/cheese_1"</span>
+                <span class="na">app:layout_scrollFlags=</span><span class="s">"scroll|enterAlways|enterAlwaysCollapsed"</span>
+                <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+                <span class="na">android:scaleType=</span><span class="s">"centerCrop"</span>
+                <span class="na">app:layout_collapseMode=</span><span class="s">"parallax"</span>
+                <span class="na">android:minHeight=</span><span class="s">"100dp"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/android.support.design.widget.CollapsingToolbarLayout&gt;</span></code></pre>
+
+
+<h2><a class="anchor" id="bottom-sheets" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#bottom-sheets"><i class="fa fa-link"></i></a>Bottom Sheets</h2>
+
+<p>Bottom Sheets are now supported in <code>v23.2</code> of the support design library.  </p>
+
+<p><img src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/3hCTnnC.png"></p>
+
+<p>The easiest way to create them is using an additional <a class="internal present" href="https://guides.codepath.com/android/Using-the-RecyclerView">RecyclerView</a> nested inside a <code>CoordinatorLayout</code>.  This <code>RecyclerView</code> will be hidden by default if the <code>layout_behavior</code> defined is set using the pre-defined <code>@string/bottom_sheet_behavior</code> value.  Note also that this <code>RecyclerView</code> should be using <code>wrap_content</code> instead of <code>match_parent</code>, which is a new change that allows the bottom sheet to only occupy the necessary space instead of the entire page:</p>
+
+<pre class="highlight"><code><span class="nt">&lt;CoordinatorLayout&gt;</span>
+
+    <span class="nt">&lt;android.support.v7.widget.RecyclerView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/design_bottom_sheet"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">app:layout_behavior=</span><span class="s">"@string/bottom_sheet_behavior"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/CoordinatorLayout&gt;</span></code></pre>
+
+
+<p>The next step is to create <code>RecyclerView</code> elements.  We can create a simple <code>Item</code> that contains an image and a text and an adapter that can inflate these items.</p>
+
+<pre class="highlight"><code>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Item</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">mDrawableRes</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mTitle</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">Item</span><span class="o">(</span><span class="nd">@DrawableRes</span> <span class="kt">int</span> <span class="n">drawable</span><span class="o">,</span> <span class="n">String</span> <span class="n">title</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">mDrawableRes</span> <span class="o">=</span> <span class="n">drawable</span><span class="o">;</span>
+        <span class="n">mTitle</span> <span class="o">=</span> <span class="n">title</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getDrawableResource</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mDrawableRes</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">getTitle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mTitle</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre>
+
+
+<p>Next, we create our adapter:</p>
+
+<pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ItemAdapter</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">Adapter</span><span class="o">&lt;</span><span class="n">ItemAdapter</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">mItems</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">ItemAdapter</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span><span class="o">,</span> <span class="n">ItemListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">mItems</span> <span class="o">=</span> <span class="n">items</span><span class="o">;</span>
+        <span class="n">mListener</span> <span class="o">=</span> <span class="n">listener</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">setListener</span><span class="o">(</span><span class="n">ItemListener</span> <span class="n">listener</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">mListener</span> <span class="o">=</span> <span class="n">listener</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ViewHolder</span> <span class="n">onCreateViewHolder</span><span class="o">(</span><span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">viewType</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">LayoutInflater</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">parent</span><span class="o">.</span><span class="na">getContext</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">adapter</span><span class="o">,</span> <span class="n">parent</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onBindViewHolder</span><span class="o">(</span><span class="n">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">holder</span><span class="o">.</span><span class="na">setData</span><span class="o">(</span><span class="n">mItems</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getItemCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mItems</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ViewHolder</span> <span class="kd">extends</span> <span class="n">RecyclerView</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span> <span class="o">{</span>
+
+        <span class="kd">public</span> <span class="n">ImageView</span> <span class="n">imageView</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="n">TextView</span> <span class="n">textView</span><span class="o">;</span>
+        <span class="kd">public</span> <span class="n">Item</span> <span class="n">item</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
+            <span class="n">itemView</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+            <span class="n">imageView</span> <span class="o">=</span> <span class="o">(</span><span class="n">ImageView</span><span class="o">)</span> <span class="n">itemView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">imageView</span><span class="o">);</span>
+            <span class="n">textView</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">itemView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textView</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">setData</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">;</span>
+            <span class="n">imageView</span><span class="o">.</span><span class="na">setImageResource</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getDrawableResource</span><span class="o">());</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">item</span><span class="o">.</span><span class="na">getTitle</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">mListener</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">mListener</span><span class="o">.</span><span class="na">onItemClick</span><span class="o">(</span><span class="n">item</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ItemListener</span> <span class="o">{</span>
+        <span class="kt">void</span> <span class="n">onItemClick</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+
+
+<p>The bottom sheet should be hidden by default.  We need to use a click event to trigger the show and hide. <strong>Note</strong>: do not try to expand the bottom sheet inside an <code>OnCreate()</code> method because of this <a href="https://code.google.com/p/android/issues/detail?id=202174">known issue</a>.</p>
+
+<pre class="highlight"><code><span class="n">RecyclerView</span> <span class="n">recyclerView</span> <span class="o">=</span> <span class="o">(</span><span class="n">RecyclerView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">design_bottom_sheet</span><span class="o">);</span> 
+
+<span class="c1">// Create your items</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">items</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+<span class="n">items</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Item</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">cheese_1</span><span class="o">,</span> <span class="s">"Cheese 1"</span><span class="o">));</span>
+<span class="n">items</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Item</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">drawable</span><span class="o">.</span><span class="na">cheese_2</span><span class="o">,</span> <span class="s">"Cheese 2"</span><span class="o">));</span>
+
+<span class="c1">// Instantiate adapter</span>
+<span class="n">ItemAdapter</span> <span class="n">itemAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ItemAdapter</span><span class="o">(</span><span class="n">items</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">itemAdapter</span><span class="o">);</span>
+
+<span class="c1">// Set the layout manager</span>
+<span class="n">recyclerView</span><span class="o">.</span><span class="na">setLayoutManager</span><span class="o">(</span><span class="k">new</span> <span class="n">LinearLayoutManager</span><span class="o">(</span><span class="k">this</span><span class="o">));</span>
+
+<span class="n">CoordinatorLayout</span> <span class="n">coordinatorLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">CoordinatorLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">main_content</span><span class="o">);</span>
+<span class="kd">final</span> <span class="n">BottomSheetBehavior</span> <span class="n">behavior</span> <span class="o">=</span> <span class="n">BottomSheetBehavior</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">recyclerView</span><span class="o">);</span>
+
+<span class="n">fab</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+       <span class="k">if</span><span class="o">(</span><span class="n">behavior</span><span class="o">.</span><span class="na">getState</span><span class="o">()</span> <span class="o">==</span> <span class="n">BottomSheetBehavior</span><span class="o">.</span><span class="na">STATE_COLLAPSED</span><span class="o">)</span> <span class="o">{</span>
+         <span class="n">behavior</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="n">BottomSheetBehavior</span><span class="o">.</span><span class="na">STATE_EXPANDED</span><span class="o">);</span>
+       <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+         <span class="n">behavior</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="n">BottomSheetBehavior</span><span class="o">.</span><span class="na">STATE_COLLAPSED</span><span class="o">);</span>
+       <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">});</span></code></pre>
+
+
+<p>You can set a layout attribute <code>app:behavior_hideable=true</code> to allow the user to swipe the bottom sheet away too.  There are other states including <code>STATE_DRAGGING</code>, <code>STATE_SETTLING</code>, and <code>STATE_HIDDEN</code>.  </p>
+
+<h2><a class="anchor" id="troubleshooting-coordinated-layouts" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#troubleshooting-coordinated-layouts"><i class="fa fa-link"></i></a>Troubleshooting Coordinated Layouts</h2>
+
+<p><code>CoordinatorLayout</code> is very powerful but error-prone at first. If you are running into issues with coordinating behavior, check the following tips below:</p>
+
+<ul>
+<li>The best example of how to use coordinator layout effectively is to refer carefully to the <a href="https://github.com/chrisbanes/cheesesquare">source code for cheesesquare</a>. This repository is a sample repo kept updated by Google to reflect best practices with coordinating behaviors. In particular, see the <a href="https://github.com/chrisbanes/cheesesquare/blob/master/app/src/main/res/layout/include_list_viewpager.xml">layout for a tabbed ViewPager list</a> and <a href="https://github.com/chrisbanes/cheesesquare/blob/master/app/src/main/res/layout/activity_detail.xml">this for a layout for a detail view</a>. Compare your code carefully to the cheesesquare source code.</li>
+<li>When coordinating between a fragment with a list of items inside of a <code>ViewPager</code> and a parent activity, you want to put the <code>app:layout_behavior</code> property on the <code>ViewPager</code> <a href="https://github.com/chrisbanes/cheesesquare/blob/master/app/src/main/res/layout/include_list_viewpager.xml#L49">as outlined here</a> so the scrolls within the pager are bubbled up and can be managed by the <code>CoordinatorLayout</code>. Note that you <strong>should not</strong> put that <code>app:layout_behavior</code> property anywhere within the fragment or the list within. </li>
+<li>Keep in mind that <code>ScrollView</code> <strong>does not work</strong> with <code>CoordinatorLayout</code>. You will need to use the <code>NestedScrollView</code> instead as shown in <a href="https://github.com/chrisbanes/cheesesquare/blob/master/app/src/main/res/layout/activity_detail.xml#L61">this example</a>. Wrapping your content in the <code>NestedScrollView</code> and applying the <code>app:layout_behavior</code> property will cause the scrolling behavior to work as expected.</li>
+<li>Make sure that the root layout is a CoordinatorLayout. Scrolls will not react to any other layout.</li>
+</ul>
+
+<p>There's a lot of ways coordinating layouts can go wrong. Add tips here as you discover them.</p>
+
+<h2><a class="anchor" id="custom-behaviors" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#custom-behaviors"><i class="fa fa-link"></i></a>Custom Behaviors</h2>
+
+<p>One example of a custom behavior is discussed in using <a class="internal present" href="https://guides.codepath.com/android/Floating-Action-Buttons#using-coordinatorlayout">CoordinatorLayout with Floating Action Buttons</a>.  </p>
+
+<p>CoordinatorLayout works by searching through any child view that has a <a href="http://developer.android.com/reference/android/support/design/widget/CoordinatorLayout.Behavior.html">CoordinatorLayout Behavior</a> defined either statically as XML with a <code>app:layout_behavior</code> tag or programmatically with the View class annotated with the <code>@DefaultBehavior</code> decorator.  When a scroll event happens, CoordinatorLayout attempts to trigger other child views that are declared as dependencies.</p>
+
+<p>To define your own a CoordinatorLayout Behavior, the layoutDependsOn() and onDependentViewChanged() should be implemented.  For instance, AppBarLayout.Behavior has these two key methods defined.  This behavior is used to trigger a change on the AppBarLayout when a scroll event happens. </p>
+
+<pre class="highlight"><code>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">layoutDependsOn</span><span class="p">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">dependency</span> <span class="k">instanceof</span> <span class="n">AppBarLayout</span><span class="o">;</span>
+      <span class="o">}</span>
+
+ <span class="kd">public</span> <span class="kt">boolean</span> <span class="n">onDependentViewChanged</span><span class="o">(</span><span class="n">CoordinatorLayout</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">child</span><span class="o">,</span> <span class="n">View</span> <span class="n">dependency</span><span class="o">)</span> <span class="o">{</span>
+          <span class="c1">// check the behavior triggered</span>
+          <span class="n">android</span><span class="o">.</span><span class="na">support</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">widget</span><span class="o">.</span><span class="na">CoordinatorLayout</span><span class="o">.</span><span class="na">Behavior</span> <span class="n">behavior</span> <span class="o">=</span> <span class="o">((</span><span class="n">android</span><span class="o">.</span><span class="na">support</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">widget</span><span class="o">.</span><span class="na">CoordinatorLayout</span><span class="o">.</span><span class="na">LayoutParams</span><span class="o">)</span><span class="n">dependency</span><span class="o">.</span><span class="na">getLayoutParams</span><span class="o">()).</span><span class="na">getBehavior</span><span class="o">();</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">behavior</span> <span class="k">instanceof</span> <span class="n">AppBarLayout</span><span class="o">.</span><span class="na">Behavior</span><span class="o">)</span> <span class="o">{</span>
+          <span class="c1">// do stuff here</span>
+          <span class="o">}</span>
+ <span class="o">}</span>       </code></pre>
+
+
+<p>The best way to understand how to implement these custom behaviors is by studying the AppBarLayout.Behavior and FloatingActionButtion.Behavior examples.  Although the source code is not publicly available yet, you can use the decompiler integrated with Android Studio 1.2 to examine how they work by navigating up the source tree.</p>
+
+<h2><a class="anchor" id="third-party-scrolling-and-parallax" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#third-party-scrolling-and-parallax"><i class="fa fa-link"></i></a>Third-Party Scrolling and Parallax</h2>
+
+<p>In addition to using the <code>CoordinatorLayout</code> as outlined above, be sure to check out <a class="internal present" href="https://guides.codepath.com/android/Must-Have-Libraries#scrolling-and-parallax">these popular third-party libraries</a> for scrolling and parallax effects across <code>ScrollView</code>, <code>ListView</code>, <code>ViewPager</code> and <code>RecyclerView</code>.</p>
+
+<h2><a class="anchor" id="embedding-google-maps-in-appbarlayout" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#embedding-google-maps-in-appbarlayout"><i class="fa fa-link"></i></a>Embedding Google Maps in AppBarLayout</h2>
+
+<p>There is currently no way of supporting Google Maps fragment within an <code>AppBarLayout</code> as confirmed in this <a href="https://code.google.com/p/android/issues/detail?id=188487">issue</a>.  Changes in the support design library v23.1.0 now provide a <code>setOnDragListener()</code> method, which is useful if <a class="internal present" href="https://guides.codepath.com/android/Gestures-and-Touch-Events#dragging-and-dropping">drag and drop effects</a> are needed within this layout.  However, it does not appear to impact scrolling as stated in this <a href="http://android-developers.blogspot.com/2015/10/android-support-library-231.html?linkId=17977963">blog article</a>.</p>
+
+<h2><a class="anchor" id="references" href="https://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#references"><i class="fa fa-link"></i></a>References</h2>
+
+<ul>
+<li><a href="http://android-developers.blogspot.com/2015/05/android-design-support-library.html">http://android-developers.blogspot.com/2015/05/android-design-support-library.html</a></li>
+<li><a href="http://android-developers.blogspot.com/2016/02/android-support-library-232.html">http://android-developers.blogspot.com/2016/02/android-support-library-232.html</a></li>
+</ul>
+</div></div></div></div><a href="https://github.com/codepath/android_guides/wiki/" class="visible-md visible-lg"><img style="position: fixed; bottom: 0; right: 0; border: 0;" src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/fork_me.png" alt="Fork me on GitHub"></a><script src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/jquery.js" type="text/javascript"></script><script src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/jquery.absolutize.js" type="text/javascript"></script><script src="./Handling Scrolls with CoordinatorLayout _ CodePath Android Cliffnotes_files/application.js" type="text/javascript"></script></body></html>

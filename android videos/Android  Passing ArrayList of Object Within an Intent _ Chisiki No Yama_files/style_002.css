@@ -1,0 +1,125 @@
+.share-buttons ul li, .share-buttons-blog ul li, .share-buttons-group ul li {
+	border-style: none;
+	display: inline-block;
+	margin: 0;
+	float: left !important;
+}
+
+.share-buttons li.bpsi {
+	padding: 5px 0 5px 5px;
+}
+
+.share-buttons li:last-child {
+	padding: 5px;
+}
+
+.share-buttons {
+	display: none;
+	margin: 15px 0 15px 0px;
+}
+
+div.activity-meta div.share-buttons ul {
+	padding-bottom: 5px;
+}
+
+.share-buttons.blog {
+	margin: 0px 0 15px 0px;
+}
+
+.share-buttons.group {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+	width: 500px;
+	float: left;
+}
+
+#item-meta .bp-share-it-button-group.generic-button.active {
+	margin-bottom: 0px;
+}
+
+.share-buttons ul {
+	display: inline-block;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #F5F5F5;
+	margin-right: 1px;
+	margin-top: 0px;
+	margin-left: 1px;
+}
+
+.share-buttons-blog {
+	display: none;
+	width: 375px;
+	padding: 10px 0px 10px 10px;
+	margin: 0px 0 15px 0px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+.share-buttons-group {
+	display: none;
+	width: 375px;
+	padding: 10px 0px 10px 10px;
+	margin: 15px 0 15px 0px;
+	background: #F5F5F5;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	float: left;
+	clear: both;
+}
+
+.activity-meta .share-buttons ul li a {
+	background-color: transparent;
+	border-style: none;
+	margin: 0;
+	padding: 0 !important;
+}
+
+.bp-share-it-button-forum {
+	margin: 15px 0 0;
+	width: 100px;
+}
+
+.bp-share-it-button:hover, .bp-share-button-forum:hover {
+	cursor: pointer;
+}
+
+.activity-list li.mini .activity-meta {
+	position: relative !important;
+}
+
+.activity-list li.mini .activity-comments {
+	margin-top: 15px;
+}
+
+.share-buttons.active {
+	visibility: visible;
+}
+
+.bp-share-button-blog, .bp-share-button-group {
+	float: right;
+}
+
+#forum-topic-form div.bp-share-it-button {
+	margin-top: 5px;
+}
+a.buddypress-share-button-bp-media {
+	text-decoration: underline;
+}
+
+img.bp-share-image{
+	width: 75px;
+}
+
+.likeImage{
+    width: 25px;
+    height: 15px;
+    float: left;
+    background-image: url("http://yaaya.mobi/images/fbLike.png");
+    background-repeat: no-repeat;
+}
+.likeImage iframe{
+    opacity: 0;
+}

@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Android: Coloring part of a string using TextView.setText()? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">    
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="Android: Coloring part of a string using TextView.setText()?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I am looking to change the text of a TextView view via the .setText(&quot;&quot;) method while also coloring a part of the text (or making it bold, italic, transparent, etc.)and not the rest. For example:
+
+t...">
+    <meta property="og:url" content="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext">
+    <link rel="canonical" href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext">
+
+    
+    
+    <script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/ados" async="" type="text/javascript"></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/quant.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/beacon.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/analytics.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/ados.js" async="" type="text/javascript"></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question 'Android: Coloring part of a string using TextView.setText()?'" href="http://stackoverflow.com/feeds/question/4897349">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:3,shownCommentCount:3,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:4897349});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '4897349');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","serverTime":1468406768,"routeName":"Questions/Show","site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"enableInsertDocLinkDialog":false,"enableSocialMediaInSharePopup":true},"user":{"fkey":"9960de9813ed46757a05e2dba32e8d68","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true}}, {"site":{"allowImageUploads":true,"enableUserHovercards":true,"styleCode":true},"tags":{},"flags":{},"snippets":{"snippetsEnabled":true,"renderDomain":"stacksnippets.net"},"markdown":{"asteriskIntraWordEmphasis":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"2db08c87cf4e","js/moderator.en.js":"2dc7215c84c2","js/full-anon.en.js":"9e97938a1a2a","js/full.en.js":"37dfd2fc4ab1","js/wmd.en.js":"c6474d177967","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"a37bf4b341d0","js/help.en.js":"54b998574be9","js/tageditor.en.js":"9c6df10dabc4","js/tageditornew.en.js":"fffeca19c0d5","js/inline-tag-editing.en.js":"96140c37890f","js/revisions.en.js":"47de10a8358f","js/review.en.js":"3b57739d18db","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"bc70104c8729","js/explore-qlist.en.js":"e71f14781288","js/events.en.js":"406f142da2a2","js/keyboard-shortcuts.en.js":"9900f3251295","js/external-editor.en.js":"34f78799ad2d","js/external-editor.en.js":"34f78799ad2d","js/snippet-javascript.en.js":"777c3a0872ac","js/snippet-javascript-codemirror.en.js":"a6859c45b852"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/full-anon.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/snippet-javascript.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/post-validation.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/prettify-full.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/external-editor.js" async=""></script><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><link href="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/jobs-multi.css" rel="stylesheet" type="text/css"></head>
+<body class="question-page new-topbar">
+    <noscript><div id="noscript-padding"></div></noscript>
+    
+        <script>(function () { var old = $.fn.contents; $.fn.contents = function () { try { return old.apply(this, arguments); } catch (e) { return $([]); } } })()</script>
+        
+
+
+
+
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+                    <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+        </ul>
+    </div>
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+        <a href="http://blog.stackoverflow.com/" class="fr">company blog</a>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 158 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+    <a href="#" class="topbar-icon icon-inbox yes-hover js-inbox-button" title="Recent inbox messages">
+        <span class="hidden-text">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="#" class="topbar-icon icon-achievements yes-hover js-achievements-button" data-unread-class="" title="Recent achievements: reputation, badges, and privileges earned">
+        <span class="hidden-text">Reputation and Badges</span>
+        <span class="unread-count" style="display:none">
+            
+        </span>
+    </a>
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                    <a href="https://stackoverflow.com/users/signup?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?ssrc=head&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext" class="login-link">log in</a>
+
+                            <a href="http://stackoverflow.com/tour">tour</a>
+    <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                        <li>
+                            <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                                Meta
+                                <span class="item-summary">
+                                    Discuss the workings and policies of this site
+                                </span>
+                            </a>
+                        </li>
+                    <li>
+                        <a href="http://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })">
+                            About Us
+                            <span class="item-summary">
+                                Learn more about Stack Overflow the company
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://business.stackoverflow.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })">
+                            Business
+                            <span class="item-summary">
+                                Learn more about hiring developers or posting ads with us
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+                                            </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="Search Q&amp;A" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-jobs" href="http://stackoverflow.com/jobs?med=site-ui&amp;ref=jobs-tab">Jobs</a></li>
+                                                <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+
+<div id="herobox">
+    <div id="hero-content">
+            <div id="close"><a title="click to minimize">_</a></div>
+        <div id="blurb">
+            Stack Overflow is a community of 4.7 million programmers, just like you, helping each other.
+            <br>
+                <br>Join them; it only takes a minute:<br>
+            <br>
+            <a href="http://stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext" id="tell-me-more" class="button">Sign up</a>
+        </div>
+        <div id="desc">
+            <b>Join the Stack Overflow community to:</b>
+            <ol id="hiw">
+                <li id="q">Ask programming questions
+                </li>
+                <li id="an">Answer and help your peers
+                </li>
+                <li id="b">Get recognized for your expertise
+                </li>
+            </ol>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <script>
+        StackExchange.ready(function () {
+
+            var location = 0;
+            if ($("body").hasClass("questions-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("question-page")) {
+                location = 1;;
+            } else if ($("body").hasClass("faq-page")) {
+                location = 5;;
+            } else if ($("body").hasClass("home-page")) {
+                location = 3;;
+            }
+
+            $('#tell-me-more').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+                });
+            });
+            $('#herobox #close').click(function () {
+                StackExchange.using("gps", function () {
+                    StackExchange.gps.track("hero.action", { hero_action_type: "minimize", location: location }, true);
+                });
+                $.cookie("hero", "mini", { path: "/", expires: 365 });
+                $.ajax({
+                    url: "/hero-mini",
+                    success: function (data) {
+                        $("#herobox").fadeOut("fast", function () {
+                            $("#herobox").replaceWith(data);
+                            $("#herobox-mini").fadeIn("fast");
+                        });
+                    }
+                });
+                return false;
+            });
+        });
+
+    </script>
+</div>
+			<div id="question-header">
+                <h1 itemprop="name"><a href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext" class="question-hyperlink">Android: Coloring part of a string using TextView.setText()?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="4897349" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1462802661",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1462802661"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0MDQyODMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNDM0MzAzLCJkaSI6IjA3ODUwOTgyY2NjNzRhYTY5YTBmYjcxNWU0ZDE5N2Q1IiwiZG0iOjEsImZjIjoxNjQ5MzAwLCJmbCI6MTQ0ODM0MiwiaXAiOiIxMTEuOTMuMTM4LjE0MiIsImt3IjoiYW5kcm9pZCx0ZXh0dmlldyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTYwNCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluIiwic3QiOjgyNzcsInVrIjoidWUxLTJjNGZhY2FlZGQyMDQ2MTZiNjdmMjFjNDQ0YjBjODNjIiwiem4iOjQzLCJ0cyI6MTQ2ODQwNjc2OTMyNywiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTQ2MjgwMjY2MSIsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2pvYnMvcmVtb3RlP21lZD16cmsmcmVmPWNhbmRpZGF0ZXMtd2ZoX2xiLXdmaC1raWQtd29yay1vbi13b3JrIn0&amp;s=DU0bYZTFbfMV4Bcc7WdfVh1A8To" rel="nofollow" target="_blank" title=""><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/1a2d5e390ec74bb39389d3d434084be0.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display: none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/i_003.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4897349" type="hidden">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">54</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="#">favorite</a>
+        <div class="favoritecount"><b>24</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>I am looking to change the text of a TextView view via the 
+.setText("") method while also coloring a part of the text (or making it
+ bold, italic, transparent, etc.)and not the rest. For example:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">title</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="str">"Your big island &lt;b&gt;ADVENTURE!&lt;/b&gt;"</span><span class="pun">;</span></code></pre>
+
+<p>I know the above code is incorrect but it helps illustrate what I would like to achieve. How would I do this?</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag js-gps-track" title="show questions tagged 'android'" rel="tag"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/tKsDb.png" alt="" class="sponsor-tag-img" height="16" width="18">android</a> <a href="http://stackoverflow.com/questions/tagged/textview" class="post-tag js-gps-track" title="show questions tagged 'textview'" rel="tag">textview</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/4897349" title="short permalink to this question" class="short-link" id="link-post-4897349">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4897349/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/4897349/revisions" title="show all edits to this post">edited <span title="2015-08-05 21:24:07Z" class="relativetime">Aug 5 '15 at 21:24</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/807423/mark"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/fdaac93731723b0ae9e9763c44958a31.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/807423/mark">Mark</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">1,985</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="43 bronze badges"><span class="badge3"></span><span class="badgecount">43</span></span>
+        </div>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2011-02-04 11:13:06Z" class="relativetime">Feb 4 '11 at 11:13</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/599429/jared"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/2b6c0550c9d1225bf1fee0db3b2ffdfa.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/599429/jared">Jared</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">870</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4897349" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-51591193" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">possible duplicate of <a href="http://stackoverflow.com/questions/4032676/how-can-i-change-color-part-of-a-textview">how can I change color part of a TextView?</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/436341/40-love" title="5,779 reputation" class="comment-user">40-Love</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51591193_4897349"><span title="2015-08-05 13:59:10Z" class="relativetime-clean">Aug 5 '15 at 13:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-56641728" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">If there is a long text in the TextView,There is <a href="http://stackoverflow.com/a/34449956/3414180">a more efficient way</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3414180/mingfei" title="154 reputation" class="comment-user">Mingfei</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment56641728_4897349"><span title="2015-12-24 09:02:40Z" class="relativetime-clean">Dec 24 '15 at 9:02</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-56641775" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">If there is a long text in the TextView,You can use <a href="http://stackoverflow.com/a/34449956/3414180">a more efficient way</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3414180/mingfei" title="154 reputation" class="comment-user">Mingfei</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment56641775_4897349"><span title="2015-12-24 09:04:53Z" class="relativetime-clean">Dec 24 '15 at 9:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4897349" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								7 Answers
+                                <span style="display:none;" itemprop="answerCount">7</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active" data-shortcut="A">
+            active</a>
+        <a href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest" data-shortcut="O">
+            oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes" data-shortcut="V">
+            votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="4897412"></a>
+<div id="answer-4897412" class="answer accepted-answer" data-answerid="4897412" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4897412" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">127</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Use <a href="http://developer.android.com/reference/android/text/style/package-summary.html">spans</a>.</p>
+
+<p>Example:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">final</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pln"> sb </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pun">(</span><span class="str">"your text here"</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// Span to set text color to some RGB value</span><span class="pln">
+</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pln"> fcs </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">rgb</span><span class="pun">(</span><span class="lit">158</span><span class="pun">,</span><span class="pln"> </span><span class="lit">158</span><span class="pun">,</span><span class="pln"> </span><span class="lit">158</span><span class="pun">));</span><span class="pln"> 
+
+</span><span class="com">// Span to make text bold</span><span class="pln">
+</span><span class="kwd">final</span><span class="pln"> </span><span class="typ">StyleSpan</span><span class="pln"> bss </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">StyleSpan</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">graphics</span><span class="pun">.</span><span class="typ">Typeface</span><span class="pun">.</span><span class="pln">BOLD</span><span class="pun">);</span><span class="pln"> 
+
+</span><span class="com">// Set the text color for first 4 characters</span><span class="pln">
+sb</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="pln">fcs</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_INCLUSIVE_INCLUSIVE</span><span class="pun">);</span><span class="pln"> 
+
+</span><span class="com">// make them also bold</span><span class="pln">
+sb</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="pln">bss</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_INCLUSIVE_INCLUSIVE</span><span class="pun">);</span><span class="pln"> 
+
+yourTextView</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">sb</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/4897412" title="short permalink to this answer" class="short-link" id="link-post-4897412">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4897412/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/4897412/revisions" title="show all edits to this post">edited <span title="2015-03-09 23:15:11Z" class="relativetime">Mar 9 '15 at 23:15</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1861769/javiersa"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/6fc23886c23db5b617df81fee29b8df7.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1861769/javiersa">JavierSA</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">7</span><span title="4 bronze badges"><span class="badge3"></span><span class="badgecount">4</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-02-04 11:19:50Z" class="relativetime">Feb 4 '11 at 11:19</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/495663/alex-orlov"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/b9a8dbce361e7e9c816bb5d12c10e5a7.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/495663/alex-orlov">Alex Orlov</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 13,677" dir="ltr">13.7k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="42 silver badges"><span class="badge2"></span><span class="badgecount">42</span></span><span title="39 bronze badges"><span class="badge3"></span><span class="badgecount">39</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4897412" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="3" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-15418693" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">4</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I really do't like the 
+solution android offers here, as it does not work with multi language as
+ I have no idea how many chars in my words are. I'm currently looking 
+for a solution where I can have multiple spans that I can attach all to a
+ TextView and then they are put together</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/366967/philipp" title="2,537 reputation" class="comment-user">philipp</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15418693_4897412"><span title="2012-07-24 21:33:44Z" class="relativetime-clean">Jul 24 '12 at 21:33</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-26324645" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The comment saying span to make text bold, should it say span to make text color?</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1061644/ryan" title="820 reputation" class="comment-user">Ryan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment26324645_4897412"><span title="2013-08-01 19:02:37Z" class="relativetime-clean">Aug 1 '13 at 19:02</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-27996340" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">3</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@philipp if your problem is 
+how many characters in your word, use the length() method on your String
+ or StringBuilder or whatever</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1956013/tere-bentikh" title="971 reputation" class="comment-user">Tere Bentikh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment27996340_4897412"><span title="2013-09-23 10:23:46Z" class="relativetime-clean">Sep 23 '13 at 10:23</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-44043403" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">one more up-vote to go.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1576010/campiador" title="1,891 reputation" class="comment-user">Campiador</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment44043403_4897412"><span title="2015-01-07 11:51:25Z" class="relativetime-clean">Jan 7 '15 at 11:51</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-56641831" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">If there is a long text in the TextView, here is <a href="http://stackoverflow.com/a/34449956/3414180">a more efficient way</a></span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3414180/mingfei" title="154 reputation" class="comment-user">Mingfei</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment56641831_4897412"><span title="2015-12-24 09:07:14Z" class="relativetime-clean">Dec 24 '15 at 9:07</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4897412" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link  dno" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="#" onclick="">show <b>3</b> more comments</a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk924484501",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk924484501"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjo0MDQyODMsImNoIjoxMTc4LCJjayI6e30sImNyIjoxNDM0Mjg2LCJkaSI6IjE3MGYzNTIxN2U2NzQyMjM4YzYxYWVkN2IyZTFhNjMwIiwiZG0iOjEsImZjIjoxNjQ5MjgwLCJmbCI6MTQ0ODM0MywiaXAiOiIxMTEuOTMuMTM4LjE0MiIsImt3IjoiYW5kcm9pZCx0ZXh0dmlldyIsIm53IjoyMiwicGMiOjAsImVjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvLmluIiwic3QiOjgyNzcsInVrIjoidWUxLTJjNGZhY2FlZGQyMDQ2MTZiNjdmMjFjNDQ0YjBjODNjIiwiem4iOjQ0LCJ0cyI6MTQ2ODQwNjc2OTMyOCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrOTI0NDg0NTAxIiwidXIiOiJodHRwOi8vc3RhY2tvdmVyZmxvdy5jb20vam9icy93aHktam9icz9tZWQ9enJrJnJlZj1jYW5kaWRhdGVzLWFkZC1jdl9sYi1kZXZlbG9wLXlvdXJzZWxmIn0&amp;s=3HIH4suoRCuvB29bLcGShvqprqU" rel="nofollow" target="_blank" title=""><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/6035965a800b4a1aab784905acc5af9b.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/i.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>
+  
+<a name="4897379"></a>
+<div id="answer-4897379" class="answer" data-answerid="4897379" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4897379" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">36</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">title</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="typ">Html</span><span class="pun">.</span><span class="pln">fromHtml</span><span class="pun">(</span><span class="str">"Your big island &lt;b&gt;ADVENTURE!&lt;/b&gt;"</span><span class="pun">));</span><span class="pln"> </span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/4897379" title="short permalink to this answer" class="short-link" id="link-post-4897379">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4897379/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/4897379/revisions" title="show all edits to this post">edited <span title="2011-02-04 13:28:02Z" class="relativetime">Feb 4 '11 at 13:28</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/546999/nanne"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/91a78cf1465182161a79685058d8b39b.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/546999/nanne">Nanne</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 45,192" dir="ltr">45.2k</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="73 silver badges"><span class="badge2"></span><span class="badgecount">73</span></span><span title="108 bronze badges"><span class="badge3"></span><span class="badgecount">108</span></span>
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2011-02-04 11:16:02Z" class="relativetime">Feb 4 '11 at 11:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/207646/sat"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/ecb2a40d56918f88ce6a44ef4e8efc86.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/207646/sat">sat</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 16,310" dir="ltr">16.3k</span><span title="20 gold badges"><span class="badge1"></span><span class="badgecount">20</span></span><span title="63 silver badges"><span class="badge2"></span><span class="badgecount">63</span></span><span title="80 bronze badges"><span class="badge3"></span><span class="badgecount">80</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4897379" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-38157071" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">This is a far nicer solution to the original problem than the marked answer is.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/3019883/bsnapz" title="115 reputation" class="comment-user">BSnapZ</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment38157071_4897379"><span title="2014-07-08 00:04:52Z" class="relativetime-clean">Jul 8 '14 at 0:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-41952925" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">If you have line breaks \n, this doesn't display the line breaks.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/436341/40-love" title="5,779 reputation" class="comment-user">40-Love</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment41952925_4897379"><span title="2014-10-31 14:26:16Z" class="relativetime-clean">Oct 31 '14 at 14:26</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-46432733" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">No, it is not nicer, there is no coloring feature, mentioned in question but SLOW method fromHTML()</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2290950/viktor-yakunin" title="871 reputation" class="comment-user">Viktor Yakunin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment46432733_4897379"><span title="2015-03-17 14:13:33Z" class="relativetime-clean">Mar 17 '15 at 14:13</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4897379" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="25913073"></a>
+<div id="answer-25913073" class="answer" data-answerid="25913073" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="25913073" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">12</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>I hope this helps you (it works with multi language).</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;string</span><span class="pln"> </span><span class="atn">name</span><span class="pun">=</span><span class="atv">"test_string"</span><span class="pln"> </span><span class="tag">&gt;</span><span class="pln">&lt;![CDATA[</span><span class="tag">&lt;font</span><span class="pln"> </span><span class="atn">color</span><span class="pun">=</span><span class="atv">"%1$s"</span><span class="tag">&gt;&lt;b&gt;</span><span class="pln">Test/b&gt;</span><span class="tag">&lt;/font&gt;</span><span class="pln">]]&gt; String</span><span class="tag">&lt;/string&gt;</span></code></pre>
+
+<p>And on your java code, you can do:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">int</span><span class="pln"> color </span><span class="pun">=</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">getResources</span><span class="pun">().</span><span class="pln">getColor</span><span class="pun">(</span><span class="pln">android</span><span class="pun">.</span><span class="pln">R</span><span class="pun">.</span><span class="pln">color</span><span class="pun">.</span><span class="pln">holo_blue_light</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">String</span><span class="pln"> </span><span class="kwd">string</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> context</span><span class="pun">.</span><span class="pln">getString</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="kwd">string</span><span class="pun">.</span><span class="pln">test_string</span><span class="pun">,</span><span class="pln"> color</span><span class="pun">);</span><span class="pln">
+textView</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="typ">Html</span><span class="pun">.</span><span class="pln">fromHtml</span><span class="pun">(</span><span class="kwd">string</span><span class="pun">));</span></code></pre>
+
+<p>This way, only the "Test" part will be colored (and bold).</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/25913073" title="short permalink to this answer" class="short-link" id="link-post-25913073">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/25913073/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-09-18 12:49:37Z" class="relativetime">Sep 18 '14 at 12:49</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1946149/luis"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/b32ecb803d84201affaf56386b0a86b0.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1946149/luis">Luis</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">230</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="7 bronze badges"><span class="badge3"></span><span class="badgecount">7</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-25913073" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-51447423" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Best Answer.  This works 
+perfectly for internationalized strings.  Also has the advantage of 
+being able to have your colored text in the middle of your string 
+resource.</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/1022886/jt-gilkeson" title="1,170 reputation" class="comment-user">jt-gilkeson</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment51447423_25913073"><span title="2015-08-01 00:17:16Z" class="relativetime-clean">Aug 1 '15 at 0:17</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-55965169" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@jt-gilkeson exactly!</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2533290/martin-pfeffer" title="1,903 reputation" class="comment-user">Martin Pfeffer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment55965169_25913073"><span title="2015-12-05 16:09:46Z" class="relativetime-clean">Dec 5 '15 at 16:09</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-55965181" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@Luis Thanks, bro! :)</span>
+                    –&nbsp;<a href="http://stackoverflow.com/users/2533290/martin-pfeffer" title="1,903 reputation" class="comment-user">Martin Pfeffer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment55965181_25913073"><span title="2015-12-05 16:10:20Z" class="relativetime-clean">Dec 5 '15 at 16:10</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-25913073" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="26680323"></a>
+<div id="answer-26680323" class="answer" data-answerid="26680323" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="26680323" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">8</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Here's an example that will look for all occurrences of a word (case insensitive), and color them red:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="typ">String</span><span class="pln"> notes </span><span class="pun">=</span><span class="pln"> </span><span class="str">"aaa AAA xAaax abc aaA xxx"</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">SpannableStringBuilder</span><span class="pln"> sb </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pun">(</span><span class="pln">notes</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">Pattern</span><span class="pln"> p </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Pattern</span><span class="pun">.</span><span class="pln">compile</span><span class="pun">(</span><span class="str">"aaa"</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Pattern</span><span class="pun">.</span><span class="pln">CASE_INSENSITIVE</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">Matcher</span><span class="pln"> m </span><span class="pun">=</span><span class="pln"> p</span><span class="pun">.</span><span class="pln">matcher</span><span class="pun">(</span><span class="pln">notes</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">m</span><span class="pun">.</span><span class="pln">find</span><span class="pun">()){</span><span class="pln">
+    </span><span class="com">//String word = m.group();</span><span class="pln">
+    </span><span class="com">//String word1 = notes.substring(m.start(), m.end());</span><span class="pln">
+
+    sb</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">rgb</span><span class="pun">(</span><span class="lit">255</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">)),</span><span class="pln"> m</span><span class="pun">.</span><span class="pln">start</span><span class="pun">(),</span><span class="pln"> m</span><span class="pun">.</span><span class="kwd">end</span><span class="pun">(),</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_INCLUSIVE_INCLUSIVE</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+editText</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">sb</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/26680323" title="short permalink to this answer" class="short-link" id="link-post-26680323">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/26680323/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2014-10-31 17:29:51Z" class="relativetime">Oct 31 '14 at 17:29</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/436341/40-love"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/92b1fa966f8fcb4d10cd725a0e1cdd50.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/436341/40-love">40-Love</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">5,779</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="35 silver badges"><span class="badge2"></span><span class="badgecount">35</span></span><span title="42 bronze badges"><span class="badge3"></span><span class="badgecount">42</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-26680323" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-26680323" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="4897386"></a>
+<div id="answer-4897386" class="answer" data-answerid="4897386" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4897386" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can use a <code>Spannable</code> to give certain parts of a text certain aspects. I can look up an example if you want.</p>
+
+<p>Ah, from right here on <a href="http://stackoverflow.com/questions/3282940/set-color-of-textview-span-in-android">stackoverflow</a>.</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="typ">TextView</span><span class="pln"> TV </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">TextView</span><span class="pun">)</span><span class="pln">findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">mytextview01</span><span class="pun">);</span><span class="pln"> 
+</span><span class="typ">Spannable</span><span class="pln"> </span><span class="typ">WordtoSpan</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableString</span><span class="pun">(</span><span class="str">"I know just how to whisper, And I know just how to cry,I know just where to find the answers"</span><span class="pun">);</span><span class="pln">        
+</span><span class="typ">WordtoSpan</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pun">(</span><span class="typ">Color</span><span class="pun">.</span><span class="pln">BLUE</span><span class="pun">),</span><span class="pln"> </span><span class="lit">15</span><span class="pun">,</span><span class="pln"> </span><span class="lit">30</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_EXCLUSIVE_EXCLUSIVE</span><span class="pun">);</span><span class="pln">
+TV</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="typ">WordtoSpan</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/4897386" title="short permalink to this answer" class="short-link" id="link-post-4897386">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4897386/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-02-04 11:17:04Z" class="relativetime">Feb 4 '11 at 11:17</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/546999/nanne"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/91a78cf1465182161a79685058d8b39b.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/546999/nanne">Nanne</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 45,192" dir="ltr">45.2k</span><span title="13 gold badges"><span class="badge1"></span><span class="badgecount">13</span></span><span title="73 silver badges"><span class="badge2"></span><span class="badgecount">73</span></span><span title="108 bronze badges"><span class="badge3"></span><span class="badgecount">108</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4897386" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4897386" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="4897378"></a>
+<div id="answer-4897378" class="answer" data-answerid="4897378" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="4897378" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you want to use HTML, you need to use <code>TextView.setText(Html.fromHtml(String htmlString))</code></p>
+
+<p>If you want to do that often / repeatedly, you may have a look at a class (<a href="https://github.com/pilhuhn/ZwitscherA/blob/master/src/de/bsd/zwitscher/helper/SpannableBuilder.java" rel="nofollow">SpannableBuilder</a>) I wrote, as <code>Html.fromHtml()</code> is not very efficient (it is using a big xml parsing machinery inside). It is described in this <a href="http://javablogs.com/Jump.action?id=618026" rel="nofollow">blog posting</a>.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/4897378" title="short permalink to this answer" class="short-link" id="link-post-4897378">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4897378/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2011-02-04 11:16:02Z" class="relativetime">Feb 4 '11 at 11:16</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/100957/heiko-rupp"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/4a77820cc954ab33a0d7933bb60bf044.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/100957/heiko-rupp">Heiko Rupp</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score 18,336" dir="ltr">18.3k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="95 bronze badges"><span class="badge3"></span><span class="badgecount">95</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4897378" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4897378" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="36214949"></a>
+<div id="answer-36214949" class="answer" data-answerid="36214949" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input name="_id_" value="36214949" type="hidden">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You can concatenate two or more Spans. This way is easier to color dynamic text using length value.</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="typ">SpannableStringBuilder</span><span class="pln"> span1 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pun">(</span><span class="str">"Android"</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">ForegroundColorSpan</span><span class="pln"> color1</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pun">(</span><span class="pln">getResources</span><span class="pun">().</span><span class="pln">getColor</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">color</span><span class="pun">.</span><span class="pln">colorPrimary</span><span class="pun">));</span><span class="pln">
+span1</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="pln">color1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> span1</span><span class="pun">.</span><span class="pln">length</span><span class="pun">(),</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_INCLUSIVE_INCLUSIVE</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">SpannableStringBuilder</span><span class="pln"> span2 </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pun">(</span><span class="str">"Love"</span><span class="pun">);</span><span class="pln">
+</span><span class="typ">ForegroundColorSpan</span><span class="pln"> color2</span><span class="pun">=</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">ForegroundColorSpan</span><span class="pun">(</span><span class="pln">getResources</span><span class="pun">().</span><span class="pln">getColor</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">color</span><span class="pun">.</span><span class="pln">colorSecondary</span><span class="pun">));</span><span class="pln">
+span2</span><span class="pun">.</span><span class="pln">setSpan</span><span class="pun">(</span><span class="pln">color2</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> span2</span><span class="pun">.</span><span class="pln">length</span><span class="pun">(),</span><span class="pln"> </span><span class="typ">Spannable</span><span class="pun">.</span><span class="pln">SPAN_INCLUSIVE_INCLUSIVE</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">Spanned</span><span class="pln"> concatenated</span><span class="pun">=(</span><span class="typ">Spanned</span><span class="pun">)</span><span class="pln"> </span><span class="typ">TextUtils</span><span class="pun">.</span><span class="pln">concat</span><span class="pun">(</span><span class="pln">span1</span><span class="pun">,</span><span class="str">" =&gt; "</span><span class="pun">,</span><span class="pln">span2</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">SpannableStringBuilder</span><span class="pln"> result </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SpannableStringBuilder</span><span class="pun">(</span><span class="pln">concatenated</span><span class="pun">);</span><span class="pln">
+
+</span><span class="typ">TextView</span><span class="pln"> tv </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="typ">TextView</span><span class="pun">)</span><span class="pln"> rootView</span><span class="pun">.</span><span class="pln">findViewById</span><span class="pun">(</span><span class="pln">R</span><span class="pun">.</span><span class="pln">id</span><span class="pun">.</span><span class="pln">my_texview</span><span class="pun">);</span><span class="pln">
+tv</span><span class="pun">.</span><span class="pln">setText</span><span class="pun">(</span><span class="pln">result</span><span class="pun">,</span><span class="pln"> </span><span class="typ">TextView</span><span class="pun">.</span><span class="typ">BufferType</span><span class="pun">.</span><span class="pln">SPANNABLE</span><span class="pun">);</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/36214949" title="short permalink to this answer" class="short-link" id="link-post-36214949">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/36214949/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/36214949/revisions" title="show all edits to this post">edited <span title="2016-06-26 22:49:10Z" class="relativetime">Jun 26 at 22:49</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        
+        <div class="-flair">
+            
+        </div>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2016-03-25 06:11:05Z" class="relativetime">Mar 25 at 6:11</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1157634/jorge-palacio"><div class="gravatar-wrapper-32"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/dad9438e06590898732763a87bd3a585.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1157634/jorge-palacio">Jorge Palacio</a>
+        <div class="-flair">
+            <span class="reputation-score" title="reputation score " dir="ltr">988</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-36214949" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-36214949" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="/questions/4897349/answer/submit" method="post" class="post-form">
+						    <input id="post-id" value="4897349" type="hidden">
+                            <input id="qualityBanWarningShown" name="qualityBanWarningShown" value="false" type="hidden">
+                            <input name="referrer" value="https://www.google.co.in" type="hidden">
+							<h2 class="space">Your Answer</h2>
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+                // Have to fire editor after snippets, if snippets enabled
+                if (StackExchange.settings.snippets.snippetsEnabled) {
+                    StackExchange.using("snippets", function() {
+                        createEditor();
+                    });
+                }
+                else {
+                    createEditor();
+                }
+            });
+
+            function createEditor() {
+                prepareEditor({
+                    heartbeatType: 'answer',
+                convertImagesToLinks: true,
+                reputationToPostImages: 10,
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                    ,immediatelyShowMarkdownHelp:true
+                    });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="9960de9813ed46757a05e2dba32e8d68" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+								            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Email and Password</span></p>
+                        </div>
+                    </div>
+                    <input name="manual-openid" class="manual-openid" type="hidden">
+                    <input name="use-facebook" class="use-facebook" value="false" type="hidden">
+                    <input name="use-google" class="use-google" value="false" type="hidden">
+                    <input class="submit-openid" value="Submit" style="display:none" type="button">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" size="30" maxlength="100" tabindex="106" placeholder="required, but never shown" type="email">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'http%3a%2f%2fstackoverflow.com%2fquestions%2f4897349%2fandroid-coloring-part-of-a-string-using-textview-settext%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" />
+                </div>
+            </td>
+        </tr>
+        </table>
+    </div>
+
+            </noscript>
+
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+									<a href="#" class="btn-clear discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/android" class="post-tag" title="show questions tagged 'android'" rel="tag"><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/tKsDb.png" alt="" class="sponsor-tag-img" height="16" width="18">android</a> <a href="http://stackoverflow.com/questions/tagged/textview" class="post-tag" title="show questions tagged 'textview'" rel="tag">textview</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2011-02-04 11:13:06Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>49006 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/4897349/android-coloring-part-of-a-string-using-textview-settext?lastactivity" class="lastactivity-link" title="2016-06-26 22:49:10Z">16 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2016/07/you-can-now-download-stack-overflows-2016-developer-survey-data/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2016/07/you-can-now-download-stack-overflows-2016-developer-survey-data/?cb=1" class="question-hyperlink">You Can Now Download Stack Overflow’s 2016 Developer Survey Data</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1827485691",[5,17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1827485691"><div id="careersadsdoublehigh" style="display:none;"></div><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li><li><label><input value="16" name="downvoteReason" type="radio">Other</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/i_002.gif" style="position:absolute;" border="0" height="0px" width="0px"></div>
+            <div class=" orange nearyou tagged clc-jobs-multi" id="hireme"><a href="http://stackoverflow.com/jobs/location/Bengaluru%2C%20India" target="_blank" data-loc="Bengaluru%2C%20India" data-at="0" data-tz="1" data-ti="1" class="top "><span>Jobs near you</span></a><div class="middle"><ul class="jobs"><li><a data-at="0" data-tz="3" data-ti="215756" href="http://stackoverflow.com/jobs/115756/system-technology-specialist-sdn-product-ericsson" target="_blank" title="System &amp; Technology Specialist - SDN Product Development at Ericsson. Click to learn more."><div class="title">System &amp; Technology Specialist - SDN Product Development</div><div><span class="company">Ericsson</span><span class="location">Bengaluru, India</span></div><span class="post-tag highlight">java</span><span class="post-tag">background</span></a></li><li><a data-at="0" data-tz="3" data-ti="215754" href="http://stackoverflow.com/jobs/115754/senior-manager-sdn-development-ericsson" target="_blank" title="Senior Manager, SDN Development at Ericsson. Click to learn more."><div class="title">Senior Manager, SDN Development</div><div><span class="company">Ericsson</span><span class="location">Bengaluru, India</span></div><span class="post-tag">networking</span><span class="post-tag">controller</span></a></li><li><a data-at="0" data-tz="3" data-ti="220273" href="http://stackoverflow.com/jobs/120273/developer-ericsson" target="_blank" title="Developer at Ericsson. Click to learn more."><div class="title">Developer</div><div><span class="company">Ericsson</span><span class="location">Bengaluru, India</span></div><span class="post-tag">networking</span><span class="post-tag">background</span></a></li><li><a data-at="0" data-tz="3" data-ti="186758" href="http://stackoverflow.com/jobs/100811/application-developer-bangalore-chennai-sahaj-software-solutions-pvt" target="_blank" title="Application Developer - Bangalore / Chennai at Sahaj Software Solutions Pvt Ltd. Click to learn more."><div class="title">Application Developer - Bangalore / Chennai</div><div><span class="company">Sahaj Software Solutions Pvt Ltd</span><span class="location">Bengaluru, India</span></div><span class="post-tag">android</span><span class="post-tag highlight">java</span></a></li></ul><div style="clear:both"></div></div><div class="bottom"><a class="city" href="http://stackoverflow.com/jobs/location/Bengaluru%2C%20India" target="_blank" data-at="0" data-tz="2" data-ti="0" data-loc="Bengaluru%2C%20India">More jobs near Bengaluru…</a></div><img class="impression" src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/soi.gif" style="display:none;"></div>
+        <script>
+;"use strict";(function(n){var r=["stackoverflow.com","serverfault.com","careers.stackoverflow.com","blog.codinghorror.com","joelonsoftware.com","www.joelonsoftware.com"],t,i;(r[0]==="*"||r.indexOf(location.hostname)!==-1)&&(t=window,t.clc_opts=n,n.autoload&&(t.clc_init=t.clc_init||[],t.clc_init.push(function(){return t.clc.load()})),i=document.createElement("script"),i.async=!0,i.src=n.lib,document.body.appendChild(i))}).call(null, {"az":true,"kt":2000,"tto":true,"autoload":true,"d":{"sb":["hireme","clc-sb"],"tlb":["careers1","clc-tlb"],"mlb":["careers3","clc-mlb"]},"h":"clc.stackoverflow.com","u":"//clc.stackoverflow.com/p.js","lib":"//cdn.sstatic.net/clc/clc.min.js?v=3ce1a9adfc98"});        </script>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/37532444?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/37532444/highlight-ip-address-in-string?noredirect=1&amp;lq=1" class="question-hyperlink">Highlight IP address in string</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/5861661?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  large">188</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5861661/actionbar-text-color?noredirect=1&amp;lq=1" class="question-hyperlink">ActionBar text color</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/3282940?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">99</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3282940/set-color-of-textview-span-in-android?noredirect=1&amp;lq=1" class="question-hyperlink">Set color of TextView span in Android</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/4032676?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">22</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/4032676/how-can-i-change-color-part-of-a-textview?noredirect=1&amp;lq=1" class="question-hyperlink">how can I change color part of a TextView?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/7347617?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">14</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/7347617/how-to-color-part-of-textview-in-android?noredirect=1&amp;lq=1" class="question-hyperlink">How to color part of TextView in android?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/18460243?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/18460243/change-text-color-in-edittext?noredirect=1&amp;lq=1" class="question-hyperlink">Change text color in EditText</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/6524976?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/6524976/change-part-of-text-color-within-an-edittext-widget?noredirect=1&amp;lq=1" class="question-hyperlink">Change part of text color within an “EditText” widget</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/10649920?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/10649920/android-how-to-get-selected-word-in-edittext?noredirect=1&amp;lq=1" class="question-hyperlink">Android How to get selected word in Edittext?</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/21496140?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21496140/most-efficient-way-for-dynamic-text-color-change-in-textview?noredirect=1&amp;lq=1" class="question-hyperlink">Most efficient way for Dynamic Text Color Change in TextView</a>
+</div>
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/33893507?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">5</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/33893507/display-of-decimal-numbers?noredirect=1&amp;lq=1" class="question-hyperlink">Display of decimal numbers</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/4897349?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/432037?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">1132</div></a><a href="http://stackoverflow.com/questions/432037/how-do-i-center-text-horizontally-and-vertically-in-a-textview-on-android?rq=1" class="question-hyperlink">How do I center text horizontally and vertically in a TextView on Android?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1466788?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">127</div></a><a href="http://stackoverflow.com/questions/1466788/android-textview-setting-the-background-color-dynamically-doesnt-work?rq=1" class="question-hyperlink">android TextView: setting the background color dynamically doesn't work</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/1748977?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">420</div></a><a href="http://stackoverflow.com/questions/1748977/making-textview-scrollable-in-android?rq=1" class="question-hyperlink">Making TextView scrollable in Android</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/2025282?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted extra-large">3605</div></a><a href="http://stackoverflow.com/questions/2025282/difference-between-px-dp-dip-and-sp-on-android?rq=1" class="question-hyperlink">Difference between px, dp, dip and sp on Android?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/3496269?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">406</div></a><a href="http://stackoverflow.com/questions/3496269/how-to-put-a-border-around-an-android-textview?rq=1" class="question-hyperlink">how to put a border around an android textview</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/3697887?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">1</div></a><a href="http://stackoverflow.com/questions/3697887/android-textview-settext-force-closes?rq=1" class="question-hyperlink">Android TextView.setText force closes</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4602902?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">310</div></a><a href="http://stackoverflow.com/questions/4602902/how-to-set-the-text-color-of-textview-in-code?rq=1" class="question-hyperlink">How to set the text color of TextView in code?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/4623508?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted large">248</div></a><a href="http://stackoverflow.com/questions/4623508/how-to-set-the-font-style-to-bold-italic-and-underlined-in-an-android-textview?rq=1" class="question-hyperlink">How to set the font style to bold, italic and underlined in an Android TextView?</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/12047300?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes answered-accepted default">4</div></a><a href="http://stackoverflow.com/questions/12047300/android-textview-links-dont-highlight-when-clicked?rq=1" class="question-hyperlink">Android TextView links don't highlight when clicked</a></div><div class="spacer js-gps-track"><a href="http://stackoverflow.com/q/26532764?rq=1" title="Vote score (upvotes - downvotes)"><div class="answer-votes default">2</div></a><a href="http://stackoverflow.com/questions/26532764/android-textview-settext-with-very-long-string-with-pagination-calculation?rq=1" class="question-hyperlink">android - TextView.setText() with very long string with pagination calculation</a></div>
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/38347994/does-this-code-violate-the-strict-aliasing-rule" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does this code violate the strict aliasing rule?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/129930/voice-biometrics-for-financial-authentication" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Voice Biometrics for financial authentication
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/38335882/why-class-size-increases-when-int64-t-changes-to-int32-t" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why class size increases when int64_t changes to int32_t
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/32763/what-happens-if-i-change-the-oil-when-the-engine-is-cold" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What happens if I change the oil when the engine is cold?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/73296/working-for-a-bed-food-in-usa-legal-on-what-visa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Working for a bed/food in USA, legal on what visa?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-dba" title="Database Administrators Stack Exchange"></div><a href="http://dba.stackexchange.com/questions/143601/was-management-studio-removed-from-sql-server-2016-installation-media" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:182 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Was Management Studio removed from SQL Server 2016 installation media?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/96287/which-one-is-correct-word-people-or-peoples" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which one is correct word? People or People's
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/37493/i-have-many-friends" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I have many friends
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/46988/how-cheap-do-prosthetics-have-to-be-for-poor-people-to-afford-them" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How cheap do prosthetics have to be for poor people to afford them?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ethereum" title="Ethereum Stack Exchange"></div><a href="http://ethereum.stackexchange.com/questions/7058/reading-values-from-a-contract-when-do-i-need-transactions" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:642 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Reading values from a contract: When do I need transactions?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/72636/what-did-a-good-academic-job-market-for-mathematicians-look-like-and-could-it-ev" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What did a good academic job market for mathematicians look like and could it ever come back?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/134490/c-program-that-reverses-a-string" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    C program that reverses a string
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ell" title="English Language Learners Stack Exchange"></div><a href="http://ell.stackexchange.com/questions/96277/how-do-native-speakers-say-i-have-completed-all-the-missions-levels-in-the-game" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:481 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How do native speakers say 'I have completed all the missions/levels in the game'?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/134328/is-the-doctor-insane" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is the Doctor insane?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/47055/are-nuclear-weapons-useful-in-space" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are nuclear weapons useful in space?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/129917/how-does-a-website-know-the-dns-server-a-client-uses" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How does a website know the DNS server a client uses?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-politics" title="Politics Stack Exchange"></div><a href="http://politics.stackexchange.com/questions/11644/why-does-the-black-lives-matter-movement-organize-protests-while-the-incident-th" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:475 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does the Black Lives Matter movement organize 
+protests while the incident they're protesting is still under 
+investigation?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cs" title="Computer Science Stack Exchange"></div><a href="http://cs.stackexchange.com/questions/60525/why-must-uncommitted-transactions-be-undone-in-backwards-order" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:419 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why must uncommitted transactions be undone in backwards order?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1857355/why-is-it-useful-to-show-the-existence-and-uniqueness-of-solution-for-a-pde" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is it useful to show the existence and uniqueness of solution for a PDE?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/85321/post-determined-array-sorting" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Post-determined Array Sorting
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/85141/draw-the-national-flag-of-iceland" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Draw the national flag of Iceland
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/134684/bash-script-that-lowercases-files" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Bash script that lowercases files
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/37334/a-canadian-with-a-flat-tire" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    A Canadian with a flat tire
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/85239/latin-square-compression" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Latin square compression
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/4897349" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/4897349/ivc/8cd6');});
+</script>
+<noscript>
+    <div><img src="/posts/4897349/ivc/8cd6" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div><script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/clc.js" async=""></script>
+    <div id="footer" class="categories">
+        <div class="footerwrap">            
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                    <a href="http://stackoverflow.com/company/about">about us</a>
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackoverflow.com/company/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                        <li><a href="http://expressionengine.stackexchange.com/" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://movies.stackexchange.com/" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (9)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                        <li><a href="http://chemistry.stackexchange.com/" title="scientists, academics, teachers and students">Chemistry</a></li>
+                        <li><a href="http://biology.stackexchange.com/" title="biology researchers, academics, and students">Biology</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (5)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2016 Stack Exchange Inc; user contributions licensed under <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2016.7.12.3752
+            </div>
+                </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    
+    
+        
+        ados.run.push(function () {
+                setTimeout(function () { $("#adzerk-user-match").remove(); }, window.AUMIframeDone ? 0 : 2000);
+                ados_setKeywords('android,textview');; ados_load();
+        });   
+        
+</script>
+
+    <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            
+            ga('create', 'UA-5620270-1');
+            ga('set', 'dimension2', '|android|textview|');             ga('send', 'pageview');
+        
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+                qc.async = true;
+                qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                s.parentNode.insertBefore(qc, s);
+                _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+                            var sc=document.createElement('script');
+                sc.async=true;
+                sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+                s.parentNode.insertBefore(sc, s);
+                _comscore.push({ c1: "2", c2: "17440561" });
+        })();
+
+    </script>
+        
+    
+            <script type="text/javascript">
+                
+                (function(appendChild) {
+                    Node.prototype.appendChild = function() {
+                        var parent = this;
+                        var newNode = arguments[0];
+                        if (parent.nodeName === 'HEAD'
+                            && newNode
+                            && newNode.nodeName === 'SCRIPT'
+                            && newNode.src) {
+                            
+                            window.setTimeout(function() {
+                                var result = newNode.src.match(/^https:\/\/maps\.googleapis\.com\/maps\/api\/place\/js\/(\w+)Service\./i) || [];
+                                var service = result[1];
+                                if (service) {
+                                    if (service === 'Autocompletion') service =  2;
+                                    else if (service === 'Place') service = 1;
+                                    else service = 0;
+                                    StackExchange.using('gps', function() {
+                                        StackExchange.gps.track('google_maps_places_api.call', { service: service });
+                                    });
+                                }
+                            }, 0);
+                        }
+                        return appendChild.apply(this, arguments);
+                    };
+                })(Node.prototype.appendChild);
+            </script>
+    
+<script src="Android%20%20Coloring%20part%20of%20a%20string%20using%20TextView.setText%28%29%20%20-%20Stack%20Overflow_files/p.js" async=""></script></body></html>

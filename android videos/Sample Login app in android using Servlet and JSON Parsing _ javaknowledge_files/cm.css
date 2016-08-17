@@ -1,0 +1,23 @@
+.yjl-pager{
+   margin:0px 0 10px;
+}
+span.page-number,span.yjl-more,span.yjl-prev,span.yjl-next,.gray{   
+   margin:0 4px 0 4px;     
+   padding:3px 5px 3px 5px;  
+   border:1px solid #dedede;
+}
+span.page-number:hover,span.yjl-more:hover,span.yjl-prev:hover,span.yjl-next:hover{
+   cursor:pointer;
+   border:1px solid #666; 
+}
+.currentPager{  
+    background:blue;      
+    color:white;
+}
+.gray{  
+   color:#aaa;
+}
+.yjl-mes{  
+   color:#c22;  
+   font-size:14px;
+}

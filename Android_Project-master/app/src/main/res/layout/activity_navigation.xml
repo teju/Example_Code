@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainactivitydrawer"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <fragment
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:id="@+id/navdrawer"
+        app:layout="@layout/fragment_navigation_bar"
+        tools:layout="@layout/fragment_navigation_bar"
+        android:name="com.example.teju_chi.androidproject.NavigationBarFragment"></fragment>
+
+</android.support.v4.widget.DrawerLayout>
+
+

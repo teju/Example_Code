@@ -1,0 +1,48 @@
+/*
+CSS Stylesheet for Posts per Cat
+Plugin URI: http://blog.urosevic.net/wordpress/posts-per-cat/
+Description: Posts per Cat list latest `N` articles from all, top level only or manually choosen categories and group them in category boxes organized in one, two, three or four columns.
+Author: Aleksandar Urošević
+Version: 1.0.0
+Author URI: http://urosevic.net
+*/
+
+#ppc-box .ppc-box .ppc {
+	border: 1px solid #DEDBD1;
+	background: #fff url(ppc_bg.gif) no-repeat bottom right;
+	margin: 0;
+	padding: 10px;
+}
+#ppc-box .ppc-box .ppc h3 {
+	margin: 0 0 10px 0;
+	padding: 0;
+	font-size: 16px;
+}
+/* list style */
+#ppc-box .ppc-box .ppc ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#ppc-box .ppc-box .ppc ul li {
+	padding-left: 15px;
+	background: url(bullet.gif) no-repeat left top;
+}
+#ppc-box .ppc-box .ppc ul li a {
+	font-size: 14px;
+	line-height: 1.2em;
+	clear: both;
+	position: relative;
+}
+#ppc-box .ppc-box .ppc ul li .ppc-comments-num,
+#ppc-box .ppc-box .ppc ul li .ppc-comments-num a { font-size: 100%; }
+
+/* fonts and colors of content */
+#ppc-box .ppc-box .ppc ul li p {
+	font-size: 14px;
+	line-height: 1.4em;
+	text-align: left;
+	padding: 0;
+	margin: 0 0 1.4em 0;
+	color: #404040;
+}

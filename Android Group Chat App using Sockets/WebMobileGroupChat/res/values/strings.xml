@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WebMobileGroupChat</string>
+    <string name="title">(Android WebSockets Chat App)</string>
+    <string name="author_name">By Ravi Tamada</string>
+    <string name="author_url">www.androidhive.info</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="btn_join">JOIN</string>
+    <string name="btn_send">Send</string>
+
+</resources>

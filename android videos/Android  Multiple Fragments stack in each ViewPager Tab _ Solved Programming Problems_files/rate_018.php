@@ -1,0 +1,6 @@
+PDRTJS_6960885_post_4136.avg_rating = 3.5;
+PDRTJS_6960885_post_4136.votes = 19;		
+PDRTJS_settings_6960885_post_4136= {"type":"stars","star_color":"green","size":"sml","custom_star":"","font_align":"left","font_position":"right","font_family":"","font_size":"","font_line_height":"16px","font_bold":"normal","font_italic":"normal","text_vote":"Vote","text_votes":"Votes","text_rate_this":"Rate This","text_1_star":"Very Poor","text_2_star":"Poor","text_3_star":"Average","text_4_star":"Good","text_5_star":"Excellent","text_thank_you":"Thank You","text_rate_up":"Rate Up","text_rate_down":"Rate Down","font_color":"000000","text_popcontent":"Most Popular Content","text_close":"Close","text_all":"All","text_today":"Today","text_thisweek":"This Week","text_thismonth":"This Month","text_rated":"Rated","text_noratings":"There are no rated items for this period","popup":"on"};
+PDRTJS_6960885_post_4136.init();		
+PDRTJS_6960885_post_4136.token='220eae7eeceebdf46a6810dc7ada04b2';
+/*6960885,_post_4136,wp-post-4136,1781787958,3.5-19*/

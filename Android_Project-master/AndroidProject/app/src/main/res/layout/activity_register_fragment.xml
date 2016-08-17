@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000">
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/register_name"
+        android:gravity="center"
+        android:layout_above="@+id/register_email_id"
+        android:layout_centerHorizontal="true"
+        android:textSize="22dp"
+        android:layout_marginTop="@dimen/abc_text_size_body_2_material"
+        android:background="@drawable/login_drawable"
+        android:hint="Enter your name"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/register_email_id"
+        android:gravity="center"
+        android:layout_above="@+id/register_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:textSize="22dp"
+        android:layout_marginTop="@dimen/abc_text_size_body_2_material"
+        android:background="@drawable/login_drawable"
+        android:hint="Enter your email id"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:id="@+id/register_password"
+        android:textSize="20dp"
+        android:background="@drawable/login_drawable"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/register_email_id"
+        android:layout_alignStart="@+id/register_email_id"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Password"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:id="@+id/register_button"
+        android:layout_marginTop="42dp"
+        android:onClick="register"
+        android:background="@drawable/login_button"
+        android:layout_below="@+id/register_password"
+        android:layout_alignRight="@+id/register_password"
+        android:layout_alignEnd="@+id/register_password"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Please Enter Your User Id and Password"
+        android:id="@+id/textView"
+        android:layout_above="@+id/register_name"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"/>
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+/*! Thrive Dashboard - 2016-04-13
+* http://www.thrivethemes.com/
+* Copyright (c) 2016 Thrive Themes */
+var TVE_Dash=TVE_Dash||{};!function(a){TVE_Dash.ajax_sent=!1;var b={},c={};TVE_Dash.add_load_item=function(d,e,f){return e&&e.action?("function"!=typeof f&&(f=a.noop),b[d]&&console.error&&console.error(d+" ajax action already defined"),b[d]=e,c[d]=f,!0):(console.error&&console.error("missing ajax action"),!1)},a(function(){setTimeout(function(){var d=new a.Event("tve-dash.load");return a(document).trigger(d),a.isEmptyObject(b)?!1:(a.ajax({url:tve_dash_front.ajaxurl,data:{action:"tve_dash_front_ajax",tve_dash_data:b},dataType:"json",type:"post"}).done(function(b){b&&a.isPlainObject(b)&&a.each(b,function(a,b){return"function"!=typeof c[a]?!0:void c[a].call(null,b)})}),void(TVE_Dash.ajax_sent=!0))})})}(jQuery);

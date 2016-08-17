@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidProject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="open">Open navigation</string>
+    <string name="close">Close navigation</string>
+    <string-array name="list">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>

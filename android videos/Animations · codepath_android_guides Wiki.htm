@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html class=" is-copy-enabled" lang="en"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <link crossorigin="anonymous" href="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/frameworks-e53fc1ddbde2a9e5645df620f65c80ef723c741b33293b6f2.css" integrity="sha256-5T/B3b3iqeVkXfYg9lyA73I8dBszKTtvIqK38sgUX88=" media="all" rel="stylesheet">
+    <link crossorigin="anonymous" href="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/github-4664ce357daee067bd8ee8e99e0833d04b115022dbf4ca637241c.css" integrity="sha256-RmTONX2u4Ge9jujpnggz0EsRUCLb9MpjckHA99H4Mrc=" media="all" rel="stylesheet">
+    
+    
+    
+    
+
+    <link as="script" href="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/frameworks-35477f5e4824848c27a44f62e3cd3b009cc9fbedf6074ddd87.js" rel="preload">
+    
+    <link as="script" href="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/github-121e6c09bb508b99e99c9fb1d41a3b377c131efae6cf3423f6ca2b.js" rel="preload">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width">
+    
+    
+    <title>Animations · codepath/android_guides Wiki</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+    <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+    <link rel="apple-touch-icon" href="https://github.com/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://github.com/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://github.com/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://github.com/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://github.com/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/apple-touch-icon-180x180.png">
+    <meta property="fb:app_id" content="1401488693436528">
+
+      <meta content="https://avatars3.githubusercontent.com/u/3710273?v=3&amp;s=400" name="twitter:image:src"><meta content="@github" name="twitter:site"><meta content="summary" name="twitter:card"><meta content="codepath/android_guides" name="twitter:title"><meta content="android_guides - Extensive Open-Source Guides for Android Developers" name="twitter:description">
+      <meta content="https://avatars3.githubusercontent.com/u/3710273?v=3&amp;s=400" property="og:image"><meta content="GitHub" property="og:site_name"><meta content="object" property="og:type"><meta content="codepath/android_guides" property="og:title"><meta content="https://github.com/codepath/android_guides" property="og:url"><meta content="android_guides - Extensive Open-Source Guides for Android Developers" property="og:description">
+      <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+    <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+    <link rel="assets" href="https://assets-cdn.github.com/">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/MTc0Njc5OTY6NmE3N2NjYTdkZjFkOGI0YTI3ZjNiMzk1ZTM4M2I1MWE6OWY3ZDI1MDRjZGI4NDZhY2I5ZTkxNGUxYWYwMzE5MDg3MGRkZTIwMjMzNDJjOTg0ODc3OGFiZmU4N2JiMzhiNw==--27d02b8c88d93330fee3a4ed70588ee7dfe2ae77">
+    <meta name="pjax-timeout" content="1000">
+    <link rel="sudo-modal" href="https://github.com/sessions/sudo_modal">
+
+    <meta name="msapplication-TileImage" content="/windows-tile.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="selected-link" value="repo_wiki" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host"><meta content="github" name="octolytics-app-id"><meta content="73F9E531:104D:610C088:578DCD20" name="octolytics-dimension-request_id"><meta content="17467996" name="octolytics-actor-id"><meta content="Tejaswini-netzealous" name="octolytics-actor-login"><meta content="d0c4771ae331512538c222c987304e3c14d3e64933f0d17cea2da52170774df3" name="octolytics-actor-hash">
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/wiki/show" data-pjax-transient="true" name="analytics-location">
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+
+        <meta name="hostname" content="github.com">
+    <meta name="user-login" content="Tejaswini-netzealous">
+
+        <meta name="expected-hostname" content="github.com">
+      <meta name="js-proxy-site-detection-payload" content="YzY1OGE0YTYxYTkyY2I0NjdiNTMxMmNhMzJkMmU4ZDc0YmVhMWYyNDUyZDU5NWQxNGRmYjZlNGQwNmYwYzQzNXx7InJlbW90ZV9hZGRyZXNzIjoiMTE1LjI0OS4yMjkuNDkiLCJyZXF1ZXN0X2lkIjoiNzNGOUU1MzE6MTA0RDo2MTBDMDg4OjU3OERDRDIwIiwidGltZXN0YW1wIjoxNDY4OTEwODgxfQ==">
+
+
+      <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#4078c0">
+      <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+    <meta name="html-safe-nonce" content="cb9405284f6618af3de297dcf712b80ad8ada7fd">
+    <meta content="a09e0f37cdf77ffddeec2534d002653857014d33" name="form-nonce">
+
+    <meta http-equiv="x-pjax-version" content="d73aa676277137c09e476203079717d4">
+    
+
+      
+  <meta name="description" content="android_guides - Extensive Open-Source Guides for Android Developers">
+  <meta name="go-import" content="github.com/codepath/android_guides git https://github.com/codepath/android_guides.git">
+
+  <meta content="3710273" name="octolytics-dimension-user_id"><meta content="codepath" name="octolytics-dimension-user_login"><meta content="10788737" name="octolytics-dimension-repository_id"><meta content="codepath/android_guides" name="octolytics-dimension-repository_nwo"><meta content="true" name="octolytics-dimension-repository_public"><meta content="false" name="octolytics-dimension-repository_is_fork"><meta content="10788737" name="octolytics-dimension-repository_network_root_id"><meta content="codepath/android_guides" name="octolytics-dimension-repository_network_root_nwo">
+  <link href="https://github.com/codepath/android_guides/commits/master.atom" rel="alternate" title="Recent Commits to android_guides:master" type="application/atom+xml">
+
+
+  </head>
+
+
+  <body class="logged-in   env-production windows vis-public">
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"></div>
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+
+    
+    
+    
+
+
+
+        <div class="header header-logged-in true" role="banner">
+  <div class="container clearfix">
+
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg aria-hidden="true" class="octicon octicon-mark-github" height="28" version="1.1" viewBox="0 0 16 16" width="28"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+
+
+        <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/codepath/android_guides/search" class="js-site-search-form" data-scoped-search-url="/codepath/android_guides/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+      <div class="header-search-scope">This repository</div>
+      <input class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable" data-hotkey="s" name="q" placeholder="Search" aria-label="Search this repository" data-unscoped-placeholder="Search GitHub" data-scoped-placeholder="Search" tabindex="1" autocapitalize="off" type="text">
+    </label>
+</form></div>
+
+
+      <ul class="header-nav left" role="navigation">
+        <li class="header-nav-item">
+          <a href="https://github.com/pulls" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="https://github.com/issues" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav right" id="user-links">
+  <li class="header-nav-item">
+    
+
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="https://github.com/new" aria-label="Create new…" data-ga-click="Header, create new, icon:add">
+      <svg aria-hidden="true" class="octicon octicon-plus left" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"></path></svg>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="https://github.com/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="https://github.com/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+
+  <a class="dropdown-item" href="https://github.com/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="codepath/android_guides">This repository</span>
+  </div>
+    <a class="dropdown-item" href="https://github.com/codepath/android_guides/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="https://github.com/Tejaswini-netzealous" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@Tejaswini-netzealous" class="avatar" src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/17467996.png" height="20" width="20">
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu dropdown-menu-sw">
+        <div class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">Tejaswini-netzealous</strong>
+        </div>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="https://github.com/Tejaswini-netzealous" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a>
+        <a class="dropdown-item" href="https://github.com/stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+        <a class="dropdown-item" href="https://github.com/explore" data-ga-click="Header, go to explore, text:explore">
+          Explore
+        </a>
+          <a class="dropdown-item" href="https://github.com/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com/" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="https://github.com/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a>
+
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/logout" class="logout-form" data-form-nonce="a09e0f37cdf77ffddeec2534d002653857014d33" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="tVkwCe1n36xfOvuYh8zHBzFwZ9JiPsezD1URSkzZs9Z5hP9j6jSijFvIbqayzkuTS1WZQObms249chOOmWHb5w==" type="hidden"></div>
+          <button class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </li>
+</ul>
+
+
+    
+  </div>
+</div>
+
+
+      
+
+
+    <div id="start-of-content" class="accessibility-aid"></div>
+
+      <div id="js-flash-container">
+</div>
+
+
+    <div role="main">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container="">
+      
+<div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+  <div class="container repohead-details-container">
+
+    
+
+<ul class="pagehead-actions">
+
+  <li>
+        <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-form-nonce="a09e0f37cdf77ffddeec2534d002653857014d33" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="azr+cCSzETSrbWZwieYTqz91+42h7cYfe3y/VCPFi06is1j/nN0prdjfxH0jRNHJak+4g44ngxy/M8YLohdJSA==" type="hidden"></div>      <input class="form-control" id="repository_id" name="repository_id" value="10788737" type="hidden">
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="https://github.com/codepath/android_guides/subscription" class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true" data-ga-click="Repository, click Watch settings, action:wiki#show">
+            <span class="js-select-button">
+              <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count" href="https://github.com/codepath/android_guides/watchers">
+            1,676
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" value="included" type="radio">
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" value="subscribed" type="radio">
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"></path></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" value="ignore" type="radio">
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"></path></svg>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/codepath/android_guides/unstar" class="starred" data-form-nonce="a09e0f37cdf77ffddeec2534d002653857014d33" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="llw3fqiDc2C+U31QxMy9TRZJ8X7F+30C1Y8IFP5lZ81l3XwjQw857GHOannWIIgP9rCOX3pzToRR3+4P37XbGg==" type="hidden"></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar codepath/android_guides" data-ga-click="Repository, click unstar button, action:wiki#show; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/codepath/android_guides/stargazers">
+          13,561
+        </a>
+</form>
+    <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/codepath/android_guides/star" class="unstarred" data-form-nonce="a09e0f37cdf77ffddeec2534d002653857014d33" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="DwIyItod/OurH9agkNLYZ1lxS4hUrDEnLcr9vFmGVC+u9hfHWtEsrICMRpdSJnjNzei1UDUiJT65a/gH3/ahug==" type="hidden"></div>
+      <button class="btn btn-sm btn-with-count js-toggler-target" aria-label="Star this repository" title="Star codepath/android_guides" data-ga-click="Repository, click star button, action:wiki#show; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="https://github.com/codepath/android_guides/stargazers">
+          13,561
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- </textarea> --><!-- '"` --><form accept-charset="UTF-8" action="/codepath/android_guides/fork" class="btn-with-count" data-form-nonce="a09e0f37cdf77ffddeec2534d002653857014d33" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="4g+qXb3Uxg8TTF1TkIovFj/cWs6ziQWRPRnqt+hXV+8tQZ91MffTNIMf91gVAzxFBuDNKeUYED/f+Z/BgX0QwQ==" type="hidden"></div>
+            <button type="submit" class="btn btn-sm btn-with-count" data-ga-click="Repository, show fork modal, action:wiki#show; text:Fork" title="Fork your own copy of codepath/android_guides to your account" aria-label="Fork your own copy of codepath/android_guides to your account">
+              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+              Fork
+            </button>
+</form>
+    <a href="https://github.com/codepath/android_guides/network" class="social-count">
+      3,334
+    </a>
+  </li>
+</ul>
+
+    <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+  <span class="author" itemprop="author"><a href="https://github.com/codepath" class="url fn" rel="author">codepath</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="https://github.com/codepath/android_guides" data-pjax="#js-repo-pjax-container">android_guides</a></strong>
+
+</h1>
+
+  </div>
+  <div class="container">
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax" itemscope="" itemtype="http://schema.org/BreadcrumbList" role="navigation" data-pjax="#js-repo-pjax-container">
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="https://github.com/codepath/android_guides" class="js-selected-navigation-item reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /codepath/android_guides" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"></path></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="https://github.com/codepath/android_guides/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /codepath/android_guides/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">39</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope="" itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="https://github.com/codepath/android_guides/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /codepath/android_guides/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">0</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="https://github.com/codepath/android_guides/wiki" aria-selected="true" class="js-selected-navigation-item selected reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /codepath/android_guides/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"></path></svg>
+      Wiki
+</a>
+
+  <a href="https://github.com/codepath/android_guides/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /codepath/android_guides/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"></path></svg>
+    Pulse
+</a>
+  <a href="https://github.com/codepath/android_guides/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /codepath/android_guides/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"></path></svg>
+    Graphs
+</a>
+
+</nav>
+
+  </div>
+</div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+
+<div id="wiki-wrapper" class="wiki-wrapper page">
+<div class="gh-header">
+  <div class="gh-header-show">
+        <div class="gh-header-actions">
+          <a href="https://github.com/codepath/android_guides/wiki/Animations/_edit" class="btn btn-sm ">Edit</a>
+          <a href="https://github.com/codepath/android_guides/wiki/_new" class="btn btn-sm btn-primary">New Page</a>
+        </div>
+    <h1 class="gh-header-title instapaper_title">Animations</h1>
+      <div class="gh-header-meta">
+        Jamie Lord edited this page <relative-time title="27 May 2016, 4:55 PM IST" datetime="2016-05-27T11:25:26Z">on 27 May</relative-time>
+        ·
+        <a href="https://github.com/codepath/android_guides/wiki/Animations/_history" class="history">
+          119 revisions
+        </a>
+      </div>
+  </div>
+</div>
+<div id="wiki-content" class="wiki-content">
+  <div class="has-rightbar">
+
+  <div id="wiki-rightbar" class="wiki-rightbar">
+    <div class="wiki-pages-box readability-sidebar boxed-group flush js-wiki-pages-box collapsed" role="navigation">
+      
+<h3 class="js-wiki-toggle-collapse wiki-auxiliary-content">
+  <svg aria-hidden="true" class="octicon octicon-triangle-down caret-expanded" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M0 5l6 6 6-6z"></path></svg>
+  <svg aria-hidden="true" class="octicon octicon-triangle-right caret-collapsed" height="16" version="1.1" viewBox="0 0 6 16" width="6"><path d="M0 14l6-6-6-6z"></path></svg>
+  Pages <span class="counter">177</span>
+</h3>
+<div class="boxed-group-inner wiki-auxiliary-content wiki-auxiliary-content-no-bg">
+    <div class="filter-bar">
+      <input id="wiki-pages-filter" class="form-control input-sm input-block js-filterable-field" placeholder="Find a Page…" aria-label="Find a Page…" tabindex="2" type="text">
+    </div>
+
+  <ul class="wiki-pages" data-filterable-for="wiki-pages-filter" data-filterable-type="substring">
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki" class="wiki-page-link">Home</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Accessing-the-Camera-and-Stored-Media" class="wiki-page-link">Accessing the Camera and Stored Media</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/ActionBar-Tabs-with-Fragments" class="wiki-page-link">ActionBar Tabs with Fragments</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/ActiveAndroid-Guide" class="wiki-page-link">ActiveAndroid Guide</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Activity-Lifecycle" class="wiki-page-link">Activity Lifecycle</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Bootcamp-Cliffnotes" class="wiki-page-link">Android Bootcamp Cliffnotes</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Design-Guidelines" class="wiki-page-link">Android Design Guidelines</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Directory-Structure" class="wiki-page-link">Android Directory Structure</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Testing-Framework" class="wiki-page-link">Android Testing Framework</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Testing-Options" class="wiki-page-link">Android Testing Options</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Android-Unit-and-Integration-testing" class="wiki-page-link">Android Unit and Integration testing</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Animations" class="wiki-page-link">Animations</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Applying-Data-Binding-for-Views" class="wiki-page-link">Applying Data Binding for Views</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Architecture-of-Android-Apps" class="wiki-page-link">Architecture of Android Apps</a></strong>
+    </li>
+    <li>
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Audio-Playback-and-Recording" class="wiki-page-link">Audio Playback and Recording</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Automating-Publishing-to-the-Play-Store" class="wiki-page-link">Automating Publishing to the Play Store</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Basic-Event-Listeners" class="wiki-page-link">Basic Event Listeners</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Basic-Painting-with-Views" class="wiki-page-link">Basic Painting with Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Basic-Todo-App-Tutorial" class="wiki-page-link">Basic Todo App Tutorial</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Beginning-Android-Resources" class="wiki-page-link">Beginning Android Resources</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Book-Search-Tutorial" class="wiki-page-link">Book Search Tutorial</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Firebase" class="wiki-page-link">Building Data driven Apps with Firebase</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Building-Data-driven-Apps-with-Parse" class="wiki-page-link">Building Data driven Apps with Parse</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Building-Gradle-Projects-with-Jenkins-CI" class="wiki-page-link">Building Gradle Projects with Jenkins CI</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Building-Simple-Chat-Client-with-Parse" class="wiki-page-link">Building Simple Chat Client with Parse</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Building-your-own-Android-library" class="wiki-page-link">Building your own Android library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Chrome-Custom-Tabs" class="wiki-page-link">Chrome Custom Tabs</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Circular-Reveal-Animation" class="wiki-page-link">Circular Reveal Animation</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Clean-Persistence-with-Sugar-ORM" class="wiki-page-link">Clean Persistence with Sugar ORM</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Cloning-a-Login-Screen-Layout-Guide" class="wiki-page-link">Cloning a Login Screen Layout Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/CodePath-Goal" class="wiki-page-link">CodePath Goal</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Collaborating-on-Projects-with-Git" class="wiki-page-link">Collaborating on Projects with Git</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Common-Implicit-Intents" class="wiki-page-link">Common Implicit Intents</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Common-Navigation-Paradigms" class="wiki-page-link">Common Navigation Paradigms</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Communicating-with-an-Event-Bus" class="wiki-page-link">Communicating with an Event Bus</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Configuring-a-Parse-Server" class="wiki-page-link">Configuring a Parse Server</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Configuring-ProGuard" class="wiki-page-link">Configuring ProGuard</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Connectivity-using-the-Bluetooth-API" class="wiki-page-link">Connectivity using the Bluetooth API</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Constructing-View-Layouts" class="wiki-page-link">Constructing View Layouts</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Consuming-APIs-with-Retrofit" class="wiki-page-link">Consuming APIs with Retrofit</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Contributing-back-to-Android" class="wiki-page-link">Contributing back to Android</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Contributing-Guidelines" class="wiki-page-link">Contributing Guidelines</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Converting-JSON-to-Models" class="wiki-page-link">Converting JSON to Models</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Crash-Reporting-with-Firebase" class="wiki-page-link">Crash Reporting with Firebase</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Creating-and-Executing-Async-Tasks" class="wiki-page-link">Creating and Executing Async Tasks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Creating-and-Using-Fragments" class="wiki-page-link">Creating and Using Fragments</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Creating-Content-Providers" class="wiki-page-link">Creating Content Providers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Creating-Custom-Listeners" class="wiki-page-link">Creating Custom Listeners</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/DBFlow-Guide" class="wiki-page-link">DBFlow Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Debugging-and-Profiling-Apps" class="wiki-page-link">Debugging and Profiling Apps</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Debugging-Exceptions-within-your-App" class="wiki-page-link">Debugging Exceptions within your App</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Defining-Custom-Views" class="wiki-page-link">Defining Custom Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Defining-The-ActionBar" class="wiki-page-link">Defining The ActionBar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Defining-Views-and-their-Attributes" class="wiki-page-link">Defining Views and their Attributes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Dependency-Injection-with-Dagger-2" class="wiki-page-link">Dependency Injection with Dagger 2</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Design-Support-Library" class="wiki-page-link">Design Support Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Developing-Custom-Themes" class="wiki-page-link">Developing Custom Themes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Displaying-Images-with-the-Fresco-Library" class="wiki-page-link">Displaying Images with the Fresco Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Displaying-Images-with-the-Picasso-Library" class="wiki-page-link">Displaying Images with the Picasso Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Displaying-the-Snackbar" class="wiki-page-link">Displaying the Snackbar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Displaying-Toasts" class="wiki-page-link">Displaying Toasts</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Drawables" class="wiki-page-link">Drawables</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Drawing-with-OpenGL-and-GLSurfaceView" class="wiki-page-link">Drawing with OpenGL and GLSurfaceView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Dynamic-Color-using-Palettes" class="wiki-page-link">Dynamic Color using Palettes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Easier-SQL-with-Cupboard" class="wiki-page-link">Easier SQL with Cupboard</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Endless-Scrolling-with-AdapterViews" class="wiki-page-link">Endless Scrolling with AdapterViews</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Endless-Scrolling-with-AdapterViews-and-RecyclerView" class="wiki-page-link">Endless Scrolling with AdapterViews and RecyclerView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Extended-ActionBar-Guide" class="wiki-page-link">Extended ActionBar Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Extending-SurfaceView" class="wiki-page-link">Extending SurfaceView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Flexible-User-Interfaces" class="wiki-page-link">Flexible User Interfaces</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Floating-Action-Buttons" class="wiki-page-link">Floating Action Buttons</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Fragment-Navigation-Drawer" class="wiki-page-link">Fragment Navigation Drawer</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Free-Android-Curriculum" class="wiki-page-link">Free Android Curriculum</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Genymotion-2.0-Emulators-with-Google-Play-support" class="wiki-page-link">Genymotion 2.0 Emulators with Google Play support</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Gestures-and-Touch-Events" class="wiki-page-link">Gestures and Touch Events</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Getting-Started-with-Gradle" class="wiki-page-link">Getting Started with Gradle</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Google-Cloud-Messaging" class="wiki-page-link">Google Cloud Messaging</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Google-Maps-API-v2-Usage" class="wiki-page-link">Google Maps API v2 Usage</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Google-Maps-Fragment-Guide" class="wiki-page-link">Google Maps Fragment Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Google-Play-Style-Tabs-using-TabLayout" class="wiki-page-link">Google Play Style Tabs using TabLayout</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Handling-Configuration-Changes" class="wiki-page-link">Handling Configuration Changes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Handling-ProgressBars" class="wiki-page-link">Handling ProgressBars</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Handling-Scrolls-with-CoordinatorLayout" class="wiki-page-link">Handling Scrolls with CoordinatorLayout</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Heterogenous-Layouts-inside-RecyclerView" class="wiki-page-link">Heterogenous Layouts inside RecyclerView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Implementing-a-Heterogenous-ListView" class="wiki-page-link">Implementing a Heterogenous ListView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Implementing-a-Horizontal-ListView-Guide" class="wiki-page-link">Implementing a Horizontal ListView Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Implementing-a-Rate-Me-Feature" class="wiki-page-link">Implementing a Rate Me Feature</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Implementing-Pull-to-Refresh-Guide" class="wiki-page-link">Implementing Pull to Refresh Guide</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Installing-Android-SDK-Tools" class="wiki-page-link">Installing Android SDK Tools</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Interacting-with-the-Calendar" class="wiki-page-link">Interacting with the Calendar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Intermediate" class="wiki-page-link">Intermediate</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Keeping-Updated-with-Android" class="wiki-page-link">Keeping Updated with Android</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Lambda-Expressions" class="wiki-page-link">Lambda Expressions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Leveraging-the-Gson-Library" class="wiki-page-link">Leveraging the Gson Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Listening-to-Sensors-using-SensorManager" class="wiki-page-link">Listening to Sensors using SensorManager</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Loading-Contacts-with-Content-Providers" class="wiki-page-link">Loading Contacts with Content Providers</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Local-Databases-with-SQLiteOpenHelper" class="wiki-page-link">Local Databases with SQLiteOpenHelper</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Managing-Runtime-Permissions-with-PermissionsDispatcher" class="wiki-page-link">Managing Runtime Permissions with PermissionsDispatcher</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Managing-Threads-and-Custom-Services" class="wiki-page-link">Managing Threads and Custom Services</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Material-Design-Primer" class="wiki-page-link">Material Design Primer</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Menus-and-Popups" class="wiki-page-link">Menus and Popups</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Migrating-to-the-AppCompat-Library" class="wiki-page-link">Migrating to the AppCompat Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Mobile-Screen-Archetypes" class="wiki-page-link">Mobile Screen Archetypes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Must-Have-Libraries" class="wiki-page-link">Must Have Libraries</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Navigation-and-Task-Stacks" class="wiki-page-link">Navigation and Task Stacks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Networking-with-the-Volley-Library" class="wiki-page-link">Networking with the Volley Library</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Notification-Services-%28GeoFence,-Calendar%29" class="wiki-page-link">Notification Services (GeoFence, Calendar)</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Notifications" class="wiki-page-link">Notifications</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Open-Source-projects-for-Android-development" class="wiki-page-link">Open Source projects for Android development</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Organizing-your-Source-Files" class="wiki-page-link">Organizing your Source Files</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Persisting-Data-to-the-Device" class="wiki-page-link">Persisting Data to the Device</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Polishing-a-UI-Tips-and-Tools" class="wiki-page-link">Polishing a UI Tips and Tools</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Popular-External-Tools" class="wiki-page-link">Popular External Tools</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Populating-a-ListView-with-a-CursorAdapter" class="wiki-page-link">Populating a ListView with a CursorAdapter</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Powerful-Persistence-with-JDXA-ORM" class="wiki-page-link">Powerful Persistence with JDXA ORM</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Presenting-an-Android-Device" class="wiki-page-link">Presenting an Android Device</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Progress-Bar-Custom-View" class="wiki-page-link">Progress Bar Custom View</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Publishing-to-the-Play-Store" class="wiki-page-link">Publishing to the Play Store</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Push-Messaging" class="wiki-page-link">Push Messaging</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Real-time-Messaging" class="wiki-page-link">Real time Messaging</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Recording-Video-of-an-Android-Device" class="wiki-page-link">Recording Video of an Android Device</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Reducing-View-Boilerplate-with-Butterknife" class="wiki-page-link">Reducing View Boilerplate with Butterknife</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Repeating-Periodic-Tasks" class="wiki-page-link">Repeating Periodic Tasks</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Replacing-Enums-with-Enumerated-Annotations" class="wiki-page-link">Replacing Enums with Enumerated Annotations</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Retrieving-Location-with-LocationServices-API" class="wiki-page-link">Retrieving Location with LocationServices API</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Ripple-Animation" class="wiki-page-link">Ripple Animation</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Robolectric-Installation-for-Unit-Testing" class="wiki-page-link">Robolectric Installation for Unit Testing</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Rotten-Tomatoes-Networking-Tutorial" class="wiki-page-link">Rotten Tomatoes Networking Tutorial</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Running-Apps-on-Your-Device" class="wiki-page-link">Running Apps on Your Device</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/RxJava" class="wiki-page-link">RxJava</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/RxJava-and-RxBinding" class="wiki-page-link">RxJava and RxBinding</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Sample-Android-Apps" class="wiki-page-link">Sample Android Apps</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Sending-and-Managing-Network-Requests" class="wiki-page-link">Sending and Managing Network Requests</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Sending-and-Receiving-Data-with-Sockets" class="wiki-page-link">Sending and Receiving Data with Sockets</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Setting-up-IntelliJ-IDEA" class="wiki-page-link">Setting up IntelliJ IDEA</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Setting-up-Travis-CI" class="wiki-page-link">Setting up Travis CI</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Settings-with-PreferenceFragment" class="wiki-page-link">Settings with PreferenceFragment</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Shared-Element-Activity-Transition" class="wiki-page-link">Shared Element Activity Transition</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Sharing-Content-with-Intents" class="wiki-page-link">Sharing Content with Intents</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Sliding-Tabs-with-PagerSlidingTabStrip" class="wiki-page-link">Sliding Tabs with PagerSlidingTabStrip</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Starting-Background-Services" class="wiki-page-link">Starting Background Services</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Storing-and-Accessing-SharedPreferences" class="wiki-page-link">Storing and Accessing SharedPreferences</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Streaming-Youtube-Videos-with-YouTubePlayerView" class="wiki-page-link">Streaming Youtube Videos with YouTubePlayerView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Styles-and-Themes" class="wiki-page-link">Styles and Themes</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Styling-UI-Screens-FAQ" class="wiki-page-link">Styling UI Screens FAQ</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Troubleshooting-Common-Issues" class="wiki-page-link">Troubleshooting Common Issues</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Troubleshooting-Common-Issues-with-Parse" class="wiki-page-link">Troubleshooting Common Issues with Parse</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Troubleshooting-Eclipse-Issues" class="wiki-page-link">Troubleshooting Eclipse Issues</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/UI-Testing-with-Espresso" class="wiki-page-link">UI Testing with Espresso</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/UI-Testing-with-Robotium" class="wiki-page-link">UI Testing with Robotium</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Understanding-App-Permissions" class="wiki-page-link">Understanding App Permissions</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Understanding-App-Resources" class="wiki-page-link">Understanding App Resources</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Unit-Testing-with-Robolectric" class="wiki-page-link">Unit Testing with Robolectric</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-a-BaseAdapter-with-ListView" class="wiki-page-link">Using a BaseAdapter with ListView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-an-ArrayAdapter-with-ListView" class="wiki-page-link">Using an ArrayAdapter with ListView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Android-Async-Http-Client" class="wiki-page-link">Using Android Async Http Client</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Android-Studio" class="wiki-page-link">Using Android Studio</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Context" class="wiki-page-link">Using Context</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-DialogFragment" class="wiki-page-link">Using DialogFragment</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Intents-to-Create-Flows" class="wiki-page-link">Using Intents to Create Flows</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Kotlin-for-Android-development" class="wiki-page-link">Using Kotlin for Android development</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-OkHttp" class="wiki-page-link">Using OkHttp</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Parcelable" class="wiki-page-link">Using Parcelable</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Parceler" class="wiki-page-link">Using Parceler</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-Retrofit-for-REST-Clients" class="wiki-page-link">Using Retrofit for REST Clients</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-the-App-ToolBar" class="wiki-page-link">Using the App ToolBar</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-the-CardView" class="wiki-page-link">Using the CardView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Using-the-RecyclerView" class="wiki-page-link">Using the RecyclerView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Video-Playback-and-Recording" class="wiki-page-link">Video Playback and Recording</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/ViewPager-with-FragmentPagerAdapter" class="wiki-page-link">ViewPager with FragmentPagerAdapter</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-Input-Views" class="wiki-page-link">Working with Input Views</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-EditText" class="wiki-page-link">Working with the EditText</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-ImageView" class="wiki-page-link">Working with the ImageView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-ScrollView" class="wiki-page-link">Working with the ScrollView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-Soft-Keyboard" class="wiki-page-link">Working with the Soft Keyboard</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-TextView" class="wiki-page-link">Working with the TextView</a></strong>
+    </li>
+    <li class="wiki-more-pages">
+      <strong><a href="https://github.com/codepath/android_guides/wiki/Working-with-the-WebView" class="wiki-page-link">Working with the WebView</a></strong>
+    </li>
+    <li class="wiki-more-pages-link">
+      <a href="#" class="js-wiki-more-pages-link">
+        Show 162 more pages…
+      </a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+
+      <div class="gollum-markdown-content readability-sidebar box box-small">
+        <div class="wiki-custom-sidebar wiki-writable markdown-body">
+            <a href="https://github.com/codepath/android_guides/wiki/_Sidebar/_edit" class="wiki-edit-link" title="Edit sidebar">
+              <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+            </a>
+          <p><strong>Finding these guides helpful?</strong></p>
+
+<p>We need help from the broader community to improve these guides, add new topics and keep the topics up-to-date. See <a href="https://github.com/codepath/android_guides/wiki/Contributing-Guidelines">our contribution guidelines here</a> and <a href="https://github.com/codepath/android_guides/issues">our topic issues list</a> for great ways to help out.</p>
+
+<p>Check these <a href="http://guides.codepath.com/android">same guides through our standalone viewer</a> for a better browsing experience and an improved search. Follow us on <a href="https://twitter.com/codepath">twitter @codepath</a> for access to more useful Android development resources. </p>
+
+<p><strong>Interested in ramping up on Android quickly?</strong></p>
+
+<p>(US Only) If you are an existing engineer with 2+ years of 
+professional experience in software development and are serious about 
+ramping up on Android quickly, be sure to apply for our <a href="http://codepath.com/androidbootcamp">free evening 8-week Android bootcamp</a>. </p>
+
+<p>We've trained over a thousand engineers from top companies including 
+Apple, Twitter, Airbnb, Uber, and many others leveraging this program. 
+The course is taught by Android experts from the industry and is 
+specifically designed for existing engineers. </p>
+
+<p><strong>Not in the United States?</strong> Please <a href="https://www.surveymonkey.com/r/codepath_interest_intake">fill out our application of interest form</a> and we’ll notify you as classes become available in your area powered by local organizers.</p>
+
+        </div>
+      </div>
+
+    <div class="clone-url">
+      <h5>Clone this wiki locally</h5>
+      <div class="input-group js-zeroclipboard-container">
+        <input class="form-control input-sm text-small text-muted input-monospace js-url-field js-zeroclipboard-target" value="https://github.com/codepath/android_guides.wiki.git" readonly="readonly" type="text">
+        <span class="input-group-button">
+          <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"></path></svg></button>
+        </span>
+      </div>
+
+
+        <a href="github-windows://openRepo/https://github.com/codepath/android_guides.wiki" class="btn btn-sm sidebar-button" title="Save this wiki to your computer and use it in GitHub Desktop." aria-label="Save this wiki to your computer and use it in GitHub Desktop.">
+          <svg aria-hidden="true" class="octicon octicon-desktop-download" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 6h3V0h2v6h3l-4 4-4-4zm11-4h-4v1h4v8H1V3h4V2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1z"></path></svg>
+          Clone in Desktop
+        </a>
+    </div>
+  </div>
+
+  <div id="wiki-body" class="wiki-body gollum-markdown-content instapaper_body">
+      <div class="markdown-body">
+        <h2>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
+
+<p>Android supports powerful animations for both views and transitions 
+between activities. There are three animation systems that work 
+differently for different cases but the most important are Property 
+animations. Property animations allow us to animate any property of any 
+object from one value to another over a specified duration. </p>
+
+<p>These can be applied to anything within the Android application. This
+ is typically used for any dynamic movement for views including position
+ changes, rotations, expansion or coloration changes. </p>
+
+<p>Animations like many resources for Android can be defined both through XML resources as well as 
+dynamically within the Java code.</p>
+
+<h3>
+<a id="user-content-animation-types" class="anchor" href="#animation-types" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Animation Types</h3>
+
+<p>There are actually two distinct animation frameworks for Android:</p>
+
+<ul>
+<li>
+<a href="http://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animations</a> - The most powerful and flexible animation system introduced in Android 3.0.</li>
+<li>
+<a href="http://developer.android.com/guide/topics/graphics/view-animation.html">View Animations</a> - Slower and less flexible; deprecated since property animations were introduced</li>
+</ul>
+
+<p>Powered by these animation frameworks, there are five relevant types of animations:</p>
+
+<ul>
+<li>
+<a href="http://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animations</a>
+ - This is the animation of any property between two values. Frequently 
+used to animate views on screen such as rotating an image or fading out a
+ button.</li>
+<li>
+<a class="internal present" href="https://github.com/codepath/android_guides/wiki/Animations#activity-transitions">Activity Transitions</a> - Animates the transition as an Activity enters the screen when an Intent is executed.</li>
+<li>
+<a href="http://android-er.blogspot.com/2013/04/implement-animation-in.html">Fragment Transitions</a> - Animates the transition as a fragment enters or exits the screen when a transaction occurs.</li>
+<li>
+<a href="http://developer.android.com/guide/topics/graphics/prop-animation.html#layout">Layout Animation</a>
+ - This allows us to enable animations on any layout container or other 
+ViewGroup such as a ListView. With layout animations enabled, all 
+changes to views inside the container will be animated.</li>
+<li>
+<a href="http://developer.android.com/guide/topics/graphics/drawable-animation.html">Drawable Animations</a> - Used to animate by displaying drawables in quick succession</li>
+</ul>
+
+<h3>
+<a id="user-content-material-animation-principles" class="anchor" href="#material-animation-principles" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Material Animation Principles</h3>
+
+<p>With the release of Android 5.0, Google has released detailed <a href="http://www.google.com/design/spec/animation">animation design guidelines</a>
+ which documents important principles to consider when integrating 
+animations and motion into your application. There are four core 
+principles outlined:</p>
+
+<ul>
+<li>
+<a href="http://www.google.com/design/spec/animation/authentic-motion.html">Authentic motion</a>
+ - Motion in the world of material design is not only beautiful, it 
+builds meaning about the spatial relationships, functionality, and 
+intention of the system.</li>
+<li>
+<a href="http://www.google.com/design/spec/animation/responsive-interaction.html">Responsive interaction</a> - When a user interacts with an app; beautiful yet perfectly logical things happen, the user feels satisfied—even delighted.</li>
+<li>
+<a href="http://www.google.com/design/spec/animation/meaningful-transitions.html">Meaningful transitions</a>
+ - Carefully choreographed motion design can effectively guide the 
+user’s attention and focus through multiple steps of a process or 
+procedure and avoid confusion. </li>
+<li>
+<a href="http://www.google.com/design/spec/animation/delightful-details.html">Delightful details</a>
+ - Animation can exist within all components of an app and at all 
+scales, from finely detailed icons to key transitions and actions. All 
+elements work together to construct a seamless experience and a 
+beautiful, functional app.</li>
+</ul>
+
+<p>Review these principles for a detailed look at how to think about animations in a way that aligns with a material app.</p>
+
+<h2>
+<a id="user-content-property-animations" class="anchor" href="#property-animations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Property Animations</h2>
+
+<p>Property animations were a more recent Android feature introduced in 
+3.0. The primary motivations for the introduction of the property 
+animations system are outlined in this <a href="http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html">post from 2011 introducing property animations</a>. </p>
+
+<p>Common properties commonly animated on views include:</p>
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alpha</code></td>
+<td>Fade in or out</td>
+</tr>
+<tr>
+<td>
+<code>rotation</code>, <code>rotationX</code>, <code>rotationY</code>
+</td>
+<td>Spin or flip</td>
+</tr>
+<tr>
+<td>
+<code>scaleX</code>, <code>scaleY</code>
+</td>
+<td>Grow or shrink</td>
+</tr>
+<tr>
+<td>
+<code>x</code>, <code>y</code>, <code>z</code>
+</td>
+<td>Position</td>
+</tr>
+<tr>
+<td>
+<code>translationX</code>, <code>translationY</code>, <strong><code>translationZ</code> (API 21+)</strong>
+</td>
+<td>Offset from Position</td>
+</tr>
+</tbody>
+</table>
+
+<p>In the past, the way to use animations <strong>compatible with pre-3.0 Android versions</strong> is to use  <a href="http://nineoldandroids.com/">NineOldAndroids</a>
+ for all our property animations.  Nine Old Androids has now been 
+deprecated and no longer being supported but can still be used by adding
+ this line to your <code>app/build.gradle</code> file:</p>
+
+<div class="highlight highlight-source-groovy-gradle"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.nineoldandroids:library:2.4.0<span class="pl-pds">'</span></span></pre></div>
+
+<p>A library that simplifies common animations is called <a href="https://github.com/daimajia/AndroidViewAnimations">AndroidViewAnimations</a> and makes certain common animations on views much easier to achieve. This library is definitely worth a look.</p>
+
+<h3>
+<a id="user-content-using-objectanimator-in-java" class="anchor" href="#using-objectanimator-in-java" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using ObjectAnimator in Java</h3>
+
+<p>We can use the <a href="http://developer.android.com/reference/android/animation/ObjectAnimator.html">ObjectAnimator</a> method to execute simple animations for a particular property on a specified object:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ObjectAnimator</span> fadeAnim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>, <span class="pl-c1">0.2f</span>);
+fadeAnim<span class="pl-k">.</span>start();</pre></div>
+
+<p>This code will execute the animation to fade out the button.   Notice
+ that the "alpha" is designated as a string type.  The ObjectAnimator 
+relies on <a href="https://github.com/android/platform_frameworks_base/blob/master/core/java/android/animation/PropertyValuesHolder.java#L658-719">reflection</a> and uses the button's <a href="http://developer.android.com/reference/android/view/View.html#getAlpha%28%29">getAlpha()</a> and <a href="http://developer.android.com/reference/android/view/View.html#setAlpha%28float%29">setAlpha()</a> methods to perform the animation.</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f647379524d736c2e6769.gif" alt="Simple Fadeout" data-canonical-src="https://i.imgur.com/dsyRMsl.gif"></p>
+
+<p>We can also use the <a href="http://android-developers.blogspot.com/2011/11/android-40-graphics-and-animations.html">properties system in 4.0</a> to execute property animations on common properties using:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ObjectAnimator</span> fadeAltAnim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(image, <span class="pl-smi">View</span><span class="pl-c1"><span class="pl-k">.</span>ALPHA</span>, <span class="pl-c1">0</span>, <span class="pl-c1">1</span>);
+fadeAltAnim<span class="pl-k">.</span>start();</pre></div>
+
+<p>This is considerably faster because this property check doesn't require as much <a href="https://github.com/android/platform_frameworks_base/blob/master/core/java/android/view/ViewPropertyAnimator.java#L989-L1022">slow runtime reflection</a>. Properties supported include <code>ALPHA</code>, <code>ROTATION</code>, <code>ROTATION_X</code>, <code>ROTATION_Y</code>, <code>SCALE_X</code>, <code>SCALE_Y</code>, <code>TRANSLATION_X</code>, <code>TRANSLATION_Y</code>, <code>TRANSLATION_Z</code>, <code>X</code>, <code>Y</code>, <code>Z</code> in order to improve performance on these animations. </p>
+
+<h4>
+<a id="user-content-setting-duration-or-repeat-on-property-animation" class="anchor" href="#setting-duration-or-repeat-on-property-animation" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting Duration or Repeat on Property Animation</h4>
+
+<p>This code above will fade the specified view to 20% opacity. We can 
+add additional behavior such as duration or repeating the animation 
+with:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ObjectAnimator</span> scaleAnim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>scaleX<span class="pl-pds">"</span></span>, <span class="pl-c1">1.0f</span>, <span class="pl-c1">2.0f</span>);
+scaleAnim<span class="pl-k">.</span>setDuration(<span class="pl-c1">3000</span>);
+scaleAnim<span class="pl-k">.</span>setRepeatCount(<span class="pl-smi">ValueAnimator</span><span class="pl-c1"><span class="pl-k">.</span>INFINITE</span>);
+scaleAnim<span class="pl-k">.</span>setRepeatMode(<span class="pl-smi">ValueAnimator</span><span class="pl-c1"><span class="pl-k">.</span>REVERSE</span>);
+scaleAnim<span class="pl-k">.</span>start();</pre></div>
+
+<h4>
+<a id="user-content-setting-interpolation" class="anchor" href="#setting-interpolation" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setting Interpolation</h4>
+
+<p>Whenever we define a property animation, we should also consider the 
+rate of change of that animation. In other words, we don't just want to 
+consider the value to change a property to but also the trajectory of 
+the movement. This is done by specifying a <a href="http://developer.android.com/reference/android/animation/TimeInterpolator.html">TimeInterpolator</a> on your <code>ObjectAnimator</code>:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ObjectAnimator</span> moveAnim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(v, <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span>, <span class="pl-c1">1000</span>);
+moveAnim<span class="pl-k">.</span>setDuration(<span class="pl-c1">2000</span>);
+moveAnim<span class="pl-k">.</span>setInterpolator(<span class="pl-k">new</span> <span class="pl-smi">BounceInterpolator</span>());
+moveAnim<span class="pl-k">.</span>start();</pre></div>
+
+<p>The result of this is a different rate of motion:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f57753936754f532e6769.gif" alt="Bounce" data-canonical-src="https://i.imgur.com/Wu96uOS.gif"></p>
+
+<p>Common pre-defined interpolators are listed below:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccelerateInterpolator</td>
+<td>Rate of change starts out slowly and and then accelerates</td>
+</tr>
+<tr>
+<td>BounceInterpolator</td>
+<td>Change bounces right at the end</td>
+</tr>
+<tr>
+<td>DecelerateInterpolator</td>
+<td>Rate of change starts out quickly and and then decelerates</td>
+</tr>
+<tr>
+<td>LinearInterpolator</td>
+<td>Rate of change is constant throughout</td>
+</tr>
+</tbody>
+</table>
+
+<p>There are several other <a href="http://developer.android.com/reference/android/animation/TimeInterpolator.html">time interpolators</a> which can be reviewed.</p>
+
+<h4>
+<a id="user-content-listening-to-the-animation-lifecycle" class="anchor" href="#listening-to-the-animation-lifecycle" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Listening to the Animation Lifecycle</h4>
+
+<p>We can add an <a href="http://developer.android.com/reference/android/animation/AnimatorListenerAdapter.html">AnimatorListenerAdapter</a> to manage events during the animation lifecycle such as <code>onAnimationStart</code> or <code>onAnimationEnd</code>:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">ObjectAnimator</span> anim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(v, <span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>, <span class="pl-c1">0.2f</span>);
+anim<span class="pl-k">.</span>addListener(<span class="pl-k">new</span> <span class="pl-smi">AnimatorListenerAdapter</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationEnd</span>(<span class="pl-smi">Animator</span> <span class="pl-v">animation</span>) {
+        <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, <span class="pl-s"><span class="pl-pds">"</span>End!<span class="pl-pds">"</span></span>, <span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_SHORT</span>)<span class="pl-k">.</span>show();
+    }
+});
+anim<span class="pl-k">.</span>start();</pre></div>
+
+<h4>
+<a id="user-content-choreographing-animations" class="anchor" href="#choreographing-animations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Choreographing Animations</h4>
+
+<p>We can play multiple <code>ObjectAnimator</code> objects together concurrently with the <a href="http://developer.android.com/reference/android/animation/AnimatorSet.html">AnimatorSet</a> with:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">AnimatorSet</span> set <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+set<span class="pl-k">.</span>playTogether(
+    <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>scaleX<span class="pl-pds">"</span></span>, <span class="pl-c1">1.0f</span>, <span class="pl-c1">2.0f</span>)
+        .setDuration(<span class="pl-c1">2000</span>),
+    <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>scaleY<span class="pl-pds">"</span></span>, <span class="pl-c1">1.0f</span>, <span class="pl-c1">2.0f</span>)
+        .setDuration(<span class="pl-c1">2000</span>),
+    <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofObject(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>backgroundColor<span class="pl-pds">"</span></span>, <span class="pl-k">new</span> <span class="pl-smi">ArgbEvaluator</span>(),
+          <span class="pl-c">/*Red*/</span>0xFFFF8080, <span class="pl-c">/*Blue*/</span>0xFF8080FF)
+        .setDuration(<span class="pl-c1">2000</span>)
+);
+set<span class="pl-k">.</span>start(); </pre></div>
+
+<p>This results in the following:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f5132754f5272372e6769.gif" alt="Animation 3" data-canonical-src="https://i.imgur.com/Q2uORr7.gif"></p>
+
+<p>We can also animate sets of other animator sets:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Define first set of animations</span>
+<span class="pl-smi">ObjectAnimator</span> anim1 <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>scaleX<span class="pl-pds">"</span></span>, <span class="pl-c1">2.0f</span>);
+<span class="pl-smi">ObjectAnimator</span> anim2 <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(tvLabel, <span class="pl-s"><span class="pl-pds">"</span>scaleY<span class="pl-pds">"</span></span>, <span class="pl-c1">2.0f</span>);
+<span class="pl-smi">AnimatorSet</span> set1 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+set1<span class="pl-k">.</span>playTogether(anim1, anim2);
+<span class="pl-c">// Define second set of animations</span>
+<span class="pl-smi">ObjectAnimator</span> anim3 <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(v, <span class="pl-s"><span class="pl-pds">"</span>X<span class="pl-pds">"</span></span>, <span class="pl-c1">300</span>);
+<span class="pl-smi">ObjectAnimator</span> anim4 <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(v, <span class="pl-s"><span class="pl-pds">"</span>Y<span class="pl-pds">"</span></span>, <span class="pl-c1">300</span>);
+<span class="pl-smi">AnimatorSet</span> set2 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+set2<span class="pl-k">.</span>playTogether(anim3, anim4);
+<span class="pl-c">// Play the animation sets one after another</span>
+<span class="pl-smi">AnimatorSet</span> set3 <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+set3<span class="pl-k">.</span>playSequentially(set1, set2);
+set3<span class="pl-k">.</span>start();</pre></div>
+
+<p>Here's one more example of a choreographed set of animations:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Create two animations to play together</span>
+<span class="pl-smi">ObjectAnimator</span> bounceAnim <span class="pl-k">=</span> <span class="pl-c1">...</span>;
+<span class="pl-smi">ObjectAnimator</span> squashAnim <span class="pl-k">=</span> <span class="pl-c1">...</span>;
+<span class="pl-c">// Construct set 1 playing together</span>
+<span class="pl-smi">AnimatorSet</span> bouncer <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+bouncer<span class="pl-k">.</span>play(bounceAnim)<span class="pl-k">.</span>with(squashAnim);
+<span class="pl-c">// Create second animation to play after</span>
+<span class="pl-smi">ObjectAnimator</span> fadeAnim <span class="pl-k">=</span> <span class="pl-smi">ObjectAnimator</span><span class="pl-k">.</span>ofFloat(view1, <span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>, <span class="pl-c1">1f</span>, <span class="pl-c1">0f</span>);
+fadeAnim<span class="pl-k">.</span>setDuration(<span class="pl-c1">250</span>);
+<span class="pl-c">// Play bouncer before fade</span>
+<span class="pl-smi">AnimatorSet</span> animatorSet <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">AnimatorSet</span>();
+animatorSet<span class="pl-k">.</span>play(bouncer)<span class="pl-k">.</span>before(fadeAnim);
+animatorSet<span class="pl-k">.</span>start();</pre></div>
+
+<p>See the <a href="http://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animation</a> official docs for more detailed information.</p>
+
+<h3>
+<a id="user-content-using-viewpropertyanimator-in-java" class="anchor" href="#using-viewpropertyanimator-in-java" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using ViewPropertyAnimator in Java</h3>
+
+<p>We can also do property animations in an even simpler way using the <code>ViewPropertyAnimator</code> system which is built on top of the <code>ObjectAnimator</code>.  It also enables faster performance as described in this <a href="http://android-developers.blogspot.com/2011/05/introducing-viewpropertyanimator.html">blog post</a> and provides a convenient way of doing animations.</p>
+
+<h4>
+<a id="user-content-without-support-library" class="anchor" href="#without-support-library" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Without Support Library</h4>
+
+<p>If we do not need the rely on the <code>ViewCompat#animate</code> support v4 library and only need to support Android v3.0 devices and above, we can invoke <code>animate()</code> directly on any view with:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Button</span> btnExample <span class="pl-k">=</span> (<span class="pl-smi">Button</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>btnExample);
+btnExample<span class="pl-k">.</span>animate()<span class="pl-k">.</span>alpha(<span class="pl-c1">0.2f</span>)<span class="pl-k">.</span>xBy(<span class="pl-k">-</span><span class="pl-c1">100</span>)<span class="pl-k">.</span>yBy(<span class="pl-c1">100</span>);</pre></div>
+
+<p>The <code>animate</code> method has many properties that mirror the methods from the <a href="http://developer.android.com/reference/android/view/ViewPropertyAnimator.html">ViewPropertyAnimator</a>
+ class including changing many possible properties such as opacity, 
+rotation, scale, x&amp;y positions, and more. Here's a more complex 
+animation being executed:</p>
+
+<div class="highlight highlight-source-java"><pre>btnExample<span class="pl-k">.</span>animate()<span class="pl-k">.</span>alpha(<span class="pl-c1">0.5f</span>)<span class="pl-k">.</span>rotation(<span class="pl-c1">90f</span>)<span class="pl-c1">.</span>
+  scaleX(<span class="pl-c1">2</span>)<span class="pl-k">.</span>xBy(<span class="pl-c1">100</span>)<span class="pl-k">.</span>yBy(<span class="pl-c1">100</span>)<span class="pl-k">.</span>setDuration(<span class="pl-c1">1000</span>)<span class="pl-k">.</span>setStartDelay(<span class="pl-c1">10</span>)<span class="pl-c1">.</span>
+  setListener(<span class="pl-k">new</span> <span class="pl-smi">AnimatorListenerAdapter</span>() {
+      <span class="pl-k">@Override</span>
+      <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationStart</span>(<span class="pl-smi">Animator</span> <span class="pl-v">animation</span>) {
+          <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, <span class="pl-s"><span class="pl-pds">"</span>Started...<span class="pl-pds">"</span></span>, <span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_SHORT</span>)<span class="pl-k">.</span>show();
+      };
+  });</pre></div>
+
+<p>This applies multiple property animations in parallel including 
+opacity change, rotation, scale and modifying the position of the 
+button. Here we also can modify the duration, introduce a start delay 
+and even setup a listener at the beginning or end of the animation.</p>
+
+<h4>
+<a id="user-content-using-the-support-library" class="anchor" href="#using-the-support-library" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Support Library</h4>
+
+<p>If we want to be able to compile the code to run on pre-ICS devices, we can leverage the support library's <code>ViewCompat.animate</code> static method instead. If you are an Android Studio user, first add the following dependency to your <code>app/build.gradle</code> file:</p>
+
+<div class="highlight highlight-source-groovy-gradle"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>com.android.support:support-v4:23.1.0<span class="pl-pds">'</span></span></pre></div>
+
+<p>We can now run concurrent animations with the following:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Button</span> btnExample <span class="pl-k">=</span> (<span class="pl-smi">Button</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>btnExample);
+<span class="pl-smi">ViewCompat</span><span class="pl-k">.</span>animate(btnExample)<span class="pl-k">.</span>alpha(<span class="pl-c1">0.2f</span>)<span class="pl-k">.</span>xBy(<span class="pl-k">-</span><span class="pl-c1">100</span>)<span class="pl-k">.</span>yBy(<span class="pl-c1">100</span>);</pre></div>
+
+<p>The support v4 library is used to enable devices back to API 11 to 
+execute the code.  However, the animations are simply ignored on pre 
+Android v4.0.3 devices according to this <a href="https://twitter.com/jakewharton/status/486346048755884034">finding</a>. To have the animations run, we need to use NineOldAndroids.</p>
+
+<h4>
+<a id="user-content-nineoldandroids" class="anchor" href="#nineoldandroids" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NineOldAndroids</h4>
+
+<p>If we wish to use the <code>ViewPropertyAnimator</code> and have 
+animations run on Android pre-v3.0 devices using the now deprecated 
+NineOldAndroids project, this import statement should be used:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">import static</span> <span class="pl-smi">com.nineoldandroids.view.ViewPropertyAnimator.animate</span>;</pre></div>
+
+<p>If we want to fade out a button on screen, we can pass the button view into the <code>animate()</code> static function and then invoke the <code>alpha</code> method:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Button</span> btnExample <span class="pl-k">=</span> (<span class="pl-smi">Button</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>btnExample);
+animate(btnExample)<span class="pl-k">.</span>alpha(<span class="pl-c1">0</span>);</pre></div>
+
+<p>This will automatically create and execute the animation to fade out the button: </p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f647379524d736c2e6769.gif" alt="Simple Fadeout" data-canonical-src="https://i.imgur.com/dsyRMsl.gif"></p>
+
+<h3>
+<a id="user-content-using-xml" class="anchor" href="#using-xml" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using XML</h3>
+
+<p>We can also use property animations from XML. All we have to do is 
+create an XML file that describes the object property animation we want 
+to run. For example, if we wanted to animate a fade out for a button, we
+ could add this file to <code>res/animator/fade_out.xml</code>:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">objectAnimator</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>1000<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p>Now we can load that XML file into our Activity and execute an animation with:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Animator</span> anim <span class="pl-k">=</span> <span class="pl-smi">AnimatorInflater</span><span class="pl-k">.</span>loadAnimator(<span class="pl-v">this</span>, <span class="pl-smi">R</span><span class="pl-k">.</span>animator<span class="pl-k">.</span>fade_out);
+anim<span class="pl-k">.</span>setTarget(btnExample);
+anim<span class="pl-k">.</span>start();</pre></div>
+
+<p>And that's all! We've now executed our predefined XML animation. Here's a more complicated animation in <code>res/animator/multi.xml</code> that applies multiple animations to the button in parallel:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">ordering</span>=<span class="pl-s"><span class="pl-pds">"</span>together<span class="pl-pds">"</span></span> &gt;
+    &lt;<span class="pl-ent">objectAnimator</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span> &gt;
+    &lt;/<span class="pl-ent">objectAnimator</span>&gt;
+    &lt;<span class="pl-ent">objectAnimator</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>rotation<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>90.0<span class="pl-pds">"</span></span> &gt;
+    &lt;/<span class="pl-ent">objectAnimator</span>&gt;
+    &lt;<span class="pl-ent">objectAnimator</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>scaleX<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span> &gt;
+    &lt;/<span class="pl-ent">objectAnimator</span>&gt;
+    &lt;<span class="pl-ent">objectAnimator</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>translationX<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>100.0<span class="pl-pds">"</span></span> &gt;
+    &lt;/<span class="pl-ent">objectAnimator</span>&gt;
+    &lt;<span class="pl-ent">objectAnimator</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">propertyName</span>=<span class="pl-s"><span class="pl-pds">"</span>translationY<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">valueTo</span>=<span class="pl-s"><span class="pl-pds">"</span>100.0<span class="pl-pds">"</span></span> &gt;
+    &lt;/<span class="pl-ent">objectAnimator</span>&gt;
+&lt;/<span class="pl-ent">set</span>&gt;</pre></div>
+
+<p>and now let's execute this on the button by inflating the XML animation description:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Animator</span> anim <span class="pl-k">=</span> <span class="pl-smi">AnimatorInflater</span><span class="pl-k">.</span>loadAnimator(<span class="pl-v">this</span>, <span class="pl-smi">R</span><span class="pl-k">.</span>animator<span class="pl-k">.</span>multi_button);
+anim<span class="pl-k">.</span>setTarget(tvBlah);
+anim<span class="pl-k">.</span>setDuration(<span class="pl-c1">1000</span>);
+anim<span class="pl-k">.</span>setStartDelay(<span class="pl-c1">10</span>);
+anim<span class="pl-k">.</span>addListener(<span class="pl-k">new</span> <span class="pl-smi">AnimatorListenerAdapter</span>() {
+     <span class="pl-k">@Override</span>
+     <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationStart</span>(<span class="pl-smi">Animator</span> <span class="pl-v">animation</span>) {
+          <span class="pl-smi">Toast</span><span class="pl-k">.</span>makeText(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, <span class="pl-s"><span class="pl-pds">"</span>Started...<span class="pl-pds">"</span></span>, <span class="pl-smi">Toast</span><span class="pl-c1"><span class="pl-k">.</span>LENGTH_SHORT</span>)<span class="pl-k">.</span>show();
+     };
+});
+anim<span class="pl-k">.</span>start();</pre></div>
+
+<p>This results in the following:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f304142304532512e6769.gif" alt="Complex Animation" data-canonical-src="https://i.imgur.com/0AB0E2Q.gif"> </p>
+
+<p>See more details in the <a href="http://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animation</a> topic guide and the <a href="http://developer.android.com/guide/topics/resources/animation-resource.html#Property">Animation Resource</a> guide.</p>
+
+<h3>
+<a id="user-content-custom-animations-with-valueanimator" class="anchor" href="#custom-animations-with-valueanimator" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Custom Animations with ValueAnimator</h3>
+
+<p>In certain cases, instead of animating the property of an object 
+directly (i.e alpha) as shown above, we might need finer-grained control
+ over the animation at each step of execution. In these situations, we 
+can use a <a href="http://developer.android.com/reference/android/animation/ValueAnimator.html">ValueAnimator</a> and setup a custom listener to adjust the view as the animation executes:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Construct the value animator and define the range</span>
+<span class="pl-smi">ValueAnimator</span> valueAnim <span class="pl-k">=</span> <span class="pl-smi">ValueAnimator</span><span class="pl-k">.</span>ofFloat(<span class="pl-c1">0</span>, <span class="pl-c1">1</span>);
+<span class="pl-c">// Animate over the course of 700 milliseconds</span>
+valueAnim<span class="pl-k">.</span>setDuration(<span class="pl-c1">700</span>);
+<span class="pl-c">// Choose an interpolator</span>
+valueAnim<span class="pl-k">.</span>setInterpolator(<span class="pl-k">new</span> <span class="pl-smi">DecelerateInterpolator</span>());
+<span class="pl-c">// Define how to update the view at each "step" of the animation</span>
+valueAnim<span class="pl-k">.</span>addUpdateListener(<span class="pl-k">new</span> <span class="pl-smi">ValueAnimator</span>.<span class="pl-smi">AnimatorUpdateListener</span>() {
+  <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationUpdate</span>(<span class="pl-smi">ValueAnimator</span> <span class="pl-v">animation</span>) {
+      <span class="pl-k">float</span> animatedValue <span class="pl-k">=</span> (<span class="pl-k">float</span>) animation<span class="pl-k">.</span>getAnimatedValue();
+      <span class="pl-c">// Use the animated value to affect the view</span>
+  }
+});
+<span class="pl-c">// Start the animation if not already running</span>
+<span class="pl-k">if</span> (<span class="pl-k">!</span>valueAnim<span class="pl-k">.</span>isStarted()) {
+  valueAnim<span class="pl-k">.</span>start();
+}</pre></div>
+
+<p>See the <a href="http://developer.android.com/reference/android/animation/ValueAnimator.html">ValueAnimator</a> for more information. Note that in most cases we can use an <code>ObjectAnimator</code>
+ as shown above but the value animator is a lower-level construct that 
+can be used when we do not want to animate the property of an object 
+directly. </p>
+
+<h2>
+<a id="user-content-view-animations" class="anchor" href="#view-animations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>View Animations</h2>
+
+<p>View animations is a slower and less flexible system for animation 
+that predates the property animation system that was introduced later. <strong>Property animations are generally preferred</strong> but let's take a look at the older system and how to apply animations using the original XML syntax.</p>
+
+<p>The primary motivations for the introduction of the property animations system are outlined clearly in this <a href="http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html">post from 2011 introducing property animations</a>.   Some of the major differences include:</p>
+
+<ul>
+<li><p>The old view animation system only supported move, fade, scale, 
+and rotate, whereas the new one provides a more extensible framework 
+(i.e. animating background color, gradients, or even <a href="http://blog.neteril.org/blog/2013/05/26/exploring-android-property-animations/">marker map locations</a>).  </p></li>
+<li><p>The old system only supported View objects (i.e. Button, 
+TextView, ListView, etc.) but the new Property animations can support 
+any objects such as drawables.</p></li>
+<li><p>The old system would not actually update the location after a 
+move animation, requiring manual code to update to the new position. 
+This issue has been fixed in the new system.</p></li>
+</ul>
+
+<p>See this <a href="https://www.youtube.com/watch?v=sTx-5CGDvM8&amp;t=2126">Google I/O talk</a> discussing some of the limitations in the older view animation system.</p>
+
+<p>There have been misconceptions that Android did not use dedicated hardware (<a href="http://en.wikipedia.org/wiki/Graphics_processing_unit">GPU's</a>) to perform animations in the old view system.  This point has been <a href="https://plus.google.com/105051985738280261832/posts/2FXDCz8x93s">debunked by one of Google's engineers</a>.  When the new Property animations systems was announced along with Android v3.0, <a href="http://android-developers.blogspot.com/2011/03/android-30-hardware-acceleration.html">support for hardware acceleration</a> for common views and widgets was also added, making the overall experience seem smoother.</p>
+
+<h3>
+<a id="user-content-using-xml-1" class="anchor" href="#using-xml-1" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using XML</h3>
+
+<p>We can define our view animations using XML instead of using the Property XML Animations. First, we define
+our animations in the <code>res/anim</code> folder. You can see <strong>several popular animations</strong> by checking out <a href="https://gist.github.com/nesquena/2dab264ed3bcec9e520a">this Android Animation XML Pack</a>. </p>
+
+<p>For example, a value animation XML file might look like this for fading in an object in <code>res/anim/fade_out.xml</code>:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fillAfter</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> &gt;
+    &lt;<span class="pl-ent">alpha</span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>1000<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/accelerate_interpolator<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">set</span>&gt;</pre></div>
+
+<p>Now, we can load that animation within an activity and apply this to a view:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Inflate animation from XML</span>
+<span class="pl-smi">Animation</span> animFadeOut <span class="pl-k">=</span> <span class="pl-smi">AnimationUtils</span><span class="pl-k">.</span>loadAnimation(<span class="pl-v">this</span>, <span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>fade_out);  
+<span class="pl-c">// Setup listeners (optional)</span>
+animFadeOut<span class="pl-k">.</span>setAnimationListener(<span class="pl-k">new</span> <span class="pl-smi">AnimationListener</span>() {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationStart</span>(<span class="pl-smi">Animation</span> <span class="pl-v">animation</span>) {
+        <span class="pl-c">// Fires when animation starts</span>
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationEnd</span>(<span class="pl-smi">Animation</span> <span class="pl-v">animation</span>) {
+       <span class="pl-c">// ...           </span>
+    }
+
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onAnimationRepeat</span>(<span class="pl-smi">Animation</span> <span class="pl-v">animation</span>) {
+       <span class="pl-c">// ...           </span>
+    }
+});
+<span class="pl-c">// start the animation</span>
+btnExample<span class="pl-k">.</span>startAnimation(animFadeOut);</pre></div>
+
+<p>This results in the following:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f647379524d736c2e6769.gif" alt="Simple Fadeout" data-canonical-src="https://i.imgur.com/dsyRMsl.gif"></p>
+
+<p>See more details in the <a href="http://developer.android.com/guide/topics/resources/animation-resource.html#View">View Animation Resource</a> guide or this <a href="http://www.androidhive.info/2013/06/android-working-with-xml-animations/#fade_in">more detailed tutorial</a>.</p>
+
+<h3>
+<a id="user-content-activity-transitions" class="anchor" href="#activity-transitions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Activity Transitions</h3>
+
+<p>In addition to property animations for views, we can also manage the 
+animations and transitions for Activities as they become visible on 
+screen. We do this by managing the transitions around the time we 
+trigger an intent.
+The basic approach is that right after executing an intent with <code>startActivity</code>, you call the <a href="http://developer.android.com/reference/android/app/Activity.html#overridePendingTransition%28int,%20int%29">overridePendingTransition</a> method such as:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">Intent</span> i <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">Intent</span>(<span class="pl-smi">MainActivity</span><span class="pl-k">.</span><span class="pl-v">this</span>, <span class="pl-smi">SecondActivity</span><span class="pl-k">.</span>class);
+startActivity(i);
+overridePendingTransition(<span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>right_in, <span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>left_out);</pre></div>
+
+<p>The first parameter is the "enter" animation for the launched 
+activity and the second is the "exit" animation for the current 
+activity. These animations can be any XML view animation files such as 
+the animations in our <a href="https://gist.github.com/nesquena/2dab264ed3bcec9e520a">XML Pack</a>. For example, <code>right_in</code> might be defined in <code>res/anim/right_in.xml</code> as:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;  
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/linear_interpolator<span class="pl-pds">"</span></span>&gt;  
+  &lt;<span class="pl-ent">translate</span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>100%p<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">set</span>&gt; </pre></div>
+
+<p>This would move the X position of the new window from off the screen sliding in from the right (<a href="http://developer.android.com/guide/topics/resources/animation-resource.html"><code>100%p</code></a> means the Activity should start at a position equal to the full width of the window). We might then define <code>left_out</code> in <code>res/anim/left_out.xml</code> with:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;  
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/linear_interpolator<span class="pl-pds">"</span></span>&gt;  
+  &lt;<span class="pl-ent">translate</span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>-100%p<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">set</span>&gt; </pre></div>
+
+<p>This causes the parent activity to slide off screen to left. When 
+these animations run together, it creates the effect that the new 
+activity is pushing the old one off the screen while sliding in. In 
+order to control the "back" animation transition as well, we need to 
+create a <code>left_in.xml</code> and <code>right_out.xml</code> that reverse the values of <code>left_out.xml</code> and <code>right_in.xml</code>:</p>
+
+<p>left_in.xml:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;  
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/linear_interpolator<span class="pl-pds">"</span></span>&gt;  
+  &lt;<span class="pl-ent">translate</span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>-100%p<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">set</span>&gt; </pre></div>
+
+<p>right_out.xml</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;  
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/linear_interpolator<span class="pl-pds">"</span></span>&gt;  
+  &lt;<span class="pl-ent">translate</span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>100%p<span class="pl-pds">"</span></span> 
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>500<span class="pl-pds">"</span></span>/&gt;
+&lt;/<span class="pl-ent">set</span>&gt; </pre></div>
+
+<p>We then use <code>overridePendingTransition</code> with these two XML-based animations:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">SecondActivity</span> <span class="pl-k">extends</span> <span class="pl-e">Activity</span> {
+    <span class="pl-c">// onBackPressed is what is called when back is hit, call `overridePendingTransition`</span>
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">void</span> <span class="pl-en">onBackPressed</span>() {
+        finish();
+        overridePendingTransition(<span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>left_in, <span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>right_out);
+    }
+
+    <span class="pl-c">// to handle activity transitions for Up navigation add it to the onOptionsItemSelected</span>
+    <span class="pl-c">// as below </span>
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">public</span> <span class="pl-k">boolean</span> <span class="pl-en">onOptionsItemSelected</span>(<span class="pl-smi">MenuItem</span> <span class="pl-v">item</span>) {
+        <span class="pl-c">// Handle action bar item clicks here. The action bar will</span>
+        <span class="pl-c">// automatically handle clicks on the Home/Up button, so long</span>
+        <span class="pl-c">// as you specify a parent activity in AndroidManifest.xml.</span>
+        <span class="pl-k">int</span> id <span class="pl-k">=</span> item<span class="pl-k">.</span>getItemId();
+
+        <span class="pl-c">//noinspection SimplifiableIfStatement</span>
+        <span class="pl-k">if</span> (id <span class="pl-k">==</span> <span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>action_settings) {
+            <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+        }
+
+        <span class="pl-c">// This refers to the Up navigation button in the action bar</span>
+        <span class="pl-k">if</span> (id <span class="pl-k">==</span> <span class="pl-smi">android<span class="pl-k">.</span>R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>home) {
+            finish();
+            overridePendingTransition(<span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>left_in, <span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>right_out);
+            <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+        }
+
+        <span class="pl-k">return</span> <span class="pl-v">super</span><span class="pl-k">.</span>onOptionsItemSelected(item);
+    }
+}</pre></div>
+
+<p>This results in the following:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f6c52553377726e2e6769.gif" alt="Activity Transition" data-canonical-src="https://i.imgur.com/lRU3wrn.gif"></p>
+
+<h4>
+<a id="user-content-browsing-transition-samples" class="anchor" href="#browsing-transition-samples" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Browsing Transition Samples</h4>
+
+<p>You can see several complete examples of activity transitions in the following resources:</p>
+
+<ul>
+<li><a href="http://stackoverflow.com/a/19959933/313399">Card Flip Animation</a></li>
+<li><a href="http://blog.quent.in/index.php/2013/06/activity-transition-animations-like-the-vine-android-application/">Vine Activity Transition</a></li>
+<li><a href="http://android-er.blogspot.com/2013/04/custom-animation-while-switching.html">Sliding In From Left Animation</a></li>
+<li><a href="http://blog.blundell-apps.com/animate-an-activity/">Sliding Drawer Animation</a></li>
+</ul>
+
+<p>Check out these above to get a deeper understanding of how to create custom and unique transitions. In <strong>Android 5.0 and above</strong>
+ the ability for activities to "share elements" was introduced allowing 
+an element in on activity to morph into an element within the child 
+activity. Check out our <a class="internal present" href="https://github.com/codepath/android_guides/wiki/Shared-Element-Activity-Transition">Shared Element Activity Transition</a> guide for more details.</p>
+
+<h4>
+<a id="user-content-modifying-the-default-transitions" class="anchor" href="#modifying-the-default-transitions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modifying the Default Transitions</h4>
+
+<p>The default entrance and exit animations for activities can be customized as part of a theme by modifying <code>res/styles.xml</code> with a custom <code>Animation.Activity</code> style as shown below:</p>
+
+<div class="highlight highlight-text-xml"><pre><span class="pl-c">&lt;!-- Customize `android:windowAnimationStyle` for theme --&gt;</span>
+&lt;<span class="pl-ent">style</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>AppTheme<span class="pl-pds">"</span></span> <span class="pl-e">parent</span>=<span class="pl-s"><span class="pl-pds">"</span>AppBaseTheme<span class="pl-pds">"</span></span>&gt;
+    <span class="pl-c">&lt;!-- ... --&gt;</span>
+    &lt;<span class="pl-ent">item</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android:windowAnimationStyle<span class="pl-pds">"</span></span>&gt;@style/CustomAnimation.Activity&lt;/<span class="pl-ent">item</span>&gt;
+&lt;/<span class="pl-ent">style</span>&gt;
+
+&lt;<span class="pl-ent">style</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>CustomAnimation.Activity<span class="pl-pds">"</span></span> <span class="pl-e">parent</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:style/Animation.Activity<span class="pl-pds">"</span></span>&gt; 
+    &lt;<span class="pl-ent">item</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android:activityOpenEnterAnimation<span class="pl-pds">"</span></span>&gt;@anim/slide_in_right&lt;/<span class="pl-ent">item</span>&gt;
+    &lt;<span class="pl-ent">item</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android:activityOpenExitAnimation<span class="pl-pds">"</span></span>&gt;@anim/slide_out_left&lt;/<span class="pl-ent">item</span>&gt;
+    &lt;<span class="pl-ent">item</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android:activityCloseEnterAnimation<span class="pl-pds">"</span></span>&gt;@android:anim/slide_in_left&lt;/<span class="pl-ent">item</span>&gt;
+    &lt;<span class="pl-ent">item</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>android:activityCloseExitAnimation<span class="pl-pds">"</span></span>&gt;@android:anim/slide_out_right&lt;/<span class="pl-ent">item</span>&gt;
+&lt;/<span class="pl-ent">style</span>&gt;</pre></div>
+
+<p>Refer to this <a href="http://stackoverflow.com/a/5018385">stackoverflow post</a> for more details. </p>
+
+<h3>
+<a id="user-content-fragment-transitions" class="anchor" href="#fragment-transitions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fragment Transitions</h3>
+
+<p>Similar to activities, we can also animate the transition between fragments by invoking the <a href="http://developer.android.com/reference/android/app/FragmentTransaction.html#setCustomAnimations%28int,%20int%29">setCustomAnimations</a> method on a <code>FragmentTransaction</code>.
+ The animations are simply view animation XML files as used for activity
+ transitions above. For example, suppose we want the fragment to slide 
+in from the left and push the old fragment out. First, let's define the 
+custom view animations starting with <code>res/anim/slide_in_left.xml</code>:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">translate</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>-50%p<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:integer/config_mediumAnimTime<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">alpha</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:integer/config_mediumAnimTime<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">set</span>&gt;</pre></div>
+
+<p>and then <code>res/anim/slide_out_right.xml</code> as well:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">set</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">translate</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>50%p<span class="pl-pds">"</span></span>
+     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:integer/config_mediumAnimTime<span class="pl-pds">"</span></span>/&gt;
+    &lt;<span class="pl-ent">alpha</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toAlpha</span>=<span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span>
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:integer/config_mediumAnimTime<span class="pl-pds">"</span></span> /&gt;
+&lt;/<span class="pl-ent">set</span>&gt;</pre></div>
+
+<p>Now we just have to configure the animations of the fragment transaction before we replace the fragment or call commit:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// Create the transaction</span>
+<span class="pl-smi">FragmentTransaction</span> fts <span class="pl-k">=</span> getSupportFragmentManager()<span class="pl-k">.</span>beginTransaction();
+<span class="pl-c">// Configure the "in" and "out" animation files</span>
+fts<span class="pl-k">.</span>setCustomAnimations(<span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>slide_in_left, <span class="pl-smi">R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>slide_out_right);
+<span class="pl-c">// Perform the fragment replacement</span>
+ft<span class="pl-k">.</span>replace(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>fragment_container, newFragment, <span class="pl-s"><span class="pl-pds">"</span>fragment<span class="pl-pds">"</span></span>);
+<span class="pl-c">// Start the animated transition.</span>
+ft<span class="pl-k">.</span>commit();</pre></div>
+
+<p>This results in the following:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f59394c383246492e6769.gif" alt="Fragment Transition" data-canonical-src="https://i.imgur.com/Y9L82FI.gif"></p>
+
+<p><strong>Compatibility Note:</strong> The animation files explained 
+above are used in conjunction with support fragments. Keep in mind that 
+if you are not using support fragments, you need to use object 
+animations instead as <a href="http://stackoverflow.com/a/9856449">explained on StackOverflow</a>.</p>
+
+<p>Note that Android has <strong>built-in animations</strong> with <a href="http://developer.android.com/reference/android/R.anim.html">R.anim</a> that can be used as well by reference <code>android.R.anim</code> such as:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-smi">FragmentTransaction</span> fts <span class="pl-k">=</span> getSupportFragmentManager()<span class="pl-k">.</span>beginTransaction();
+fts<span class="pl-k">.</span>setCustomAnimations(<span class="pl-smi">android<span class="pl-k">.</span>R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>slide_in_left, <span class="pl-smi">android<span class="pl-k">.</span>R</span><span class="pl-k">.</span>anim<span class="pl-k">.</span>slide_out_right);
+fts<span class="pl-k">.</span>replace(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>fragment_container, newFragment, <span class="pl-s"><span class="pl-pds">"</span>fragment<span class="pl-pds">"</span></span>);
+fts<span class="pl-k">.</span>commit();</pre></div>
+
+<p>Read more about Fragment Transitions in this <a href="http://android-er.blogspot.com/2013/04/implement-animation-in.html">detailed article</a>. You can even <a href="http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/4.4_r1/frameworks/base/core/res/res/anim/slide_in_right.xml?av=f">check out the source code</a> of those animations. </p>
+
+<p><strong>Extended Note:</strong> Check out <a href="http://stackoverflow.com/a/15816189/313399">this stackoverflow post</a> if you are looking to animate the appearance of a DialogFragment.</p>
+
+<h2>
+<a id="user-content-layout-animations" class="anchor" href="#layout-animations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Layout Animations</h2>
+
+<h3>
+<a id="user-content-animating-on-start" class="anchor" href="#animating-on-start" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Animating on Start</h3>
+
+<p>A particular animation can be specified when the layout first appears on screen. This can be done by using the <a href="http://developer.android.com/reference/android/view/ViewGroup.html#attr_android:layoutAnimation">android:layoutAnimation</a> property to specify an animation to execute.</p>
+
+<p>First, let's define an animation we'd like to use when the views in the layout appear on the screen in <code>res/anim/slide_right.xml</code> which defines sliding in right from outside the screen:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">set</span>  <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>  
+      <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">interpolator</span>=<span class="pl-s"><span class="pl-pds">"</span>@android:anim/accelerate_interpolator<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">translate</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">fromXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>-100%p<span class="pl-pds">"</span></span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">toXDelta</span>=<span class="pl-s"><span class="pl-pds">"</span>0<span class="pl-pds">"</span></span>
+            <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">duration</span>=<span class="pl-s"><span class="pl-pds">"</span>1000<span class="pl-pds">"</span></span> /&gt; 
+&lt;/<span class="pl-ent">set</span>&gt;</pre></div>
+
+<p>and now we need to create a special <code>layoutAnimation</code> which references that animation:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;?<span class="pl-ent">xml</span><span class="pl-e"> version</span>=<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span><span class="pl-e"> encoding</span>=<span class="pl-s"><span class="pl-pds">"</span>utf-8<span class="pl-pds">"</span></span>?&gt;
+&lt;<span class="pl-ent">layoutAnimation</span> <span class="pl-e">xmlns</span><span class="pl-e">:</span><span class="pl-e">android</span>=<span class="pl-s"><span class="pl-pds">"</span>http://schemas.android.com/apk/res/android<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">delay</span>=<span class="pl-s"><span class="pl-pds">"</span>30%<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">animationOrder</span>=<span class="pl-s"><span class="pl-pds">"</span>reverse<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">animation</span>=<span class="pl-s"><span class="pl-pds">"</span>@anim/slide_right<span class="pl-pds">"</span></span>
+/&gt;</pre></div>
+
+<p>and now we need to apply this <code>layoutAnimation</code> to our Layout or ViewGroup:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">LinearLayout</span> 
+    ...
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layoutAnimation</span>=<span class="pl-s"><span class="pl-pds">"</span>@anim/layout_bottom_to_top_slide<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p>and now when you launch the application, the views within this layout
+ will slide in from the right. See more information about layout 
+animation in <a href="http://linkyan.com/2013/06/layoutanimation/">this guide by linkyan</a> or in this <a href="http://android-er.blogspot.com/2009/10/layout-animation.html">layout animation tutorial</a> or in the <a href="http://mobile.dzone.com/articles/android-ui-action-layout">ui action layout tutorial</a>.</p>
+
+<h3>
+<a id="user-content-animating-changes" class="anchor" href="#animating-changes" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Animating Changes</h3>
+
+<p><a href="http://developer.android.com/training/animation/layout.html">Layout Change Animations</a>
+ allow us to enable animations on any Layout container or other 
+ViewGroup such as a ListView. With layout animations enabled, all 
+changes to views inside the container will be animated automatically. 
+This is especially useful for ListViews which causes items to be 
+animated as they are added or removed.</p>
+
+<p>To enable the default animations, all we have to do is set the <code>animateLayoutChanges</code> property on any ViewGroup within the XML:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">LinearLayout</span>
+  ...
+  <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">animateLayoutChanges</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>&gt;
+
+  &lt;<span class="pl-ent">ListView</span> <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>@+id/list<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">animateLayoutChanges</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>
+    ...
+  /&gt;
+
+&lt;/<span class="pl-ent">LinearLayout</span>&gt;</pre></div>
+
+<p>The <a href="http://developer.android.com/reference/android/view/ViewGroup.html#attr_android:animateLayoutChanges">android:animateLayoutChanges</a> property enables a default animation if no further customization is made.</p>
+
+<h2>
+<a id="user-content-animated-images" class="anchor" href="#animated-images" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Animated Images</h2>
+
+<p>In certain cases, we want to be able to display animated images such 
+as an simple animated GIF. The underlying class for making this happen 
+is called <a href="http://developer.android.com/reference/android/graphics/drawable/AnimationDrawable.html">AnimationDrawable</a> which is an XML format for describing a sequence of images to display. </p>
+
+<p>One of the simplest ways to display an animated gif is to use a third-party library. <a href="https://github.com/bumptech/glide">Glide</a> is an easy way to display a local or remote gif into an <code>ImageView</code>. First, let's add Glide to our <code>app/build.gradle</code> file:</p>
+
+<div class="highlight highlight-source-groovy-gradle"><pre><span class="pl-en">dependencies</span> {
+    <span class="pl-k">..</span>.
+    compile <span class="pl-s"><span class="pl-pds">'</span>com.github.bumptech.glide:glide:3.6.0<span class="pl-pds">'</span></span>
+}</pre></div>
+
+<p>Next, setup an <code>ImageView</code> in the the activity i.e <code>activity_main.xml</code>:</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">ImageView</span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>@+id/ivGif<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">contentDescription</span>=<span class="pl-s"><span class="pl-pds">"</span>Gif<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span> /&gt;</pre></div>
+
+<p>For local GIFs, be sure to put an animated gif into the <code>res/raw</code> folder for displaying. Next, we can convert and load the GIF into the <code>ImageView</code> within the activity i.e <code>MainActivity.java</code> using Glide:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-c">// MainActivity.java</span>
+<span class="pl-k">public</span> <span class="pl-k">class</span> <span class="pl-en">MainActivity</span> <span class="pl-k">extends</span> <span class="pl-e">Activity</span> {
+    <span class="pl-k">@Override</span>
+    <span class="pl-k">protected</span> <span class="pl-k">void</span> <span class="pl-en">onCreate</span>(<span class="pl-smi">Bundle</span> <span class="pl-v">savedInstanceState</span>) {
+        <span class="pl-v">super</span><span class="pl-k">.</span>onCreate(savedInstanceState);
+        setContentView(<span class="pl-smi">R</span><span class="pl-k">.</span>layout<span class="pl-k">.</span>activity_main);
+        <span class="pl-c">// Find the ImageView to display the GIF</span>
+        <span class="pl-smi">ImageView</span> ivGif <span class="pl-k">=</span> (<span class="pl-smi">ImageView</span>) findViewById(<span class="pl-smi">R</span><span class="pl-k">.</span>id<span class="pl-k">.</span>ivGif);
+        <span class="pl-c">// Display the GIF (from raw resource) into the ImageView</span>
+        <span class="pl-smi">Glide</span><span class="pl-k">.</span>with(<span class="pl-v">this</span>)<span class="pl-k">.</span>load(<span class="pl-smi">R</span><span class="pl-k">.</span>raw<span class="pl-k">.</span>my_gif)<span class="pl-k">.</span>asGif()<span class="pl-k">.</span>into(imageView);
+        <span class="pl-c">// OR even download from the network</span>
+        <span class="pl-c">// Glide.with(this).load("https://i.imgur.com/l9lffwf.gif").asGif().into(imageView);</span>
+    }
+}</pre></div>
+
+<p>and now we have this:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f59456d746145362e6769.gif" alt="GIF" data-canonical-src="https://i.imgur.com/YEmtaE6.gif"></p>
+
+<p>You can also check out the popular <a href="https://github.com/koral--/android-gif-drawable">android-gif-drawable</a> library for another solution. An alternative method is simply to <a href="http://droid-blog.net/2011/10/17/tutorial-how-to-play-animated-gifs-in-android-part-3/">use a WebView</a>. </p>
+
+<h2>
+<a id="user-content-lollipop-animations" class="anchor" href="#lollipop-animations" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lollipop Animations</h2>
+
+<p>In Android 5.0, several new animation features were introduced including:</p>
+
+<ul>
+<li>
+<a class="internal present" href="https://github.com/codepath/android_guides/wiki/Shared-Element-Activity-Transition">Shared Element Activity Transition</a> - Transitions that have shared layout elements that transform as one activity is transitioned to the other.</li>
+<li>
+<a class="internal present" href="https://github.com/codepath/android_guides/wiki/Ripple-Animation">Ripple Animation</a> - Used provide an instantaneous visual confirmation at the point of contact when users interact with UI elements.</li>
+<li>
+<a class="internal present" href="https://github.com/codepath/android_guides/wiki/Circular-Reveal-Animation">Circular Reveal Animation</a>
+ - Reveal is a new animation introduced in Android L that animates the 
+view's clipping boundaries. Often used in conjunction with <a class="internal present" href="https://github.com/codepath/android_guides/wiki/Floating-Action-Buttons">material floating action buttons</a>.</li>
+</ul>
+
+<p>Note that these animations require <strong>lollipop or newer</strong>
+ and do not work on devices with an Android version less than API 21. 
+Around 30% of devices have at least lollipop (Dec 2015), so the time 
+spent using one of these animations requires thought to determine if it 
+is worth the effort.</p>
+
+<h2>
+<a id="user-content-particle-effects" class="anchor" href="#particle-effects" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Particle Effects</h2>
+
+<p>Use the third-party <a href="https://github.com/plattysoft/Leonids">Leonids</a>
+ library for simple particle effects. Particle systems are often used in
+ games for a wide range of purposes: explosions, fire, smoke, etc. This 
+effects can also be used on normal apps to add elements of playful 
+design. Here's an example of particle motion:</p>
+
+<p><img src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/68747470733a2f2f692e696d6775722e636f6d2f67546e704c756b2e6769.gif" alt="Particles" data-canonical-src="https://i.imgur.com/gTnpLuk.gif"></p>
+
+<p>Precisely because its main use is games, all engines have support for
+ particle systems, but there is no such thing built-in for standard 
+Android UI. Instead we can use Leonids by <a href="http://www.plattysoft.com/2014/05/30/leonids-particle-system-lib/">reviewing this tutorial</a> for further details.</p>
+
+<h2>
+<a id="user-content-libraries" class="anchor" href="#libraries" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Libraries</h2>
+
+<ul>
+<li>
+<a href="https://github.com/daimajia/AndroidViewAnimations">AndroidViewAnimations</a> - Common property animations made easy.</li>
+<li>
+<a href="https://github.com/nhaarman/ListViewAnimations">ListViewAnimations</a> - List view item animations made simple including insertion and deletion.</li>
+<li>
+<a href="http://nineoldandroids.com/">NineOldAndroids</a> - Compatibility library supporting property animations all the way back to Android 1.0 (deprecated but still works).</li>
+<li>
+<a href="https://github.com/plattysoft/Leonids">Leonids</a> - Simple particle effects for Android.</li>
+</ul>
+
+<h2>
+<a id="user-content-references" class="anchor" href="#references" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>References</h2>
+
+<ul>
+<li><a href="http://www.vogella.com/articles/AndroidAnimation/article.html">http://www.vogella.com/articles/AndroidAnimation/article.html</a></li>
+<li><a href="http://developer.android.com/guide/topics/graphics/overview.html">http://developer.android.com/guide/topics/graphics/overview.html</a></li>
+<li><a href="http://developer.android.com/guide/topics/graphics/drawable-animation.html">http://developer.android.com/guide/topics/graphics/drawable-animation.html</a></li>
+<li><a href="http://developer.android.com/guide/topics/resources/animation-resource.html">http://developer.android.com/guide/topics/resources/animation-resource.html</a></li>
+<li><a href="http://developer.android.com/reference/android/view/ViewPropertyAnimator.html">http://developer.android.com/reference/android/view/ViewPropertyAnimator.html</a></li>
+<li><a href="http://www.androidhive.info/2013/06/android-working-with-xml-animations/">http://www.androidhive.info/2013/06/android-working-with-xml-animations/</a></li>
+<li><a href="http://karanbalkar.com/2013/05/tutorial-30-create-animation-in-android/">http://karanbalkar.com/2013/05/tutorial-30-create-animation-in-android/</a></li>
+<li><a href="http://www.javacodegeeks.com/2011/01/android-animations-quick-guide.html">http://www.javacodegeeks.com/2011/01/android-animations-quick-guide.html</a></li>
+<li><a href="http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html">http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html</a></li>
+<li><a href="http://android-developers.blogspot.com/2011/05/introducing-viewpropertyanimator.html">http://android-developers.blogspot.com/2011/05/introducing-viewpropertyanimator.html</a></li>
+<li><a href="http://learnandroideasily.blogspot.in/2013/07/imageview-animation-in-android.html">http://learnandroideasily.blogspot.in/2013/07/imageview-animation-in-android.html</a></li>
+<li><a href="http://java.dzone.com/articles/using-view-animations-android">http://java.dzone.com/articles/using-view-animations-android</a></li>
+<li><a href="http://mobile.dzone.com/articles/android-ui-action-layout">http://mobile.dzone.com/articles/android-ui-action-layout</a></li>
+<li>
+<a href="http://www.google.com/design/spec/animation/authentic-motion.html">http://www.google.com/design/spec/animation/authentic-motion.html</a> </li>
+<li><a href="https://plus.google.com/+JakeWharton/posts/hPZYyEXaSqk">https://plus.google.com/+JakeWharton/posts/hPZYyEXaSqk</a></li>
+<li><a href="https://twitter.com/jakewharton/status/486346048755884034">https://twitter.com/jakewharton/status/486346048755884034</a></li>
+</ul>
+
+      </div>
+
+      <div id="wiki-footer" class="wiki-footer gollum-markdown-content boxed-group">
+        <div class="boxed-group-inner wiki-auxiliary-content wiki-writable markdown-body">
+            <a href="https://github.com/codepath/android_guides/wiki/_Footer/_edit" class="wiki-edit-link" title="Edit footer">
+              <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
+            </a>
+          <p>Created by <a href="http://codepath.com/">CodePath</a> with much help from the community.</p>
+
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+
+    </div>
+  </div>
+
+    </div>
+
+        <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com/" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com/" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>© 2016 <span title="0.30675s from github-fe118-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com/" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+    
+
+    <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"></path></svg>
+      <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+        <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+      </button>
+      Something went wrong with that request. Please try again.
+    </div>
+
+
+      
+      <script crossorigin="anonymous" integrity="sha256-NUd/XkgkhIwnpE9i4807AJzJ++32B03dh2XucNCUmcY=" src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/frameworks-35477f5e4824848c27a44f62e3cd3b009cc9fbedf6074ddd87.js"></script>
+      <script async="async" crossorigin="anonymous" integrity="sha256-Eh5sCbtQi5npnJ+x1Bo7N3wTHvrmzzQj9sorNJLtSzs=" src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/github-121e6c09bb508b99e99c9fb1d41a3b377c131efae6cf3423f6ca2b.js"></script>
+      
+      
+      
+        <script crossorigin="anonymous" integrity="sha256-C89fFFFfiQlwtsICc8mWQjW6hUIiSHA7VsduS1i+x6g=" src="Animations%20%C2%B7%20codepath_android_guides%20Wiki_files/wiki-0bcf5f14515f890970b6c20273c9964235ba85422248703b56c76e4b.js"></script>
+
+      
+      
+    <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner hidden">
+      <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"></path></svg>
+      <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+      <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    </div>
+    <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"></path></svg>
+    </button>
+  </div>
+</div>
+
+  
+
+
+</body></html>

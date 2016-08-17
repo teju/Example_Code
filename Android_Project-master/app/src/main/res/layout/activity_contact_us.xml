@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <include layout="@layout/activity_toolbar"
+        android:id="@+id/app_login_bar"></include>
+    <include layout="@layout/activity_navigation">
+    </include>
+
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/contact_table"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_below="@id/app_login_bar"
+        android:layout_marginTop="25dp">
+    </TableLayout>
+
+</RelativeLayout>

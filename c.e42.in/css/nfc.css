@@ -1,0 +1,20 @@
+/*
+ *  Document   : nfc.css
+ *  Author     : Cloudnix
+ *  Description: The classes can be used to
+ *  alter the text, the background or the border color of an element individually
+ *
+ */
+
+.nfc-form-custom {
+	width: 300px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+.email-send {
+	float: right !important;
+	margin-top: 10px;
+	margin-right: 10px;
+}

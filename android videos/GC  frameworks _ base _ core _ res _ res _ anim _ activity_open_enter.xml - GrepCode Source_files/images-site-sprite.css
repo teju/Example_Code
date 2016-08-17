@@ -1,0 +1,114 @@
+/** Site-only images **/
+
+
+img.img_java {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -0px;
+}
+
+img.img_apache {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -16px;
+}
+
+img.img_bsd {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -32px;
+}
+
+img.img_gnu {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -48px;
+}
+
+img.img_eclipse {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -64px;
+}
+
+img.img_jboss {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -80px;
+}
+
+img.img_springsource {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -96px;
+}
+
+img.img_google_appengine {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -112px;
+}
+
+img.img_cloudera {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -128px;
+}
+
+img.img_glassfish {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -144px;
+}
+
+img.img_primefaces {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -160px;
+}
+
+img.img_pentaho {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -176px;
+}
+
+img.img_twitter {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -192px;
+}
+
+img.img_netbeans {
+	 width: 16px;
+	 height: 16px;
+	 background-repeat: no-repeat;
+  background-image: url('../images/site_sprite.png');
+  background-position: left -208px;
+}

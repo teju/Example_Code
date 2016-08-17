@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <title>Solving the Android image loading problem: Volley vs. Picasso | Big Nerd Ranch</title> <meta name="robots" content="noodp"> <meta http-equiv="date" content="Tuesday, 09 2013 14:39:18 GMT"> <meta name="viewport" content="width=device-width"> <link rel="stylesheet" href="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/application-c74bdb19a7b1376ffc0a457b795915cc.css"> <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.bignerdranch.com/rss.xml"> <link rel="shortcut icon" type="image/x-icon" href="https://www.bignerdranch.com/favicon.png"> <link rel="canonical" href="https://www.bignerdranch.com/blog/solving-the-android-image-loading-problem-volley-vs-picasso/"> <meta property="og:title" content="Solving the Android image loading problem: Volley vs. Picasso | Big Nerd Ranch"> <meta property="og:site_name" content="Big Nerd Ranch"> <meta property="og:url" content="https://www.bignerdranch.com/blog/solving-the-android-image-loading-problem-volley-vs-picasso/"> <meta property="og:description" content=""> <meta property="og:image" content="https://www.bignerdranch.com/img/bnr-logo-square.png"> <script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/fbevents.js" async=""></script><script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/embed.htm" async="" type="text/javascript"></script><script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/RUPVAE4MIBEMPA5LWIZ6G3" type="text/javascript" async="true"></script><div style="width: 1px; height: 1px; display: inline; position: absolute;"><img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_007.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_005.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_002.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_003.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_004.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out.htm" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/out_006.gif" height="1" width="1">
+<img style="border-style:none;" alt="" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/a.gif" height="1" width="1">
+<img src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/seg.gif" height="1" width="1">
+</div></head> <body> <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PGM76X" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/linkid.js" async="" type="text/javascript"></script><script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/roundtrip.js" async="" type="text/javascript"></script><script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/analytics.js" async="" type="text/javascript"></script><script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/gtm.js" async=""></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PGM76X');</script> <!--[if lt IE 9]> <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p> <![endif]--> <header class="nav-skin-top-header"> <div class="l-container"> <a class="nav-skin-logo" href="https://www.bignerdranch.com/"> <img src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/bnr-logo.svg" alt="Big Nerd Ranch Logo"> </a> <a class="nav-dropdown" id="navDropdown"> <span class="nav-bar-line"></span> <span class="nav-bar-line"></span> <span class="nav-bar-line"></span> </a> <nav class="u-tac"> <ul class="nav-full"> <li><a href="https://www.bignerdranch.com/we-develop/">WE DEVELOP</a></li> <li><a href="https://www.bignerdranch.com/we-teach/">WE TEACH</a></li> <li><a href="https://www.bignerdranch.com/we-write/">WE WRITE</a></li> <li><a href="https://www.bignerdranch.com/about-us/">ABOUT</a></li> <li><a class="nav-active" href="https://www.bignerdranch.com/blog/">BLOG</a></li> <li><a href="https://www.bignerdranch.com/contact/">CONTACT</a></li> </ul> </nav> </div> </header> <main> <section class="skin-color-yellow l-padding-vert"> <div class="l-container"> <div class="l-shift-grid"> <header> <h1 class="u-tac t-white-txt">Solving the Android image loading problem: Volley vs. Picasso</h1> </header> </div> </div> </section> <section> <div class="l-container"> <div class="l-shift-grid"> <div class="blog-landing-l-author-container"> <a class="blog-landing-l-image-link" href="https://www.bignerdranch.com/about-us/nerds/bill-phillips/"> <img class="blog-skin-avatar blog-l-neg-avatar" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/bill-phillips.jpg" alt="Bill Phillips's Headshot"> </a> <div class="blog-landing-l-author-info"> <a class="u-display-block" href="https://www.bignerdranch.com/about-us/nerds/bill-phillips/">Bill Phillips</a> <time class="meta" datetime="2013-07-09"> Jul 9, 2013 </time> <span class="blog-t-category"> • </span> <a class="blog-t-category blog-has-comma" href="https://www.bignerdranch.com/blog/categories/android/">Android</a> </div> <ul class="list-c-social-blog"> <li><h3 class="t-mid-light-gray-txt">Share</h3></li> <li> <a class="list-c-facebook-blog" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.bignerdranch.com%2Fblog%2Fsolving-the-android-image-loading-problem-volley-vs-picasso%2F" target="_blank" title="Facebook"></a> </li> <li> <a class="list-c-twitter-blog" href="https://twitter.com/share?text=Solving+the+Android+image+loading+problem%3A+Volley+vs.+Picasso%3A&amp;url=https%3A%2F%2Fwww.bignerdranch.com%2Fblog%2Fsolving-the-android-image-loading-problem-volley-vs-picasso%2F" target="_blank" title="Twitter"></a> </li> <li> <a class="list-c-google-plus-blog" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.bignerdranch.com%2Fblog%2Fsolving-the-android-image-loading-problem-volley-vs-picasso%2F" target="_blank" title="Google Plus"></a> </li> </ul> </div> </div> </div> <div class="l-container"> <div class="l-shift-grid"> <div class="post blog-landing-l-content"> <p>The
+ scrolling list of visuals is a classic mobile interface pattern. 
+Unfortunately, it’s always been a hassle to implement well on Android. 
+If they are stored locally, a native Android implementation will result 
+in stuttering. And if they are stored on the web, you have to worry 
+about canceling pending requests, along with caching and a slew of other
+ concerns.</p> <p>As a result, many Android developers have written their own dedicated image downloading component once or twice. In fact, <a href="https://www.bignerdranch.com/we-write/android-programming/">our&nbsp;Android book</a>&nbsp;has an exercise where you write one in an app called PhotoGallery, which we’ll talk more about below.</p> <p>And
+ when you start to need caching, transformations, and better 
+performance, it’s natural to ask if someone else has solved this problem
+ before you. Just a few months back, I found myself in that exact 
+situation with one of our client apps. I researched some solutions, but 
+didn’t find anything compelling enough to commit to.</p> <p>But right around <a href="https://www.bignerdranch.com/blog/google-io-lots-of-android-love/">Google I/O</a>, a couple of interesting new image libraries were introduced: <a href="https://android.googlesource.com/platform/frameworks/volley/+/43950676303ff68b23a8b469d6a534ccd1e08cfc/src/com/android/volley">Volley</a> and <a href="http://square.github.io/picasso/">Picasso</a>.
+ They don’t solve exactly the same problem, but each offers solutions 
+for this image loading issue. I decided I’d port them both into the 
+PhotoGallery example code from our book to see how they measured up 
+against one another.</p> <h3 id="the-setup-photogallery">The Setup: PhotoGallery</h3> <p>PhotoGallery is a simple Flickr client that displays the most recent photos on Flickr:</p> <p><a href="https://www.bignerdranch.com/img/blog/2013/07/downloading_complete-180x300.png" class="lightbox-link"><img src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/downloading_complete-180x300.png" alt="Screencap of completed PhotoGallery"></a></p> <p>Scroll it down, and you’ll see more pictures.&nbsp;Let’s focus on the image downloading code, though.</p> <p>PhotoGalleryFragment
+ has a component called ThumbnailDownloader. It is a single thread that 
+is responsible for downloading images, and provides a callback that gets
+ fired when the image is downloaded.</p> <p>ThumbnailDownloader is 
+initialized inside onCreate() by setting a listener, starting the thread
+ and then calling getLooper() to ensure that its message loop is ready 
+to receive messages:</p><pre><code>    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ...
+
+        mThumbnailThread = new ThumbnailDownloader&lt;ImageView&gt;(new Handler());
+        mThumbnailThread.setListener(new ThumbnailDownloader.Listener&lt;ImageView&gt;() {
+            public void onThumbnailDownloaded(ImageView imageView, Bitmap thumbnail) {
+                if (isVisible()) {
+                    imageView.setImageBitmap(thumbnail);
+                }
+            }
+        });
+        mThumbnailThread.start();
+        mThumbnailThread.getLooper();
+    }
+</code></pre><p>The listener here is responsible for actually setting the image on the ImageViews that PhotoGallery is populating.</p> <p>In onDestroyView(), old requests are cleared out:</p><pre><code>    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mThumbnailThread.clearQueue();
+    }
+</code></pre><p>And in onDestroy(), the thread is cleared out entirely:</p><pre><code>    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mThumbnailThread.quit();
+    }
+</code></pre><p>Inside the adapter for PhotoGallery’s GridView, a default image is set, and a request is queued on the thumbnail thread:</p><pre><code>    private class GalleryItemAdapter extends ArrayAdapter&lt;GalleryItem&gt; {
+        public GalleryItemAdapter(ArrayList&lt;GalleryItem&gt; items) {
+            super(getActivity(), 0, items);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getActivity().getLayoutInflater()
+                        .inflate(R.layout.gallery_item, parent, false);
+            }
+
+            GalleryItem item = getItem(position);
+            ImageView imageView = (ImageView)convertView
+                    .findViewById(R.id.gallery_item_imageView);
+            imageView.setImageResource(R.drawable.brian_up_close);
+            mThumbnailThread.queueThumbnail(imageView, item.getUrl());
+
+            return convertView;
+        }
+    }
+</code></pre><p>And that’s it. ThumbnailDownloader itself is a very 
+simple image downloader. It downloads each image one by one from Flickr 
+on a single thread. If a request is invalid or out of date, it skips 
+over to the next request. It has some nice properties, too: it’s simple,
+ small and easy to understand.</p> <p>There are a few drawbacks to this 
+implementation, though. One is that I have a lot of integration with the
+ lifecycle of my fragment: I have to initialize my thread in three 
+ordered steps, I have to manually clear out stale requests, and I have 
+to shut down my thread when I’m done with it. I could solve some of 
+these problems by centralizing my image downloader in a singleton, but 
+then my implementation would need to be able to handle multiple client 
+fragments simultaneously, making it more complicated.</p> <p>Okay, enough boring setup. Let’s get to the juice.</p> <h3 id="the-slickness-picasso">The Slickness: Picasso</h3> <p>Picasso
+ comes from the good folks at Square, and it’s the last entry in their 
+Seven Days of Open Source leading up to Google I/O. It’s focused, small 
+and has a wonderfully tiny interface.</p> <p>Pulling it into your 
+project is as straightforward as these things get. If you’re using 
+maven, add a few lines to your pom file. If you’re not, just download a 
+jar file and include it.</p> <p>Square claims easy integration into your code, too, stating that</p> <blockquote> <p>Picasso allows for hassle-free image loading in your application—often in one line of code!</p> </blockquote> <p>That one line of code looks like this:</p><pre><code>    Picasso.with(context).load("http://i.imgur.com/DvpvklR.png").into(imageView);
+</code></pre><p>Square tells the truth. This code is almost exactly what
+ my code in PhotoGallery ended up looking like. All the code onCreate(),
+ onDestroyView() and onDestroy() ended up going away, and my adapter 
+implementation turned into this:</p><pre><code>    private class GalleryItemAdapter extends ArrayAdapter&lt;GalleryItem&gt; {
+        public GalleryItemAdapter(ArrayList&lt;GalleryItem&gt; items) {
+            super(getActivity(), 0, items);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getActivity().getLayoutInflater()
+                        .inflate(R.layout.gallery_item, parent, false);
+            }
+
+            GalleryItem item = getItem(position);
+            ImageView imageView = (ImageView)convertView
+                    .findViewById(R.id.gallery_item_imageView);
+
+            imageView.setImageResource(R.drawable.brian_up_close);
+            Picasso.with(getActivity())
+                .load(item.getUrl())
+                .noFade()
+                .into(imageView);
+
+            return convertView;
+        }
+    }
+</code></pre><p>That’s the entire implementation. I broke my 
+implementation out into more than one line for clarity, but other than 
+that it is the same. Picasso also includes the ability to specify a 
+placeholder image, but I didn’t use it. As of this writing, Picasso’s 
+implementation seems to override your ImageView’s scaling behavior, so I
+ set my own placeholder.</p> <p>I also had to disable a default 
+behavior. Out of the box, Picasso displays a slick fade-in animation 
+when your image loads. This is actually nice to see in Android—we rarely
+ get any free visual spiff. In our case, though, the fade-from-white 
+animation looked a little odd on PhotoGallery’s black background. I 
+turned it off with a call to noFade().</p> <p>I don’t demonstrate it 
+here, but the other interesting thing you can do is transform the image 
+in various ways, by scaling it, cropping it, and so on and so forth. 
+Most of this is what I’d call <em>nifty</em>. Particularly nifty is that the transformations are performed prior to caching, which would be a big win in some scenarios.</p> <h3 id="pros-and-cons-of-picasso">Pros and cons of Picasso</h3> <p>So what do I get with those five lines?</p> <ul> <li>An automatically created singleton image downloader (which you can do without if you like)</li> <li>Memory and disk caching of uncompress imagery, post-processing</li> <li>Request cancellation</li> <li>Multiple downloads at one time</li> </ul> <p>A couple of things jumped out at me as being handy for embedding Picasso into existing apps:</p> <ul> <li>It
+ plays nicely with existing code. No custom ImageView subclass is 
+necessary. In PhotoGallery, no changes needed to be made to my adapter 
+code, apart from ripping out the old image code and plugging in the new.</li> <li>Picasso’s
+ got its own networking layer. If your own networking layer is based off
+ an ExecutorService, you’re in luck. Just plug it in to a Picasso 
+instance, and they’ll run off the same thread pool.</li> </ul> <p>And how can Picasso be extended? My example doesn’t explore it much, but you’ve got a few options:</p> <ul> <li>You can make your own custom image transformations. These plug right in alongside the existing transformations.</li> <li>You
+ can plug in your own image loader. This could be handy if you’re doing 
+something like deploying some precached results as assets.</li> <li>You can define your own targets for image loads, handy if you’re loading images into something other than ImageView.</li> </ul> <p>Finally, one thing I found to be a hassle with Picasso: scaling and fitting my images correctly. Picasso doesn’t respect the <code>scaleType</code> attribute on your ImageViews, and the following code fails at runtime: (<em>note: this issue has been fixed now. hooray!</em>)</p><pre><code>    Picasso.with(getActivity())
+        .load(item.getUrl())
+        .placeholder(R.drawable.brian_up_close)
+        .centerCrop()
+        .noFade()
+        .into(imageView);
+</code></pre><p>This is Picasso’s raison d’etre. So why is it difficult?</p> <p>Picasso’s
+ strength is also its weakness: it caches scaled and cropped image 
+requests. This means that it has to know how big the image is at the 
+time you request it. Unfortunately, you will not know how big the image 
+needs to be at the time you usually build the request: right after you 
+create your view.</p> <h3 id="a-more-general-solution58-volley">A more general solution: Volley</h3> <p>During I/O itself, we heard about a completely different solution: a library called Volley from the Android dev team.</p> <p>I’ll admit to being extremely excited about Volley after seeing Ficus Kirkpatrick’s <a href="https://developers.google.com/events/io/sessions/325304728">presentation</a>. (Just ask <a href="https://www.bignerdranch.com/about-us/nerds/chris-stewart/">Chris Stewart</a>
+ if you don’t believe me.) See, Volley isn’t an image loading 
+library—it’s an asynchronous networking library. And what’s the hard 
+part of image loading? Generally it’s the networking and caching parts!</p> <p>Here’s
+ an example of what a Volley request and response look like. It’s a 
+Vollified version of the code that fetches the initial list of picture 
+XML data from Flickr:</p><pre><code>    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        mQueue = Volley.newRequestQueue(getActivity());
+
+        GalleryItemRequest itemsRequest = GalleryItemRequest.newRecentItemsRequest(null, 
+                new Listener&lt;ArrayList&lt;GalleryItem&gt;&gt;() {
+            @Override
+            public void onResponse(ArrayList&lt;GalleryItem&gt; items) {
+                mItems = items;
+                setupAdapter();
+            }
+        });
+
+        itemsRequest.setTag(this);
+
+        mQueue.add(itemsRequest);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mQueue.cancelAll(this);
+    }
+</code></pre><p>GalleryItemRequest is a custom Volley request object I 
+wrote to parse an XML network request into a set of model objects. The 
+old implementation fetched the items from doInBackground() in an 
+AsyncTask and setup the adapter in onPostExecute(). This implementation 
+has a smaller footprint in my controller code, and also has the 
+advantage that the request gets cleaned up in onDestroy() if the user 
+navigates away for some reason.</p> <p>This is exciting because 
+traditionally, networking in Android has been hairy. Asynchronous 
+networking would be ideal, but in Android it’s problematic, because your
+ controller components are popping in and out of existence all the time.
+ In practice, something like our AsyncTask implementation is common. We 
+explain how it all works in our book, but I have often wished for 
+something simpler. Volley looked like it’d be just the ticket for me.</p> <p>So
+ how do we integrate image loading? The very first step is actually to 
+integrate this library into our app. Unfortunately, this isn’t as easy 
+as with Picasso. Volley lives in AOSP, but it is not (for the time 
+being) exposed as a library through, for example, the support library. 
+That means there’s no github page, no jar file or maven distribution. I 
+ended up downloading a copy of Volley’s source to my machine and 
+compiling my own jar.</p> <p>Once you’ve done that, the first step is to create two things: a RequestQueue and an ImageLoader.</p><pre><code>    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ...
+
+        mQueue = Volley.newRequestQueue(getActivity());
+
+        mImageLoader = new ImageLoader(mQueue, new ImageCache() {
+            @Override
+            public void putBitmap(String key, Bitmap value) { }
+
+            @Override
+            public Bitmap getBitmap(String key) {
+                return null;
+            }
+        });
+
+        ...
+    }
+</code></pre><p>Note that in a real-world app, your fragments wouldn’t 
+be cluttered with this sort of initialization code. Instead, you’d 
+probably have a shared instance of these two components across the 
+entire app.</p> <p>Now, the ImageLoader requires an implementation of 
+ImageCache. As of this post, Volley doesn’t include any implementations 
+out of the box, so I have provided an empty one that doesn’t cache 
+anything. This doesn’t mean there’s no caching—Volley caches HTTP 
+response data for you. Not having an image cache here does mean that my 
+images will be decoded every time they’re displayed, though.</p> <p>Next
+ is to integrate into the adapter. Volley can work with bare ImageViews,
+ but it is a little verbose. To make it easier, Volley provides a class 
+called NetworkImageView. I’ve created an alternate layout file called 
+gallery_item_network.xml that includes a NetworkImageView. I then 
+inflate and configure it:</p><pre><code>    private class GalleryItemAdapter extends ArrayAdapter&lt;GalleryItem&gt; {
+        public GalleryItemAdapter(ArrayList&lt;GalleryItem&gt; items) {
+            super(getActivity(), 0, items);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            if (convertView == null) {
+                convertView = getActivity().getLayoutInflater()
+                        .inflate(R.layout.gallery_item_network, parent, false);
+            }
+
+            GalleryItem item = getItem(position);
+
+            NetworkImageView imageView = (NetworkImageView)convertView
+                    .findViewById(R.id.gallery_item_imageView);
+            imageView.setDefaultImageResId(R.drawable.brian_up_close);
+            imageView.setImageUrl(item.getUrl(), mImageLoader);
+
+            return convertView;
+        }
+    }
+</code></pre><p>And that’s it.</p> <h3 id="pros-and-cons-of-volley">Pros and cons of Volley</h3> <p>So what’s nice about Volley?</p> <ul> <li>The
+ networking part isn’t just for images. Volley is intended to be an 
+integral part of your back end. For a fresh project based off of a 
+simple REST service, this could be a big win.</li> <li>NetworkImageView 
+is more aggressive about request cleanup than Picasso, and more 
+conservative in its GC usage patterns. NetworkImageView relies 
+exclusively on strong memory references, and cleans up all request data 
+as soon as a new request is made for an ImageView, <strong>or</strong> as soon as that ImageView moves offscreen.</li> <li>Performance.
+ This post won’t evaluate this claim, but they’ve clearly taken some 
+care to be judicious in their memory usage patterns. Volley also makes 
+an effort to batch callbacks to the main thread to reduce context 
+switching.</li> <li>Volley apparently has futures, too. Check out RequestFuture if you’re interested.</li> <li>If you’re dealing with high-resolution compressed images, Volley is the only solution here that works well.</li> </ul> <p>This
+ last point is worth an aside: Android does not handle high-res images 
+well at all. I have a small obsession with the pattern of catching 
+OutOfMemoryError in Android apps. It seems like a ridiculous tactic, but
+ it’s the only way to reliably handle some image scenarios.</p> <p>Sure 
+enough, when I looked through Volley I found that it catches 
+OutOfMemoryError. I knew I’d want to test it, so I modified PhotoGallery
+ to download the original resolution image instead of the thumbnail 
+version. The original implementation blows up. The Picasso version 
+doesn’t blow up (it catches OutOfMemoryError, too), but it fails to load
+ any images that are too large. Not only does Volley not blow up, but it
+ displays all these large images with aplomb.</p> <p>So what about embedding Volley into an existing app?</p> <ul> <li>Volley
+ prefers to deal with NetworkImageView, not ImageView. It’s possible to 
+work around this, but you will find Volley integration more painful if 
+you don’t have the freedom to change which class your images are 
+displayed in.</li> <li>Volley’s networking is self-contained. There’s no
+ ExecutorService to plug into like there is for Picasso, so there’s no 
+way to make Volley’s threading play well with Picasso’s.</li> </ul> <p>Extending
+ with Volley is a different story than it is for Picasso. See, Picasso 
+is totally focused on image loading. As a result, if you have quirks in 
+your image loading process, then there’s a hook there to hang your quirk
+ on.</p> <p>Volley, on the other hand, is totally focused on handling 
+individual, small HTTP requests. So if your HTTP request handling has 
+some quirks, Volley probably has a hook for you. If, on the other hand, 
+you have a quirk in your image handling, the only real hook you have is 
+ImageCache. It’s not nothing, but it’s not a lot, either.</p> <p>The 
+other drawback to that focus is that as soon as one “request” on the 
+front end is really multiple HTTP requests, you can’t extend Volley. 
+Instead, you have to build something on top of it.</p> <h3 id="which-library-should-i-use-then">Which Library Should I Use, Then?</h3> <p>Good
+ question. If you’ve gotten this far, you can tell that Picasso and 
+Volley are very different animals. Picasso does just one thing, while 
+Volley tries to solve a more general problem.</p> <p>So my feeling is 
+that, if you have a large, stable, pre-existing project, you are 
+probably better off using Picasso. Integration is painless, performance 
+seems good, and if the fade-in works for you, you get some free visual 
+fun, too.</p> <p>If, on the other hand, your app is new, or if it’s small enough that you can think about swapping out the back end completely, <strong>and</strong>
+ it deals mostly with small HTTP payloads, Volley is worth considering. 
+Once you define your requests, using them from within a fragment or 
+activity is painless. And unlike parallel AsyncTasks, you don’t have to 
+worry about spinning up too many threads, or potential missteps with 
+shared state.</p> <p>Or what about using both at the same time? If 
+Volley’s image management causes you severe pain, then you’re probably 
+fine using both. I wouldn’t start off using both, however. Picasso 
+solves a couple of pain points that Volley doesn’t address, and it’s 
+trivial to integrate, which means that you should be perfectly fine 
+putting off switching to Picasso until it’s necessary.</p> </div> </div> </div> </section> <section> <div class="l-container u-tac l-padding-bottom"> <div class="l-shift-grid"> <span>More by</span> <a class="link-heading-l-container" href="https://www.bignerdranch.com/about-us/nerds/bill-phillips/"> <img class="blog-skin-avatar blog-l-avatar-more-posts" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/bill-phillips.jpg" alt="Bill Phillips's Headshot"> <h2 class="l-link-heading t-link-heading">Bill Phillips</h2> <i class="icon-button-red-arrow"></i> </a> </div> </div> </section> <section> <div class="l-container u-tac"> </div> </section> <section class="callout-l-container skin-color-green"> <div class="l-container"> <div class="l-shift-grid"> <p class="blog-l-callout t-white-txt">Are you looking for a partner in <a href="https://www.bignerdranch.com/we-develop">developing an Android app</a>? Do you want to accelerate your learning? Bill Phillips and the rest of the nerds can teach you the latest and greatest in <a href="https://training.bignerdranch.com/classes">Android development</a>. </p> </div> </div> </section> <section> <div class="l-container l-padding-vert"> <div class="l-shift-grid"> <h2>Recent Comments</h2> <div id="disqus_thread"></div> <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> </div> </div> </section> <section> <div class="l-container"> <ul class="posts blog-skin-list"> <li class="blog-post-l-container"> <article> <div class="blog-post-l-author-info"> <div class="blog-post-l-author-pic"> <a class="blog-t-author-name" href="https://www.bignerdranch.com/about-us/nerds/paul-turner/"> <img class="blog-l-avatar blog-skin-avatar" src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/paul-turner.jpg" alt="Paul Turner's Headshot"> </a> </div> <div class="blog-post-l-author-name"> <a class="blog-t-author-name" href="https://www.bignerdranch.com/about-us/nerds/paul-turner/">Paul Turner</a> </div> </div> <div class="blog-post-l-time"> <h2 class="t-promo-top-heading">RELATED</h2> </div> <div class="blog-post-l-content"> <a class="blog-post-t-heading" href="https://www.bignerdranch.com/blog/google-io-2016-joining-and-evolving/"> <h1>Google I/O 2016: Joining and Evolving</h1> </a> <p>Another
+ Google I/O keynote has come and gone, and we’ve been given a peek into 
+many of the new products and technologies Google will be focusing on for
+ the next year. If I had to give this year a theme, it would be a focus 
+of joining and evolving existing technologies into new products and 
+features.</p> </div> </article> </li> </ul> </div> </section> </main> <footer class="skin-color-white"> <div class="l-container"> <nav> <ul class="list-c-social"> <li><a class="list-c-facebook" href="http://www.facebook.com/bignerdranch" target="_blank" title="Facebook"></a></li> <li><a class="list-c-twitter" href="http://twitter.com/bignerdranch" target="_blank" title="Twitter"></a></li> <li><a class="list-c-linkedin" href="https://www.linkedin.com/company/bignerdranch" target="_blank" title="LinkedIn"></a></li> <li><a class="list-c-instagram" href="https://instagram.com/bignerdranch" target="_blank" title="Instagram"></a></li> <li><a class="list-c-vimeo" href="http://vimeo.com/bignerdranch" target="_blank" title="Vimeo"></a></li> <li><a class="list-c-youtube" href="http://www.youtube.com/user/BigNerdRanchVideo" target="_blank" title="Youtube"></a></li> <li><a class="list-c-google-plus" href="https://plus.google.com/+bignerdranch/posts" target="_blank" title="Google Plus"></a></li> <li><a class="list-c-github" href="http://www.github.com/bignerdranch" target="_blank" title="Github"></a></li> <li><a class="list-c-dribbble" href="https://dribbble.com/bignerdranch" target="_blank" title="Dribbble"></a></li> </ul> </nav> <p class="u-tac">Copyright© 1998 - 2016 Big Nerd Ranch, LLC. All Rights Reserved. | <a href="https://www.bignerdranch.com/privacy-policy/">Privacy Policy</a> | <a href="#" class="js-usersnap">Report a bug</a></p> </div> </footer> <script type="application/ld+json"> { "@context": "http://schema.org", "@type": "Organization", "name": "Big Nerd Ranch", "url": "https://www.bignerdranch.com/", "logo": "https://www.bignerdranch.com/img/bnr-logo-square.png", "sameAs": [ "https://www.facebook.com/bignerdranch", "https://twitter.com/bignerdranch", "https://plus.google.com/+bignerdranch", "http://instagram.com/bignerdranch/", "https://www.youtube.com/user/BigNerdRanchVideo", "https://www.linkedin.com/company/bignerdranch" ] } </script> <script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/zepto-cc858cc084f2471ecbbf9220bdae2a3c.js"></script> <script src="Solving%20the%20Android%20image%20loading%20problem%20%20Volley%20vs.%20Picasso%20_%20Big%20Nerd%20Ranch_files/main-b56be2eb2b0d5f3a39c859101a1286b3.js"></script> <script type="text/javascript"> var disqus_shortname = 'bignerdranch'; (function() { var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js'; (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq); })(); </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>  
+</body></html>

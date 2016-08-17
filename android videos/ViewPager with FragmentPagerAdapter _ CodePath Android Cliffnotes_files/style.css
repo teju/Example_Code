@@ -1,0 +1,162 @@
+/* This is a generated SCSS file to be edited in app/stylesheets! */
+/* GENERAL */
+body, input, select, textarea, button {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif;
+  line-height: 1.4; }
+
+body {
+  min-width: 1020px;
+  color: #333333;
+  background-color: #fff;
+  margin: 0; }
+
+.container {
+  max-width: 1280px;
+  min-width: 960px;
+  width: auto !important;
+  margin-left: auto;
+  margin-right: auto;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto; }
+
+h1 {
+  font-size: 36px; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1; }
+
+a {
+  color: #4183c4;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+tt, code, pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px; }
+
+/* HEADER */
+.header {
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);
+  background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3);
+  background-image: linear-gradient(#f9f9f9, #f3f3f3);
+  background-repeat: repeat-x;
+  text-shadow: 0 1px 0 #fff;
+  border-bottom: 1px solid #e5e5e5;
+  min-width: 1000px;
+  margin-bottom: 0.8em; }
+  .header .inner-content {
+    max-width: 1280px;
+    min-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5em 1.2em 1.3em 2.3em;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: auto; }
+  .header form.search {
+    text-align: right; }
+
+/* WIKI */
+#wiki-title {
+  overflow: hidden;
+  padding-bottom: 0.4em; }
+  #wiki-title .page-nav {
+    float: right;
+    margin-right: 1em; }
+  #wiki-title .page-nav a {
+    margin-right: 0.4em; }
+
+#wiki-content {
+  margin-bottom: 3em;
+  overflow: hidden;
+  padding: 1.2em; }
+
+#wiki-body {
+  float: left;
+  width: 74%; }
+
+/* Table Of Contents */
+.markdown-toc {
+  position: relative;
+  width: 25%;
+  background-color: #f6f6f6;
+  border-radius: 7px;
+  padding: 0.4em;
+  max-height: 580px;
+  overflow: hidden;
+  float: right;
+  background-color: #f3f3f3;
+  background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);
+  background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3);
+  background-image: linear-gradient(#f9f9f9, #f3f3f3);
+  background-repeat: repeat-x;
+  border: 1px solid #e5e5e5; }
+
+/* Hide the default title */
+.markdown-toc .toc-title {
+  display: none; }
+
+.markdown-toc .title {
+  font-weight: bold;
+  margin-left: 0.6em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.2em; }
+
+/* No left margin 1st level heading */
+.markdown-toc .toc > ul {
+  margin: 0 0 0.5em 0;
+  padding-left: 1em; }
+
+.toc > ul > li {
+  display: none; }
+
+.markdown-toc ul > ul {
+  margin-left: 0;
+  padding-left: 1em;
+  list-style-type: disc; }
+
+.markdown-toc ul > ul > ul {
+  list-style-type: circle; }
+
+/* Hide 4th Level Headings */
+.markdown-toc ul > ul > ul > ul {
+  display: none; }
+
+/* ----- SEARCH ------- */
+.results h3.summary {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  font-size: 1.3em; }
+
+.results .item {
+  padding-bottom: 20px;
+  margin: 0 0 20px;
+  list-style: none;
+  border-bottom: 1px solid #eee; }
+
+.results h3.pagename {
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap; }
+
+.results p.count {
+  color: #333333;
+  font-size: 1.1em;
+  margin-bottom: 0; }
+
+.results h3.pagename img {
+  vertical-align: middle; }
+
+.results h3.pagename a {
+  margin-left: 0.5em;
+  margin-top: 0.3em; }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidProject</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="open">Open navigation</string>
+    <string name="close">Close navigation</string>
+    <string-array name="list">
+        <item>Home</item>
+        <item>Contacts</item>
+        <item>Whats new</item>
+        <item>Photos</item>
+    </string-array>
+    <string-array name="settingslist">
+        <item>Notification Settings</item>
+        <item>Profile settings</item>
+        <item>Account Settings</item>
+        <item>Change Password</item>
+        <item>General setting</item>
+    </string-array>
+    <string-array name="contactlistNames">
+        <item>Name</item>
+        <item>Tejasini N</item>
+        <item>Amith</item>
+    </string-array>
+    <string-array name="contactlistEmail">
+        <item>Email Id</item>
+        <item>teju@gmail.com</item>
+        <item>Amith@gmail.com</item>
+    </string-array>
+    <string-array name="contactlistPhone">
+        <item>Phone No</item>
+        <item>9846310110</item>
+        <item>987543210</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

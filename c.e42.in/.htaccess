@@ -1,0 +1,136 @@
+RewriteEngine on
+
+#####################################
+# GENERIC REDIRECTS				 #
+#####################################
+#Redirect: www => non-wwww
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Redrect: http to https
+RewriteCond %{HTTP_HOST} ^srpcards.com$  [NC]
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+# Redrect: https to http
+RewriteCond %{HTTP_HOST} !^srpcards.com$  [NC]
+RewriteCond %{HTTPS} on
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
+
+# Redirect .shopnix.in to .shopnix.org except payments
+RewriteCond %{HTTP_HOST} !^payments.shopnix.in$  [NC]
+RewriteCond %{HTTP_HOST} ^(.*)\.shopnix.in$ [NC]
+RewriteRule ^(.*)$ http://%1.shopnix.org/$1 [R=301,L]
+
+# Redirect: non-www => www
+# RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+php_value newrelic.appname "Shopnix Stores"
+
+#####################################-
+# DON'T REDIRECT FILE/FOLDERS	   #
+#####################################
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule	  ^/media/(.*)/images/products/(.*)-([0-9]+)-([0-9]+)-jpg$	media/$1.jpg							[NC,L]
+
+#####################################
+# HOME                              #
+#####################################
+# eg: http://Kiranawalla.com
+# eg: http://Kiranawalla.com/home
+RewriteRule	  ^home/?$									index.php?go=home			  [NC,L]
+
+#####################################
+# APP REQUESTS                      #
+#####################################
+RewriteRule       ^app/certificate/verify/rollno/(.*)/?$ 		 index.php?is_app_request=true&mode=j&mod=certificate&go=verify&roll_no=$1                          [NC,L]
+RewriteRule	  ^app/certificate/verify/(.*)/?$				index.php?is_app_request=true&mode=j&mod=certificate&go=verify&nfc_tag_id=$1			  [NC,L]
+RewriteRule	  ^app/certificate/?$				index.php?is_app_request=true&mode=j&mod=certificate			  [NC,L]
+
+
+
+#####################################
+# CERTIFICATE                       #
+#####################################
+RewriteRule	  ^search/(.*)/(.*)/?$						index.php?mod=certificate&go=show&usn=$1&roll_no=$2					  [NC,L]
+RewriteRule	  ^certificate/delete/?$					index.php?mode=j&mod=certificate					  [NC,L]
+RewriteRule	  ^certificate/new/?$						index.php?mod=certificate&go=new			  [NC,L]
+RewriteRule	  ^certificate/add/?$						index.php?mod=certificate&go=modify			  [NC,L]
+RewriteRule	  ^certificate/save/(.*)/?$					index.php?mod=certificate&go=modify&certificate_id=$1			  [NC,L]
+RewriteRule       ^certificate/verify/rollno/(.*)/?$                           index.php?mode=j&mod=certificate&go=verify&roll_no=$1                          [NC,L]
+RewriteRule	  ^certificate/verify/(.*)/?$				index.php?mode=j&mod=certificate&go=verify&nfc_tag_id=$1			  [NC,L]
+RewriteRule	  ^certificate/modify/(.*)/?$				index.php?mod=certificate&go=modify&certificate_id=$1			  [NC,L]
+RewriteRule	  ^certificate/?$							index.php?mod=certificate&go=list			  [NC,L]
+#RewriteRule  ^certificate/(.*)/?$						index.php?mod=certificate&go=show&roll_no=$1			  [NC,L]
+RewriteRule	  ^certificate/search/(.*)/?$				index.php?mod=certificate&go=list&search=$1			  [NC,L]
+
+
+
+RewriteRule	  ^activate/(.*)/(.*)/?$			  index.php?go=activate&email_id=$1&key=$2			   [NC,L]
+RewriteRule	  ^logout/?$						  index.php?go=logout								   [NC,L]
+RewriteRule	  ^myprofile/?$					   index.php?mod=user&go=modify								   [NC,L]
+
+#####################################
+# CERTTAG                           #
+#####################################
+RewriteRule	  ^certtag/add/?$						index.php?mode=j&mod=certificate									  [NC,L]
+RewriteRule	  ^certtag/delete/?$					index.php?mode=j&mod=certificate									  [NC,L]
+
+
+#####################################
+# WALLET                           #
+#####################################
+RewriteRule	  ^wallet/new/?$						index.php?mod=wallet&go=new			  [NC,L]
+RewriteRule	  ^wallet/add/?$						index.php?mod=wallet&go=modify			  [NC,L]
+RewriteRule	  ^wallet/modify/(.*)/?$				index.php?mod=wallet&go=modify&wallet_id=$1				[NC,L]
+RewriteRule	  ^wallet/save/?$					index.php?mod=wallet&go=modify					  [NC,L]
+RewriteRule	  ^wallet/delete/?$					index.php?mode=j&mod=wallet					  [NC,L]
+RewriteRule	  ^wallet/?$							index.php?mod=wallet&go=list										[NC,L]
+RewriteRule	  ^wallet/search/(.*)/?$				index.php?mod=wallet&go=list&search=$1			  [NC,L]
+RewriteRule	  ^wallet/insert/(.*)/?$				index.php?mode=j&mod=wallet&go=insert&imei=$1			  [NC,L]
+
+
+#####################################
+# USER                              #
+#####################################
+RewriteRule	  ^user/new/?$						index.php?mod=user&go=new			  [NC,L]
+RewriteRule	  ^user/add/?$						index.php?mod=user&go=modify			  [NC,L]
+RewriteRule	  ^user/modify/(.*)/?$				index.php?mod=user&go=modify&user_id=$1				[NC,L]
+RewriteRule	  ^user/save/?$						index.php?mod=user&go=modify					  [NC,L]
+RewriteRule	  ^user/delete/?$					index.php?mode=j&mod=user					  [NC,L]
+RewriteRule	  ^user/delete_photo?$				index.php?mode=j&mod=user										[NC,L]
+RewriteRule	  ^user/?$							index.php?mod=user&go=list										[NC,L]
+RewriteRule	  ^user/search/(.*)/?$				index.php?mod=user&go=list&search=$1			  [NC,L]
+
+
+
+#####################################
+# ORGANIZATION                      #
+#####################################
+RewriteRule	  ^org/new/?$						index.php?mod=org&go=new			  [NC,L]
+RewriteRule	  ^org/add/?$						index.php?mod=org&go=modify			  [NC,L]
+RewriteRule	  ^org/modify/(.*)/?$				index.php?mod=org&go=modify&org_id=$1				[NC,L]
+RewriteRule	  ^org/save/?$						index.php?mod=org&go=modify					  [NC,L]
+RewriteRule	  ^org/delete/?$					index.php?mode=j&mod=org					  [NC,L]
+RewriteRule	  ^org/?$							index.php?mod=org&go=list										[NC,L]
+RewriteRule	  ^org/search/(.*)/?$				index.php?mod=org&go=list&search=$1			  [NC,L]
+
+
+#####################################
+# TAG                               #
+#####################################
+RewriteRule	  ^tag/?$							index.php?mod=certificate&go=tag_list			  [NC,L]
+RewriteRule	  ^tag/add/?$					   index.php?mode=j&mod=certificate									  [NC,L]
+RewriteRule	  ^tag/update/?$					   index.php?mode=j&mod=certificate									  [NC,L]
+RewriteRule	  ^tag/delete/?$				   index.php?mode=j&mod=certificate									  [NC,L]
+
+
+#####################################
+# ORDER                             #
+#####################################
+RewriteRule	  ^getcredits/?$							index.php?mod=order&go=make_payment			  [NC,L]
+RewriteRule	  ^make_payment/confirm?$					index.php?mod=order&go=payment_confirm							  [NC,L]
+RewriteRule	  ^make_payment/?$							index.php?mod=order							  [NC,L]
