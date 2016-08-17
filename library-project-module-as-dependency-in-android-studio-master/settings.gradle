@@ -1,0 +1,1 @@
+include ':app', ':appcompat_v7'
