@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:id="@+id/main_layout"
     tools:context=".MainActivity" >
 
     <LinearLayout
@@ -44,7 +45,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <com.google.android.gms.common.SignInButton
+    <Button
         android:id="@+id/btn_sign_in"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -63,6 +64,5 @@
         android:text="New Button"
         android:id="@+id/btn_revoke_access"
         android:layout_gravity="center_horizontal" />
-
 
 </LinearLayout>

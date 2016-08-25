@@ -23,4 +23,3 @@
           android:drawable="@drawable/abc_spinner_ab_focused_holo_dark" />
     <item android:drawable="@drawable/abc_spinner_ab_default_holo_dark" />
 </selector>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/drawable/abc_spinner_ab_holo_dark.xml -->

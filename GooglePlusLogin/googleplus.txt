@@ -1,0 +1,2 @@
+Enable api key from https://console.developers.google.com/iam-admin/projects
+generate sha key by clicking on gradle on right hand side -> click on refresh -> android -> signinginreport

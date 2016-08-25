@@ -57,4 +57,3 @@
                                                          android:visibility="gone"
                                                          android:gravity="center"/>
 </android.support.v7.internal.widget.ActionBarOverlayLayout>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_action_bar_decor_overlay.xml -->

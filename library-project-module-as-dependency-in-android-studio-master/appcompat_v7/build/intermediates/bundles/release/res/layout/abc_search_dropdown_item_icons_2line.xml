@@ -86,4 +86,4 @@
               android:layout_toLeftOf="@android:id/icon2"
               android:layout_above="@android:id/text2" />
 
-</RelativeLayout><!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_search_dropdown_item_icons_2line.xml -->
+</RelativeLayout>

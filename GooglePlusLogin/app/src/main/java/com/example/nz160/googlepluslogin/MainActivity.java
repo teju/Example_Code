@@ -2,17 +2,17 @@ package com.example.nz160.googlepluslogin;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.content.IntentSender.SendIntentException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,13 +21,11 @@ import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
-
 
 import java.io.InputStream;
 
@@ -54,7 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
     private ConnectionResult mConnectionResult;
 
-    private SignInButton btnSignIn;
+    private Button btnSignIn;
     private Button btnSignOut, btnRevokeAccess;
     private ImageView imgProfilePic;
     private TextView txtName, txtEmail;
@@ -62,16 +60,19 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSignIn = (SignInButton) findViewById(R.id.btn_sign_in);
-        btnSignOut = (Button) findViewById(R.id.btn_sign_out);
-        btnRevokeAccess = (Button) findViewById(R.id.btn_revoke_access);
-        imgProfilePic = (ImageView) findViewById(R.id.imgProfilePic);
+        btnSignIn = (Button) findViewById(R.id.btn_sign_in);
+        btnSignOut = (Button)findViewById(R.id.btn_sign_out);
+        btnRevokeAccess = (Button)findViewById(R.id.btn_revoke_access);
+        imgProfilePic = (ImageView)findViewById(R.id.imgProfilePic);
         txtName = (TextView) findViewById(R.id.txtName);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
-        llProfileLayout = (LinearLayout) findViewById(R.id.llProfile);
+        llProfileLayout = (LinearLayout)findViewById(R.id.llProfile);
+        System.out.println("CHECKINGFLOW " + " onCreate");
 
         // Button click listeners
         btnSignIn.setOnClickListener(this);
@@ -84,12 +85,11 @@ public class MainActivity extends Activity implements View.OnClickListener,
                 .addScope(Plus.SCOPE_PLUS_LOGIN).build();
     }
 
-    protected void onStart() {
-        super.onStart();
-        mGoogleApiClient.connect();
-    }
 
-    protected void onStop() {
+
+    public void onStop() {
+        System.out.println("CHECKINGFLOW "+" onStop");
+
         super.onStop();
         if (mGoogleApiClient.isConnected()) {
             mGoogleApiClient.disconnect();
@@ -100,21 +100,35 @@ public class MainActivity extends Activity implements View.OnClickListener,
      * Method to resolve any signin errors
      * */
     private void resolveSignInError() {
-        if (mConnectionResult.hasResolution()) {
-            try {
-                mIntentInProgress = true;
-                mConnectionResult.startResolutionForResult(this, RC_SIGN_IN);
-            } catch (IntentSender.SendIntentException e) {
-                mIntentInProgress = false;
-                mGoogleApiClient.connect();
+        System.out.println("CHECKINGFLOW "+" resolveSignInError");
+
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this).addApi(Plus.API, Plus.PlusOptions.builder().build())
+                .addScope(Plus.SCOPE_PLUS_LOGIN).build();
+        //System.out.println(" resolveSignInError "+mConnectionResult.hasResolution());
+        try {
+            if (mConnectionResult.hasResolution()) {
+                try {
+                    mIntentInProgress = true;
+                    mConnectionResult.startResolutionForResult(this, RC_SIGN_IN);
+                } catch (Exception e) {
+                    mIntentInProgress = false;
+                    mGoogleApiClient.connect();
+                }
             }
+        } catch (Exception e){
+            mIntentInProgress = false;
+            mGoogleApiClient.connect();
         }
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult result) {
+        System.out.println("CHECKINGFLOW "+" onConnectionFailed");
+
         if (!result.hasResolution()) {
-            GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), this,
+            GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), getParent(),
                     0).show();
             return;
         }
@@ -130,12 +144,13 @@ public class MainActivity extends Activity implements View.OnClickListener,
                 resolveSignInError();
             }
         }
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int responseCode,
                                     Intent intent) {
+        System.out.println("CHECKINGFLOW " + " onActivityResult " + requestCode + " " + responseCode);
+
         if (requestCode == RC_SIGN_IN) {
             if (responseCode != RESULT_OK) {
                 mSignInClicked = false;
@@ -151,6 +166,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
     @Override
     public void onConnected(Bundle arg0) {
+        System.out.println("CHECKINGFLOW "+" onConnected");
+
         mSignInClicked = false;
         Toast.makeText(this, "User is connected!", Toast.LENGTH_LONG).show();
 
@@ -166,6 +183,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
      * Updating the UI, showing/hiding buttons and profile layout
      * */
     private void updateUI(boolean isSignedIn) {
+        System.out.println("CHECKINGFLOW "+" updateUI");
+
         if (isSignedIn) {
             btnSignIn.setVisibility(View.GONE);
             btnSignOut.setVisibility(View.VISIBLE);
@@ -182,7 +201,10 @@ public class MainActivity extends Activity implements View.OnClickListener,
     /**
      * Fetching user's information name, email, profile pic
      * */
+
     private void getProfileInformation() {
+        System.out.println("CHECKINGFLOW "+" getProfileInformation");
+
         try {
             if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
                 Person currentPerson = Plus.PeopleApi
@@ -219,10 +241,11 @@ public class MainActivity extends Activity implements View.OnClickListener,
 
     @Override
     public void onConnectionSuspended(int arg0) {
+        System.out.println("CHECKINGFLOW "+" onConnectionSuspended");
+
         mGoogleApiClient.connect();
         updateUI(false);
     }
-
 
     /**
      * Button on click listener
@@ -244,7 +267,10 @@ public class MainActivity extends Activity implements View.OnClickListener,
                 break;
         }
     }
+
     private void revokeGplusAccess() {
+        System.out.println("CHECKINGFLOW "+" revokeGplusAccess");
+
         if (mGoogleApiClient.isConnected()) {
             Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
             Plus.AccountApi.revokeAccessAndDisconnect(mGoogleApiClient)
@@ -252,6 +278,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
                         @Override
                         public void onResult(Status arg0) {
                             Log.e(TAG, "User access revoked!");
+                            btnSignOut.setOnClickListener(MainActivity.this);
                             mGoogleApiClient.connect();
                             updateUI(false);
                         }
@@ -261,6 +288,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
     }
 
     private void signOutFromGplus() {
+        System.out.println("CHECKINGFLOW "+" signOutFromGplus");
+
         if (mGoogleApiClient.isConnected()) {
             Plus.AccountApi.clearDefaultAccount(mGoogleApiClient);
             mGoogleApiClient.disconnect();
@@ -273,7 +302,11 @@ public class MainActivity extends Activity implements View.OnClickListener,
      * Sign-in into google
      * */
     private void signInWithGplus() {
+        System.out.println("CHECKINGFLOW "+" signInWithGplus");
+
+        System.out.println(" signInWithGplus "+mGoogleApiClient.isConnecting());
         if (!mGoogleApiClient.isConnecting()) {
+            System.out.println(" !not signInWithGplus "+mGoogleApiClient.isConnecting());
             mSignInClicked = true;
             resolveSignInError();
         }
@@ -286,6 +319,7 @@ public class MainActivity extends Activity implements View.OnClickListener,
         ImageView bmImage;
 
         public LoadProfileImage(ImageView bmImage) {
+
             this.bmImage = bmImage;
         }
 
@@ -301,10 +335,8 @@ public class MainActivity extends Activity implements View.OnClickListener,
             }
             return mIcon11;
         }
-
         protected void onPostExecute(Bitmap result) {
             bmImage.setImageBitmap(result);
         }
     }
-
 }

@@ -36,4 +36,3 @@
                android:adjustViewBounds="true"
                android:scaleType="fitCenter"/>
 </view>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_action_bar_home.xml -->

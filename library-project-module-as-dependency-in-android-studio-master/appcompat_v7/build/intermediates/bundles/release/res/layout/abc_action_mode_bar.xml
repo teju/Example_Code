@@ -22,4 +22,3 @@
         android:layout_height="wrap_content"
         android:visibility="gone"
         style="?attr/actionModeStyle"/>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_action_mode_bar.xml -->

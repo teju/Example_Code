@@ -26,4 +26,4 @@
 
     <include layout="@layout/abc_activity_chooser_view_include" />
 
-</android.support.v7.internal.widget.LinearLayoutICS><!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_activity_chooser_view.xml -->
+</android.support.v7.internal.widget.LinearLayoutICS>

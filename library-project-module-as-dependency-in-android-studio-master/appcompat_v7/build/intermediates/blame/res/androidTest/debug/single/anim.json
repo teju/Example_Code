@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_slide_in_top.xml"
+    },
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_out.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_fade_out.xml"
+    },
+    {
+        "merged": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\anim\\abc_fade_in.xml",
+        "source": "D:\\Android project\\Example_Code\\library-project-module-as-dependency-in-android-studio-master\\appcompat_v7\\build\\intermediates\\bundles\\debug\\res\\anim\\abc_fade_in.xml"
+    }
+]

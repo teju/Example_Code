@@ -63,17 +63,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int actionButtonStyle=0x7f010009;
-        /**  Default ActionBar dropdown style. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int actionDropDownStyle=0x7f010066;
-        /** 
-             An optional layout to be used as an action view.
-             See {@link android.view.MenuItem#setActionView(android.view.View)}
-             for more info.
-        
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int actionLayout=0x7f01005d;
@@ -143,13 +137,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int actionOverflowButtonStyle=0x7f010019;
-        /** 
-             The name of an optional ActionProvider class to instantiate an action view
-             and perform operations such as default action for that menu item.
-             See {@link android.view.MenuItem#setActionProvider(android.view.ActionProvider)}
-             for more info.
-        
-         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -157,12 +145,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int actionProviderClass=0x7f01005f;
-        /** 
-             The name of an optional View class to instantiate and use as an
-             action view. See {@link android.view.MenuItem#setActionView(android.view.View)}
-             for more info.
-        
-         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -174,20 +157,17 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int activityChooserViewStyle=0x7f01001a;
-        /**  Specifies a background drawable for the action bar. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int background=0x7f010047;
-        /**  Specifies a background drawable for the bottom component of a split action bar. 
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static int backgroundSplit=0x7f010049;
-        /**  Specifies a background drawable for a second stacked row of the action bar. 
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
@@ -201,16 +181,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int buttonBarStyle=0x7f01001c;
-        /**  Specifies a layout for custom navigation. Overrides navigationMode. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int customNavigationLayout=0x7f01004a;
-        /** 
-             Whether this spinner should mark child views as enabled/disabled when
-             the spinner itself is enabled/disabled.
-        
-         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -218,8 +193,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int disableChildrenWhenDisabled=0x7f010065;
-        /**  Options affecting how the action bar is displayed. 
-         <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
@@ -234,8 +208,7 @@ containing a value of this type.
 </table>
          */
         public static int displayOptions=0x7f010040;
-        /**  Specifies the drawable used for item dividers. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int divider=0x7f010046;
@@ -243,8 +216,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int dividerHorizontal=0x7f01001d;
-        /**  Size of padding on either end of a divider. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -262,8 +234,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int dropDownListViewStyle=0x7f01001f;
-        /**  The preferred item height for dropdown lists. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -273,14 +244,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int dropdownListPreferredItemHeight=0x7f010067;
-        /** 
-             The drawable to show in the button for expanding the activities overflow popup.
-             <strong>Note:</strong> Clients would like to set this drawable
-             as a clue about the action the chosen activity will perform. For
-             example, if share activity is to be chosen the drawable should
-             give a clue that sharing is to be performed.
-        
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int expandActivityOverflowButtonDrawable=0x7f010058;
@@ -298,21 +262,15 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int homeAsUpIndicator=0x7f010021;
-        /**  Specifies a layout to use for the "home" section of the action bar. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int homeLayout=0x7f01004b;
-        /**  Specifies the drawable used for the application icon. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int icon=0x7f010044;
-        /** 
-             The default state of the SearchView. If true, it will be iconified when not in
-             use and expanded when clicked.
-        
-         <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -320,13 +278,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int iconifiedByDefault=0x7f010060;
-        /**  Specifies a style resource to use for an indeterminate progress spinner. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int indeterminateProgressStyle=0x7f01004d;
-        /**  The maximal number of items initially shown in the activity list. 
-         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -342,11 +298,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int isLightTheme=0x7f010022;
-        /** 
-             Specifies padding that should be applied to the left and right sides of
-             system-provided items in the bar.
-        
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -356,8 +308,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int itemPadding=0x7f01004f;
-        /**  Drawable used as a background for selected list items. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int listChoiceBackgroundIndicator=0x7f01006b;
@@ -415,26 +366,23 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int listPreferredItemPaddingRight=0x7f010028;
-        /**  Specifies the drawable used for the application logo. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int logo=0x7f010045;
-        /**  The type of navigation to use. 
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>normal</code></td><td>0</td><td> Normal static title text </td></tr>
-<tr><td><code>listMode</code></td><td>1</td><td> The action bar will use a selection list for navigation. </td></tr>
-<tr><td><code>tabMode</code></td><td>2</td><td> The action bar will use a series of horizontal tabs for navigation. </td></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>listMode</code></td><td>1</td><td></td></tr>
+<tr><td><code>tabMode</code></td><td>2</td><td></td></tr>
 </table>
          */
         public static int navigationMode=0x7f01003f;
-        /**  Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -444,8 +392,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int paddingEnd=0x7f01006d;
-        /**  Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -455,13 +402,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int paddingStart=0x7f01006c;
-        /**  Default Panel Menu style. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int panelMenuListTheme=0x7f01006a;
-        /**  Default Panel Menu width. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -471,22 +416,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int panelMenuListWidth=0x7f010069;
-        /**  Default PopupMenu style. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int popupMenuStyle=0x7f010068;
-        /** 
-             Reference to a layout to use for displaying a prompt in the dropdown for
-             spinnerMode="dropdown". This layout must contain a TextView with the id
-             {@code @android:id/text1} to be populated with the prompt text.
-        
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int popupPromptView=0x7f010064;
-        /**  Specifies the horizontal padding on either end for an embedded progress bar. 
-         <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>This may also be a reference to a resource (in the form
@@ -496,18 +434,15 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int progressBarPadding=0x7f01004e;
-        /**  Specifies a style resource to use for an embedded progress bar. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int progressBarStyle=0x7f01004c;
-        /**  The prompt to display when the spinner's dialog is shown. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int prompt=0x7f010062;
-        /**  An optional query hint string to be displayed in the empty query field. 
-         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -569,42 +504,21 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int selectableItemBackground=0x7f010034;
-        /**  How this item should display in the Action Bar, if present. 
-         <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>never</code></td><td>0</td><td>
-                 Never show this item in an action bar, show it in the overflow menu instead.
-                 Mutually exclusive with "ifRoom" and "always".
-            </td></tr>
-<tr><td><code>ifRoom</code></td><td>1</td><td>
-                 Show this item in an action bar if there is room for it as determined
-                 by the system. Favor this option over "always" where possible.
-                 Mutually exclusive with "never" and "always".
-            </td></tr>
-<tr><td><code>always</code></td><td>2</td><td>
-                 Always show this item in an actionbar, even if it would override
-                 the system's limits of how much stuff to put there. This may make
-                 your action bar look bad on some screens. In most cases you should
-                 use "ifRoom" instead. Mutually exclusive with "ifRoom" and "never".
-            </td></tr>
-<tr><td><code>withText</code></td><td>4</td><td>
-                 When this item is shown as an action in the action bar, show a text
-                 label with it even if it has an icon representation.
-            </td></tr>
-<tr><td><code>collapseActionView</code></td><td>8</td><td>
-                 This item's action view collapses to a normal menu
-                 item. When expanded, the action view takes over a
-                 larger segment of its container.
-            </td></tr>
+<tr><td><code>never</code></td><td>0</td><td></td></tr>
+<tr><td><code>ifRoom</code></td><td>1</td><td></td></tr>
+<tr><td><code>always</code></td><td>2</td><td></td></tr>
+<tr><td><code>withText</code></td><td>4</td><td></td></tr>
+<tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
          */
         public static int showAsAction=0x7f01005c;
-        /**  Setting for which dividers to show. 
-         <p>Must be one or more (separated by '|') of the following constant values.</p>
+        /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
@@ -621,18 +535,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int spinnerDropDownItemStyle=0x7f010035;
-        /**  Display mode for spinner options. 
-         <p>Must be one of the following constant values.</p>
+        /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>dialog</code></td><td>0</td><td> Spinner options will be presented to the user as a dialog window. </td></tr>
-<tr><td><code>dropdown</code></td><td>1</td><td>
-                 Spinner options will be presented to the user as an inline dropdown
-                 anchored to the spinner widget itself.
-            </td></tr>
+<tr><td><code>dialog</code></td><td>0</td><td></td></tr>
+<tr><td><code>dropdown</code></td><td>1</td><td></td></tr>
 </table>
          */
         public static int spinnerMode=0x7f010063;
@@ -640,8 +550,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int spinnerStyle=0x7f010036;
-        /**  Specifies subtitle text used for navigationMode="normal" 
-         <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
 theme attribute (in the form
@@ -649,13 +558,11 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int subtitle=0x7f010041;
-        /**  Specifies a style to use for subtitle text. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int subtitleTextStyle=0x7f010043;
-        /**  Present the text in ALL CAPS. This may use a small-caps form when available. 
-         <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
          */
@@ -698,8 +605,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int title=0x7f01003e;
-        /**  Specifies a style to use for title text. 
-         <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static int titleTextStyle=0x7f010042;
@@ -719,12 +625,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int windowActionBarOverlay=0x7f010051;
-        /** 
-             A fixed height for the window along the major axis of the screen,
-             that is, when in portrait. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
-         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>May be a fractional value, which is a floating point number appended with either % or %p, such as "<code>14.5%</code>".
@@ -737,12 +638,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int windowFixedHeightMajor=0x7f010056;
-        /** 
-             A fixed height for the window along the minor axis of the screen,
-             that is, when in landscape. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
-         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>May be a fractional value, which is a floating point number appended with either % or %p, such as "<code>14.5%</code>".
@@ -755,12 +651,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int windowFixedHeightMinor=0x7f010054;
-        /** 
-             A fixed width for the window along the major axis of the screen,
-             that is, when in landscape. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
-         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>May be a fractional value, which is a floating point number appended with either % or %p, such as "<code>14.5%</code>".
@@ -773,12 +664,7 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int windowFixedWidthMajor=0x7f010053;
-        /** 
-             A fixed width for the window along the minor axis of the screen,
-             that is, when in portrait. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
-         <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+        /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
 <p>May be a fractional value, which is a floating point number appended with either % or %p, such as "<code>14.5%</code>".
@@ -801,41 +687,41 @@ containing a value of this type.
         public static int windowSplitActionBar=0x7f010052;
     }
     public static final class bool {
-        public static int abc_action_bar_embed_tabs_pre_jb=0x7f050000;
-        public static int abc_action_bar_expanded_action_views_exclusive=0x7f050001;
-        public static int abc_config_actionMenuItemAllCaps=0x7f050002;
-        public static int abc_config_allowActionMenuItemTextWithIcon=0x7f050003;
-        public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050004;
-        public static int abc_split_action_bar_is_narrow=0x7f050005;
+        public static int abc_action_bar_embed_tabs_pre_jb=0x7f060000;
+        public static int abc_action_bar_expanded_action_views_exclusive=0x7f060003;
+        public static int abc_config_actionMenuItemAllCaps=0x7f060004;
+        public static int abc_config_allowActionMenuItemTextWithIcon=0x7f060001;
+        public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f060005;
+        public static int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static int abc_search_url_text_holo=0x7f060003;
-        public static int abc_search_url_text_normal=0x7f060000;
-        public static int abc_search_url_text_pressed=0x7f060001;
-        public static int abc_search_url_text_selected=0x7f060002;
+        public static int abc_search_url_text_holo=0x7f0a0003;
+        public static int abc_search_url_text_normal=0x7f0a0000;
+        public static int abc_search_url_text_pressed=0x7f0a0001;
+        public static int abc_search_url_text_selected=0x7f0a0002;
     }
     public static final class dimen {
-        public static int abc_action_bar_default_height=0x7f080000;
-        public static int abc_action_bar_icon_vertical_padding=0x7f080001;
-        public static int abc_action_bar_progress_bar_size=0x7f080002;
-        public static int abc_action_bar_stacked_max_height=0x7f080003;
-        public static int abc_action_bar_stacked_tab_max_width=0x7f080004;
-        public static int abc_action_bar_subtitle_bottom_margin=0x7f080005;
-        public static int abc_action_bar_subtitle_text_size=0x7f080006;
-        public static int abc_action_bar_subtitle_top_margin=0x7f080007;
-        public static int abc_action_bar_title_text_size=0x7f080008;
-        public static int abc_action_button_min_width=0x7f080009;
-        public static int abc_config_prefDialogWidth=0x7f08000a;
-        public static int abc_dropdownitem_icon_width=0x7f08000b;
-        public static int abc_dropdownitem_text_padding_left=0x7f08000c;
-        public static int abc_dropdownitem_text_padding_right=0x7f08000d;
-        public static int abc_panel_menu_list_width=0x7f08000e;
-        public static int abc_search_view_preferred_width=0x7f08000f;
-        public static int abc_search_view_text_min_width=0x7f080010;
-        public static int dialog_fixed_height_major=0x7f080011;
-        public static int dialog_fixed_height_minor=0x7f080012;
-        public static int dialog_fixed_width_major=0x7f080013;
-        public static int dialog_fixed_width_minor=0x7f080014;
+        public static int abc_action_bar_default_height=0x7f070000;
+        public static int abc_action_bar_icon_vertical_padding=0x7f070001;
+        public static int abc_action_bar_progress_bar_size=0x7f070002;
+        public static int abc_action_bar_stacked_max_height=0x7f07000e;
+        public static int abc_action_bar_stacked_tab_max_width=0x7f07000f;
+        public static int abc_action_bar_subtitle_bottom_margin=0x7f070003;
+        public static int abc_action_bar_subtitle_text_size=0x7f070004;
+        public static int abc_action_bar_subtitle_top_margin=0x7f070005;
+        public static int abc_action_bar_title_text_size=0x7f070006;
+        public static int abc_action_button_min_width=0x7f07000d;
+        public static int abc_config_prefDialogWidth=0x7f070007;
+        public static int abc_dropdownitem_icon_width=0x7f070010;
+        public static int abc_dropdownitem_text_padding_left=0x7f070011;
+        public static int abc_dropdownitem_text_padding_right=0x7f070012;
+        public static int abc_panel_menu_list_width=0x7f070013;
+        public static int abc_search_view_preferred_width=0x7f070014;
+        public static int abc_search_view_text_min_width=0x7f070008;
+        public static int dialog_fixed_height_major=0x7f070009;
+        public static int dialog_fixed_height_minor=0x7f07000a;
+        public static int dialog_fixed_width_major=0x7f07000b;
+        public static int dialog_fixed_width_minor=0x7f07000c;
     }
     public static final class drawable {
         public static int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -927,66 +813,66 @@ containing a value of this type.
         public static int abc_textfield_searchview_right_holo_light=0x7f020056;
     }
     public static final class id {
-        public static int action_bar=0x7f07001c;
-        public static int action_bar_activity_content=0x7f070014;
-        public static int action_bar_container=0x7f07001b;
-        public static int action_bar_overlay_layout=0x7f07001f;
-        public static int action_bar_root=0x7f07001a;
-        public static int action_bar_subtitle=0x7f070023;
-        public static int action_bar_title=0x7f070022;
-        public static int action_context_bar=0x7f07001d;
-        public static int action_menu_divider=0x7f070015;
-        public static int action_menu_presenter=0x7f070016;
-        public static int action_mode_close_button=0x7f070024;
-        public static int activity_chooser_view_content=0x7f070025;
-        public static int always=0x7f07000f;
-        public static int beginning=0x7f07000a;
-        public static int checkbox=0x7f07002d;
-        public static int collapseActionView=0x7f070011;
-        public static int default_activity_button=0x7f070028;
-        public static int dialog=0x7f070012;
-        public static int disableHome=0x7f070008;
-        public static int dropdown=0x7f070013;
-        public static int edit_query=0x7f070030;
-        public static int end=0x7f07000c;
-        public static int expand_activities_button=0x7f070026;
-        public static int expanded_menu=0x7f07002c;
-        public static int home=0x7f070017;
-        public static int homeAsUp=0x7f070005;
-        public static int icon=0x7f07002a;
-        public static int ifRoom=0x7f07000e;
-        public static int image=0x7f070027;
-        public static int listMode=0x7f070001;
-        public static int list_item=0x7f070029;
-        public static int middle=0x7f07000b;
-        public static int never=0x7f07000d;
-        public static int none=0x7f070009;
-        public static int normal=0x7f070000;
-        public static int progress_circular=0x7f070018;
-        public static int progress_horizontal=0x7f070019;
-        public static int radio=0x7f07002f;
-        public static int search_badge=0x7f070032;
-        public static int search_bar=0x7f070031;
-        public static int search_button=0x7f070033;
-        public static int search_close_btn=0x7f070038;
-        public static int search_edit_frame=0x7f070034;
-        public static int search_go_btn=0x7f07003a;
-        public static int search_mag_icon=0x7f070035;
-        public static int search_plate=0x7f070036;
-        public static int search_src_text=0x7f070037;
-        public static int search_voice_btn=0x7f07003b;
-        public static int shortcut=0x7f07002e;
-        public static int showCustom=0x7f070007;
-        public static int showHome=0x7f070004;
-        public static int showTitle=0x7f070006;
-        public static int split_action_bar=0x7f07001e;
-        public static int submit_area=0x7f070039;
-        public static int tabMode=0x7f070002;
-        public static int title=0x7f07002b;
-        public static int top_action_bar=0x7f070020;
-        public static int up=0x7f070021;
-        public static int useLogo=0x7f070003;
-        public static int withText=0x7f070010;
+        public static int action_bar=0x7f0b001c;
+        public static int action_bar_activity_content=0x7f0b0000;
+        public static int action_bar_container=0x7f0b001b;
+        public static int action_bar_overlay_layout=0x7f0b001f;
+        public static int action_bar_root=0x7f0b001a;
+        public static int action_bar_subtitle=0x7f0b0023;
+        public static int action_bar_title=0x7f0b0022;
+        public static int action_context_bar=0x7f0b001d;
+        public static int action_menu_divider=0x7f0b0001;
+        public static int action_menu_presenter=0x7f0b0002;
+        public static int action_mode_close_button=0x7f0b0024;
+        public static int activity_chooser_view_content=0x7f0b0025;
+        public static int always=0x7f0b0013;
+        public static int beginning=0x7f0b000f;
+        public static int checkbox=0x7f0b002d;
+        public static int collapseActionView=0x7f0b0014;
+        public static int default_activity_button=0x7f0b0028;
+        public static int dialog=0x7f0b0018;
+        public static int disableHome=0x7f0b0009;
+        public static int dropdown=0x7f0b0019;
+        public static int edit_query=0x7f0b0030;
+        public static int end=0x7f0b0010;
+        public static int expand_activities_button=0x7f0b0026;
+        public static int expanded_menu=0x7f0b002c;
+        public static int home=0x7f0b0003;
+        public static int homeAsUp=0x7f0b000a;
+        public static int icon=0x7f0b002a;
+        public static int ifRoom=0x7f0b0015;
+        public static int image=0x7f0b0027;
+        public static int listMode=0x7f0b0006;
+        public static int list_item=0x7f0b0029;
+        public static int middle=0x7f0b0011;
+        public static int never=0x7f0b0016;
+        public static int none=0x7f0b0012;
+        public static int normal=0x7f0b0007;
+        public static int progress_circular=0x7f0b0004;
+        public static int progress_horizontal=0x7f0b0005;
+        public static int radio=0x7f0b002f;
+        public static int search_badge=0x7f0b0032;
+        public static int search_bar=0x7f0b0031;
+        public static int search_button=0x7f0b0033;
+        public static int search_close_btn=0x7f0b0038;
+        public static int search_edit_frame=0x7f0b0034;
+        public static int search_go_btn=0x7f0b003a;
+        public static int search_mag_icon=0x7f0b0035;
+        public static int search_plate=0x7f0b0036;
+        public static int search_src_text=0x7f0b0037;
+        public static int search_voice_btn=0x7f0b003b;
+        public static int shortcut=0x7f0b002e;
+        public static int showCustom=0x7f0b000b;
+        public static int showHome=0x7f0b000c;
+        public static int showTitle=0x7f0b000d;
+        public static int split_action_bar=0x7f0b001e;
+        public static int submit_area=0x7f0b0039;
+        public static int tabMode=0x7f0b0008;
+        public static int title=0x7f0b002b;
+        public static int top_action_bar=0x7f0b0020;
+        public static int up=0x7f0b0021;
+        public static int useLogo=0x7f0b000e;
+        public static int withText=0x7f0b0017;
     }
     public static final class integer {
         public static int abc_max_action_buttons=0x7f090000;
@@ -1019,160 +905,160 @@ containing a value of this type.
         public static int support_simple_spinner_dropdown_item=0x7f030018;
     }
     public static final class string {
-        public static int abc_action_bar_home_description=0x7f0a0000;
-        public static int abc_action_bar_up_description=0x7f0a0001;
-        public static int abc_action_menu_overflow_description=0x7f0a0002;
-        public static int abc_action_mode_done=0x7f0a0003;
-        public static int abc_activity_chooser_view_see_all=0x7f0a0004;
-        public static int abc_activitychooserview_choose_application=0x7f0a0005;
-        public static int abc_searchview_description_clear=0x7f0a0006;
-        public static int abc_searchview_description_query=0x7f0a0007;
-        public static int abc_searchview_description_search=0x7f0a0008;
-        public static int abc_searchview_description_submit=0x7f0a0009;
-        public static int abc_searchview_description_voice=0x7f0a000a;
-        public static int abc_shareactionprovider_share_with=0x7f0a000b;
-        public static int abc_shareactionprovider_share_with_application=0x7f0a000c;
+        public static int abc_action_bar_home_description=0x7f050000;
+        public static int abc_action_bar_up_description=0x7f050001;
+        public static int abc_action_menu_overflow_description=0x7f050002;
+        public static int abc_action_mode_done=0x7f050003;
+        public static int abc_activity_chooser_view_see_all=0x7f050004;
+        public static int abc_activitychooserview_choose_application=0x7f050005;
+        public static int abc_searchview_description_clear=0x7f050006;
+        public static int abc_searchview_description_query=0x7f050007;
+        public static int abc_searchview_description_search=0x7f050008;
+        public static int abc_searchview_description_submit=0x7f050009;
+        public static int abc_searchview_description_voice=0x7f05000a;
+        public static int abc_shareactionprovider_share_with=0x7f05000b;
+        public static int abc_shareactionprovider_share_with_application=0x7f05000c;
     }
     public static final class style {
-        public static int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0000;
-        public static int TextAppearance_AppCompat_Base_SearchResult=0x7f0b0001;
-        public static int TextAppearance_AppCompat_Base_SearchResult_Subtitle=0x7f0b0002;
-        public static int TextAppearance_AppCompat_Base_SearchResult_Title=0x7f0b0003;
-        public static int TextAppearance_AppCompat_Base_Widget_PopupMenu_Large=0x7f0b0004;
-        public static int TextAppearance_AppCompat_Base_Widget_PopupMenu_Small=0x7f0b0005;
-        public static int TextAppearance_AppCompat_Light_Base_SearchResult=0x7f0b0006;
-        public static int TextAppearance_AppCompat_Light_Base_SearchResult_Subtitle=0x7f0b0007;
-        public static int TextAppearance_AppCompat_Light_Base_SearchResult_Title=0x7f0b0008;
-        public static int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Large=0x7f0b0009;
-        public static int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Small=0x7f0b000a;
-        public static int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0b000b;
-        public static int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0b000c;
-        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0b000d;
-        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0b000e;
-        public static int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0b000f;
-        public static int TextAppearance_AppCompat_SearchResult_Title=0x7f0b0010;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0b0011;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0b0012;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0b0013;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0b0014;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0b0015;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0b0016;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0b0017;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0b0018;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0b0019;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Menu=0x7f0b001a;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle=0x7f0b001b;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle_Inverse=0x7f0b001c;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Title=0x7f0b001d;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Title_Inverse=0x7f0b001e;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle=0x7f0b001f;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle_Inverse=0x7f0b0020;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Title=0x7f0b0021;
-        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Title_Inverse=0x7f0b0022;
-        public static int TextAppearance_AppCompat_Widget_Base_DropDownItem=0x7f0b0023;
-        public static int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0b0024;
-        public static int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0b0025;
-        public static int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0b0026;
-        public static int TextAppearance_Widget_AppCompat_Base_ExpandedMenu_Item=0x7f0b0027;
-        public static int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0b0028;
-        public static int Theme_AppCompat=0x7f0b0029;
-        public static int Theme_AppCompat_Base_CompactMenu=0x7f0b002a;
-        public static int Theme_AppCompat_Base_CompactMenu_Dialog=0x7f0b002b;
-        public static int Theme_AppCompat_CompactMenu=0x7f0b002c;
-        public static int Theme_AppCompat_CompactMenu_Dialog=0x7f0b002d;
-        public static int Theme_AppCompat_DialogWhenLarge=0x7f0b002e;
-        public static int Theme_AppCompat_Light=0x7f0b002f;
-        public static int Theme_AppCompat_Light_DarkActionBar=0x7f0b0030;
-        public static int Theme_AppCompat_Light_DialogWhenLarge=0x7f0b0031;
-        public static int Theme_Base=0x7f0b0032;
-        public static int Theme_Base_AppCompat=0x7f0b0033;
-        public static int Theme_Base_AppCompat_Dialog_FixedSize=0x7f0b0034;
-        public static int Theme_Base_AppCompat_Dialog_Light_FixedSize=0x7f0b0035;
-        public static int Theme_Base_AppCompat_DialogWhenLarge=0x7f0b0036;
-        public static int Theme_Base_AppCompat_DialogWhenLarge_Base=0x7f0b0089;
-        public static int Theme_Base_AppCompat_Light=0x7f0b0037;
-        public static int Theme_Base_AppCompat_Light_DarkActionBar=0x7f0b0038;
-        public static int Theme_Base_AppCompat_Light_DialogWhenLarge=0x7f0b0039;
-        public static int Theme_Base_AppCompat_Light_DialogWhenLarge_Base=0x7f0b008a;
-        public static int Theme_Base_Light=0x7f0b003a;
-        public static int Widget_AppCompat_ActionBar=0x7f0b003b;
-        public static int Widget_AppCompat_ActionBar_Solid=0x7f0b003c;
-        public static int Widget_AppCompat_ActionBar_TabBar=0x7f0b003d;
-        public static int Widget_AppCompat_ActionBar_TabText=0x7f0b003e;
-        public static int Widget_AppCompat_ActionBar_TabView=0x7f0b003f;
-        public static int Widget_AppCompat_ActionButton=0x7f0b0040;
-        public static int Widget_AppCompat_ActionButton_CloseMode=0x7f0b0041;
-        public static int Widget_AppCompat_ActionButton_Overflow=0x7f0b0042;
-        public static int Widget_AppCompat_ActionMode=0x7f0b0043;
-        public static int Widget_AppCompat_ActivityChooserView=0x7f0b0044;
-        public static int Widget_AppCompat_AutoCompleteTextView=0x7f0b0045;
-        public static int Widget_AppCompat_Base_ActionBar=0x7f0b0046;
-        public static int Widget_AppCompat_Base_ActionBar_Solid=0x7f0b0047;
-        public static int Widget_AppCompat_Base_ActionBar_TabBar=0x7f0b0048;
-        public static int Widget_AppCompat_Base_ActionBar_TabText=0x7f0b0049;
-        public static int Widget_AppCompat_Base_ActionBar_TabView=0x7f0b004a;
-        public static int Widget_AppCompat_Base_ActionButton=0x7f0b004b;
-        public static int Widget_AppCompat_Base_ActionButton_CloseMode=0x7f0b004c;
-        public static int Widget_AppCompat_Base_ActionButton_Overflow=0x7f0b004d;
-        public static int Widget_AppCompat_Base_ActionMode=0x7f0b004e;
-        public static int Widget_AppCompat_Base_ActivityChooserView=0x7f0b004f;
-        public static int Widget_AppCompat_Base_AutoCompleteTextView=0x7f0b0050;
-        public static int Widget_AppCompat_Base_DropDownItem_Spinner=0x7f0b0051;
-        public static int Widget_AppCompat_Base_ListPopupWindow=0x7f0b0052;
-        public static int Widget_AppCompat_Base_ListView_DropDown=0x7f0b0053;
-        public static int Widget_AppCompat_Base_ListView_Menu=0x7f0b0054;
-        public static int Widget_AppCompat_Base_PopupMenu=0x7f0b0055;
-        public static int Widget_AppCompat_Base_ProgressBar=0x7f0b0056;
-        public static int Widget_AppCompat_Base_ProgressBar_Horizontal=0x7f0b0057;
-        public static int Widget_AppCompat_Base_Spinner=0x7f0b0058;
-        public static int Widget_AppCompat_DropDownItem_Spinner=0x7f0b0059;
-        public static int Widget_AppCompat_Light_ActionBar=0x7f0b005a;
-        public static int Widget_AppCompat_Light_ActionBar_Solid=0x7f0b005b;
-        public static int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0b005c;
-        public static int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0b005d;
-        public static int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0b005e;
-        public static int Widget_AppCompat_Light_ActionBar_TabText=0x7f0b005f;
-        public static int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0b0060;
-        public static int Widget_AppCompat_Light_ActionBar_TabView=0x7f0b0061;
-        public static int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0b0062;
-        public static int Widget_AppCompat_Light_ActionButton=0x7f0b0063;
-        public static int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0b0064;
-        public static int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0b0065;
-        public static int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0b0066;
-        public static int Widget_AppCompat_Light_ActivityChooserView=0x7f0b0067;
-        public static int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0b0068;
-        public static int Widget_AppCompat_Light_Base_ActionBar=0x7f0b0069;
-        public static int Widget_AppCompat_Light_Base_ActionBar_Solid=0x7f0b006a;
-        public static int Widget_AppCompat_Light_Base_ActionBar_Solid_Inverse=0x7f0b006b;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabBar=0x7f0b006c;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabBar_Inverse=0x7f0b006d;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabText=0x7f0b006e;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabText_Inverse=0x7f0b006f;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabView=0x7f0b0070;
-        public static int Widget_AppCompat_Light_Base_ActionBar_TabView_Inverse=0x7f0b0071;
-        public static int Widget_AppCompat_Light_Base_ActionButton=0x7f0b0072;
-        public static int Widget_AppCompat_Light_Base_ActionButton_CloseMode=0x7f0b0073;
-        public static int Widget_AppCompat_Light_Base_ActionButton_Overflow=0x7f0b0074;
-        public static int Widget_AppCompat_Light_Base_ActionMode_Inverse=0x7f0b0075;
-        public static int Widget_AppCompat_Light_Base_ActivityChooserView=0x7f0b0076;
-        public static int Widget_AppCompat_Light_Base_AutoCompleteTextView=0x7f0b0077;
-        public static int Widget_AppCompat_Light_Base_DropDownItem_Spinner=0x7f0b0078;
-        public static int Widget_AppCompat_Light_Base_ListPopupWindow=0x7f0b0079;
-        public static int Widget_AppCompat_Light_Base_ListView_DropDown=0x7f0b007a;
-        public static int Widget_AppCompat_Light_Base_PopupMenu=0x7f0b007b;
-        public static int Widget_AppCompat_Light_Base_Spinner=0x7f0b007c;
-        public static int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0b007d;
-        public static int Widget_AppCompat_Light_ListPopupWindow=0x7f0b007e;
-        public static int Widget_AppCompat_Light_ListView_DropDown=0x7f0b007f;
-        public static int Widget_AppCompat_Light_PopupMenu=0x7f0b0080;
-        public static int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0b0081;
-        public static int Widget_AppCompat_ListPopupWindow=0x7f0b0082;
-        public static int Widget_AppCompat_ListView_DropDown=0x7f0b0083;
-        public static int Widget_AppCompat_ListView_Menu=0x7f0b0084;
-        public static int Widget_AppCompat_PopupMenu=0x7f0b0085;
-        public static int Widget_AppCompat_ProgressBar=0x7f0b0086;
-        public static int Widget_AppCompat_ProgressBar_Horizontal=0x7f0b0087;
-        public static int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b0088;
+        public static int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f080041;
+        public static int TextAppearance_AppCompat_Base_SearchResult=0x7f080042;
+        public static int TextAppearance_AppCompat_Base_SearchResult_Subtitle=0x7f08000a;
+        public static int TextAppearance_AppCompat_Base_SearchResult_Title=0x7f08000b;
+        public static int TextAppearance_AppCompat_Base_Widget_PopupMenu_Large=0x7f08000c;
+        public static int TextAppearance_AppCompat_Base_Widget_PopupMenu_Small=0x7f08000d;
+        public static int TextAppearance_AppCompat_Light_Base_SearchResult=0x7f080043;
+        public static int TextAppearance_AppCompat_Light_Base_SearchResult_Subtitle=0x7f08000e;
+        public static int TextAppearance_AppCompat_Light_Base_SearchResult_Title=0x7f08000f;
+        public static int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Large=0x7f080010;
+        public static int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Small=0x7f080011;
+        public static int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f080044;
+        public static int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f080045;
+        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f080046;
+        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f080047;
+        public static int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f080048;
+        public static int TextAppearance_AppCompat_SearchResult_Title=0x7f080049;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f08004a;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f08004b;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f08004c;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f08004d;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f08004e;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f08004f;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f080050;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f080051;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f080052;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Menu=0x7f080012;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle=0x7f080013;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle_Inverse=0x7f080014;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Title=0x7f080015;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionBar_Title_Inverse=0x7f080016;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle=0x7f080017;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle_Inverse=0x7f080018;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Title=0x7f080019;
+        public static int TextAppearance_AppCompat_Widget_Base_ActionMode_Title_Inverse=0x7f08001a;
+        public static int TextAppearance_AppCompat_Widget_Base_DropDownItem=0x7f080053;
+        public static int TextAppearance_AppCompat_Widget_DropDownItem=0x7f080054;
+        public static int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f080055;
+        public static int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f080056;
+        public static int TextAppearance_Widget_AppCompat_Base_ExpandedMenu_Item=0x7f080057;
+        public static int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f080058;
+        public static int Theme_AppCompat=0x7f080059;
+        public static int Theme_AppCompat_Base_CompactMenu=0x7f08005a;
+        public static int Theme_AppCompat_Base_CompactMenu_Dialog=0x7f08005b;
+        public static int Theme_AppCompat_CompactMenu=0x7f08005c;
+        public static int Theme_AppCompat_CompactMenu_Dialog=0x7f08005d;
+        public static int Theme_AppCompat_DialogWhenLarge=0x7f08005e;
+        public static int Theme_AppCompat_Light=0x7f08005f;
+        public static int Theme_AppCompat_Light_DarkActionBar=0x7f080060;
+        public static int Theme_AppCompat_Light_DialogWhenLarge=0x7f080061;
+        public static int Theme_Base=0x7f080002;
+        public static int Theme_Base_AppCompat=0x7f08001b;
+        public static int Theme_Base_AppCompat_Dialog_FixedSize=0x7f080003;
+        public static int Theme_Base_AppCompat_Dialog_Light_FixedSize=0x7f080004;
+        public static int Theme_Base_AppCompat_DialogWhenLarge=0x7f080000;
+        public static int Theme_Base_AppCompat_DialogWhenLarge_Base=0x7f08001c;
+        public static int Theme_Base_AppCompat_Light=0x7f08001d;
+        public static int Theme_Base_AppCompat_Light_DarkActionBar=0x7f08001e;
+        public static int Theme_Base_AppCompat_Light_DialogWhenLarge=0x7f080001;
+        public static int Theme_Base_AppCompat_Light_DialogWhenLarge_Base=0x7f08001f;
+        public static int Theme_Base_Light=0x7f080005;
+        public static int Widget_AppCompat_ActionBar=0x7f080062;
+        public static int Widget_AppCompat_ActionBar_Solid=0x7f080063;
+        public static int Widget_AppCompat_ActionBar_TabBar=0x7f080064;
+        public static int Widget_AppCompat_ActionBar_TabText=0x7f080065;
+        public static int Widget_AppCompat_ActionBar_TabView=0x7f080066;
+        public static int Widget_AppCompat_ActionButton=0x7f080067;
+        public static int Widget_AppCompat_ActionButton_CloseMode=0x7f080068;
+        public static int Widget_AppCompat_ActionButton_Overflow=0x7f080069;
+        public static int Widget_AppCompat_ActionMode=0x7f08006a;
+        public static int Widget_AppCompat_ActivityChooserView=0x7f08006b;
+        public static int Widget_AppCompat_AutoCompleteTextView=0x7f08006c;
+        public static int Widget_AppCompat_Base_ActionBar=0x7f080020;
+        public static int Widget_AppCompat_Base_ActionBar_Solid=0x7f080021;
+        public static int Widget_AppCompat_Base_ActionBar_TabBar=0x7f080022;
+        public static int Widget_AppCompat_Base_ActionBar_TabText=0x7f080023;
+        public static int Widget_AppCompat_Base_ActionBar_TabView=0x7f080024;
+        public static int Widget_AppCompat_Base_ActionButton=0x7f080025;
+        public static int Widget_AppCompat_Base_ActionButton_CloseMode=0x7f080026;
+        public static int Widget_AppCompat_Base_ActionButton_Overflow=0x7f080027;
+        public static int Widget_AppCompat_Base_ActionMode=0x7f08006d;
+        public static int Widget_AppCompat_Base_ActivityChooserView=0x7f080028;
+        public static int Widget_AppCompat_Base_AutoCompleteTextView=0x7f080006;
+        public static int Widget_AppCompat_Base_DropDownItem_Spinner=0x7f080029;
+        public static int Widget_AppCompat_Base_ListPopupWindow=0x7f08002a;
+        public static int Widget_AppCompat_Base_ListView_DropDown=0x7f08002b;
+        public static int Widget_AppCompat_Base_ListView_Menu=0x7f08002c;
+        public static int Widget_AppCompat_Base_PopupMenu=0x7f08002d;
+        public static int Widget_AppCompat_Base_ProgressBar=0x7f080007;
+        public static int Widget_AppCompat_Base_ProgressBar_Horizontal=0x7f080008;
+        public static int Widget_AppCompat_Base_Spinner=0x7f08002e;
+        public static int Widget_AppCompat_DropDownItem_Spinner=0x7f08006e;
+        public static int Widget_AppCompat_Light_ActionBar=0x7f08006f;
+        public static int Widget_AppCompat_Light_ActionBar_Solid=0x7f080070;
+        public static int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f080071;
+        public static int Widget_AppCompat_Light_ActionBar_TabBar=0x7f080072;
+        public static int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f080073;
+        public static int Widget_AppCompat_Light_ActionBar_TabText=0x7f080074;
+        public static int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f080075;
+        public static int Widget_AppCompat_Light_ActionBar_TabView=0x7f080076;
+        public static int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f080077;
+        public static int Widget_AppCompat_Light_ActionButton=0x7f080078;
+        public static int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f080079;
+        public static int Widget_AppCompat_Light_ActionButton_Overflow=0x7f08007a;
+        public static int Widget_AppCompat_Light_ActionMode_Inverse=0x7f08007b;
+        public static int Widget_AppCompat_Light_ActivityChooserView=0x7f08007c;
+        public static int Widget_AppCompat_Light_AutoCompleteTextView=0x7f08007d;
+        public static int Widget_AppCompat_Light_Base_ActionBar=0x7f08002f;
+        public static int Widget_AppCompat_Light_Base_ActionBar_Solid=0x7f080030;
+        public static int Widget_AppCompat_Light_Base_ActionBar_Solid_Inverse=0x7f080031;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabBar=0x7f080032;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabBar_Inverse=0x7f080033;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabText=0x7f080034;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabText_Inverse=0x7f080035;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabView=0x7f080036;
+        public static int Widget_AppCompat_Light_Base_ActionBar_TabView_Inverse=0x7f080037;
+        public static int Widget_AppCompat_Light_Base_ActionButton=0x7f080038;
+        public static int Widget_AppCompat_Light_Base_ActionButton_CloseMode=0x7f080039;
+        public static int Widget_AppCompat_Light_Base_ActionButton_Overflow=0x7f08003a;
+        public static int Widget_AppCompat_Light_Base_ActionMode_Inverse=0x7f08003b;
+        public static int Widget_AppCompat_Light_Base_ActivityChooserView=0x7f08007e;
+        public static int Widget_AppCompat_Light_Base_AutoCompleteTextView=0x7f080009;
+        public static int Widget_AppCompat_Light_Base_DropDownItem_Spinner=0x7f08003c;
+        public static int Widget_AppCompat_Light_Base_ListPopupWindow=0x7f08003d;
+        public static int Widget_AppCompat_Light_Base_ListView_DropDown=0x7f08003e;
+        public static int Widget_AppCompat_Light_Base_PopupMenu=0x7f08003f;
+        public static int Widget_AppCompat_Light_Base_Spinner=0x7f080040;
+        public static int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f08007f;
+        public static int Widget_AppCompat_Light_ListPopupWindow=0x7f080080;
+        public static int Widget_AppCompat_Light_ListView_DropDown=0x7f080081;
+        public static int Widget_AppCompat_Light_PopupMenu=0x7f080082;
+        public static int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f080083;
+        public static int Widget_AppCompat_ListPopupWindow=0x7f080084;
+        public static int Widget_AppCompat_ListView_DropDown=0x7f080085;
+        public static int Widget_AppCompat_ListView_Menu=0x7f080086;
+        public static int Widget_AppCompat_PopupMenu=0x7f080087;
+        public static int Widget_AppCompat_ProgressBar=0x7f080088;
+        public static int Widget_AppCompat_ProgressBar_Horizontal=0x7f080089;
+        public static int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f08008a;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
@@ -1181,27 +1067,25 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBar_background android.support.v7.appcompat:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundSplit android.support.v7.appcompat:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundStacked android.support.v7.appcompat:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_customNavigationLayout android.support.v7.appcompat:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
-           <tr><td><code>{@link #ActionBar_displayOptions android.support.v7.appcompat:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
-           <tr><td><code>{@link #ActionBar_divider android.support.v7.appcompat:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
-           <tr><td><code>{@link #ActionBar_height android.support.v7.appcompat:height}</code></td><td> Specifies a fixed height.</td></tr>
-           <tr><td><code>{@link #ActionBar_homeLayout android.support.v7.appcompat:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_icon android.support.v7.appcompat:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle android.support.v7.appcompat:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
-           <tr><td><code>{@link #ActionBar_itemPadding android.support.v7.appcompat:itemPadding}</code></td><td>
-             Specifies padding that should be applied to the left and right sides of
-             system-provided items in the bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_logo android.support.v7.appcompat:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
-           <tr><td><code>{@link #ActionBar_navigationMode android.support.v7.appcompat:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarPadding android.support.v7.appcompat:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarStyle android.support.v7.appcompat:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_subtitle android.support.v7.appcompat:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_subtitleTextStyle android.support.v7.appcompat:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionBar_title android.support.v7.appcompat:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_titleTextStyle android.support.v7.appcompat:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionBar_background android.support.v7.appcompat:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundSplit android.support.v7.appcompat:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundStacked android.support.v7.appcompat:backgroundStacked}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_customNavigationLayout android.support.v7.appcompat:customNavigationLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_displayOptions android.support.v7.appcompat:displayOptions}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_divider android.support.v7.appcompat:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_height android.support.v7.appcompat:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_homeLayout android.support.v7.appcompat:homeLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_icon android.support.v7.appcompat:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle android.support.v7.appcompat:indeterminateProgressStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_itemPadding android.support.v7.appcompat:itemPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_logo android.support.v7.appcompat:logo}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_navigationMode android.support.v7.appcompat:navigationMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarPadding android.support.v7.appcompat:progressBarPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarStyle android.support.v7.appcompat:progressBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitle android.support.v7.appcompat:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_subtitleTextStyle android.support.v7.appcompat:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_title android.support.v7.appcompat:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBar_titleTextStyle android.support.v7.appcompat:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionBar_background
            @see #ActionBar_backgroundSplit
@@ -1231,61 +1115,52 @@ containing a value of this type.
             0x7f01004d, 0x7f01004e, 0x7f01004f
         };
         /**
-          <p>
-          @attr description
-           Specifies a background drawable for the action bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#background}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:background
         */
-        public static final int ActionBar_background = 10;
+        public static int ActionBar_background = 10;
         /**
-          <p>
-          @attr description
-           Specifies a background drawable for the bottom component of a split action bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#backgroundSplit}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:backgroundSplit
         */
-        public static final int ActionBar_backgroundSplit = 12;
+        public static int ActionBar_backgroundSplit = 12;
         /**
-          <p>
-          @attr description
-           Specifies a background drawable for a second stacked row of the action bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#backgroundStacked}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:backgroundStacked
         */
-        public static final int ActionBar_backgroundStacked = 11;
+        public static int ActionBar_backgroundStacked = 11;
         /**
-          <p>
-          @attr description
-           Specifies a layout for custom navigation. Overrides navigationMode. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#customNavigationLayout}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:customNavigationLayout
         */
-        public static final int ActionBar_customNavigationLayout = 13;
+        public static int ActionBar_customNavigationLayout = 13;
         /**
-          <p>
-          @attr description
-           Options affecting how the action bar is displayed. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#displayOptions}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -1301,26 +1176,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>showCustom</code></td><td>0x10</td><td></td></tr>
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:displayOptions
         */
-        public static final int ActionBar_displayOptions = 3;
+        public static int ActionBar_displayOptions = 3;
         /**
-          <p>
-          @attr description
-           Specifies the drawable used for item dividers. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#divider}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:divider
         */
-        public static final int ActionBar_divider = 9;
+        public static int ActionBar_divider = 9;
         /**
-          <p>
-          @attr description
-           Specifies a fixed height. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#height}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1331,53 +1202,42 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:height
         */
-        public static final int ActionBar_height = 0;
+        public static int ActionBar_height = 0;
         /**
-          <p>
-          @attr description
-           Specifies a layout to use for the "home" section of the action bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#homeLayout}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:homeLayout
         */
-        public static final int ActionBar_homeLayout = 14;
+        public static int ActionBar_homeLayout = 14;
         /**
-          <p>
-          @attr description
-           Specifies the drawable used for the application icon. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#icon}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:icon
         */
-        public static final int ActionBar_icon = 7;
+        public static int ActionBar_icon = 7;
         /**
-          <p>
-          @attr description
-           Specifies a style resource to use for an indeterminate progress spinner. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#indeterminateProgressStyle}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:indeterminateProgressStyle
         */
-        public static final int ActionBar_indeterminateProgressStyle = 16;
+        public static int ActionBar_indeterminateProgressStyle = 16;
         /**
-          <p>
-          @attr description
-          
-             Specifies padding that should be applied to the left and right sides of
-             system-provided items in the bar.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#itemPadding}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1388,26 +1248,22 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:itemPadding
         */
-        public static final int ActionBar_itemPadding = 18;
+        public static int ActionBar_itemPadding = 18;
         /**
-          <p>
-          @attr description
-           Specifies the drawable used for the application logo. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#logo}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:logo
         */
-        public static final int ActionBar_logo = 8;
+        public static int ActionBar_logo = 8;
         /**
-          <p>
-          @attr description
-           The type of navigation to use. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#navigationMode}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -1416,18 +1272,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>normal</code></td><td>0</td><td> Normal static title text </td></tr>
-<tr><td><code>listMode</code></td><td>1</td><td> The action bar will use a selection list for navigation. </td></tr>
-<tr><td><code>tabMode</code></td><td>2</td><td> The action bar will use a series of horizontal tabs for navigation. </td></tr>
+<tr><td><code>normal</code></td><td>0</td><td></td></tr>
+<tr><td><code>listMode</code></td><td>1</td><td></td></tr>
+<tr><td><code>tabMode</code></td><td>2</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:navigationMode
         */
-        public static final int ActionBar_navigationMode = 2;
+        public static int ActionBar_navigationMode = 2;
         /**
-          <p>
-          @attr description
-           Specifies the horizontal padding on either end for an embedded progress bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#progressBarPadding}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1438,26 +1292,22 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:progressBarPadding
         */
-        public static final int ActionBar_progressBarPadding = 17;
+        public static int ActionBar_progressBarPadding = 17;
         /**
-          <p>
-          @attr description
-           Specifies a style resource to use for an embedded progress bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#progressBarStyle}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:progressBarStyle
         */
-        public static final int ActionBar_progressBarStyle = 15;
+        public static int ActionBar_progressBarStyle = 15;
         /**
-          <p>
-          @attr description
-           Specifies subtitle text used for navigationMode="normal" 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#subtitle}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -1466,26 +1316,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:subtitle
         */
-        public static final int ActionBar_subtitle = 4;
+        public static int ActionBar_subtitle = 4;
         /**
-          <p>
-          @attr description
-           Specifies a style to use for subtitle text. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#subtitleTextStyle}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:subtitleTextStyle
         */
-        public static final int ActionBar_subtitleTextStyle = 6;
+        public static int ActionBar_subtitleTextStyle = 6;
         /**
-          <p>
-          @attr description
-           Specifies title text used for navigationMode="normal" 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#title}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -1494,22 +1340,19 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:title
         */
-        public static final int ActionBar_title = 1;
+        public static int ActionBar_title = 1;
         /**
-          <p>
-          @attr description
-           Specifies a style to use for title text. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#titleTextStyle}
+          attribute's value can be found in the {@link #ActionBar} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:titleTextStyle
         */
-        public static final int ActionBar_titleTextStyle = 5;
+        public static int ActionBar_titleTextStyle = 5;
         /** Attributes that can be used with a ActionBarLayout.
            <p>Includes the following attributes:</p>
            <table>
@@ -1528,7 +1371,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           attribute's value can be found in the {@link #ActionBarLayout} array.
           @attr name android:layout_gravity
         */
-        public static final int ActionBarLayout_android_layout_gravity = 0;
+        public static int ActionBarLayout_android_layout_gravity = 0;
         /** Attributes that can be used with a ActionBarWindow.
            <p>Includes the following attributes:</p>
            <table>
@@ -1537,18 +1380,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #ActionBarWindow_windowActionBar android.support.v7.appcompat:windowActionBar}</code></td><td></td></tr>
            <tr><td><code>{@link #ActionBarWindow_windowActionBarOverlay android.support.v7.appcompat:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMajor android.support.v7.appcompat:windowFixedHeightMajor}</code></td><td>
-             A fixed height for the window along the major axis of the screen,
-             that is, when in portrait.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMinor android.support.v7.appcompat:windowFixedHeightMinor}</code></td><td>
-             A fixed height for the window along the minor axis of the screen,
-             that is, when in landscape.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMajor android.support.v7.appcompat:windowFixedWidthMajor}</code></td><td>
-             A fixed width for the window along the major axis of the screen,
-             that is, when in landscape.</td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMinor android.support.v7.appcompat:windowFixedWidthMinor}</code></td><td>
-             A fixed width for the window along the minor axis of the screen,
-             that is, when in portrait.</td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMajor android.support.v7.appcompat:windowFixedHeightMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowFixedHeightMinor android.support.v7.appcompat:windowFixedHeightMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMajor android.support.v7.appcompat:windowFixedWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowFixedWidthMinor android.support.v7.appcompat:windowFixedWidthMinor}</code></td><td></td></tr>
            <tr><td><code>{@link #ActionBarWindow_windowSplitActionBar android.support.v7.appcompat:windowSplitActionBar}</code></td><td></td></tr>
            </table>
            @see #ActionBarWindow_windowActionBar
@@ -1576,7 +1411,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name android.support.v7.appcompat:windowActionBar
         */
-        public static final int ActionBarWindow_windowActionBar = 0;
+        public static int ActionBarWindow_windowActionBar = 0;
         /**
           <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #ActionBarWindow} array.
@@ -1590,15 +1425,10 @@ theme attribute (in the form
 containing a value of this type.
           @attr name android.support.v7.appcompat:windowActionBarOverlay
         */
-        public static final int ActionBarWindow_windowActionBarOverlay = 1;
+        public static int ActionBarWindow_windowActionBarOverlay = 1;
         /**
-          <p>
-          @attr description
-          
-             A fixed height for the window along the major axis of the screen,
-             that is, when in portrait. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowFixedHeightMajor}
+          attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
           <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1612,18 +1442,12 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:windowFixedHeightMajor
         */
-        public static final int ActionBarWindow_windowFixedHeightMajor = 6;
+        public static int ActionBarWindow_windowFixedHeightMajor = 6;
         /**
-          <p>
-          @attr description
-          
-             A fixed height for the window along the minor axis of the screen,
-             that is, when in landscape. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowFixedHeightMinor}
+          attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
           <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1637,18 +1461,12 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:windowFixedHeightMinor
         */
-        public static final int ActionBarWindow_windowFixedHeightMinor = 4;
+        public static int ActionBarWindow_windowFixedHeightMinor = 4;
         /**
-          <p>
-          @attr description
-          
-             A fixed width for the window along the major axis of the screen,
-             that is, when in landscape. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowFixedWidthMajor}
+          attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
           <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1662,18 +1480,12 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:windowFixedWidthMajor
         */
-        public static final int ActionBarWindow_windowFixedWidthMajor = 3;
+        public static int ActionBarWindow_windowFixedWidthMajor = 3;
         /**
-          <p>
-          @attr description
-          
-             A fixed width for the window along the minor axis of the screen,
-             that is, when in portrait. Can be either an absolute dimension
-             or a fraction of the screen size in that dimension.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowFixedWidthMinor}
+          attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
           <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1687,10 +1499,9 @@ some parent container.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:windowFixedWidthMinor
         */
-        public static final int ActionBarWindow_windowFixedWidthMinor = 5;
+        public static int ActionBarWindow_windowFixedWidthMinor = 5;
         /**
           <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #ActionBarWindow} array.
@@ -1704,7 +1515,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name android.support.v7.appcompat:windowSplitActionBar
         */
-        public static final int ActionBarWindow_windowSplitActionBar = 2;
+        public static int ActionBarWindow_windowSplitActionBar = 2;
         /** Attributes that can be used with a ActionMenuItemView.
            <p>Includes the following attributes:</p>
            <table>
@@ -1723,8 +1534,8 @@ containing a value of this type.
           attribute's value can be found in the {@link #ActionMenuItemView} array.
           @attr name android:minWidth
         */
-        public static final int ActionMenuItemView_android_minWidth = 0;
-        /**  Size of padding on either end of a divider. 
+        public static int ActionMenuItemView_android_minWidth = 0;
+        /** Attributes that can be used with a ActionMenuView.
          */
         public static final int[] ActionMenuView = {
             
@@ -1735,11 +1546,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMode_background android.support.v7.appcompat:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_backgroundSplit android.support.v7.appcompat:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_height android.support.v7.appcompat:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_subtitleTextStyle android.support.v7.appcompat:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionMode_titleTextStyle android.support.v7.appcompat:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionMode_background android.support.v7.appcompat:background}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_backgroundSplit android.support.v7.appcompat:backgroundSplit}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_height android.support.v7.appcompat:height}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_subtitleTextStyle android.support.v7.appcompat:subtitleTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMode_titleTextStyle android.support.v7.appcompat:titleTextStyle}</code></td><td></td></tr>
            </table>
            @see #ActionMode_background
            @see #ActionMode_backgroundSplit
@@ -1752,35 +1563,30 @@ containing a value of this type.
             0x7f010049
         };
         /**
-          <p>
-          @attr description
-           Specifies a background for the action mode bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#background}
+          attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:background
         */
-        public static final int ActionMode_background = 3;
+        public static int ActionMode_background = 3;
         /**
-          <p>
-          @attr description
-           Specifies a background for the split action mode bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#backgroundSplit}
+          attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:backgroundSplit
         */
-        public static final int ActionMode_backgroundSplit = 4;
+        public static int ActionMode_backgroundSplit = 4;
         /**
-          <p>
-          @attr description
-           Specifies a fixed height for the action mode bar. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#height}
+          attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1791,43 +1597,37 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:height
         */
-        public static final int ActionMode_height = 0;
+        public static int ActionMode_height = 0;
         /**
-          <p>
-          @attr description
-           Specifies a style to use for subtitle text. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#subtitleTextStyle}
+          attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:subtitleTextStyle
         */
-        public static final int ActionMode_subtitleTextStyle = 2;
+        public static int ActionMode_subtitleTextStyle = 2;
         /**
-          <p>
-          @attr description
-           Specifies a style to use for title text. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#titleTextStyle}
+          attribute's value can be found in the {@link #ActionMode} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:titleTextStyle
         */
-        public static final int ActionMode_titleTextStyle = 1;
+        public static int ActionMode_titleTextStyle = 1;
         /** Attributes that can be used with a ActivityChooserView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable android.support.v7.appcompat:expandActivityOverflowButtonDrawable}</code></td><td>
-             The drawable to show in the button for expanding the activities overflow popup.</td></tr>
-           <tr><td><code>{@link #ActivityChooserView_initialActivityCount android.support.v7.appcompat:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
+           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable android.support.v7.appcompat:expandActivityOverflowButtonDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActivityChooserView_initialActivityCount android.support.v7.appcompat:initialActivityCount}</code></td><td></td></tr>
            </table>
            @see #ActivityChooserView_expandActivityOverflowButtonDrawable
            @see #ActivityChooserView_initialActivityCount
@@ -1836,27 +1636,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010057, 0x7f010058
         };
         /**
-          <p>
-          @attr description
-          
-             The drawable to show in the button for expanding the activities overflow popup.
-             <strong>Note:</strong> Clients would like to set this drawable
-             as a clue about the action the chosen activity will perform. For
-             example, if share activity is to be chosen the drawable should
-             give a clue that sharing is to be performed.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#expandActivityOverflowButtonDrawable}
+          attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:expandActivityOverflowButtonDrawable
         */
-        public static final int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
+        public static int ActivityChooserView_expandActivityOverflowButtonDrawable = 1;
         /**
-          <p>
-          @attr description
-           The maximal number of items initially shown in the activity list. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#initialActivityCount}
+          attribute's value can be found in the {@link #ActivityChooserView} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -1865,17 +1656,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:initialActivityCount
         */
-        public static final int ActivityChooserView_initialActivityCount = 0;
+        public static int ActivityChooserView_initialActivityCount = 0;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CompatTextView_textAllCaps android.support.v7.appcompat:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
+           <tr><td><code>{@link #CompatTextView_textAllCaps android.support.v7.appcompat:textAllCaps}</code></td><td></td></tr>
            </table>
            @see #CompatTextView_textAllCaps
          */
@@ -1883,27 +1673,25 @@ containing a value of this type.
             0x7f010059
         };
         /**
-          <p>
-          @attr description
-           Present the text in ALL CAPS. This may use a small-caps form when available. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#textAllCaps}
+          attribute's value can be found in the {@link #CompatTextView} array.
 
 
           <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:textAllCaps
         */
-        public static final int CompatTextView_textAllCaps = 0;
+        public static int CompatTextView_textAllCaps = 0;
         /** Attributes that can be used with a LinearLayoutICS.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LinearLayoutICS_divider android.support.v7.appcompat:divider}</code></td><td> Drawable to use as a vertical divider between buttons.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_dividerPadding android.support.v7.appcompat:dividerPadding}</code></td><td> Size of padding on either end of a divider.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_showDividers android.support.v7.appcompat:showDividers}</code></td><td> Setting for which dividers to show.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_divider android.support.v7.appcompat:divider}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_dividerPadding android.support.v7.appcompat:dividerPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_showDividers android.support.v7.appcompat:showDividers}</code></td><td></td></tr>
            </table>
            @see #LinearLayoutICS_divider
            @see #LinearLayoutICS_dividerPadding
@@ -1913,21 +1701,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010046, 0x7f01005a, 0x7f01005b
         };
         /**
-          <p>
-          @attr description
-           Drawable to use as a vertical divider between buttons. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#divider}
+          attribute's value can be found in the {@link #LinearLayoutICS} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:divider
         */
-        public static final int LinearLayoutICS_divider = 0;
+        public static int LinearLayoutICS_divider = 0;
         /**
-          <p>
-          @attr description
-           Size of padding on either end of a divider. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#dividerPadding}
+          attribute's value can be found in the {@link #LinearLayoutICS} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -1938,14 +1723,12 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:dividerPadding
         */
-        public static final int LinearLayoutICS_dividerPadding = 2;
+        public static int LinearLayoutICS_dividerPadding = 2;
         /**
-          <p>
-          @attr description
-           Setting for which dividers to show. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#showDividers}
+          attribute's value can be found in the {@link #LinearLayoutICS} array.
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -1959,24 +1742,21 @@ containing a value of this type.
 <tr><td><code>middle</code></td><td>2</td><td></td></tr>
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:showDividers
         */
-        public static final int LinearLayoutICS_showDividers = 1;
+        public static int LinearLayoutICS_showDividers = 1;
         /** Attributes that can be used with a MenuGroup.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuGroup_android_checkableBehavior android:checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_enabled android:enabled}</code></td><td> Whether the items are enabled.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_id android:id}</code></td><td> The ID of the group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_menuCategory android:menuCategory}</code></td><td>
-             The category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_orderInCategory android:orderInCategory}</code></td><td>
-             The order within the category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_visible android:visible}</code></td><td> Whether the items are shown/visible.</td></tr>
+           <tr><td><code>{@link #MenuGroup_android_checkableBehavior android:checkableBehavior}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuGroup_android_enabled android:enabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuGroup_android_id android:id}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuGroup_android_menuCategory android:menuCategory}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuGroup_android_orderInCategory android:orderInCategory}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuGroup_android_visible android:visible}</code></td><td></td></tr>
            </table>
            @see #MenuGroup_android_checkableBehavior
            @see #MenuGroup_android_enabled
@@ -1990,102 +1770,64 @@ containing a value of this type.
             0x010101df, 0x010101e0
         };
         /**
-          <p>
-          @attr description
-           Whether the items are capable of displaying a check mark. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checkableBehavior}.
+          <p>This symbol is the offset where the {@link android.R.attr#checkableBehavior}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:checkableBehavior
         */
-        public static final int MenuGroup_android_checkableBehavior = 5;
+        public static int MenuGroup_android_checkableBehavior = 5;
         /**
-          <p>
-          @attr description
-           Whether the items are enabled. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#enabled}.
+          <p>This symbol is the offset where the {@link android.R.attr#enabled}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:enabled
         */
-        public static final int MenuGroup_android_enabled = 0;
+        public static int MenuGroup_android_enabled = 0;
         /**
-          <p>
-          @attr description
-           The ID of the group. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#id}.
+          <p>This symbol is the offset where the {@link android.R.attr#id}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:id
         */
-        public static final int MenuGroup_android_id = 1;
+        public static int MenuGroup_android_id = 1;
         /**
-          <p>
-          @attr description
-          
-             The category applied to all items within this group.
-             (This will be or'ed with the orderInCategory attribute.)
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#menuCategory}.
+          <p>This symbol is the offset where the {@link android.R.attr#menuCategory}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:menuCategory
         */
-        public static final int MenuGroup_android_menuCategory = 3;
+        public static int MenuGroup_android_menuCategory = 3;
         /**
-          <p>
-          @attr description
-          
-             The order within the category applied to all items within this group.
-             (This will be or'ed with the category attribute.)
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#orderInCategory}.
+          <p>This symbol is the offset where the {@link android.R.attr#orderInCategory}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:orderInCategory
         */
-        public static final int MenuGroup_android_orderInCategory = 4;
+        public static int MenuGroup_android_orderInCategory = 4;
         /**
-          <p>
-          @attr description
-           Whether the items are shown/visible. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#visible}.
+          <p>This symbol is the offset where the {@link android.R.attr#visible}
+          attribute's value can be found in the {@link #MenuGroup} array.
           @attr name android:visible
         */
-        public static final int MenuGroup_android_visible = 2;
+        public static int MenuGroup_android_visible = 2;
         /** Attributes that can be used with a MenuItem.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuItem_actionLayout android.support.v7.appcompat:actionLayout}</code></td><td>
-             An optional layout to be used as an action view.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionProviderClass android.support.v7.appcompat:actionProviderClass}</code></td><td>
-             The name of an optional ActionProvider class to instantiate an action view
-             and perform operations such as default action for that menu item.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionViewClass android.support.v7.appcompat:actionViewClass}</code></td><td>
-             The name of an optional View class to instantiate and use as an
-             action view.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td>
-             The alphabetic shortcut key.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_checked android:checked}</code></td><td>
-             Whether the item is checked.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_enabled android:enabled}</code></td><td> Whether the item is enabled.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_icon android:icon}</code></td><td>
-             The icon associated with this item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_id android:id}</code></td><td> The ID of the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_menuCategory android:menuCategory}</code></td><td>
-             The category applied to the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_numericShortcut android:numericShortcut}</code></td><td>
-             The numeric shortcut key.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_onClick android:onClick}</code></td><td>
-             Name of a method on the Context used to inflate the menu that will be
-             called when the item is clicked.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_orderInCategory android:orderInCategory}</code></td><td>
-             The order within the category applied to the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_title android:title}</code></td><td> The title associated with the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_titleCondensed android:titleCondensed}</code></td><td>
-             The condensed title associated with the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_visible android:visible}</code></td><td> Whether the item is shown/visible.</td></tr>
-           <tr><td><code>{@link #MenuItem_showAsAction android.support.v7.appcompat:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
+           <tr><td><code>{@link #MenuItem_actionLayout android.support.v7.appcompat:actionLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionProviderClass android.support.v7.appcompat:actionProviderClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_actionViewClass android.support.v7.appcompat:actionViewClass}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_alphabeticShortcut android:alphabeticShortcut}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_checkable android:checkable}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_checked android:checked}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_enabled android:enabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_icon android:icon}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_id android:id}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_menuCategory android:menuCategory}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_numericShortcut android:numericShortcut}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_onClick android:onClick}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_orderInCategory android:orderInCategory}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_title android:title}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_titleCondensed android:titleCondensed}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_android_visible android:visible}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuItem_showAsAction android.support.v7.appcompat:showAsAction}</code></td><td></td></tr>
            </table>
            @see #MenuItem_actionLayout
            @see #MenuItem_actionProviderClass
@@ -2113,30 +1855,18 @@ containing a value of this type.
             0x7f01005f
         };
         /**
-          <p>
-          @attr description
-          
-             An optional layout to be used as an action view.
-             See {@link android.view.MenuItem#setActionView(android.view.View)}
-             for more info.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#actionLayout}
+          attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:actionLayout
         */
-        public static final int MenuItem_actionLayout = 14;
+        public static int MenuItem_actionLayout = 14;
         /**
-          <p>
-          @attr description
-          
-             The name of an optional ActionProvider class to instantiate an action view
-             and perform operations such as default action for that menu item.
-             See {@link android.view.MenuItem#setActionProvider(android.view.ActionProvider)}
-             for more info.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#actionProviderClass}
+          attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -2145,18 +1875,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:actionProviderClass
         */
-        public static final int MenuItem_actionProviderClass = 16;
+        public static int MenuItem_actionProviderClass = 16;
         /**
-          <p>
-          @attr description
-          
-             The name of an optional View class to instantiate and use as an
-             action view. See {@link android.view.MenuItem#setActionView(android.view.View)}
-             for more info.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#actionViewClass}
+          attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -2165,155 +1889,90 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:actionViewClass
         */
-        public static final int MenuItem_actionViewClass = 15;
+        public static int MenuItem_actionViewClass = 15;
         /**
-          <p>
-          @attr description
-          
-             The alphabetic shortcut key.  This is the shortcut when using a keyboard
-             with alphabetic keys.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#alphabeticShortcut}.
+          <p>This symbol is the offset where the {@link android.R.attr#alphabeticShortcut}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:alphabeticShortcut
         */
-        public static final int MenuItem_android_alphabeticShortcut = 9;
+        public static int MenuItem_android_alphabeticShortcut = 9;
         /**
-          <p>
-          @attr description
-           Whether the item is capable of displaying a check mark. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checkable}.
+          <p>This symbol is the offset where the {@link android.R.attr#checkable}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:checkable
         */
-        public static final int MenuItem_android_checkable = 11;
+        public static int MenuItem_android_checkable = 11;
         /**
-          <p>
-          @attr description
-          
-             Whether the item is checked.  Note that you must first have enabled checking with
-             the checkable attribute or else the check mark will not appear.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#checked}.
+          <p>This symbol is the offset where the {@link android.R.attr#checked}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:checked
         */
-        public static final int MenuItem_android_checked = 3;
+        public static int MenuItem_android_checked = 3;
         /**
-          <p>
-          @attr description
-           Whether the item is enabled. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#enabled}.
+          <p>This symbol is the offset where the {@link android.R.attr#enabled}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:enabled
         */
-        public static final int MenuItem_android_enabled = 1;
+        public static int MenuItem_android_enabled = 1;
         /**
-          <p>
-          @attr description
-          
-             The icon associated with this item.  This icon will not always be shown, so
-             the title should be sufficient in describing this item.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#icon}.
+          <p>This symbol is the offset where the {@link android.R.attr#icon}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:icon
         */
-        public static final int MenuItem_android_icon = 0;
+        public static int MenuItem_android_icon = 0;
         /**
-          <p>
-          @attr description
-           The ID of the item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#id}.
+          <p>This symbol is the offset where the {@link android.R.attr#id}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:id
         */
-        public static final int MenuItem_android_id = 2;
+        public static int MenuItem_android_id = 2;
         /**
-          <p>
-          @attr description
-          
-             The category applied to the item.
-             (This will be or'ed with the orderInCategory attribute.)
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#menuCategory}.
+          <p>This symbol is the offset where the {@link android.R.attr#menuCategory}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:menuCategory
         */
-        public static final int MenuItem_android_menuCategory = 5;
+        public static int MenuItem_android_menuCategory = 5;
         /**
-          <p>
-          @attr description
-          
-             The numeric shortcut key.  This is the shortcut when using a numeric (e.g., 12-key)
-             keyboard.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#numericShortcut}.
+          <p>This symbol is the offset where the {@link android.R.attr#numericShortcut}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:numericShortcut
         */
-        public static final int MenuItem_android_numericShortcut = 10;
+        public static int MenuItem_android_numericShortcut = 10;
         /**
-          <p>
-          @attr description
-          
-             Name of a method on the Context used to inflate the menu that will be
-             called when the item is clicked.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#onClick}.
+          <p>This symbol is the offset where the {@link android.R.attr#onClick}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:onClick
         */
-        public static final int MenuItem_android_onClick = 12;
+        public static int MenuItem_android_onClick = 12;
         /**
-          <p>
-          @attr description
-          
-             The order within the category applied to the item.
-             (This will be or'ed with the category attribute.)
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#orderInCategory}.
+          <p>This symbol is the offset where the {@link android.R.attr#orderInCategory}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:orderInCategory
         */
-        public static final int MenuItem_android_orderInCategory = 6;
+        public static int MenuItem_android_orderInCategory = 6;
         /**
-          <p>
-          @attr description
-           The title associated with the item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#title}.
+          <p>This symbol is the offset where the {@link android.R.attr#title}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:title
         */
-        public static final int MenuItem_android_title = 7;
+        public static int MenuItem_android_title = 7;
         /**
-          <p>
-          @attr description
-          
-             The condensed title associated with the item.  This is used in situations where the
-             normal title may be too long to be displayed.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#titleCondensed}.
+          <p>This symbol is the offset where the {@link android.R.attr#titleCondensed}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:titleCondensed
         */
-        public static final int MenuItem_android_titleCondensed = 8;
+        public static int MenuItem_android_titleCondensed = 8;
         /**
-          <p>
-          @attr description
-           Whether the item is shown/visible. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#visible}.
+          <p>This symbol is the offset where the {@link android.R.attr#visible}
+          attribute's value can be found in the {@link #MenuItem} array.
           @attr name android:visible
         */
-        public static final int MenuItem_android_visible = 4;
+        public static int MenuItem_android_visible = 4;
         /**
-          <p>
-          @attr description
-           How this item should display in the Action Bar, if present. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#showAsAction}
+          attribute's value can be found in the {@link #MenuItem} array.
 
 
           <p>Must be one or more (separated by '|') of the following constant values.</p>
@@ -2322,49 +1981,29 @@ containing a value of this type.
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>never</code></td><td>0</td><td>
-                 Never show this item in an action bar, show it in the overflow menu instead.
-                 Mutually exclusive with "ifRoom" and "always".
-            </td></tr>
-<tr><td><code>ifRoom</code></td><td>1</td><td>
-                 Show this item in an action bar if there is room for it as determined
-                 by the system. Favor this option over "always" where possible.
-                 Mutually exclusive with "never" and "always".
-            </td></tr>
-<tr><td><code>always</code></td><td>2</td><td>
-                 Always show this item in an actionbar, even if it would override
-                 the system's limits of how much stuff to put there. This may make
-                 your action bar look bad on some screens. In most cases you should
-                 use "ifRoom" instead. Mutually exclusive with "ifRoom" and "never".
-            </td></tr>
-<tr><td><code>withText</code></td><td>4</td><td>
-                 When this item is shown as an action in the action bar, show a text
-                 label with it even if it has an icon representation.
-            </td></tr>
-<tr><td><code>collapseActionView</code></td><td>8</td><td>
-                 This item's action view collapses to a normal menu
-                 item. When expanded, the action view takes over a
-                 larger segment of its container.
-            </td></tr>
+<tr><td><code>never</code></td><td>0</td><td></td></tr>
+<tr><td><code>ifRoom</code></td><td>1</td><td></td></tr>
+<tr><td><code>always</code></td><td>2</td><td></td></tr>
+<tr><td><code>withText</code></td><td>4</td><td></td></tr>
+<tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:showAsAction
         */
-        public static final int MenuItem_showAsAction = 13;
+        public static int MenuItem_showAsAction = 13;
         /** Attributes that can be used with a MenuView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuView_android_headerBackground android:headerBackground}</code></td><td> Default background for the menu header.</td></tr>
-           <tr><td><code>{@link #MenuView_android_horizontalDivider android:horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemBackground android:itemBackground}</code></td><td> Default background for each menu item.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha android:itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemTextAppearance android:itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
-           <tr><td><code>{@link #MenuView_android_preserveIconSpacing android:preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
-           <tr><td><code>{@link #MenuView_android_verticalDivider android:verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
-           <tr><td><code>{@link #MenuView_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
+           <tr><td><code>{@link #MenuView_android_headerBackground android:headerBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_horizontalDivider android:horizontalDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_itemBackground android:itemBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha android:itemIconDisabledAlpha}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_itemTextAppearance android:itemTextAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_preserveIconSpacing android:preserveIconSpacing}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_verticalDivider android:verticalDivider}</code></td><td></td></tr>
+           <tr><td><code>{@link #MenuView_android_windowAnimationStyle android:windowAnimationStyle}</code></td><td></td></tr>
            </table>
            @see #MenuView_android_headerBackground
            @see #MenuView_android_horizontalDivider
@@ -2377,91 +2016,67 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x010103f8
+            0x0101012f, 0x01010130, 0x01010131, 0x0101052f
         };
         /**
-          <p>
-          @attr description
-           Default background for the menu header. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#headerBackground}.
+          <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:headerBackground
         */
-        public static final int MenuView_android_headerBackground = 4;
+        public static int MenuView_android_headerBackground = 4;
         /**
-          <p>
-          @attr description
-           Default horizontal divider between rows of menu items. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#horizontalDivider}.
+          <p>This symbol is the offset where the {@link android.R.attr#horizontalDivider}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:horizontalDivider
         */
-        public static final int MenuView_android_horizontalDivider = 2;
+        public static int MenuView_android_horizontalDivider = 2;
         /**
-          <p>
-          @attr description
-           Default background for each menu item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#itemBackground}.
+          <p>This symbol is the offset where the {@link android.R.attr#itemBackground}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:itemBackground
         */
-        public static final int MenuView_android_itemBackground = 5;
+        public static int MenuView_android_itemBackground = 5;
         /**
-          <p>
-          @attr description
-           Default disabled icon alpha for each menu item that shows an icon. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#itemIconDisabledAlpha}.
+          <p>This symbol is the offset where the {@link android.R.attr#itemIconDisabledAlpha}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:itemIconDisabledAlpha
         */
-        public static final int MenuView_android_itemIconDisabledAlpha = 6;
+        public static int MenuView_android_itemIconDisabledAlpha = 6;
         /**
-          <p>
-          @attr description
-           Default appearance of menu item text. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#itemTextAppearance}.
+          <p>This symbol is the offset where the {@link android.R.attr#itemTextAppearance}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:itemTextAppearance
         */
-        public static final int MenuView_android_itemTextAppearance = 1;
+        public static int MenuView_android_itemTextAppearance = 1;
         /**
-          <p>
-          @attr description
-           Whether space should be reserved in layout when an icon is missing. 
-          <p>This is a private symbol.
+          <p>This symbol is the offset where the {@link android.R.attr#preserveIconSpacing}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:preserveIconSpacing
         */
-        public static final int MenuView_android_preserveIconSpacing = 7;
+        public static int MenuView_android_preserveIconSpacing = 7;
         /**
-          <p>
-          @attr description
-           Default vertical divider between menu items. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#verticalDivider}.
+          <p>This symbol is the offset where the {@link android.R.attr#verticalDivider}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:verticalDivider
         */
-        public static final int MenuView_android_verticalDivider = 3;
+        public static int MenuView_android_verticalDivider = 3;
         /**
-          <p>
-          @attr description
-           Default animations for the menu. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#windowAnimationStyle}.
+          <p>This symbol is the offset where the {@link android.R.attr#windowAnimationStyle}
+          attribute's value can be found in the {@link #MenuView} array.
           @attr name android:windowAnimationStyle
         */
-        public static final int MenuView_android_windowAnimationStyle = 0;
+        public static int MenuView_android_windowAnimationStyle = 0;
         /** Attributes that can be used with a SearchView.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td> The input type to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_iconifiedByDefault android.support.v7.appcompat:iconifiedByDefault}</code></td><td>
-             The default state of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_queryHint android.support.v7.appcompat:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
+           <tr><td><code>{@link #SearchView_android_imeOptions android:imeOptions}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_android_inputType android:inputType}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_android_maxWidth android:maxWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_iconifiedByDefault android.support.v7.appcompat:iconifiedByDefault}</code></td><td></td></tr>
+           <tr><td><code>{@link #SearchView_queryHint android.support.v7.appcompat:queryHint}</code></td><td></td></tr>
            </table>
            @see #SearchView_android_imeOptions
            @see #SearchView_android_inputType
@@ -2474,39 +2089,26 @@ containing a value of this type.
             0x7f010061
         };
         /**
-          <p>
-          @attr description
-           The IME options to set on the query text field. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#imeOptions}.
+          <p>This symbol is the offset where the {@link android.R.attr#imeOptions}
+          attribute's value can be found in the {@link #SearchView} array.
           @attr name android:imeOptions
         */
-        public static final int SearchView_android_imeOptions = 2;
+        public static int SearchView_android_imeOptions = 2;
         /**
-          <p>
-          @attr description
-           The input type to set on the query text field. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#inputType}.
+          <p>This symbol is the offset where the {@link android.R.attr#inputType}
+          attribute's value can be found in the {@link #SearchView} array.
           @attr name android:inputType
         */
-        public static final int SearchView_android_inputType = 1;
+        public static int SearchView_android_inputType = 1;
         /**
-          <p>
-          @attr description
-           An optional maximum width of the SearchView. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#maxWidth}.
+          <p>This symbol is the offset where the {@link android.R.attr#maxWidth}
+          attribute's value can be found in the {@link #SearchView} array.
           @attr name android:maxWidth
         */
-        public static final int SearchView_android_maxWidth = 0;
+        public static int SearchView_android_maxWidth = 0;
         /**
-          <p>
-          @attr description
-          
-             The default state of the SearchView. If true, it will be iconified when not in
-             use and expanded when clicked.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#iconifiedByDefault}
+          attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -2515,14 +2117,12 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:iconifiedByDefault
         */
-        public static final int SearchView_iconifiedByDefault = 3;
+        public static int SearchView_iconifiedByDefault = 3;
         /**
-          <p>
-          @attr description
-           An optional query hint string to be displayed in the empty query field. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#queryHint}
+          attribute's value can be found in the {@link #SearchView} array.
 
 
           <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
@@ -2531,34 +2131,25 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:queryHint
         */
-        public static final int SearchView_queryHint = 4;
+        public static int SearchView_queryHint = 4;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownHorizontalOffset android:dropDownHorizontalOffset}</code></td><td>
-             Horizontal offset from the spinner widget for positioning the dropdown
-             in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownSelector android:dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownVerticalOffset android:dropDownVerticalOffset}</code></td><td>
-             Vertical offset from the spinner widget for positioning the dropdown in
-             spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_gravity android:gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
-           <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled android.support.v7.appcompat:disableChildrenWhenDisabled}</code></td><td>
-             Whether this spinner should mark child views as enabled/disabled when
-             the spinner itself is enabled/disabled.</td></tr>
-           <tr><td><code>{@link #Spinner_popupPromptView android.support.v7.appcompat:popupPromptView}</code></td><td>
-             Reference to a layout to use for displaying a prompt in the dropdown for
-             spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_prompt android.support.v7.appcompat:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
-           <tr><td><code>{@link #Spinner_spinnerMode android.support.v7.appcompat:spinnerMode}</code></td><td> Display mode for spinner options.</td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownHorizontalOffset android:dropDownHorizontalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownSelector android:dropDownSelector}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownVerticalOffset android:dropDownVerticalOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownWidth android:dropDownWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_gravity android:gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_android_popupBackground android:popupBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled android.support.v7.appcompat:disableChildrenWhenDisabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_popupPromptView android.support.v7.appcompat:popupPromptView}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_prompt android.support.v7.appcompat:prompt}</code></td><td></td></tr>
+           <tr><td><code>{@link #Spinner_spinnerMode android.support.v7.appcompat:spinnerMode}</code></td><td></td></tr>
            </table>
            @see #Spinner_android_dropDownHorizontalOffset
            @see #Spinner_android_dropDownSelector
@@ -2577,72 +2168,44 @@ containing a value of this type.
             0x7f010064, 0x7f010065
         };
         /**
-          <p>
-          @attr description
-          
-             Horizontal offset from the spinner widget for positioning the dropdown
-             in spinnerMode="dropdown".
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownHorizontalOffset}.
+          <p>This symbol is the offset where the {@link android.R.attr#dropDownHorizontalOffset}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:dropDownHorizontalOffset
         */
-        public static final int Spinner_android_dropDownHorizontalOffset = 4;
+        public static int Spinner_android_dropDownHorizontalOffset = 4;
         /**
-          <p>
-          @attr description
-           List selector to use for spinnerMode="dropdown" display. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownSelector}.
+          <p>This symbol is the offset where the {@link android.R.attr#dropDownSelector}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:dropDownSelector
         */
-        public static final int Spinner_android_dropDownSelector = 1;
+        public static int Spinner_android_dropDownSelector = 1;
         /**
-          <p>
-          @attr description
-          
-             Vertical offset from the spinner widget for positioning the dropdown in
-             spinnerMode="dropdown".
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownVerticalOffset}.
+          <p>This symbol is the offset where the {@link android.R.attr#dropDownVerticalOffset}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:dropDownVerticalOffset
         */
-        public static final int Spinner_android_dropDownVerticalOffset = 5;
+        public static int Spinner_android_dropDownVerticalOffset = 5;
         /**
-          <p>
-          @attr description
-           Width of the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#dropDownWidth}.
+          <p>This symbol is the offset where the {@link android.R.attr#dropDownWidth}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:dropDownWidth
         */
-        public static final int Spinner_android_dropDownWidth = 3;
+        public static int Spinner_android_dropDownWidth = 3;
         /**
-          <p>
-          @attr description
-           Gravity setting for positioning the currently selected item. 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#gravity}.
+          <p>This symbol is the offset where the {@link android.R.attr#gravity}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:gravity
         */
-        public static final int Spinner_android_gravity = 0;
+        public static int Spinner_android_gravity = 0;
         /**
-          <p>
-          @attr description
-           Background drawable to use for the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#popupBackground}.
+          <p>This symbol is the offset where the {@link android.R.attr#popupBackground}
+          attribute's value can be found in the {@link #Spinner} array.
           @attr name android:popupBackground
         */
-        public static final int Spinner_android_popupBackground = 2;
+        public static int Spinner_android_popupBackground = 2;
         /**
-          <p>
-          @attr description
-          
-             Whether this spinner should mark child views as enabled/disabled when
-             the spinner itself is enabled/disabled.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#disableChildrenWhenDisabled}
+          attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -2651,42 +2214,32 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:disableChildrenWhenDisabled
         */
-        public static final int Spinner_disableChildrenWhenDisabled = 9;
+        public static int Spinner_disableChildrenWhenDisabled = 9;
         /**
-          <p>
-          @attr description
-          
-             Reference to a layout to use for displaying a prompt in the dropdown for
-             spinnerMode="dropdown". This layout must contain a TextView with the id
-             {@code @android:id/text1} to be populated with the prompt text.
-        
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#popupPromptView}
+          attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:popupPromptView
         */
-        public static final int Spinner_popupPromptView = 8;
+        public static int Spinner_popupPromptView = 8;
         /**
-          <p>
-          @attr description
-           The prompt to display when the spinner's dialog is shown. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#prompt}
+          attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:prompt
         */
-        public static final int Spinner_prompt = 6;
+        public static int Spinner_prompt = 6;
         /**
-          <p>
-          @attr description
-           Display mode for spinner options. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#spinnerMode}
+          attribute's value can be found in the {@link #Spinner} array.
 
 
           <p>Must be one of the following constant values.</p>
@@ -2695,28 +2248,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <colgroup align="left" />
 <colgroup align="left" />
 <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>dialog</code></td><td>0</td><td> Spinner options will be presented to the user as a dialog window. </td></tr>
-<tr><td><code>dropdown</code></td><td>1</td><td>
-                 Spinner options will be presented to the user as an inline dropdown
-                 anchored to the spinner widget itself.
-            </td></tr>
+<tr><td><code>dialog</code></td><td>0</td><td></td></tr>
+<tr><td><code>dropdown</code></td><td>1</td><td></td></tr>
 </table>
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:spinnerMode
         */
-        public static final int Spinner_spinnerMode = 7;
+        public static int Spinner_spinnerMode = 7;
         /** Attributes that can be used with a Theme.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Theme_actionDropDownStyle android.support.v7.appcompat:actionDropDownStyle}</code></td><td> Default ActionBar dropdown style.</td></tr>
-           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight android.support.v7.appcompat:dropdownListPreferredItemHeight}</code></td><td> The preferred item height for dropdown lists.</td></tr>
-           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator android.support.v7.appcompat:listChoiceBackgroundIndicator}</code></td><td> Drawable used as a background for selected list items.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListTheme android.support.v7.appcompat:panelMenuListTheme}</code></td><td> Default Panel Menu style.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListWidth android.support.v7.appcompat:panelMenuListWidth}</code></td><td> Default Panel Menu width.</td></tr>
-           <tr><td><code>{@link #Theme_popupMenuStyle android.support.v7.appcompat:popupMenuStyle}</code></td><td> Default PopupMenu style.</td></tr>
+           <tr><td><code>{@link #Theme_actionDropDownStyle android.support.v7.appcompat:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight android.support.v7.appcompat:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator android.support.v7.appcompat:listChoiceBackgroundIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListTheme android.support.v7.appcompat:panelMenuListTheme}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListWidth android.support.v7.appcompat:panelMenuListWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #Theme_popupMenuStyle android.support.v7.appcompat:popupMenuStyle}</code></td><td></td></tr>
            </table>
            @see #Theme_actionDropDownStyle
            @see #Theme_dropdownListPreferredItemHeight
@@ -2730,21 +2279,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01006a, 0x7f01006b
         };
         /**
-          <p>
-          @attr description
-           Default ActionBar dropdown style. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#actionDropDownStyle}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:actionDropDownStyle
         */
-        public static final int Theme_actionDropDownStyle = 0;
+        public static int Theme_actionDropDownStyle = 0;
         /**
-          <p>
-          @attr description
-           The preferred item height for dropdown lists. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#dropdownListPreferredItemHeight}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -2755,38 +2301,32 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:dropdownListPreferredItemHeight
         */
-        public static final int Theme_dropdownListPreferredItemHeight = 1;
+        public static int Theme_dropdownListPreferredItemHeight = 1;
         /**
-          <p>
-          @attr description
-           Drawable used as a background for selected list items. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#listChoiceBackgroundIndicator}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:listChoiceBackgroundIndicator
         */
-        public static final int Theme_listChoiceBackgroundIndicator = 5;
+        public static int Theme_listChoiceBackgroundIndicator = 5;
         /**
-          <p>
-          @attr description
-           Default Panel Menu style. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#panelMenuListTheme}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:panelMenuListTheme
         */
-        public static final int Theme_panelMenuListTheme = 4;
+        public static int Theme_panelMenuListTheme = 4;
         /**
-          <p>
-          @attr description
-           Default Panel Menu width. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#panelMenuListWidth}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -2797,32 +2337,28 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:panelMenuListWidth
         */
-        public static final int Theme_panelMenuListWidth = 3;
+        public static int Theme_panelMenuListWidth = 3;
         /**
-          <p>
-          @attr description
-           Default PopupMenu style. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#popupMenuStyle}
+          attribute's value can be found in the {@link #Theme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:popupMenuStyle
         */
-        public static final int Theme_popupMenuStyle = 2;
+        public static int Theme_popupMenuStyle = 2;
         /** Attributes that can be used with a View.
            <p>Includes the following attributes:</p>
            <table>
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td>
-             Boolean that controls whether a view can take focus.</td></tr>
-           <tr><td><code>{@link #View_paddingEnd android.support.v7.appcompat:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
-           <tr><td><code>{@link #View_paddingStart android.support.v7.appcompat:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_android_focusable android:focusable}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingEnd android.support.v7.appcompat:paddingEnd}</code></td><td></td></tr>
+           <tr><td><code>{@link #View_paddingStart android.support.v7.appcompat:paddingStart}</code></td><td></td></tr>
            </table>
            @see #View_android_focusable
            @see #View_paddingEnd
@@ -2832,25 +2368,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x010100da, 0x7f01006c, 0x7f01006d
         };
         /**
-          <p>
-          @attr description
-          
-             Boolean that controls whether a view can take focus.  By default the user can not
-             move focus to a view; by setting this attribute to true the view is
-             allowed to take focus.  This value does not impact the behavior of
-             directly calling {@link android.view.View#requestFocus}, which will
-             always request focus regardless of this view.  It only impacts where
-             focus navigation will try to move focus.
-        
-          <p>This corresponds to the global attribute
-          resource symbol {@link android.R.attr#focusable}.
+          <p>This symbol is the offset where the {@link android.R.attr#focusable}
+          attribute's value can be found in the {@link #View} array.
           @attr name android:focusable
         */
-        public static final int View_android_focusable = 0;
+        public static int View_android_focusable = 0;
         /**
-          <p>
-          @attr description
-           Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#paddingEnd}
+          attribute's value can be found in the {@link #View} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -2861,14 +2386,12 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:paddingEnd
         */
-        public static final int View_paddingEnd = 2;
+        public static int View_paddingEnd = 2;
         /**
-          <p>
-          @attr description
-           Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}. 
+          <p>This symbol is the offset where the {@link android.support.v7.appcompat.R.attr#paddingStart}
+          attribute's value can be found in the {@link #View} array.
 
 
           <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
@@ -2879,9 +2402,8 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          <p>This is a private symbol.
           @attr name android.support.v7.appcompat:paddingStart
         */
-        public static final int View_paddingStart = 1;
+        public static int View_paddingStart = 1;
     };
 }

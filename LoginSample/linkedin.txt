@@ -1,0 +1,3 @@
+Step1:https://www.linkedin.com/developer/apps
+Step2: Create new application
+Step 3: click on mobile in left hand side navigation bar. Add package and hashkey

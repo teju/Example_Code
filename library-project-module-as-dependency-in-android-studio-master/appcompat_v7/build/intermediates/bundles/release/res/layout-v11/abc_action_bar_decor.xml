@@ -25,4 +25,3 @@
     <include layout="@layout/abc_action_bar_decor_include" />
 
 </android.support.v7.internal.widget.NativeActionModeAwareLayout>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout-v11/abc_action_bar_decor.xml -->

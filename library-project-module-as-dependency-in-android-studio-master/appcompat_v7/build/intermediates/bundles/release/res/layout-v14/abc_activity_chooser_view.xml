@@ -26,4 +26,4 @@
 
     <include layout="@layout/abc_activity_chooser_view_include" />
 
-</LinearLayout><!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout-v14/abc_activity_chooser_view.xml -->
+</LinearLayout>

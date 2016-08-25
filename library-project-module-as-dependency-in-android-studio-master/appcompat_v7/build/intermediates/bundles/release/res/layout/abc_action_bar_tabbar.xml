@@ -20,4 +20,3 @@ limitations under the License.
         android:layout_height="match_parent"
         android:gravity="center"
         style="?attr/actionBarTabBarStyle"/>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout/abc_action_bar_tabbar.xml -->

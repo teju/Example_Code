@@ -29,4 +29,3 @@
         android:foreground="?android:attr/windowContentOverlay"/>
 
 </android.support.v7.internal.widget.NativeActionModeAwareLayout>
-<!-- From: file:/F:/workspace/ModuleDependencyExample/appcompat_v7/res/layout-v11/abc_simple_decor.xml -->

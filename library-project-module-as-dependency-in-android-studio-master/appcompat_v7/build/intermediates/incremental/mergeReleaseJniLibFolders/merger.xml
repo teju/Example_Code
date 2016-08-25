@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="D:\Android project\Example_Code\library-project-module-as-dependency-in-android-studio-master\appcompat_v7\src\main\jniLibs"/></dataSet><dataSet config="release"><source path="D:\Android project\Example_Code\library-project-module-as-dependency-in-android-studio-master\appcompat_v7\build-types\release\jniLibs"/></dataSet></merger>
