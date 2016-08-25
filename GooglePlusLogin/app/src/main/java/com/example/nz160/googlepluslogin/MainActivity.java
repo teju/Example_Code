@@ -128,19 +128,26 @@ public class MainActivity extends Activity implements View.OnClickListener,
         System.out.println("CHECKINGFLOW "+" onConnectionFailed");
 
         if (!result.hasResolution()) {
+            System.out.println("CHECKINGFLOW "+" onConnectionFailed "+" result.hasResolution");
+
             GooglePlayServicesUtil.getErrorDialog(result.getErrorCode(), getParent(),
                     0).show();
+            System.out.println("CHECKINGFLOW " + " onConnectionFailed " + " GooglePlayServicesUtil");
+
             return;
         }
 
         if (!mIntentInProgress) {
             // Store the ConnectionResult for later usage
             mConnectionResult = result;
+            System.out.println("CHECKINGFLOW " + " onConnectionFailed " + " !mIntentInProgress");
 
             if (mSignInClicked) {
                 // The user has already clicked 'sign-in' so we attempt to
                 // resolve all
                 // errors until the user is signed in, or they cancel.
+                System.out.println("CHECKINGFLOW " + " onConnectionFailed " + " mSignInClicked");
+
                 resolveSignInError();
             }
         }
