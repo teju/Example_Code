@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\android-facebook-integration-tutorial-master\facebookDemo\libs\universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3-d41cc84daa892bb998cf9687164a8a8c14735221.jar" />
+    </item>
+    <item
+        jar="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\exploded-aar\android-facebook-integration-tutorial-master\facebookSDK\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f2b5ba8c7139f7552b75d8fac94962a604e551b6">
+        <dex dex="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\pre-dexed\debug\classes-4cd1da96436aae36de2664121d936730838cc1c4.jar" />
+    </item>
+    <item
+        jar="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\exploded-aar\android-facebook-integration-tutorial-master\facebookSDK\unspecified\jars\libs\bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7">
+        <dex dex="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-e3a8acd318141532cb491cdc4b451c16a4f14875.jar" />
+    </item>
+    <item
+        jar="C:\Users\nz160\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="D:\android-facebook-integration-tutorial-master\facebookDemo\build\intermediates\pre-dexed\debug\support-v4-19.1.0-582d44914c03d1104efa1390ccbef8cdf318616f.jar" />
+    </item>
+
+</items>

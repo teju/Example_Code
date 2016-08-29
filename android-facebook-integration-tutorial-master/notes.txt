@@ -1,0 +1,13 @@
+Step1: developers.facebook.com
+Step2: Add new app. Fill in all the details.
+Step3: Add platform
+Step 4: Select android
+Step5 :Add package, class and hashkey.
+Step6: change the api_id in strings.xml
+
+Generate hash key :
+Step 1: go to jre\bin
+Step 2:type command: 
+  keytool -exportcert -alias androiddebugkey -keystore "C:\\Users\nz160\.android\debug.keystore " | 
+  "D:\softwares\openssl\bin\openssl " sha1 -binary"
+  "D:\softwares\openssl\bin\openssl" base64
