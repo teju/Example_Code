@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
     }
 
     // Authenticate with linkedin and intialize Session.
-
     public void login_linkedin(){
         LISessionManager.getInstance(getApplicationContext()).init(this, buildScope(), new AuthListener() {
             @Override
@@ -60,7 +59,6 @@ public class MainActivity extends Activity {
 
                 // Toast.makeText(getApplicationContext(), "success" + LISessionManager.getInstance(getApplicationContext()).getSession().getAccessToken().toString(), Toast.LENGTH_LONG).show();
                 login_linkedin_btn.setVisibility(View.GONE);
-
             }
 
             @Override
