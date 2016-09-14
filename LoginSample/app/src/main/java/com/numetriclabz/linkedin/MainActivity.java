@@ -24,7 +24,6 @@ import java.security.NoSuchAlgorithmException;
 public class MainActivity extends Activity {
     private static final String TAG = MainActivity.class.getSimpleName();
     public static final String PACKAGE = "com.numetriclabz.linkedin";
-
     Button login_linkedin_btn,hask_key;
 
     @Override
@@ -77,7 +76,6 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(MainActivity.this,UserProfile.class);
         startActivity(intent);
     }
-
     // This method is used to make permissions to retrieve data from linkedin
 
     private static Scope buildScope() {
@@ -97,6 +95,7 @@ public class MainActivity extends Activity {
 
                 ((TextView) findViewById(R.id.package_name)).setText(info.packageName);
                 ((TextView) findViewById(R.id.hash_key)).setText(Base64.encodeToString(md.digest(), Base64.NO_WRAP));
+                System.out.println("PACKAGENAME "+Base64.encodeToString(md.digest(), Base64.NO_WRAP));
             }
         } catch (PackageManager.NameNotFoundException e) {
             Log.d(TAG, e.getMessage(), e);
@@ -104,5 +103,4 @@ public class MainActivity extends Activity {
             Log.d(TAG, e.getMessage(), e);
         }
     }
-
 }

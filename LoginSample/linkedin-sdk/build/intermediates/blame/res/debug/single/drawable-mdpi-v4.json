@@ -4,6 +4,10 @@
         "source": "D:\\Android project\\Example code\\LoginSample\\linkedin-sdk\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "D:\\Android\\Example_Code\\LoginSample\\linkedin-sdk\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\Android\\Example_Code\\LoginSample\\linkedin-sdk\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
         "merged": "D:\\Android project\\Example_Code\\LoginSample\\linkedin-sdk\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "D:\\Android project\\Example_Code\\LoginSample\\linkedin-sdk\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
