@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "me.kevingleason.pubnubchat"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            apply plugin: 'application'
+            apply plugin: 'application'
+            apply plugin: 'application'
+            apply plugin: 'java'
+            apply plugin: 'application'
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.pubnub:pubnub-android:3.7.4'
+    compile 'com.google.android.gms:play-services:7.5.0'
+}
