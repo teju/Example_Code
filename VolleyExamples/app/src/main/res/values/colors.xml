@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/tools">
+
+    <color name="textColorPrimary">#e64a19</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="mainBlue">#0157AD</color>
+    <color name="mainGreen">#7BBA07</color>
+    <color name="blue">#7BBA07</color>
+    <color name="lightblack">#363535</color>
+    <color name="colorPrimary">#0b6eb1</color>
+    <color name="colorPrimaryDark">#e7e5e5</color>
+    <color name="colorTextview">#bebebe</color>
+    <color name="headercolor">#FFFFFF</color>
+    <color name="colorAccent">#1595ea</color>
+    <color name="background_color1">#1b024d</color>
+    <color name="bgcolor">#e9e9e9</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="rippelColor">#1595ea</color>
+    <color name="dark_grey">#dddddd</color>
+    <color name="table">#FFFFFF</color>
+    <color name="price">#ea3418</color>
+    <color name="button_color">#6aa636</color>
+    <color name="bottomline">#949090</color>
+    <color name="logintext_color">#7A7A7A</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white_greyish">#5d5d5d</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
+    <color name="RatingBar">#7BBA07</color>
+    <color name="RatingBar2">#7BBA07</color>
+    <color name="webinar_tab_bar">#2E4777</color>
+    <color name="webinar_filter">#1595ea</color>
+    <color name="box1">#EAA400</color>
+    <color name="box2">#0082E5</color>
+    <color name="box3">#C904C2</color>
+    <color name="box4">#7BBA07</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="black_trans">#14000000</color>
+</resources>
