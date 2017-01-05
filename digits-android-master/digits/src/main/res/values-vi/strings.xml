@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Gọi tôi</string>
+    <string name="dgts__calling">Đang gọi…</string>
+    <string name="dgts__confirmation_code">Mã xác nhận</string>
+    <string name="dgts__confirmation_edit_hint">Nhập mã 6 chữ số chúng tôi đã gửi bạn</string>
+    <string name="dgts__confirmation_error">Không thể xác nhận số điện thoại của bạn</string>
+    <string name="dgts__confirmation_error_alternative">Rất tiếc, chúng tôi đang gặp vấn đề khi gửi cho bạn mã xác nhận.</string>
+    <string name="dgts__confirmation_expired">Mã này đã hết hạn. Vui lòng gửi lại mã xác nhận.</string>
+    <string name="dgts__continue">Tiếp tục</string>
+    <string name="dgts__create_account">Tạo tài khoản</string>
+    <string name="dgts__digits_logo_desc">biểu tượng logo của digits</string>
+    <string name="dgts__digits_logo_name_desc">tên logo của digits</string>
+    <string name="dgts__dismiss">Bỏ qua</string>
+    <string name="dgts__done">Hoàn tất</string>
+    <string name="dgts__email_request_edit_hint">Địa chỉ email</string>
+    <string name="dgts__email_request_title">Nhập địa chỉ email</string>
+    <string name="dgts__find_your_friends">Tìm bạn bè của bạn</string>
+    <string name="dgts__image_header_description">Tiêu đề ảnh để đăng nhập</string>
+    <string name="dgts__invalid_email">Email Không hợp lệ. Thử Lại</string>
+    <string name="dgts__login_digits_text">Sử dụng số điện thoại của tôi</string>
+    <string name="dgts__network_error">Vui lòng kiểm tra mạng của bạn và thử lại.</string>
+    <string name="dgts__not_now">Không phải bây giờ</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Số của Bạn</string>
+    <string name="dgts__phone_number_text">Nhập số điện thoại của bạn</string>
+    <string name="dgts__pin_code_verification_title">Nhập mã xác nhận 2 bước</string>
+    <string name="dgts__resend_confirmation_button_code">Gửi lại mã</string>
+    <string name="dgts__resend_confirmation_text">Gửi lại mã xác nhận</string>
+    <string name="dgts__send_confirmation_code">Gửi mã xác nhận</string>
+    <string name="dgts__sending">Đang gửi…</string>
+    <string name="dgts__success_desc">Biểu tượng Thành công</string>
+    <string name="dgts__terms_email_request">Khi nhấn %1$sTiếp tục%1$s ở trên, bạn đang thêm email này vào tài khoản Digits của mình. Bạn đồng ý rằng ứng dụng này và %7$stất cả ứng dụng được liệt kê trong tài khoản Digits của mình%5$s có thể truy cập vào địa chỉ email này và người dùng các ứng dụng đó có thể tìm thấy bạn qua email.</string>
+    <string name="dgts__terms_text">Khi nhấn %1$sGửi mã xác nhận%1$s ở trên, %6$sDigits by Twitter%5$s sẽ gửi cho bạn một tin nhắn SMS để xác nhận số điện thoại của bạn. Trên màn hình tiếp theo, bạn có thể chọn “Gửi lại mã” để nhận tin nhắn SMS mới hoặc “Gọi cho tôi” để khởi tạo cuộc gọi xác nhận số điện thoại của bạn. Phí tin nhắn, cuộc gọi &amp; dữ liệu có thể áp dụng.</string>
+    <string name="dgts__terms_text_call_me">Khi nhấn %1$sGọi cho tôi%1$s ở trên, %6$sDigits by Twitter%5$s sẽ gửi cho bạn một cuộc gọi thoại để xác nhận số điện thoại của bạn. Phí cuộc gọi &amp; dữ liệu có thể áp dụng.</string>
+    <string name="dgts__terms_text_create">Khi nhấn %1$sTạo tài khoản%1$s ở trên, bạn đồng ý với %8$sĐiều khoản dịch vụ%5$s, %9$sChính sách riêng tư%5$s và %10$sViệc sử dụng Cookie%5$s của %6$sDigits by Twitter%5$s, để chia sẻ số điện thoại của bạn với %4$s và rằng những người dùng %4$s khác có thể tìm ra bạn bằng số điện thoại của bạn.</string>
+    <string name="dgts__terms_text_sign_in">Khi nhấn %1$sTiếp tục%1$s ở trên, %7$ssố điện thoại và/hoặc địa chỉ email Digits%5$s của bạn sẽ được chia sẻ với %4$s và những người dùng %4$s khác có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__terms_text_updated">Khi nhấn %1$sTiếp tục%1$s ở trên, bạn đồng ý với %8$sĐiều khoản dịch vụ%5$s, %9$sChính sách riêng tư%5$s và việc %10$sSử dụng Cookie%5$s của %6$sDigits by Twitter%5$s, để chia sẻ %7$ssố điện thoại và/hoặc địa chỉ email Digits%5$s của bạn với %4$s và rằng những người dùng %4$s khác có thể tìm thấy bạn qua số điện thoại và/hoặc email.</string>
+    <string name="dgts__try_again">Thử Lại</string>
+    <string name="dgts__try_again_confirmation">Vui lòng kiểm tra mã của bạn và thử lại.</string>
+    <string name="dgts__try_again_email">Vui lòng kiểm tra email của bạn và thử lại</string>
+    <string name="dgts__try_again_phone_number">Vui lòng kiểm tra số của bạn và thử lại.</string>
+    <string name="dgts__try_another_phone">Thử một số điện thoại khác</string>
+    <string name="dgts__unsupported_operator_error">Không thể gửi một tin nhắn SMS đến số này.</string>
+    <string name="dgts__upload_contacts">Chúng tôi sử dụng Digits by Twitter để tìm thêm bạn bè của bạn sử dụng ứng dụng này. Khi bạn nhấn Okay, chúng tôi sẽ tải sổ địa chỉ của bạn lên Digits by Twitter để có thể giúp bạn tìm thấy những người dùng %1$s mà bạn biết hoặc giúp những người dùng %1$s khác tìm thấy bạn.</string>
+    <string name="dgts__verification_code">Mã xác nhận</string>
+    <string name="dgts_pin_code_terms">Trước đây bạn đã đặt một mã xác nhận 2 bước trên digits.com</string>
+</resources>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">呼叫我</string>
+    <string name="dgts__calling">呼叫中…</string>
+    <string name="dgts__confirmation_code">确认码</string>
+    <string name="dgts__confirmation_edit_hint">输入我们发送给你的六位数验证码</string>
+    <string name="dgts__confirmation_error">无法确认你的手机号码</string>
+    <string name="dgts__confirmation_error_alternative">很抱歉，我们无法向你发送验证码。</string>
+    <string name="dgts__confirmation_expired">此确认码已过期，请重新发送确认码。</string>
+    <string name="dgts__continue">继续</string>
+    <string name="dgts__create_account">创建账号</string>
+    <string name="dgts__digits_logo_desc">digits logo 图标</string>
+    <string name="dgts__digits_logo_name_desc">digits logo 名字</string>
+    <string name="dgts__dismiss">忽略</string>
+    <string name="dgts__done">已完成</string>
+    <string name="dgts__email_request_edit_hint">邮件地址</string>
+    <string name="dgts__email_request_title">输入邮件地址</string>
+    <string name="dgts__find_your_friends">查找你的好友</string>
+    <string name="dgts__image_header_description">登录图片标题</string>
+    <string name="dgts__invalid_email">邮件地址无效。请重试</string>
+    <string name="dgts__login_digits_text">使用我的手机号码</string>
+    <string name="dgts__network_error">请检查你的网络并重试。</string>
+    <string name="dgts__not_now">暂时不用</string>
+    <string name="dgts__okay">好的</string>
+    <string name="dgts__phone_number_edit_hint">你的手机号码</string>
+    <string name="dgts__phone_number_text">输入你的手机号码</string>
+    <string name="dgts__pin_code_verification_title">输入两步验证码</string>
+    <string name="dgts__resend_confirmation_button_code">重新发送验证码</string>
+    <string name="dgts__resend_confirmation_text">重新发送确认码</string>
+    <string name="dgts__send_confirmation_code">发送确认码</string>
+    <string name="dgts__sending">发送中…</string>
+    <string name="dgts__success_desc">成功图标</string>
+    <string name="dgts__terms_email_request">点击上方 %1$s继续%1$s ，表明您正在将该电子邮箱添加至 Digits 账户。您同意该应用和  %7$sDigits\
+账户中列出的所有应用%5$s \
+\
+可以访问该电子邮箱地址并且其用户可以通过电子邮箱找到您。</string>
+    <string name="dgts__terms_text">点击上面的%1$s发送验证码%1$s按钮，%6$sTwitter 的 Digits%5$s便会向你的手机号码发送验证短信。运营商可能会收取额外的短信或数据传输费。</string>
+    <string name="dgts__terms_text_call_me">点击上方%1$s呼叫我%1$s ， %6$sTwitter\
+Digits%5$s\
+\
+将向你发起语音呼叫，确认你的电话号码，相关呼叫和数据费率适用。</string>
+    <string name="dgts__terms_text_create">点击上方 %1$s创建账户%1$s，表明您同意 Twitter\
+Digits %8$s服务条款%5$s, %9$s隐私政策%5$s 和 %10$sCookie\
+使用%5$s  %6$s%5$s, 与 %4$s共享您的电话号码并且其他%4$s 用户能够通过电话号码找到您。</string>
+    <string name="dgts__terms_text_sign_in">点击上方 %1$s继续%1$s 表明您的 Digits 电话号码和/或电子邮箱地址%7$s将与%5$s  %4$s 共享，其他%4$s \
+\
+用户能够通过电话号码和/或电子邮箱找到您。</string>
+    <string name="dgts__terms_text_updated">点击上方 %1$s继续%1$s ，表明您同意 Twitter Gigits %8$s服务条款%5$s, %9$s隐私政策%5$s, and %10$sCookie\
+使用%5$s %6$s%5$s与%7$s共享您的 Digits 电话号码和/或电子邮箱地址%5$s 并且 %4$s其他用户%4$s 能够通过电话号码和/或电子邮箱找到您。</string>
+    <string name="dgts__try_again">重试</string>
+    <string name="dgts__try_again_confirmation">请检查你的确认码并重试。</string>
+    <string name="dgts__try_again_email">请检查你的邮件并重试</string>
+    <string name="dgts__try_again_phone_number">请检查你的手机号码并重试。</string>
+    <string name="dgts__try_another_phone">请尝试其他手机号码</string>
+    <string name="dgts__unsupported_operator_error">无法向这个号码发送短信。</string>
+    <string name="dgts__upload_contacts">我们使用Twitter Digits来查找你身边使用这个应用程序的朋友。当你点击“确认”时，我们将上传你的通讯录至Twitter Digits，帮你找到你认识的%1$s用户，同时帮其他%1$s用户找到你。</string>
+    <string name="dgts__verification_code">验证码</string>
+    <string name="dgts_pin_code_terms">你之前已在 digits.com 设置了两步验证</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Hívj fel</string>
+    <string name="dgts__calling">Hívás folyamatban…</string>
+    <string name="dgts__confirmation_code">Megerősítő kód</string>
+    <string name="dgts__confirmation_edit_hint">Add meg az általunk küldött hatjegyű kódot</string>
+    <string name="dgts__confirmation_error">A telefonszámod megerősítése sikertelen</string>
+    <string name="dgts__confirmation_error_alternative">Sajnáljuk, probléma merült fel az ellenőrzőkód elküldése során.</string>
+    <string name="dgts__confirmation_expired">Ez a kód lejárt. Kérjük, küldd újra a megerősítő kódot.</string>
+    <string name="dgts__continue">Tovább</string>
+    <string name="dgts__create_account">Fiók létrehozása</string>
+    <string name="dgts__digits_logo_desc">digits logó ikonja</string>
+    <string name="dgts__digits_logo_name_desc">digits logó neve</string>
+    <string name="dgts__dismiss">Bezárás</string>
+    <string name="dgts__done">Kész</string>
+    <string name="dgts__email_request_edit_hint">E-mail cím</string>
+    <string name="dgts__email_request_title">Add meg az e-mail címedet</string>
+    <string name="dgts__find_your_friends">Találd meg barátaidat</string>
+    <string name="dgts__image_header_description">Fejléckép bejelentkezéshez</string>
+    <string name="dgts__invalid_email">Érvénytelen e-mail. Próbáld meg újra</string>
+    <string name="dgts__login_digits_text">A telefonszámom használata</string>
+    <string name="dgts__network_error">Kérjük, ellenőrizd a hálózatod és próbáld meg újra.</string>
+    <string name="dgts__not_now">Most nem</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">A számod</string>
+    <string name="dgts__phone_number_text">Add meg a telefonszámod</string>
+    <string name="dgts__pin_code_verification_title">Add meg a kétlépcsős hitelesítés kódját</string>
+    <string name="dgts__resend_confirmation_button_code">Kód újraküld</string>
+    <string name="dgts__resend_confirmation_text">Megerősítő kód újraküldése</string>
+    <string name="dgts__send_confirmation_code">Megerősítő kód küldése</string>
+    <string name="dgts__sending">Küldés folyamatban…</string>
+    <string name="dgts__success_desc">Sikerikon</string>
+    <string name="dgts__terms_email_request">A fenti %1$sTovább%1$s pontra koppintva e-mail címedet hozzáadod Digits-fiókodhoz. Beleegyezel, hogy ennek és %7$svalamennyi, a Digits-fiókodban felsorolt alkalmazásnak%5$s hozzáférése lesz ehhez az e-mail címhez és az alkalmazás más felhasználói megkereshetnek e-mail címed alapján.</string>
+    <string name="dgts__terms_text">A fenti %1$sMegerősítő kód küldése%1$s pontra koppintva a %6$sDigits by Twitter%5$s SMS-t küld telefonszámod megerősítése céljából. A következő képernyőn kiválaszthatod a “Kód újraküldése”-opciót, hogy új SMS-t kapj vagy a \"Hívj fel”-opciót, hogy hanghívást kapj telefonszámod megerősítése céljából. Üzenetküldési/adatforgalmi díjak merülhetnek fel.</string>
+    <string name="dgts__terms_text_call_me">A fenti %1$sHívj fel%1$s pontra koppintva a %6$sDigits by Twitter%5$s hanghívást indít telefonszámod megerősítése céljából. Hívás- és adatforgalmi díjak merülhetnek fel.</string>
+    <string name="dgts__terms_text_create">A fenti %1$sTovább%1$s pontra koppintva elfogadod a %6$sDigits by Twitter%5$s %8$sFelhasználási feltételeit%5$s, %9$sAdatvédelmi irányelveit%5$s és a %10$sCookie-k (sütik) kezelésére vonatkozó irányelveit%5$s, valamint beleegyezel, hogy telefonszámod megosztásra kerüljön a(z) %4$s alkalmazással és a(z) %4$s alkalmazás más felhasználói megkereshessenek telefonszámod alapján.</string>
+    <string name="dgts__terms_text_sign_in">A fenti %1$sTovább%1$s pontra koppintva beleegyezel, hogy %7$sDigits-telefonszámod és/vagy e-mail címed%5$s megosztásra kerüljön a(z) %4$s alkalmazással és a(z) %4$s alkalmazás más felhasználói megkereshessenek telefonszámod és/vagy e-mail címed alapján.</string>
+    <string name="dgts__terms_text_updated">A fenti %1$sTovább%1$s pontra koppintva elfogadod a %6$sDigits by Twitter%5$s %8$sFelhasználási feltételeit%5$s, %9$sAdatvédelmi irányelveit%5$s és a %10$sCookie-k (sütik) kezelésére vonatkozó irányelveit%5$s, valamint beleegyezel, hogy %7$sDigits-telefonszámod és/vagy e-mail címed%5$s megosztásra kerüljön a(z) %4$s alkalmazással és a(z) %4$s alkalmazás más felhasználói megkereshessenek telefonszámod és/vagy e-mail címed alapján.</string>
+    <string name="dgts__try_again">Próbáld meg újra</string>
+    <string name="dgts__try_again_confirmation">Kérjük, ellenőrizd a kódod és próbáld meg újra.</string>
+    <string name="dgts__try_again_email">Kérjük, ellenőrizd az e-mailjeidet és próbáld meg újra</string>
+    <string name="dgts__try_again_phone_number">Kérjük, ellenőrizd a számod és próbáld meg újra.</string>
+    <string name="dgts__try_another_phone">Próbálkozz másik telefonszámmal!</string>
+    <string name="dgts__unsupported_operator_error">Nem tudunk SMS-t küldeni erre a telefonszámra.</string>
+    <string name="dgts__upload_contacts">A Digits by Twitter segítségével megkeressük az alkalmazást használó ismerőseidet. Az OK gombra koppintva feltöltjük a címjegyzéked a Digits by Twitter szolgáltatásba, és ezáltal lehetővé tesszük, hogy megtaláld a(z) %1$s  alkalmazás általad ismert felhasználóit, vagy a(z) %1$s alkalmazás többi felhasználójának, hogy megtaláljanak téged.</string>
+    <string name="dgts__verification_code">Ellenőrzőkód</string>
+    <string name="dgts_pin_code_terms">Korábban kétlépcsős ellenőrzőkódot állítottál be a digits.com oldalon</string>
+</resources>

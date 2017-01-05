@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">ನನಗೆ ಕರೆ</string>
+    <string name="dgts__calling">ಕರೆ ಮಾಡಲಾಗುತ್ತಿದೆ…</string>
+    <string name="dgts__confirmation_code">ದೃಢೀಕರಣ ಕೋಡ್</string>
+    <string name="dgts__confirmation_edit_hint">ನಾವು ನಿಮಗೆ ಕಳುಹಿಸಿರುವ 6-ಅಂಕೆಯ ಕೋಡ್ ನಮೂದಿಸಿ</string>
+    <string name="dgts__confirmation_error">ನಿಮ್ಮ ದೂರವಾಣಿ ಸಂಖ್ಯೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+    <string name="dgts__confirmation_error_alternative">ಕ್ಷಮಿಸಿ, ನಿಮಗೆ ದೃಢೀಕರಣ ಕೋಡ್ ಕಳುಹಿಸುವಲ್ಲಿ ನಮಗೆ ತೊಂದರೆಯುಂಟಾಗಿದೆ.</string>
+    <string name="dgts__confirmation_expired">ಈ ಕೋಡ್ ಅವಧಿ ಮೀರಿದೆ. ದಯವಿಟ್ಟು ದೃಢೀಕರಣ ಕೋಡ್ ಮರುಕಳುಹಿಸಿ.</string>
+    <string name="dgts__continue">ಮುಂದುವರಿಸು</string>
+    <string name="dgts__create_account">ಖಾತೆಯನ್ನು ರಚಿಸಿ</string>
+    <string name="dgts__digits_logo_desc">digits ಲೋಗೋ ಐಕಾನ್</string>
+    <string name="dgts__digits_logo_name_desc">digits ಲೋಗೋ ಹೆಸರು</string>
+    <string name="dgts__dismiss">ವಜಾಗೊಳಿಸು</string>
+    <string name="dgts__done">ಮುಗಿದಿದೆ</string>
+    <string name="dgts__email_request_edit_hint">ಇಮೇಲ್ ವಿಳಾಸ</string>
+    <string name="dgts__email_request_title">ಇಮೇಲ್ ವಿಳಾಸ ನಮೂದಿಸಿ</string>
+    <string name="dgts__find_your_friends">ನಿಮ್ಮ ಸ್ನೇಹಿತರನ್ನು ಹುಡುಕಿ</string>
+    <string name="dgts__image_header_description">ಲಾಗಿನ್‌ಗಾಗಿ ಇಮೇಜ್ ಶೀರ್ಷಿಕೆ</string>
+    <string name="dgts__invalid_email">ಅಮಾನ್ಯ ಇಮೇಲ್. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸು</string>
+    <string name="dgts__login_digits_text">ನನ್ನ ದೂರವಾಣಿ ಸಂಖ್ಯೆ ಬಳಸು</string>
+    <string name="dgts__network_error">ದಯವಿಟ್ಟು ನಿಮ್ಮ ನೆಟ್‌ವರ್ಕ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="dgts__not_now">ಈಗ ಅಲ್ಲ</string>
+    <string name="dgts__okay">ಸರಿ</string>
+    <string name="dgts__phone_number_edit_hint">ನಿಮ್ಮ ಸಂಖ್ಯೆ</string>
+    <string name="dgts__phone_number_text">ನಿಮ್ಮ ದೂರವಾಣಿ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ</string>
+    <string name="dgts__pin_code_verification_title">2-ಹಂತದ ಪರಿಶೀಲನಾ ಕೋಡ್ ನಮೂದಿಸಿ</string>
+    <string name="dgts__resend_confirmation_button_code">ಕೋಡ್ ಕಳುಹಿಸು</string>
+    <string name="dgts__resend_confirmation_text">ದೃಢೀಕರಣ ಕೋಡ್ ಪುನಃ ಕಳುಹಿಸಿ</string>
+    <string name="dgts__send_confirmation_code">ದೃಢೀಕರಣ ಸಂಕೇತ ಕಳುಹಿಸಿ</string>
+    <string name="dgts__sending">ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ…</string>
+    <string name="dgts__success_desc">ಯಶಸ್ಸಿನ ಐಕಾನ್</string>
+    <string name="dgts__terms_email_request">ಮೇಲೆ ಇರುವ %1$sಮುಂದುವರಿಸು%1$s ತಟ್ಟುವ ಮೂಲಕ, ನೀವು ಇದನ್ನು ನಿಮ್ಮ Digits ಖಾತೆಗೆ ಸೇರಿಸುತ್ತೀರಿ. ಈ ಆಪ್ ಮತ್ತು ನಿಮ್ಮ Digits ಖಾತೆ%5$s ಅಲ್ಲಿ ಪಟ್ಟಿ ಮಾಡಲಾಗಿರುವ %7$sಎಲ್ಲಾ ಆಪ್‌ಗಳು ಈ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಪ್ರವೇಶಿಸಬಲ್ಲವು ಮತ್ತು ಅದರ ಬಳಕೆದಾರರು ನಿಮ್ಮನ್ನು ಇಮೇಲ್ ಮೂಲಕ ಕಂಡು ಹಿಡಿಯಬಹುದು.</string>
+    <string name="dgts__terms_text">ಮೇಲೆ ಇರುವ %1$sದೃಢೀಕರಣ ಕೋಡ್ ಕಳುಹಿಸಿ%1$s ತಟ್ಟುವ ಮೂಲಕ, %6$sTwitter ನಿಂದ Digits%5$s ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಒಂದು ಎಸ್‌ಎಮ್‍ಎಸ್ ಕಳುಹಿಸುತ್ತದೆ. ಹೊಸ ಎಸ್‌ಎಮ್‌ಎಸ್ ಅಥವಾ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ದೃಢೀಕರಿಸಲು \"ನನಗೆ ಕರೆಮಾಡು\" ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಮುಂದಿನ ಪರದೆಯಲ್ಲಿ ನೀವು \"ಕೋಡ್ ಮರುಕಳುಹಿಸಿ\" ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿಕೊಳ್ಳಬಹುದು. ಸಂದೇಶ, ಕರೆ ಮತ್ತು ಡೇಟಾ ದರಗಳು ಅನ್ವಯವಾಗುವುವು.</string>
+    <string name="dgts__terms_text_call_me">ಮೇಲೆ ಇರುವ %1$sನನಗೆ ಕರೆ ಮಾಡಿ%1$s ತಟ್ಟುವ ಮೂಲಕ, %6$sTwitter ನಿಂದ Digits%5$s ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಒಂದು ಧ್ವನಿ ಕರೆಯನ್ನು ಕಳುಹಿಸುತ್ತದೆ. ಕರೆ ಮತ್ತು ಡೇಟಾ ದರಗಳು ಅನ್ವಯವಾಗುವುವು.</string>
+    <string name="dgts__terms_text_create">ಮೇಲೆ ಇರುವ %1$sಖಾತೆ ರಚಿಸಿ%1$s ತಟ್ಟುವ ಮೂಲಕ, ನೀವು %6$sTwitter ನಿಂದ Digits%5$s,ನ %8$sಸೇವಾ ನಿಯಮಗಳು%5$s, %9$sಗೌಪ್ಯತಾ ನೀತಿ%5$s, ಮತ್ತು %10$sಕುಕೀಗಳ ಬಳಕೆ%5$s ಯನ್ನು ಮಾಡಲು, %4$s ಜೊತೆಗೆ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಲು, ಮತ್ತು %4$s ನ ಇತರೆ ಬಳಕೆದಾರರು ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಕಂಡು ಹಿಡಿಯಲು ನೀವು ಒಪ್ಪಿಕೊಳ್ಳುತ್ತಿದ್ದೀರಿ.</string>
+    <string name="dgts__terms_text_sign_in">ಮೇಲೆ ಇರುವ %1$sಮುಂದುವರಿಸಿ%1$s ತಟ್ಟುವ ಮೂಲಕ, ನಿಮ್ಮ %7$sDigits ಫೋನ್ ಸಂಖ್ಯೆ ಮತ್ತು/ಅಥವಾ ಇಮೇಲ್ ವಿಳಾಸ%5$sವನ್ನು %4$s ಜೊತೆಗೆ ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದು ಮತ್ತು %4$s ನ ಇತರೆ ಬಳಕೆದಾರರು ನಿಮ್ಮನ್ನು ಫೋನ್ ಸಂಖ್ಯೆ ಮತ್ತು/ಅಥವಾ ಇಮೇಲ್ ಮೂಲಕ ಕಂಡು ಹಿಡಿಯಬಹುದು.</string>
+    <string name="dgts__terms_text_updated">ಮೇಲೆ ಇರುವ %1$sಮುಂದುವರಿಸಿ%1$s ತಟ್ಟುವ ಮೂಲಕ, ನೀವು %6$sTwitter ನಿಂದ Digits%5$s,ನ %8$sಸೇವಾ ನಿಯಮಗಳು%5$s, %9$sಗೌಪ್ಯತಾ ನೀತಿ%5$s, ಮತ್ತು %10$sಕುಕೀಗಳ ಬಳಕೆ%5$s ಯನ್ನು ಮಾಡಲು, %7$sDigits ಪೋನ್ ಸಂಖ್ಯೆ ಮತ್ತು/ಅಥವಾ ಇಮೇಲ್ ವಿಳಾಸ%5$sವನ್ನು %4$s ಜೊತೆಗೆ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಒಪ್ಪಿಕೊಳ್ಳುತ್ತಿದ್ದೀರಿ. %4$s ನ ಇತರೆ ಬಳಕೆದಾರರು ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ/ ಅಥವಾ ಇಮೇಲ್ ಮೂಲಕ ನಿಮ್ಮನ್ನು ಕಂಡು ಹಿಡಿಯಬಹುದು.</string>
+    <string name="dgts__try_again">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸು</string>
+    <string name="dgts__try_again_confirmation">ದಯವಿಟ್ಟು ನಿಮ್ಮ ಕೋಡ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="dgts__try_again_email">ದಯವಿಟ್ಟು ನಿಮ್ಮ ಇಮೇಲ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="dgts__try_again_phone_number">ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಂಖ್ಯೆಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.</string>
+    <string name="dgts__try_another_phone">ಒಂದು ವಿಭಿನ್ನ ಫೋನ್ ಸಂಖ್ಯೆಯನ್ನು ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="dgts__unsupported_operator_error">ಎಸ್‌ಎಮ್‌ಎಸ್ ಸಂದೇಶವನ್ನು ಈ ಸಂಖ್ಯೆಗೆ ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
+    <string name="dgts__upload_contacts">ನಿಮ್ಮ ಸ್ನೇಹಿತರಲ್ಲಿ ಯಾರು ಈ ಆಪ್ ಅನ್ನು ಬಳಸುತ್ತಾರೋ ಅವರನ್ನು ಹುಡುಕಲು Digits by Twitter ಅನ್ನು ಬಳಸುತ್ತೇವೆ. ಯಾವಾಗ ನೀವು ಸರಿ ಅನ್ನು ತಟ್ಟುತ್ತೀರೋ ಆಗ, ನಾವು ನಿಮ್ಮ ವಿಳಾಸ ಪುಸ್ತಕವನ್ನು Digits by Twitter ಗೆ ಅಪ್‌ಲೋಡ್ ಮಾಡುತ್ತೆವೆ ಮತ್ತು ನಿಮ್ಮನ್ನು ಪತ್ತೆ ಹಚ್ಚಲು ನಮ್ಮ  %1$s ನ ಇತರೆ ಬಳಕೆದಾರರಿಗೆ ಅಥವಾ %1$s ನ ಇತರೆ ಬಳಕೆದಾರರರಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.</string>
+    <string name="dgts__verification_code">ಪರಿಶೀಲನಾ ಕೋಡ್</string>
+    <string name="dgts_pin_code_terms">ನೀವು ಈ ಹಿಂದೆ 2-ಹಂತದ ಪರಿಶೀಲನಾ ಕೋಡ್ ಅನ್ನು digits.com ನಲ್ಲಿ ಸೆಟ್ ಮಾಡಿದ್ದಿರಿ</string>
+</resources>

@@ -1,0 +1,18 @@
+language: android
+jdk: oraclejdk7
+android:
+  components:
+    # Workaround to get build tools 23.0.3
+    # https://github.com/travis-ci/travis-ci/issues/5036
+    - tools
+    - platform-tools
+    - build-tools-23.0.3
+    - android-23
+    - extra-android-m2repository
+
+script:
+    - echo "twitterConsumerKey=$TWITTER_CONSUMER_KEY" >> samples/app/fabric.properties
+    - echo "twitterConsumerSecret=$TWITTER_CONSUMER_SECRET" >> samples/app/fabric.properties
+    - echo "apiKey=$API_KEY" >> samples/app/fabric.properties
+    - echo "apiSecret=$API_SECRET" >> samples/app/fabric.properties
+    - ./gradlew assemble test

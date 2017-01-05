@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">تماس با من</string>
+    <string name="dgts__calling">در حال تماس…</string>
+    <string name="dgts__confirmation_code">کد تأیید</string>
+    <string name="dgts__confirmation_edit_hint">کد ۶ رقمی را که برایتان فرستادیم، وارد کنید.</string>
+    <string name="dgts__confirmation_error">امکان تأیید شماره تلفنتان وجود ندارد</string>
+    <string name="dgts__confirmation_error_alternative">متأسفیم، مشکلی در ارسال کد تأیید برای شما وجود دارد.</string>
+    <string name="dgts__confirmation_expired">این کد منقضی شده است. لطفا کد تاییدسازی را مجددا ارسال کنید.</string>
+    <string name="dgts__continue">ادامه</string>
+    <string name="dgts__create_account">ایجاد حساب کاربری</string>
+    <string name="dgts__digits_logo_desc">نماد آرم Digits</string>
+    <string name="dgts__digits_logo_name_desc">نام آرم digits</string>
+    <string name="dgts__dismiss">نادیده گرفتن</string>
+    <string name="dgts__done">انجام شد</string>
+    <string name="dgts__email_request_edit_hint">آدرس ایمیل</string>
+    <string name="dgts__email_request_title">آدرس ايميل را وارد كنيد</string>
+    <string name="dgts__find_your_friends">دوستانتان را پیدا کنید</string>
+    <string name="dgts__image_header_description">تصویر سربرگ برای ورود</string>
+    <string name="dgts__invalid_email">ايميل نامعتبر است. دوباره تلاش كنيد</string>
+    <string name="dgts__login_digits_text">از شماره تلفن من استفاده شود</string>
+    <string name="dgts__network_error">لطفاً شبکه تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__not_now">حالا نه</string>
+    <string name="dgts__okay">تأیید</string>
+    <string name="dgts__phone_number_edit_hint">شماره شما</string>
+    <string name="dgts__phone_number_text">شماره تلفنتان را وارد کنید</string>
+    <string name="dgts__pin_code_verification_title">کد تاییدسازی ۲مرحله‌ای را وارد کنید</string>
+    <string name="dgts__resend_confirmation_button_code">ارسال مجدد کد</string>
+    <string name="dgts__resend_confirmation_text">ارسال مجدد کد تأیید</string>
+    <string name="dgts__send_confirmation_code">ارسال کد تاییدسازی</string>
+    <string name="dgts__sending">در حال ارسال…</string>
+    <string name="dgts__success_desc">نماد موفقیت</string>
+    <string name="dgts__terms_email_request">با ضربه زدن روی %1$sادامه%1$s  این ایمیل را به حساب کاربری Digits خود اضافه می‌کنید. شما موافقت می‌کنید که این برنامه و %7$sهمه برنامه‌های فهرست‌شده در حساب کاربری Digits شما%5$s می‌توانند به این نشانی ایمیل دسترسی داشته باشند و کاربران آن‌ها می‌توانند شما را با ایمیل‌‌تان پیدا کنند.</string>
+    <string name="dgts__terms_text">با ضربه زدن روی %1$sارسال کد تاییدسازی%1$s در بالا،  %6$sDigits by Twitter%5$s یک پیامک برای تایید شماره تلفن شما ارسال خواهد کرد. در صفحه بعد، شما میتوانید «ارسال مجدد کد» را انتخاب کنید تا یک پیامک جدید دریافت کنید یا «با من تماس بگیر» را بزنید تا با شما یک تماس برقرار شود و شماره تلفن خود را تایید کنید. نرخ معمول پیامک و داده محاسبه می شود.</string>
+    <string name="dgts__terms_text_call_me">با ضربه زدن روی %1$sبا من تماس بگیر%1$s در بالا، %6$sDigits by Twitter%5$s  پیامی صوتی برای شما ارسال خواهد کرد تا شماره تلفن خود را تایید کنید. هزینه داده و تماس ممکن است اعمال شود.</string>
+    <string name="dgts__terms_text_create">با ضربه زدن روی %1$sایجاد حساب‌ کاربری%1$s در بالا، شما با %8$sشرایط استفاده از خدمات%5$s ، %9$sسیاست حریم خصوصی%5$s و %10$s استفاده از کوکی‌های%5$s %6$sDigits by Twitter%5$s ، برای به اشتراک‌گذاری شماره تلفن خود با %4$s موافقت میکنید و سایر کاربران %4$s می‌توانند شما را با شماره تلفن‌تان پیدا کنند.</string>
+    <string name="dgts__terms_text_sign_in">با ضربه زدن روی %1$sادامه%1$s در بالا، %7$sشماره تلفن/نشانی ایمیل Digits شما%5$s با %4$s به اشتراک گذاشته می‌شود و سایر کاربران %4$s می‌توانند شما را با شماره تلفن/ یا ایمیل پیدا کنند.</string>
+    <string name="dgts__terms_text_updated">با ضربه زدن روی %1$sادامه%1$s در بالا، شما با %8$sشرایط استفاده از خدمات%5$s، %9$sسیاست حریم خصوصی%5$s و %10$sاستفاده از کوکی‌های%5$s %6$sDigits by Twitter%5$s، برای به اشتراک‌گذاری%7$s شماره تلفن/نشانی ایمیل Digits شما %5$s با %4$s موافقت می‌کنید و سایر کاربران %4$s می‌توانند شما را با شماره تلفن/ نشانی ایمیل پیدا کنند.</string>
+    <string name="dgts__try_again">تلاش مجدد</string>
+    <string name="dgts__try_again_confirmation">لطفاً کدتان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_again_email">لطفا ايميلتان را بررسی کرده و دوباره امتحان کنید</string>
+    <string name="dgts__try_again_phone_number">لطفاً شماره تان را بررسی کنید و دوباره امتحان کنید.</string>
+    <string name="dgts__try_another_phone">یک شماره تلفن دیگر را امتحان کنید</string>
+    <string name="dgts__unsupported_operator_error">قادر به ارسال پیامک برای این شماره نیستیم.</string>
+    <string name="dgts__upload_contacts">ما از Digits by Twitter استفاده می‌کنیم تا تعداد بیشتری از دوستان شما که از این برنامه استفاده می کنند را پیدا کنیم. وقتی تأیید را بزنید، دفترچه آدرس شما را در Digits by Twitter بارگذاری خواهیم کرد تا شما را در یافتن کاربران %1$s که می‌شناسید کمک کنیم یا به سایر کاربران %1$s  کمک کنیم شما را پیدا کنند.</string>
+    <string name="dgts__verification_code">کد تاییدسازی</string>
+    <string name="dgts_pin_code_terms">شما پیش‌تر کد تاییدسازی ۲مرحله‌ای را در digits.com فعال کرده‌اید.</string>
+</resources>

@@ -1,0 +1,174 @@
+/*
+ * Copyright (C) 2015 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+apply plugin: 'android-sdk-manager'
+apply plugin: 'com.android.library'
+apply from: rootProject.qualityScript
+apply from: rootProject.deployScript
+apply plugin: io.fabric.gradle.weaving.ArtifactSizePlugin
+apply plugin: io.fabric.gradle.weaving.FabricPropertiesPlugin
+apply plugin: io.fabric.gradle.release.FabricKitReleasePlugin
+apply plugin: io.fabric.gradle.weaving.DexMethodCountPlugin
+
+repositories {
+    jcenter()
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+    defaultConfig {
+        versionCode 1
+        versionName version
+        minSdkVersion 9
+        consumerProguardFiles 'proguard.txt'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "GROUP", "\"${pom_group_id}\""
+            buildConfigField "String", "ARTIFACT_ID", "\"${pom_artifact_id}\""
+            buildConfigField "String", "BUILD_NUMBER", "\"${buildNumber}\""
+            buildConfigField "long", "BUILD_TIME", "${System.currentTimeMillis()}L"
+
+            testCoverageEnabled enableTestCodeCoverage
+        }
+        release {
+            buildConfigField "String", "GROUP", "\"${pom_group_id}\""
+            buildConfigField "String", "ARTIFACT_ID", "\"${pom_artifact_id}\""
+            buildConfigField "String", "BUILD_NUMBER", "\"${buildNumber}\""
+            buildConfigField "long", "BUILD_TIME", "${System.currentTimeMillis()}L"
+        }
+    }
+
+    lintOptions {
+        warningsAsErrors true
+    }
+
+    dexMethodCount {
+        packageFilter = "com.digits.sdk"
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
+    //Gradle publishes only release by default for multi module projects
+    //This will publish all build variants and we can specifically choose them
+    defaultPublishConfig 'release'
+    publishNonDefault true
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+    // Forcibly add debug and the generated "R" files onto the test classpath
+    sourceSets {
+        test.java.srcDirs += "build/generated/source/r/debug"
+        test.java.srcDirs += "src/debug"
+    }
+
+    testOptions.unitTests {
+        returnDefaultValues = true
+        all {
+            testLogging {
+                events 'passed', 'skipped', 'failed', 'standardOut', 'standardError'
+            }
+        }
+    }
+}
+
+ext.projectDependencies = [
+        ':sdk:fabric:fabric' : 'io.fabric.sdk.android:fabric:+@aar',
+        ':sdk:twitter:twitter-core' : 'com.twitter.sdk.android:twitter-core:+@aar'
+]
+
+dependencies {
+    projectDependencies.each { path, binary ->
+        debugCompile project(path: path, configuration: 'debug')
+        releaseCompile projectOrBinary(path: path, configuration: 'release', binary: binary)
+    }
+
+    // We need to include the appcompat as a compile time dependency to workaround a bug that exists
+    // in 1.1.0-1.1.3 version, see https://code.google.com/p/android/issues/detail?id=149268.
+    compile rootProject.appCompat
+    compile rootProject.retrofitMock
+    compile rootProject.answersShim
+
+    androidTestCompile rootProject.mockito
+    androidTestCompile rootProject.dexmakerMockito
+    androidTestCompile rootProject.androidTestingSupport
+
+    testCompile rootProject.fabricTest
+    testCompile rootProject.mavenAntTasks
+    testCompile rootProject.mockito
+    testCompile rootProject.androidTestingSupport
+    testCompile rootProject.junit
+    testCompile(rootProject.robolectric) {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
+    testCompile (rootProject.junitAddons) {
+        transitive = false
+    }
+}
+
+fabricKitRelease {
+    apiKey = project.hasProperty('DIGITS_KIT_API_KEY') ? project.DIGITS_KIT_API_KEY : ""
+    friendlyName = "Digits"
+    name = "${project.pom_group_id}.${project.pom_artifact_id}"
+    description = "Add phone number signup and login to your app with just a few lines of code."
+    version = project.version
+    artifactUrl {
+        repository = "https://maven.fabric.io/public"
+        groupId = project.pom_group_id
+        artifactId = project.pom_artifact_id
+    }
+    releaseNotesUrl = "https://s3.amazonaws.com/kits-crashlytics-com/android/com/digits/sdk/android/digits/${project.version}/digits-${project.version}-release-notes.html"
+    learnMoreUrl = "http://docs.fabric.io/android/digits/index.html"
+    price {
+        plan = "free"
+    }
+    license {
+        name = "Twitter"
+        url = "https://twitter.com/tos"
+    }
+    releaseChannel = "public"
+    minBuild = 0
+    maxBuild = Integer.MAX_VALUE
+    minPlatformVersion {
+        apiVersion "9"
+    }
+    docsUrl = "https://docs.fabric.io/javadocs/digits/${project.version}/index.html"
+    twitterHandle = "@digits"
+    websiteUrl = "https://get.digits.com/"
+}
+
+project.tasks.getByName('fabricKitRelease').enabled = rootProject.ext.kitsForRelease.get(project.path)
+
+task uploadFabricReleaseNotes(group: 'Release',
+        description: 'Upload Release Notes to S3 bucket kits-crashlytics-com',
+        type: io.fabric.gradle.release.FileUploadS3Task) {
+    enabled = rootProject.ext.kitsForRelease.get(project.path)
+    accessKey = System.properties['AWS_ACCESS_KEY_ID']
+    secretKey = System.properties['AWS_SECRET_ACCESS_KEY']
+    bucketName = System.properties['AWS_BUCKET']
+    destination = "android/com/digits/sdk/android/digits/${project.version}/digits-${project.version}-release-notes.html"
+    srcFile = new File("${project.projectDir}/release-notes.html")
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Zovi me</string>
+    <string name="dgts__calling">Pozivanje…</string>
+    <string name="dgts__confirmation_code">Potvrdni kod</string>
+    <string name="dgts__confirmation_edit_hint">Unesite šesteroznamenkasti kod koji smo vam poslali</string>
+    <string name="dgts__confirmation_error">Ne možemo potvrditi vaš telefonski broj</string>
+    <string name="dgts__confirmation_error_alternative">Nažalost, imamo problema sa slanjem potvrdnog koda.</string>
+    <string name="dgts__confirmation_expired">Ovaj je kod istekao. Ponovno pošaljite potvrdni kod.</string>
+    <string name="dgts__continue">Nastavi</string>
+    <string name="dgts__create_account">Izradi račun</string>
+    <string name="dgts__digits_logo_desc">ikona logotipa servisa digits</string>
+    <string name="dgts__digits_logo_name_desc">naziv logotipa servisa digits</string>
+    <string name="dgts__dismiss">Odbaci</string>
+    <string name="dgts__done">Gotovo</string>
+    <string name="dgts__email_request_edit_hint">Adresa e-pošte</string>
+    <string name="dgts__email_request_title">Unesite adresu e-pošte</string>
+    <string name="dgts__find_your_friends">Pronađite svoje prijatelje</string>
+    <string name="dgts__image_header_description">Slikovno zaglavlje za prijavu</string>
+    <string name="dgts__invalid_email">Adresa e-pošte nije valjana. Pokušajte ponovno</string>
+    <string name="dgts__login_digits_text">Koristi moj telefonski broj</string>
+    <string name="dgts__network_error">Provjerite svoju mrežu i pokušajte ponovno.</string>
+    <string name="dgts__not_now">Ne sada</string>
+    <string name="dgts__okay">U redu</string>
+    <string name="dgts__phone_number_edit_hint">Vaš broj</string>
+    <string name="dgts__phone_number_text">Unesite svoj telefonski broj</string>
+    <string name="dgts__pin_code_verification_title">Unesite kod za provjeru autentičnosti u dva koraka</string>
+    <string name="dgts__resend_confirmation_button_code">Opet šalji kod</string>
+    <string name="dgts__resend_confirmation_text">Ponovno pošalji potvrdni kod</string>
+    <string name="dgts__send_confirmation_code">Pošalji potvrdni kod</string>
+    <string name="dgts__sending">Slanje…</string>
+    <string name="dgts__success_desc">Ikona uspjele prijave</string>
+    <string name="dgts__terms_email_request">Dodirom na gore navedenu vezu %1$sNastavi%1$s tu ćete adresu e-pošte dodati na svoj račun za Digits. Pristajete na to da ova aplikacija i %7$ssve aplikacije navedene na vašem računu za Digits%5$s pristupaju navedenoj adresi te da vas korisnici tih aplikacija mogu pronaći pomoću adrese e-pošte.</string>
+    <string name="dgts__terms_text">Dodirom na gore navedenu vezu %1$sPošalji potvrdni kod%1$s %6$sDigits by Twitter%5$s poslat će vam SMS radi potvrde vašeg telefonskog broja. Na sljedećem zaslonu možete odabrati \"Ponovno pošalji kod\" da biste primili novi SMS ili \"Nazovi me\" da biste zatražili telefonski poziv za potvrdu telefonskog broja. Moguća je naplata poruka, poziva i prijenosa podataka.</string>
+    <string name="dgts__terms_text_call_me">Dodirom na gore navedenu vezu %1$sNazovi me%1$s %6$sDigits by Twitter%5$s uputit će vam govorni poziv radi potvrde vašeg telefonskog broja. Moguća je naplata poziva i prijenosa podataka.</string>
+    <string name="dgts__terms_text_create">Dodirom na gore navedenu vezu %1$sIzradi račun%1$s pristajete na %8$suvjete pružanja usluge%5$s, %9$spravila o privatnosti%5$s i %10$spravilnik o korištenju kolačića%5$s servisa %6$sDigits by Twitter%5$s te na dijeljenje telefonskog broja sa servisom %4$s i na to da vas korisnici servisa %4$s mogu pronaći pomoću telefonskog broja.</string>
+    <string name="dgts__terms_text_sign_in">Dodirom na gore navedenu vezu %1$sNastavi%1$s vaš će %7$stelefonski broj i/ili adresa e-pošte na servisu Digits%5$s biti podijeljeni sa servisom %4$s, a  korisnici servisa %4$s moći će vas pronaći pomoću telefonskog broja \
+i/ili adrese e-pošte.</string>
+    <string name="dgts__terms_text_updated">Dodirom na gore navedenu vezu %1$sNastavi%1$s pristajete na %8$suvjete \
+pružanja usluge%5$s, %9$spravila o privatnosti%5$s i %10$spravilnik o korištenju kolačića%5$s servisa %6$sDigits by Twitter%5$s te na dijeljenje %7$stelefonskog broja i/ili adrese e-pošte servisa Digits%5$s sa servisom %4$s te na to da vas korisnici servisa %4$s mogu pronaći pomoću telefonskog broja i/ili adrese e-pošte.</string>
+    <string name="dgts__try_again">Pokušajte ponovno</string>
+    <string name="dgts__try_again_confirmation">Provjerite svoj kod i pokušajte ponovno.</string>
+    <string name="dgts__try_again_email">Provjerite svoju e-poštu i pokušajte ponovno</string>
+    <string name="dgts__try_again_phone_number">Provjerite svoj broj i pokušajte ponovno.</string>
+    <string name="dgts__try_another_phone">Pokušajte s drugim telefonskim brojem</string>
+    <string name="dgts__unsupported_operator_error">Ne možemo poslati SMS poruku na ovaj broj.</string>
+    <string name="dgts__upload_contacts">Digits by Twitter koristimo da bismo pronašli još vaših prijatelja koji koriste ovu aplikaciju. Kada dodirnete U redu, prenijet ćemo vaš adresar u Digits by Twitter da bismo vam pomogli pronaći korisnike aplikacije %1$s koje poznajete ili da bismo pomogli drugim korisnicima aplikacije %1$s da pronađu vas.</string>
+    <string name="dgts__verification_code">Kod za provjeru autentičnosti</string>
+    <string name="dgts_pin_code_terms">Već ste postavili kod za provjeru autentičnosti u dva koraka na web-mjestu digits.com</string>
+</resources>

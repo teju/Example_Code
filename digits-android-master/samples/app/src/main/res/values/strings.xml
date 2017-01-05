@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="digits_app_name"
+        tools:ignore="UnusedResources">DigitsSampleApp</string>
+
+    <string name="kit_digits">Digits</string>
+
+    <string name="user_id">User Id: %d</string>
+    <string name="token">Token: %s</string>
+    <string name="secret">Secret: %s</string>
+    <string name="upload_your_friends">Upload contacts</string>
+    <string name="contact_lookup">Lookup friend matches</string>
+    <string name="enable_sandbox">Enable sandbox</string>
+    <string name="disable_sandbox">Disable sandbox</string>
+    <string name="sandboxMode_header">Sandbox Mode:</string>
+    <string name="custom_phone_login">Custom Phone Login (Beta)</string>
+    <string name="beta_notice">Currently in closed beta. Contact support for more information.</string>
+    <string name="send_confirmation_code">Send Confirmation Code</string>
+    <string name="phone_number_edit_hint">Your Number</string>
+    <string name="no_friends_found">No friends found</string>
+    <string name="id_format">ID: %d</string>
+    <string name="contact_upload_failed">Contact upload failed</string>
+    <string name="contact_upload_failed_permission">Contacts permission missing</string>
+    <string name="you_have_new_friends">You have new friends</string>
+    <string name="clear_session">Clear Session</string>
+    <string name="verify_credentials">Verify Credentials</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">以電話確認</string>
+    <string name="dgts__calling">撥號中…</string>
+    <string name="dgts__confirmation_code">確認碼</string>
+    <string name="dgts__confirmation_edit_hint">請輸入我們傳送給你的 6 位數確認碼</string>
+    <string name="dgts__confirmation_error">無法確認你的電話號碼</string>
+    <string name="dgts__confirmation_error_alternative">抱歉，傳送你的確認碼時發生錯誤。</string>
+    <string name="dgts__confirmation_expired">此代碼已過期。請重新發送確認碼。</string>
+    <string name="dgts__continue">繼續</string>
+    <string name="dgts__create_account">建立帳戶</string>
+    <string name="dgts__digits_logo_desc">digits 標誌圖示</string>
+    <string name="dgts__digits_logo_name_desc">digits 標誌名稱</string>
+    <string name="dgts__dismiss">捨棄</string>
+    <string name="dgts__done">完成</string>
+    <string name="dgts__email_request_edit_hint">電子郵件地址</string>
+    <string name="dgts__email_request_title">輸入電子郵件地址</string>
+    <string name="dgts__find_your_friends">尋找你的朋友</string>
+    <string name="dgts__image_header_description">登入的影像標題</string>
+    <string name="dgts__invalid_email">電子郵件地址無效。請再試一次</string>
+    <string name="dgts__login_digits_text">使用我的電話號碼</string>
+    <string name="dgts__network_error">請檢查網路，然後再試一次。</string>
+    <string name="dgts__not_now">現在不用</string>
+    <string name="dgts__okay">好的</string>
+    <string name="dgts__phone_number_edit_hint">你的號碼</string>
+    <string name="dgts__phone_number_text">輸入你的電話號碼</string>
+    <string name="dgts__pin_code_verification_title">輸入 2 步驟認證碼</string>
+    <string name="dgts__resend_confirmation_button_code">重新傳送確認碼</string>
+    <string name="dgts__resend_confirmation_text">重新傳送確認碼</string>
+    <string name="dgts__send_confirmation_code">發送確認碼</string>
+    <string name="dgts__sending">發送中…</string>
+    <string name="dgts__success_desc">成功圖示</string>
+    <string name="dgts__terms_email_request">如果點選上方的「%1$s繼續%1$s」，就會將此電子郵件加入 Digits 帳戶。你同意此應用程式和 %7$sDigits 帳戶中所列的所有應用程式%5$s都可以存取此電子郵件地址，而且其使用者可以透過電子郵件地址找到你。</string>
+    <string name="dgts__terms_text">如果點選上方的「%1$s發送確認碼%1$s」，%6$sDigits by Twitter%5$s 就會發送簡訊給你，確認你的電話號碼。在下一個畫面中，你可以選擇「重新發送確認碼」以接收新簡訊，或選擇「以電話確認」以接收確認電話號碼的語音通話。可能需要支付簡訊、通話和數據費用。</string>
+    <string name="dgts__terms_text_call_me">如果點選上方的「%1$s以電話確認%1$s」，%6$sDigits by Twitter%5$s 就會撥打語音通話給你，確認你的電話號碼。可能需支付通話和數據費用。</string>
+    <string name="dgts__terms_text_create">如果點選上方的「%1$s建立帳戶%1$s」，即表示你同意 %6$sDigits by Twitter%5$s 的%8$s服務條款%5$s、%9$s隱私政策%5$s和 %10$sCookie 使用政策%5$s，同意將你的電話號碼與 %4$s 分享，並同意 %4$s 的其他使用者可以透過電話號碼找到你。</string>
+    <string name="dgts__terms_text_sign_in">如果點選上方的「%1$s繼續%1$s」，將會與 %4$s 分享你的 %7$sDigits 電話號碼和/或電子郵件地址%5$s，而且 %4$s 的其他使用者可以透過電話號碼和/或電子郵件地址找到你。</string>
+    <string name="dgts__terms_text_updated">如果點選上方的「%1$s繼續%1$s」，即表示你同意 %6$sDigits by Twitter%5$s 的%8$s服務條款%5$s、%9$s隱私政策%5$s和 %10$sCookie 使用政策%5$s，同意將你的 %7$sDigits 電話號碼和/或電子郵件地址%5$s與 %4$s 分享，並同意 %4$s 的其他使用者可以透過電話號碼和/或電子郵件地址找到你。</string>
+    <string name="dgts__try_again">再試一次</string>
+    <string name="dgts__try_again_confirmation">請檢查你的代碼，然後再試一次。</string>
+    <string name="dgts__try_again_email">請檢查你的電子郵件地址，然後再試一次</string>
+    <string name="dgts__try_again_phone_number">請檢查你的號碼，然後再試一次。</string>
+    <string name="dgts__try_another_phone">請試試不同的電話號碼</string>
+    <string name="dgts__unsupported_operator_error">無法將簡訊發送至這個電話號碼。</string>
+    <string name="dgts__upload_contacts">我們會使用 Digits by Twitter 為你尋找更多在使用此應用程式的朋友。當你點選「確定」時，我們就會將你的通訊錄上傳到 Digits by Twitter，以便協助你尋找你認識的 %1$s 的使用者，或協助其他 %1$s 的使用者找到你。</string>
+    <string name="dgts__verification_code">認證碼</string>
+    <string name="dgts_pin_code_terms">你先前已在 digits.com 上設定 2 步驟認證碼</string>
+</resources>

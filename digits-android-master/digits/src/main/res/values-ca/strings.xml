@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Truca\'m</string>
+    <string name="dgts__calling">S\'està trucant…</string>
+    <string name="dgts__confirmation_code">Codi de confirmació</string>
+    <string name="dgts__confirmation_edit_hint">Introdueix el codi de 6 dígits que t\'hem enviat</string>
+    <string name="dgts__confirmation_error">No es pot confirmar el número de telèfon</string>
+    <string name="dgts__confirmation_error_alternative">Tenim problemes per enviar-te un codi de confirmació.</string>
+    <string name="dgts__confirmation_expired">Aquest codi ha caducat. Torna a enviar el codi de confirmació.</string>
+    <string name="dgts__continue">Continua</string>
+    <string name="dgts__create_account">Crea un compte</string>
+    <string name="dgts__digits_logo_desc">icona del logo de Digits</string>
+    <string name="dgts__digits_logo_name_desc">nom del logo de Digits</string>
+    <string name="dgts__dismiss">Descarta</string>
+    <string name="dgts__done">Fet</string>
+    <string name="dgts__email_request_edit_hint">Adreça electrònica</string>
+    <string name="dgts__email_request_title">Introdueix l\'adreça electrònica</string>
+    <string name="dgts__find_your_friends">Troba els teus amics</string>
+    <string name="dgts__image_header_description">Capçalera de la imatge per a l\'inici de sessió</string>
+    <string name="dgts__invalid_email">El correu electrònic no és vàlid. Torna-ho a provar</string>
+    <string name="dgts__login_digits_text">Utilitza el meu número de telèfon</string>
+    <string name="dgts__network_error">Comprova la xarxa i torna-ho a provar.</string>
+    <string name="dgts__not_now">Ara no</string>
+    <string name="dgts__okay">D\'acord</string>
+    <string name="dgts__phone_number_edit_hint">El teu número</string>
+    <string name="dgts__phone_number_text">Introdueix el número de telèfon</string>
+    <string name="dgts__pin_code_verification_title">Introdueix el codi de verificació en 2 passos</string>
+    <string name="dgts__resend_confirmation_button_code">Reenvia codi</string>
+    <string name="dgts__resend_confirmation_text">Torna a enviar el codi de confirmació</string>
+    <string name="dgts__send_confirmation_code">Envia el codi de confirmació</string>
+    <string name="dgts__sending">S\'està enviant…</string>
+    <string name="dgts__success_desc">Icona d\'èxit</string>
+    <string name="dgts__terms_email_request">Si toques %1$sContinua%1$s més amunt, afegiràs aquest correu electrònic al compte de Digits. A més, voldrà dir que acceptes que aquesta aplicació i %7$stotes les aplicacions incloses al compte de Digits%5$s puguin accedir a aquesta adreça electrònica i que els seus usuaris et puguin descobrir pel correu electrònic.</string>
+    <string name="dgts__terms_text">Si toques %1$sEnvia el codi de confirmació%1$s més amunt, %6$sDigits by Twitter%5$s t\'enviarà un missatge SMS per confirmar el número de telèfon. A la pantalla següent, podràs triar \"Torna a enviar el codi\" per rebre un altre SMS o \"Truca\'m\" per iniciar una trucada telefònica i confirmar el número de telèfon. Es poden aplicar càrrecs per missatges, trucades i dades.</string>
+    <string name="dgts__terms_text_call_me">Si toques %1$sTruca\'m%1$s més amunt, %6$sDigits by Twitter%5$s et farà una trucada de veu per confirmar el número de telèfon. Es poden aplicar càrrecs per trucada i dades.</string>
+    <string name="dgts__terms_text_create">Si toques %1$sCrea un compte%1$s més amunt, voldrà dir que acceptes les %8$scondicions del servei%5$s, la %9$spolítica de privacitat%5$s i l\'%10$sús de galetes%5$s de %6$sDigits by Twitter%5$s per  compartir el número de telèfon amb %4$s i que altres usuaris de %4$s et podran descobrir pel número de telèfon.</string>
+    <string name="dgts__terms_text_sign_in">Si toques %1$sContinua%1$s més amunt, el teu %7$snúmero de telèfon i/o adreça electrònica de Digits%5$s es compartiran amb %4$s i altres usuaris de %4$s  et podran descobrir pel número de telèfon i/o el correu electrònic.</string>
+    <string name="dgts__terms_text_updated">Si toques %1$sContinua%1$s més amunt, voldrà dir que acceptes les %8$scondicions del servei%5$s, la %9$spolítica de privacitat%5$s i l\'%10$sús de galetes%5$s de  %6$sDigits by Twitter%5$s per compartir %7$sel número de telèfon o l\'adreça electrònica de Digits%5$s amb %4$s i que altres usuaris de %4$s et podran  descobrir pel número de telèfon i/o el correu electrònic.</string>
+    <string name="dgts__try_again">Torna-ho a provar</string>
+    <string name="dgts__try_again_confirmation">Comprova el codi i torna-ho a provar.</string>
+    <string name="dgts__try_again_email">Comprova el correu electrònic i torna-ho a provar</string>
+    <string name="dgts__try_again_phone_number">Comprova el número i torna-ho a provar.</string>
+    <string name="dgts__try_another_phone">Prova-ho amb un número de telèfon diferent</string>
+    <string name="dgts__unsupported_operator_error">No es pot enviar un missatge SMS a aquest número.</string>
+    <string name="dgts__upload_contacts">Utilitzem Digits by Twitter per trobar més amics teus que utilitzen aquesta aplicació. Quan toquis D\'acord, pujarem la llibreta d\'adreces a Digits by Twitter per ajudar-te a trobar els usuaris de %1$s que coneguis o ajudar altres usuaris de %1$s a trobar-te.</string>
+    <string name="dgts__verification_code">Codi de verificació</string>
+    <string name="dgts_pin_code_terms">Has configurat prèviament un codi de verificació en 2 passos a digits.com</string>
+</resources>

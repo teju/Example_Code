@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources>
+    <dimen name="dgts__progress_bar_side_length">28dp</dimen>
+    <dimen name="dgts__title_text_size">22sp</dimen>
+    <dimen name="dgts__terms_text_size">12sp</dimen>
+    <dimen name="dgts__confirmation_code_text_size">32sp</dimen>
+    <dimen name="dgts__margin_bottom">16dp</dimen>
+    <dimen name="dgts__margin_left">14dp</dimen>
+    <dimen name="dgts__margin_right">14dp</dimen>
+    <dimen name="dgts__countdown_margin">8dp</dimen>
+    <dimen name="dgts__padding_container">14dp</dimen>
+    <dimen name="dgts__padding_title">10dp</dimen>
+    <dimen name="dgts__country_code_margin_bottom">1dp</dimen>
+    <dimen name="dgts__permissions_margin_bottom">18dp</dimen>
+</resources>

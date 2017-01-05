@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">โทรหาฉัน</string>
+    <string name="dgts__calling">กำลังโทร…</string>
+    <string name="dgts__confirmation_code">รหัสยืนยัน</string>
+    <string name="dgts__confirmation_edit_hint">กรอกรหัส 6 หลักที่เราส่งให้คุณ</string>
+    <string name="dgts__confirmation_error">ไม่สามารถยืนยันหมายเลขโทรศัพท์ของคุณได้</string>
+    <string name="dgts__confirmation_error_alternative">ขออภัย เรามีปัญหาในการส่งรหัสยืนยันไปหาคุณ</string>
+    <string name="dgts__confirmation_expired">รหัสนี้หมดอายุแล้ว โปรดส่งรหัสยืนยันใหม่อีกครั้ง</string>
+    <string name="dgts__continue">ดำเนินการต่อ</string>
+    <string name="dgts__create_account">สร้างบัญชี</string>
+    <string name="dgts__digits_logo_desc">ไอคอนโลโก้ Digits</string>
+    <string name="dgts__digits_logo_name_desc">ชื่อโลโก้ Digits</string>
+    <string name="dgts__dismiss">ไม่สนใจ</string>
+    <string name="dgts__done">เสร็จสิ้น</string>
+    <string name="dgts__email_request_edit_hint">ที่อยู่อีเมล</string>
+    <string name="dgts__email_request_title">ป้อนที่อยู่อีเมล</string>
+    <string name="dgts__find_your_friends">ค้นหาเพื่อนของคุณ</string>
+    <string name="dgts__image_header_description">ภาพส่วนหัวสำหรับการเข้าสู่ระบบ</string>
+    <string name="dgts__invalid_email">อีเมลไม่ถูกต้อง ลองใหม่</string>
+    <string name="dgts__login_digits_text">ใช้หมายเลขโทรศัพท์ของฉัน</string>
+    <string name="dgts__network_error">กรุณาตรวจสอบการเชื่อมต่อของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__not_now">ไม่ใช่ตอนนี้</string>
+    <string name="dgts__okay">โอเค</string>
+    <string name="dgts__phone_number_edit_hint">หมายเลขของคุณ</string>
+    <string name="dgts__phone_number_text">กรอกหมายเลขโทรศัพท์ของคุณ</string>
+    <string name="dgts__pin_code_verification_title">ป้อนรหัสยืนยัน 2 ชั้น</string>
+    <string name="dgts__resend_confirmation_button_code">ส่งรหัสใหม่</string>
+    <string name="dgts__resend_confirmation_text">ส่งรหัสยืนยันอีกครั้ง</string>
+    <string name="dgts__send_confirmation_code">ส่งรหัสยืนยัน</string>
+    <string name="dgts__sending">กำลังส่ง…</string>
+    <string name="dgts__success_desc">ไอคอนความสำเร็จ</string>
+    <string name="dgts__terms_email_request">การแตะที่ %1$sดำเนินการต่อ%1$s ด้านบน จะเป็นการเพิ่มอีเมลนี้ลงในบัญชี Digits ของคุณ และจะถือว่าคุณยอมให้แอพนี้และ%7$sแอพทั้งหมดในบัญชี Digits ของคุณ%5$sเข้าถึงที่อยู่อีเมลนี้ได้ และผู้ใช้แอพเหล่านั้นจะสามารถค้นหาคุณได้ด้วยอีเมล</string>
+    <string name="dgts__terms_text">เมื่อแตะ %1$sส่งรหัสยืนยัน%1$s ด้านบน %6$sDigits by Twitter%5$s จะส่งข้อความ SMS ไปหาคุณเพื่อยืนยันหมายเลขโทรศัพท์ บนหน้าจอถัดไป คุณสามารถเลือก “ส่งรหัสอีกครั้ง” เพื่อรับ SMS ใหม่ หรือ “โทรหาฉัน” เพื่อเริ่มต้นการโทรศัพท์เพื่อยืนยันหมายเลขโทรศัพท์ของคุณ โดยอาจมีการเก็บค่าบริการข้อความ การโทร และข้อมูล</string>
+    <string name="dgts__terms_text_call_me">เมื่อแตะที่ %1$sโทรหาฉัน%1$s ด้านบน %6$sDigits by Twitter%5$s จะโทรหาคุณเพื่อยืนยันหมายเลขโทรศัพท์ของคุณ ซึ่งอาจมีการเก็บค่าบริการการโทรและข้อมูล</string>
+    <string name="dgts__terms_text_create">เมื่อแตะ %1$sสร้างบัญชี%1$s ด้านบนจะถือว่าคุณยอมรับ%8$sข้อตกลงการใช้งาน%5$s%9$sนโยบายความเป็นส่วนตัว%5$s และ%10$sนโยบายคุกกี้%5$sของ %6$sDigits by Twitter%5$s ในการแบ่งปันหมายเลขโทรศัพท์ของคุณร่วมกับ %4$s และผู้ใช้อื่นของ %4$s  สามารถหาคุณได้จากหมายเลขโทรศัพท์</string>
+    <string name="dgts__terms_text_sign_in">การแตะที่ %1$sดำเนินการต่อ%1$s ด้านบน จะถือว่าคุณยอมให้เราแบ่งปัน%7$sหมายเลขโทรศัพท์และ/หรืออีเมล Digits ของคุณ%5$sร่วมกับ %4$s  และผู้ใช้ %4$s รายอื่น ๆ จะสามารถค้นหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมล</string>
+    <string name="dgts__terms_text_updated">การแตะที่ %1$sดำเนินการต่อ%1$s ด้านบน จะถือว่าคุณยอมรับ %8$sข้อตกลงการให้บริการ%5$s, %9$sนโยบายความเป็นส่วนตัว%5$s และ  %10$sนโยบายคุ้กกี้%5$s ของ %6$sDigits by Twitter%5$s ในการแบ่งปัน%7$sหมายเลขโทรศัพท์และ/หรืออีเมล Digits ของคุณ%5$sร่วมกับ%4$s และผู้ใช้%4$s รายอื่น ๆ จะสามารถค้นหาคุณได้จากหมายเลขโทรศัพท์และ/หรืออีเมล</string>
+    <string name="dgts__try_again">ลองใหม่</string>
+    <string name="dgts__try_again_confirmation">กรุณาตรวจสอบรหัสของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_again_email">โปรดตรวจสอบอีเมลคุณและลองอีกครั้ง</string>
+    <string name="dgts__try_again_phone_number">กรุณาตรวจสอบหมายเลขของคุณแล้วลองอีกครั้ง</string>
+    <string name="dgts__try_another_phone">ลองใช้หมายเลขโทรศัพท์อื่น</string>
+    <string name="dgts__unsupported_operator_error">ไม่สามารถส่งข้อความ SMS ถึงหมายเลขนี้ได้</string>
+    <string name="dgts__upload_contacts">เราใช้ Digits by Twitter เพื่อค้นหาเพื่อนของคุณที่ใช้งานแอพนี้ เมื่อคุณแตะ ตกลง เราจะอัพโหลดสมุดที่อยู่ของคุณไปที่ Digits by Twitter ดังนั้นเราสามารถหาผู้ใช้ของ %1$s ที่คุณรู้จักหรือช่วยผู้ใช้อื่นๆของ %1$s ค้นหาคุณ</string>
+    <string name="dgts__verification_code">รหัสยืนยัน</string>
+    <string name="dgts_pin_code_terms">คุณได้ตั้งรหัสยืนยัน 2 ชั้นไว้ก่อนหน้านี้บน digits.com</string>
+</resources>

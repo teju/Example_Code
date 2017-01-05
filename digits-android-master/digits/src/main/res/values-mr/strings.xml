@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">मला कॉल करा</string>
+    <string name="dgts__calling">कॉल करीत आहे…</string>
+    <string name="dgts__confirmation_code">पुष्टीकरण कोड</string>
+    <string name="dgts__confirmation_edit_hint">आम्ही आपल्याला पाठवलेला 6-अंकी कोड नोंदवा</string>
+    <string name="dgts__confirmation_error">आपल्या फोन नंबरची पुष्टी करण्यात असमर्थ</string>
+    <string name="dgts__confirmation_error_alternative">माफ करा, आपणास पुष्टीकरण कोड पाठविण्यात आम्हाला अडचण येत आहे.</string>
+    <string name="dgts__confirmation_expired">हा कोड कालबाह्य झाला आहे. कृपया पुष्टीकरण कोड पुन्हा पाठवा.</string>
+    <string name="dgts__continue">पुढे चालू ठेवा</string>
+    <string name="dgts__create_account">खाते तयार करा</string>
+    <string name="dgts__digits_logo_desc">digits लोगो चिन्ह</string>
+    <string name="dgts__digits_logo_name_desc">digits लोगो नाव</string>
+    <string name="dgts__dismiss">डिसमिस</string>
+    <string name="dgts__done">पूर्ण झाले</string>
+    <string name="dgts__email_request_edit_hint">ई-मेल पत्ता</string>
+    <string name="dgts__email_request_title">ई-मेल पत्ता नोंदवा</string>
+    <string name="dgts__find_your_friends">आपल्या मित्रांना शोधा</string>
+    <string name="dgts__image_header_description">लॉगइनसाठी प्रतिमा हेडर</string>
+    <string name="dgts__invalid_email">अमान्य ई-मेल. पुन्हा प्रयत्न करा</string>
+    <string name="dgts__login_digits_text">माझा फोन नंबर वापरा</string>
+    <string name="dgts__network_error">कृपया आपले नेटवर्क तपासा आणि पुन्हा प्रयत्न करा.</string>
+    <string name="dgts__not_now">आत्ता नको</string>
+    <string name="dgts__okay">ठीक आहे</string>
+    <string name="dgts__phone_number_edit_hint">आपला नंबर</string>
+    <string name="dgts__phone_number_text">आपला फोन नंबर नोंदवा</string>
+    <string name="dgts__pin_code_verification_title">2-चरण सत्यापन कोड प्रविष्ट करा</string>
+    <string name="dgts__resend_confirmation_button_code">कोड पाठवा</string>
+    <string name="dgts__resend_confirmation_text">पुष्टीकरण कोड पुन्हा पाठवा</string>
+    <string name="dgts__send_confirmation_code">पुष्टीकरण कोड पाठवा</string>
+    <string name="dgts__sending">पाठवित आहे…</string>
+    <string name="dgts__success_desc">सफलता आयकॉन</string>
+    <string name="dgts__terms_email_request">वरील %1$sपुढे सुरू ठेवा%1$s टॅप करून, आपण आपल्या Digits खात्यामध्ये हा ई-मेल सामील करत आहात. आपल्या Digits खात्यामध्ये%5$s हा अनुप्रयोग आणि %7$sसर्व अनुप्रयोग या ई-मेल पत्त्याचा वापर करू शकतात आणि त्यांचे उपभोक्ते आपल्याला ई-मेलद्वारे शोधू शकतात.</string>
+    <string name="dgts__terms_text">वरील %1$sपुष्टीकरण कोड पाठवा%1$s वर टॅप करून, %6$sDigits by Twitter%5$s आपल्या फोन क्रमांकाची पुष्टी करण्यासाठी आपल्याला SMS पाठवेल. पुढील स्क्रीनवर, आपल्या फोन क्रमांकाची पुष्टी करण्यासाठी, आपण नवीन SMS प्राप्त करण्याकरिता \"कोड पुन्हा पाठवा\" किंवा फोन कॉल सुरू करण्यासाठी \"मला कॉल करा\" निवडू शकता.</string>
+    <string name="dgts__terms_text_call_me">वरील %1$sमला कॉल करा%1$s वर टॅप करून, आपल्या फोन क्रमांकाची पुष्टी करण्यासाठी %6$sDigits by Twitter%5$s आपणास व्हॉइस कॉल पाठवेल. कॉल आणि डेटा शुल्क लागू होऊ शकते.</string>
+    <string name="dgts__terms_text_create">वरील %1$sखाते तयार करा%1$s टॅप करून, आपला फोन क्रमांक %4$s सह शेअर करण्यासाठी, %6$sDigits by Twitter%5$s यांच्या %8$sसेवा अटी%5$s, %9$sगोपनीयता धोरण%5$s, आणि %10$sकुकीजचा वापर%5$s यांना मान्यता देता, आणि आणि %4$s यांचे अन्य उपभोक्ते आपल्या फोन क्रमांकाद्वारे आपल्याला शोधू शकतात.</string>
+    <string name="dgts__terms_text_sign_in">वरील %1$sपुढे चालू ठेवा%1$s टॅप करून, आपला %7$s अंकी फोन क्रमांक आणि/किंवा ई-मेल पत्ता%5$s, %4$s यांच्यासह शेअर केला जाईल आणि %4$s यांचे अन्य उपभोक्ते आपला फोन क्रमांक आणि/किंवा ई-मेलद्वारे आपल्याला ओळखू शकतात.</string>
+    <string name="dgts__terms_text_updated">वरील %1$sपुढे चालू ठेवा%1$s टॅप करून, आपला %7$s अंकी फोन क्रमांक आणि/किंवा ईमेल पत्ता%5$s, %4$s सह शेअर करण्यासाठी, %6$sDigits by Twitter%5$s यांच्या %8$sसेवा अटी%5$s, %9$sगोपनीयता धोरण%5$s, आणि %10$sकुकीजचा वापर%5$s यांना मान्यता देता, आणि %4$s यांचे अन्य उपभोक्ते आपल्या फोन क्रमांक आणि/किंवा ई-मेल द्वारे आपल्याला शोधू शकतात.</string>
+    <string name="dgts__try_again">पुन्हा प्रयत्न करा</string>
+    <string name="dgts__try_again_confirmation">कृपया आपला कोड तपासा आणि पुन्हा प्रयत्न करा.</string>
+    <string name="dgts__try_again_email">कृपया आपला ई-मेल तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="dgts__try_again_phone_number">कृपया आपला नंबर तपासा आणि पुन्हा प्रयत्न करा.</string>
+    <string name="dgts__try_another_phone">अन्य फोन नंबर वापरून पाहा</string>
+    <string name="dgts__unsupported_operator_error">या नंबरवर SMS संदेश पाठविण्यास असमर्थ.</string>
+    <string name="dgts__upload_contacts">आम्ही Digits by Twitter चा उपयोग हा अनुप्रयोग वापरणाऱ्या आपल्या अधिक मित्रांना शोधण्यासाठी करतो. आपण जेव्हा ठीक आहे वर टॅप करता तेव्हा आम्ही आपले पत्ता पुस्तक Digits by Twitter वर अपलोड करू म्हणजे आम्ही आपल्याला माहित असलेले %1$s चे उपभोक्ते शोधण्यात आपली किंवा %1$s च्या इतर उपभोक्त्यांनी आपल्याला शोधण्यात त्यांची मदत करू शकू.</string>
+    <string name="dgts__verification_code">सत्यापन कोड</string>
+    <string name="dgts_pin_code_terms">आपण यापूर्वी digits.com वर 2-चरण सत्यापन कोड सेट केलेला आहे</string>
+</resources>

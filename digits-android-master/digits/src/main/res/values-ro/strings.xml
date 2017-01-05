@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Sună-mă</string>
+    <string name="dgts__calling">Se apelează…</string>
+    <string name="dgts__confirmation_code">Cod de confirmare</string>
+    <string name="dgts__confirmation_edit_hint">Introdu codul de 6 cifre pe care ți l-am trimis</string>
+    <string name="dgts__confirmation_error">Nu s-a putut confirma numărul de telefon</string>
+    <string name="dgts__confirmation_error_alternative">Ne pare rău, nu reușim să-ți trimitem un cod de confirmare.</string>
+    <string name="dgts__confirmation_expired">Acest cod a expirat. Retrimite codul de confirmare.</string>
+    <string name="dgts__continue">Continuă</string>
+    <string name="dgts__create_account">Creează un cont</string>
+    <string name="dgts__digits_logo_desc">pictograma siglei digits</string>
+    <string name="dgts__digits_logo_name_desc">numele siglei digits</string>
+    <string name="dgts__dismiss">Renunță</string>
+    <string name="dgts__done">Gata</string>
+    <string name="dgts__email_request_edit_hint">Adresă de e-mail</string>
+    <string name="dgts__email_request_title">Introdu adresa de e-mail</string>
+    <string name="dgts__find_your_friends">Găsește-ți prietenii</string>
+    <string name="dgts__image_header_description">Imagine de antet pentru conectare</string>
+    <string name="dgts__invalid_email">Adresă de e-mail nevalidă. Încearcă din nou.</string>
+    <string name="dgts__login_digits_text">Folosește-mi numărul de telefon</string>
+    <string name="dgts__network_error">Verifică-ți rețeaua și încearcă din nou.</string>
+    <string name="dgts__not_now">Nu acum</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Numărul tău</string>
+    <string name="dgts__phone_number_text">Introdu numărul tău de telefon</string>
+    <string name="dgts__pin_code_verification_title">Introdu codul de verificare în 2 pași</string>
+    <string name="dgts__resend_confirmation_button_code">Retrimite cod</string>
+    <string name="dgts__resend_confirmation_text">Retrimite codul de confirmare</string>
+    <string name="dgts__send_confirmation_code">Trimite codul de confirmare</string>
+    <string name="dgts__sending">Se trimite…</string>
+    <string name="dgts__success_desc">Pictograma Succes</string>
+    <string name="dgts__terms_email_request">Dacă atingi %1$sContinuă%1$s mai sus, adaugi această adresă de e-mail la contul \
+tău Digits. Ești de acord ca această aplicație și %7$stoate aplicațiile listate în contul tău Digits%5$s să aibă acces la această adresă de e-mail,\
+ iar utilizatorii lor să te găsească după e-mail.</string>
+    <string name="dgts__terms_text">Dacă atingi %1$sTrimite codul de confirmare%1$s mai sus, %6$sDigits by \
+Twitter%5$s îți va trimite un SMS pentru a-ți confirma numărul de \
+telefon. În ecranul următor poți alege „Retrimite codul” pentru a \
+primi un SMS nou sau „Sună-mă” pentru a iniția un apel telefonic pentru a-ți \
+confirma numărul de telefon. Se pot percepe tarife pentru mesaje, \
+apeluri și date.</string>
+    <string name="dgts__terms_text_call_me">Dacă atingi %1$sSună-mă%1$s mai sus, %6$sDigits by Twitter%5$s îți va trimite un apel vocal pentru a-ți confirma numărul de telefon. Se pot aplica tarife pentru apeluri și date.</string>
+    <string name="dgts__terms_text_create">Dacă atingi %1$sCreează un cont%1$s mai sus, ești de acord cu \
+%8$sCondițiile de utilizare%5$s, cu %9$sPolitica de \
+confidențialitate%5$s și cu %10$sPolitica pentru module cookie%5$s stabilite de %6$sDigits by Twitter%5$s pentru a-ți partaja numărul de\
+ telefon cu %4$s și ești de acord ca alți utilizatori ai %4$s te poată \
+găsi după numărul de telefon.</string>
+    <string name="dgts__terms_text_sign_in">Dacă atingi %1$sContinuă%1$s mai sus, %7$snumărul tău de telefon și/sau \
+adresa de e-mail Digits%5$s vor fi partajate cu %4$s, iar alți \
+utilizatori ai %4$s vor putea să te găsească după numărul de telefon \
+și/sau adresa de e-mail.</string>
+    <string name="dgts__terms_text_updated">Dacă atingi %1$sContinuă%1$s mai sus, ești de acord cu %8$sCondițiile de\
+ utilizare%5$s, cu %9$sPolitica de confidențialitate%5$s și cu \
+%10$sUtilizarea modulelor cookies%5$s stabilite de %6$sDigits by Twitter%5$s, \
+pentru a partaja %7$snumărul tău de telefon și/sau adresa de e-mail \
+Digits%5$s cu %4$s și ești de acord ca alți utilizatori ai %4$s să te \
+poată găsi după numărul de telefon și/sau după adresa de e-mail.</string>
+    <string name="dgts__try_again">Încearcă din nou</string>
+    <string name="dgts__try_again_confirmation">Verifică-ți codul și încearcă din nou.</string>
+    <string name="dgts__try_again_email">Verifică-ți adresa de e-mail și încearcă din nou</string>
+    <string name="dgts__try_again_phone_number">Verifică-ți numărul și încearcă din nou.</string>
+    <string name="dgts__try_another_phone">Încearcă un alt număr de telefon</string>
+    <string name="dgts__unsupported_operator_error">Nu s-a putut trimite un mesaj SMS la acest număr.</string>
+    <string name="dgts__upload_contacts">Folosim Digits by Twitter pentru a găsi mai mulți prieteni ai tăi \
+care folosesc această aplicație. Atunci când atingi OK, îți vom încărca \
+agenda în Digits by Twitter, ca să te ajutăm să găsești utilizatori %1$s pe care îi cunoști sau ca să-i ajutăm pe ceilalți \
+utilizatori %1$s să te găsească pe tine.</string>
+    <string name="dgts__verification_code">Cod de verificare</string>
+    <string name="dgts_pin_code_terms">Ai setat anterior un cod de verificare în 2 pași pe digits.com</string>
+</resources>

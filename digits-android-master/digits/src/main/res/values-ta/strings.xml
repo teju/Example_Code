@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">என்னை அழை</string>
+    <string name="dgts__calling">அழைக்கிறது…</string>
+    <string name="dgts__confirmation_code">உறுதிபடுத்தல் குறியீடு</string>
+    <string name="dgts__confirmation_edit_hint">நாங்கள் உங்களுக்கு அனுப்பிய 6-இலக்கக் குறியீட்டை உள்ளிடவும்</string>
+    <string name="dgts__confirmation_error">உங்கள் தொலைபேசி எண்ணை உறுதிப்படுத்த முடியவில்லை</string>
+    <string name="dgts__confirmation_error_alternative">மன்னிக்கவும், உங்களுக்கு உறுதிப்படுத்தல் குறியீட்டை அனுப்புவதில் சிக்கல் உள்ளது.</string>
+    <string name="dgts__confirmation_expired">இந்தக் குறியீடு காலாவதியாகிவிட்டது. உறுதிப்படுத்தல் குறியீட்டை மீண்டும் அனுப்பவும்.</string>
+    <string name="dgts__continue">தொடர்</string>
+    <string name="dgts__create_account">கணக்கை உருவாக்கு</string>
+    <string name="dgts__digits_logo_desc">Digits லோகோ படவுரு</string>
+    <string name="dgts__digits_logo_name_desc">digits லோகோ பெயர்</string>
+    <string name="dgts__dismiss">நிராகரி</string>
+    <string name="dgts__done">முடிந்தது</string>
+    <string name="dgts__email_request_edit_hint">மின்னஞ்சல் முகவரி</string>
+    <string name="dgts__email_request_title">மின்னஞ்சல் முகவரியை உள்ளிடவும்</string>
+    <string name="dgts__find_your_friends">உங்கள் நண்பர்களைக் கண்டுபிடியுங்கள்</string>
+    <string name="dgts__image_header_description">உள்நுழைவுக்கான படத் தலைப்பு</string>
+    <string name="dgts__invalid_email">செல்லுபடியாகாத மின்னஞ்சல். மீண்டும் முயற்சிக்கவும்</string>
+    <string name="dgts__login_digits_text">எனது தொலைபேசி எண்ணைப் பயன்படுத்து</string>
+    <string name="dgts__network_error">உங்கள் நெட்வொர்க்கைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="dgts__not_now">இப்போது வேண்டாம்</string>
+    <string name="dgts__okay">சரி</string>
+    <string name="dgts__phone_number_edit_hint">உங்கள் எண்</string>
+    <string name="dgts__phone_number_text">உங்கள் தொலைபேசி எண்ணை உள்ளிடவும்</string>
+    <string name="dgts__pin_code_verification_title">2-படிநிலை சரிபார்த்தல் குறியீட்டை உள்ளீடுக</string>
+    <string name="dgts__resend_confirmation_button_code">குறியீடனுப்பு</string>
+    <string name="dgts__resend_confirmation_text">உறுதிப்படுத்தல் குறியீட்டை மீண்டும் அனுப்பு</string>
+    <string name="dgts__send_confirmation_code">உறுதிப்படுத்தல் குறியீட்டை அனுப்பு</string>
+    <string name="dgts__sending">அனுப்புகிறது…</string>
+    <string name="dgts__success_desc">வெற்றி படவுரு</string>
+    <string name="dgts__terms_email_request">மேலே %1$sதொடர்%1$s என்பதைத் தட்டுவதன் மூலம், உங்கள் Digits கணக்கில் இந்த மின்னஞ்சலைச் சேர்க்கிறீர்கள். இந்தப் பயன்பாடு மற்றும் %7$sஉங்கள் இலக்கங்கள் கணக்கில் பட்டியலிடப்பட்டுள்ள பயன்பாடுகள் அனைத்தும்%5$s இந்த மின்னஞ்சலை அணுகலாம் மற்றும் இதன் பயனர்கள் மின்னஞ்சல் மூலம் உங்கள் கண்டறியலாம் என்றும் ஒப்புக்கொள்கிறீர்கள்.</string>
+    <string name="dgts__terms_text">மேலே %1$sஉறுதிப்படுத்தல் குறியீட்டை அனுப்பு%1$s என்பதைத் தட்டுவதன் மூலம், உங்கள் தொலைபேசி எண்ணை உறுதிசெய்ய %6$sDigits by Twitter%5$s ஆனது SMS -ஐ அனுப்பும். அடுத்தத் திரையில், புதிய SMS -ஐ பெறுவதற்கு “குறியீட்டை மீண்டும்அனுப்பு” என்பதையும், உங்கள் தொலைபேசி எண்ணை உறுதிசெய்வதற்கு தொலைபேசி அழைப்பைத் துவங்க “என்னை அழை” என்பதையும் தேர்வுசெய்யலாம். செய்தி, அழைப்பு &amp; தரவுக் கட்டணங்கள் பொருந்தலாம்.</string>
+    <string name="dgts__terms_text_call_me">மேலே %1$sஎன்னை அழை%1$s என்பதைத் தட்டுவதன் மூலம், உங்கள் தொலைபேசி எண்ணை உறுதிசெய்ய %6$sDigits by Twitter%5$s ஆனது குரல் அழைப்பை அனுப்பும். அழைப்பு &amp; தரவுக் கட்டணங்கள் பொருந்தலாம்.</string>
+    <string name="dgts__terms_text_create">மேலே %1$sகணக்கை உருவாக்கு%1$s என்பதைத் தட்டுவதன் மூலம், %8$sசேவை விதிமுறைகள்%5$s, %9$sதனியுரிமைக் கொள்கை%5$s மற்றும் %6$sDigits by Twitter%5$s என்பதன் %10$sகுக்கீகள் பயன்பாடு%5$s, உங்கள் தொலைபேசி எண்ணை %4$s -உடன் பகிர்வதற்கு மற்றும் தொலைபேசி எண் மூலம் %4$s -இன் பிற பயனர்கள் உங்களைக் கண்டறிவதற்கும் நீங்கள் ஒப்புக்கொள்கிறீர்கள்.</string>
+    <string name="dgts__terms_text_sign_in">மேலே %1$sதொடர்%1$s என்பதைத் தட்டுவதன் மூலம், உங்கள் %7$sDigits தொலைபேசி எண் மற்றும்/அல்லது மின்னஞ்சல் முகவரி%5$s -ஐ %4$s -உடன் பகிரப்படும் மற்றும் தொலைபேசி எண் மற்றும்/அல்லது மின்னஞ்சல் மூலம் %4$s -இன் பிற பயனர்கள் உங்களைக் கண்டறியலாம்.</string>
+    <string name="dgts__terms_text_updated">மேலே %1$sதொடர்%1$s என்பதைத் தட்டுவதன் மூலம், %8$sசேவை விதிமுறைகள்%5$s, %9$sதனியுரிமைக் கொள்கை%5$s மற்றும் %6$sDigits by Twitter%5$s என்பதன் %10$sகுக்கீகள் பயன்பாடு%5$s, உங்கள் %7$sDigits தொலைபேசி எண் மற்றும்/அல்லது மின்னஞ்சல் முகவரி%5$s -ஐ %4$s -உடன் பகிர்வதற்கு மற்றும் தொலைபேசி எண் மற்றும்/அல்லது மின்னஞ்சல் மூலம் %4$s -இன் பிற பயனர்கள் உங்களைக் கண்டறிவதற்கும் நீங்கள் ஒப்புக்கொள்கிறீர்கள்.</string>
+    <string name="dgts__try_again">மீண்டும் முயற்சிக்கவும்</string>
+    <string name="dgts__try_again_confirmation">உங்கள் குறியீட்டைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="dgts__try_again_email">உங்கள் மின்னஞ்சலைச் சரிபார்த்து, மீண்டும் முயற்சிக்கவும்</string>
+    <string name="dgts__try_again_phone_number">உங்கள் எண்ணை சரிபார்த்து மீண்டும் முயற்சிக்கவும்.</string>
+    <string name="dgts__try_another_phone">வேறொரு தொலைபேசி எண்ணை முயற்சிக்கவும்</string>
+    <string name="dgts__unsupported_operator_error">இந்த எண்ணுக்கு SMS செய்தி அனுப்ப முடியவில்லை.</string>
+    <string name="dgts__upload_contacts">இந்தப் பயன்பாட்டைப் பயன்படுத்தும் உங்களது மற்ற  நண்பர்களைக் கண்டறிய நாங்கள் Digits by Twitter -ஐப் பயன்படுத்துவோம். நீங்கள் சரி என்னும் பொத்தானை தட்டியதும் உங்கள் முகவரி புத்தகத்தை Digits by Twitter -க்கு பதிவேற்றுவோம், அதன் மூலம் %1$s -இன் பிற பயனர்களை நீங்கள் கண்டறிய அல்லது %1$s -இன் பிற பயனர்கள் உங்களை கண்டறிய நாங்கள் உதவ முடியும்.</string>
+    <string name="dgts__verification_code">சரிபார்த்தல் குறியீடு</string>
+    <string name="dgts_pin_code_terms">நீங்கள் முன்னரே digits.com -இல் ஒரு 2-படிநிலை  சரிபார்த்தல் குறியீட்டை அமைத்துள்ளீர்கள்</string>
+</resources>

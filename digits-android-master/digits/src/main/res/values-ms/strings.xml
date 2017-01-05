@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Tel. saya</string>
+    <string name="dgts__calling">Menghubungi…</string>
+    <string name="dgts__confirmation_code">Kod pengesahan</string>
+    <string name="dgts__confirmation_edit_hint">Masukkan kod 6 digit yang kami hantar</string>
+    <string name="dgts__confirmation_error">Tidak dapat mengesahkan nombor telefon anda</string>
+    <string name="dgts__confirmation_error_alternative">Maaf, kami menghadapi masalah menghantar anda kod pengesahan.</string>
+    <string name="dgts__confirmation_expired">Kod ini telah tamat tempoh. Sila hantar semula kod pengesahan.</string>
+    <string name="dgts__continue">Teruskan</string>
+    <string name="dgts__create_account">Cipta akaun</string>
+    <string name="dgts__digits_logo_desc">ikon logo digits</string>
+    <string name="dgts__digits_logo_name_desc">nama logo digits</string>
+    <string name="dgts__dismiss">Abai</string>
+    <string name="dgts__done">Selesai</string>
+    <string name="dgts__email_request_edit_hint">Alamat e-mel</string>
+    <string name="dgts__email_request_title">Masukkan alamat e-mel</string>
+    <string name="dgts__find_your_friends">Cari rakan anda</string>
+    <string name="dgts__image_header_description">Imej pengepala untuk log masuk</string>
+    <string name="dgts__invalid_email">E-mel Tidak Sah. Cuba Lagi</string>
+    <string name="dgts__login_digits_text">Gunakan nombor telefon saya</string>
+    <string name="dgts__network_error">Sila semak rangkaian anda dan cuba sekali lagi.</string>
+    <string name="dgts__not_now">Bukan sekarang</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Nombor Anda</string>
+    <string name="dgts__phone_number_text">Masukkan nombor telefon anda</string>
+    <string name="dgts__pin_code_verification_title">Masukkan kod pengesahan 2 langkah</string>
+    <string name="dgts__resend_confirmation_button_code">Hntr balik kod</string>
+    <string name="dgts__resend_confirmation_text">Hantar semula kod pengesahan</string>
+    <string name="dgts__send_confirmation_code">Hantar kod pengesahan</string>
+    <string name="dgts__sending">Menghantar…</string>
+    <string name="dgts__success_desc">Ikon Berjaya</string>
+    <string name="dgts__terms_email_request">Dengan mengetik %1$sTeruskan%1$s di atas, anda menambah emel ini ke akaun Digit anda. Anda bersetuju bahawa aplikasi ini dan %7$s semua aplikasi yang disenaraikan dalam akaun Digit%5$s anda boleh mengakses alamat emel ini dan pengguna mereka boleh menemui anda melalui emel.</string>
+    <string name="dgts__terms_text">Dengan mengetik %1$sHantar kod pengesahan%1$s di atas, %6$sDigit by Twitter%5$s akan menghantar anda SMS untuk mengesahkan nombor telefon anda. Pada skrin yang berikutnya, anda boleh memilih \"Hantar semula kod\" untuk menerima SMS baru atau \"Hubungi saya\" untuk memulakan panggilan telefon untuk mengesahkan nombor telefon anda. Kadar mesej, panggilan &amp; data mungkin dikenakan.</string>
+    <string name="dgts__terms_text_call_me">Dengan mengetik %1$sHubungi saya%1$s di atas, %6$sDigit by Twitter%5$s akan menghantar anda panggilan suara untuk mengesahkan nombor telefon anda. Kadar panggilan &amp; data mungkin dikenakan.</string>
+    <string name="dgts__terms_text_create">Dengan mengetik %1$sCipta akaun%1$s di atas, anda bersetuju dengan %8$sTerma Perkhidmatan%5$s, %9$sDasar Privasi%5$s, dan %10$sPenggunaan Kuki%5$s %6$sDigit by Twitter%5$s, untuk berkongsi nombor telefon anda dengan %4$s, dan pengguna lain %4$s boleh menemui anda melalui nombor telefon.</string>
+    <string name="dgts__terms_text_sign_in">Dengan mengetik %1$sTeruskan%1$s di atas, %7$snombor telefon Digit anda dan/atau alamat emel%5$s akan dikongsi dengan %4$s dan pengguna %4$s yang lain boleh menemui anda melalui nombor telefon dan/atau emel.</string>
+    <string name="dgts__terms_text_updated">Dengan mengetik %1$sTeruskan%1$s di atas, anda bersetuju dengan %8$sTerma Perkhidmatan%5$s, %9$sDasar Privasi%5$s, dan %10$sPenggunaan Kuki%5$s %6$sDigit by Twitter%5$s, untuk berkongsi %7$s nombor telefon Digit dan/atau alamat e-mel anda%5$s dengan %4$s, dan pengguna %4$s yang lain boleh menemui anda melalui nombor telefon dan/atau e-mel.</string>
+    <string name="dgts__try_again">Cuba Lagi</string>
+    <string name="dgts__try_again_confirmation">Sila semak kod anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_again_email">Sila semak e-mel anda dan cuba sekali lagi</string>
+    <string name="dgts__try_again_phone_number">Sila semak nombor anda dan cuba sekali lagi.</string>
+    <string name="dgts__try_another_phone">Cuba nombor telefon lain</string>
+    <string name="dgts__unsupported_operator_error">Tidak dapat menghantar mesej SMS ke nombor ini</string>
+    <string name="dgts__upload_contacts">Kami menggunakan Digits by Twitter untuk mencari lebih ramai rakan anda yang menggunakan aplikasi ini. Apabila anda mengetik Okey, kami akan memuat naik buku alamat anda ke Digits by Twitter supaya kami boleh membantu anda mencari pengguna %1$s yang anda kenali atau membantu pengguna lain %1$s mencari anda.</string>
+    <string name="dgts__verification_code">Kod pengesahan</string>
+    <string name="dgts_pin_code_terms">Anda telah setkan kod pengesahan 2 langkah sebelum ini di digits.com</string>
+</resources>

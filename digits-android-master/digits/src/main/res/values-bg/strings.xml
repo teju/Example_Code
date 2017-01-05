@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Обаждане</string>
+    <string name="dgts__calling">Обаждаме се…</string>
+    <string name="dgts__confirmation_code">Код за потвърждение</string>
+    <string name="dgts__confirmation_edit_hint">Въведи 6-цифрения код, който ти пратихме</string>
+    <string name="dgts__confirmation_error">Телефонният ти номер не може да бъде потвърден</string>
+    <string name="dgts__confirmation_error_alternative">За съжаление, имаме проблеми с изпращането на код за потвърждение до теб.</string>
+    <string name="dgts__confirmation_expired">Този код е изтекъл. Моля, изпрати отново код за потвърждение.</string>
+    <string name="dgts__continue">Продължаване</string>
+    <string name="dgts__create_account">Създаване на профил</string>
+    <string name="dgts__digits_logo_desc">икона с логото на digits</string>
+    <string name="dgts__digits_logo_name_desc">име на логото на digits</string>
+    <string name="dgts__dismiss">Отхвърляне</string>
+    <string name="dgts__done">Готово</string>
+    <string name="dgts__email_request_edit_hint">Имейл адрес</string>
+    <string name="dgts__email_request_title">Въведи имейл адрес</string>
+    <string name="dgts__find_your_friends">Намиране на приятелите ти</string>
+    <string name="dgts__image_header_description">Изображение в заглавката за вход</string>
+    <string name="dgts__invalid_email">Имейл адресът е невалиден. Опитай отново</string>
+    <string name="dgts__login_digits_text">Използване на телефонния ми номер</string>
+    <string name="dgts__network_error">Моля, провери мрежата си и опитай отново.</string>
+    <string name="dgts__not_now">Не сега</string>
+    <string name="dgts__okay">OK</string>
+    <string name="dgts__phone_number_edit_hint">Твоят номер</string>
+    <string name="dgts__phone_number_text">Въведи телефонния си номер</string>
+    <string name="dgts__pin_code_verification_title">Въведи кода за потвърждаване в две стъпки</string>
+    <string name="dgts__resend_confirmation_button_code">Повт. на кода</string>
+    <string name="dgts__resend_confirmation_text">Повторно изпращане на код за потвърджение</string>
+    <string name="dgts__send_confirmation_code">Изпращане на код за потвърждение</string>
+    <string name="dgts__sending">Изпраща се…</string>
+    <string name="dgts__success_desc">Иконка за успех</string>
+    <string name="dgts__terms_email_request">С натискането на %1$sПродължаване%1$s по-горе добавяш този имейл адрес към профила си в Digits. Приемаш, че това приложение и %7$sвсички приложения, изброени в профила ти в Digits%5$s, имат достъп до този имейл адрес и че потребителите им ще могат да те откриват по имейл адрес.</string>
+    <string name="dgts__terms_text">С натискането на %1$sИзпращане на код за потвърждение%1$s по-горе %6$sDigits by Twitter%5$s ще ти изпрати SMS, за да потвърдиш телефонния си номер. На следващия екран можеш да избереш „Повторно изпращане на код“, за да получиш нов SMS, или „Обаждане“, за да бъде извършено телефонно обаждане за потвърждаване на номера ти. Важат тарифите за SMS, обаждания и пренос на данни.</string>
+    <string name="dgts__terms_text_call_me">С натискането на %1$sОбаждане%1$s по-горе %6$sDigits by Twitter%5$s ще ти се обади по телефона, за да потвърдиш телефонния си номер. Важат тарифите за обаждания и пренос на данни.</string>
+    <string name="dgts__terms_text_create">С натискането на %1$sСъздаване на профил%1$s по-горе приемаш %8$sУсловията за ползване%5$s, %9$sПолитиката за поверителност%5$s и %10$sупотребата на „бисквитки“%5$s от страна на %6$sDigits by Twitter%5$s, както и споделянето на телефонния ти номер с/ъс %4$s. Приемаш и че другите потребители на %4$s ще могат да те откриват по телефонен номер.</string>
+    <string name="dgts__terms_text_sign_in">С натискането на %1$sПродължаване%1$s по-горе %7$sтелефонният номер и/или имейл адресът ти в Digits%5$s ще бъдат споделени с/ъс %4$s и другите потребители на %4$s ще могат да те откриват по телефонен номер и/или имейл адрес.</string>
+    <string name="dgts__terms_text_updated">С натискането на %1$sПродължаване%1$s по-горе приемаш %8$sУсловията за ползване%5$s, %9$sПолитиката за поверителност%5$s и %10$sупотребата на „бисквитки“%5$s от страна на %6$sDigits by Twitter%5$s, както и споделянето на %7$sтелефонния номер и/или имейл адреса ти в Digits%5$s с/ъс %4$s. Приемаш и че другите потребители на %4$s ще могат да те откриват по телефонен номер и/или имейл адрес.</string>
+    <string name="dgts__try_again">Нов опит</string>
+    <string name="dgts__try_again_confirmation">Моля, провери кода си и опитай отново.</string>
+    <string name="dgts__try_again_email">Моля, провери имейл адреса си и опитай отново</string>
+    <string name="dgts__try_again_phone_number">Моля, провери номера си и опитай отново.</string>
+    <string name="dgts__try_another_phone">Опитай с друг телефонен номер</string>
+    <string name="dgts__unsupported_operator_error">Не можем да изпратим SMS до този номер.</string>
+    <string name="dgts__upload_contacts">Използваме Digits by Twitter, за да намираме други твои приятели, които използват това приложение. Когато натиснеш „OK“, ще качим адресната ти книга в Digits by Twitter, за да можем да ти помогнем да намериш потребители на %1$s, които познаваш, или да помогнем на другите потребители на %1$s да те намерят.</string>
+    <string name="dgts__verification_code">Код за потвърждение</string>
+    <string name="dgts_pin_code_terms">Вече настрои код за потвърждаване в две стъпки на адрес digits.com</string>
+</resources>

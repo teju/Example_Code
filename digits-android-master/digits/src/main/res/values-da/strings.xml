@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Twitter, Inc.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="dgts__call_me">Ring mig op</string>
+    <string name="dgts__calling">Ringer…</string>
+    <string name="dgts__confirmation_code">Bekræftelseskode</string>
+    <string name="dgts__confirmation_edit_hint">Indtast den 6-cifrede kode vi har sendt dig</string>
+    <string name="dgts__confirmation_error">Ikke i stand til at bekræfte dit telefonnummer</string>
+    <string name="dgts__confirmation_error_alternative">Beklager, vi har problemer med at sende dig en bekræftelseskode.</string>
+    <string name="dgts__confirmation_expired">Denne kode er udløbet. Send venligst bekræftelseskode igen.</string>
+    <string name="dgts__continue">Fortsæt</string>
+    <string name="dgts__create_account">Opret konto</string>
+    <string name="dgts__digits_logo_desc">digits-logoikon</string>
+    <string name="dgts__digits_logo_name_desc">digits-logonavn</string>
+    <string name="dgts__dismiss">Afvis</string>
+    <string name="dgts__done">Færdig</string>
+    <string name="dgts__email_request_edit_hint">E-mailadresse</string>
+    <string name="dgts__email_request_title">Indtast e-mailadresse</string>
+    <string name="dgts__find_your_friends">Find dine venner</string>
+    <string name="dgts__image_header_description">Billedsidehoved for log ind</string>
+    <string name="dgts__invalid_email">Ugyldig e-mail. Prøv igen</string>
+    <string name="dgts__login_digits_text">Brug mit telefonnummer</string>
+    <string name="dgts__network_error">Kontrollér dit netværk, og prøv igen.</string>
+    <string name="dgts__not_now">Ikke nu</string>
+    <string name="dgts__okay">Okay</string>
+    <string name="dgts__phone_number_edit_hint">Dit nummer</string>
+    <string name="dgts__phone_number_text">Indtast dit telefonnummer</string>
+    <string name="dgts__pin_code_verification_title">Indtast 2-trins-bekræftelseskode</string>
+    <string name="dgts__resend_confirmation_button_code">Send kode igen</string>
+    <string name="dgts__resend_confirmation_text">Send bekræftelseskode igen</string>
+    <string name="dgts__send_confirmation_code">Send bekræftelseskode</string>
+    <string name="dgts__sending">Sender…</string>
+    <string name="dgts__success_desc">Ikonet Fuldført</string>
+    <string name="dgts__terms_email_request">Når du trykker på %1$sFortsæt%1$s ovenfor, tilføjer du denne e-mail til din Digits-konto. Du accepterer at denne app og %7$salle apps anført i din Digits-konto%5$s vil have adgang til denne e-mailadresse, og deres brugere vil være i stand til at opdage dig via e-mail.</string>
+    <string name="dgts__terms_text">Når du trykker på %1$sSend bekræftelseskode%1$s ovenfor, sender %6$sDigits by Twitter%5$s dig en sms-besked for at bekræfte dit telefonnummer. På det næste skærmbillede kan du vælge “Send kode igen”, for at modtage en ny sms-besked, eller “Ring til mig” for at indlede et opkald, der kan bekræfte dit telefonnummer. Besked-, opkalds- og datatakster kan blive pålagt.</string>
+    <string name="dgts__terms_text_call_me">Når du trykker på %1$sRing til mig%1$s ovenfor, sender %6$sDigits by Twitter%5$s dig et stemmekald for at bekræfte dit telefonnummer. Opkalds- og datatakst kan blive pålagt.</string>
+    <string name="dgts__terms_text_create">Ved at trykke på %1$sOpret konto%1$s ovenfor accepterer du %8$svilkår for anvendelse%5$s, %9$sprivatlivspolitik%5$s og %10$sbrug af cookies%5$s for %6$sDigits by Twitter%5$s. Du accepterer desuden at dele dit telefonnummer med %4$s, og at andre brugere af %4$s kan finde dig ved hjælp af dit telefonnummer.</string>
+    <string name="dgts__terms_text_sign_in">Når du trykker på %1$sFortsæt%1$s ovenfor, deles dit %7$sDigits-telefonnummer og/eller din e-mailadresse%5$s med %4$s, så andre brugere af %4$s kan finde dig via dit telefonnummer og/eller din e-mail.</string>
+    <string name="dgts__terms_text_updated">Ved at trykke på %1$sFortsæt%1$s ovenfor, accepterer du %8$svilkår for anvendelse%5$s, %9$sprivatlivspolitik%5$s og %10$sbrug af cookies%5$s for %6$sDigits by Twitter%5$s, at dele dit %7$sDigits-telefonnummer og/eller din e-mail%5$s med %4$s, og at andre brugere af %4$s kan finde dig ved hjælp af dit telefonnummer og/eller din e-mail.</string>
+    <string name="dgts__try_again">Prøv igen</string>
+    <string name="dgts__try_again_confirmation">Tjek venligst din kode og prøv igen.</string>
+    <string name="dgts__try_again_email">Tjek venligst din e-mail og prøv igen</string>
+    <string name="dgts__try_again_phone_number">Tjek venligst dit nummer og prøv igen.</string>
+    <string name="dgts__try_another_phone">Prøv et andet telefonnummer</string>
+    <string name="dgts__unsupported_operator_error">Kan ikke sende dette nummer en SMS-besked.</string>
+    <string name="dgts__upload_contacts">Vi bruger Digits by Twitter til at finde flere af dine venner, der bruger denne app. Når du trykker på OK, uploader vi din adressebog til Digits by Twitter, så vi kan hjælpe dig med at finde brugere af %1$s, du kender, eller hjælpe andre brugere af %1$s med at finde dig.</string>
+    <string name="dgts__verification_code">Bekræftelseskode</string>
+    <string name="dgts_pin_code_terms">Du har tidligere sat en 2-trins-bekræftelseskode på digits.com</string>
+</resources>

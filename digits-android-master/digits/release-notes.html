@@ -1,0 +1,106 @@
+<h2>Digits</h2>
+<h3>1.11.2</h3>
+- Added new confirmation code bucketing that provides visual feedback to users about the length of the confirmation code we expect.<br/>
+- Replacing custom actions with custom events in sample application to serve as a better example on using digits custom loggers.<br/>
+<h3>1.11.1</h3>
+- Bugs Fixed
+<ul>
+  <li>OSS gradle files breakages in v 1.11.0 to help customers continue using our OSS project as an example</li>
+  <li>Crash caused when digitsLoginFailure event was reported without countryCode</li>
+  <li>Users being unable to login when guest auth expires on the service but not on the client</li>
+  <li>Delete contacts throws exception in okhttp 2.3.1+</li>
+</ul>
+<h3>1.11.0</h3>
+- Added new beta Sandbox feature that provides
+<ul>
+  <li>full offline testing (to avoid rate limits in development)</li>
+  <li>success and error state mocking</li>
+  <li>docs https://docs.fabric.io/android/digits/sandbox.html</li>
+</ul>
+- Added new beta Analytics feature that provides
+<ul>
+  <li>out of the box Answers integration</li>
+  <li>support for custom analytics providers</li>
+  <li>integration points for full funnel visibility</li>
+  <li>docs https://docs.fabric.io/android/digits/analytics.html</li>
+</ul>
+- Updated Friend Finder feature to provide
+<ul>
+  <li>a summary code in the event of failure</li>
+  <li>feedback when a user cancels the flow</li>
+  <li>upload bandwidth optimizations</li>
+  <li>docs https://docs.fabric.io/android/digits/find-friends.html</li>
+</ul>
+- Updated Authentication feature to provide
+<ul>
+  <li>fixed Russian and Serbian translations</li>
+  <li>improved input feedback to end-users</li>
+  <li>feedback when a user cancels the flow</li>
+  <li>consistent cleanup after activities finish</li>
+  <li>docs https://docs.fabric.io/android/digits/digits.html</li>
+</ul>
+<h3>1.10.3</h3>
+- Log errors from contact upload requests in logcat.<br/>
+- Fixed security issue where certificate pinning wasn't happening for some requests.<br/>
+<h3>1.10.2</h3>
+- Bug fixes and error log improvements.<br/>
+<h3>1.10.1</h3>
+- Bug fixes when used alongside OKHttp 2.3+<br/>
+- Updated Translations.<br/>
+<h3>1.10.0</h3>
+- Headless UI allowing apps to use a custom phone number screen.<br/>
+<h3>1.9.4</h3>
+- Improved UX for resending confirmation code via sms/voice.<br/>
+<h3>1.9.3</h3>
+- Fixed issue when setting default three-digit country code.<br/>
+- Added public accessors to Email object.<br/>
+<h3>1.9.2</h3>
+- Fixed issue where Digits Activities are retained in recents.<br/>
+<h3>1.9.1</h3>
+- Updated translations<br/>
+<h3>1.9.0</h3>
+- Added Email feature<br/>
+- Fixed parsing of confirmation code from SMS.<br/>
+- Removed usage of deprecated Apache HTTP Client constants.<br/>
+<h3>1.8.0</h3>
+- Added style attribute dgts__logoDrawable to allow developers providing their logo<br/>
+- New voice call verification when SMS is unavailable<br/>
+- Raised Min SDK version from 8 to 9<br/>
+<h3>1.7.2</h3>
+- Updated for twitter-core 1.7.2 guest auth fixes.<br/>
+<h3>1.7.1</h3>
+- Fixed issue where DigitsSessionVerifier invalidated the current session.<br/>
+<h3>1.7.0</h3>
+- Added SessionListener to receive session changes.<br/>
+<h3>1.6.2</h3>
+- Use AuthRequestQueue for all API request to ensure we always have a valid DigitsAPIClient.<br/>
+- Fixed critical issue where Digits sessions are lost when using Proguard.<br/>
+<h3>1.6.1</h3>
+- Fixed a memory leak<br/>
+<h3>1.6.0</h3>
+- Fixed crash on StateButton for multiple clicks<br/>
+- Added a new public API for authenticate flow to allow developers provided a phone number<br/>
+<h3>1.5.0</h3>
+- Changed base host to api.digits.com.<br/>
+- Changed Pin code edit text to password type.<br/>
+- Return normalized phone number on signup and login.<br/>
+<h3>1.4.0</h3>
+- CountrySpinner now sets the country based on SIM country.<br/>
+<h3>1.3.0</h3>
+- Find Friends service. <br/>
+- Leverage Android intents if available to prefill phone number, and or/read SMS pin.<br/>
+<h3>1.2.0</h3>
+- Removed Twitter login from fallback screen.<br/>
+- Fixed Resources$NotFoundException on Gingerbread devices.<br/>
+- Fixed theme detection when building with Eclipse.<br/>
+- Fixed stale guest auth token not being updated.<br/>
+<h3>1.1.0</h3>
+- Min SDK version updated from 7 to 8.<br/>
+- Included licensing information in pom.<br/>
+- Fixed possible kit initialization error.<br/>
+- Add theming support.<br>
+- Included licensing information in pom.<br/>
+<h3>1.0.1</h3>
+- Removed Apache 2.0 licenses from pom.xml<br/>
+- Update of error strings for fallback<br/>
+
