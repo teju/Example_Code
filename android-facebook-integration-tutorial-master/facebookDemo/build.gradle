@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.tag.facebooksharingdemo"
-        minSdkVersion 9
-        targetSdkVersion 21
+        minSdkVersion 15
+        targetSdkVersion 23
     }
 
     buildTypes {

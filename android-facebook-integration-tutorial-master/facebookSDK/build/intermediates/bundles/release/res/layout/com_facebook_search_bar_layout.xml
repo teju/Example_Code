@@ -28,4 +28,4 @@
             android:drawablePadding="5dp"
             android:imeOptions="actionDone"
             />
-</LinearLayout><!-- From: file:/D:/android-facebook-integration-tutorial-master/facebookSDK/src/main/res/layout/com_facebook_search_bar_layout.xml -->
+</LinearLayout>

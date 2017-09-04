@@ -21,4 +21,3 @@
           android:drawable="@drawable/com_facebook_button_grey_focused" />
     <item android:drawable="@drawable/com_facebook_button_grey_normal" />
 </selector>
-<!-- From: file:/D:/android-facebook-integration-tutorial-master/facebookSDK/src/main/res/drawable/com_facebook_loginbutton_silver.xml -->

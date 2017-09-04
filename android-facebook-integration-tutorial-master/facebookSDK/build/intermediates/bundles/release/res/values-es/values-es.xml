@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/android-facebook-integration-tutorial-master/facebookSDK/src/main/res/values-es/strings.xml -->
-    <eat-comment/>
     <string name="com_facebook_choose_friends">Elige Amigos</string>
     <string name="com_facebook_dialogloginactivity_ok_button">Aceptar</string>
     <string name="com_facebook_internet_permission_error_message">WebView inicio de sesión requiere permiso INTERNET</string>

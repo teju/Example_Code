@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/D:/android-facebook-integration-tutorial-master/facebookSDK/src/main/res/values-iw/strings.xml -->
-    <eat-comment/>
     <string name="com_facebook_choose_friends">בחר חברים</string>
     <string name="com_facebook_dialogloginactivity_ok_button">אישור</string>
     <string name="com_facebook_internet_permission_error_message">ההתחברות לתצוגת אתר דורשת אישור אינטרנט</string>
