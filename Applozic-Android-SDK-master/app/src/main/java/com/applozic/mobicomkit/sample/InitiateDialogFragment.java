@@ -24,7 +24,7 @@ public class InitiateDialogFragment extends DialogFragment implements DialogInte
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         inputEditText = new EditText(getActivity());
         return new AlertDialog.Builder(getActivity()).setTitle(R.string.initiate_chat_info).setMessage(R.string.enter_user_id_info)
-                .setPositiveButton("START", this).setNegativeButton("CANCEL", null).setView(inputEditText).create();
+                .setPositiveButton(R.string.start, this).setNegativeButton(R.string.cancel, null).setView(inputEditText).create();
     }
 
     @Override

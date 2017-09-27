@@ -6,9 +6,7 @@ import android.support.multidex.MultiDexApplication;
 import com.crashlytics.android.Crashlytics;
 import io.fabric.sdk.android.Fabric;
 
-/**
- * Created by sunil on 21/3/16.
- */
+
 public class ApplozicSampleApplication extends MultiDexApplication {
 
     @Override

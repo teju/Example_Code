@@ -20,15 +20,15 @@ public class MobiComKitConstants {
     public static final String AUDIO = "Audio";
     public static final String VIDEO = "Video";
     public static final String ATTACHMENT = "Attachment";
-    public static String APPLICATION_KEY_META_DATA = "com.applozic.application.key";
-    public static String APPLICATION_ACTIVITY_TO_OPEN_ON_CHAT_TOOLBAR_TAP = "com.applozic.mobicomkit.uiwidgets.toolbar.tap.activity";
-    public static String APPLICATION_LOGIN_ACTIVITY = "com.applozic.loginActivity";
-
     public static final String APPLOZIC_VIDEO_CALL_ANSWER = "applozic.video.call.answer";
     public static final String APPLOZIC_VIDEO_CALL_REJECTED = "applozic.video.call.rejected";
     public static final String APPLOZIC_VIDEO_DIALED = "applozic.video.call.dialed";
     public static final String PACKAGE_NAME = "com.package.name";
-
-
+    public static final String AL_MESSAGE = "AL_MESSAGE";
+    public static String APPLICATION_KEY_META_DATA = "com.applozic.application.key";
+    public static String APPLICATION_ACTIVITY_TO_OPEN_ON_CHAT_TOOLBAR_TAP = "com.applozic.mobicomkit.uiwidgets.toolbar.tap.activity";
+    public static String APPLICATION_LOGIN_ACTIVITY = "com.applozic.loginActivity";
+    public static String GROUP_USER_LIMIT_EXCEED = "GROUP_USER_LIMIT_EXCEED";
+    public static final String APPLICATION_INFO_RESPONSE  = "\"success\"";
 
 }

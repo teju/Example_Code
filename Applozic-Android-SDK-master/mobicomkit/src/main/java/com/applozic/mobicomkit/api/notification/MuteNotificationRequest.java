@@ -11,11 +11,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class MuteNotificationRequest extends JsonMarker {
 
-    String  userId;
-   @SerializedName("id")
-    Integer groupId;		    //Group unique identifier
-    String  clientGroupId;		//	Client Group unique identifier
-    Long    notificationAfterTime; //Time Interval for which notification has be be disabled
+    String userId;
+    @SerializedName("id")
+    Integer groupId;            //Group unique identifier
+    String clientGroupId;        //	Client Group unique identifier
+    Long notificationAfterTime; //Time Interval for which notification has be be disabled
 
     public MuteNotificationRequest(String clientGroupId, Long notificationAfterTime) {
         this.clientGroupId = clientGroupId;

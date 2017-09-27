@@ -4,9 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.util.Log;
 
 import com.applozic.mobicomkit.api.attachment.FileClientService;
+import com.applozic.mobicommons.commons.core.utils.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -49,7 +49,7 @@ public class ContactService {
         StringBuilder sb = new StringBuilder();
         try {
             String line;
-            if (br != null){
+            if (br != null) {
                 while ((line = br.readLine()) != null) {
                     sb.append(line).append('\n');
                 }
@@ -60,7 +60,7 @@ public class ContactService {
 
         byte[] buf = sb.toString().trim().getBytes();
         if (!MobiComVCFParser.validateData(sb.toString())) {
-            Log.i("vCard ::", sb.toString().toString());
+            Utils.printLog(context,"vCard ::", sb.toString().toString());
             throw new Exception("contact exported is not proper in proper format");
         }
         FileOutputStream fileOutputStream = new FileOutputStream(outputFile.getAbsoluteFile());

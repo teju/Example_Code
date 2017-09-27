@@ -1,4 +1,4 @@
-###Building a New App
+### Building a New App
 
 If you are building a new app, you can download the sample app with chat integrated from Github:
 [https://github.com/Applozic/Applozic-Android-SDK/](https://github.com/Applozic/Applozic-Android-SDK/)
@@ -11,24 +11,24 @@ Open the downloaded project in Android Studio, replace Applozic Application Key 
 ```
 
 
-###Add Applozic Chat to existing App
+### Add Applozic Chat to existing App
 
 
 
 
-####Step 1: Gradle Dependency
+#### Step 1: Gradle Dependency
 
 Add the following in your build.gradle dependency  
 a) Chat SDK (Without audio/video)
 
 ```
-compile 'com.applozic.communication.uiwidget:mobicomkitui:4.77'
+compile 'com.applozic.communication.uiwidget:mobicomkitui:5.0'
 ```
 
 b) Chat SDK with Audio/Video.
 
 ```
-compile 'com.applozic.communication.uiwidget:audiovideo:1.0'
+compile 'com.applozic.communication.uiwidget:audiovideo:1.4'
 ```
 **NOTE** : To enable Audio/Video you need to follow extra steps:
 https://www.applozic.com/docs/android-chat-sdk.html#audio-video-call-setup
@@ -51,7 +51,7 @@ android {
 ```
 
 
-####Step 2: AndroidManifest
+#### Step 2: AndroidManifest
 Add the following Permissions, Activities, Services and Receivers in androidmanifest.xml
        
 **Note**: Add meta-data, Activities, Services and Receivers within application Tag ``` <application> </application>  ``` 
@@ -84,7 +84,7 @@ To disable the location sharing via map add this line ApplozicSetting.getInstanc
            android:exported="false"
            android:grantUriPermissions="true">
 <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-           android:resource="@xml/provider_paths"/>
+           android:resource="@xml/applozic_provider_paths"/>
  </provider>         
          
 ```
@@ -97,19 +97,6 @@ To disable the location sharing via map add this line ApplozicSetting.getInstanc
 <string name="default_media_location_folder">YOUR_APP_NAME</string> 
 ```
 
-Adding  File Provider path in your app 
-
-1.Create a android resorce directory as xml directory  
-2.Create a XML resource file in xml directory as provider_paths and paste the below code
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<paths>
-    <external-path name="files" path="."/>
-</paths>
-```
-
-
 Permissions:          
 
 
@@ -121,7 +108,6 @@ Permissions:
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />
 <uses-permission android:name="android.permission.READ_CONTACTS" />
-<uses-permission android:name="android.permission.VIBRATE"/>
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -130,6 +116,8 @@ Permissions:
 <uses-permission android:name="android.permission.CALL_PHONE" />
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.VIBRATE" />
   ```
 
 
@@ -168,22 +156,31 @@ Paste the following in your androidmanifest.xml:
            android:value="<APP_PARENT_ACTIVITY>" />
  </activity>
                    
-<activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
-          android:configChanges="keyboardHidden|screenSize|smallestScreenSize|screenLayout|orientation"
-          android:label="@string/activity_contacts_list"
-          android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
-          android:theme="@style/ApplozicTheme"
-          android:windowSoftInputMode="adjustResize">
-     <!-- Parent activity meta-data to support API level 7+ -->
-<meta-data
-          android:name="android.support.PARENT_ACTIVITY"
-          android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+ <activity android:name="com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity"
+           android:configChanges="keyboardHidden|screenSize|smallestScreenSize|screenLayout|orientation"
+           android:label="@string/app_name"
+           android:parentActivityName="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity"
+           android:theme="@style/ApplozicTheme"
+           android:windowSoftInputMode="adjustResize">
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+<meta-data android:name="android.support.PARENT_ACTIVITY"
+           android:value="com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity" />
+
          <intent-filter>
-             <action android:name="android.intent.action.SEARCH" />
+                <action android:name="android.intent.action.SEARCH" />
          </intent-filter>
-<meta-data
-          android:name="android.app.searchable"
-          android:resource="@xml/searchable_contacts" />
+
+         <intent-filter>
+               <action android:name="android.intent.action.SEND" />             
+               <category android:name="android.intent.category.DEFAULT" />
+               <data android:mimeType="image/*" />
+               <data android:mimeType="audio/*" />
+               <data android:mimeType="video/*" />
+               <data android:mimeType="text/plain"/>
+         </intent-filter>
+<meta-data android:name="android.app.searchable"
+           android:resource="@xml/searchable_contacts" />
 </activity>
 
 <activity android:name="com.applozic.mobicomkit.uiwidgets.conversation.activity.FullScreenImageActivity"
@@ -274,6 +271,9 @@ Paste the following in your androidmanifest.xml:
             
 <service android:name="com.applozic.mobicomkit.api.conversation.ConversationReadService"
          android:exported="false" />
+         
+<service android:name="com.applozic.mobicomkit.uiwidgets.notification.NotificationIntentService"
+         android:exported="false" />
 
 <receiver android:name="com.applozic.mobicomkit.broadcast.TimeChangeBroadcastReceiver">
          <intent-filter>
@@ -293,7 +293,7 @@ Paste the following in your androidmanifest.xml:
 
 Replace APP_PARENT_ACTIVITY with your app's parent activity.        
 
-####Step 3: Login/Register User
+#### Step 3: Login/Register User
 Applozic will create a new user if the user doesn't exists. userId is the unique identifier for any user, it can be anything like email, phone number or uuid from your database.
 
      
@@ -321,12 +321,16 @@ new UserLoginTask(user, listener, this).execute((Void) null);
 ```
 
 If it is a new user, new user account will get created else existing user will be logged in to the application.
+You can check if user is logged in to applozic or not by using ``` MobiComUserPreference.getInstance(this).isLoggedIn() ```
 
 
-####Step 4: Push Notification Setup
 
-***Go to Applozic Dashboard, Edit Application. 
-Under Module section, update the GCM Server Key.***
+#### Step 4: Push Notification Setup
+
+For push notifications, you must have a Firebase account.
+Signup to https://console.firebase.google.com/ and create your application and generate push notification services file.
+
+***Go to Applozic Dashboard, Edit Application -> Push Notification -> Android -> GCM/FCM Server Key.***
 
 
 #### Firebase Cloud Messaging (FCM)  is already enabled in my app
@@ -431,8 +435,7 @@ if(MobiComPushReceiver.isMobiComPushNotification(data)) {
 
 #### Don't have Android Push Notification code ?
 
-To Enable Android Push Notification using Firebase Cloud Messaging (FCM) visit the [Firebase console](https://console.firebase.google.com) and create new project, add the google service json to your app, configure the build.gradle files in your app ,finally get server key from project settings and update in  ***[Applozic Dashboard](https://dashboard.applozic.com/views/applozic/page/admin/dashboard.jsp) under Edit Application. 
-Under Module section, update the GCM Server Key.***
+To Enable Android Push Notification using Firebase Cloud Messaging (FCM) visit the [Firebase console](https://console.firebase.google.com) and create new project, add the google service json to your app, configure the build.gradle files in your app ,finally get server key from project settings and update in  ***[Applozic Dashboard](https://dashboard.applozic.com/views/applozic/page/admin/dashboard.jsp) under Edit Application -> Push Notification -> Android -> GCM/FCM Server Key.***
 
 
 In case, if you don't have the existing FCM related code, then copy the push notification related files from Applozic sample app to your project from the below github link
@@ -456,7 +459,7 @@ And add below code in your androidmanifest.xml file
        </intent-filter>
 </service>
   ``` 
-####Setup PushNotificationTask in UserLoginTask "onSuccess" (refer Step 3).
+#### Setup PushNotificationTask in UserLoginTask "onSuccess" (refer Step 3).
 
 ```
  PushNotificationTask pushNotificationTask = null;
@@ -475,7 +478,7 @@ And add below code in your androidmanifest.xml file
  pushNotificationTask.execute((Void)null);
 ```
 
-####Step 5: Initiate Chat
+#### Step 5: Initiate Chat
 
 For starting the messaging activity      
       
@@ -488,17 +491,43 @@ For starting individual conversation thread, set "userId" in intent:
  
 ```
 Intent intent = new Intent(this, ConversationActivity.class);            
-intent.putExtra(ConversationUIService.USER_ID, "receiveruserid123");             
-intent.putExtra(ConversationUIService.DISPLAY_NAME, "Receiver display name"); //put it for displaying the title.             
+intent.putExtra(ConversationUIService.USER_ID, "receiveruserid123");   
+intent.putExtra(ConversationUIService.DISPLAY_NAME, "Receiver display name"); //put it for displaying the title.
+intent.putExtra(ConversationUIService.TAKE_ORDER,true); //Skip chat list for showing on back press 
 startActivity(intent);                              
 ```
 
-####Step 6: Logout user       
+#### Step 6: Logout user       
 
 Call the following when user logout from your app:
 
 ```
-new UserClientService(this).logout();      
+1)Async task call for logout:
+
+ UserLogoutTask.TaskListener userLogoutTaskListener = new UserLogoutTask.TaskListener() {
+ @Override
+ public void onSuccess(Context context) {
+   //Logout success
+ } 
+  @Override
+ public void onFailure(Exception exception) {
+  //Logout failure
+ }
+ };
+
+ UserLogoutTask userLogoutTask = new UserLogoutTask(userLogoutTaskListener, context);
+ userLogoutTask.execute((Void) null);     
+ 
+ 2)Logout Method call  
+ 
+ ApiResponse apiResponse =  new UserClientService(this).logout();
+ 
+ if(apiResponse != null && apiResponse.isSuccess()){
+      //Logout success
+  }else {
+     //Logout failure 
+ }
+Note :Use async task or thread to call this logout method  
 ```
  
 
@@ -521,4 +550,9 @@ Add the following if you are using ProGuard:
 -keep class org.eclipse.paho.client.mqttv3.logging.JSR47Logger { *; } 
 -keep class android.support.** { *; }
 -keep interface android.support.** { *; }
+-dontwarn android.support.v4.**
+-keep public class com.google.android.gms.* { public *; }
+-dontwarn com.google.android.gms.**
+-keep class com.google.gson.** { *; }
+
  ``` 

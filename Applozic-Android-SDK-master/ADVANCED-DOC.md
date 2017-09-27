@@ -151,7 +151,7 @@ The below methods are for creating contacts to be stored locally on the user's d
 You can create the contact list in two easy steps by using AppContactService.java api. 
 Sample method **buildContactData()** for adding contacts is present in sample app MainActivity.java.
 
-#####Step 1: Creating contact   
+##### Step 1: Creating contact   
 
 Create
 ```
@@ -174,7 +174,7 @@ Example :
     contact.setEmailId("github@applozic.com");                
 ```
 
-#####Step 2: Save contact
+##### Step 2: Save contact
 
 Save the contact using AppContactService.java add() method.
  
@@ -186,7 +186,7 @@ Save the contact using AppContactService.java add() method.
 
 
 
-#####AppContactService.Java at a glance
+##### AppContactService.Java at a glance
 
 
 AppContactService.java provides methods you need to add, delete and update contacts.
@@ -241,7 +241,7 @@ startActivity(intent);
 ```
 
 
-#####1) Create Group
+##### 1) Create Group
 
  Create a group with a specific group type 
  
@@ -337,7 +337,7 @@ Code
 | userId | Unique identifier of the user |
 
  
-#####3) Remove Member from Group
+##### 3) Remove Member from Group
  
 Import  
 ```
@@ -372,7 +372,7 @@ Code
   __NOTE:__ Only admin can remove member from the group/channel.
   
  
-#####4) Leave Group
+##### 4) Leave Group
  
 Import
 ```
@@ -405,7 +405,7 @@ Code
  
  __Note:__ This is only for logged in user who want's to leave from group
  
-#####5) Change Group Name
+##### 5) Change Group Name
 
 Import
 
@@ -570,7 +570,7 @@ b) Add setting for audio/video handler class:
 onSuccess of UserLoginTask, you need to set below handlers in settings.
 
 ```
-  ApplozicClient.getInstance(context).setContextBasedChat(true).setHandleDial(true).setIPCallEnabled(true);
+  ApplozicClient.getInstance(context).setHandleDial(true).setIPCallEnabled(true);
   Map<ApplozicSetting.RequestCode, String> activityCallbacks = new HashMap<ApplozicSetting.RequestCode, String>();
   activityCallbacks.put(ApplozicSetting.RequestCode.AUDIO_CALL, AudioCallActivityV2.class.getName());
   activityCallbacks.put(ApplozicSetting.RequestCode.VIDEO_CALL, VideoActivity.class.getName());

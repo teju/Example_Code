@@ -15,7 +15,7 @@ public class ChannelMetadata extends JsonMarker {
     public final static String GROUP_ICON_CHANGE_MESSAGE = "GROUP_ICON_CHANGE_MESSAGE";
     public final static String GROUP_LEFT_MESSAGE = "GROUP_LEFT_MESSAGE";
     public final static String DELETED_GROUP_MESSAGE = "DELETED_GROUP_MESSAGE";
-    public final static String HIDE_METADATA_NOTIFICATION= "HIDE";
+    public final static String HIDE_METADATA_NOTIFICATION = "HIDE";
 
     public static final String ADMIN_NAME = ":adminName";
     public static final String GROUP_NAME = ":groupName";

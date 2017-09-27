@@ -1,15 +1,44 @@
 
-##Changelog
- **Version 4.75**  - Friday, 18 November 2016
+## Changelog
+
+**Version 4.78**  - Thursday, 2 March 2017
+   
+  - Group of two support 
+  - Group member limit in group create and group member add
+  - Launch one to one chat in group member name click or profile click 
+  - Sending meta data in message by adding settings 
+  - Group and profile image upload bug fix
+  - Other bug fixes 
+ 
+
+ **Version 4.76**  - Friday,10 February 2017
+   
+  - Android N contact sharing bug fix  .
+ 
+
+ **Version 4.75**  - Wednesday,8 February 2017
    
   - Group Delete support: deleted group will be disabled.
  
- **Version 4.74**  - Friday, 18 November 2016
+ **Version 4.74**  - Sunday, 5 February 2017
    
   - Support for version 7.1 
   - Support for support-library version 25.1.0
   - Chat not syncing bug fix for android 7.1
   
+ **Version 4.73**  - Sunday, 5 January 2017
+ 
+ - Support for version 7.0 
+ - Group mute
+ 
+   
+ **Version 4.71**  - Thursday, 5 January 2017
+ 
+ - Attachments options settings 
+ - Restricted words settings 
+ 
+  
+   
  **Version 4.64**  - Friday, 18 November 2016
    
   Group info members context menu

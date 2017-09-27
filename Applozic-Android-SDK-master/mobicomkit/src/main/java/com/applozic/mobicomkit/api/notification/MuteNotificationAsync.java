@@ -10,16 +10,7 @@ import com.applozic.mobicomkit.feed.ApiResponse;
  * Created by Adarsh on 12/30/16.
  */
 
-public class MuteNotificationAsync extends  AsyncTask<Void, Void, Boolean> {
-
-    public interface TaskListener {
-
-        void onSuccess(ApiResponse apiResponse);
-
-        void onFailure(ApiResponse apiResponse, Exception exception);
-
-        void onCompletion();
-    }
+public class MuteNotificationAsync extends AsyncTask<Void, Void, Boolean> {
 
     private final MuteNotificationAsync.TaskListener taskListener;
     private final Context context;
@@ -27,10 +18,10 @@ public class MuteNotificationAsync extends  AsyncTask<Void, Void, Boolean> {
     private Exception mException;
     private MuteNotificationRequest muteNotificationRequest;
 
-    public MuteNotificationAsync(Context context, MuteNotificationAsync.TaskListener listener, MuteNotificationRequest request ) {
+    public MuteNotificationAsync(Context context, MuteNotificationAsync.TaskListener listener, MuteNotificationRequest request) {
         this.context = context;
         this.taskListener = listener;
-        this.muteNotificationRequest= request;
+        this.muteNotificationRequest = request;
     }
 
     @Override
@@ -53,6 +44,15 @@ public class MuteNotificationAsync extends  AsyncTask<Void, Void, Boolean> {
             this.taskListener.onFailure(apiResponse, mException);
         }
         this.taskListener.onCompletion();
+    }
+
+    public interface TaskListener {
+
+        void onSuccess(ApiResponse apiResponse);
+
+        void onFailure(ApiResponse apiResponse, Exception exception);
+
+        void onCompletion();
     }
 
 

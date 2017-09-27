@@ -3,7 +3,6 @@ package com.applozic.mobicomkit.api;
 import android.content.Context;
 import android.os.Process;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.applozic.mobicomkit.api.account.user.MobiComUserPreference;
 import com.applozic.mobicomkit.api.conversation.Message;
@@ -41,43 +40,11 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
     private MemoryPersistence memoryPersistence;
     private Context context;
 
-    public static enum NOTIFICATION_TYPE {
-        MESSAGE_RECEIVED("APPLOZIC_01"), MESSAGE_SENT("APPLOZIC_02"),
-        MESSAGE_SENT_UPDATE("APPLOZIC_03"), MESSAGE_DELIVERED("APPLOZIC_04"),
-        MESSAGE_DELETED("APPLOZIC_05"), CONVERSATION_DELETED("APPLOZIC_06"),
-        MESSAGE_READ("APPLOZIC_07"), MESSAGE_DELIVERED_AND_READ("APPLOZIC_08"),
-        CONVERSATION_READ("APPLOZIC_09"), CONVERSATION_DELIVERED_AND_READ("APPLOZIC_10"),
-        USER_CONNECTED("APPLOZIC_11"), USER_DISCONNECTED("APPLOZIC_12"),
-        GROUP_DELETED("APPLOZIC_13"), GROUP_LEFT("APPLOZIC_14"), GROUP_SYNC("APPLOZIC_15"),
-        USER_BLOCKED("APPLOZIC_16"), USER_UN_BLOCKED("APPLOZIC_17"),
-        ACTIVATED("APPLOZIC_18"),
-        DEACTIVATED("APPLOZIC_19"),
-        REGISTRATION("APPLOZIC_20"),
-        GROUP_CONVERSATION_READ("APPLOZIC_21"),
-        GROUP_MESSAGE_DELETED("APPLOZIC_22"),
-        GROUP_CONVERSATION_DELETED("APPLOZIC_23"),
-        APPLOZIC_TEST("APPLOZIC_24"),
-        USER_ONLINE_STATUS("APPLOZIC_25"),
-        CONTACT_SYNC("APPLOZIC_26");
-        private String value;
-
-        private NOTIFICATION_TYPE(String c) {
-            value = c;
-        }
-
-        public String getValue() {
-            return String.valueOf(value);
-        }
-
-    }
-
-
     private ApplozicMqttService(Context context) {
         super(context);
         this.context = context;
         memoryPersistence = new MemoryPersistence();
     }
-
 
     public static ApplozicMqttService getInstance(Context context) {
 
@@ -98,16 +65,16 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             }
 
             if (!client.isConnected()) {
-                Log.i(TAG, "Connecting to mqtt...");
+                Utils.printLog(context,TAG, "Connecting to mqtt...");
                 MqttConnectOptions options = new MqttConnectOptions();
                 options.setConnectionTimeout(60);
-                options.setWill(STATUS, (MobiComUserPreference.getInstance(context).getSuUserKeyString()+","+MobiComUserPreference.getInstance(context).getDeviceKeyString() + "," + "0").getBytes(), 0, true);
+                options.setWill(STATUS, (MobiComUserPreference.getInstance(context).getSuUserKeyString() + "," + MobiComUserPreference.getInstance(context).getDeviceKeyString() + "," + "0").getBytes(), 0, true);
                 client.setCallback(ApplozicMqttService.this);
 
                 client.connect(options);
             }
         } catch (MqttException e) {
-            Log.d(TAG, "Connecting already in progress.");
+            Utils.printLog(context,TAG, "Connecting already in progress.");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -115,7 +82,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
         return client;
     }
 
-    public synchronized void connectPublish(final String userKeyString,final String deviceKeyString, final String status) {
+    public synchronized void connectPublish(final String userKeyString, final String deviceKeyString, final String status) {
 
         try {
             final MqttClient client = connect();
@@ -125,7 +92,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             MqttMessage message = new MqttMessage();
             message.setRetained(false);
             message.setPayload((userKeyString + "," + deviceKeyString + "," + status).getBytes());
-            Log.i(TAG, "UserKeyString,DeviceKeyString,status:" + userKeyString + "," + deviceKeyString + "," + status);
+            Utils.printLog(context,TAG, "UserKeyString,DeviceKeyString,status:" + userKeyString + "," + deviceKeyString + "," + status);
             message.setQos(0);
             client.publish(STATUS, message);
         } catch (Exception e) {
@@ -148,7 +115,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             if (client == null || !client.isConnected()) {
                 return;
             }
-            connectPublish(userKeyString,deviceKeyString, "1");
+            connectPublish(userKeyString, deviceKeyString, "1");
             subscribeToConversation();
             if (client != null) {
                 client.setCallback(ApplozicMqttService.this);
@@ -170,7 +137,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                 return;
             }
             if (client != null && client.isConnected()) {
-                Log.i(TAG, "Subscribing to conversation topic.");
+                Utils.printLog(context,TAG, "Subscribing to conversation topic.");
                 client.subscribe(userKeyString, 0);
             }
         } catch (Exception e) {
@@ -197,9 +164,9 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
         thread.start();
     }
 
-    public void disconnectPublish(String userKeyString,String deviceKeyString, String status) {
+    public void disconnectPublish(String userKeyString, String deviceKeyString, String status) {
         try {
-            connectPublish(userKeyString,deviceKeyString, status);
+            connectPublish(userKeyString, deviceKeyString, status);
             if (!MobiComUserPreference.getInstance(context).isLoggedIn()) {
                 disconnect();
             }
@@ -212,7 +179,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
         if (client != null && client.isConnected()) {
             try {
                 client.disconnect();
-            } catch (Exception  e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -224,8 +191,8 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
     }
 
     @Override
-    public void messageArrived(String s,final MqttMessage mqttMessage) throws Exception {
-        Log.i(TAG, "Received MQTT message: " + new String(mqttMessage.getPayload()));
+    public void messageArrived(String s, final MqttMessage mqttMessage) throws Exception {
+        Utils.printLog(context,TAG, "Received MQTT message: " + new String(mqttMessage.getPayload()));
         try {
             if (!TextUtils.isEmpty(s) && s.startsWith(TYPINGTOPIC)) {
                 String typingResponse[] = mqttMessage.toString().split(",");
@@ -244,7 +211,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                     Thread thread = new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            Log.i(TAG, "MQTT message type: " + mqttMessageResponse.getType());
+                            Utils.printLog(context,TAG, "MQTT message type: " + mqttMessageResponse.getType());
                             if (NOTIFICATION_TYPE.MESSAGE_RECEIVED.getValue().equals(mqttMessageResponse.getType()) || "MESSAGE_RECEIVED".equals(mqttMessageResponse.getType())) {
                                 syncCallService.syncMessages(null);
                             }
@@ -257,7 +224,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                                 syncCallService.updateDeliveryStatus(keyString);
                             }
 
-                            if ( NOTIFICATION_TYPE.MESSAGE_DELIVERED_AND_READ.getValue().equals(mqttMessageResponse.getType())
+                            if (NOTIFICATION_TYPE.MESSAGE_DELIVERED_AND_READ.getValue().equals(mqttMessageResponse.getType())
                                     || "MT_MESSAGE_DELIVERED_READ".equals(mqttMessageResponse.getType())) {
                                 String splitKeyString[] = (mqttMessageResponse.getMessage()).toString().split(",");
                                 String keyString = splitKeyString[0];
@@ -269,14 +236,14 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                                 syncCallService.updateDeliveryStatusForContact(contactId, true);
                             }
 
-                         /*   if (NOTIFICATION_TYPE.CONVERSATION_READ.getValue().equals(mqttMessageResponse.getType())) {
-                                syncCallService.updateConversationReadStatus(mqttMessageResponse.getMessage().toString(),false);
+                            if (NOTIFICATION_TYPE.CONVERSATION_READ.getValue().equals(mqttMessageResponse.getType())) {
+                                syncCallService.updateConversationReadStatus(mqttMessageResponse.getMessage().toString(), false);
                             }
 
                             if (NOTIFICATION_TYPE.GROUP_CONVERSATION_READ.getValue().equals(mqttMessageResponse.getType())) {
                                 InstantMessageResponse instantMessageResponse = (InstantMessageResponse) GsonUtils.getObjectFromJson(mqttMessage.toString(), InstantMessageResponse.class);
-                                syncCallService.updateConversationReadStatus(instantMessageResponse.getMessage(),true);
-                            }*/
+                                syncCallService.updateConversationReadStatus(instantMessageResponse.getMessage(), true);
+                            }
 
                             if (NOTIFICATION_TYPE.USER_CONNECTED.getValue().equals(mqttMessageResponse.getType())) {
                                 syncCallService.updateConnectedStatus(mqttMessageResponse.getMessage().toString(), new Date(), true);
@@ -293,15 +260,15 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                                 syncCallService.updateConnectedStatus(userId, lastSeenAt, false);
                             }
 
-                            if(NOTIFICATION_TYPE.CONVERSATION_DELETED.getValue().equals(mqttMessageResponse.getType())) {
+                            if (NOTIFICATION_TYPE.CONVERSATION_DELETED.getValue().equals(mqttMessageResponse.getType())) {
                                 syncCallService.deleteConversationThread(mqttMessageResponse.getMessage().toString());
                                 BroadcastService.sendConversationDeleteBroadcast(context, BroadcastService.INTENT_ACTIONS.DELETE_CONVERSATION.toString(), mqttMessageResponse.getMessage().toString(), 0, "success");
                             }
 
-                            if(NOTIFICATION_TYPE.GROUP_CONVERSATION_DELETED.getValue().equals(mqttMessageResponse.getType())) {
+                            if (NOTIFICATION_TYPE.GROUP_CONVERSATION_DELETED.getValue().equals(mqttMessageResponse.getType())) {
                                 InstantMessageResponse instantMessageResponse = (InstantMessageResponse) GsonUtils.getObjectFromJson(mqttMessage.toString(), InstantMessageResponse.class);
                                 syncCallService.deleteChannelConversationThread(instantMessageResponse.getMessage());
-                                BroadcastService.sendConversationDeleteBroadcast(context, BroadcastService.INTENT_ACTIONS.DELETE_CONVERSATION.toString(),null, Integer.valueOf(instantMessageResponse.getMessage()), "success");
+                                BroadcastService.sendConversationDeleteBroadcast(context, BroadcastService.INTENT_ACTIONS.DELETE_CONVERSATION.toString(), null, Integer.valueOf(instantMessageResponse.getMessage()), "success");
                             }
 
                             if (NOTIFICATION_TYPE.MESSAGE_DELETED.getValue().equals(mqttMessageResponse.getType())) {
@@ -319,6 +286,11 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
                             if (NOTIFICATION_TYPE.USER_BLOCKED.getValue().equals(mqttMessageResponse.getType()) ||
                                     NOTIFICATION_TYPE.USER_UN_BLOCKED.getValue().equals(mqttMessageResponse.getType())) {
                                 syncCallService.syncBlockUsers();
+                            }
+
+                            if (NOTIFICATION_TYPE.USER_DETAIL_CHANGED.getValue().equals(mqttMessageResponse.getType()) || NOTIFICATION_TYPE.USER_DELETE_NOTIFICATION.getValue().equals(mqttMessageResponse.getType())) {
+                                String userId = mqttMessageResponse.getMessage().toString();
+                                syncCallService.syncUserDetail(userId);
                             }
 
                         }
@@ -345,17 +317,18 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             message.setPayload((applicationId + "," + loggedInUserId + "," + status).getBytes());
             message.setQos(0);
             client.publish("typing" + "-" + applicationId + "-" + userId, message);
-            Log.i(TAG, "Published " + new String(message.getPayload()) + " to topic: " + "typing" + "-" + applicationId + "-" + userId);
+            Utils.printLog(context,TAG, "Published " + new String(message.getPayload()) + " to topic: " + "typing" + "-" + applicationId + "-" + userId);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     public synchronized void subscribeToTypingTopic(Channel channel) {
         try {
             String currentId = null;
-            if(channel != null) {
+            if (channel != null) {
                 currentId = String.valueOf(channel.getKey());
-            }else {
+            } else {
                 MobiComUserPreference mobiComUserPreference = MobiComUserPreference.getInstance(context);
                 currentId = mobiComUserPreference.getUserId();
             }
@@ -366,19 +339,18 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             }
 
             client.subscribe("typing-" + getApplicationKey(context) + "-" + currentId, 0);
-            Log.i(TAG, "Subscribed to topic: " + "typing-" +  getApplicationKey(context)  + "-" + currentId);
+            Utils.printLog(context,TAG, "Subscribed to topic: " + "typing-" + getApplicationKey(context) + "-" + currentId);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
     public synchronized void unSubscribeToTypingTopic(Channel channel) {
         try {
             String currentId = null;
-            if(channel != null) {
+            if (channel != null) {
                 currentId = String.valueOf(channel.getKey());
-            }else {
+            } else {
                 MobiComUserPreference mobiComUserPreference = MobiComUserPreference.getInstance(context);
                 currentId = mobiComUserPreference.getUserId();
             }
@@ -389,7 +361,7 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
             }
 
             client.unsubscribe("typing-" + getApplicationKey(context) + "-" + currentId);
-            Log.i(TAG, "UnSubscribed to topic: " + "typing-" +  getApplicationKey(context) + "-" + currentId);
+            Utils.printLog(context,TAG, "UnSubscribed to topic: " + "typing-" + getApplicationKey(context) + "-" + currentId);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -402,24 +374,60 @@ public class ApplozicMqttService extends MobiComKitClientService implements Mqtt
 
     public void typingStarted(Contact contact, Channel channel) {
         String currentId;
-        if(channel != null){
+        if (channel != null) {
             currentId = String.valueOf(channel.getKey());
-        }else {
+        } else {
             currentId = contact.getUserId();
         }
         MobiComUserPreference mobiComUserPreference = MobiComUserPreference.getInstance(context);
         publishTopic(getApplicationKey(context), "1", mobiComUserPreference.getUserId(), currentId);
     }
 
-    public void typingStopped(Contact contact,Channel channel) {
+    public void typingStopped(Contact contact, Channel channel) {
         String currentId;
-        if(channel != null){
+        if (channel != null) {
             currentId = String.valueOf(channel.getKey());
-        }else {
+        } else {
             currentId = contact.getUserId();
         }
         MobiComUserPreference mobiComUserPreference = MobiComUserPreference.getInstance(context);
         publishTopic(getApplicationKey(context), "0", mobiComUserPreference.getUserId(), currentId);
+    }
+
+    public static enum NOTIFICATION_TYPE {
+        MESSAGE_RECEIVED("APPLOZIC_01"), MESSAGE_SENT("APPLOZIC_02"),
+        MESSAGE_SENT_UPDATE("APPLOZIC_03"), MESSAGE_DELIVERED("APPLOZIC_04"),
+        MESSAGE_DELETED("APPLOZIC_05"), CONVERSATION_DELETED("APPLOZIC_06"),
+        MESSAGE_READ("APPLOZIC_07"), MESSAGE_DELIVERED_AND_READ("APPLOZIC_08"),
+        CONVERSATION_READ("APPLOZIC_09"), CONVERSATION_DELIVERED_AND_READ("APPLOZIC_10"),
+        USER_CONNECTED("APPLOZIC_11"), USER_DISCONNECTED("APPLOZIC_12"),
+        GROUP_DELETED("APPLOZIC_13"), GROUP_LEFT("APPLOZIC_14"), GROUP_SYNC("APPLOZIC_15"),
+        USER_BLOCKED("APPLOZIC_16"), USER_UN_BLOCKED("APPLOZIC_17"),
+        ACTIVATED("APPLOZIC_18"),
+        DEACTIVATED("APPLOZIC_19"),
+        REGISTRATION("APPLOZIC_20"),
+        GROUP_CONVERSATION_READ("APPLOZIC_21"),
+        GROUP_MESSAGE_DELETED("APPLOZIC_22"),
+        GROUP_CONVERSATION_DELETED("APPLOZIC_23"),
+        APPLOZIC_TEST("APPLOZIC_24"),
+        USER_ONLINE_STATUS("APPLOZIC_25"),
+        CONTACT_SYNC("APPLOZIC_26"),
+        CONVERSATION_DELETED_NEW("APPLOZIC_27"),
+        CONVERSATION_DELIVERED_AND_READ_NEW("APPLOZIC_28"),
+        CONVERSATION_READ_NEW("APPLOZIC_29"),
+        USER_DETAIL_CHANGED("APPLOZIC_30"),
+        MESSAGE_LIKE("APPLOZIC_33"),
+        USER_DELETE_NOTIFICATION("APPLOZIC_34");
+        private String value;
+
+        private NOTIFICATION_TYPE(String c) {
+            value = c;
+        }
+
+        public String getValue() {
+            return String.valueOf(value);
+        }
+
     }
 
 }

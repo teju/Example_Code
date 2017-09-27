@@ -4,13 +4,13 @@
 
     <item
         android:id="@+id/Next"
-        android:title="Next"
+        android:title="@string/next"
         android:orderInCategory="2"
         app:showAsAction="always|withText" />
 
     <item
         android:id="@+id/Done"
-        android:title="Done"
+        android:title="@string/done"
         android:orderInCategory="2"
         app:showAsAction="always|withText" />
 

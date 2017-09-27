@@ -25,27 +25,20 @@ import java.util.Map;
  */
 public class VideoCallNotificationHelper {
 
-    private static final String TAG = "CallNotiHandler";
-
     public static final String CALL_STARTED = "CALL_STARTED";
     public static final String CALL_END = "CALL_END";
-
     public static final String MSG_TYPE = "MSG_TYPE";
     public static final String CALL_ID = "CALL_ID";
-
-
     public static final String CALL_DIALED = "CALL_DIALED";
     public static final String CALL_REJECTED = "CALL_REJECTED";
     public static final String CALL_ANSWERED = "CALL_ANSWERED";
     public static final String CALL_MISSED = "CALL_MISSED";
-
     public static final String CALL_CANCELED = "CALL_CANCELED";
     public static final String CALL_AUDIO_ONLY = "CALL_AUDIO_ONLY";
-
     public static final int MAX_NOTIFICATION_RING_DURATION = 1 * 60 * 1000;
     public static final String NOTIFICATION_ACTIVITY_NAME = "com.applozic.audiovideo.activity.CallActivity";
     public static final String CALL_DURATION = "CALL_DURATION";
-
+    private static final String TAG = "CallNotiHandler";
     String videoCallId;
     Context context;
     boolean isAudioOnly;
@@ -63,6 +56,44 @@ public class VideoCallNotificationHelper {
         this.context = context;
         this.isAudioOnly = isAudioOnly;
         init();
+    }
+
+    public static String getStatus(Map<String, String> metaDataMap) {
+
+        String type = metaDataMap.get(MSG_TYPE);
+
+        String audioORVideoCallPrefix = Boolean.valueOf(metaDataMap.get(CALL_AUDIO_ONLY)) ? "Audio call" : "Video call";
+        if (type.equals(CALL_STARTED)) {
+            return audioORVideoCallPrefix + " started";
+        } else if (type.equals(CALL_END)) {
+            return audioORVideoCallPrefix;
+        } else if (type.equals(CALL_REJECTED)) {
+            return "Call busy";
+        } else {
+            return "Missed " + audioORVideoCallPrefix;
+        }
+    }
+
+    public static boolean isMissedCall(Message message) {
+        String msgType = message.getMetaDataValueForKey(VideoCallNotificationHelper.MSG_TYPE);
+        return (VideoCallNotificationHelper.CALL_MISSED.equals(msgType)
+                || VideoCallNotificationHelper.CALL_REJECTED.equals(msgType)
+                || VideoCallNotificationHelper.CALL_CANCELED.equals(msgType));
+    }
+
+    public static boolean isAudioCall(Message message) {
+        return Boolean.parseBoolean(message.getMetaDataValueForKey(CALL_AUDIO_ONLY));
+    }
+
+    public static void buildVideoCallNotification(Context context, Message message) {
+        Map<String, String> metaDataMap = message.getMetadata();
+        Contact contact = new AppContactService(context).getContactById(message.getContactIds());
+        String audioORVideoCallPrefix = Boolean.valueOf(metaDataMap.get(CALL_AUDIO_ONLY)) ? "audio call " : "video call ";
+        if (metaDataMap.get(VideoCallNotificationHelper.MSG_TYPE).equals(VideoCallNotificationHelper.CALL_MISSED)) {
+            Message message1 = new Message(message);
+            message1.setMessage("You missed " + audioORVideoCallPrefix + " from " + contact.getDisplayName());
+            BroadcastService.sendNotificationBroadcast(context, message1);
+        }
     }
 
     public void init() {
@@ -131,7 +162,6 @@ public class VideoCallNotificationHelper {
         return metaData;
     }
 
-
     public Map<String, String> getMissedCallMap() {
         Map<String, String> metaData = new HashMap<>();
         metaData.put(CALL_ID, videoCallId);
@@ -171,7 +201,6 @@ public class VideoCallNotificationHelper {
         return sendVideoCallRequest(contact, true);
     }
 
-
     public void sendVideoCallAnswer(Contact contact, String videoCallId) {
 
         Log.i(TAG, "sendVideoCallAnswer()");
@@ -182,41 +211,6 @@ public class VideoCallNotificationHelper {
         notificationMessage.setMetadata(getAnswerCallMetaData());
         conversationService.sendMessage(notificationMessage, MessageIntentService.class);
         Log.i(TAG, "sendVideoCallAnswer()  END");
-
-    }
-
-
-    public void sendVideoCallReject(Contact contact, String videoCallId) {
-        this.videoCallId = videoCallId;
-        Message notificationMessage = getNotificationMessage(contact);
-        notificationMessage.setMetadata(getRejectedCallMap());
-        notificationMessage.setMessage(videoCallId);
-        conversationService.sendMessage(notificationMessage, MessageIntentService.class);
-    }
-
-
-    public void sendCallMissed(Contact contact, String videoCallId) {
-        this.videoCallId = videoCallId;
-        Message notificationMessage = getNotificationMessage(contact);
-        notificationMessage.setMetadata(getMissedCallMap());
-        notificationMessage.setMessage(videoCallId);
-        conversationService.sendMessage(notificationMessage, MessageIntentService.class);
-    }
-
-    public void sendVideoCallStarted(Contact contact, String videoCallId) {
-        Message statusMessage = getVideoCallStatusMessage(contact);
-        statusMessage.setMetadata(getVideoCallStartedMap());
-        statusMessage.setMessage(videoCallId);
-        conversationService.sendMessage(statusMessage, MessageIntentService.class);
-    }
-
-
-    public void sendVideoCallEnd(Contact contact, String videoCallId, String duration) {
-
-        Message statusMessage = getVideoCallStatusMessage(contact);
-        statusMessage.setMetadata(getVideoCallEndMap(duration));
-        statusMessage.setMessage("Call End");
-        conversationService.sendMessage(statusMessage, MessageIntentService.class);
 
     }
 
@@ -237,6 +231,43 @@ public class VideoCallNotificationHelper {
 //        conversationService.sendMessage(statusMessage, MessageIntentService.class);
 //
 //    }
+
+    public void sendVideoCallReject(Contact contact, String videoCallId) {
+        this.videoCallId = videoCallId;
+        Message notificationMessage = getNotificationMessage(contact);
+        notificationMessage.setMetadata(getRejectedCallMap());
+        notificationMessage.setMessage(videoCallId);
+        conversationService.sendMessage(notificationMessage, MessageIntentService.class);
+    }
+
+    public void sendCallMissed(Contact contact, String videoCallId) {
+        this.videoCallId = videoCallId;
+        Message notificationMessage = getNotificationMessage(contact);
+        notificationMessage.setMetadata(getMissedCallMap());
+        notificationMessage.setMessage(videoCallId);
+        conversationService.sendMessage(notificationMessage, MessageIntentService.class);
+    }
+
+
+//    public void updateVideoMessageStatus(String callId,String type){
+//        messageDatabaseService.updateVideoCallMetaData(callId,type);
+//    }
+
+    public void sendVideoCallStarted(Contact contact, String videoCallId) {
+        Message statusMessage = getVideoCallStatusMessage(contact);
+        statusMessage.setMetadata(getVideoCallStartedMap());
+        statusMessage.setMessage(videoCallId);
+        conversationService.sendMessage(statusMessage, MessageIntentService.class);
+    }
+
+    public void sendVideoCallEnd(Contact contact, String videoCallId, String duration) {
+
+        Message statusMessage = getVideoCallStatusMessage(contact);
+        statusMessage.setMetadata(getVideoCallEndMap(duration));
+        statusMessage.setMessage("Call End");
+        conversationService.sendMessage(statusMessage, MessageIntentService.class);
+
+    }
 
     @NonNull
     private Message getNotificationMessage(Contact contact) {
@@ -272,11 +303,6 @@ public class VideoCallNotificationHelper {
         return notificationMessage;
     }
 
-
-//    public void updateVideoMessageStatus(String callId,String type){
-//        messageDatabaseService.updateVideoCallMetaData(callId,type);
-//    }
-
     public void handleVideoCallNotificationMessages(final Message message) {
 
         Map<String, String> valueMap = message.getMetadata();
@@ -303,7 +329,7 @@ public class VideoCallNotificationHelper {
             intent.putExtra(CALL_ID, videoCallId);
             LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
-            if(!message.isTypeOutbox() && BroadcastService.videoCallAcitivityOpend){
+            if (!message.isTypeOutbox() && BroadcastService.videoCallAcitivityOpend) {
 
                 Contact contact = baseContactService.getContactById(message.getContactIds());
                 Message statusMessage = getVideoCallStatusMessage(contact);
@@ -333,23 +359,22 @@ public class VideoCallNotificationHelper {
 
     }
 
-
     private void handleIncomingVideoNotification(Message msg) {
 
         String isAudioCallOnly = msg.getMetadata().get(CALL_AUDIO_ONLY);
         boolean staleNotification = System.currentTimeMillis() - msg.getCreatedAtTime() > MAX_NOTIFICATION_RING_DURATION;
         //OR SELF Connecting
 
-        if (staleNotification|| msg.isTypeOutbox() ) {
+        if (staleNotification || msg.isTypeOutbox()) {
 
             //Contact contact = baseContactService.getContactById(msg.getContactIds());
             //sendCallMissed(contact, msg.getMessage());
-            Log.i(TAG, "notification not valid ignoring.." );
+            Log.i(TAG, "notification not valid ignoring..");
             return;
 
         }
 
-        if(BroadcastService.callRinging) {
+        if (BroadcastService.callRinging) {
 
             Contact contactDetail = baseContactService.getContactById(msg.getTo());
             VideoCallNotificationHelper helper = new VideoCallNotificationHelper(context, isAudioOnly);
@@ -357,7 +382,7 @@ public class VideoCallNotificationHelper {
             return;
         }
 
-        if (BroadcastService.videoCallAcitivityOpend ) {
+        if (BroadcastService.videoCallAcitivityOpend) {
 
             Intent intent = new Intent(MobiComKitConstants.APPLOZIC_VIDEO_DIALED);
             intent.putExtra("CONTACT_ID", msg.getTo());
@@ -385,51 +410,12 @@ public class VideoCallNotificationHelper {
         return;
     }
 
-
-    public static String getStatus(Map<String, String> metaDataMap) {
-
-        String type = metaDataMap.get(MSG_TYPE);
-
-        String audioORVideoCallPrefix = Boolean.valueOf(metaDataMap.get(CALL_AUDIO_ONLY)) ? "Audio call" : "Video call";
-        if (type.equals(CALL_STARTED)) {
-            return audioORVideoCallPrefix + " started";
-        } else if (type.equals(CALL_END)) {
-            return audioORVideoCallPrefix ;
-        } else if (type.equals(CALL_REJECTED)) {
-            return "Call busy";
-        } else {
-            return "Missed " + audioORVideoCallPrefix;
-        }
-    }
-
-    public static boolean isMissedCall(Message message) {
-        String msgType = message.getMetaDataValueForKey(VideoCallNotificationHelper.MSG_TYPE);
-        return (VideoCallNotificationHelper.CALL_MISSED.equals(msgType)
-                || VideoCallNotificationHelper.CALL_REJECTED.equals(msgType)
-                || VideoCallNotificationHelper.CALL_CANCELED.equals(msgType));
-    }
-
-    public static boolean isAudioCall(Message message) {
-        return Boolean.parseBoolean(message.getMetaDataValueForKey(CALL_AUDIO_ONLY));
-    }
-
     public void sendVideoCallMissedMessage(Contact contactToCall, String callId) {
         Message notificationMessage = getVideoCallStatusMessage(contactToCall);
         notificationMessage.setMetadata(getMissedCallMap());
         notificationMessage.setMessage("Call Missed");
         conversationService.sendMessage(notificationMessage, MessageIntentService.class);
 
-    }
-
-    public static void buildVideoCallNotification(Context context, Message message) {
-        Map<String, String> metaDataMap = message.getMetadata();
-        Contact contact = new AppContactService(context).getContactById(message.getContactIds());
-        String audioORVideoCallPrefix = Boolean.valueOf(metaDataMap.get(CALL_AUDIO_ONLY)) ? "audio call " : "video call ";
-        if (metaDataMap.get(VideoCallNotificationHelper.MSG_TYPE).equals(VideoCallNotificationHelper.CALL_MISSED)) {
-            Message message1 = new Message(message);
-            message1.setMessage("You missed " + audioORVideoCallPrefix + " from " + contact.getDisplayName());
-            BroadcastService.sendNotificationBroadcast(context, message1);
-        }
     }
 
 

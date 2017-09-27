@@ -11,10 +11,12 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -49,22 +51,25 @@ import android.widget.Toast;
 
 import com.applozic.mobicomkit.ApplozicClient;
 import com.applozic.mobicomkit.api.MobiComKitConstants;
+import com.applozic.mobicomkit.api.account.register.RegisterUserClientService;
 import com.applozic.mobicomkit.api.account.user.MobiComUserPreference;
+import com.applozic.mobicomkit.api.account.user.User;
+import com.applozic.mobicomkit.api.account.user.UserClientService;
 import com.applozic.mobicomkit.api.attachment.FileClientService;
 import com.applozic.mobicomkit.api.conversation.ApplozicMqttIntentService;
 import com.applozic.mobicomkit.api.conversation.Message;
 import com.applozic.mobicomkit.api.conversation.MessageIntentService;
-import com.applozic.mobicomkit.api.conversation.MobiComConversationService;
 import com.applozic.mobicomkit.api.conversation.MobiComMessageService;
 import com.applozic.mobicomkit.api.conversation.service.ConversationService;
+import com.applozic.mobicomkit.api.people.UserIntentService;
 import com.applozic.mobicomkit.broadcast.BroadcastService;
 import com.applozic.mobicomkit.broadcast.ConnectivityReceiver;
+import com.applozic.mobicomkit.channel.database.ChannelDatabaseService;
 import com.applozic.mobicomkit.contact.AppContactService;
 import com.applozic.mobicomkit.contact.BaseContactService;
-import com.applozic.mobicomkit.uiwidgets.ApplozicSetting;
 import com.applozic.mobicomkit.uiwidgets.AlCustomizationSettings;
+import com.applozic.mobicomkit.uiwidgets.ApplozicSetting;
 import com.applozic.mobicomkit.uiwidgets.R;
-import com.applozic.mobicomkit.uiwidgets.async.AlSyncAccountStatusTask;
 import com.applozic.mobicomkit.uiwidgets.conversation.ConversationUIService;
 import com.applozic.mobicomkit.uiwidgets.conversation.MessageCommunicator;
 import com.applozic.mobicomkit.uiwidgets.conversation.MobiComKitBroadcastReceiver;
@@ -74,6 +79,7 @@ import com.applozic.mobicomkit.uiwidgets.conversation.fragment.MobiComQuickConve
 import com.applozic.mobicomkit.uiwidgets.conversation.fragment.MultimediaOptionFragment;
 import com.applozic.mobicomkit.uiwidgets.instruction.ApplozicPermissions;
 import com.applozic.mobicomkit.uiwidgets.instruction.InstructionUtil;
+import com.applozic.mobicomkit.uiwidgets.people.activity.MobiComKitPeopleActivity;
 import com.applozic.mobicomkit.uiwidgets.people.fragment.ProfileFragment;
 import com.applozic.mobicomkit.uiwidgets.uilistener.MobicomkitUriListener;
 import com.applozic.mobicommons.commons.core.utils.PermissionsUtils;
@@ -94,17 +100,16 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
+import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 
 
 /**
  * Created by devashish on 6/25/2015.
  */
-public class ConversationActivity extends AppCompatActivity implements MessageCommunicator, MobiComKitActivityInterface, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ActivityCompat.OnRequestPermissionsResultCallback,MobicomkitUriListener ,SearchView.OnQueryTextListener{
+public class ConversationActivity extends AppCompatActivity implements MessageCommunicator, MobiComKitActivityInterface, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener, ActivityCompat.OnRequestPermissionsResultCallback, MobicomkitUriListener, SearchView.OnQueryTextListener, OnClickReplyInterface {
 
     public static final int LOCATION_SERVICE_ENABLE = 1001;
     public static final String TAKE_ORDER = "takeOrder";
@@ -121,53 +126,83 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
     private static final String CAPTURED_IMAGE_URI = "capturedImageUri";
     private static final String CAPTURED_VIDEO_URI = "capturedVideoUri";
     private static final String SHARE_TEXT = "share_text";
+    public static final String CONTACTS_GROUP_ID = "CONTACTS_GROUP_ID";
     private static Uri capturedImageUri;
     private static String inviteMessage;
+    private static int retry;
+    public Contact contact;
+    public LinearLayout layout;
+    public boolean isTakePhoto;
+    public boolean isAttachment;
+    public Integer currentConversationId;
+    public Snackbar snackbar;
     protected ConversationFragment conversation;
     protected MobiComQuickConversationFragment quickConversationFragment;
     protected MobiComKitBroadcastReceiver mobiComKitBroadcastReceiver;
     protected ActionBar mActionBar;
     protected GoogleApiClient googleApiClient;
-    private LocationRequest locationRequest;
-    public Contact contact;
-    private Channel channel;
-    private static int retry;
-    public LinearLayout layout;
     String geoApiKey;
     String activityToOpenOnClickOfCallButton;
     int resourceId;
     RelativeLayout childFragmentLayout;
-    public boolean isTakePhoto;
-    public boolean isAttachment;
+    ProfileFragment profilefragment;
+    MobiComMessageService mobiComMessageService;
+    AlCustomizationSettings alCustomizationSettings;
+    ConnectivityReceiver connectivityReceiver;
+    File mediaFile;
+    File profilePhotoFile;
+    SyncAccountStatusAsyncTask accountStatusAsyncTask;
+    String contactsGroupId;
+    private LocationRequest locationRequest;
+    private Channel channel;
     private BaseContactService baseContactService;
     private ApplozicPermissions applozicPermission;
-    public Integer currentConversationId;
     private Uri videoFileUri;
     private Uri imageUri;
-    ProfileFragment profilefragment;
-    MobiComMessageService  mobiComMessageService;
     private ConversationUIService conversationUIService;
     private SearchView searchView;
     private String searchTerm;
     private SearchListFragment searchListFragment;
-    AlCustomizationSettings alCustomizationSettings;
-    ConnectivityReceiver connectivityReceiver;
-    private Calendar calendar;
-    File mediaFile;
-    File profilePhotoFile;
 
     public ConversationActivity() {
 
     }
 
-    public Snackbar snackbar;
+    public static void addFragment(FragmentActivity fragmentActivity, Fragment fragmentToAdd, String fragmentTag) {
+        FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
+
+        // Fragment activeFragment = UIService.getActiveFragment(fragmentActivity);
+        FragmentTransaction fragmentTransaction = supportFragmentManager
+                .beginTransaction();
+        fragmentTransaction.replace(R.id.layout_child_activity, fragmentToAdd,
+                fragmentTag);
+
+        if (supportFragmentManager.getBackStackEntryCount() > 1
+                && !ConversationUIService.MESSGAE_INFO_FRAGMENT.equalsIgnoreCase(fragmentTag) &&
+                !ConversationUIService.USER_PROFILE_FRAMENT.equalsIgnoreCase(fragmentTag)) {
+            supportFragmentManager.popBackStackImmediate();
+        }
+
+        fragmentTransaction.addToBackStack(fragmentTag);
+        fragmentTransaction.commitAllowingStateLoss();
+        supportFragmentManager.executePendingTransactions();
+        //Log.i(TAG, "BackStackEntryCount: " + supportFragmentManager.getBackStackEntryCount());
+    }
+
+    public static Uri getCapturedImageUri() {
+        return capturedImageUri;
+    }
+
+    public static void setCapturedImageUri(Uri capturedImageUri) {
+        ConversationActivity.capturedImageUri = capturedImageUri;
+    }
 
     @Override
     public void showErrorMessageView(String message) {
-        try{
+        try {
             layout.setVisibility(View.VISIBLE);
             snackbar = Snackbar.make(layout, message, Snackbar.LENGTH_LONG);
-            snackbar.setAction("OK", new View.OnClickListener() {
+            snackbar.setAction(this.getString(R.string.ok_alert), new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     snackbar.dismiss();
@@ -181,7 +216,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
             TextView txtView = (TextView) group.findViewById(R.id.snackbar_text);
             txtView.setMaxLines(5);
             snackbar.show();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 
@@ -201,26 +236,6 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         if (snackbar != null) {
             snackbar.dismiss();
         }
-    }
-
-    public static void addFragment(FragmentActivity fragmentActivity, Fragment fragmentToAdd, String fragmentTag) {
-        FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
-
-        // Fragment activeFragment = UIService.getActiveFragment(fragmentActivity);
-        FragmentTransaction fragmentTransaction = supportFragmentManager
-                .beginTransaction();
-        fragmentTransaction.replace(R.id.layout_child_activity, fragmentToAdd,
-                fragmentTag);
-
-        if (supportFragmentManager.getBackStackEntryCount() > 1
-                && !ConversationUIService.MESSGAE_INFO_FRAGMENT.equalsIgnoreCase(fragmentTag)){
-            supportFragmentManager.popBackStackImmediate();
-        }
-        fragmentTransaction.addToBackStack(fragmentTag);
-        //fragmentTransaction.setAllowOptimization(false);
-        fragmentTransaction.commitAllowingStateLoss();
-        supportFragmentManager.executePendingTransactions();
-        //Log.i(TAG, "BackStackEntryCount: " + supportFragmentManager.getBackStackEntryCount());
     }
 
     @Override
@@ -274,7 +289,6 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         super.onSaveInstanceState(savedInstanceState);
     }
 
-
     @Override
     public boolean onSupportNavigateUp() {
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
@@ -306,40 +320,44 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        baseContactService =  new AppContactService(this);
-        conversationUIService =  new ConversationUIService(this);
-        mobiComMessageService = new MobiComMessageService(this, MessageIntentService.class);
-        quickConversationFragment = new MobiComQuickConversationFragment();
         String jsonString = FileUtils.loadSettingsJsonFile(getApplicationContext());
-        if(!TextUtils.isEmpty(jsonString)){
-            alCustomizationSettings = (AlCustomizationSettings) GsonUtils.getObjectFromJson(jsonString,AlCustomizationSettings.class);
-        }else {
+        if (!TextUtils.isEmpty(jsonString)) {
+            alCustomizationSettings = (AlCustomizationSettings) GsonUtils.getObjectFromJson(jsonString, AlCustomizationSettings.class);
+        } else {
             alCustomizationSettings = new AlCustomizationSettings();
         }
-
-        if(!TextUtils.isEmpty(alCustomizationSettings.getChatBackgroundImageName())){
+        if (!TextUtils.isEmpty(alCustomizationSettings.getChatBackgroundImageName())) {
             resourceId = getResources().getIdentifier(alCustomizationSettings.getChatBackgroundImageName(), "drawable", getPackageName());
         }
-        if(resourceId != 0){
+        if (resourceId != 0) {
             getWindow().setBackgroundDrawableResource(resourceId);
         }
         setContentView(R.layout.quickconversion_activity);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        baseContactService = new AppContactService(this);
+        conversationUIService = new ConversationUIService(this);
+        mobiComMessageService = new MobiComMessageService(this, MessageIntentService.class);
+        quickConversationFragment = new MobiComQuickConversationFragment();
         connectivityReceiver = new ConnectivityReceiver();
         geoApiKey = Utils.getMetaDataValue(getApplicationContext(), GOOGLE_API_KEY_META_DATA);
         activityToOpenOnClickOfCallButton = Utils.getMetaDataValue(getApplicationContext(), ACTIVITY_TO_OPEN_ONCLICK_OF_CALL_BUTTON_META_DATA);
         layout = (LinearLayout) findViewById(R.id.footerAd);
         applozicPermission = new ApplozicPermissions(this, layout);
         childFragmentLayout = (RelativeLayout) findViewById(R.id.layout_child_activity);
-        profilefragment =  new ProfileFragment();
+        profilefragment = new ProfileFragment();
         profilefragment.setAlCustomizationSettings(alCustomizationSettings);
-
+        contactsGroupId = MobiComUserPreference.getInstance(this).getContactsGroupId();
         if (Utils.hasMarshmallow()) {
             applozicPermission.checkRuntimePermissionForStorage();
         }
         mActionBar = getSupportActionBar();
+        if (!TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimary()) && !TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimaryDark())) {
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(alCustomizationSettings.getThemeColorPrimary())));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(Color.parseColor(alCustomizationSettings.getThemeColorPrimaryDark()));
+            }
+        }
         inviteMessage = Utils.getMetaDataValue(getApplicationContext(), SHARE_TEXT);
         retry = 0;
         if (savedInstanceState != null) {
@@ -347,16 +365,16 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                     Uri.parse(savedInstanceState.getString(CAPTURED_IMAGE_URI)) : null;
             videoFileUri = savedInstanceState.getString(CAPTURED_VIDEO_URI) != null ?
                     Uri.parse(savedInstanceState.getString(CAPTURED_VIDEO_URI)) : null;
-            mediaFile = savedInstanceState.getSerializable(LOAD_FILE) != null? (File) savedInstanceState.getSerializable(LOAD_FILE) :null;
+            mediaFile = savedInstanceState.getSerializable(LOAD_FILE) != null ? (File) savedInstanceState.getSerializable(LOAD_FILE) : null;
 
             contact = (Contact) savedInstanceState.getSerializable(CONTACT);
             channel = (Channel) savedInstanceState.getSerializable(CHANNEL);
             currentConversationId = savedInstanceState.getInt(CONVERSATION_ID);
-            if(contact != null || channel != null ){
+            if (contact != null || channel != null) {
                 if (channel != null) {
-                    conversation = new ConversationFragment(null, channel,currentConversationId);
+                    conversation = ConversationFragment.newInstance(null, channel, currentConversationId, null);
                 } else {
-                    conversation = new ConversationFragment(contact, null,currentConversationId);
+                    conversation = ConversationFragment.newInstance(contact, null, currentConversationId, null);
                 }
                 addFragment(this, conversation, ConversationUIService.CONVERSATION_FRAGMENT);
             }
@@ -379,25 +397,16 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
         Boolean takeOrder = getIntent().getBooleanExtra(TAKE_ORDER, false);
 
-        if(!takeOrder){
-            new MobiComConversationService(getApplicationContext()).processLastSeenAtStatus();
+        if (!takeOrder) {
+            Intent lastSeenStatusIntent = new Intent(this, UserIntentService.class);
+            lastSeenStatusIntent.putExtra(UserIntentService.USER_LAST_SEEN_AT_STATUS, true);
+            startService(lastSeenStatusIntent);
         }
 
-        new AlSyncAccountStatusTask(this, new AlSyncAccountStatusTask.TaskListener() {
-            @Override
-            public void onCompletion(Context context) {
-                try {
-                    if (ApplozicClient.getInstance(context).isAccountClosed() || ApplozicClient.getInstance(context).isNotAllowed()) {
-                        snackbar = Snackbar.make(layout, ApplozicClient.getInstance(context).isAccountClosed() ?
-                                        R.string.applozic_account_closed : R.string.applozic_free_version_not_allowed_on_release_build,
-                                Snackbar.LENGTH_INDEFINITE);
-                        snackbar.show();
-                    }
-                } catch (Exception e) {
-                }
-            }
-        }).execute((Void)null);
-
+        if (ApplozicClient.getInstance(this).isAccountClosed() || ApplozicClient.getInstance(this).isNotAllowed()) {
+            accountStatusAsyncTask = new SyncAccountStatusAsyncTask(this, layout, snackbar);
+            accountStatusAsyncTask.execute();
+        }
         registerReceiver(connectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
     }
 
@@ -407,12 +416,12 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         //setIntent(intent);
         if (!MobiComUserPreference.getInstance(this).isLoggedIn()) {
             //user is not logged in
-            Log.i("AL", "user is not logged in yet.");
+            Utils.printLog(this, "AL", "user is not logged in yet.");
             return;
         }
 
         try {
-            if(intent.getExtras() != null){
+            if (intent.getExtras() != null) {
                 BroadcastService.setContextBasedChat(intent.getExtras().getBoolean(ConversationUIService.CONTEXT_BASED_CHAT));
             }
             conversationUIService.checkForStartNewConversation(intent);
@@ -446,31 +455,31 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        try{
+        try {
             conversationUIService.onActivityResult(requestCode, resultCode, data);
-            handleOnActivityResult(requestCode,data);
+            handleOnActivityResult(requestCode, data);
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
                 CropImage.ActivityResult result = CropImage.getActivityResult(data);
                 if (resultCode == RESULT_OK) {
-                    if(data == null){
+                    if (data == null) {
                         return;
                     }
-                    if(imageUri != null){
+                    if (imageUri != null) {
                         imageUri = result.getUri();
                         if (imageUri != null && profilefragment != null) {
-                            profilefragment.handleProfileimageUpload(false,imageUri,profilePhotoFile);
+                            profilefragment.handleProfileimageUpload(true, imageUri, profilePhotoFile);
                         }
-                    }else {
+                    } else {
                         imageUri = result.getUri();
                         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                         String imageFileName = "JPEG_" + timeStamp + "_" + ".jpeg";
-                        profilePhotoFile = FileClientService.getFilePath(imageFileName,this, "image/jpeg");
+                        profilePhotoFile = FileClientService.getFilePath(imageFileName, this, "image/jpeg");
                         if (imageUri != null && profilefragment != null) {
-                            profilefragment.handleProfileimageUpload(true,imageUri,profilePhotoFile);
+                            profilefragment.handleProfileimageUpload(true, imageUri, profilePhotoFile);
                         }
                     }
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                    Toast.makeText(this, "Cropping failed: " + result.getError(), Toast.LENGTH_LONG).show();
+                    Utils.printLog(this, ConversationActivity.class.getName(), "Cropping failed:" + result.getError());
                 }
             }
             if (requestCode == LOCATION_SERVICE_ENABLE) {
@@ -482,12 +491,11 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                 }
                 return;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
 
     public void handleOnActivityResult(int requestCode, Intent intent) {
 
@@ -495,6 +503,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
             case ProfileFragment.REQUEST_CODE_ATTACH_PHOTO:
                 Uri selectedFileUri = (intent == null ? null : intent.getData());
+                imageUri = null;
                 beginCrop(selectedFileUri);
                 break;
 
@@ -505,22 +514,23 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         }
     }
 
-    void beginCrop(Uri imageUri){
-        try{
+    void beginCrop(Uri imageUri) {
+        try {
             CropImage.activity(imageUri)
                     .setGuidelines(CropImageView.Guidelines.OFF)
                     .setMultiTouchEnabled(true)
                     .start(this);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == PermissionsUtils.REQUEST_STORAGE) {
             if (PermissionsUtils.verifyPermissions(grantResults)) {
                 showSnackBar(R.string.storage_permission_granted);
-                if(isAttachment){
+                if (isAttachment) {
                     isAttachment = false;
                     processAttachment();
                 }
@@ -541,11 +551,10 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
             } else {
                 showSnackBar(R.string.phone_state_permission_not_granted);
             }
-        }
-        else if (requestCode == PermissionsUtils.REQUEST_CALL_PHONE) {
+        } else if (requestCode == PermissionsUtils.REQUEST_CALL_PHONE) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 showSnackBar(R.string.phone_call_permission_granted);
-                processCall(contact,currentConversationId);
+                processCall(contact, currentConversationId);
             } else {
                 showSnackBar(R.string.phone_call_permission_not_granted);
             }
@@ -577,20 +586,26 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         } else if (requestCode == PermissionsUtils.REQUEST_CAMERA_FOR_PROFILE_PHOTO) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 showSnackBar(R.string.phone_camera_permission_granted);
-                if(profilefragment != null){
+                if (profilefragment != null) {
                     profilefragment.processPhotoOption();
                 }
             } else {
                 showSnackBar(R.string.phone_camera_permission_not_granted);
             }
-        }else if (requestCode == PermissionsUtils.REQUEST_STORAGE_FOR_PROFILE_PHOTO) {
+        } else if (requestCode == PermissionsUtils.REQUEST_STORAGE_FOR_PROFILE_PHOTO) {
             if (PermissionsUtils.verifyPermissions(grantResults)) {
                 showSnackBar(R.string.storage_permission_granted);
-                if(profilefragment != null){
+                if (profilefragment != null) {
                     profilefragment.processPhotoOption();
                 }
             } else {
                 showSnackBar(R.string.storage_permission_not_granted);
+            }
+        } else if (requestCode == PermissionsUtils.REQUEST_CAMERA_AUDIO) {
+            if (PermissionsUtils.verifyPermissions(grantResults)) {
+                showSnackBar(R.string.phone_camera_and_audio_permission_granted);
+            } else {
+                showSnackBar(R.string.audio_or_camera_permission_not_granted);
             }
         }
         else {
@@ -598,14 +613,10 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         }
     }
 
-
-
     public void processingLocation() {
         if (alCustomizationSettings.isLocationShareViaMap() && !TextUtils.isEmpty(geoApiKey) && !API_KYE_STRING.equals(geoApiKey)) {
             Intent toMapActivity = new Intent(this, MobicomLocationActivity.class);
             startActivityForResult(toMapActivity, MultimediaOptionFragment.REQUEST_CODE_SEND_LOCATION);
-            Log.i("test", "Activity for result strarted");
-
         } else {
             //================= START GETTING LOCATION WITHOUT LOADING MAP AND SEND LOCATION AS TEXT===============
 
@@ -621,7 +632,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                                 startActivityForResult(intent, LOCATION_SERVICE_ENABLE);
                             }
                         })
-                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
                                 Toast.makeText(ConversationActivity.this, R.string.location_sending_cancelled, Toast.LENGTH_LONG).show();
@@ -656,34 +667,63 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.start_new) {
-            conversationUIService.startContactActivityForResult();
+                if (!TextUtils.isEmpty(contactsGroupId)) {
+                    if (Utils.isInternetAvailable(this)) {
+                        conversationUIService.startContactActivityForResult();
+                    } else {
+                        Intent intent = new Intent(this, MobiComKitPeopleActivity.class);
+                        ChannelDatabaseService channelDatabaseService = ChannelDatabaseService.getInstance(this);
+                        String[] userIdArray = channelDatabaseService.getChannelMemberByName(contactsGroupId, null);
+                        if (userIdArray != null) {
+                            conversationUIService.startContactActivityForResult(intent, null, null, userIdArray);
+                        }
+                    }
+                } else {
+                    conversationUIService.startContactActivityForResult();
+                }
         } else if (id == R.id.conversations) {
             Intent intent = new Intent(this, ChannelCreateActivity.class);
-            intent.putExtra(ChannelCreateActivity.GROUP_TYPE,Channel.GroupType.PUBLIC.getValue().intValue());
+            intent.putExtra(ChannelCreateActivity.GROUP_TYPE, Channel.GroupType.PUBLIC.getValue().intValue());
             startActivity(intent);
-        }else if(id == R.id.broadcast){
+        } else if (id == R.id.broadcast) {
             Intent intent = new Intent(this, ContactSelectionActivity.class);
-            intent.putExtra(ContactSelectionActivity.GROUP_TYPE,Channel.GroupType.BROADCAST.getValue().intValue());
+            intent.putExtra(ContactSelectionActivity.GROUP_TYPE, Channel.GroupType.BROADCAST.getValue().intValue());
             startActivity(intent);
-        }else if (id == R.id.refresh) {
-            String message = this.getString(R.string.info_message_sync);
-            mobiComMessageService.syncMessagesWithServer(message);
+        } else if (id == R.id.refresh) {
+            Toast.makeText(this, getString(R.string.info_message_sync), Toast.LENGTH_LONG).show();
+            new SyncMessagesAsyncTask(this).execute();
         } else if (id == R.id.shareOptions) {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setAction(Intent.ACTION_SEND)
                     .setType("text/plain").putExtra(Intent.EXTRA_TEXT, inviteMessage);
             startActivity(Intent.createChooser(intent, "Share Via"));
             return super.onOptionsItemSelected(item);
-        }else if(id == R.id.applozicUserProfile){
+        } else if (id == R.id.applozicUserProfile) {
             profilefragment.setApplozicPermissions(applozicPermission);
-            addFragment(this,profilefragment,ProfileFragment.ProfileFragmentTag);
+            addFragment(this, profilefragment, ProfileFragment.ProfileFragmentTag);
+        } else if (id == R.id.logout) {
+            try {
+                if (!TextUtils.isEmpty(alCustomizationSettings.getLogoutPackage())) {
+                    Class loginActivity = Class.forName(alCustomizationSettings.getLogoutPackage().trim());
+                    if (loginActivity != null) {
+                        new UserClientService(this).logout();
+                        Toast.makeText(getBaseContext(), getString(R.string.user_logout_info), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(this, loginActivity);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
         }
         return false;
     }
 
     @Override
-    public void onQuickConversationFragmentItemClick(View view, Contact contact, Channel channel,Integer conversationId,String searchString) {
-        conversation = new ConversationFragment(contact, channel,conversationId,searchString);
+    public void onQuickConversationFragmentItemClick(View view, Contact contact, Channel channel, Integer conversationId, String searchString) {
+        conversation = ConversationFragment.newInstance(contact, channel, conversationId, searchString);
         addFragment(this, conversation, ConversationUIService.CONVERSATION_FRAGMENT);
         this.channel = channel;
         this.contact = contact;
@@ -703,13 +743,13 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
     @Override
     public void onBackPressed() {
-        if(getSupportFragmentManager().getBackStackEntryCount() == 1){
-            try{
+        if (getSupportFragmentManager().getBackStackEntryCount() == 1) {
+            try {
                 Intent upIntent = NavUtils.getParentActivityIntent(this);
-                if(upIntent != null && isTaskRoot()){
+                if (upIntent != null && isTaskRoot()) {
                     TaskStackBuilder.create(this).addNextIntentWithParentStack(upIntent).startActivities();
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             this.finish();
@@ -721,13 +761,13 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
             conversationFragment.hideMultimediaOptionGrid();
             return;
         }
-        if (takeOrder){
+        if (takeOrder) {
             Intent upIntent = NavUtils.getParentActivityIntent(this);
             if (upIntent != null && isTaskRoot()) {
                 TaskStackBuilder.create(this).addNextIntentWithParentStack(upIntent).startActivities();
             }
             ConversationActivity.this.finish();
-        }else {
+        } else {
             super.onBackPressed();
         }
 
@@ -800,11 +840,12 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
     }
 
-    public void setChildFragmentLayoutBG(){
+    public void setChildFragmentLayoutBG() {
 
         childFragmentLayout.setBackgroundResource(R.color.conversation_list_all_background);
     }
-    public void setChildFragmentLayoutBGToTransparent(){
+
+    public void setChildFragmentLayoutBGToTransparent() {
 
         childFragmentLayout.setBackgroundResource(android.R.color.transparent);
     }
@@ -824,14 +865,6 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
     public Integer getConversationId() {
         return currentConversationId;
-    }
-
-    public static Uri getCapturedImageUri() {
-        return capturedImageUri;
-    }
-
-    public static void setCapturedImageUri(Uri capturedImageUri) {
-        ConversationActivity.capturedImageUri = capturedImageUri;
     }
 
     public void showSnackBar(int resId) {
@@ -864,22 +897,22 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
         if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfPermissionForAudioRecording(this)) {
             new ApplozicPermissions(this, layout).requestAudio();
-        } else if(PermissionsUtils.isAudioRecordingPermissionGranted(this)) {
+        } else if (PermissionsUtils.isAudioRecordingPermissionGranted(this)) {
 
             FragmentManager supportFragmentManager = getSupportFragmentManager();
             DialogFragment fragment = AudioMessageFragment.newInstance();
 
             FragmentTransaction fragmentTransaction = supportFragmentManager
-                    .beginTransaction().add(fragment, "dialog");
+                    .beginTransaction().add(fragment, "AudioMessageFragment");
 
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commitAllowingStateLoss();
 
-        }else{
+        } else {
 
-            if(alCustomizationSettings.getAudioPermissionNotFoundMsg()==null){
+            if (alCustomizationSettings.getAudioPermissionNotFoundMsg() == null) {
                 showSnackBar(R.string.applozic_audio_permission_missing);
-            }else{
+            } else {
                 snackbar = Snackbar.make(layout, alCustomizationSettings.getAudioPermissionNotFoundMsg(),
                         Snackbar.LENGTH_SHORT);
                 snackbar.show();
@@ -888,15 +921,39 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         }
     }
 
+    public void processVideoCall(Contact contactObj, Integer conversationId) {
+        this.contact = baseContactService.getContactById(contactObj.getContactIds());
+        if (ApplozicClient.getInstance(getApplicationContext()).isIPCallEnabled()) {
+            try {
+                if (Utils.hasMarshmallow() && !PermissionsUtils.checkPermissionForCameraAndMicrophone(this)) {
+                    applozicPermission.checkRuntimePermissionForCameraAndAudioRecording();
+                    return;
+                }
+                String activityName = ApplozicSetting.getInstance(this).getActivityCallback(ApplozicSetting.RequestCode.VIDEO_CALL);
+                Class activityToOpen = Class.forName(activityName);
+                Intent intent = new Intent(this, activityToOpen);
+                intent.putExtra("CONTACT_ID", contact.getUserId());
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     public void processCall(Contact contactObj, Integer conversationId) {
         this.contact = baseContactService.getContactById(contactObj.getContactIds());
         this.currentConversationId = conversationId;
         try {
-            if(ApplozicClient.getInstance(getApplicationContext()).isIPCallEnabled()){
+
+            if (ApplozicClient.getInstance(getApplicationContext()).isIPCallEnabled()) {
+                if (Utils.hasMarshmallow() && !PermissionsUtils.checkPermissionForCameraAndMicrophone(this)) {
+                    applozicPermission.checkRuntimePermissionForCameraAndAudioRecording();
+                    return;
+                }
                 //Audio Call
                 String activityName = ApplozicSetting.getInstance(this).getActivityCallback(ApplozicSetting.RequestCode.AUDIO_CALL);
-                Class activityToOpen =  Class.forName(activityName);
+                Class activityToOpen = Class.forName(activityName);
                 Intent intent = new Intent(this, activityToOpen);
                 intent.putExtra("CONTACT_ID", contact.getUserId());
                 startActivity(intent);
@@ -911,18 +968,18 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                 }
                 callIntent.putExtra(ConversationUIService.CONTACT, contact);
                 startActivity(callIntent);
-            } else if (alCustomizationSettings.isShowActionDialWithOutCalling()){
-                if(!TextUtils.isEmpty(contact.getContactNumber())) {
+            } else if (alCustomizationSettings.isShowActionDialWithOutCalling()) {
+                if (!TextUtils.isEmpty(contact.getContactNumber())) {
                     Intent callIntent;
                     String uri = "tel:" + contact.getContactNumber().trim();
                     callIntent = new Intent(Intent.ACTION_DIAL);
                     callIntent.setData(Uri.parse(uri));
                     startActivity(callIntent);
                 }
-            }else {
+            } else {
                 if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfForCallPermission(this)) {
                     applozicPermission.requestCallPermission();
-                } else if(PermissionsUtils.isCallPermissionGranted(this)){
+                } else if (PermissionsUtils.isCallPermissionGranted(this)) {
                     if (!TextUtils.isEmpty(contact.getContactNumber())) {
                         Intent callIntent;
                         String uri = "tel:" + contact.getContactNumber().trim();
@@ -931,14 +988,14 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                         startActivity(callIntent);
                     }
                 } else {
-                    snackbar = Snackbar.make(layout,R.string.phone_call_permission_not_granted ,
+                    snackbar = Snackbar.make(layout, R.string.phone_call_permission_not_granted,
                             Snackbar.LENGTH_SHORT);
                     snackbar.show();
                 }
             }
 
         } catch (Exception e) {
-            Log.i("ConversationActivity", "Call permission is not added in androidManifest");
+            Utils.printLog(this, "ConversationActivity", "Call permission is not added in androidManifest");
         }
     }
 
@@ -961,30 +1018,31 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
     }
 
     public void processVideoRecording() {
-        try{
-            if(PermissionsUtils.isCameraPermissionGranted(this)){
+        try {
+            if (PermissionsUtils.isCameraPermissionGranted(this)) {
                 showVideoCapture();
-            }else {
+            } else {
                 if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfForCameraPermission(this)) {
                     applozicPermission.requestCameraPermission();
                 } else {
                     showVideoCapture();
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void processContact(){
-        if(Utils.hasMarshmallow() && PermissionsUtils.checkSelfForContactPermission(this)){
+    public void processContact() {
+        if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfForContactPermission(this)) {
             applozicPermission.requestContactPermission();
-        }else {
+        } else {
             Intent contactIntent = new Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
             contactIntent.setType(ContactsContract.Contacts.CONTENT_TYPE);
             startActivityForResult(contactIntent, MultimediaOptionFragment.REQUEST_CODE_CONTACT_SHARE);
         }
     }
+
     public void imageCapture() {
         try {
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -992,7 +1050,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
             mediaFile = FileClientService.getFilePath(imageFileName, getApplicationContext(), "image/jpeg");
 
-            capturedImageUri = FileProvider.getUriForFile(this,  Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", mediaFile);
+            capturedImageUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", mediaFile);
 
             Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -1033,10 +1091,10 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         }
     }
 
-    public void processAttachment(){
-        if(Utils.hasMarshmallow() && PermissionsUtils.checkSelfForStoragePermission(this)){
+    public void processAttachment() {
+        if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfForStoragePermission(this)) {
             applozicPermission.requestStoragePermissions();
-        }else {
+        } else {
             Intent intentPick = new Intent(this, MobiComAttachmentSelectorActivity.class);
             startActivityForResult(intentPick, MultimediaOptionFragment.REQUEST_MULTI_ATTCAHMENT);
         }
@@ -1044,22 +1102,22 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
 
     public void showVideoCapture() {
 
-        try{
+        try {
             Intent videoIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
             String imageFileName = "VID_" + timeStamp + "_" + ".mp4";
 
             mediaFile = FileClientService.getFilePath(imageFileName, getApplicationContext(), "video/mp4");
 
-            videoFileUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME)+".provider",mediaFile);
+            videoFileUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", mediaFile);
 
             videoIntent.putExtra(MediaStore.EXTRA_OUTPUT, videoFileUri);
 
-            if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 videoIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                 videoIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            } else if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.JELLY_BEAN) {
-                ClipData clip=
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                ClipData clip =
                         ClipData.newUri(getContentResolver(), "a Video", videoFileUri);
 
                 videoIntent.setClipData(clip);
@@ -1067,7 +1125,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                 videoIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 
             } else {
-                List<ResolveInfo> resInfoList=
+                List<ResolveInfo> resInfoList =
                         getPackageManager()
                                 .queryIntentActivities(videoIntent, PackageManager.MATCH_DEFAULT_ONLY);
 
@@ -1088,7 +1146,7 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
                 }
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -1099,16 +1157,15 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_" + ".jpeg";
         profilePhotoFile = FileClientService.getFilePath(imageFileName, getApplicationContext(), "image/jpeg");
-        imageUri = FileProvider.getUriForFile(this,  Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", profilePhotoFile);
+        imageUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", profilePhotoFile);
         return imageUri;
     }
 
 
-
-    public void processGalleryPhotoSelection(){
-        if(Utils.hasMarshmallow() && PermissionsUtils.checkSelfForStoragePermission(this)){
+    public void processGalleryPhotoSelection() {
+        if (Utils.hasMarshmallow() && PermissionsUtils.checkSelfForStoragePermission(this)) {
             applozicPermission.requestStoragePermissionsForProfilePhoto();
-        }else {
+        } else {
             Intent getContentIntent = new Intent(Intent.ACTION_PICK,
                     android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(getContentIntent, ProfileFragment.REQUEST_CODE_ATTACH_PHOTO);
@@ -1142,12 +1199,88 @@ public class ConversationActivity extends AppCompatActivity implements MessageCo
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        try{
-            if(connectivityReceiver != null){
+        try {
+            if (connectivityReceiver != null) {
                 unregisterReceiver(connectivityReceiver);
             }
-        }catch (Exception e){
+            if (accountStatusAsyncTask != null) {
+                accountStatusAsyncTask.cancel(true);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void onClickOnMessageReply(Message message) {
+        if (message != null && conversation != null) {
+            conversation.onClickOnMessageReply(message);
+        }
+    }
+
+    private class SyncMessagesAsyncTask extends AsyncTask<Boolean, Void, Void> {
+        MobiComMessageService messageService;
+
+        public SyncMessagesAsyncTask(Context context) {
+            messageService = new MobiComMessageService(context, MessageIntentService.class);
+        }
+
+        protected Void doInBackground(Boolean... parms) {
+            messageService.syncMessages();
+            return null;
+        }
+    }
+
+    public class SyncAccountStatusAsyncTask extends AsyncTask<Void, Void, Boolean> {
+        Context context;
+        RegisterUserClientService registerUserClientService;
+        String loggedInUserId;
+        ApplozicClient applozicClient;
+        WeakReference<Snackbar> snackBarWeakReference;
+        WeakReference<LinearLayout> linearLayoutWeakReference;
+
+        public SyncAccountStatusAsyncTask(Context context, LinearLayout linearLayout, Snackbar snackbar) {
+            this.context = context;
+            this.registerUserClientService = new RegisterUserClientService(context);
+            this.linearLayoutWeakReference = new WeakReference<LinearLayout>(linearLayout);
+            this.snackBarWeakReference = new WeakReference<Snackbar>(snackbar);
+            this.applozicClient = ApplozicClient.getInstance(context);
+            this.loggedInUserId = MobiComUserPreference.getInstance(context).getUserId();
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            User applozicUser = new User();
+            applozicUser.setUserId(loggedInUserId);
+            try {
+                registerUserClientService.updateRegisteredAccount(applozicUser);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+
+
+        @Override
+        protected void onPostExecute(Boolean aBoolean) {
+            super.onPostExecute(aBoolean);
+            if (applozicClient.isAccountClosed() || applozicClient.isNotAllowed()) {
+                LinearLayout linearLayout = null;
+                Snackbar snackbar = null;
+                if (snackBarWeakReference != null) {
+                    snackbar = snackBarWeakReference.get();
+                }
+                if (linearLayoutWeakReference != null) {
+                    linearLayout = linearLayoutWeakReference.get();
+                }
+                if (snackbar != null && linearLayout != null) {
+                    snackbar = Snackbar.make(linearLayout, applozicClient.isAccountClosed() ?
+                                    R.string.applozic_account_closed : R.string.applozic_free_version_not_allowed_on_release_build,
+                            Snackbar.LENGTH_INDEFINITE);
+                    snackbar.show();
+                }
+            }
+        }
+    }
+
 }

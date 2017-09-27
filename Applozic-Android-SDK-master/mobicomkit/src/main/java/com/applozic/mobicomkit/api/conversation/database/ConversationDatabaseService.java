@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.applozic.mobicomkit.database.MobiComDatabaseHelper;
+import com.applozic.mobicommons.commons.core.utils.Utils;
 import com.applozic.mobicommons.people.channel.Channel;
 import com.applozic.mobicommons.people.channel.Conversation;
 import com.applozic.mobicommons.people.contact.Contact;
@@ -97,7 +97,7 @@ public class ConversationDatabaseService {
             if (!TextUtils.isEmpty(conversation.getTopicDetail())) {
                 contentValues.put(MobiComDatabaseHelper.TOPIC_DETAIL, conversation.getTopicDetail());
             }
-            if (!TextUtils.isEmpty(conversation.getTopicLocalImageUri()) ) {
+            if (!TextUtils.isEmpty(conversation.getTopicLocalImageUri())) {
                 contentValues.put(MobiComDatabaseHelper.TOPIC_LOCAL_IMAGE_URL, conversation.getTopicLocalImageUri());
             }
         }
@@ -126,16 +126,16 @@ public class ConversationDatabaseService {
     }
 
 
-    public Conversation getConversationByTopicId(final String  topicId,Context context) {
-        if(TextUtils.isEmpty(topicId)){
-           return null;
+    public Conversation getConversationByTopicId(final String topicId, Context context) {
+        if (TextUtils.isEmpty(topicId)) {
+            return null;
         }
         Conversation conversation = null;
         SQLiteDatabase database = MobiComDatabaseHelper.getInstance(context).getReadableDatabase();
         String conversationParameters = "";
         List<String> structuredNameParamsList = new ArrayList<>();
 
-        conversationParameters += MobiComDatabaseHelper.TOPIC_ID+"= ? ";
+        conversationParameters += MobiComDatabaseHelper.TOPIC_ID + "= ? ";
         structuredNameParamsList.add(topicId);
 
         Cursor cursor = database.query(MobiComDatabaseHelper.CONVERSATION, null, conversationParameters, structuredNameParamsList.toArray(new String[structuredNameParamsList.size()]), null, null, null);
@@ -143,7 +143,7 @@ public class ConversationDatabaseService {
         if (cursor.moveToFirst()) {
             conversation = getConversation(cursor);
         }
-        if(cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
 
@@ -171,7 +171,7 @@ public class ConversationDatabaseService {
         if (cursor.moveToFirst()) {
             conversation = getConversationList(cursor);
         }
-        if(cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
         return conversation;
@@ -202,10 +202,10 @@ public class ConversationDatabaseService {
 
     public void deleteConversation(String userId) {
         int deletedRows = dbHelper.getWritableDatabase().delete(MobiComDatabaseHelper.CONVERSATION, MobiComDatabaseHelper.USERID + "=?", new String[]{userId});
-        Log.i(TAG, "Delete no of conversation:" + deletedRows);
+        Utils.printLog(context,TAG, "Delete no of conversation:" + deletedRows);
     }
 
-    public Integer isConversationExit(String userId,String topicId){
+    public Integer isConversationExit(String userId, String topicId) {
         Conversation conversation = null;
         SQLiteDatabase database = dbHelper.getReadableDatabase();
 
@@ -225,17 +225,16 @@ public class ConversationDatabaseService {
             cursor.close();
             return conversation.getId();
         }
-        if(cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
         return null;
     }
 
-    public void updateTopicLocalImageUri(String imageUri,Integer conversationId){
-        ContentValues contentValues =  new ContentValues();
-        contentValues.put(MobiComDatabaseHelper.TOPIC_LOCAL_IMAGE_URL,imageUri);
-        int updatedRow =  dbHelper.getWritableDatabase().update(MobiComDatabaseHelper.CONVERSATION,contentValues, MobiComDatabaseHelper.KEY + "=?", new String[]{String.valueOf(conversationId)});
-        Log.i("updating","now"+updatedRow);
+    public void updateTopicLocalImageUri(String imageUri, Integer conversationId) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MobiComDatabaseHelper.TOPIC_LOCAL_IMAGE_URL, imageUri);
+        int updatedRow = dbHelper.getWritableDatabase().update(MobiComDatabaseHelper.CONVERSATION, contentValues, MobiComDatabaseHelper.KEY + "=?", new String[]{String.valueOf(conversationId)});
     }
 
 }

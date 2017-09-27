@@ -47,7 +47,7 @@ public class AlCustomizationSettings extends JsonMarker {
     private String attachCameraIconName = "applozic_ic_action_camera_new";
     private String adminBorderColor = "#FF03A9F4";
     private String userNotAbleToChatTextColor = "#000000";
-    private String chatBackgroundImageName ;
+    private String chatBackgroundImageName;
 
     private String audioPermissionNotFoundMsg;
     private String noConversationLabel = "You have no conversations";
@@ -55,7 +55,7 @@ public class AlCustomizationSettings extends JsonMarker {
     private String restrictedWordMessage = "Restricted words are not allowed";
     private boolean locationShareViaMap = true;
     private boolean startNewFloatingButton;
-    private boolean startNewButton;
+    private boolean startNewButton = true;
     private boolean onlineStatusMasterList;
     private boolean priceWidget;
     private boolean startNewGroup = true;
@@ -75,11 +75,29 @@ public class AlCustomizationSettings extends JsonMarker {
     private boolean profileOption;
     private boolean broadcastOption;
     private boolean hideAttachmentButton;
+    private boolean groupUsersOnlineStatus;
+    private boolean refreshOption = true;
+    private boolean deleteOption = true;
+    private boolean blockOption = true;
+    private boolean muteOption = true;
+    private String logoutPackageName;
+    private boolean logoutOption = false;
 
     private int totalRegisteredUserToFetch = 100;
     private int maxAttachmentAllowed = 5;
     private int maxAttachmentSizeAllowed = 30;
     private int totalOnlineUsers = 0;
+    private String themeColorPrimary;
+    private String themeColorPrimaryDark;
+    private String editTextHintText = "Write a Message..";
+    private boolean replyOption = true;
+    private String replyMessageLayoutSentMessageBackground = "#C0C0C0";
+    private String replyMessageLayoutReceivedMessageBackground = "#F5F5F5";
+    private boolean groupInfoScreenVisible = true;
+    private boolean forwardOption = true;
+    private boolean recordButton = true;
+
+    private boolean launchChatFromProfilePicOrName;
 
     private Map<String, Boolean> attachmentOptions;
 
@@ -343,6 +361,7 @@ public class AlCustomizationSettings extends JsonMarker {
     public String getChatBackgroundImageName() {
         return chatBackgroundImageName;
     }
+
     public Map<String, Boolean> getAttachmentOptions() {
         return attachmentOptions;
     }
@@ -366,6 +385,111 @@ public class AlCustomizationSettings extends JsonMarker {
 
     public void setRestrictedWordMessage(String restrictedWordMessage) {
         this.restrictedWordMessage = restrictedWordMessage;
+    }
+
+    public boolean isLaunchChatFromProfilePicOrName() {
+        return launchChatFromProfilePicOrName;
+    }
+
+    public boolean isGroupUsersOnlineStatus() {
+        return groupUsersOnlineStatus;
+    }
+
+
+    public boolean isRefreshOption() {
+        return refreshOption;
+    }
+
+    public void setRefreshOption(boolean refreshOption) {
+        this.refreshOption = refreshOption;
+    }
+
+    public boolean isDeleteOption() {
+        return deleteOption;
+    }
+
+    public void setDeleteOption(boolean deleteOption) {
+        this.deleteOption = deleteOption;
+    }
+
+    public boolean isBlockOption() {
+        return blockOption;
+    }
+
+    public void setBlockOption(boolean blockOption) {
+        this.blockOption = blockOption;
+    }
+
+    public boolean isMuteOption() {
+        return muteOption;
+    }
+
+    public void setMuteOption(boolean muteOption) {
+        this.muteOption = muteOption;
+    }
+
+    public boolean isLogoutOption() {
+        return logoutOption;
+    }
+
+    public void setLogout(boolean logoutOption) {
+        this.logoutOption = logoutOption;
+    }
+
+    public String getLogoutPackage() {
+        return logoutPackageName;
+    }
+
+    public void setLogoutPackageName(String logoutPackageName) {
+        this.logoutPackageName = logoutPackageName;
+    }
+
+    public String getThemeColorPrimary() {
+        return themeColorPrimary;
+    }
+
+    public String getThemeColorPrimaryDark() {
+        return themeColorPrimaryDark;
+    }
+
+    public String getEditTextHintText() {
+        return editTextHintText;
+    }
+
+    public boolean isReplyOption() {
+        return replyOption;
+    }
+
+    public void setReplyOption(boolean replyOption) {
+        this.replyOption = replyOption;
+    }
+
+    public String getReplyMessageLayoutSentMessageBackground() {
+        return replyMessageLayoutSentMessageBackground;
+    }
+
+    public String getReplyMessageLayoutReceivedMessageBackground() {
+        return replyMessageLayoutReceivedMessageBackground;
+    }
+
+    public boolean isGroupInfoScreenVisible() {
+        return groupInfoScreenVisible;
+    }
+
+    public boolean isForwardOption() {
+        return forwardOption;
+    }
+
+    public void setForwardOption(boolean forwardOption) {
+        this.forwardOption = forwardOption;
+    }
+
+    public boolean isRecordButton() {
+        return recordButton;
+    }
+
+    public void setRecordButton(boolean recordButton) {
+        this.recordButton = recordButton;
     }
 
     @Override

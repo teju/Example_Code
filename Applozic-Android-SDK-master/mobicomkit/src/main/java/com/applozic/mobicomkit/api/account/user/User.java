@@ -28,6 +28,8 @@ public class User extends JsonMarker {
     private String displayName;
     private String appModuleName;
     private Short userTypeId;
+    private List<String> features;
+    private String notificationSoundFilePath;
 
     public List<String> getFeatures() {
         return features;
@@ -36,9 +38,6 @@ public class User extends JsonMarker {
     public void setFeatures(List<String> features) {
         this.features = features;
     }
-
-    private List<String> features;
-
 
     public String getUserId() {
         return userId;
@@ -190,6 +189,14 @@ public class User extends JsonMarker {
 
     public void setUserTypeId(Short userTypeId) {
         this.userTypeId = userTypeId;
+    }
+
+    public String getNotificationSoundFilePath() {
+        return notificationSoundFilePath;
+    }
+
+    public void setNotificationSoundFilePath(String notificationSoundFilePath) {
+        this.notificationSoundFilePath = notificationSoundFilePath;
     }
 
     public enum AuthenticationType {

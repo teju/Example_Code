@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,23 +22,24 @@ import com.applozic.mobicomkit.uiwidgets.R;
 import com.applozic.mobicomkit.uiwidgets.conversation.activity.RemoveInterfaceListener;
 import com.applozic.mobicomkit.uiwidgets.people.fragment.ProfileFragment;
 import com.applozic.mobicomkit.uiwidgets.uilistener.MobicomkitUriListener;
+import com.applozic.mobicommons.commons.core.utils.Utils;
 
 import java.util.List;
 
 /**
  * Created by sunil on 25/5/16.
  */
-public class PictureUploadPopUpFragment extends DialogFragment  {
+public class PictureUploadPopUpFragment extends DialogFragment {
 
-    private static final String TAG = "PictureUploadPopUpFrag" ;
+    public static final String REMOVE_PHOTO = "REMOVE_PHOTO";
+    public static final String REMOVE_OPTION = "REMOVE_OPTION";
+    private static final String TAG = "PictureUploadPopUpFrag";
     LinearLayout removeLayout, galleryLayout, cameraLayout;
     boolean removePhoto;
     boolean disableRemoveOption;
-    public  static final String REMOVE_PHOTO = "REMOVE_PHOTO";
-    public  static final String REMOVE_OPTION = "REMOVE_OPTION";
-    Bundle bundle ;
+    Bundle bundle;
 
-    public static PictureUploadPopUpFragment newInstance(boolean removePhoto,boolean disableRemoveOption) {
+    public static PictureUploadPopUpFragment newInstance(boolean removePhoto, boolean disableRemoveOption) {
         PictureUploadPopUpFragment f = new PictureUploadPopUpFragment();
         Bundle args = new Bundle();
         args.putBoolean(REMOVE_PHOTO, removePhoto);
@@ -47,6 +47,7 @@ public class PictureUploadPopUpFragment extends DialogFragment  {
         f.setArguments(args);
         return f;
     }
+
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
 
@@ -70,20 +71,20 @@ public class PictureUploadPopUpFragment extends DialogFragment  {
         removeLayout = (LinearLayout) view.findViewById(R.id.upload_remove_image_layout);
         removeLayout.setVisibility(View.GONE);
 
-        if(bundle != null){
+        if (bundle != null) {
             removePhoto = bundle.getBoolean(REMOVE_PHOTO);
             disableRemoveOption = bundle.getBoolean(REMOVE_OPTION);
         }
-        if(disableRemoveOption){
+        if (disableRemoveOption) {
             removeLayout.setVisibility(View.GONE);
         }
         removeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(removePhoto){
-                    ((RemoveInterfaceListener)getActivity()).removeCallBack();
-                }else {
-                    getTargetFragment().onActivityResult(ProfileFragment.REQUEST_REMOVE_PHOTO,Activity.RESULT_OK,getActivity().getIntent());
+                if (removePhoto) {
+                    ((RemoveInterfaceListener) getActivity()).removeCallBack();
+                } else {
+                    getTargetFragment().onActivityResult(ProfileFragment.REQUEST_REMOVE_PHOTO, Activity.RESULT_OK, getActivity().getIntent());
                 }
                 getDialog().dismiss();
             }
@@ -116,7 +117,7 @@ public class PictureUploadPopUpFragment extends DialogFragment  {
         Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         if (!(getActivity() instanceof MobicomkitUriListener)) {
-            Log.d(TAG, "Activity must implement MobicomkitUriListener to get image file uri");
+            Utils.printLog(getContext(),TAG, "Activity must implement MobicomkitUriListener to get image file uri");
             return;
         }
 

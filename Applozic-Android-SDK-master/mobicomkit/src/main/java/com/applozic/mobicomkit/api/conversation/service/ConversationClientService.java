@@ -2,7 +2,6 @@ package com.applozic.mobicomkit.api.conversation.service;
 
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.applozic.mobicomkit.api.HttpRequestUtils;
 import com.applozic.mobicomkit.api.MobiComKitClientService;
@@ -10,6 +9,8 @@ import com.applozic.mobicomkit.api.conversation.database.ConversationDatabaseSer
 import com.applozic.mobicomkit.feed.ApiResponse;
 import com.applozic.mobicomkit.feed.ChannelFeed;
 import com.applozic.mobicomkit.feed.ChannelFeedApiResponse;
+import com.applozic.mobicomkit.feed.ConversationFeed;
+import com.applozic.mobicommons.commons.core.utils.Utils;
 import com.applozic.mobicommons.json.GsonUtils;
 import com.applozic.mobicommons.people.channel.Conversation;
 
@@ -26,12 +27,12 @@ public class ConversationClientService extends MobiComKitClientService {
     private static final String CONVERSATION_CLOSE_TOPIC_ID_URL = "/rest/ws/conversation/closeall";
     private static final String CONVERSATION_CLOSE_URL = "/rest/ws/conversation/close";
     private static final String TAG = "ConversationClient";
+    final private static String TOPIC_ID = "topicId";
+    final private static String WITH_USER_ID = "withUserId";
     private static ConversationClientService conversationClientService;
     private Context context;
     private ConversationDatabaseService conversationDatabaseService;
     private HttpRequestUtils httpRequestUtils;
-    final private static String TOPIC_ID = "topicId";
-    final private static String WITH_USER_ID = "withUserId";
 
     private ConversationClientService(Context context) {
         super(context);
@@ -68,7 +69,7 @@ public class ConversationClientService extends MobiComKitClientService {
         try {
             String jsonFromObject = GsonUtils.getJsonFromObject(conversation, conversation.getClass());
             String createChannelResponse = httpRequestUtils.postData(getCreateConversationUrl(), "application/json", "application/json", jsonFromObject);
-            Log.i(TAG, "Create Conversation reponse:" + createChannelResponse);
+            Utils.printLog(context,TAG, "Create Conversation reponse:" + createChannelResponse);
             ChannelFeedApiResponse channelFeedApiResponse = (ChannelFeedApiResponse) GsonUtils.getObjectFromJson(createChannelResponse, ChannelFeedApiResponse.class);
 
             if (channelFeedApiResponse != null && channelFeedApiResponse.isSuccess()) {
@@ -86,8 +87,8 @@ public class ConversationClientService extends MobiComKitClientService {
         try {
             if (conversationId != null) {
                 response = httpRequestUtils.getResponse(getConversationUrl() + "?id=" + String.valueOf(conversationId), "application/json", "application/json");
-                ApiResponse apiResponse = (ApiResponse) GsonUtils.getObjectFromJson(response, ApiResponse.class);
-                Log.i(TAG, "Conversation response  is :" + response);
+                ConversationFeed apiResponse = (ConversationFeed) GsonUtils.getObjectFromJson(response, ConversationFeed.class);
+                Utils.printLog(context,TAG, "Conversation response  is :" + response);
                 if (apiResponse != null && apiResponse.isSuccess()) {
                     return (Conversation) apiResponse.getResponse();
                 }
@@ -107,7 +108,7 @@ public class ConversationClientService extends MobiComKitClientService {
                     return null;
                 }
                 ApiResponse apiResponse = (ApiResponse) GsonUtils.getObjectFromJson(response, ApiResponse.class);
-                Log.i(TAG, "Conversation close  API Response :" + response);
+                Utils.printLog(context,TAG, "Conversation close  API Response :" + response);
                 if (apiResponse != null && apiResponse.isSuccess()) {
                     return apiResponse.getResponse().toString();
                 }
@@ -132,7 +133,7 @@ public class ConversationClientService extends MobiComKitClientService {
                     return null;
                 }
                 ApiResponse apiResponse = (ApiResponse) GsonUtils.getObjectFromJson(response, ApiResponse.class);
-                Log.i(TAG, "Conversation close by topic id :" + response);
+                Utils.printLog(context,TAG, "Conversation close by topic id :" + response);
                 if (apiResponse != null && apiResponse.isSuccess()) {
                     return apiResponse.getResponse().toString();
                 }

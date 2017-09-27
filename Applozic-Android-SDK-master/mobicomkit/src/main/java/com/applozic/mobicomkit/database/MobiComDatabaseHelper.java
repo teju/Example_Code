@@ -3,16 +3,16 @@ package com.applozic.mobicomkit.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.applozic.mobicomkit.api.MobiComKitClientService;
 import com.applozic.mobicomkit.api.account.user.MobiComUserPreference;
 import com.applozic.mobicomkit.api.account.user.UserClientService;
 import com.applozic.mobicommons.commons.core.utils.DBUtils;
+import com.applozic.mobicommons.commons.core.utils.Utils;
 
 public class MobiComDatabaseHelper extends SQLiteOpenHelper {
 
-    public static final int DB_VERSION = 23;
+    public static final int DB_VERSION = 27;
 
     public static final String _ID = "_id";
     public static final String SMS_KEY_STRING = "smsKeyString";
@@ -32,7 +32,7 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
     public static final String CONTACT_IMAGE_LOCAL_URI = "contactImageLocalURI";
     public static final String CONTACT_IMAGE_URL = "contactImageURL";
     public static final String CHANNEL_IMAGE_URL = "channelImageURL";
-    public static final String CHANNEL_IMAGE_LOCAL_URI= "channelImageLocalURI";
+    public static final String CHANNEL_IMAGE_LOCAL_URI = "channelImageLocalURI";
     public static final String USERID = "userId";
     public static final String EMAIL = "email";
     public static final String APPLICATION_ID = "applicationId";
@@ -64,6 +64,10 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
     public static final String USER_TYPE_ID = "userTypeId";
     public static final String NOTIFICATION_AFTER_TIME = "notificationAfterTime";
     public static final String DELETED_AT = "deletedAtTime";
+    public static final String CHANNEL_META_DATA = "channelMetadata";
+    public static final String HIDDEN = "hidden";
+    public static final String REPLY_MESSAGE = "replyMessage";
+
 
     public static final String CREATE_SCHEDULE_SMS_TABLE = "create table " + SCHEDULE_SMS_TABLE_NAME + "( "
             + _ID + " integer primary key autoincrement  ," + SMS
@@ -101,11 +105,13 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             + "topicId varchar(300) null,"
             + "channelKey integer default 0,"
             + STATUS + " varchar(200) default 0,"
-            + CLIENT_GROUP_ID +" varchar(1000) default null,"
+            + CLIENT_GROUP_ID + " varchar(1000) default null,"
+            + HIDDEN + " integer default 0,"
+            + REPLY_MESSAGE + " INTEGER default 0,"
             + "UNIQUE (keyString,contactNumbers,channelKey))";
     private static final String SMS_BACKUP = "sms_backup";
-    public static final String INSERT_INTO_SMS_FROM_SMS_BACKUP_QUERY = "INSERT INTO sms (id,keyString,toNumbers,contactNumbers,message,type,read,delivered,storeOnDevice,sentToServer,createdAt,scheduledAt,source,timeToLive,fileMetaKeyStrings,filePaths,thumbnailUrl,size,name,contentType,metaFileKeyString,blobKeyString,canceled,deleted,applicationId,messageContentType,conversationId,topicId,channelKey,status)" +
-            " SELECT id,keyString,toNumbers,contactNumbers,message,type,read,delivered,storeOnDevice,sentToServer,createdAt,scheduledAt,source,timeToLive,fileMetaKeyStrings,filePaths,thumbnailUrl,size,name,contentType,metaFileKeyString,blobKeyString,canceled,deleted,applicationId,messageContentType,conversationId,topicId,channelKey,status" +
+    public static final String INSERT_INTO_SMS_FROM_SMS_BACKUP_QUERY = "INSERT INTO sms (id,keyString,toNumbers,contactNumbers,message,type,read,delivered,storeOnDevice,sentToServer,createdAt,scheduledAt,source,timeToLive,fileMetaKeyStrings,filePaths,metadata,thumbnailUrl,size,name,contentType,metaFileKeyString,blobKeyString,canceled,deleted,applicationId,messageContentType,conversationId,topicId,channelKey,status,hidden,replyMessage)" +
+            " SELECT id,keyString,toNumbers,contactNumbers,message,type,read,delivered,storeOnDevice,sentToServer,createdAt,scheduledAt,source,timeToLive,fileMetaKeyStrings,filePaths,metadata,thumbnailUrl,size,name,contentType,metaFileKeyString,blobKeyString,canceled,deleted,applicationId,messageContentType,conversationId,topicId,channelKey,status,hidden,replyMessage" +
             " FROM " + SMS_BACKUP;
     private static final String DROP_SMS_BACKUP = "DROP TABLE " + SMS_BACKUP;
     private static final String ALTER_SMS_TABLE_FOR_DELETE_COLUMN = "ALTER TABLE " + SMS + " ADD COLUMN deleted integer default 0";
@@ -120,8 +126,8 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
     private static final String ALTER_MESSAGE_TABLE_FOR_TOPIC_ID_COLUMN = "ALTER TABLE " + SMS + " ADD COLUMN " + TOPIC_ID + " varchar(300) null";
     private static final String ALTER_CONTACT_TABLE_UNREAD_COUNT_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + UNREAD_COUNT + " integer default 0";
     private static final String ALTER_CHANNEL_TABLE_UNREAD_COUNT_COLUMN = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + UNREAD_COUNT + " integer default 0";
-    private static final String ALTER_CONTACT_TABLE_BLOCKED_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + BLOCKED+ " integer default 0";
-    private static final String ALTER_CONTACT_TABLE_BLOCKED_BY_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + BLOCKED_BY+ " integer default 0";
+    private static final String ALTER_CONTACT_TABLE_BLOCKED_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + BLOCKED + " integer default 0";
+    private static final String ALTER_CONTACT_TABLE_BLOCKED_BY_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + BLOCKED_BY + " integer default 0";
     private static final String ALTER_CHANNEL_TABLE_FOR_IMAGE_URL_COLUMN = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + CHANNEL_IMAGE_URL + " varchar(300) null";
     private static final String ALTER_CHANNEL_TABLE_FOR_IMAGE_LOCAL_URI_COLUMN = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + CHANNEL_IMAGE_LOCAL_URI + " varchar(300) null";
     private static final String ALTER_CHANNEL_TABLE_FOR_CLIENT_GROUP_ID = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + CLIENT_GROUP_ID + " varchar(200) null";
@@ -130,8 +136,11 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
     private static final String ALTER_CONTACT_TABLE_FOR_CONTENT_TYPE_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + CONTACT_TYPE + " integer default 0";
     private static final String ALTER_CONTACT_TABLE_FOR_USER_TYPE_ID_COLUMN = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + USER_TYPE_ID + " integer default 0";
     private static final String ALTER_CHANNEL_TABLE_FOR_NOTIFICATION_AFTER_TIME_COLUMN = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + NOTIFICATION_AFTER_TIME + " integer default 0";
-
     private static final String ALTER_CHANNEL_TABLE_FOR_DELETED_AT_COLUMN = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + DELETED_AT + " integer";
+    private static final String ALTER_CHANNEL_TABLE_FOR_CHANNEL_META_DATA = "ALTER TABLE " + CHANNEL + " ADD COLUMN " + CHANNEL_META_DATA + " VARCHAR(2000)";
+    private static final String ALTER_SMS_TABLE_FOR_HIDDEN = "ALTER TABLE " + SMS + " ADD COLUMN hidden integer default 0";
+    private static final String ALTER_SMS_TABLE_FOR_REPLY_MESSAGE_COLUMN = "ALTER TABLE " + SMS + " ADD COLUMN replyMessage INTEGER default 0";
+    private static final String ALTER_CONTACT_TABLE_FOR_DELETED_AT = "ALTER TABLE " + CONTACT_TABLE_NAME + " ADD COLUMN " + DELETED_AT + " integer default 0";
 
     private static final String CREATE_CONTACT_TABLE = " CREATE TABLE contact ( " +
             USERID + " VARCHAR(50) primary key, "
@@ -147,9 +156,10 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             + UNREAD_COUNT + " integer default 0,"
             + BLOCKED + " integer default 0, "
             + BLOCKED_BY + " integer default 0, "
-            + STATUS +" varchar(2500) null, "
-            + CONTACT_TYPE+" integer default 0,"
-            + USER_TYPE_ID +" integer default 0 "
+            + STATUS + " varchar(2500) null, "
+            + CONTACT_TYPE + " integer default 0,"
+            + USER_TYPE_ID + " integer default 0,"
+            + DELETED_AT +" INTEGER default 0 "
             + " ) ";
 
     private static final String CREATE_CHANNEL_TABLE = " CREATE TABLE channel ( " +
@@ -163,9 +173,9 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             + USER_COUNT + "integer, "
             + CHANNEL_IMAGE_URL + " VARCHAR(300), "
             + CHANNEL_IMAGE_LOCAL_URI + " VARCHAR(300), "
-            + NOTIFICATION_AFTER_TIME +" integer default 0, "
-            + DELETED_AT +" integer"
-            + " )";
+            + NOTIFICATION_AFTER_TIME + " integer default 0, "
+            + DELETED_AT + " integer,"
+            + CHANNEL_META_DATA + " VARCHAR(2000)) ";
 
     private static final String CREATE_CHANNEL_USER_X_TABLE = " CREATE TABLE channel_User_X ( " +
             _ID + " integer primary key autoincrement, "
@@ -185,7 +195,7 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             + TOPIC_LOCAL_IMAGE_URL + " varchar(500))";
 
     private static final String CREATE_INDEX_SMS_TYPE = "CREATE INDEX IF NOT EXISTS INDEX_SMS_TYPE ON sms (type)";
-    private static final String CREATE_INDEX_ON_CREATED_AT =  "CREATE INDEX IF NOT EXISTS message_createdAt ON sms (createdAt)";
+    private static final String CREATE_INDEX_ON_CREATED_AT = "CREATE INDEX IF NOT EXISTS message_createdAt ON sms (createdAt)";
     private static final String TAG = "MobiComDatabaseHelper";
     private static MobiComDatabaseHelper sInstance;
     private Context context;
@@ -243,7 +253,7 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
         //Note: some user might directly upgrade from an old version to the new version, in that case it may happen that
         //schedule sms table is not present.
         if (newVersion > oldVersion) {
-            Log.i(TAG, "Upgrading database from version "
+            Utils.printLog(context,TAG, "Upgrading database from version "
                     + oldVersion + " to " + newVersion
                     + ", which will destroy all old data");
 
@@ -307,7 +317,7 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             if (!DBUtils.existsColumnInTable(database, "channel", CLIENT_GROUP_ID)) {
                 database.execSQL(ALTER_CHANNEL_TABLE_FOR_CLIENT_GROUP_ID);
             }
-            if(!DBUtils.existsColumnInTable(database, CHANNEL, UNREAD_COUNT)){
+            if (!DBUtils.existsColumnInTable(database, CHANNEL, UNREAD_COUNT)) {
                 database.execSQL(ALTER_CHANNEL_TABLE_UNREAD_COUNT_COLUMN);
             }
             if (!DBUtils.existsColumnInTable(database, "contact", STATUS)) {
@@ -328,7 +338,18 @@ public class MobiComDatabaseHelper extends SQLiteOpenHelper {
             if (!DBUtils.existsColumnInTable(database, "channel", DELETED_AT)) {
                 database.execSQL(ALTER_CHANNEL_TABLE_FOR_DELETED_AT_COLUMN);
             }
-
+            if (!DBUtils.existsColumnInTable(database, "contact", DELETED_AT)) {
+                database.execSQL(ALTER_CONTACT_TABLE_FOR_DELETED_AT);
+            }
+            if (!DBUtils.existsColumnInTable(database, CHANNEL, CHANNEL_META_DATA)) {
+                database.execSQL(ALTER_CHANNEL_TABLE_FOR_CHANNEL_META_DATA);
+            }
+            if (!DBUtils.existsColumnInTable(database, SMS, HIDDEN)) {
+                database.execSQL(ALTER_SMS_TABLE_FOR_HIDDEN);
+            }
+            if (!DBUtils.existsColumnInTable(database, SMS, REPLY_MESSAGE)) {
+                database.execSQL(ALTER_SMS_TABLE_FOR_REPLY_MESSAGE_COLUMN);
+            }
             database.execSQL(CREATE_INDEX_ON_CREATED_AT);
             database.execSQL(CREATE_INDEX_SMS_TYPE);
             database.execSQL(ALTER_SMS_TABLE);

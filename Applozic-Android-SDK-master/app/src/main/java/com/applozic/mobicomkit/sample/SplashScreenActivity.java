@@ -18,19 +18,19 @@ public class SplashScreenActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_layout);
-            new Handler().postDelayed(new Runnable(){
-                @Override
-                public void run() {
-                    if(MobiComUserPreference.getInstance(SplashScreenActivity.this).isLoggedIn()) {
-                        Intent mainIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
-                        SplashScreenActivity.this.startActivity(mainIntent);
-                        SplashScreenActivity.this.finish();
-                    }else {
-                        Intent mainIntent = new Intent(SplashScreenActivity.this, LoginActivity.class);
-                        SplashScreenActivity.this.startActivity(mainIntent);
-                        SplashScreenActivity.this.finish();
-                    }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (MobiComUserPreference.getInstance(SplashScreenActivity.this).isLoggedIn()) {
+                    Intent mainIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                    SplashScreenActivity.this.startActivity(mainIntent);
+                    SplashScreenActivity.this.finish();
+                } else {
+                    Intent mainIntent = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                    SplashScreenActivity.this.startActivity(mainIntent);
+                    SplashScreenActivity.this.finish();
                 }
-            }, SPLASH_DISPLAY_LENGTH);
-        }
+            }
+        }, SPLASH_DISPLAY_LENGTH);
+    }
 }

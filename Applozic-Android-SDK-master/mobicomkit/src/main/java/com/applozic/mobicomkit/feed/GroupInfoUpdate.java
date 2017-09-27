@@ -4,7 +4,9 @@ import com.applozic.mobicommons.json.Exclude;
 import com.applozic.mobicommons.json.JsonMarker;
 import com.applozic.mobicommons.people.channel.Channel;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -24,7 +26,15 @@ public class GroupInfoUpdate extends JsonMarker {
     private String newlocalPath;
     @Exclude
     private String contentUri;
+    private Map<String, String> metadata = new HashMap<>();
 
+    public GroupInfoUpdate(Integer channelKey) {
+        this.groupId = channelKey;
+    }
+
+    public GroupInfoUpdate(String clientGroupId) {
+        this.clientGroupId = clientGroupId;
+    }
 
     public GroupInfoUpdate(Channel channel) {
         this.newName = channel.getName();
@@ -114,6 +124,14 @@ public class GroupInfoUpdate extends JsonMarker {
 
     public void setContentUri(String contentUri) {
         this.contentUri = contentUri;
+    }
+
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
     }
 
     @Override

@@ -21,6 +21,7 @@ public class ChannelInfo extends JsonMarker {
     private String imageUrl;
     private int type = Channel.GroupType.PUBLIC.getValue().intValue();
     private Map<String, String> metadata;
+    private String admin;
     private ChannelMetadata channelMetadata;
 
     public ChannelInfo(String groupName, List<String> groupMemberList) {
@@ -78,11 +79,19 @@ public class ChannelInfo extends JsonMarker {
         return channelMetadata;
     }
 
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
+    }
+
     public void setChannelMetadata(ChannelMetadata channelMetadata) {
         this.channelMetadata = channelMetadata;
         if (channelMetadata != null) {
-            if(metadata == null){
-                metadata  = new HashMap<String, String>();
+            if (metadata == null) {
+                metadata = new HashMap<String, String>();
             }
             metadata.put(ChannelMetadata.CREATE_GROUP_MESSAGE, channelMetadata.getCreateGroupMessage());
             metadata.put(ChannelMetadata.ADD_MEMBER_MESSAGE, channelMetadata.getAddMemberMessage());
@@ -97,6 +106,14 @@ public class ChannelInfo extends JsonMarker {
         }
     }
 
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
+    }
+
     @Override
     public String toString() {
         return "ChannelInfo{" +
@@ -106,6 +123,8 @@ public class ChannelInfo extends JsonMarker {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", type=" + type +
                 ", metadata=" + metadata +
+                ", admin='" + admin + '\'' +
+                ", channelMetadata=" + channelMetadata +
                 '}';
     }
 }

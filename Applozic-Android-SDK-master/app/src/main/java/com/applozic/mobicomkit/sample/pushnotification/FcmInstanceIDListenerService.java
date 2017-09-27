@@ -15,6 +15,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 public class FcmInstanceIDListenerService extends FirebaseInstanceIdService {
 
     final private static String TAG = "FcmInstanceIDListener";
+
     @Override
     public void onTokenRefresh() {
         super.onTokenRefresh();
@@ -24,7 +25,8 @@ public class FcmInstanceIDListenerService extends FirebaseInstanceIdService {
         Applozic.getInstance(this).setDeviceRegistrationId(registrationId);
         if (MobiComUserPreference.getInstance(this).isRegistered()) {
             try {
-                RegistrationResponse registrationResponse = new RegisterUserClientService(this).updatePushNotificationId(registrationId);
+                RegistrationResponse registrationResponse = new RegisterUserClientService(this)
+                        .updatePushNotificationId(registrationId);
             } catch (Exception e) {
                 e.printStackTrace();
             }

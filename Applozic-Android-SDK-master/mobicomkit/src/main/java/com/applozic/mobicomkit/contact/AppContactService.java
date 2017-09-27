@@ -3,7 +3,6 @@ package com.applozic.mobicomkit.contact;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.applozic.mobicomkit.api.attachment.FileClientService;
 import com.applozic.mobicomkit.broadcast.BroadcastService;
@@ -30,7 +29,7 @@ public class AppContactService implements BaseContactService {
     public AppContactService(Context context) {
         this.context = context.getApplicationContext();
         this.contactDatabase = new ContactDatabase(context);
-        this.fileClientService =  new FileClientService(context);
+        this.fileClientService = new FileClientService(context);
     }
 
     @Override
@@ -40,7 +39,7 @@ public class AppContactService implements BaseContactService {
 
     @Override
     public void addAll(List<Contact> contactList) {
-        for (Contact contact: contactList) {
+        for (Contact contact : contactList) {
             upsert(contact);
         }
     }
@@ -158,23 +157,23 @@ public class AppContactService implements BaseContactService {
     @Override
     public void updateConnectedStatus(String contactId, Date date, boolean connected) {
         Contact contact = contactDatabase.getContactById(contactId);
-        if(contact != null && contact.isConnected() != connected){
+        if (contact != null && contact.isConnected() != connected) {
             contactDatabase.updateConnectedOrDisconnectedStatus(contactId, date, connected);
             BroadcastService.sendUpdateLastSeenAtTimeBroadcast(context, BroadcastService.INTENT_ACTIONS.UPDATE_LAST_SEEN_AT_TIME.toString(), contactId);
         }
     }
 
     @Override
-    public void updateUserBlocked(String userId,boolean userBlocked) {
-        if(!TextUtils.isEmpty(userId)){
-            contactDatabase.updateUserBlockStatus(userId,userBlocked);
+    public void updateUserBlocked(String userId, boolean userBlocked) {
+        if (!TextUtils.isEmpty(userId)) {
+            contactDatabase.updateUserBlockStatus(userId, userBlocked);
             BroadcastService.sendUpdateLastSeenAtTimeBroadcast(context, BroadcastService.INTENT_ACTIONS.UPDATE_LAST_SEEN_AT_TIME.toString(), userId);
         }
     }
 
     @Override
     public void updateUserBlockedBy(String userId, boolean userBlockedBy) {
-        if(!TextUtils.isEmpty(userId)){
+        if (!TextUtils.isEmpty(userId)) {
             contactDatabase.updateUserBlockByStatus(userId, userBlockedBy);
             BroadcastService.sendUpdateLastSeenAtTimeBroadcast(context, BroadcastService.INTENT_ACTIONS.UPDATE_LAST_SEEN_AT_TIME.toString(), userId);
         }

@@ -15,6 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -41,14 +42,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, EcommerceFragment.OnFragmentInteractionListener {
-    private UserLogoutTask userLogoutTask;
     public static final String TAKE_ORDER = "takeOrder";
     public static final String TAG = "MainActivity";
-    public static final String TAKE_ORDER_USERID_METADATA = "com.applozic.take.order.userId";
-    private static final String CONVERSATION_FRAGMENT = "ConversationFragment";
-
+    private UserLogoutTask userLogoutTask;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -90,7 +88,6 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         MobiComUserPreference userPreference = MobiComUserPreference.getInstance(this);
@@ -114,38 +111,20 @@ public class MainActivity extends ActionBarActivity
         //Put Support Contact Data
         buildSupportContactData();
 
-        /*else {
-            Intent intent = new Intent(this, ConversationActivity.class);
-                startActivity(intent);
-        }*/
-
-        /*ApplozicSetting.getInstance(this).setColor(ApplozicSetting.CUSTOM_MESSAGE_BACKGROUND_COLOR, Color.parseColor("#FFB3E5FC"));
-        Message message = new Message("contact@applozic.com", "hey! here's a match <3");
-        new MobiComMessageService(this, MessageIntentService.class).sendCustomMessage(message);*/
     }
 
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
-
         if (position == 1) {
             Intent intent = new Intent(this, ConversationActivity.class);
-            if(ApplozicClient.getInstance(this).isContextBasedChat()){
-                intent.putExtra(ConversationUIService.CONTEXT_BASED_CHAT,true);
+            if (ApplozicClient.getInstance(this).isContextBasedChat()) {
+                intent.putExtra(ConversationUIService.CONTEXT_BASED_CHAT, true);
             }
             startActivity(intent);
             return;
-        }/*
-        if (position == 1) {
-            ConversationFragment conversationFragment = new ConversationFragment();
-            Contact contact = new Contact(this, "mobicomkit");
-            mTitle = getString(R.string.user_id);
-            addFragment(this, conversationFragment, "conversationFragment");
-            conversationFragment.loadConversation(contact);
-            return;
-
-        }*/
+        }
         if (position == 0) {
             mTitle = getString(R.string.ecommerce);
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -157,14 +136,16 @@ public class MainActivity extends ActionBarActivity
 
         if (position == 2) {
 
-            UserLogoutTask.TaskListener userLogoutTaskListener = new UserLogoutTask.TaskListener(){
+            UserLogoutTask.TaskListener userLogoutTaskListener = new UserLogoutTask.TaskListener() {
 
                 @Override
                 public void onSuccess(Context context) {
                     userLogoutTask = null;
-                    Toast.makeText(getBaseContext(), "Log out successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(),getBaseContext()
+                            .getString(R.string.log_out_successful), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, LoginActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                     finish();
                 }
@@ -175,7 +156,7 @@ public class MainActivity extends ActionBarActivity
                     AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
                     alertDialog.setTitle(getString(R.string.text_alert));
                     alertDialog.setMessage(exception.toString());
-                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(android.R.string.ok),
+                    alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.ok_alert),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {
                                     dialog.dismiss();
@@ -187,14 +168,14 @@ public class MainActivity extends ActionBarActivity
                 }
             };
 
-            userLogoutTask = new UserLogoutTask(userLogoutTaskListener,this);
-            userLogoutTask.execute((Void)null);
+            userLogoutTask = new UserLogoutTask(userLogoutTaskListener, this);
+            userLogoutTask.execute((Void) null);
 
         }
 
-        if(position == 3){
-            Map<String,String> messageMetaData = new HashMap<>();
-            messageMetaData.put(Message.MetaDataType.KEY.getValue(),Message.MetaDataType.HIDDEN.getValue());
+        if (position == 3) {
+            Map<String, String> messageMetaData = new HashMap<>();
+            messageMetaData.put(Message.MetaDataType.KEY.getValue(), Message.MetaDataType.HIDDEN.getValue());
             Message message = new Message();
             MobiComUserPreference userPreferences = MobiComUserPreference.getInstance(MainActivity.this);
             message.setContactIds("android");
@@ -219,30 +200,21 @@ public class MainActivity extends ActionBarActivity
                 .commit();
     }
 
-//    public void takeOrder(View v) {
-//        Intent takeOrderIntent = new Intent(this, ConversationActivity.class);
-//        takeOrderIntent.putExtra(TAKE_ORDER, true);
-//        takeOrderIntent.putExtra(ConversationUIService.USER_ID, Utils.getMetaDataValue(this, TAKE_ORDER_USERID_METADATA));
-//        takeOrderIntent.putExtra(ConversationUIService.DEFAULT_TEXT, "Hello I am interested in your property, Can we chat?");
-//        takeOrderIntent.putExtra(ConversationUIService.PRODUCT_TOPIC_ID, "Ebco Strip Light Connection Cord 4");
-//        takeOrderIntent.putExtra(ConversationUIService.PRODUCT_IMAGE_URL, "https://www.applozic.com/resources/sidebox/images/applozic.png");
-//        // takeOrderIntent.putExtra(ConversationUIService.APPLICATION_ID,"applozic-sample-app");
-//        startActivity(takeOrderIntent);
-//    }
 
     public void takeOrder(View v) {
         Conversation conversation = buildConversation();
         ApplozicConversationCreateTask applozicConversationCreateTask;
 
-        ApplozicConversationCreateTask.ConversationCreateListener conversationCreateListener =  new ApplozicConversationCreateTask.ConversationCreateListener() {
+        ApplozicConversationCreateTask.ConversationCreateListener conversationCreateListener =
+                new ApplozicConversationCreateTask.ConversationCreateListener() {
             @Override
             public void onSuccess(Integer conversationId, Context context) {
-                Log.i(TAG,"ConversationID is:"+conversationId);
+                Log.i(TAG, "ConversationID is:" + conversationId);
                 Intent takeOrderIntent = new Intent(context, ConversationActivity.class);
                 takeOrderIntent.putExtra(TAKE_ORDER, true);
-                takeOrderIntent.putExtra(ConversationUIService.CONTEXT_BASED_CHAT,true);
+                takeOrderIntent.putExtra(ConversationUIService.CONTEXT_BASED_CHAT, true);
                 takeOrderIntent.putExtra(ConversationUIService.USER_ID, "usertest2");
-                takeOrderIntent.putExtra(ConversationUIService.DEFAULT_TEXT, "Hello I am interested in your property, Can we chat?");
+                takeOrderIntent.putExtra(ConversationUIService.DEFAULT_TEXT, R.string.intrest_in_chat);
                 takeOrderIntent.putExtra(ConversationUIService.CONVERSATION_ID,conversationId);
                 startActivity(takeOrderIntent);
 
@@ -253,8 +225,9 @@ public class MainActivity extends ActionBarActivity
 
             }
         };
-        applozicConversationCreateTask =  new ApplozicConversationCreateTask(MainActivity.this,conversationCreateListener,conversation);
-        applozicConversationCreateTask.execute((Void)null);
+        applozicConversationCreateTask = new ApplozicConversationCreateTask(MainActivity.this,
+                conversationCreateListener, conversation);
+        applozicConversationCreateTask.execute((Void) null);
 
     }
 
@@ -264,13 +237,13 @@ public class MainActivity extends ActionBarActivity
         conversation.setUserId("usertest2");
         conversation.setTopicId("Topic#Id#Test");
         TopicDetail topic = new TopicDetail();
-        topic.setTitle("TestTopic2");
-        topic.setSubtitle("Topic1");
+        topic.setTitle(getResources().getString(R.string.TestTopic2));
+        topic.setSubtitle(getResources().getString(R.string.Topic_1));
         topic.setLink("https://www.applozic.com/resources/sidebox/images/applozic.png");
-        topic.setKey1("Qty");
+        topic.setKey1(getResources().getString(R.string.Qty));
         topic.setValue1("1000");
-        topic.setKey2("Price");
-        topic.setValue2("20 Rs");
+        topic.setKey2(getResources().getString(R.string.Price));
+        topic.setValue2(getResources().getString(R.string.rs));
         conversation.setSenderSmsFormat(MobiComUserPreference.getInstance(this).getUserId(), "SENDER SMS  FORMAT");
         conversation.setReceiverSmsFormat("usertest2", "RECEIVER SMS FORMAT");
         conversation.setTopicDetail(topic.getJson());

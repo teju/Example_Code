@@ -25,24 +25,11 @@ public class RegistrationResponse extends JsonMarker {
     private boolean enableEncryption;
     private Short pricingPackage = PricingType.STARTER.getValue();
 
-    public static enum PricingType {
-
-        CLOSED(Short.valueOf("-1")), BETA(Short.valueOf("0")), STARTER(Short.valueOf("1")), LAUNCH(Short.valueOf("2")), GROWTH(Short.valueOf("3")), ENTERPRISE(
-                Short.valueOf("4"));
-        private final Short value;
-
-        private PricingType(Short c) {
-            value = c;
-        }
-
-        public Short getValue() {
-            return value;
-        }
-    };
-
     public String getMessage() {
         return message;
     }
+
+    ;
 
     public void setMessage(String message) {
         this.message = message;
@@ -104,8 +91,8 @@ public class RegistrationResponse extends JsonMarker {
         this.brokerUrl = brokerUrl;
     }
 
-    public boolean isPasswordInvalid(){
-        return (! TextUtils.isEmpty(message) && ( "PASSWORD_INVALID".equals(message) || "PASSWORD_REQUIRED".equals(message) ));
+    public boolean isPasswordInvalid() {
+        return (!TextUtils.isEmpty(message) && ("PASSWORD_INVALID".equals(message) || "PASSWORD_REQUIRED".equals(message)));
     }
 
     public Short getPricingPackage() {
@@ -131,6 +118,7 @@ public class RegistrationResponse extends JsonMarker {
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
+
     public String getImageLink() {
         return imageLink;
     }
@@ -182,5 +170,20 @@ public class RegistrationResponse extends JsonMarker {
                 ", enableEncryption=" + enableEncryption +
                 ", pricingPackage=" + pricingPackage +
                 '}';
+    }
+
+    public static enum PricingType {
+
+        CLOSED(Short.valueOf("-1")), BETA(Short.valueOf("0")), STARTER(Short.valueOf("1")), LAUNCH(Short.valueOf("2")), GROWTH(Short.valueOf("3")), ENTERPRISE(
+                Short.valueOf("4"));
+        private final Short value;
+
+        private PricingType(Short c) {
+            value = c;
+        }
+
+        public Short getValue() {
+            return value;
+        }
     }
 }

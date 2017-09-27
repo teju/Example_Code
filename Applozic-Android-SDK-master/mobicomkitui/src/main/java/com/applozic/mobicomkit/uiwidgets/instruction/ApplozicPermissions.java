@@ -1,5 +1,6 @@
 package com.applozic.mobicomkit.uiwidgets.instruction;
 
+import android.Manifest;
 import android.app.Activity;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.widget.LinearLayout;
 
 import com.applozic.mobicomkit.uiwidgets.R;
 import com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity;
+import com.applozic.mobicomkit.uiwidgets.conversation.activity.MobicomLocationActivity;
 import com.applozic.mobicommons.commons.core.utils.PermissionsUtils;
 
 /**
@@ -99,10 +101,32 @@ public class ApplozicPermissions {
         }
     }
 
+    public void requestCameraAndRecordPermission() {
+        if (PermissionsUtils.shouldShowRequestForContactPermission(activity)) {
+            showSnackBar(!PermissionsUtils.checkPermissionForCameraAndMicrophone(activity)?R.string.camera_audio_permission:!PermissionsUtils.isAudioRecordingPermissionGranted(activity)?R.string.record_audio:!PermissionsUtils.isCameraPermissionGranted(activity)?R.string.phone_camera_permission:R.string.camera_audio_permission, new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, PermissionsUtils.REQUEST_CAMERA_AUDIO);
+        } else {
+            PermissionsUtils.requestPermissions(activity,new String[]{Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, PermissionsUtils.REQUEST_CAMERA_AUDIO);
+        }
+    }
+
+    public void checkRuntimePermissionForCameraAndAudioRecording() {
+        if (PermissionsUtils.checkSelfPermissionForLocation(activity)) {
+            requestCameraAndRecordPermission();
+        }
+    }
+
+    public void checkRuntimePermissionForLocationActivity() {
+        if (PermissionsUtils.checkSelfPermissionForLocation(activity)) {
+            requestLocationPermissions();
+        } else {
+            ((MobicomLocationActivity) activity).processingLocation();
+        }
+    }
+
     public void showSnackBar(int resId, final String[] permissions, final int requestCode) {
         Snackbar.make(snackBarLayout, resId,
                 Snackbar.LENGTH_INDEFINITE)
-                .setAction(android.R.string.ok, new View.OnClickListener() {
+                .setAction(R.string.ok_alert, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         PermissionsUtils.requestPermissions(activity, permissions, requestCode);

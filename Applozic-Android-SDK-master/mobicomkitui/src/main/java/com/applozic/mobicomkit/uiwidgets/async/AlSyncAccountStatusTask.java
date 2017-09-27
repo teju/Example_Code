@@ -18,11 +18,7 @@ public class AlSyncAccountStatusTask extends AsyncTask<Void, Void, Boolean> {
     TaskListener taskListener;
     String loggedInUserId;
 
-    public interface TaskListener {
-        void onCompletion(Context context);
-    }
-
-    public AlSyncAccountStatusTask(Context context, TaskListener taskListener){
+    public AlSyncAccountStatusTask(Context context, TaskListener taskListener) {
         this.context = context;
         this.taskListener = taskListener;
         this.registerUserClientService = new RegisterUserClientService(context);
@@ -41,12 +37,15 @@ public class AlSyncAccountStatusTask extends AsyncTask<Void, Void, Boolean> {
         return true;
     }
 
-
     @Override
     protected void onPostExecute(Boolean aBoolean) {
         super.onPostExecute(aBoolean);
-        if(taskListener != null){
+        if (taskListener != null) {
             taskListener.onCompletion(context);
         }
+    }
+
+    public interface TaskListener {
+        void onCompletion(Context context);
     }
 }

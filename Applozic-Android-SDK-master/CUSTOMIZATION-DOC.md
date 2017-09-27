@@ -1,9 +1,9 @@
 
-Applozic provide easy settings to customise your ui themes color,pop-up messages etc. You need to follow below steps to enable/change these settings:
+Applozic provide easy settings to customise your ui themes color, pop-up messages etc. You need to follow below steps to enable/change these settings:
 
  **1**.Download applozic-settings.json file from here [Json file](https://github.com/AppLozic/Applozic-Android-SDK/tree/master/app/src/main/assets/applozic-settings.json)
  
- **2**.Create a assets directory in app-->main and paste that applozic-settings.json file in assets directory
+ **2**.Create an assets directory in app-->main and paste that applozic-settings.json file in assets directory
  
 #### Applozic settings  Json Properites detail
 
@@ -44,7 +44,7 @@ Applozic provide easy settings to customise your ui themes color,pop-up messages
 | startNewGroup | true/false | Create group  option | 
 | inviteFriendsInContactActivity | true/false | Invite friends button in Conatct list when no contcats are there |
 | registeredUserContactListCall | true/false | Registered users contact list call |
-| createAnyContact | true/false | Launch a chat with any user in contcat list | 
+| createAnyContact | true/false | Launch a chat with any user in contact list | 
 | userProfileFragment |  true/false | Show other user profile on click of App bar|
 | messageSearchOption | true/false | Message search option |
 | hideGroupAddMembersButton | true/false | Hide the add memeber option in group |
@@ -131,8 +131,30 @@ You can add the chat fragments to any activity  below documentation links will e
 **1**. [Adding Chat fragments to Activity](https://docs.google.com/document/d/1qH1razXLCg_aCWgdhVp4ATCAZqU3APugWiUbSEJm0-A/edit?usp=sharing)
 
  **2**. [Adding Chat fragments to TabView Activity](https://docs.google.com/document/d/1-TbJWCUEIzwWGD8mBkV6y2PLrNAIWTmTI6jJuzgC7c4/edit?usp=sharing)
+ 
+ 
+ #### Localization
+ 
+  Steps to Add resources in your Application
+  
+ **Step 1**. Create the android resource directory for your locale
+ 
+ **Step 2**. Create resource file inside android resource directory for your locale (i.e created from Step1)
+ 
+ Download and override resource string for your locale from below
+ 
+ 
+  [Array Options](https://github.com/AppLozic/Applozic-Android-SDK/blob/master/mobicomkitui/src/main/res/values/mobicom_array.xml)
 
 
+  [Common Strings](https://github.com/AppLozic/Applozic-Android-SDK/blob/master/mobicomkitui/src/main/res/values/mobicom_strings.xml)
 
+
+  [Simple Strings](https://github.com/AppLozic/Applozic-Android-SDK/blob/master/mobicomkitui/src/main/res/values/strings.xml)
+  
+  Ex. Change resource string (message) value to spanish locale
+  
+  
+      <string name="message">Mensaje</string>
 
 

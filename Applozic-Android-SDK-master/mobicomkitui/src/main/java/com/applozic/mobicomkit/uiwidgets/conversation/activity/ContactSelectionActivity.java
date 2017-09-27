@@ -1,7 +1,10 @@
 package com.applozic.mobicomkit.uiwidgets.conversation.activity;
 
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,15 +15,19 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.applozic.mobicomkit.broadcast.ConnectivityReceiver;
 import com.applozic.mobicomkit.contact.AppContactService;
 import com.applozic.mobicomkit.contact.database.ContactDatabase;
+import com.applozic.mobicomkit.uiwidgets.AlCustomizationSettings;
 import com.applozic.mobicomkit.uiwidgets.R;
 import com.applozic.mobicomkit.uiwidgets.people.contact.ContactSelectionFragment;
 import com.applozic.mobicommons.commons.core.utils.Utils;
+import com.applozic.mobicommons.file.FileUtils;
+import com.applozic.mobicommons.json.GsonUtils;
 import com.applozic.mobicommons.people.SearchListFragment;
 import com.applozic.mobicommons.people.channel.Channel;
 
@@ -33,56 +40,22 @@ public class ContactSelectionActivity extends AppCompatActivity implements Searc
     public static final String CHECK_BOX = "CHECK_BOX";
     public static final String IMAGE_LINK = "IMAGE_LINK";
     public static final String GROUP_TYPE = "GROUP_TYPE";
+    public static boolean isSearching = false;
+    protected SearchView searchView;
     Channel channel;
+    boolean disableCheckBox;
+    int groupType;
+    ContactDatabase contactDatabase;
+    ContactSelectionFragment contactSelectionFragment;
+    AlCustomizationSettings alCustomizationSettings;
     private String name;
     private String imageUrl;
     private ActionBar mActionBar;
-    boolean disableCheckBox;
-    protected SearchView searchView;
     private SearchListFragment searchListFragment;
     private boolean isSearchResultView = false;
-    int groupType;
     private String mSearchTerm;
-    ContactDatabase contactDatabase;
-    public static boolean isSearching = false;
-    ContactSelectionFragment contactSelectionFragment;
     private AppContactService contactService;
     private ConnectivityReceiver connectivityReceiver;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_select_layout);
-        contactDatabase = new ContactDatabase(this);
-        contactSelectionFragment = new ContactSelectionFragment();
-        setSearchListFragment(contactSelectionFragment);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(toolbar);
-        contactService = new AppContactService(this);
-        mActionBar = getSupportActionBar();
-        mActionBar.setDisplayShowHomeEnabled(true);
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        if (getIntent().getExtras() != null) {
-            channel = (Channel) getIntent().getSerializableExtra(CHANNEL_OBJECT);
-            disableCheckBox = getIntent().getBooleanExtra(CHECK_BOX, false);
-            mActionBar.setTitle(R.string.channel_member_title);
-            name = getIntent().getStringExtra(CHANNEL);
-            imageUrl = getIntent().getStringExtra(IMAGE_LINK);
-            groupType =  getIntent().getIntExtra(GROUP_TYPE,Channel.GroupType.PUBLIC.getValue().intValue());
-        } else {
-            mActionBar.setTitle(R.string.channel_members_title);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(CHANNEL_OBJECT, channel);
-        bundle.putBoolean(CHECK_BOX, disableCheckBox);
-        bundle.putString(CHANNEL,name);
-        bundle.putString(IMAGE_LINK,imageUrl);
-        bundle.putInt(GROUP_TYPE,groupType);
-        contactSelectionFragment.setArguments(bundle);
-        addFragment(this, contactSelectionFragment, "ContactSelectionFragment");
-        connectivityReceiver = new ConnectivityReceiver();
-        registerReceiver(connectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-    }
 
     public static void addFragment(FragmentActivity fragmentActivity, Fragment fragmentToAdd, String fragmentTag) {
         FragmentManager supportFragmentManager = fragmentActivity.getSupportFragmentManager();
@@ -100,6 +73,52 @@ public class ContactSelectionActivity extends AppCompatActivity implements Searc
         supportFragmentManager.executePendingTransactions();
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.contact_select_layout);
+        contactDatabase = new ContactDatabase(this);
+        contactSelectionFragment = new ContactSelectionFragment();
+        setSearchListFragment(contactSelectionFragment);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+        contactService = new AppContactService(this);
+        mActionBar = getSupportActionBar();
+        String jsonString = FileUtils.loadSettingsJsonFile(getApplicationContext());
+        if (!TextUtils.isEmpty(jsonString)) {
+            alCustomizationSettings = (AlCustomizationSettings) GsonUtils.getObjectFromJson(jsonString, AlCustomizationSettings.class);
+        } else {
+            alCustomizationSettings = new AlCustomizationSettings();
+        }
+        if (!TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimary()) && !TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimaryDark())) {
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(alCustomizationSettings.getThemeColorPrimary())));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(Color.parseColor(alCustomizationSettings.getThemeColorPrimaryDark()));
+            }
+        }
+        mActionBar.setDisplayShowHomeEnabled(true);
+        mActionBar.setDisplayHomeAsUpEnabled(true);
+        if (getIntent().getExtras() != null) {
+            channel = (Channel) getIntent().getSerializableExtra(CHANNEL_OBJECT);
+            disableCheckBox = getIntent().getBooleanExtra(CHECK_BOX, false);
+            mActionBar.setTitle(R.string.channel_member_title);
+            name = getIntent().getStringExtra(CHANNEL);
+            imageUrl = getIntent().getStringExtra(IMAGE_LINK);
+            groupType = getIntent().getIntExtra(GROUP_TYPE, Channel.GroupType.PUBLIC.getValue().intValue());
+        } else {
+            mActionBar.setTitle(R.string.channel_members_title);
+        }
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(CHANNEL_OBJECT, channel);
+        bundle.putBoolean(CHECK_BOX, disableCheckBox);
+        bundle.putString(CHANNEL, name);
+        bundle.putString(IMAGE_LINK, imageUrl);
+        bundle.putInt(GROUP_TYPE, groupType);
+        contactSelectionFragment.setArguments(bundle);
+        addFragment(this, contactSelectionFragment, "ContactSelectionFragment");
+        connectivityReceiver = new ConnectivityReceiver();
+        registerReceiver(connectivityReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+    }
 
     @Override
     public void onBackPressed() {
@@ -180,11 +199,11 @@ public class ContactSelectionActivity extends AppCompatActivity implements Searc
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        try{
-            if(connectivityReceiver != null){
+        try {
+            if (connectivityReceiver != null) {
                 unregisterReceiver(connectivityReceiver);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -6,9 +6,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -23,7 +26,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,6 +34,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import com.applozic.mobicomkit.api.MobiComKitConstants;
 import com.applozic.mobicomkit.api.account.user.MobiComUserPreference;
 import com.applozic.mobicomkit.api.account.user.RegisteredUsersAsyncTask;
@@ -39,8 +42,8 @@ import com.applozic.mobicomkit.api.attachment.FileClientService;
 import com.applozic.mobicomkit.broadcast.ConnectivityReceiver;
 import com.applozic.mobicomkit.feed.RegisteredUsersApiResponse;
 import com.applozic.mobicomkit.uiwidgets.AlCustomizationSettings;
+import com.applozic.mobicomkit.uiwidgets.ApplozicSetting;
 import com.applozic.mobicomkit.uiwidgets.R;
-import com.applozic.mobicomkit.uiwidgets.conversation.fragment.MultimediaOptionFragment;
 import com.applozic.mobicomkit.uiwidgets.conversation.fragment.PictureUploadPopUpFragment;
 import com.applozic.mobicomkit.uiwidgets.instruction.ApplozicPermissions;
 import com.applozic.mobicomkit.uiwidgets.people.fragment.ProfileFragment;
@@ -66,9 +69,17 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChannelCreateActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback, MobicomkitUriListener, RemoveInterfaceListener {
 
+    public static final String ACTION_FINISH_CHANNEL_CREATE =
+            "channelCreateActivity.ACTION_FINISH";
     private static final int REQUEST_CODE_ATTACH_PHOTO = 901;
     private static final String TAG = "ChannelCreateActivity";
     public static String GROUP_TYPE = "GroupType";
+
+    MobiComUserPreference userPreference;
+    AlCustomizationSettings alCustomizationSettings;
+    ConnectivityReceiver connectivityReceiver;
+    File profilePhotoFile;
+    FileClientService fileClientService;
     private EditText channelName;
     private CircleImageView circleImageView;
     private View focus;
@@ -81,13 +92,6 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
     private Snackbar snackbar;
     private ApplozicPermissions applozicPermissions;
     private FinishActivityReceiver finishActivityReceiver;
-    public static final String ACTION_FINISH_CHANNEL_CREATE =
-            "channelCreateActivity.ACTION_FINISH";
-    MobiComUserPreference userPreference;
-    AlCustomizationSettings alCustomizationSettings;
-    ConnectivityReceiver connectivityReceiver;
-    File profilePhotoFile;
-    FileClientService fileClientService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,14 +100,20 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
         String jsonString = FileUtils.loadSettingsJsonFile(getApplicationContext());
-        if(!TextUtils.isEmpty(jsonString)){
-            alCustomizationSettings = (AlCustomizationSettings) GsonUtils.getObjectFromJson(jsonString,AlCustomizationSettings.class);
-        }else {
-            alCustomizationSettings =  new AlCustomizationSettings();
+        if (!TextUtils.isEmpty(jsonString)) {
+            alCustomizationSettings = (AlCustomizationSettings) GsonUtils.getObjectFromJson(jsonString, AlCustomizationSettings.class);
+        } else {
+            alCustomizationSettings = new AlCustomizationSettings();
         }
         connectivityReceiver = new ConnectivityReceiver();
         userPreference = MobiComUserPreference.getInstance(ChannelCreateActivity.this);
         mActionBar = getSupportActionBar();
+        if(!TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimary()) && !TextUtils.isEmpty(alCustomizationSettings.getThemeColorPrimaryDark())){
+            mActionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor(alCustomizationSettings.getThemeColorPrimary())));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(Color.parseColor(alCustomizationSettings.getThemeColorPrimaryDark()));
+            }
+        }
         mActionBar.setTitle(R.string.channel_create_title);
         mActionBar.setDisplayShowHomeEnabled(true);
         mActionBar.setDisplayHomeAsUpEnabled(true);
@@ -125,7 +135,7 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
         uploadImageButton.setImageResource(drawableResourceId);
 
         fileClientService = new FileClientService(this);
-        if(getIntent() != null){
+        if (getIntent() != null) {
             groupType = getIntent().getIntExtra(GROUP_TYPE, Channel.GroupType.PUBLIC.getValue().intValue());
         }
        /* groupType = getIntent().getIntExtra(GROUP_TYPE, Channel.GroupType.PRIVATE.getValue().intValue());
@@ -157,9 +167,9 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
             }
             if (check) {
                 Utils.toggleSoftKeyBoard(ChannelCreateActivity.this, true);
-                if (alCustomizationSettings.getTotalRegisteredUserToFetch() > 0 && alCustomizationSettings.isRegisteredUserContactListCall() && !userPreference.getWasContactListServerCallAlreadyDone()) {
+                if (alCustomizationSettings.getTotalRegisteredUserToFetch() > 0 && (alCustomizationSettings.isRegisteredUserContactListCall() || ApplozicSetting.getInstance(this).isRegisteredUsersContactCall())&& !userPreference.getWasContactListServerCallAlreadyDone()) {
                     processDownloadRegisteredUsers();
-                }else {
+                } else {
                     Intent intent = new Intent(ChannelCreateActivity.this, ContactSelectionActivity.class);
                     intent.putExtra(ContactSelectionActivity.CHANNEL, channelName.getText().toString());
                     if (!TextUtils.isEmpty(groupIconImageLink)) {
@@ -175,7 +185,7 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
         return super.onOptionsItemSelected(item);
     }
 
-    public void processDownloadRegisteredUsers(){
+    public void processDownloadRegisteredUsers() {
         final ProgressDialog progressDialog = ProgressDialog.show(ChannelCreateActivity.this, "",
                 getString(R.string.applozic_contacts_loading_info), true);
 
@@ -206,13 +216,14 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
             }
+
             @Override
             public void onCompletion() {
 
             }
         };
-        RegisteredUsersAsyncTask usersAsyncTask  = new RegisteredUsersAsyncTask(ChannelCreateActivity.this,usersAsyncTaskTaskListener, alCustomizationSettings.getTotalRegisteredUserToFetch(), userPreference.getRegisteredUsersLastFetchTime(),null,null,true);
-        usersAsyncTask.execute((Void)null);
+        RegisteredUsersAsyncTask usersAsyncTask = new RegisteredUsersAsyncTask(ChannelCreateActivity.this, usersAsyncTaskTaskListener, alCustomizationSettings.getTotalRegisteredUserToFetch(), userPreference.getRegisteredUsersLastFetchTime(), null, null, true);
+        usersAsyncTask.execute((Void) null);
 
     }
 
@@ -224,32 +235,32 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
             if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
                 CropImage.ActivityResult result = CropImage.getActivityResult(intent);
                 if (resultCode == RESULT_OK) {
-                    if(intent == null){
+                    if (intent == null) {
                         return;
                     }
-                    if(imageChangeUri != null){
+                    if (imageChangeUri != null) {
                         imageChangeUri = result.getUri();
                         circleImageView.setImageDrawable(null); // <--- added to force redraw of ImageView
                         circleImageView.setImageURI(imageChangeUri);
-                        new ProfilePictureUpload(false,profilePhotoFile,imageChangeUri, ChannelCreateActivity.this).execute((Void[]) null);
-                    }else {
+                        new ProfilePictureUpload(true, profilePhotoFile, imageChangeUri, ChannelCreateActivity.this).execute((Void[]) null);
+                    } else {
                         imageChangeUri = result.getUri();
                         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                         String imageFileName = "JPEG_" + timeStamp + "_" + ".jpeg";
                         circleImageView.setImageDrawable(null); // <--- added to force redraw of ImageView
                         circleImageView.setImageURI(imageChangeUri);
-                        profilePhotoFile = FileClientService.getFilePath(imageFileName,this, "image/jpeg");
-                        new ProfilePictureUpload(true,profilePhotoFile,imageChangeUri, ChannelCreateActivity.this).execute((Void[]) null);
+                        profilePhotoFile = FileClientService.getFilePath(imageFileName, this, "image/jpeg");
+                        new ProfilePictureUpload(true, profilePhotoFile, imageChangeUri, ChannelCreateActivity.this).execute((Void[]) null);
                     }
                 } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-                    Toast.makeText(this, "Cropping failed: " + result.getError(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, this.getString(R.string.applozic_Cropping_failed) + result.getError(), Toast.LENGTH_LONG).show();
                 }
             }
-            if(resultCode == Activity.RESULT_OK){
+            if (resultCode == Activity.RESULT_OK) {
                 handleOnActivityResult(requestCode, intent);
             }
         } catch (Exception e) {
-            Log.i(TAG, "exception in profile image");
+            Utils.printLog(this, TAG, "exception in profile image");
         }
     }
 
@@ -260,6 +271,7 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
 
             case ProfileFragment.REQUEST_CODE_ATTACH_PHOTO:
                 Uri selectedFileUri = (intent == null ? null : intent.getData());
+                imageChangeUri = null;
                 beginCrop(selectedFileUri);
                 break;
 
@@ -270,14 +282,14 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
         }
     }
 
-    void beginCrop(Uri imageUri){
-        try{
+    void beginCrop(Uri imageUri) {
+        try {
             CropImage.activity(imageUri)
                     .setGuidelines(CropImageView.Guidelines.OFF)
                     .setMultiTouchEnabled(true)
                     .start(this);
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -291,59 +303,6 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
             circleImageView.setImageResource(R.drawable.applozic_group_icon);
         } catch (Exception e) {
             e.printStackTrace();
-        }
-
-    }
-
-
-    class ProfilePictureUpload extends AsyncTask<Void, Void, Boolean> {
-
-        Context context;
-        Uri fileUri;
-        String displayName;
-        private ProgressDialog progressDialog;
-        File file;
-        boolean isSaveFile;
-        FileClientService fileClientService;
-
-        public ProfilePictureUpload(boolean isSaveFile,File file ,Uri fileUri, Context context) {
-            this.context = context;
-            this.fileUri = fileUri;
-            this.file = file ;
-            this.isSaveFile = isSaveFile;
-            this.fileClientService = new FileClientService(context);
-
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog = ProgressDialog.show(context, "",
-                    context.getString(R.string.applozic_contacts_loading_info), true);
-        }
-
-        @Override
-        protected Boolean doInBackground(Void... params) {
-
-            try {
-                if (fileUri != null) {
-                    String  filePath = file.getAbsolutePath();
-                    if(isSaveFile){
-                        fileClientService.writeFile(fileUri,file);
-                    }
-                    groupIconImageLink = fileClientService.uploadProfileImage(filePath);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                Log.i(ChannelCreateActivity.class.getName(), "Exception");
-
-            }
-            return true;
-        }
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-            progressDialog.dismiss();
         }
 
     }
@@ -371,27 +330,18 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        try{
-            if(finishActivityReceiver != null){
+        try {
+            if (finishActivityReceiver != null) {
                 unregisterReceiver(finishActivityReceiver);
             }
-            if(connectivityReceiver != null){
+            if (connectivityReceiver != null) {
                 unregisterReceiver(connectivityReceiver);
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
-    private final class FinishActivityReceiver extends BroadcastReceiver {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent != null && intent.getAction().equals(ACTION_FINISH_CHANNEL_CREATE))
-                finish();
-        }
-    }
-
 
     public void processImagePicker() {
 
@@ -400,7 +350,7 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
             new Handler().post(new Runnable() {
                 public void run() {
                     FragmentManager supportFragmentManager = getSupportFragmentManager();
-                    DialogFragment fragment = PictureUploadPopUpFragment.newInstance(true,imageChangeUri == null);
+                    DialogFragment fragment = PictureUploadPopUpFragment.newInstance(true, imageChangeUri == null);
                     FragmentTransaction fragmentTransaction = supportFragmentManager
                             .beginTransaction();
                     Fragment prev = getSupportFragmentManager().findFragmentByTag("PhotosAttachmentFragment");
@@ -425,14 +375,73 @@ public class ChannelCreateActivity extends AppCompatActivity implements Activity
         }
     }
 
-
     @Override
     public Uri getCurrentImageUri() {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_" + ".jpeg";
         profilePhotoFile = FileClientService.getFilePath(imageFileName, getApplicationContext(), "image/jpeg");
-        imageChangeUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME)  + ".provider", profilePhotoFile);
+        imageChangeUri = FileProvider.getUriForFile(this, Utils.getMetaDataValue(this, MobiComKitConstants.PACKAGE_NAME) + ".provider", profilePhotoFile);
         return imageChangeUri;
+    }
+
+    class ProfilePictureUpload extends AsyncTask<Void, Void, Boolean> {
+
+        Context context;
+        Uri fileUri;
+        String displayName;
+        File file;
+        boolean isSaveFile;
+        FileClientService fileClientService;
+        private ProgressDialog progressDialog;
+
+        public ProfilePictureUpload(boolean isSaveFile, File file, Uri fileUri, Context context) {
+            this.context = context;
+            this.fileUri = fileUri;
+            this.file = file;
+            this.isSaveFile = isSaveFile;
+            this.fileClientService = new FileClientService(context);
+
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = ProgressDialog.show(context, "",
+                    context.getString(R.string.applozic_contacts_loading_info), true);
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+
+            try {
+                if (fileUri != null) {
+                    String filePath = file.getAbsolutePath();
+                    if (isSaveFile) {
+                        fileClientService.writeFile(fileUri, file);
+                    }
+                    groupIconImageLink = fileClientService.uploadProfileImage(filePath);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return true;
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+            if (progressDialog != null && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
+        }
+
+    }
+
+    private final class FinishActivityReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null && intent.getAction().equals(ACTION_FINISH_CHANNEL_CREATE))
+                finish();
+        }
     }
 
 }

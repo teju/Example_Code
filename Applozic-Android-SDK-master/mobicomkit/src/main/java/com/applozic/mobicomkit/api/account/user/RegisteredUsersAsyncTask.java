@@ -11,28 +11,17 @@ import com.applozic.mobicomkit.feed.RegisteredUsersApiResponse;
  */
 public class RegisteredUsersAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
-    public interface TaskListener {
-
-        void onSuccess(RegisteredUsersApiResponse registeredUsersApiResponse, String[] userIdArray);
-
-        void onFailure(RegisteredUsersApiResponse registeredUsersApiResponse, String[] userIdArray, Exception exception);
-
-        void onCompletion();
-    }
-
-
     private final TaskListener taskListener;
-    private Exception mException;
-    private Message message;
     Context context;
-    private String messageContent;
     int numberOfUsersToFetch;
     UserService userService;
     long lastTimeFetched;
     String[] userIdArray;
     RegisteredUsersApiResponse registeredUsersApiResponse;
     boolean callForRegistered;
-
+    private Exception mException;
+    private Message message;
+    private String messageContent;
 
     public RegisteredUsersAsyncTask(Context context, TaskListener listener, int numberOfUsersToFetch, Message message, String messageContent) {
         this.message = message;
@@ -42,6 +31,7 @@ public class RegisteredUsersAsyncTask extends AsyncTask<Void, Void, Boolean> {
         this.numberOfUsersToFetch = numberOfUsersToFetch;
         this.userService = UserService.getInstance(context);
     }
+
 
     public RegisteredUsersAsyncTask(Context context, TaskListener listener, int numberOfUsersToFetch, long lastTimeFetched, Message message, String messageContent, boolean callForRegistered) {
         this.callForRegistered = callForRegistered;
@@ -78,6 +68,15 @@ public class RegisteredUsersAsyncTask extends AsyncTask<Void, Void, Boolean> {
             this.taskListener.onFailure(registeredUsersApiResponse, userIdArray, mException);
         }
         this.taskListener.onCompletion();
+    }
+
+    public interface TaskListener {
+
+        void onSuccess(RegisteredUsersApiResponse registeredUsersApiResponse, String[] userIdArray);
+
+        void onFailure(RegisteredUsersApiResponse registeredUsersApiResponse, String[] userIdArray, Exception exception);
+
+        void onCompletion();
     }
 
 

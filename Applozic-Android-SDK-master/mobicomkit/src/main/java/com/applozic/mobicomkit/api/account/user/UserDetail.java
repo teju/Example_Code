@@ -16,6 +16,7 @@ public class UserDetail extends JsonMarker {
     private String phoneNumber;
     private String statusMessage;
     private Short userTypeId;
+    private Long deletedAtTime;
 
 
     public String getUserId() {
@@ -90,6 +91,15 @@ public class UserDetail extends JsonMarker {
         this.userTypeId = userTypeId;
     }
 
+    public Long getDeletedAtTime() {
+        return deletedAtTime;
+    }
+
+    public void setDeletedAtTime(Long deletedAtTime) {
+        this.deletedAtTime = deletedAtTime;
+    }
+
+
     @Override
     public String toString() {
         return "UserDetail{" +
@@ -102,6 +112,7 @@ public class UserDetail extends JsonMarker {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", statusMessage='" + statusMessage + '\'' +
                 ", userTypeId=" + userTypeId +
+                ", deletedAtTime=" + deletedAtTime +
                 '}';
     }
 }

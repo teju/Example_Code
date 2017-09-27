@@ -1,34 +1,25 @@
 package com.applozic.mobicomkit.uiwidgets.conversation;
 
-import android.content.Intent;
 import android.net.Uri;
-import android.provider.ContactsContract;
-import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.PopupWindow;
 
-import com.applozic.mobicomkit.api.attachment.FileClientService;
+import com.applozic.mobicomkit.uiwidgets.R;
 import com.applozic.mobicomkit.uiwidgets.conversation.activity.ConversationActivity;
-import com.applozic.mobicomkit.uiwidgets.conversation.activity.MobiComAttachmentSelectorActivity;
-import com.applozic.mobicomkit.uiwidgets.conversation.fragment.MultimediaOptionFragment;
 
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
  * Created by reytum on 19/3/16.
  */
 public class MultimediaOptionsGridView {
-    private Uri capturedImageUri;
     public PopupWindow showPopup;
     FragmentActivity context;
     GridView multimediaOptions;
+    private Uri capturedImageUri;
 
     public MultimediaOptionsGridView(FragmentActivity context, GridView multimediaOptions) {
         this.context = context;
@@ -48,41 +39,23 @@ public class MultimediaOptionsGridView {
     }
 
     public void executeMethod(String key) {
-
-        switch (key) {
-
-            case ":location":
-                ((ConversationActivity) context).processLocation();
-                break;
-            case ":camera":
-                ((ConversationActivity) context).isTakePhoto(true);
-                ((ConversationActivity) context).processCameraAction();
-
-                break;
-
-            case ":file":
-                ((ConversationActivity) context).isAttachment(true);
-                ((ConversationActivity) context).processAttachment();
-                break;
-
-            case ":audio":
-                ((ConversationActivity) context).showAudioRecordingDialog();
-                break;
-
-            case ":video":
-                ((ConversationActivity) context).isTakePhoto(false);
-                ((ConversationActivity) context).processVideoRecording();
-                break;
-
-            case ":contact":
-                //Sharing contact.
-                ((ConversationActivity) context).processContact();
-                break;
-
-            case ":pricing":
-                new ConversationUIService(context).sendPriceMessage();
-                break;
-            default:
+        if (key.equals(context.getResources().getString(R.string.location))) {
+            ((ConversationActivity) context).processLocation();
+        } else if (key.equals(context.getString(R.string.camera))) {
+            ((ConversationActivity) context).isTakePhoto(true);
+            ((ConversationActivity) context).processCameraAction();
+        } else if (key.equals(context.getString(R.string.file))) {
+            ((ConversationActivity) context).isAttachment(true);
+            ((ConversationActivity) context).processAttachment();
+        } else if (key.equals(context.getString(R.string.audio))) {
+            ((ConversationActivity) context).showAudioRecordingDialog();
+        } else if (key.equals(context.getString(R.string.video))) {
+            ((ConversationActivity) context).isTakePhoto(false);
+            ((ConversationActivity) context).processVideoRecording();
+        } else if (key.equals(context.getString(R.string.contact))) {
+            ((ConversationActivity) context).processContact();
+        } else if (key.equals(context.getString(R.string.contact))) {
+            new ConversationUIService(context).sendPriceMessage();
         }
         multimediaOptions.setVisibility(View.GONE);
     }

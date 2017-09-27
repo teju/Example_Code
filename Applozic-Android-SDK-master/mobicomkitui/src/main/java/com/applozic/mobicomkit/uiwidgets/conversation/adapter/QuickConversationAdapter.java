@@ -24,6 +24,7 @@ import com.applozic.mobicomkit.api.conversation.Message;
 import com.applozic.mobicomkit.api.conversation.database.MessageDatabaseService;
 import com.applozic.mobicomkit.api.notification.VideoCallNotificationHelper;
 import com.applozic.mobicomkit.channel.database.ChannelDatabaseService;
+import com.applozic.mobicomkit.channel.service.ChannelService;
 import com.applozic.mobicomkit.contact.AppContactService;
 import com.applozic.mobicomkit.contact.BaseContactService;
 import com.applozic.mobicomkit.uiwidgets.AlCustomizationSettings;
@@ -67,7 +68,12 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
         messageTypeColorMap.put(Message.MessageType.CALL_OUTGOING.getValue(), R.color.message_type_outgoing_call);
     }
 
-    public ImageLoader contactImageLoader,channelImageLoader;
+    public ImageLoader contactImageLoader, channelImageLoader;
+    public String searchString = null;
+    TextView messageTextView;
+    ImageView attachmentIcon;
+    TextView alphabeticTextView;
+    CircleImageView contactImage;
     private Context context;
     private MessageDatabaseService messageDatabaseService;
     private List<Message> messageList;
@@ -75,16 +81,9 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
     private EmojiconHandler emojiconHandler;
     private long deviceTimeOffset = 0;
     private List<Message> originalList;
-    public String searchString = null;
     private AlphabetIndexer mAlphabetIndexer;
     private TextAppearanceSpan highlightTextSpan;
     private AlCustomizationSettings alCustomizationSettings;
-    TextView messageTextView;
-     ImageView attachmentIcon;
-
-    public void setAlCustomizationSettings(AlCustomizationSettings alCustomizationSettings) {
-        this.alCustomizationSettings = alCustomizationSettings;
-    }
 
     public QuickConversationAdapter(final Context context, List<Message> messageList, EmojiconHandler emojiconHandler) {
         this.context = context;
@@ -109,10 +108,13 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
         channelImageLoader.addImageCache(((FragmentActivity) context).getSupportFragmentManager(), 0.1f);
         channelImageLoader.setImageFadeIn(false);
         final String alphabet = context.getString(R.string.alphabet);
-        mAlphabetIndexer = new AlphabetIndexer(null,1 , alphabet);
+        mAlphabetIndexer = new AlphabetIndexer(null, 1, alphabet);
         highlightTextSpan = new TextAppearanceSpan(context, R.style.searchTextHiglight);
     }
 
+    public void setAlCustomizationSettings(AlCustomizationSettings alCustomizationSettings) {
+        this.alCustomizationSettings = alCustomizationSettings;
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -127,8 +129,8 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
             TextView createdAtTime = (TextView) customView.findViewById(R.id.createdAtTime);
             messageTextView = (TextView) customView.findViewById(R.id.message);
             //ImageView contactImage = (ImageView) customView.findViewById(R.id.contactImage);
-            CircleImageView contactImage = (CircleImageView) customView.findViewById(R.id.contactImage);
-            TextView alphabeticTextView = (TextView) customView.findViewById(R.id.alphabeticImage);
+            contactImage = (CircleImageView) customView.findViewById(R.id.contactImage);
+            alphabeticTextView = (TextView) customView.findViewById(R.id.alphabeticImage);
             TextView onlineTextView = (TextView) customView.findViewById(R.id.onlineTextView);
             ImageView sentOrReceived = (ImageView) customView.findViewById(R.id.sentOrReceivedIcon);
             TextView attachedFile = (TextView) customView.findViewById(R.id.attached_file);
@@ -160,47 +162,33 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
             if (message.getGroupId() == null) {
                 contactImageLoader.setLoadingImage(R.drawable.applozic_ic_contact_picture_holo_light);
             } else {
-                channelImageLoader.setLoadingImage(R.drawable.applozic_group_icon);
-            }
-            String contactNumber = "";
-            char firstLetter = 0;
-            if (channel != null && message.getGroupId() != null) {
-                smReceivers.setText(ChannelUtils.getChannelTitleName(channel, MobiComUserPreference.getInstance(context).getUserId()));
-                if (!TextUtils.isEmpty(channel.getImageUrl())) {
-                    channelImageLoader.loadImage(channel, contactImage);
-                }else if(channel.isBroadcastMessage()){
-                    contactImage.setImageResource(R.drawable.applozic_ic_applozic_broadcast);
-                }else {
+                if (Channel.GroupType.GROUPOFTWO.getValue().equals(channel.getType())) {
+                    contactImageLoader.setLoadingImage(R.drawable.applozic_ic_contact_picture_holo_light);
+                } else {
                     channelImageLoader.setLoadingImage(R.drawable.applozic_group_icon);
                 }
-            }else if (contactReceiver != null) {
-                contactNumber = contactReceiver.getDisplayName().toUpperCase();
-                firstLetter = contactReceiver.getDisplayName().toUpperCase().charAt(0);
-
-                if (contactReceiver != null) {
-                    if (firstLetter != '+') {
-                        alphabeticTextView.setText(String.valueOf(firstLetter));
-                    } else if (contactNumber.length() >= 2) {
-                        alphabeticTextView.setText(String.valueOf(contactNumber.charAt(1)));
-                    }
-                    Character colorKey = AlphaNumberColorUtil.alphabetBackgroundColorMap.containsKey(firstLetter) ? firstLetter : null;
-                /*alphabeticTextView.setTextColor(context.getResources().getColor(AlphaNumberColorUtil.alphabetTextColorMap.get(colorKey)));
-                alphabeticTextView.setBackgroundResource(AlphaNumberColorUtil.alphabetBackgroundColorMap.get(colorKey));*/
-                    GradientDrawable bgShape = (GradientDrawable) alphabeticTextView.getBackground();
-                    bgShape.setColor(context.getResources().getColor(AlphaNumberColorUtil.alphabetBackgroundColorMap.get(colorKey)));
-                }
-                if (contactReceiver.isDrawableResources()) {
-                    int drawableResourceId = context.getResources().getIdentifier(contactReceiver.getrDrawableName(), "drawable", context.getPackageName());
-                    contactImage.setImageResource(drawableResourceId);
-                } else {
-                    if(TextUtils.isEmpty(contactReceiver.getImageURL())){
-                        alphabeticTextView.setVisibility(View.VISIBLE);
-                        contactImage.setVisibility(View.GONE);
-                    }else {
-                        contactImageLoader.loadImage(contactReceiver, contactImage, alphabeticTextView);
-                    }
-                }
             }
+            if (channel != null && message.getGroupId() != null) {
+                if (Channel.GroupType.GROUPOFTWO.getValue().equals(channel.getType())) {
+                    Contact withUserContact = contactService.getContactById(ChannelService.getInstance(context).getGroupOfTwoReceiverUserId(channel.getKey()));
+                    if (withUserContact != null) {
+                        smReceivers.setText(withUserContact.getDisplayName());
+                        processContactImage(withUserContact);
+                    }
+                } else {
+                    smReceivers.setText(ChannelUtils.getChannelTitleName(channel, MobiComUserPreference.getInstance(context).getUserId()));
+                    if (!TextUtils.isEmpty(channel.getImageUrl())) {
+                        channelImageLoader.loadImage(channel, contactImage);
+                    } else if (channel.isBroadcastMessage()) {
+                        contactImage.setImageResource(R.drawable.applozic_ic_applozic_broadcast);
+                    } else {
+                        channelImageLoader.setLoadingImage(R.drawable.applozic_group_icon);
+                    }
+                }
+            } else if (contactReceiver != null) {
+                processContactImage(contactReceiver);
+            }
+
             if (alCustomizationSettings.isOnlineStatusMasterList()) {
                 onlineTextView.setVisibility(contactReceiver != null && contactReceiver.isOnline() ? View.VISIBLE : View.GONE);
             }
@@ -209,7 +197,7 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
                 @Override
                 public void onClick(View view) {
                     InstructionUtil.hideInstruction(context, R.string.instruction_open_conversation_thread);
-                    ((MobiComKitActivityInterface) context).onQuickConversationFragmentItemClick(view, contactReceiver,channel,message.getConversationId(),searchString);
+                    ((MobiComKitActivityInterface) context).onQuickConversationFragmentItemClick(view, contactReceiver, channel, message.getConversationId(), searchString);
                 }
             });
 
@@ -231,12 +219,12 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
             } else if (attachmentIcon != null && message.getContentType() == Message.ContentType.LOCATION.getValue()) {
                 attachmentIcon.setVisibility(View.VISIBLE);
                 attachmentIcon.setImageResource(R.drawable.mobicom_notification_location_icon);
-                messageTextView.setText("Location");
+                messageTextView.setText(context.getString(R.string.Location));
             } else if (message.getContentType() == Message.ContentType.PRICE.getValue()) {
                 messageTextView.setText(EmoticonUtils.getSmiledText(context, ConversationUIService.FINAL_PRICE_TEXT + message.getMessage(), emojiconHandler));
-            } else if(message.getContentType() == Message.ContentType.TEXT_HTML.getValue()){
+            } else if (message.getContentType() == Message.ContentType.TEXT_HTML.getValue()) {
                 messageTextView.setText(Html.fromHtml(message.getMessage()));
-            }else{
+            } else {
                 messageTextView.setText(EmoticonUtils.getSmiledText(context, message.getMessage(), emojiconHandler));
             }
 
@@ -270,8 +258,8 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
                 unReadCountTextView.setVisibility(View.GONE);
             }
 
-            int startIndex =indexOfSearchQuery(message.getMessage());
-            if(startIndex!=-1){
+            int startIndex = indexOfSearchQuery(message.getMessage());
+            if (startIndex != -1) {
 
                 final SpannableString highlightedName = new SpannableString(message.getMessage());
 
@@ -283,7 +271,7 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
                 messageTextView.setText(highlightedName);
             }
 
-            if(message.isVideoCallMessage()){
+            if (message.isVideoCallMessage()) {
                 createVideoCallView(message);
             }
 
@@ -343,7 +331,7 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
                         }
                     }
                     oReturn.values = results;
-                }else{
+                } else {
                     oReturn.values = originalList;
                 }
                 return oReturn;
@@ -359,9 +347,9 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
         };
     }
 
-    public void createVideoCallView(Message message ){
+    public void createVideoCallView(Message message) {
 
-        if(message.getMetadata()==null || message.getMetadata().isEmpty()){
+        if (message.getMetadata() == null || message.getMetadata().isEmpty()) {
 
             attachmentIcon.setImageResource(R.drawable.ic_videocam_white_24px);
             attachmentIcon.setColorFilter(R.color.applozic_green_color);
@@ -372,13 +360,46 @@ public class QuickConversationAdapter extends BaseAdapter implements Filterable 
 
         if (VideoCallNotificationHelper.isMissedCall(message)) {
             attachmentIcon.setImageResource(R.drawable.ic_communication_call_missed);
-        } else if(VideoCallNotificationHelper.isAudioCall(message)) {
+        } else if (VideoCallNotificationHelper.isAudioCall(message)) {
             attachmentIcon.setImageResource(R.drawable.applozic_ic_action_call_holo_light);
-        }else{
+        } else {
             attachmentIcon.setImageResource(R.drawable.ic_videocam_white_24px);
             attachmentIcon.setColorFilter(R.color.applozic_green_color);
         }
 
+    }
+
+    private void processContactImage(Contact contact) {
+        try {
+            String contactNumber = "";
+            char firstLetter = 0;
+            contactNumber = contact.getDisplayName().toUpperCase();
+            firstLetter = contact.getDisplayName().toUpperCase().charAt(0);
+
+            if (contact != null) {
+                if (firstLetter != '+') {
+                    alphabeticTextView.setText(String.valueOf(firstLetter));
+                } else if (contactNumber.length() >= 2) {
+                    alphabeticTextView.setText(String.valueOf(contactNumber.charAt(1)));
+                }
+                Character colorKey = AlphaNumberColorUtil.alphabetBackgroundColorMap.containsKey(firstLetter) ? firstLetter : null;
+                GradientDrawable bgShape = (GradientDrawable) alphabeticTextView.getBackground();
+                bgShape.setColor(context.getResources().getColor(AlphaNumberColorUtil.alphabetBackgroundColorMap.get(colorKey)));
+            }
+            if (contact.isDrawableResources()) {
+                int drawableResourceId = context.getResources().getIdentifier(contact.getrDrawableName(), "drawable", context.getPackageName());
+                contactImage.setImageResource(drawableResourceId);
+            } else {
+                if (TextUtils.isEmpty(contact.getImageURL())) {
+                    alphabeticTextView.setVisibility(View.VISIBLE);
+                    contactImage.setVisibility(View.GONE);
+                } else {
+                    contactImageLoader.loadImage(contact, contactImage, alphabeticTextView);
+                }
+            }
+        } catch (Exception e) {
+
+        }
     }
 
 }
