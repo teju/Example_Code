@@ -89,9 +89,11 @@ public class Register extends AppCompatActivity {
 
                                                 if (!obj.has(user)) {
                                                     reference.child(user).child("password").setValue(pass);
-                                                    Toast.makeText(Register.this, "registration successful", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(Register.this, "registration successful",
+                                                            Toast.LENGTH_LONG).show();
                                                 } else {
-                                                    Toast.makeText(Register.this, "username already exists", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(Register.this, "username already exists",
+                                                            Toast.LENGTH_LONG).show();
                                                 }
 
                                             } catch (JSONException e) {
@@ -106,6 +108,8 @@ public class Register extends AppCompatActivity {
                                     @Override
                                     public void onErrorResponse(VolleyError volleyError) {
                                         System.out.println("" + volleyError );
+                                        System.out.println("onErrorResponse1234567 " + volleyError);
+
                                         pd.dismiss();
                                     }
                                 });
