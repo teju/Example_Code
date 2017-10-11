@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "android.intel.sample.otpdemo"
+        minSdkVersion 4
+        targetSdkVersion 10
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/httpclient-4.2.3.jar')
+    compile files('libs/httpcore.jar')
+    compile files('libs/httpmime-4.2.3.jar')
+    compile files('libs/gradle-wrapper.jar')
+}

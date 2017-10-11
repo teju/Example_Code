@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\setup_dialog.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\setup_dialog.xml"
+    },
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\home.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\home.xml"
+    },
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\provision.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\provision.xml"
+    },
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\otp_gen.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\otp_gen.xml"
+    },
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\otp_login.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\otp_login.xml"
+    },
+    {
+        "merged": "D:\\Android\\Example_Code\\OTPDemo1\\app\\build\\intermediates\\res\\merged\\debug\\layout\\otp_verify.xml",
+        "source": "D:\\Android\\Example_Code\\OTPDemo1\\app\\src\\main\\res\\layout\\otp_verify.xml"
+    }
+]

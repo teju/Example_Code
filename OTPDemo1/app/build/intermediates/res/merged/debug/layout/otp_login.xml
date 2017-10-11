@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bkground"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/OTP_LOGIN_MSG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dip"
+        android:text="@string/otp_login_without_msg"
+        android:textColor="@color/prov_msg"
+        android:textSize="20sp" />
+
+</RelativeLayout>

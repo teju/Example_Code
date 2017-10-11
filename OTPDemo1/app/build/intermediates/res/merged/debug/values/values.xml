@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bkground">#ffffff</color>
+    <color name="check_option">#000000</color>
+    <color name="prov_msg">#006400</color>
+    <color name="text_color">#ffffff</color>
+    <string name="app_name">OTP Demo</string>
+    <string name="capabilities">Capabilities</string>
+    <string name="gen_otp">Generate OTP</string>
+    <string name="login">Login</string>
+    <string name="no">No</string>
+    <string name="ocra_mode">OCRA Mode</string>
+    <string name="otp">125866</string>
+    <string name="otp_gen_msg">OTP Generate status: In progress</string>
+    <string name="otp_login_with_msg">You are login with One Time Password, you have have full access!</string>
+    <string name="otp_login_without_msg">You are login without One Time Password, your access will be limited!</string>
+    <string name="otp_not_capable">Your device is NOT OTP capable, your access will be restricted!</string>
+    <string name="otp_setup">Your device is OTP capable,  do you want to setup the OTP?</string>
+    <string name="otp_ver_msg">OTP Verification status: In progress</string>
+    <string name="password">Password:</string>
+    <string name="pin">PIN</string>
+    <string name="prov">Provisioning</string>
+    <string name="prov_msg">Provisioning status: In progress</string>
+    <string name="question">Question</string>
+    <string name="username">User Name:</string>
+    <string name="ver_otp">Verify OTP</string>
+    <string name="version">Version</string>
+    <string name="yes">Yes</string>
+</resources>
